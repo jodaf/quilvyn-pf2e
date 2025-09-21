@@ -14549,7 +14549,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends area to 120\'; <b>8th</b> gives resistance 15 and extends area to 500\'"',
+      '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends the effects to 120\'; <b>8th</b> gives resistance 15 and extends the effects to 500\'"',
   'Sanctuary':
     Pathfinder2E.SPELLS.Sanctuary
     .replace('Abjuration', 'Concentrate,Manipulate'),
@@ -14564,7 +14564,9 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Divination', 'Concentrate,Manipulate'),
   'Seize Soul':
     Pathfinder2E.SPELLS['Bind Soul']
-    .replace('Evil,Necromancy', 'Unholy,Concentrate,Manipulate'),
+    .replace('Evil,Necromancy', 'Unholy,Concentrate,Manipulate')
+    .replace('gem', 'valuable item')
+    .replace('gem', 'item'),
   'Sending':
     Pathfinder2E.SPELLS.Sending
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -14605,7 +14607,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Black Tentacles']
     .replace('Conjuration', 'Concentrate,Manipulate,Shadow') + ' ' +
     'Description=' +
-      '"R120\' 20\' bursts inflict 3d6 HP piercing, 1d6 HP persistent poison, and grabbed for 1 min; requires a successful success on a DC %{spellDifficultyClass.%tradition} Escape or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition} to escape (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +1d6 HP persistent poison and requires +6 HP damage to escape)"',
+      '"R120\' 20\' burst inflicts 3d6 HP piercing, 1d6 HP persistent poison, and grabbed for 1 min; requires a successful DC %{spellDifficultyClass.%tradition} Escape or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition} to escape (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +1d6 HP persistent poison and requires +6 HP damage to escape)"',
   'Slow':
     Pathfinder2E.SPELLS.Slow
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -14616,7 +14618,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Restore Senses']
     .replace('Necromancy', 'Concentrate,Manipulate,Vitality') + ' ' +
     'Description=' +
-      '"Makes a counteract attempt vs. a magical blinded, dazzled, deafness, enfeebled, or sickened effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect for 1 rd (<b>heightened 4th</b> attempts to counteract drained; <b>8th</b> attempts to counteract stunned)"',
+      '"Makes a counteract attempt vs. a magical blinded, dazzled, deafness, enfeebled, or sickened effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect until the start of the next turn (<b>heightened 4th</b> attempts to counteract drained; <b>8th</b> attempts to counteract stunned)"',
   'Speak With Animals':
     Pathfinder2E.SPELLS['Speak With Animals']
     .replace('Divination', 'Concentrate,Manipulate')
@@ -14624,13 +14626,15 @@ Pathfinder2ERemaster.SPELLS = {
   'Speak With Plants':
     Pathfinder2E.SPELLS['Speak With Plants']
     .replace('Divination', 'Concentrate,Manipulate')
-    .replace('10 min', '1 hr (<b>heightened 4th</b> effects last 8 hr') + ' ' +
-    'Level=3',
+    .replace('10 min', '1 hr (<b>heightened 4th</b> effects last for 8 hr)') + ' ' +
+    'Level=3 ' +
+    'Traditions=Divine,Occult,Primal',
   'Speak With Stones':
     Pathfinder2E.SPELLS['Stone Tell']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace('10 min', '1 hr (<b>heightened 6th</b> effects last 8 hr') + ' ' +
-    'Level=5',
+    .replace('10 min', '1 hr (<b>heightened 6th</b> effects last for 8 hr)') + ' ' +
+    'Level=5 ' +
+    'Traditions=Divine,Occult,Primal',
   'Spellwrack':
     Pathfinder2E.SPELLS.Spellwrack
     .replace('Abjuration', 'Concentrate,Manipulate'),
@@ -14648,12 +14652,14 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Spiritual Weapon']
     .replace('Evocation,Force', 'Concentrate,Manipulate,Sanctified,Spirit')
     .replace(/\+%\{.*\}/, 'spell')
-    .replace('1d8 HP force', '2d8 HP spirit'),
+    .replace('1d8 HP force', '2d8 HP spirit')
+    .replace('damage type', 'damage type, or double HP on a critical hit,'),
   'Spiritual Guardian':
     Pathfinder2E.SPELLS['Spiritual Guardian']
     .replace('Abjuration,Force', 'Concentrate,Manipulate,Sanctified,Spirit')
     .replace(/\+%\{.*\} /, '')
-    .replace('2d8 HP force', '3d8 HP spirit'),
+    .replace('2d8 HP force', '3d8 HP spirit')
+    .replace('damage type', 'damage type, or double HP on a critical hit,'),
   'Stabilize':
     Pathfinder2E.SPELLS.Stabilize
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
@@ -14664,7 +14670,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Touch Of Idiocy']
     .replace('Enchantment', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R30\' Inflicts stupefied 2 for 1 min (<b>save Will</b> inflicts stupefied 1 for 1 rd; critical success negates; critical failure inflicts stupefied 3)"',
+      '"R30\' Inflicts stupefied 2 for 1 min (<b>save Will</b> inflicts stupefied 1 until the start of the next turn; critical success negates; critical failure inflicts stupefied 3)"',
   'Subconscious Suggestion':
     Pathfinder2E.SPELLS['Subconscious Suggestion']
     .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
@@ -14705,7 +14711,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Creates a handheld musical instrument that self can play for 1 hr (<b>Heightened 5th</b> creates a virtuoso instrument"',
+      '"Creates a handheld musical instrument that only self can play for 1 hr (<b>Heightened 5th</b> creates a virtuoso instrument)"',
   'Summon Monitor':
     'Level=5 ' +
     'Traits=Concentrate,Manipulate,Summon ' +
@@ -14732,7 +14738,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Remove Paralysis']
     .replace('Necromancy', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"Makes a counteract attempt vs. a clumsy, grabbed, or paralysis effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect for 1 rd (<b>heightened 4th</b> attempts to counteract immobilized or restrained; <b>6th</b> attempts to counteract petrified; <b>8th</b> attempts to counteract stunned)"',
+      '"Makes a counteract attempt vs. a clumsy, grabbed, or paralyzed effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect for 1 rd (<b>heightened 4th</b> attempts to counteract immobilized or restrained; <b>6th</b> attempts to counteract petrified; <b>8th</b> attempts to counteract stunned)"',
   'Sure Strike':
     Pathfinder2E.SPELLS['True Strike']
     .replace('Divination', 'Concentrate'),
