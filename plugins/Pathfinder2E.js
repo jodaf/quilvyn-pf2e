@@ -8209,7 +8209,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
+      '"30\' cone inflicts loss of reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=1 ' +
     'Traits=Cantrip,Evocation,Light ' +
@@ -8383,7 +8383,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d6+%{spellModifier.%tradition} HP positive on an undead target (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Inflicts 1d6+%{spellModifier.%tradition} HP positive (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 until the start of the next turn) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'Traits=Necromancy,Positive ' +
@@ -8591,7 +8591,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects 5 additional willing creatures, and effects last for 10 min)"',
+      '"Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> extends the range to 30\', affects 5 additional willing creatures, and effects last for 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
     'Traits=Enchantment,Incapacitation,Mental ' +
@@ -8782,7 +8782,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10\' fly Speed  for 5 min or until the target or self ends the spell"',
+      '"Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and a 10\' fly Speed  for 5 min or until the target or self ends the spell"',
   'Gate':
     'Level=10 ' +
     'Traits=Uncommon,Conjuration,Teleportation ' +
@@ -8806,7 +8806,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates sound equivalent to 4 humans shouting while sustained (<b>heightened 3rd</b> R60\'; <b>5th</b> R120\')"',
+      '"R30\' Creates sound equivalent to 4 humans shouting while sustained (<b>heightened 3rd</b> extends the range to 60\'; <b>5th</b> extends the range to 120\')"',
   'Ghostly Weapon':
     'Level=3 ' +
     'Traits=Transmutation ' +
@@ -9165,7 +9165,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Moves a light object 20\' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> R60\'; <b>7th</b> moves a Bulk 2 object)"',
+      '"R30\' Moves a light object 20\' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> extends the range to 60\'; <b>7th</b> moves a Bulk 2 object)"',
   'Magic Aura':
     'Level=1 ' +
     'Traits=Uncommon,Illusion ' +
@@ -9396,7 +9396,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Negates the scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30\' affects 10 targets)"',
+      '"Negates the scent of a willing touched creature for 1 hr (<b>heightened 5th</b> extends the range to 30\' and affects 10 targets)"',
   'Neutralize Poison':
     'Level=3 ' +
     'Traits=Healing,Necromancy ' +
@@ -9761,7 +9761,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> extends the range to 30\' and affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'Traits=Healing,Necromancy ' +
@@ -9769,7 +9769,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Makes a counteract attempt vs. a paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. a paralysis effect affecting touched (<b>heightened 6th</b> extends the range to 30\' and affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'Traits=Abjuration,Aura,Mental ' +
@@ -9817,7 +9817,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched (<b>heightened 6th</b> extends the range to 30\' and affects 10 targets)"',
   'Retrocognition':
     'Level=7 ' +
     'Traits=Divination ' +
@@ -10243,7 +10243,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> extends the range to 2200\' and affects a 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
@@ -10379,7 +10379,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts -10\' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
+      '"R30\' Spell attack inflicts -10\' Speed for 1 rd, plus immobilized for 1 rd or until a successful Escape on a critical success (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
     'Traits=Conjuration,Plant ' +
@@ -10387,7 +10387,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10\' Speed, and a successful unarmed attack immobilizes 1 target for 1 rd (a successful Escape negates), each rd for 10 min"',
+      '"R500\' 40\' burst inflicts -10\' Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Traits=Evocation ' +
@@ -10395,7 +10395,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Moves an 80 Bulk, 20\' cubic object 20\' each rd while sustained for up to 1 min"',
+      '"R120\' Moves an 80 Bulk, 20\' cubic object 20\' each rd while sustained for up to 1 min; allows selecting a different target each rd"',
   'Telekinetic Maneuver':
     'Level=2 ' +
     'Traits=Attack,Evocation,Force ' +
@@ -10434,7 +10434,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self to communicate telepathically with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
+      '"Allows self to communicate telepathically using a shared language with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
     'Traits=Uncommon,Conjuration,Teleportation ' +
@@ -10458,7 +10458,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)"',
+      '"Touched understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
     'Traits=Enchantment,Mental ' +
@@ -10505,7 +10505,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies\' attacks within 1 rd on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions"',
+      '"R60\' 4 selected allies\' attacks before the start of the next turn on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'Traits=Enchantment,Incapacitation,Mental ' +
@@ -10513,7 +10513,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers flat-footed and no reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
+      '"Touched suffers flat-footed and loss of reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
     'Traits=Uncommon,Abjuration ' +
@@ -10561,7 +10561,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone inflicts 12d6 HP negative, giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"30\' cone inflicts 12d6 HP negative (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vampiric Touch':
     'Level=3 ' +
     'Traits=Death,Necromancy,Negative ' +
@@ -10569,7 +10569,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 6d6 HP negative, giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"Touch inflicts 6d6 HP negative (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Veil':
     'Level=4 ' +
     'Traits=Illusion,Visual ' +
@@ -10609,7 +10609,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touch heals once each rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)"',
+      '"Touch heals once per rd: 4d10 Hit Points, 4d8 Hit Points, 4d6 Hit Points, then 4d4 Hit Points, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)"',
   'Volcanic Eruption':
     'Level=7 ' +
     'Traits=Evocation,Fire ' +
@@ -10617,7 +10617,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, a 20\' descent and difficult terrain on flying creatures, and -10\' Speed and clumsy 1 until a successful escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, a 20\' descent and difficult terrain on flying creatures, and -10\' Speed and clumsy 1 until a successful Escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'Traits=Auditory,Death,Necromancy,Negative ' +
@@ -10641,7 +10641,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
+      '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 Hit Points that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives the wall +20 Hit Points)"',
   'Wall Of Ice':
     'Level=5 ' +
     'Traits=Cold,Evocation,Water ' +
@@ -10649,7 +10649,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x10\'x1\' wall or a 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or a 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 Hit Points per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 Hit Points, and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
     'Traits=Conjuration,Earth ' +
@@ -10657,7 +10657,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
+      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 Hit Points per 10\' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 Hit Points)"',
   'Wall Of Thorns':
     'Level=3 ' +
     'Traits=Conjuration,Plant ' +
@@ -10665,7 +10665,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 HP)"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 Hit Points per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 Hit Points)"',
   'Wall Of Wind':
     'Level=3 ' +
     'Traits=Air,Evocation ' +
@@ -10705,7 +10705,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last for 1 hr)"',
+      '"Touched can walk on liquids for 10 min (<b>heightened 4th</b> extends the range to 30\', affects 10 creatures, and effects last for 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'Traits=Evocation,Force ' +
@@ -10761,7 +10761,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)"',
+      '"R30\' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> each rd while fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)"',
   'Zone Of Truth':
     'Level=3 ' +
     'Traits=Uncommon,Enchantment,Mental ' +
@@ -11103,7 +11103,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +2 Deception and Stealth to blend into a crowd and ignores difficult terrain from crowds for 1 min (<b>heightened 3rd</b> R10\' affects 10 creatures)"',
+      '"Self gains +2 Deception and Stealth to blend into a crowd and ignores difficult terrain from crowds for 1 min (<b>heightened 3rd</b> extends the range to 10\' and affects 10 creatures)"',
   'Fire Ray':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Attack,Cleric,Evocation,Fire ' +
