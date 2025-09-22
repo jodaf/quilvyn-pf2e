@@ -2391,7 +2391,7 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Ranger >= 4 || ' +
        'fighterDedicationLevel >= 8 || ' +
        'rangerDedicationLevel >= 8 || ' +
-       'dualWeaponWarrirDedicationLevel >= 6"',
+       'dualWeaponWarriorDedicationLevel >= 6"',
   'Advanced Weapon Training (%weaponGroup)':
     Pathfinder2E.FEATS['Advanced Weapon Training (%weaponGroup)'],
   'Advantageous Assault':Pathfinder2E.FEATS['Advantageous Assault'],
@@ -13807,7 +13807,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Remove Fear'] + ' ' +
     'Traits=Concentrate,Healing,Manipulate,Mental ' +
     'Description=' +
-      '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
+      '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead suppresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
   'Command':
     Pathfinder2E.SPELLS.Command
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -13882,7 +13882,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Disjunction
     .replace('Abjuration', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5\' emanation (<b>save basic Reflex</b>); trageted magic items are also deactivated for 1 week"',
+      '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5\' emanation (<b>save basic Reflex</b>); targeted magic items are also deactivated for 1 week"',
   'Dinosaur Form':
     Pathfinder2E.SPELLS['Dinosaur Form']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -14770,7 +14770,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Telekinetic Projectile':
     Pathfinder2E.SPELLS['Telekinetic Projectile']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace(/1d6+%\{.*\}/, '2d6'),
+    .replace(/1d6\+%\{.*\}/, '2d6'),
   'Telepathy':
     Pathfinder2E.SPELLS.Telepathy
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -14819,7 +14819,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Unfettered Movement':
     Pathfinder2E.SPELLS['Freedom Of Movement']
-    .replace('Abjuration', 'Concentrate,Manipulate'),
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Unfettered Pack':
     Pathfinder2E.SPELLS['Unfettered Pack']
     .replace('Abjuration', 'Concentrate,Manipulate'),
@@ -14837,7 +14838,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Vanishing Tracks':
     Pathfinder2E.SPELLS['Pass Without Trace']
     .replace('Abjuration', 'Concentrate,Manipulate'),
-  'Gaseous Form':
+  'Vapor Form':
     Pathfinder2E.SPELLS['Gaseous Form']
     .replace('Transmutation', 'Concentrate,Manipulate,Air'),
   'Nondetection':
@@ -14849,7 +14850,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Attempts to counteract detection, revelation, and scrying cast against the target for 8 hr"',
+      '"Attempts to counteract detection, revelation, and scrying cast vs. touched for 8 hr"',
   'Ventriloquism':
     Pathfinder2E.SPELLS.Ventriloquism
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -14860,19 +14861,20 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Phantasmal Killer']
     .replace('Illusion', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Inflicts 8d6 HP mental, frightened 2, and death if taken to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R120\' Inflicts 8d6 HP mental, frightened 2, and death if reduced to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure inflicts double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vital Beacon':
     Pathfinder2E.SPELLS['Vital Beacon']
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
   'Vitality Lash':
     Pathfinder2E.SPELLS['Disrupt Undead']
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality')
+    .replace('positive', 'vitality')
     .replace(/1d6.*%\{.*\}/, '2d6'),
   'Void Warp':
     Pathfinder2E.SPELLS['Chill Touch']
     .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void') + ' ' +
     'Description=' +
-      '"Touch inflicts 2d4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"Touch inflicts 2d4 HP void (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Volcanic Eruption':
     Pathfinder2E.SPELLS['Volcanic Eruption']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -14918,7 +14920,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Storm Of Vengeance']
     .replace('Evocation', 'Concentrate,Manipulate,Cold') + ' ' +
     'Description=' +
-      '"R800\' 400\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP cold (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), or thrown 40\' (<b>no save</b>) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+      '"R800\' 400\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP cold (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), or thrown upward 40\' in a 30\' radius (<b>no save</b>) while sustained for up to 1 min (<b>heightened 10th</b> extends the range to 2200\' and affects a 1000\' burst)"',
   'Zealous Conviction':
     Pathfinder2E.SPELLS['Zealous Conviction']
     .replace('Enchantment', 'Concentrate,Manipulate'),

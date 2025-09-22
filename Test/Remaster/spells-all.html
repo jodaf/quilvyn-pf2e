@@ -131,8 +131,7 @@ var attributes = {
   "spells.Foresight (A9)":1, "spells.Foresight (D9)":1, "spells.Foresight (O9)":1, 
   "spells.Freeze Time (A10)":1, "spells.Freeze Time (O10)":1, "spells.Frostbite (AC1)":1, 
   "spells.Frostbite (PC1)":1, "spells.Fungal Infestation (A2)":1, "spells.Fungal Infestation (P2)":1, 
-  "spells.Gale Blast (AC1)":1, "spells.Gale Blast (PC1)":1, "spells.Gaseous Form (A4)":1, 
-  "spells.Gaseous Form (O4)":1, "spells.Gaseous Form (P4)":1, "spells.Gate (A10)":1, "spells.Gate (D10)":1, 
+  "spells.Gale Blast (AC1)":1, "spells.Gale Blast (PC1)":1, "spells.Gate (A10)":1, "spells.Gate (D10)":1, 
   "spells.Gate (O10)":1, "spells.Gecko Grip (A2)":1, "spells.Gecko Grip (P2)":1, 
   "spells.Gentle Landing (A1)":1, "spells.Gentle Landing (P1)":1, "spells.Ghostly Carrier (A2)":1, 
   "spells.Ghostly Carrier (O2)":1, "spells.Ghostly Tragedy (D4)":1, "spells.Ghostly Tragedy (O4)":1, 
@@ -303,7 +302,8 @@ var attributes = {
   "spells.Vampiric Exsanguination (A6)":1, "spells.Vampiric Exsanguination (D6)":1, 
   "spells.Vampiric Exsanguination (O6)":1, "spells.Vampiric Feast (A3)":1, "spells.Vampiric Feast (D3)":1, 
   "spells.Vampiric Feast (O3)":1, "spells.Vampiric Maiden (A4)":1, "spells.Vampiric Maiden (D4)":1, 
-  "spells.Vampiric Maiden (O4)":1, "spells.Vanishing Tracks (P1)":1, "spells.Veil Of Privacy (A3)":1, 
+  "spells.Vampiric Maiden (O4)":1, "spells.Vanishing Tracks (P1)":1, "spells.Vapor Form (A4)":1, 
+  "spells.Vapor Form (O4)":1, "spells.Vapor Form (P4)":1, "spells.Veil Of Privacy (A3)":1, 
   "spells.Veil Of Privacy (O3)":1, "spells.Veil Of Privacy (P3)":1, "spells.Ventriloquism (A1)":1, 
   "spells.Ventriloquism (D1)":1, "spells.Ventriloquism (O1)":1, "spells.Ventriloquism (P1)":1, 
   "spells.Vibrant Pattern (A6)":1, "spells.Vibrant Pattern (O6)":1, "spells.Vision Of Death (A4)":1, 
@@ -843,11 +843,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cleanse Cuisine (P1): <b>(2)</b> R10' Enhances or removes contaminants from 1 cubic foot of food and drink (<b>heightened +2</b> affects +1 cubic foot)</td>
     </tr><tr style="text-align:left">
-      <td>Clear Mind (D2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
+      <td>Clear Mind (D2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead suppresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
     </tr><tr style="text-align:left">
-      <td>Clear Mind (O2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
+      <td>Clear Mind (O2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead suppresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
     </tr><tr style="text-align:left">
-      <td>Clear Mind (P2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
+      <td>Clear Mind (P2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead suppresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
     </tr><tr style="text-align:left">
       <td>Cloak Of Colors (A5): <b>(2)</b> R30' Creatures adjacent to the target suffer dazzled, and successful attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd), for 1 min</td>
     </tr><tr style="text-align:left">
@@ -987,9 +987,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Detect Scrying (O4): <b>(2)</b> 30' emanation reveals scrying effects, along with the image and location of the scrying creature for lower-rank effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
-      <td>Detonate Magic (A9): <b>(2)</b> R120' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5' emanation (<b>save basic Reflex</b>); trageted magic items are also deactivated for 1 week</td>
+      <td>Detonate Magic (A9): <b>(2)</b> R120' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5' emanation (<b>save basic Reflex</b>); targeted magic items are also deactivated for 1 week</td>
     </tr><tr style="text-align:left">
-      <td>Detonate Magic (P9): <b>(2)</b> R120' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5' emanation (<b>save basic Reflex</b>); trageted magic items are also deactivated for 1 week</td>
+      <td>Detonate Magic (P9): <b>(2)</b> R120' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5' emanation (<b>save basic Reflex</b>); targeted magic items are also deactivated for 1 week</td>
     </tr><tr style="text-align:left">
       <td>Dinosaur Form (P4): <b>(2)</b> Self becomes a Large dinosaur with 15 temporary Hit Points, Armor Class 35, +16 attack, +9 damage, low-light vision, 30' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15' or 20' reach, 20 temporary Hit Points, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20' or 25' reach, Armor Class 38, 25 temporary Hit Points, +25 attack, +15 damage with double damage dice, +25 Athletics)</td>
     </tr><tr style="text-align:left">
@@ -1258,12 +1258,6 @@ var attributes = {
       <td>Gale Blast (AC1): <b>(2)</b> 5' emanation inflicts 1d6 HP bludgeoning and a 5' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10' push) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Gale Blast (PC1): <b>(2)</b> 5' emanation inflicts 1d6 HP bludgeoning and a 5' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10' push) (<b>heightened +1</b> inflicts +1d6 HP)</td>
-    </tr><tr style="text-align:left">
-      <td>Gaseous Form (A4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10' fly Speed  for 5 min or until the target or self ends the spell</td>
-    </tr><tr style="text-align:left">
-      <td>Gaseous Form (O4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10' fly Speed  for 5 min or until the target or self ends the spell</td>
-    </tr><tr style="text-align:left">
-      <td>Gaseous Form (P4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10' fly Speed  for 5 min or until the target or self ends the spell</td>
     </tr><tr style="text-align:left">
       <td>Gate (A10): <b>(2)</b> R120' Opens a 40' radius gate to another plane while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
@@ -2189,29 +2183,29 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Talking Corpse (O4): <b>(10 min)</b> Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows lying or refusing to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)</td>
     </tr><tr style="text-align:left">
-      <td>Tangle Vine (AC1): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
+      <td>Tangle Vine (AC1): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd or until a successful Escape on a critical success (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Tangle Vine (PC1): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
+      <td>Tangle Vine (PC1): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd or until a successful Escape on a critical success (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Tangling Creepers (A6): <b>(3)</b> R500' 40' burst inflicts -10' Speed, and a successful unarmed attack immobilizes 1 target for 1 rd (a successful Escape negates), each rd for 10 min</td>
+      <td>Tangling Creepers (A6): <b>(3)</b> R500' 40' burst inflicts -10' Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Tangling Creepers (P6): <b>(3)</b> R500' 40' burst inflicts -10' Speed, and a successful unarmed attack immobilizes 1 target for 1 rd (a successful Escape negates), each rd for 10 min</td>
+      <td>Tangling Creepers (P6): <b>(3)</b> R500' 40' burst inflicts -10' Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Hand (AC1): <b>(2)</b> R30' Moves a light object 20' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> R60'; <b>7th</b> moves a Bulk 2 object)</td>
+      <td>Telekinetic Hand (AC1): <b>(2)</b> R30' Moves a light object 20' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> extends the range to 60'; <b>7th</b> moves a Bulk 2 object)</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Hand (OC1): <b>(2)</b> R30' Moves a light object 20' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> R60'; <b>7th</b> moves a Bulk 2 object)</td>
+      <td>Telekinetic Hand (OC1): <b>(2)</b> R30' Moves a light object 20' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> extends the range to 60'; <b>7th</b> moves a Bulk 2 object)</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Haul (A5): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min</td>
+      <td>Telekinetic Haul (A5): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min; allows selecting a different target each rd</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Haul (O5): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min</td>
+      <td>Telekinetic Haul (O5): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min; allows selecting a different target each rd</td>
     </tr><tr style="text-align:left">
       <td>Telekinetic Maneuver (A2): <b>(2)</b> R60' Spell attack attempts to Disarm, Shove, or Trip</td>
     </tr><tr style="text-align:left">
       <td>Telekinetic Maneuver (O2): <b>(2)</b> R60' Spell attack attempts to Disarm, Shove, or Trip</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Projectile (AC1): <b>(2)</b> Spell attack hurls a loose object that inflicts 1d6+3 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Telekinetic Projectile (AC1): <b>(2)</b> Spell attack hurls a loose object that inflicts 2d6 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Projectile (OC1): <b>(2)</b> Spell attack hurls a loose object that inflicts 1d6+4 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Telekinetic Projectile (OC1): <b>(2)</b> Spell attack hurls a loose object that inflicts 2d6 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Telepathic Demand (A9): <b>(3)</b> Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)</td>
     </tr><tr style="text-align:left">
@@ -2219,9 +2213,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Telepathic Demand (O9): <b>(3)</b> Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)</td>
     </tr><tr style="text-align:left">
-      <td>Telepathy (A4): <b>(2)</b> Allows self to communicate telepathically with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
+      <td>Telepathy (A4): <b>(2)</b> Allows self to communicate telepathically using a shared language with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
     </tr><tr style="text-align:left">
-      <td>Telepathy (O4): <b>(2)</b> Allows self to communicate telepathically with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
+      <td>Telepathy (O4): <b>(2)</b> Allows self to communicate telepathically using a shared language with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
     </tr><tr style="text-align:left">
       <td>Teleport (A6): <b>(10 min)</b> Transports self and 4 willing touched creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>10th</b> transports to any planet in the same galaxy)</td>
     </tr><tr style="text-align:left">
@@ -2259,9 +2253,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Tree Of Seasons (P6): <b>(2)</b> Creates 4 seedpods that can be thrown 30', inflicting 6d6 HP electricity, fire, poison, or cold in a 5' burst within 1 min (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>True Target (A7): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
+      <td>True Target (A7): <b>(1)</b> R60' 4 selected allies' attacks before the start of the next turn on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
     </tr><tr style="text-align:left">
-      <td>True Target (O7): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
+      <td>True Target (O7): <b>(1)</b> R60' 4 selected allies' attacks before the start of the next turn on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
     </tr><tr style="text-align:left">
       <td>Truesight (A6): <b>(2)</b> R60' Makes counteract checks to allow self to see through illusions and transmutations for 10 min</td>
     </tr><tr style="text-align:left">
@@ -2271,27 +2265,27 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Truesight (P6): <b>(2)</b> R60' Makes counteract checks to allow self to see through illusions and transmutations for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Truespeech (A5): <b>(2)</b> Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
+      <td>Truespeech (A5): <b>(2)</b> Touched understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Truespeech (D5): <b>(2)</b> Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
+      <td>Truespeech (D5): <b>(2)</b> Touched understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Truespeech (O5): <b>(2)</b> Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
+      <td>Truespeech (O5): <b>(2)</b> Touched understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
       <td>Umbral Journey (A5): <b>(1 min)</b> Allows self and 10 willing touched to travel through the Netherworld at 72x Speed for 8 hr</td>
     </tr><tr style="text-align:left">
       <td>Umbral Journey (O5): <b>(1 min)</b> Allows self and 10 willing touched to travel through the Netherworld at 72x Speed for 8 hr</td>
     </tr><tr style="text-align:left">
-      <td>Uncontrollable Dance (A8): <b>(2)</b> Touched suffers off-guard and no reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
+      <td>Uncontrollable Dance (A8): <b>(2)</b> Touched suffers off-guard and loss of reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
     </tr><tr style="text-align:left">
-      <td>Uncontrollable Dance (O8): <b>(2)</b> Touched suffers off-guard and no reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
+      <td>Uncontrollable Dance (O8): <b>(2)</b> Touched suffers off-guard and loss of reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
     </tr><tr style="text-align:left">
       <td>Unfathomable Song (O9): <b>(2)</b> R120' Randomly inflicts frightened 2, confused for 1 rd, stupefied 4 for 1 rd, or blinded for 1 rd on 5 targets while sustained for up to 1 min (<b>save Will</b> negates for 1 rd; critical success negates; critical failure replaces frightened 2 with stunned for 1 rd and stupefied 1)</td>
     </tr><tr style="text-align:left">
-      <td>Unfettered Movement (A4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
+      <td>Unfettered Movement (A4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell rank for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Unfettered Movement (D4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
+      <td>Unfettered Movement (D4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell rank for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Unfettered Movement (P4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
+      <td>Unfettered Movement (P4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell rank for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Unfettered Pack (P7): <b>(2)</b> R30' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> targets ignore environmental greater difficult terrain)</td>
     </tr><tr style="text-align:left">
@@ -2299,17 +2293,17 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Unrelenting Observation (O8): <b>(2)</b> R100' 5 targets in a 20' burst can see a 6th target for 1 hr; lead and running water block the vision (<b>save Will</b> effects last for 1 min; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Exsanguination (A6): <b>(2)</b> 30' cone inflicts 12d6 HP void, giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Exsanguination (A6): <b>(2)</b> 30' cone inflicts 12d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Exsanguination (D6): <b>(2)</b> 30' cone inflicts 12d6 HP void, giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Exsanguination (D6): <b>(2)</b> 30' cone inflicts 12d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Exsanguination (O6): <b>(2)</b> 30' cone inflicts 12d6 HP void, giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Exsanguination (O6): <b>(2)</b> 30' cone inflicts 12d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half that suffered by the most-affected target (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Feast (A3): <b>(2)</b> Touch inflicts 6d6 HP void, giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Feast (A3): <b>(2)</b> Touch inflicts 6d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Feast (D3): <b>(2)</b> Touch inflicts 6d6 HP void, giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Feast (D3): <b>(2)</b> Touch inflicts 6d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vampiric Feast (O3): <b>(2)</b> Touch inflicts 6d6 HP void, giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vampiric Feast (O3): <b>(2)</b> Touch inflicts 6d6 HP void (<b>save basic Fortitude</b>), giving self temporary Hit Points for 1 min equal to half the inflicted damage (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Vampiric Maiden (A4): <b>(2)</b> R30' Inflicts 4d4 HP piercing, 4d4 HP void, and immobilized for 1 rd (Interact action ends), giving self temporary Hit Points equal to the void damage for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilization for 1 rd or until a successful Escape) (<b>heightened +1</b> inflicts +1d4 HP piercing and void)</td>
     </tr><tr style="text-align:left">
@@ -2319,11 +2313,17 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Vanishing Tracks (P1): <b>(2)</b> Increases the DC to Track self by 4 or to 33, whichever is higher, for 1 hr (<b>heightened 2nd</b> effects last for 8 hr; <b>4th</b> effects last for 8 hr and affect a 20' radius and 10 creatures)</td>
     </tr><tr style="text-align:left">
-      <td>Veil Of Privacy (A3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast against the target for 8 hr</td>
+      <td>Vapor Form (A4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and a 10' fly Speed  for 5 min or until the target or self ends the spell</td>
     </tr><tr style="text-align:left">
-      <td>Veil Of Privacy (O3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast against the target for 8 hr</td>
+      <td>Vapor Form (O4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and a 10' fly Speed  for 5 min or until the target or self ends the spell</td>
     </tr><tr style="text-align:left">
-      <td>Veil Of Privacy (P3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast against the target for 8 hr</td>
+      <td>Vapor Form (P4): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and a 10' fly Speed  for 5 min or until the target or self ends the spell</td>
+    </tr><tr style="text-align:left">
+      <td>Veil Of Privacy (A3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast vs. touched for 8 hr</td>
+    </tr><tr style="text-align:left">
+      <td>Veil Of Privacy (O3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast vs. touched for 8 hr</td>
+    </tr><tr style="text-align:left">
+      <td>Veil Of Privacy (P3): <b>(10 min)</b> Attempts to counteract detection, revelation, and scrying cast vs. touched for 8 hr</td>
     </tr><tr style="text-align:left">
       <td>Ventriloquism (A1): <b>(2)</b> Allows self to project their voice up to 60' for 10 min (<b>heightened 2nd</b> effects last for 1 hr, allow changing voice quality, and require an active Perception to attempt to disbelieve)</td>
     </tr><tr style="text-align:left">
@@ -2337,27 +2337,27 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Vibrant Pattern (O6): <b>(2)</b> R120' 10' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd after leaving the area removes the blindness (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)</td>
     </tr><tr style="text-align:left">
-      <td>Vision Of Death (A4): <b>(2)</b> R120' Inflicts 8d6 HP mental, frightened 2, and death if taken to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vision Of Death (A4): <b>(2)</b> R120' Inflicts 8d6 HP mental, frightened 2, and death if reduced to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure inflicts double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vision Of Death (O4): <b>(2)</b> R120' Inflicts 8d6 HP mental, frightened 2, and death if taken to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Vision Of Death (O4): <b>(2)</b> R120' Inflicts 8d6 HP mental, frightened 2, and death if reduced to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure inflicts double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Visions Of Danger (O7): <b>(3)</b> R500' 30' burst inflicts 8d8 HP mental for 1 min (<b>save basic Will</b>; critical success allows an attempt to disbelieve that negates the effects) (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vital Beacon (D4): <b>(1 min)</b> Touch heals once each rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)</td>
+      <td>Vital Beacon (D4): <b>(1 min)</b> Touch heals once per rd: 4d10 Hit Points, 4d8 Hit Points, 4d6 Hit Points, then 4d4 Hit Points, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)</td>
     </tr><tr style="text-align:left">
-      <td>Vital Beacon (P4): <b>(1 min)</b> Touch heals once each rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)</td>
+      <td>Vital Beacon (P4): <b>(1 min)</b> Touch heals once per rd: 4d10 Hit Points, 4d8 Hit Points, 4d6 Hit Points, then 4d4 Hit Points, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)</td>
     </tr><tr style="text-align:left">
-      <td>Vitality Lash (DC1): <b>(2)</b> R30' Inflicts 2d6 HP positive on an undead target (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Vitality Lash (DC1): <b>(2)</b> R30' Inflicts 2d6 HP vitality (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 until the start of the next turn) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Vitality Lash (PC1): <b>(2)</b> R30' Inflicts 2d6 HP positive on an undead target (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Vitality Lash (PC1): <b>(2)</b> R30' Inflicts 2d6 HP vitality (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 until the start of the next turn) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Void Warp (AC1): <b>(2)</b> Touch inflicts 2d4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
+      <td>Void Warp (AC1): <b>(2)</b> Touch inflicts 2d4 HP void (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Void Warp (DC1): <b>(2)</b> Touch inflicts 2d4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
+      <td>Void Warp (DC1): <b>(2)</b> Touch inflicts 2d4 HP void (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Void Warp (OC1): <b>(2)</b> Touch inflicts 2d4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
+      <td>Void Warp (OC1): <b>(2)</b> Touch inflicts 2d4 HP void (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Volcanic Eruption (P7): <b>(2)</b> R120' 5'x80' cylinder inflicts 14d6 HP fire, a 20' descent and difficult terrain on flying creatures, and -10' Speed and clumsy 1 until a successful escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5')</td>
+      <td>Volcanic Eruption (P7): <b>(2)</b> R120' 5'x80' cylinder inflicts 14d6 HP fire, a 20' descent and difficult terrain on flying creatures, and -10' Speed and clumsy 1 until a successful Escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5')</td>
     </tr><tr style="text-align:left">
       <td>Vomit Swarm (A2): <b>(2)</b> 30' cone inflicts 2d8 HP piercing and sickened 1 (<b>save basic Reflex</b> also negates sickened) (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
@@ -2379,21 +2379,21 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Wall Of Flesh (P5): <b>(2)</b> R60' Creates a 30'x20'x3' wall of flesh, each 5' section with Armor Class 10 and 75 Hit Points, that either inflicts 2d6 HP piercing, gives self +2 Perception within the wall's line of sight, or grabs for 1 rd or until a successful Escape (<b>save Reflex<b> negates; critical failure grabs), for 1 min (<b>heightened +2</b> gives each section +10 Hit Points and inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Force (A6): <b>(3)</b> R30' Creates an invisible 50'x20' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)</td>
+      <td>Wall Of Force (A6): <b>(3)</b> R30' Creates an invisible 50'x20' wall with Armor Class 10, Harness 30, and 60 Hit Points that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives the wall +20 Hit Points)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Force (O6): <b>(3)</b> R30' Creates an invisible 50'x20' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)</td>
+      <td>Wall Of Force (O6): <b>(3)</b> R30' Creates an invisible 50'x20' wall with Armor Class 10, Harness 30, and 60 Hit Points that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives the wall +20 Hit Points)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Ice (A5): <b>(3)</b> R120' Creates a 60'x10'x1' wall or a 10' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)</td>
+      <td>Wall Of Ice (A5): <b>(3)</b> R120' Creates a 60'x10'x1' wall or a 10' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 Hit Points per 10' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 Hit Points, and rubble inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Ice (P5): <b>(3)</b> R120' Creates a 60'x10'x1' wall or a 10' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)</td>
+      <td>Wall Of Ice (P5): <b>(3)</b> R120' Creates a 60'x10'x1' wall or a 10' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 Hit Points per 10' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 Hit Points, and rubble inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Stone (A5): <b>(3)</b> R120' Creates a permanent 120'x20'x1" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)</td>
+      <td>Wall Of Stone (A5): <b>(3)</b> R120' Creates a permanent 120'x20'x1" stone wall with Armor Class 10, Hardness 14, and 50 Hit Points per 10' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 Hit Points)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Stone (P5): <b>(3)</b> R120' Creates a permanent 120'x20'x1" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)</td>
+      <td>Wall Of Stone (P5): <b>(3)</b> R120' Creates a permanent 120'x20'x1" stone wall with Armor Class 10, Hardness 14, and 50 Hit Points per 10' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 Hit Points)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Thorns (A3): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 HP)</td>
+      <td>Wall Of Thorns (A3): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with Armor Class 10, Hardness 10, and 20 Hit Points per 10' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 Hit Points)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Thorns (P3): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 HP)</td>
+      <td>Wall Of Thorns (P3): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with Armor Class 10, Hardness 10, and 20 Hit Points per 10' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 Hit Points)</td>
     </tr><tr style="text-align:left">
       <td>Wall Of Wind (A3): <b>(3)</b> R120' Creates a 60'x30'x5' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) allows passage as difficult terrain; critical success negates; critical failure inflicts a 10' push)</td>
     </tr><tr style="text-align:left">
@@ -2413,15 +2413,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Water Breathing (P2): <b>(1 min)</b> R30' 5 targets can breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
-      <td>Water Walk (A2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30' affects 10 creatures, and effects last for 1 hr)</td>
+      <td>Water Walk (A2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> extends the range to 30', affects 10 creatures, and effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Water Walk (D2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30' affects 10 creatures, and effects last for 1 hr)</td>
+      <td>Water Walk (D2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> extends the range to 30', affects 10 creatures, and effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Water Walk (P2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30' affects 10 creatures, and effects last for 1 hr)</td>
+      <td>Water Walk (P2): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> extends the range to 30', affects 10 creatures, and effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Wave Of Despair (A5): <b>(2)</b> 30' cone prevents reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
+      <td>Wave Of Despair (A5): <b>(2)</b> 30' cone inflicts loss of reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
-      <td>Wave Of Despair (O5): <b>(2)</b> 30' cone prevents reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
+      <td>Wave Of Despair (O5): <b>(2)</b> 30' cone inflicts loss of reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
       <td>Weapon Of Judgment (D9): <b>(2)</b> R100' +undefined attacks by a force weapon inflict 4d10 HP spirit or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP) (<b>heightened 10th</b> inflicts +1d10 HP)</td>
     </tr><tr style="text-align:left">
@@ -2437,11 +2437,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Whispers Of The Void (O4): <b>(2)</b> R60' 10' burst inflicts 4d8 HP persistent void and drained 1 (<b>save Fortitude</b> inflicts 2d8 HP persistent void only; critical success negates; critical failure inflicts drained 2 and doomed 1) (<b>heightened +2</b> inflicts +2d8 HP, or +1d8 HP on a successful save)</td>
     </tr><tr style="text-align:left">
-      <td>Wrathful Storm (P9): <b>(3)</b> R800' 400' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP cold (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), or thrown 40' (<b>no save</b>) while sustained for up to 1 min (<b>heightened 10th</b> R2200' 1000' burst)</td>
+      <td>Wrathful Storm (P9): <b>(3)</b> R800' 400' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP cold (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), or thrown upward 40' in a 30' radius (<b>no save</b>) while sustained for up to 1 min (<b>heightened 10th</b> extends the range to 2200' and affects a 1000' burst)</td>
     </tr><tr style="text-align:left">
-      <td>Zealous Conviction (D6): <b>(2)</b> R30' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)</td>
+      <td>Zealous Conviction (D6): <b>(2)</b> R30' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> each rd while fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)</td>
     </tr><tr style="text-align:left">
-      <td>Zealous Conviction (O6): <b>(2)</b> R30' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)</td>
+      <td>Zealous Conviction (O6): <b>(2)</b> R30' 10 willing targets gain 12 temporary Hit Points, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> each rd while fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary Hit Points and +3 Will)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
