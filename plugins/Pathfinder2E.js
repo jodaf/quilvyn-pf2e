@@ -7876,7 +7876,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Successful DC 6 secret flat check reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad"',
+      '"Successful DC 6 GM flat check reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad"',
   'Avatar':
     'Level=10 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -10975,7 +10975,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last for 1 action; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> increases the radius by 15\')"',
+      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last for 1 action, then gives immunity for 1 hr; critical success negates and gives immunity for 1 hr; critical failure also improves attitude by 1 step) (<b>heightened +1</b> increases the radius by 15\')"',
   'Charming Touch':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -10991,7 +10991,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"20\' emanation around willing touched reduces bright light to dim and conceals touched for 1 min; target can shed the cloak, and the spell ends if another picks it up"',
+      '"20\' emanation around willing touched reduces bright light to dim and conceals the target for 1 min; the target can shed the cloak, and the spell ends if another picks it up"',
   'Commanding Lash':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
@@ -11039,7 +11039,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R20\' Gives self temporary Hit Points for 1 min equal to %{spellModifier.%tradition} + the level of a living creature that dies, or double that for an undead creature that is destroyed"',
+      '"R20\' Gives self temporary Hit Points for 1 min equal to %{spellModifier.%tradition} + the level of the triggering living creature that dies, or double that for an undead creature that is destroyed"',
   'Delusional Pride':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -11047,7 +11047,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn, or -2 if it fails twice, for 10 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects last for 24 hr)"',
+      '"R30\' Inflicts -1 attacks and skill checks until end of its turn on a target that fails an attack or skill check, or -2 if it fails twice, for 10 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects last for 24 hr)"',
   'Destructive Aura':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Aura,Cleric,Evocation ' +
@@ -11055,7 +11055,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' emanation inflicts -2 resistances (<b>heightened +2</b> inflicts an additional -2 resistances)"',
+      '"15\' emanation inflicts -2 resistances for 1 min (<b>heightened +2</b> inflicts an additional -2 resistances)"',
   'Disperse Into Air':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Air,Cleric,Polymorph,Transmutation ' +
@@ -11079,7 +11079,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a suggestion and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> inflicts flat-footed and fascinated only; critical success negates; critical failure prevents the target from taking other actions)"',
+      '"R30\' Target obeys a suggestion for 1 action and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> inflicts flat-footed and fascinated only; critical success negates; critical failure prevents the target from taking other actions)"',
   'Enduring Might':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Abjuration,Cleric ' +
@@ -11159,7 +11159,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows a Recall Knowledge check, using the better of 2 rolls, during initiative or immediately after inflicting damage to remember a target\'s abilities"',
+      '"Allows using the better of 2 rolls on a Recall Knowledge check to remember a target\'s abilities during initiative or immediately after inflicting damage"',
   'Localized Quake':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Earth,Transmutation ' +
@@ -11183,7 +11183,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched gains +1 saves; subsequent casting sustains the spell up to 1 min and gives the target resistance to spell damage equal to the cast spell\'s level"',
+      '"Touched gains +1 saves while sustained for up to 1 min; subsequent casting sustains the spell and gives the target resistance to spell damage equal to the cast spell\'s level"',
   'Malignant Sustenance':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Necromancy,Negative ' +
@@ -11207,7 +11207,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Gives heightened +1 effects to the next damage or healing spell cast by the target within 1 rd"',
+      '"R30\' Gives heightened +1 effects to the next damage or healing spell cast by the target until the start of the next turn"',
   "Nature's Bounty":
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Conjuration,Plant,Positive ' +
@@ -11215,7 +11215,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
+      '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 Hit Points if eaten within 1 min (<b>heightened +1</b> restores +6 Hit Points)"',
   'Overstuff':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Transmutation ' +
@@ -11295,7 +11295,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R10\' Successful DC 6 flat check gives a one-word clue to the target\'s short-term fate"',
+      '"R10\' Successful DC 6 GM flat check gives a one-word clue to the target\'s short-term fate"',
   'Rebuke Death':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Healing,Necromancy,Positive ' +
@@ -11335,7 +11335,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows self to use the better of 2 rolls on the triggering Seek or Recall Knowledge check"',
+      '"Allows self to use the better of 2 rolls on the triggering Seek or trained Recall Knowledge check"',
   'Shared Nightmare':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -11456,7 +11456,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Allows allies to use self\'s saving throw vs. the triggering spell or ability"',
+      '"R30\' Allows allies to use self saving throw vs. the triggering spell or ability"',
   'Veil Of Confidence':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Enchantment,Mental ' +
@@ -11464,7 +11464,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Reduces any frightened condition on self by 1 for 1 min; critical failure on a subsequent save ends the spell and increases the frightened condition by 1"',
+      '"Reduces frightened conditions on self by 1 for 1 min; critical failure on a subsequent save ends the spell and increases the frightened condition by 1"',
   'Vibrant Thorns':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Morph,Plant,Transmutation ' +
@@ -11536,7 +11536,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
+      '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd or until a successful Escape), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'Traits=Focus,Uncommon,Conjuration,Druid ' +
@@ -11576,7 +11576,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> can choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> can choose 3 effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or, using 2 actions, a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> can choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> can choose 3 effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
