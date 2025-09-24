@@ -14970,14 +14970,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Negates an increase in target\'s dying condition that would cause death"',
+      '"R60\' Negates an increase in the target\'s dying condition that would cause death"',
   'Pied Piping':
     'Level=10 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Concentrate,Incapacitation,Mental,Sonic ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"5\' emanation fascinates creature and causes them to approach while sustained for up to 1 min; a hostile action ends the effect (<b>save Will</i> inflicts fascination only; critical success negates; critical failure inflicts complete control)"',
+      '"5\' emanation fascinates creatures and causes them to approach for 1 min; each Sustain increases the radius by 5\', and a hostile action ends the effect (<b>save Will</b> inflicts fascination only; critical success negates; critical failure inflicts complete control)"',
   'Rallying Anthem':
     Pathfinder2E.SPELLS['Inspire Defense']
     .replace('Enchantment', 'Concentrate')
@@ -14988,7 +14988,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' emanation allows self and allies to Hustle and self to use Performance for initiate while sustained for up to 1 hr (<b>heightened 6th</b> effects last 2 hr; <b>9th</b> effect last 4 hr)"',
+      '"60\' emanation allows self and allies to Hustle, allows self to use Performance for initiative, and gives self and allies +1 initiative while sustained for up to 1 hr (<b>heightened 6th</b> effects last 2 hr; <b>9th</b> effect last 4 hr)"',
   'Song Of Strength':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Emotion,Mental ' +
@@ -15005,7 +15005,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Uses Performance to counteract a choice of grabbed, immobilized, paralyzed, restrained, slowed, or stunned affecting target (<b>heightened 9th</b> affects 4 targets)"',
+      '"R30\' Allows a Performance check to counteract a choice of grabbed, immobilized, paralyzed, restrained, slowed, or stunned affecting target (<b>heightened 9th</b> affects 4 targets)"',
   'Triple Time':
     Pathfinder2E.SPELLS['Triple Time']
     .replace('Enchantment', 'Manipulate'),
@@ -15037,7 +15037,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Divination', 'Concentrate,Manipulate') + ' ' +
     'Cast=2 ' +
     'Description=' +
-      '"R25 miles; reveals information about settlements and gives +2 to Recall Knowledge and Gather Information about them for 8 hr (<b>heightened 5th</b> increases the range to 100 miles; <b>7th</b> increases the range to 500 miles and the bonus to +3)"',
+      '"R25 miles; reveals information about settlements and gives +2 to Recall Knowledge and Gather Information about them, or +%{2+level} if untrained, for 8 hr (<b>heightened 5th</b> increases the range to 100 miles; <b>7th</b> increases the range to 500 miles and the bonus to +3 or +%{3+level})"',
   'Veil Of Confidence':
     Pathfinder2E.SPELLS['Veil Of Confidence']
     .replace('Enchantment', 'Concentrate')
@@ -15064,7 +15064,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Eradicate Undeath':
     Pathfinder2E.SPELLS['Eradicate Undeath']
     .replace('Necromancy', 'Concentrate,Manipulate')
-    .replace('Positive', 'Vitality'),
+    .replace('positive', 'vitality'),
   'Cry Of Destruction':
     Pathfinder2E.SPELLS['Cry Of Destruction']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -15074,7 +15074,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Sweet Dream':
     Pathfinder2E.SPELLS['Sweet Dream']
     .replace('Enchantment', 'Concentrate,Manipulate')
-    .replace('for 9 min', 'for 59 min (<b>heightened 4th<b> gives +2 skill checks; <b>7th</b> gives +3 skill checks') + ' ' +
+    .replace('for 9 min', 'for 59 min (<b>heightened 4th</b> gives +2 skill checks; <b>7th</b> gives +3 skill checks') + ' ' +
     'Cast=2',
   "Dreamer's Call":
     Pathfinder2E.SPELLS["Dreamer's Call"]
@@ -15083,7 +15083,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Hurtling Stone':
     Pathfinder2E.SPELLS['Hurtling Stone']
     .replace('Evocation', 'Manipulate')
-    .replace(/1d6.*HP/, '2d6 HP'),
+    .replace(/1d6\+%\{.*?\} HP (\w+)/, "2d6 HP $1 and a 5' push")
+    .replace('double HP', "double HP and a 10' push"),
   'Localized Quake':
     Pathfinder2E.SPELLS['Localized Quake']
     .replace('Transmutation', 'Concentrate,Manipulate')
@@ -15098,21 +15099,24 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Abjuration', 'Concentrate'),
   'Read Fate':
     Pathfinder2E.SPELLS['Read Fate']
-    .replace('Divination', 'Concentrate,Manipulate') + ' ' +
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace("10'", "30'") + ' ' +
     'Cast=2',
   'Tempt Fate':
     Pathfinder2E.SPELLS['Tempt Fate']
     .replace('Divination', 'Manipulate'),
   'Fire Ray':
     Pathfinder2E.SPELLS['Fire Ray']
-    .replace('Evocation', 'Concentrate,Manipulate')
-    .replaceAll('1d4 HP persistent fire', "1d6 HP to others in the target\'s square"),
+    .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R60\' Spell attack inflicts 2d6 HP fire, or double HP on a critical hit; others who end their turns in the target\'s space suffer 1d6 HP fire until the end of the target\'s turn (<b>heightened +1</b> inflicts +2d6 HP to target and +1d6 HP to others)"',
   'Flame Barrier':
     Pathfinder2E.SPELLS['Flame Barrier']
     .replace('Abjuration', 'Concentrate'),
   'Unimpeded Stride':
     Pathfinder2E.SPELLS['Unimpeded Stride']
-    .replace('Transmutation', 'Manipulate'),
+    .replace('Transmutation', 'Manipulate')
+    .replaceAll('level', 'rank'),
   'Word Of Freedom':
     Pathfinder2E.SPELLS['Word Of Freedom']
     .replace('Enchantment', 'Concentrate'),
@@ -15172,7 +15176,8 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Waking Nightmare']
     .replace('Enchantment', 'Concentrate,Manipulate')
     .replace('frightened 2', 'frightened 2 and +1 HP mental from successful Strikes')
-    .replace('fleeing', 'paralyzed'),
+    .replace('fleeing', 'paralyzed')
+    .replace(')', ') (<b>heightened +1</b> inflicts +1 HP)'),
   'Shared Nightmare':
     Pathfinder2E.SPELLS['Shared Nightmare']
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -15183,10 +15188,10 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Retributive Pain']
     .replace('Abjuration', 'Manipulate'),
   'Charming Touch':
-    Pathfinder2E.SPELLS['Retributive Pain']
+    Pathfinder2E.SPELLS['Charming Touch']
     .replace('Enchantment', 'Manipulate'),
   'Captivating Adoration':
-    Pathfinder2E.SPELLS['Retributive Pain']
+    Pathfinder2E.SPELLS['Captivating Adoration']
     .replace('Enchantment', 'Concentrate,Manipulate,Aura'),
   'Perfected Mind':
     Pathfinder2E.SPELLS['Perfected Mind']
@@ -15225,7 +15230,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Transmutation', 'Manipulate'),
   "Traveler's Transit":
     Pathfinder2E.SPELLS["Traveler's Transit"]
-    .replace('Evocation', 'Concentrate,Manipulate'),
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('1 min', '5 min'),
   'Sudden Shift':
     Pathfinder2E.SPELLS['Sudden Shift'] + ' ' +
     'Traits=Focus,Uncommon,Cleric,Manipulate',
@@ -15243,11 +15249,12 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Touch Of Obedience']
     .replace('Enchantment', 'Manipulate') + ' ' +
     'Description=' +
-      '"Touch inflicts stupefied 2 until the end of the next turn (<b>save Will</b> inflicts stupefied 1 until the end of the next turn; critical success negates; critical failure inflicts stupefied 2 for 1 min and prone)"',
+      '"Touch inflicts stupefied 2 until the end of the next turn once per target per hr (<b>save Will</b> inflicts stupefied 1 until the end of the next turn; critical success negates; critical failure inflicts stupefied 2 for 1 min and prone)"',
   'Commanding Lash':
     Pathfinder2E.SPELLS['Commanding Lash']
     .replace('Enchantment', 'Concentrate,Manipulate')
     .replace('Incapacitation', 'Linguistic')
+    .replace('(', 'once per target per hr (')
     .replace('negates', '(-2 if frightened, stupefied, or suffering persistent damage) negates'),
   'Touch Of Undeath':
     Pathfinder2E.SPELLS['Touch Of Undeath']
@@ -15272,12 +15279,13 @@ Pathfinder2ERemaster.SPELLS = {
   'Precious Metals':
     Pathfinder2E.SPELLS['Precious Metals']
     .replace('Transmutation', 'Concentrate,Metal')
+    .replace('mithral', 'dawnsilver')
     .replace('<b>', '<b>heightened +1</b> gives +2 Hardness; <b>'),
   'Weapon Surge':
     Pathfinder2E.SPELLS['Weapon Surge']
     .replace('Evocation', 'Manipulate,Sanctified') + ' ' +
     'Description=' +
-      '"Held weapon gains +1 attack and +1d6 HP spirit on the next attack before the start of the next turn (<b>heightened 5th</b> gives +1d6 HP; <b>9th</b> gives +1d6 HP)"',
+      '"Held weapon gains +1 attack and inflicts +1d6 HP spirit on the next attack before the start of the next turn (<b>heightened 5th</b> inflicts +2d6 HP; <b>9th</b> inflicts +3d6 HP)"',
   'Zeal For Battle':
     Pathfinder2E.SPELLS['Zeal For Battle']
     .replace('Enchantment', 'Concentrate'),
@@ -15292,6 +15300,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Necromancy', 'Manipulate'),
   'Cornucopia':
     Pathfinder2E.SPELLS.Goodberry
+    .replace('touched', 'conjured')
+    .replace('affects', 'conjures')
     .replace('Necromancy', 'Concentrate,Manipulate,Plant,Vitality'),
   'Impaling Briars':
     Pathfinder2E.SPELLS['Impaling Briars']
@@ -15320,27 +15330,27 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"First Strike each rd gains a damage bonus equal to twice the number of damage dice"',
+      '"First Strike each rd gains a damage bonus equal to twice the number of damage dice for 1 min"',
   'Heal Companion':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Ranger,Healing,Vitality ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch restores 1d10 HP to companion, or using 2 actions gives R30\' and restores 1d10+8 HP (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)"',
+      '"Touched companion (2 actions gives R30\') regains 1d10 HP, or 1d10+8 HP with 2 actions (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)"',
   'Magic Hide':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Ranger,Manipulate ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="R30\' Gives companion +1 Armor Class for 1 min"',
+    'Description="R30\' Target companion gains +1 Armor Class for 1 min"',
   'Animal Feature':
     'Level=2 ' +
     'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Morph ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains low-light vision, claws that inflict 1d6 HP slashing, or jaws that inflict 1d8 HP piercing for 1 min (<b>heightened 4th</b> allows choosing %{speed}\' swim or fly Speed or darkvision)"',
+      '"Self gains low-light vision, claws that inflict 1d6 HP slashing, or jaws that inflict 1d8 HP piercing for 1 min (<b>heightened 4th</b> allows instead choosing %{speed}\' swim or fly Speed or darkvision)"',
   'Enlarge Companion':
     'Level=2 ' +
     'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Polymorph ' +
@@ -15350,7 +15360,7 @@ Pathfinder2ERemaster.SPELLS = {
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Enlarge, 'Description')
       .replace('Willing target', 'Companion')
       .replace('5 min', '1 min')
-      .replace(/; <b>8th[^\)]*/, '') + '"',
+      .replace(/; <b>6th[^\)]*/, '') + '"',
   "Hunter's Luck":
     'Level=2 ' +
     'Traits=Uncommon,Focus,Ranger,Concentrate,Fortune ' +
@@ -15364,7 +15374,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Restores 2d8 HP and removes a source of persistent damage to a living creature, or inflicts 2d8 HP vitality and 2 HP persistent vitality to an undead target"',
+      '"R30\' Restores 2d8 HP and removes a source of persistent damage to a living creature, or inflicts 2d8 HP vitality and 2 HP persistent vitality (<b>save basic Fortitude</b> also negates persistent damage) to an undead target (<b>heightened +1</b> restores or inflicts +1d8 HP initial and +1 HP persistent)"',
   'Ephemeral Tracking':
     'Level=3 ' +
     'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate ' +
