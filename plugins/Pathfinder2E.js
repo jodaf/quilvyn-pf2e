@@ -7789,7 +7789,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes a Medium bat, bird, pterosaur, or wasp with 5 temporary Hit Points, Armor Class %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Acrobatics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary Hit Points, +18 attack, +8 damage, +20 Acrobatics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary Hit Points, Armor Class %{level+21}, +21 attack, +4 damage with double damage dice, +23 Acrobatics)"',
+      '"Self becomes a Medium bat, bird, pterosaur, or wasp with 5 temporary Hit Points, Armor Class %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Acrobatics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10 Speed, 10 temporary Hit Points, +18 attack, +8 damage, +20 Acrobatics; <b>6th</b> becomes a Huge creature with +15 Speed, 10\' reach, 15 temporary Hit Points, Armor Class %{level+21}, +21 attack, +4 damage with double damage dice, +23 Acrobatics)"',
   'Air Bubble':
     'Level=1 ' +
     'Traits=Air,Conjuration ' +
@@ -8726,7 +8726,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="Self gains +30\' Speed for 1 min"',
+    'Description="Self gains +30 Speed for 1 min"',
   'Flesh To Stone':
     'Level=6 ' +
     'Traits=Transmutation ' +
@@ -9149,7 +9149,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains +10\' Speed for 1 hr (<b>heightened 2nd</b> effects last for 8 hr)"',
+      '"Self gains +10 Speed for 1 hr (<b>heightened 2nd</b> effects last for 8 hr)"',
   'Mage Armor':
     'Level=1 ' +
     'Traits=Abjuration ' +
@@ -9372,7 +9372,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5 willing targets gain 5 temporary Hit Points, +10\' Speed, fangs and claws that inflict 2d8 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver and prohibition of non-rage, non-Seek concentration actions, for 1 min (<b>heightened 6th</b> gives 10 temporary Hit Points, weakness 10 to silver, and fangs and claws that inflict 3d8 HP piercing and 3d6 HP slashing; <b>10th</b> gives 20 temporary Hit Points, weakness 20 to silver, and fangs and claws that inflict 4d8 HP piercing and 4d6 HP slashing)"',
+      '"R30\' 5 willing targets gain 5 temporary Hit Points, +10 Speed, fangs and claws that inflict 2d8 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver and prohibition of non-rage, non-Seek concentration actions, for 1 min (<b>heightened 6th</b> gives 10 temporary Hit Points, weakness 10 to silver, and fangs and claws that inflict 3d8 HP piercing and 3d6 HP slashing; <b>10th</b> gives 20 temporary Hit Points, weakness 20 to silver, and fangs and claws that inflict 4d8 HP piercing and 4d6 HP slashing)"',
   'Nature Incarnate':
     'Level=10 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -10871,7 +10871,7 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="60\' emanation gives allies +10\' Speed for 1 rd"',
+    'Description="60\' emanation gives allies +10 Speed for 1 rd"',
   "Champion's Sacrifice":
     'Level=6 ' +
     'Traits=Focus,Uncommon,Abjuration,Champion ' +
@@ -10927,7 +10927,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +5\' Speed and can move normally in difficult terrain for the remainder of the turn"',
+      '"Self gains +5 Speed and can move normally in difficult terrain for the remainder of the turn"',
   'Appearance Of Wealth':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Illusion ' +
@@ -10951,7 +10951,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +10\' Speed and +2 Athletics for 1 rd and can immediately Stride, Leap, Climb, or Swim"',
+      '"Self gains +10 Speed and +2 Athletics for 1 rd and can immediately Stride, Leap, Climb, or Swim"',
   'Bit Of Luck':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
@@ -11376,7 +11376,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Willing target who sleeps for 1 min gains +1 intelligence-based skill checks, +1 charisma-based skill checks, or +5\' Speed for 9 min"',
+      '"R30\' Willing target who sleeps for 1 min gains +1 intelligence-based skill checks, +1 charisma-based skill checks, or +5 Speed for 9 min"',
   'Take Its Course':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Necromancy ' +
@@ -11766,7 +11766,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?(speed+\\"\' swim Speed and water breathing\\"):(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
+      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?(speed+\\"\' swim Speed and water breathing\\"):(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10 Speed; <b>9th</b> gives +20 Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
@@ -12012,7 +12012,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +20\' Speed, a %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
+      '"Self gains +20 Speed, a %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
   'Vigilant Eye':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Divination,Wizard ' +
