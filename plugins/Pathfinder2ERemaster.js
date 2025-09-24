@@ -5784,7 +5784,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,ability ' +
     'Note=' +
       '"+1 Encumbered Bulk/+1 Maximum Bulk",' +
-      '"+10\' Speed during overland travel"',
+      '"+10 Speed during overland travel"',
   'Incredible Improvisation':Pathfinder2E.FEATURES['Incredible Improvisation'],
   'Multitalented':Pathfinder2E.FEATURES.Multitalented,
   'Advanced General Training':
@@ -8906,7 +8906,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gives the triggering ally spell a spellshape effect or a damage bonus equal to its rank"',
   'Hex Focus':'Section=magic Note="Refocus restores all focus points"',
   "Witch's Broom":
-    'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10\' Speed, during daily prep"',
+    'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10 Speed, during daily prep"',
   'Reflect Spell':Pathfinder2E.FEATURES['Reflect Spell'],
   'Rites Of Transfiguration':
     'Section=magic ' +
@@ -10856,7 +10856,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Meddling Futures':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="<b>(Cursebound)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
+    'Note="<b>(Cursebound)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20 Speed, and using a different action requires a successful DC 6 flat check"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
     'Action=Free ' +
@@ -13363,7 +13363,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful Athletics check turns a ally\'s critical Climb failure when a following self into a normal failure; a critical failure inflicts the consequences on both"',
   'Legendary Guide':
     'Section=skill ' +
-    'Note="Following party gains +10\' Speed when traveling and can travel normally over difficult terrain and at half speed over greater difficult terrain"',
+    'Note="Following party gains +10 Speed when traveling and can travel normally over difficult terrain and at half speed over greater difficult terrain"',
   'Leverage Connections':Pathfinder2E.FEATURES.Connections,
   'Numb To Death':
     'Section=save ' +
@@ -15413,7 +15413,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives a +2 bonus"',
+      '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives a +2 bonus)"',
   'Cackle':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Concentrate,Hex ' +
@@ -15426,7 +15426,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers a curse at stage 1, which inflicts 4d6 HP void and fatigued while sustained for up to 1 min; subsequent failures after 1 rd inflict 8d6 HP void at stage 2, 12d6 HP void at stage 3, and death at stage 4 (<b>save Fortitude</b> inflicts stage 1 with no further saves; critical success negates; critical failure inflicts stage 2) (<b>heightened +1 inflicts +1d6 HP void)"',
+      '"R30\' Target suffers a curse at stage 1, which inflicts 4d6 HP void and fatigued while sustained for up to 1 min; subsequent failures after 1 rd inflict 8d6 HP void at stage 2, 12d6 HP void at stage 3, and death at stage 4 (<b>save Fortitude</b> inflicts stage 1 with no further progression; critical success negates; critical failure inflicts stage 2) (<b>heightened +1</b> inflicts +1d6 HP)"',
   "Deceiver's Cloak":
     'Level=3 ' +
     'Traits=Uncommon,Focus,Witch,Concentrate,Hex,Manipulate ' +
@@ -15435,7 +15435,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Description="' +
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS['Illusory Disguise'], 'Description')
       .replace('for 1 hr', 'while sustained up to 1 hr')
-      .replace(' (heightened 2nd</b>', ';')
+      .replace(' (<b>heightened 2nd</b>', ';')
       .replace('; <b>3rd</b>', ' and')
       .replace(/\)$/, ' (<b>heightened 6th</b> allows copying any creature of the same size</b>)"'),
   'Elemental Betrayal':
@@ -15458,14 +15458,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Successful attacks by the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of a choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
+      '"Spell attacks using the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of a choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
   'Needle Of Vengeance':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Hex,Manipulate,Mental ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 2 HP mental <b>save basic Will</b>) whenever it attacks the named creature while sustained for up to 1 min (<b>heightened +1</b> inflicts +2 HP)"',
+      '"R30\' Target suffers 2 HP mental (<b>save basic Will</b>) whenever it attacks the named creature while sustained for up to 1 min (<b>heightened +1</b> inflicts +2 HP)"',
   "Patron's Puppet":
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Hex ' +
@@ -15478,7 +15478,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 1d6 HP cold and 1d6 HP persistent cold while sustained for up to 1 min (<b>save Fortitude</b> inflicts initial cold only; critical success negates; critical failure inflicts 2d6 HP cold and 2d6 HP persistent cold) (<b>heightened +1</> inflicts +1 HP initial and persistent, or +2 on a critical save failure)"',
+      '"R30\' Conceals the target and inflicts 1d6 HP cold, plus 1d6 HP persistent cold while sustained for up to 1 min (<b>save Fortitude</b> inflicts initial cold only; critical success negates; critical failure inflicts 2d6 HP cold and 2d6 HP persistent cold) (<b>heightened +1</b> inflicts +1 HP initial and persistent, or +2 on a critical failure)"',
   'Phase Familiar':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Hex,Manipulate ' +
@@ -15500,6 +15500,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description=' +
       '"R30\' Inflicts -1 Perception, attacks, and Will saves, -2 vs. sleep, and a DC 5 flat check to use a concentrate action while sustained for up to 1 min (<b>save Will</b> negates flat check; critical success negates)"',
+  // TODO the below aren't focus spells, but are not generally available either
   'Clinging Ice':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Cantrip,Cold,Hex,Manipulate ' +
@@ -15513,7 +15514,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Give +1 on attempts to Recall Knowledge, Seek, or Sense Motive as free actions while sustained for up to 1 min (<b>heightened 5th</b> affects 2 targets)"',
+      '"R30\' Gives +1 on attempts to Recall Knowledge, Seek, or Sense Motive as free actions while sustained for up to 1 min (<b>heightened 5th</b> affects 2 targets)"',
   'Evil Eye':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Cantrip,Curse,Hex,Manipulate ' +
@@ -15527,7 +15528,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Gives +1 to make a failed attack, skill check, or save into a success within 1 min"',
+      '"R30\' Gives +1 to make an attack, skill check, or save critical failure into a normal failure or a normal failure into a success within 1 min"',
   'Shroud Of Night':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Cantrip,Hex,Manipulate ' +
@@ -15548,7 +15549,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers -2 attack and sickened 1 when attacking self while sustained for up to 1 min (<b>save Will</b> negates sickened; critical success negates; critical failure inflicts sickened 2)"',
+      '"R30\' Target suffers -2 attack and sickened 1 when attacking self while sustained for up to 1 min (<b>save Will</b> (animals, fungi, and plants suffer a -1 penalty) negates sickened; critical success negates; critical failure inflicts sickened 2)"',
 
   // Wizard
   'Protective Wards':
@@ -15624,7 +15625,7 @@ Pathfinder2ERemaster.SPELLS = {
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Invisibility, 'Description')
       .replace('Touched', 'Self')
       .replace('10 min', '1 min')
-      .replace(/\([^\)]*./, '(<b>heightened 6th</b> effects last for 10 min</b>; <b>8th</b> effect last for 1 hr)"'),
+      .replace(/\([^\)]*./, '(<b>heightened 6th</b> effects last for 10 min</b>; <b>8th</b> effects last for 1 hr)"'),
   'Scramble Body':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate,Manipulate ' +
@@ -15638,21 +15639,21 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Gives self a choice of +20\' Speed, %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min"',
+      '"Gives self a choice of +20 Speed, %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min"',
   'Hand Of The Apprentice':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Attack,Manipulate ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Successful spell attack while throwing a melee weapon inflicts its base damage + %{spellModifier.%tradition}, or double HP and the weapon\'s critical specialization effect on a critical success; the weapon returns afterwards"',
+      '"Spell attack while throwing a melee weapon inflicts its base damage + %{spellModifier.%tradition}, or double HP and the weapon\'s critical specialization effect on a critical success; the weapon returns afterwards"',
   'Interdisciplinary Incantation':
     'Level=4 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Allows imitating the triggering spell cast until the end of the next turn once per 24 hr"',
+      '"R30\' Allows replicating another creature\'s triggering arcane spell until the end of the next turn once per 24 hr"',
 
   // Core 2
 
