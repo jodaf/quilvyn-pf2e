@@ -8575,7 +8575,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts difficult terrain and -10\' Speed for 1 min (<b>save Reflex</b> inflicts difficult terrain only; critical failure inflicts immobilized for 1 rd)"',
+      '"R120\' 20\' burst inflicts difficult terrain and -10 Speed for 1 min (<b>save Reflex</b> inflicts difficult terrain only; critical failure inflicts immobilized for 1 rd)"',
   'Enthrall':
     'Level=3 ' +
     'Traits=Auditory,Emotion,Enchantment ' +
@@ -8742,7 +8742,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates an invisible 2\' radius disk that follows self and holds 5 Bulk for 8 hr"',
+      '"Creates an invisible 2\' diameter disk that follows self and holds 5 Bulk for 8 hr"',
   'Fly':
     'Level=4 ' +
     'Traits=Transmutation ' +
@@ -9388,7 +9388,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed for 1 rd (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from bonded animals, fungi, and plants for 10 min"',
+      '"R120\' 5 targets in a 500\' burst suffer -10 Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed for 1 rd (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from bonded animals, fungi, and plants for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
     'Traits=Abjuration ' +
@@ -9785,7 +9785,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates around the target an impassible force field with immunity to critical hits and precision damage, Armor Class 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates)"',
+      '"R30\' Creates around the target an impassible force field with immunity to critical hits and precision damage, Armor Class 5, Hardness 10, and 40 Hit Points for 1 min or until destroyed (<b>save Reflex</b> reduces the Hit Points to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
     'Traits=Abjuration ' +
@@ -9865,7 +9865,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"30\' burst gives +1 Armor Class, attacks, damage, and saves vs. aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
+      '"30\' burst gives +1 Armor Class, attacks, damage, and saves vs. a choice of aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
     'Traits=Abjuration ' +
@@ -10379,7 +10379,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts -10\' Speed for 1 rd, plus immobilized for 1 rd or until a successful Escape on a critical success (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
+      '"R30\' Spell attack inflicts -10 Speed for 1 rd, plus immobilized for 1 rd or until a successful Escape on a critical success (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
     'Traits=Conjuration,Plant ' +
@@ -10387,7 +10387,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10\' Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min"',
+      '"R500\' 40\' burst inflicts -10 Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Traits=Evocation ' +
@@ -10617,7 +10617,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, a 20\' descent and difficult terrain on flying creatures, and -10\' Speed and clumsy 1 until a successful Escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, a 20\' descent and difficult terrain on flying creatures, and -10 Speed and clumsy 1 until a successful Escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'Traits=Auditory,Death,Necromancy,Negative ' +
@@ -10641,7 +10641,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 Hit Points that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives the wall +20 Hit Points)"',
+      '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Hardness 30, and 60 Hit Points that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives the wall +20 Hit Points)"',
   'Wall Of Ice':
     'Level=5 ' +
     'Traits=Cold,Evocation,Water ' +
@@ -10729,7 +10729,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving) (<b>heightened 4th</b> extends the range to 60\' and affects a 20\' burst)"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10 Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving) (<b>heightened 4th</b> extends the range to 60\' and affects a 20\' burst)"',
   'Weird':
     'Level=9 ' +
     'Traits=Death,Emotion,Fear,Illusion,Mental ' +
@@ -11223,7 +11223,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> target can use an action to end the sickened condition; critical success negates; critical failure inflicts sickened 2)"',
+      '"R30\' Target suffers sickened 1 and -10 Speed until no longer sickened (<b>save Fortitude</b> target can use an action to end the sickened condition; critical success negates; critical failure inflicts sickened 2)"',
   'Perfected Form':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
@@ -11536,7 +11536,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd or until a successful Escape), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
+      '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd or until a successful Escape), or greater difficult terrain, plus 10d6 HP piercing and -10 Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'Traits=Focus,Uncommon,Conjuration,Druid ' +
@@ -11544,7 +11544,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Free ' +
     'Description=' +
-      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60\' fly Speed; a 20\' burrow Speed, -10\' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60\' swim Speed, a Shove after a melee attack, and resistance 5 to fire"',
+      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60\' fly Speed; a 20\' burrow Speed, -10 Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60\' swim Speed, a Shove after a melee attack, and resistance 5 to fire"',
   'Storm Lord':
     'Level=9 ' +
     'Traits=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
@@ -11829,7 +11829,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10\' Speed for 1 rd for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10 Speed for 1 rd for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Evil,Evocation,Fire,Sorcerer ' +
