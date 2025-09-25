@@ -5669,7 +5669,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Kneecap':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts -10\' Speed for 1 rd, or -15\' Speed on a critical success"',
+    'Note="Successful melee Strike inflicts -10 Speed for 1 rd, or -15 Speed on a critical success"',
   'Loud Singer':'Section=combat Note="Has increased Goblin Song effects"',
   'Vandal':
     'Section=combat,skill ' +
@@ -5853,7 +5853,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+1 on the triggering save vs. a spell or magical effect"',
   'Seedpod':
     'Section=combat ' +
-    'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed until the start of the next turn on a critical success"',
+    'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10 Speed until the start of the next turn on a critical success"',
   'Shadow Of The Wilds':
     'Section=skill ' +
     'Note="Has continuous Covering Tracks effects outside of urban environments"',
@@ -6328,7 +6328,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Leech-Clip':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike with a flail inflicts -10\' Speed, or -15\' Speed on a critical hit, for 1 rd"',
+    'Note="Successful Strike with a flail inflicts -10 Speed, or -15 Speed on a critical hit, for 1 rd"',
   'Remorseless Lash':
     'Section=combat ' +
     'Note="Melee hits prevent reduction of a frightened condition until the beginning of the next turn"',
@@ -10602,7 +10602,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Curse Of Inclement Headwinds':
     'Section=ability,combat,feature,save ' +
     'Note=' +
-      '"Cursebound 4 inflicts -10\' Speed",' +
+      '"Cursebound 4 inflicts -10 Speed",' +
       '"Cursebound 2 inflicts -2 ranged attacks",' +
       '"Shows aspects of weather",' +
       '"Cursebound 1 and 3 inflict weakness 2 and weakness %{5+level} to electricity"',
@@ -11710,7 +11710,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Targeting Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful targeted attack on a foe\'s arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; the effect extends for 1 min at half severity on a critical hit"',
+    'Note="Successful targeted attack on a foe\'s arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10 Speed until the end of the next turn; the effect extends for 1 min at half severity on a critical hit"',
   'Cheat Death':
     'Action=Reaction ' +
     'Section=save ' +
@@ -13663,7 +13663,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Evocation', 'Manipulate') + ' ' +
     // Duration deleted by errata
     'Description=' +
-      '"R120\' Inflicts 2d8 HP acid and a 10\' forced move, plus 1d6 HP persistent acid and -10\' Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5\' forced move only; critical success negates; critical failure inflicts double initial HP and a 20\' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
+      '"R120\' Inflicts 2d8 HP acid and a 10\' forced move, plus 1d6 HP persistent acid and -10 Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5\' forced move only; critical success negates; critical failure inflicts double initial HP and a 20\' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Aerial Form':
     Pathfinder2E.SPELLS['Aerial Form']
     .replace('Transmutation', 'Manipulate,Concentrate'),
@@ -15507,7 +15507,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts 1d4 HP cold and -5\' Speed while sustained for up to 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10\' Speed) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Inflicts 1d4 HP cold and -5 Speed while sustained for up to 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10 Speed) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Discern Secrets':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Cantrip,Hex,Manipulate ' +
@@ -15676,67 +15676,74 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers clumsy 1, requires a successful DC 5 flat check for manipulate actions, and gains a claw, hoof, horn, or jaws Strike for 1 hr (<b>save Fortitude</b> only inflicts clumsy 1 for 1 rd; critical success negates; critical failure effects are permanent)"',
+      '"Touched suffers clumsy 1, requires a successful DC 5 flat check for manipulate actions, and gains a claw, hoof, horn, or jaws Strike for 1 hr (<b>save Fortitude</b> inflicts only clumsy 1 for 1 rd; critical success negates; critical failure effects are permanent)"',
   'Blanket Of Stars':
     'Level=6 ' +
     'Traits=Concentrate,Illusion,Manipulate ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Gives self +2 Stealth to Hide and Sneak and invisibility or concealment when still or moving beneath a starry sky, and inflicts dazzled for 1 rd on adjacent creatures (<b>save Will negates; critical failure also inflicts confused</b) for 10 min"',
+      '"Gives self +2 Stealth to Hide and Sneak and invisibility or concealment when still or moving beneath a starry sky, and inflicts dazzled until the end of the target\'s next turn on adjacent creatures (<b>save Will</b> negates; critical failure also inflicts confused) for 10 min"',
   'Blinding Fury':
     'Level=6 ' +
     'Traits=Concentrate,Curse,Emotion,Incapacitation,Mental ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Makes self hidden from the triggering attacker for 1 rd after every damaging attack for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects are permanent and also affect the target\'s perception of other creatures)"',
+      '"R60\' Makes self hidden from the triggering attacker until the end of its turn after every damaging attack for 1 min (<b>save Will</b> effects last until the end of the current turn; critical success negates; critical failure effects are permanent and also affect the target\'s perception of other creatures)"',
   'Blister':
     'Level=5 ' +
     'Traits=Concentrate,Manipulate ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Allows self to create 2 15\' cones from target that each inflict 7d6 HP acid (<b>save basic Fortitude</b>) anytime within 1 min (<b>save Fortitude</b> allows 1 cone; critical success negates; critical failure allows 4 cones)"',
+      '"R60\' Allows self to create 2 15\' cones from the target that each inflict 7d6 HP acid (<b>save basic Fortitude</b>) anytime within 1 min (<b>save Fortitude</b> allows 1 cone; critical success negates; critical failure allows 4 cones)"',
   'Blistering Invective':
+    'Level=2 ' +
+    'Traits=Auditory,Concentrate,Emotion,Fear,Manipulate,Mental ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Inflicts 2d6 HP persistent fire and frightened 1 (<b>save Will</b> (+4 if the target doesn\'t understand the language) inflicts half HP only; critical success negates; critical failure inflicts double HP and frightened 2) (<b>heightened +2</b> inflicts +2d6 HP and affects +2 targets)"',
+  'Bullhorn':
     'Level=1 ' +
     'Traits=Auditory,Cantrip,Concentrate,Illusion,Manipulate ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self voice to be heard up to 500\' away, giving +1 Coerce and auditory Perform in large venues (<b>heightened 5th</b> extends voice to 1200\'; <b>7th</b> extends voice to 1 mile)"',
+      '"Allows self voice to be heard up to 500\' away, giving +1 Coerce and auditory Performance in large venues (<b>heightened 5th</b> extends voice to 1200\'; <b>7th</b> extends voice to 1 mile)"',
   'Carryall':
     Pathfinder2E.SPELLS['Floating Disk']
     .replace('Conjuration', 'Concentrate,Manipulate')
-    .replace(/"$/, ' (<b>heightened 4th</b> allows carrying passengers and 10 Bulk"'),
+    .replace(/"$/, ' (<b>heightened 4th</b> allows carrying passengers and 10 Bulk)"'),
   'Chameleon Coat':
     'Level=5 ' +
     'Traits=Concentrate,Illusion,Manipulate ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R15\' 8 targets gain +3 Stealth and Hide for 10 min; shedding gear or clothes ends the spell for that target (<b>heightened 6th</b> makes critical failures on Sneak vs. creatures within 30\' into normal failures; <b>8th</b> gives +4 Stealth and Hide)"',
+      '"R15\' 8 targets gain +3 Hide for 10 min; shedding gear or clothes ends the spell for that target (<b>heightened 6th</b> makes critical failures on Sneak vs. creatures within 30\' into normal failures; <b>8th</b> gives +4 Hide)"',
   'Charitable Urge':
     'Level=2 ' +
     'Traits=Concentrate,Incapacitation,Manipulate,Mental ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Compels the target to give a possession to the nearest creature (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure effects last for 4 rd or until a successful save)"',
+      '"R30\' Compels the target to give a possession to the nearest creature (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure effects last for 4 rd, and a subsequent successful or critically successful Will save reduces the duration by 1 rd or ends it)"',
   'Chilling Spray':
     'Level=1 ' +
     'Traits=Cold,Concentrate,Manipulate ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' code inflicts 2d4 HP cold and -5\' Speed for 2 rd (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10\' Speed)"',
+      '"15\' code inflicts 2d4 HP cold and -5 Speed for 2 rd (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10 Speed) (<b>heightened +1</b> inflicts +2d4 HP)"',
   'Chroma Leach':
     'Level=4 ' +
     'Traits=Concentrate,Manipulate ' +
-    'Traditions=Occult,Primal ' +
+    'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers enfeebled 2 for 1 min and drained 1 and must succeed on a Will save to move for 1 rd (<b>save Fortitude</b> only inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts enfeebled 2 permanently and drained 2)"',
+      '"Touched suffers enfeebled 2 for 1 min and drained 1 and must succeed on a Will save to move for 1 rd (<b>save Fortitude</b> (-2 for gnomes) inflicts only enfeebled 2 for 1 rd; critical success negates; critical failure inflicts permanent enfeebled 2 and drained 2)"',
   'Cloak Of Colors':
     Pathfinder2E.SPELLS['Cloak Of Colors']
     .replace('Illusion', 'Concentrate,Manipulate'),
@@ -15749,7 +15756,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts 1d4 HP; 2 or 3 actions inflicts 2d4 HP sonic in a 10\' or 30\' radius (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP for 1 action or +2d4 HP for 2 or 3)"',
+      '"R30\' Inflicts 1d4 HP sonic; 2 or 3 actions inflicts 2d4 HP sonic in a 10\' burst or a 30\' emanation (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP for 1 action or +2d4 HP for 2 or 3)"',
   'Confusing Colors':
     Pathfinder2E.SPELLS['Scintillating Pattern']
     .replace('Traits=', 'Traits=Manipulate,Subtle,'),
@@ -15757,14 +15764,14 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Resilient Sphere']
     .replace('Abjuration', 'Concentrate,Manipulate')
     .replace('Armor Class 5, ', '')
-    .replace(')', ') (<b>heightened +1</b> increases field Hit Points by 5 or 15 on save success or failure'),
+    .replace(')', ') (<b>heightened +1</b> increases Hit Points by 15, or by 5 on a successful save)'),
   'Corrosive Muck':
     'Level=5 ' +
     'Traits=Acid,Concentrate,Manipulate ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 2 10\' bursts inflict greater difficult terrain and 8d6 HP acid for 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> creates another 10\' burst)"',
+      '"R120\' 2 10\' bursts inflict greater difficult terrain and 8d6 HP acid (<b>save basic Reflex</b>; critical failure also inflicts 1d6 HP persistent acid) for 1 min (<b>heightened +2</b> creates another 10\' burst)"',
   'Countless Eyes':
     'Level=4 ' +
     'Traits=Concentrate,Manipulate ' +
@@ -15778,14 +15785,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone inflicts 6d6 HP bludgeoning and extinguishes non-magical fires (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"30\' cone extinguishes non-magical fires and inflicts 6d6 HP bludgeoning (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Curse Of Lost Time':
     'Level=3 ' +
     'Traits=Concentrate,Curse,Manipulate,Void ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched object suffers 4d6 HP, becomes shoddy, cannot be repaired, and counteracts magical attempts to repair it (<b>save Fortitude</b> by bearer negates); touched construct suffers 4d6 HP and clumsy 1, enfeebled 1, cannot be repaired, and counteracts magical attempts to repair it for 1 hr (<b>save basic Fortitude</b>; critical failure makes effects permanent); touched living creature suffers clumsy 1 and enfeebled 1 for 1 hr (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure makes effects permanent)"',
+      '"Touched object suffers 4d6 HP, becomes shoddy, cannot be repaired, and counteracts magical attempts to repair it (<b>save Fortitude</b> by bearer negates); touched construct suffers 4d6 HP and clumsy 1, enfeebled 1, cannot be repaired, and counteracts magical attempts to repair it for 1 hr (<b>save basic Fortitude</b>; critical failure makes effects permanent); touched living creature suffers clumsy 1 and enfeebled 1 for 1 hr (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure makes effects permanent) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Deja Vu':
     'Level=1 ' +
     'Traits=Concentrate,Incapacitation,Manipulate,Mental ' +
@@ -15952,7 +15959,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"500\' burst inflicts -10\' Speed, 2d10 slashing damage and off-guard for 1 rd (DC 8 flat check negates; <b>save basic Reflex</b>; critical success also negates off-guard), and loss of connection to nature and natural creatures, and failure of primal spells (DC 5 flat check negates) for 10 min"',
+      '"500\' burst inflicts -10 Speed, 2d10 slashing damage and off-guard for 1 rd (DC 8 flat check negates; <b>save basic Reflex</b>; critical success also negates off-guard), and loss of connection to nature and natural creatures, and failure of primal spells (DC 5 flat check negates) for 10 min"',
   'Noxious Vapors':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate,Poison ' +
@@ -16414,7 +16421,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch inflicts 1d4 HP bludgeoning, 1d4 HP cold, and -10\' Speed until the end of the next turn (<b>save Fortitude</b> inflicts half HP and -5\' Speed; critical success negates; critical failure inflicts double HP)"',
+      '"Touch inflicts 1d4 HP bludgeoning, 1d4 HP cold, and -10 Speed until the end of the next turn (<b>save Fortitude</b> inflicts half HP and -5 Speed; critical success negates; critical failure inflicts double HP)"',
   'Thunderburst':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Air,Concentrate,Focus,Manipulate,Sonic ' +
