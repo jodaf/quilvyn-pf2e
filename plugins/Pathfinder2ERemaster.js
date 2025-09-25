@@ -15827,7 +15827,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self to perceive and speak through target animal companion or familiar senses while sustained"',
+      '"Allows self to perceive and speak through the senses of the target animal companion or familiar while sustained"',
   'Final Sacrifice':
     'Level=2 ' +
     'Traits=Concentrate,Fire,Manipulate ' +
@@ -15838,7 +15838,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Fungal Infestation':
     'Level=2 ' +
     'Traits=Concentrate,Fungus,Manipulate,Poison ' +
-    'Traditions=Arcane,Primal ' +
+    'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
       '"15\' cone inflicts 2d6 HP persistent poison and weakness 1 to fire and slashing while the persistent damage lasts (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and weakness 2) (<b>heightened +2</b> inflicts +2d6 HP and increases weakness by 1, or by 2 on critical failure)"',
@@ -15855,7 +15855,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Spirits reenact the 9 min leading up to a named victim\'s injury and 1 min afterward, inflicting 2d6 HP void on self"',
+      '"Spirits reenact the 9 min leading up to a named victim\'s injury and 1 min afterward, inflicting 2d6 HP void on self per participating spirit"',
   // Major changes
   'Ghoulish Cravings':
     'Level=2 ' +
@@ -15863,7 +15863,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers sickened 2 that requires eating raw meat to remove (<b>save Will</b> inflicts sickened 1; critical success negates; critical failure inflicts sickened 2 that requires eating raw meat to reduce)"',
+      '"Touched suffers sickened 2 that requires eating raw meat to remove (<b>save Will</b> inflicts sickened 1 that can be removed normally; critical success negates; critical failure inflicts sickened 2 that requires eating raw meat to reduce)"',
   'Gravity Well':
     'Level=3 ' +
     'Traits=Concentrate,Manipulate ' +
@@ -15877,7 +15877,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Inflicts 10d6 HP piercing on target (<b>save basic Fortitude</b>) and, unless the target critically succeeds, sickened 1 on creatures within 30\' (<b>save Will</b> negates; critical failure inflicts sickened 2; afterwards immune for 1 hr) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' Inflicts 10d6 HP piercing (<b>save basic Fortitude</b>) and, unless the target critically succeeds, sickened 1 on creatures within 30\' (<b>save Will</b> negates; critical failure inflicts sickened 2; afterwards immune for 1 hr) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Haunting Hymn':
     'Level=1 ' +
     'Traits=Auditory,Cantrip,Concentrate,Manipulate,Sonic ' +
@@ -15889,14 +15889,14 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Holy Cascade'] + ' ' +
     'Traits=Concentrate,Holy,Manipulate,Water ' +
     'Description=' +
-      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP spirit to unholy (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP spirit)"',
+      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP spirit to unholy creatures (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP spirit)"',
   'Ice Storm':
     'Level=4 ' +
     'Traits=Cold,Concentrate,Manipulate ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 20\' burst (or 2 20\' bursts outdoors) inflicts 2d8 HP bludgeoning and 2d8 HP cold, as well as 2 HP cold and difficult terrain (<b>save basic Reflex</b>) while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP bludgeoning, +1d8 HP cold, and +1 cold while sustained)"',
+      '"R120\' 20\' burst (or 2 20\' bursts outdoors) inflicts 2d8 HP bludgeoning and 2d8 HP cold (<b>save basic Reflex</b>), plus 2 HP cold and difficult terrain while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP bludgeoning, +1d8 HP cold, and +1 cold while sustained)"',
   'Imaginary Lockbox':
     'Level=5 ' +
     'Traits=Concentrate,Manipulate,Mental ' +
@@ -15917,7 +15917,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched object becomes invisible for 1 hr (<b>heightened 3rd</b> effects last until next daily prep; <b>7th</b> effects last indefinitely)"',
+      '"Touched object becomes invisible for 1 hr or until used in an attack (<b>heightened 3rd</b> effects last until next daily prep; <b>7th</b> effects last indefinitely)"',
   'Leaden Steps':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate,Metal,Morph ' +
@@ -15931,14 +15931,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 20\' wooden cube with half-inch gaps between bars (AC 10, Hardness 20, 40 HP, weakness 5 to void) traps creatures while sustained for up to 1 min (<b>save Reflex</b> negates)"',
+      '"R30\' 20\' wooden cube with half-inch gaps between bars (AC 10, Hardness 20, 40 Hit Points, immune to critical hits and precision damage, weakness 5 to void) traps creatures while sustained for up to 1 min (<b>save Reflex</b> negates)"',
   'Lightning Storm':
     'Level=5 ' +
     'Traits=Concentrate,Electricity,Manipulate ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 20\' burst (or 2 20\' burst outdoors) inflicts 4d12 HP electricity in a vertical line each rd while sustained for up to 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> inflicts +1d12 HP)"',
+      '"R120\' 20\' burst (or 2 20\' bursts outdoors) inflicts 4d12 HP electricity in a vertical line each rd while sustained for up to 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> inflicts +1d12 HP)"',
   'Live Wire':
     'Level=1 ' +
     'Traits=Attack,Cantrip,Concentrate,Electricity,Manipulate,Metal ' +
@@ -15959,14 +15959,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"500\' burst inflicts -10 Speed, 2d10 slashing damage and off-guard for 1 rd (DC 8 flat check negates; <b>save basic Reflex</b>; critical success also negates off-guard), and loss of connection to nature and natural creatures, and failure of primal spells (DC 5 flat check negates) for 10 min"',
+      '"R120\' 500\' burst inflicts on 5 targets -10 Speed, 2d10 slashing damage and off-guard for 1 rd (DC 8 flat check negates; <b>save basic Reflex</b>; critical success also negates off-guard), hostility from natural creatures, and failure of primal spells (DC 5 flat check negates) for 10 min"',
   'Noxious Vapors':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate,Poison ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"10\' emanation inflicts 1d6 HP poison (<b>save basic Fortitude</b>; critical failure also inflicts sickened 1) and gives concealment for 1 rd (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"10\' emanation conceals creatures and inflicts 1d6 HP poison (<b>save basic Fortitude</b>; critical failure also inflicts sickened 1) for 1 rd (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Object Reading':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate ' +
