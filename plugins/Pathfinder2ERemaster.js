@@ -14607,7 +14607,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Black Tentacles']
     .replace('Conjuration', 'Concentrate,Manipulate,Shadow') + ' ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts 3d6 HP piercing, 1d6 HP persistent poison, and grabbed for 1 min; requires a successful DC %{spellDifficultyClass.%tradition} Escape or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition} to escape (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +1d6 HP persistent poison and requires +6 HP damage to escape)"',
+      '"R120\' 20\' burst inflicts 3d6 HP piercing, 1d6 HP persistent poison, and grabbed for 1 min; requires a successful DC %{spellDifficultyClass.%tradition||0} Escape or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition||0} to escape (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +1d6 HP persistent poison and requires +6 HP damage to escape)"',
   'Slow':
     Pathfinder2E.SPELLS.Slow
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -15210,7 +15210,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Forced Quiet']
     .replace('Abjuration', 'Manipulate,Sonic') + ' ' +
     'Description=' +
-      '"R60\' 15\' burst mutes speech, requiring others over 5\' away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min"',
+      '"R60\' 15\' burst mutes speech, requiring others over 5\' away to succeed on a DC %{spellDifficultyClass.%tradition||0} Perception to hear, for 1 min"',
   'Safeguard Secret':
     Pathfinder2E.SPELLS['Safeguard Secret']
     .replace('Abjuration', 'Concentrate,Manipulate')
@@ -15458,7 +15458,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Spell attacks using the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of a choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
+      '"Spell attacks using the target\'s shadow inflict 1d10+%{spellModifier.%tradition||0} HP of a choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
   'Needle Of Vengeance':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Hex,Manipulate,Mental ' +
@@ -15646,7 +15646,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Spell attack while throwing a melee weapon inflicts its base damage + %{spellModifier.%tradition}, or double HP and the weapon\'s critical specialization effect on a critical success; the weapon returns afterwards"',
+      '"Spell attack while throwing a melee weapon inflicts its base damage + %{spellModifier.%tradition||0}, or double HP and the weapon\'s critical specialization effect on a critical success; the weapon returns afterwards"',
   'Interdisciplinary Incantation':
     'Level=4 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate ' +
