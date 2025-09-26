@@ -8559,7 +8559,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Improves the quality of touched 1 gallon of water or 5 pounds of food for 1 hr and attempts to counteract any poison (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>"',
+      '"Improves the quality of touched 1 gallon of water or 5 pounds of food for 1 hr and attempts to counteract any poison (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>)"',
   'Enlarge':
     'Level=2 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -9268,7 +9268,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> extends range to 500\')"',
+      '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> extends the range to 500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'Traits=Evocation,Fire ' +
@@ -9587,7 +9587,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary Hit Points, 40\' Speed, low-light vision, Armor Class level + 22, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, +30 Athletics modifier, and a trample action for 1 min"',
+      '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary Hit Points, 40\' Speed, low-light vision, Armor Class level + 22, 15\' reach, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, +30 Athletics modifier, and a trample action, for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'Traits=Divination ' +
@@ -10426,7 +10426,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
+      '"Self exchanges a pair of 25-word messages with a prior telepathy target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'Traits=Divination,Linguistic,Mental ' +
@@ -10713,7 +10713,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP) (<b>heightened 10th</b> inflicts +1d10 HP)"',
+      '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type, either when the target forgoes attacking a specified creature on its turn or whenever it attacks self or 5 specified allies, for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'Traits=Evocation ' +
@@ -10729,7 +10729,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts difficult terrain and -10 Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving) (<b>heightened 4th</b> extends the range to 60\' and affects a 20\' burst)"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10 Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving) for 1 min (<b>heightened 4th</b> extends the range to 60\' and affects a 20\' burst)"',
   'Weird':
     'Level=9 ' +
     'Traits=Death,Emotion,Fear,Illusion,Mental ' +
