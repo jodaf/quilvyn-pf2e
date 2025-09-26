@@ -10530,7 +10530,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Touch Of Death occult spell"',
   'One-Millimeter Punch':
     'Section=combat ' +
-    'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a 20\' Push, or a 30\' Push with 3 actions"',
+    'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a 20\' Push, or a 30\' Push with 3 actions)"',
   'Shattering Strike (Monk)':Pathfinder2E.FEATURES['Shattering Strike'],
   'Diamond Fists':
     Pathfinder2E.FEATURES['Diamond Fists']
@@ -13763,7 +13763,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts 10d6 HP mental, frightened 3, and a curse that negates circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and a permanent curse that also affects the target\'s allies within 15\'"',
+      '"R120\' Inflicts 10d6 HP mental, frightened 3, and a curse that negates circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and a permanent curse that also affects the target\'s allies within 15\')"',
   'Cataclysm':
     Pathfinder2E.SPELLS.Cataclysm
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -14549,7 +14549,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends the effects to 120\'; <b>8th</b> gives resistance 15 and extends the effects to 500\'"',
+      '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends the effects to 120\'; <b>8th</b> gives resistance 15 and extends the effects to 500\')"',
   'Sanctuary':
     Pathfinder2E.SPELLS.Sanctuary
     .replace('Abjuration', 'Concentrate,Manipulate'),
@@ -15980,7 +15980,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Target becomes fascinated with illusionary treasure for 1 min (<b>save Will</b> effects last until end of target\'s turn; critical success negates; critical failure causes target to use all actions to interact with the treasure"',
+      '"R60\' Target becomes fascinated with illusionary treasure for 1 min (<b>save Will</b> effects last until end of the target\'s turn; critical success negates; critical failure causes the target to use all actions to interact with the treasure)"',
   'Primal Herd':
     Pathfinder2E.SPELLS['Primal Herd']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -15997,14 +15997,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R10\' Inflicts 1d4 HP poison and 1d4 HP persistent poison (<b>save Fortitude</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
+      '"R10\' Inflicts 1d4 HP poison and 1d4 HP persistent poison (<b>save Fortitude</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +2</b> inflicts +1d4 HP initial and persistent)"',
   "Reaper's Lantern":
     'Level=2 ' +
     'Traits=Aura,Concentrate,Death,Light,Manipulate ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Lights a 5\' emanation, inflicts enfeebled 1 on undead, and negates half of healing effects on living (<b>save Fortitude<b> negates) for 1 min; a Sustain each turn increases the radius by 5\'"',
+      '"Lights a 5\' emanation that inflicts enfeebled 1 on undead and negates half of healing effects on living creatures (<b>save Fortitude</b> negates) for 1 min; a Sustain each turn increases the radius by 5\'"',
   'Resplendent Mansion':
     Pathfinder2E.SPELLS['Resplendent Mansion'] + ' ' +
     'Traits=Concentrate,Manipulate,Structure',
@@ -16017,14 +16017,15 @@ Pathfinder2ERemaster.SPELLS = {
       '"R60\' 10\' burst inflicts 2d6 HP slashing (<b>save basic Reflex</b>) while sustained for up to 1 min; the area of effect can be moved 20\' each rd (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Sacred Form':
     Pathfinder2E.SPELLS['Righteous Might']
-    .replace('Transmutation', 'Concentrate,Manipulate'),
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('{deityWeaponLowered}', '{deityWeaponLowered} that inflicts 3d6 HP bludgeoning and 1d6 HP spirit'),
   'Scatter Scree':
     'Level=1 ' +
     'Traits=Cantrip,Concentrate,Earth,Manipulate ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 2 contiguous 5\' cubes inflict 2d4 HP bludgeoning initial (<b>save basic Reflex), plus difficult terrain for 1 min (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' 2 contiguous 5\' cubes inflict 2d4 HP bludgeoning initial (<b>save basic Reflex</b>), plus difficult terrain for 1 min (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Schadenfreude':
     'Level=1 ' +
     'Traits=Concentrate,Emotion,Mental ' +
@@ -16045,7 +16046,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers weakness 2 to a specified damage type, plus death when reduced to 0 HP by that damage type if the target is level 7 or less, for 1 min (<b>save Fortitude</b> inflicts weakness 2 only until the end of the next turn; critical success negates; critical failure effects last indefinitely) (<b>heightened +2 inflicts weakness +1 and increases the maximum target level to suffer death by 4)"',
+      '"Touched suffers weakness 2 to a specified damage type, plus death when reduced to 0 HP by that damage type if the target is level 7 or less, for 1 min (<b>save Fortitude</b> inflicts weakness 2 only until the end of the next turn; critical success negates; critical failure effects last indefinitely) (<b>heightened +2</b> inflicts weakness +1 and increases the maximum target level to suffer death by 4)"',
   'Shared Invisibility':
     Pathfinder2E.SPELLS['Invisibility Sphere'] + ' ' +
     'Traits=Aura,Illusion,Manipulate,Subtle ' +
@@ -16067,7 +16068,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains a 30\' automatic Search for spirits and haunts, +1 Seek, Recall Knowledge, Armor Class, and saving throws with spirits and haunts, and +1 skill checks to disable a haunt, for 10 min"',
+      '"Self gains a 30\' automatic Search for spirits and haunts, +1 Seek, Recall Knowledge, Armor Class, and saves with spirits and haunts, and +1 skill checks to disable a haunt, for 10 min (<b>heightened 6th</b> effects last until next daily prep)"',
   // Major changes
   'Spirit Song':
     'Level=8 ' +
@@ -16075,7 +16076,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' cone inflicts 14d6 HP spirit, stunned 1, and loss of reaction until the beginning of their turns on spirits, including any hidden in solid barriers (<b>save Fortitude</b> inflicts half HP and negates stunned; critical success negates; critical failure inflicts double HP and stunned 2) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"60\' cone inflicts 14d6 HP spirit, stunned 1, and loss of reactions until the beginning of their turns on spirits, including any hidden in solid barriers (<b>save Fortitude</b> inflicts half HP and negates stunned; critical success negates; critical failure inflicts double HP and stunned 2) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spiritual Epidemic':
     Pathfinder2E.SPELLS['Spiritual Epidemic']
     .replace('Necromancy', 'Concentrate,Manipulate,Spirit'),
@@ -16092,7 +16093,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' 4 10\' disconnected cubes inflict difficult terrain for all modes of movement and teleportation between cubes upon exit for 1 min (<b>save Will</b> negates)"',
+      '"R60\' 4 10\' disconnected cubes inflict difficult terrain for all movement and involuntary teleportation between cubes upon exit for 1 min (<b>save Will</b> negates)"',
   'Sudden Blight':
     'Level=2 ' +
     'Traits=Concentrate,Manipulate,Void ' +
@@ -16106,7 +16107,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Summons a celestial, fiend, monitor, or Outer Sphere animal of level -1, as allowed by deity, while sustained for up to 1 min (<b>heightened 2nd</b> summons up to level 1; <b>3rd</b> summons up to level 2; <b>4th</b> summons up to level 3)"',
+      '"R30\' Summons a celestial, fiend, monitor, or Outer Sphere animal of level -1%{deity!=\'None\'?\', as allowed by \'+deity:\'\'}, while sustained for up to 1 min (<b>heightened 2nd</b> summons up to level 1; <b>3rd</b> summons up to level 2; <b>4th</b> summons up to level 3)"',
   'Synesthesia':
     Pathfinder2E.SPELLS.Synesthesia
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -16119,7 +16120,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Teleports a light Bulk object from self to a willing target (<b>heightened 3rd</b> extends range to 500\'; <b>5th</b> teleports a Bulk 1 item, and using 3 actions extends range to 1 mile"',
+      '"R120\' Teleports a light Bulk object from self to a willing target (<b>heightened 3rd</b> extends the range to 500\'; <b>5th</b> teleports a Bulk 1 item, and using 3 actions extends the range to 1 mile)"',
   'Threefold Aspect':
     'Level=3 ' +
     'Traits=Concentrate,Manipulate,Polymorph ' +
@@ -16150,7 +16151,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Creates a 30\'x20\'x3\' wall of flesh, each 5\' section with Armor Class 10 and 75 Hit Points, that either inflicts 2d6 HP piercing, gives self +2 Perception within the wall\'s line of sight, or grabs for 1 rd or until a successful Escape (<b>save Reflex<b> negates; critical failure grabs), for 1 min (<b>heightened +2</b> gives each section +10 Hit Points and inflicts +1d6 HP)"',
+      '"R60\' Creates a 30\'x20\'x3\' wall of flesh, each 5\' section with Armor Class 10 and 75 Hit Points, that either inflicts 2d6 HP piercing, gives self +2 Perception within the wall\'s line of sight, or grabs for 1 rd or until a successful Escape (<b>save Reflex</b> negates; critical failure restrains), for 1 min (<b>heightened +2</b> gives each section +10 Hit Points and inflicts +1d6 HP)"',
   "Wanderer's Guide":
     Pathfinder2E.SPELLS["Wanderer's Guide"]
     .replace('Divination', 'Concentrate,Manipulate'),
