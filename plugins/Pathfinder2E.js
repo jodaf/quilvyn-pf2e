@@ -3234,7 +3234,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Heritage':'Section=feature Note="1 selection"',
   'Hillock Halfling':
     'Section=combat ' +
-    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
+    'Note="Regains +%{level} HP from treatment and overnight rest"',
   'Keen Eyes':
     'Section=combat,skill ' +
     'Note=' +
@@ -3492,7 +3492,7 @@ Pathfinder2E.FEATURES = {
   'Revivifying Mutagen':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends the effects of a mutagen to regain 1d6 Hit Points per 2 levels of the mutagen"',
+    'Note="Ends the effects of a mutagen to regain 1d6 HP per 2 levels of the mutagen"',
   'Smoke Bomb':
     'Action=Free ' +
     'Section=combat ' +
@@ -3580,7 +3580,7 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=skill ' +
-    'Note="Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min"',
+    'Note="Can administer a true elixir of life that restores life with 1 Hit Point and wounded 1 to a creature dead for up to 2 rd once per 10 min"',
   'Perfect Debilitation':
     'Section=combat ' +
     'Note="Debilitating Bombs require a critical success to avoid effects"',
@@ -4410,7 +4410,7 @@ Pathfinder2E.FEATURES = {
   'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points + 10 Hit Points per heightened level"',
+    'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="Can use an additional reaction for a Shield Block once per turn"',
@@ -5061,7 +5061,7 @@ Pathfinder2E.FEATURES = {
   'Healing Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent non-cantrip polymorph spell restores 1d6 Hit Points per spell level"',
+    'Note="Subsequent non-cantrip polymorph spell restores 1d6 HP per spell level"',
   'Overwhelming Energy':
     'Action=1 ' +
     'Section=magic ' +
@@ -5092,7 +5092,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has plant, not humanoid, trait",' +
-      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
+      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half HP with 10 min in sunlight, and restores all HP and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
@@ -6250,7 +6250,7 @@ Pathfinder2E.FEATURES = {
   'Defensive Roll':
     'Action=Free ' +
     'Section=save ' +
-    'Note="Negates half the damage from an attack that would reduce self to 0 HP once per 10 min"',
+    'Note="Negates half the damage from an attack that would reduce self to 0 Hit Points once per 10 min"',
   'Instant Opening':
     'Action=1 ' +
     'Section=combat ' +
@@ -7301,7 +7301,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'a target\'} for 1 rd with a successful Performance vs. Will"',
   'Fast Recovery':
     'Section=save ' +
-    'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
+    'Note="Regains 2x HP and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
   'Feather Step':'Section=ability Note="Can Step into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
   'Foil Senses':
@@ -8258,7 +8258,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Kills a touched target with 0 HP and gives self 10 temporary Hit Points and +1 attack and damage for 10 min (<b>save Will</b> increases the target\'s dying value by 1; critical success negates)"',
+      '"Kills a touched target with 0 Hit Points and gives self 10 temporary Hit Points and +1 attack and damage for 10 min (<b>save Will</b> increases the target\'s dying value by 1; critical success negates)"',
   'Death Ward':
     'Level=5 ' +
     'Traits=Abjuration ' +
@@ -8360,7 +8360,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 12d10 HP, reducing the target to dust at 0 HP, or destroys a non-artifact 10\' cube object (<b>save basic Fortitude</b>; critical hit worsens save by 1 degree) (<b>heightened +1</b> inflicts +2d10 HP)"',
+      '"R120\' Spell attack inflicts 12d10 HP, reducing the target to dust at 0 Hit Points, or destroys a non-artifact 10\' cube object (<b>save basic Fortitude</b>; critical hit worsens save by 1 degree) (<b>heightened +1</b> inflicts +2d10 HP)"',
   'Disjunction':
     'Level=9 ' +
     'Traits=Uncommon,Abjuration ' +
@@ -8496,7 +8496,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Creates a minion copy of a target up to level 15 with 70 HP and no special abilities while sustained for up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> the copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)"',
+      '"R30\' Creates a minion copy of a target up to level 15 with 70 Hit Points and no special abilities while sustained for up to 1 min or until reduced to 0 Hit Points; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> the copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)"',
   'Earthbind':
     'Level=3 ' +
     'Traits=Transmutation ' +
@@ -8680,7 +8680,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers 70 HP negative, dying at 0 HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +10 HP)"',
+      '"R30\' Target suffers 70 HP negative, dying at 0 Hit Points (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +10 HP)"',
   'Fire Seeds':
     'Level=6 ' +
     'Traits=Evocation,Fire,Plant ' +
@@ -8696,7 +8696,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains cold resistance 5, and melee attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)"',
+      '"Self gains cold resistance 5, and melee attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives +5 resistance and inflicts +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
     'Traits=Evocation,Fire ' +
@@ -9237,7 +9237,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within the line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (<b>save Fortitude</b> 10d6 HP) on creatures up to level 19)"',
+      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 Hit Points; if none die, it inflicts an additional 30 negative on all within the line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (<b>save Fortitude</b> 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
     'Traits=Conjuration,Extradimensional,Teleportation ' +
@@ -9564,7 +9564,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Kills a target up to level 14 or 50 HP, inflicts 0 HP and dying 1 on a level 15 target, or inflicts 50 HP on a level 16+ target (<b>heightened +1</b> increases outcome levels by 2)"',
+      '"R30\' Kills a target up to level 14 or 50 Hit Points, inflicts reduction to 0 Hit Points and dying 1 on a level 15 target, or inflicts 50 HP on a level 16+ target (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Stun':
     'Level=8 ' +
     'Traits=Uncommon,Auditory,Enchantment,Mental ' +
@@ -9731,7 +9731,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched target regains 15 Hit Points and regrows a damaged organ each rd and cannot die from Hit Point damage for 1 min; suffering new acid or fire damage negates the effects for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
+      '"Touched target regains 15 HP and regrows a damaged organ each rd and cannot die from Hit Point damage for 1 min; suffering new acid or fire damage negates the effects for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
   'Remake':
     'Level=10 ' +
     'Traits=Uncommon,Conjuration ' +
@@ -9992,7 +9992,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transfers half of damage suffered by target to self for 10 min or until either is reduced to 0 HP"',
+      '"R30\' Transfers half of damage suffered by target to self for 10 min or until either is reduced to 0 Hit Points"',
   'Shillelagh':
     'Level=1 ' +
     'Traits=Plant,Transmutation ' +
@@ -10072,7 +10072,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target regains 1d10+4 Hit Points and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 Hit Points)"',
+      '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)"',
   'Sound Burst':
     'Level=2 ' +
     'Traits=Evocation,Sonic ' +
@@ -10158,7 +10158,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transfers 2 HP of damage each rd from a willing target to self for 10 min (<b>heightened +1</b> transfers +2 HP)"',
+      '"R30\' Transfers 2 Hit Points of damage each rd from a willing target to self for 10 min (<b>heightened +1</b> transfers +2 Hit Points)"',
   'Spirit Song':
     'Level=8 ' +
     'Traits=Force,Necromancy ' +
@@ -10182,7 +10182,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Summoned guardian with 50 HP can attack or protect each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition||0} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
+      '"R120\' Summoned guardian with 50 Hit Points can attack or protect each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition||0} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 Hit Points of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'Traits=Evocation,Force ' +
@@ -10554,7 +10554,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained or until reduced to 0 HP"',
+      '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained or until reduced to 0 Hit Points"',
   'Vampiric Exsanguination':
     'Level=6 ' +
     'Traits=Death,Necromancy,Negative ' +
@@ -10801,7 +10801,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Kills a target up to level 16 or 50 HP, inflicts 0 HP and dying 1 on a level 17 target, or inflicts 50 HP on a level 18+ target"',
+      '"R30\' Kills a target up to level 16 or 50 Hit Points, inflicts reduction to 0 Hit Points and dying 1 on a level 17 target, or inflicts 50 HP on a level 18+ target"',
   'House Of Imaginary Walls':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
@@ -11216,7 +11216,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 Hit Points if eaten within 1 min (<b>heightened +1</b> restores +6 Hit Points)"',
+      '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
   'Overstuff':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Transmutation ' +
@@ -11264,7 +11264,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Transfers 3 HP damage of the triggering attack from target to self (<b>heightened +1</b> transfers +3 HP)"',
+      '"R30\' Transfers 3 Hit Points damage of the triggering attack from target to self (<b>heightened +1</b> transfers +3 Hit Points)"',
   "Protector's Sphere":
     'Level=4 ' +
     'Traits=Focus,Uncommon,Abjuration,Aura,Cleric ' +
@@ -11639,7 +11639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self regains 8 Hit Points or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 Hit Points)"',
+      '"Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)"',
   'Wild Winds Stance':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Air,Evocation,Monk,Stance ' +
@@ -11878,7 +11878,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 Hit Points (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect for 1 rd; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 Hit Points)"',
+      '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect for 1 rd; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
   'Unusual Anatomy':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
