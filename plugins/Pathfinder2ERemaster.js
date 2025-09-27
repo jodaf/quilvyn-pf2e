@@ -5805,7 +5805,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Fruit Leshy':
     'Section=magic ' +
-    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 Hit Points if eaten within an hr after removal"',
+    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hr after removal"',
   'Fungus Leshy':
     'Section=feature,feature ' +
     'Note=' +
@@ -6004,7 +6004,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Rampaging Ferocity':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Using Orc Ferocity gives a Strike against the attacking foe that allows another use of Orc Ferocity if it reduces the foe to 0 HP"',
+    'Note="Using Orc Ferocity gives a Strike against the attacking foe that allows another use of Orc Ferocity if it reduces the foe to 0 Hit Points"',
 
   // Changeling
   'Changeling Heritage':
@@ -6020,7 +6020,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Charming Liar feature"',
   'Dream May':
     'Section=save ' +
-    'Note="+2 vs. sleep and dream effects/Sleep restores %{constitutionModifier*level} Hit Points and reduces drained and doomed conditions by 2"',
+    'Note="+2 vs. sleep and dream effects/Sleep restores %{constitutionModifier*level} HP and reduces drained and doomed conditions by 2"',
   'Slag May':
     'Section=combat,combat ' +
     'Note=' +
@@ -6263,7 +6263,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Caterwaul':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives 1 HP and a wounded condition increase to an ally reduced to 0 HP once per day"',
+    'Note="Gives 1 Hit Point and a wounded condition increase to an ally reduced to 0 Hit Points once per day"',
   'Elude Trouble':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6271,7 +6271,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Reliable Luck':'Section=save Note="Has increased Cat\'s Luck effects"',
   'Ten Lives':
     'Section=save ' +
-    'Note="Successful DC 17 flat check upon dying instead inflicts 0 HP and dying 3"',
+    'Note="Successful DC 17 flat check upon dying instead inflicts 0 Hit Points and dying 3"',
 
   // Hobgoblin
   // Darkvision as above
@@ -6361,7 +6361,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Pride In Arms':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an ally who brings a foe to 0 HP temporary Hit Points equal to their Constitution modifier until the end of their next turn"',
+    'Note="Gives an ally who brings a foe to 0 Hit Points temporary Hit Points equal to their Constitution modifier until the end of their next turn"',
   'Squad Tactics':
     'Section=combat ' +
     'Note="Adjacent foes within reach of 2 allies are off-guard vs. self"',
@@ -6374,7 +6374,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cantorian Restoration':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R60\' Restores 6d8+%{constitutionModifier} Hit Points to a dying creature once per day"',
+    'Note="R60\' Restores 6d8+%{constitutionModifier} HP to a dying creature once per day"',
   'Rallying Cry':
     'Action=2 ' +
     'Section=combat ' +
@@ -6461,7 +6461,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Suffers 1 HP slashing to enhance a weapon to inflict 1d4 HP persistent poison on the next hit before the end of the next turn once per hr"',
   'Right-Hand Blood':
     'Section=skill ' +
-    'Note="Can suffer 1 HP slashing to gain +1 on Administer First Aid or 2d8 HP slashing to gain +1 on Treat Disease or Treat Wounds"',
+    'Note="Suffers 1 HP slashing to gain +1 on Administer First Aid or 2d8 HP slashing to gain +1 on Treat Disease or Treat Wounds"',
   'Ambush Hunter':
     'Section=skill Note="Can Scout and Avoid Notice simultaneously"',
   'Breath Like Honey':
@@ -6485,7 +6485,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Adjacent foes suffer -1 attacks and skill checks once per foe per day (<b>save Will</b> negates)"',
   'First To Strike, First To Fall':
     'Section=combat ' +
-    'Note="Successful Strike in the 1st round on a foe that hasn\'t acted inflicts off-guard until the end of the next turn; reducing the foe to 0 HP by the end of that turn gives self and allies within 30\' an extra Step, Stride, or Strike until the end of the following turn"',
+    'Note="Successful Strike in the 1st round on a foe that hasn\'t acted inflicts off-guard until the end of the next turn; reducing the foe to 0 Hit Points by the end of that turn gives self and allies within 30\' an extra Step, Stride, or Strike until the end of the following turn"',
   'Impaling Bone':
     'Section=magic ' +
     'Note="Knows the Impaling Spike occult innate spell; can cast it at 7th rank once per day for a bone spike that affects both corporeal or incorporeal targets"',
@@ -7744,7 +7744,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Surging Focus':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Seeing an ally reduced to 0 HP restores 1 Focus Point to self once per day"',
+    'Note="Seeing an ally reduced to 0 Hit Points restores 1 Focus Point to self once per day"',
   'Void Siphon':
     'Section=magic ' +
     'Note="Critical failures vs. self <i>Harm</i> inflict drained 1"',
@@ -8931,7 +8931,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes"',
   "Patron's Truth":'Section=magic Note="+1 10th rank spell slot"',
   "Witch's Hut":
-    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with Armor Class %{armorClass}, +%{perception} Perception, 60\' Speed, 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
+    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with Armor Class %{armorClass}, +%{perception} Perception, 60\' Speed, 150 Hit Points, and Hardness 10 that can guard, hide, teleport, lock, and move"',
 
   // Wizard
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
@@ -9449,7 +9449,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat,save ' +
     'Note=' +
       '"Increases added rage damage to %V",' +
-      '"Entering rage restores %{level+constitutionModifier} Hit Points once per 10 min/Inflicts +%{combatNotes.greaterWeaponSpecialization?3:1} HP vs. targets seen casting within the past hr during rage",' +
+      '"Entering rage restores %{level+constitutionModifier} HP once per 10 min/Inflicts +%{combatNotes.greaterWeaponSpecialization?3:1} HP vs. targets seen casting within the past hr during rage",' +
       '"+2 vs. magic during rage/Willingly accepting magic effects during rage inflicts frightened 1 as long as the effects last"',
   'Titan Mauler':Pathfinder2E.FEATURES['Titan Mauler'],
   'Unstoppable Frenzy':
@@ -10118,7 +10118,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Forensic Acumen and Battle Medicine features",' +
       '"Skill Trained (Medicine)",' +
-      '"Battle Medicine restores +%{level} Hit Points and can be used on the same target once per hr"',
+      '"Battle Medicine restores +%{level} HP and can be used on the same target once per hr"',
   'Incredible Senses':'Section=skill Note="Perception Legendary"',
   'Interrogation':
     'Section=feature,skill,skill ' +
@@ -10428,7 +10428,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Align Qi':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Casting a monk spell restores %{level+wisdomModifier} Hit Points once per hr"',
+    'Note="Casting a monk spell restores %{level+wisdomModifier} HP once per hr"',
   'Crane Flutter':Pathfinder2E.FEATURES['Crane Flutter'],
   'Dragon Roar':Pathfinder2E.FEATURES['Dragon Roar'],
   'Mountain Stronghold':Pathfinder2E.FEATURES['Mountain Stronghold'],
@@ -10710,7 +10710,7 @@ Pathfinder2ERemaster.FEATURES = {
     // in note 'Action=1 ' +
     'Section=magic,save ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(Cursebound)</b> R30\' Target regains %{level*2+2} Hit Points",' +
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(Cursebound)</b> R30\' Target regains %{level*2+2} HP",' +
       '"Can choose during daily prep to be healed by vitality healing or void healing"',
   'Oracular Warning':
     'Action=Free ' +
@@ -10918,7 +10918,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Waters Of Creation':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="<b>(Cursebound)</b> 15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
+    'Note="<b>(Cursebound)</b> 15\' emanation restores %{level//2}d6 HP (cursebound 3 restores %{level//2}d8 HP)"',
   'Domain Fluency (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
   'Domain Fluency (Ambition)':
     Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
@@ -10992,7 +10992,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Epiphany At The Crossroads':
     'Action=Free ' +
     'Section=save ' +
-    'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} Hit Points, and can Stand once per day"',
+    'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} HP, and can Stand once per day"',
   'Greater Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Form divine spell"',
   'Greater Revelation (Battle)':
@@ -11145,7 +11145,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Sorcerer Spellcasting':Pathfinder2E.FEATURES['Sorcerer Spellcasting'],
   'Sorcerous Potency':
     'Section=magic ' +
-    'Note="Initial damage or healing from spell slots inflicts or restores additional Hit Points equal to the spell\'s rank"',
+    'Note="Initial damage or healing from spell slots inflicts or restores additional HP equal to the spell\'s rank"',
   // Weapon Expertise as above
   // Weapon Specialization as above
 
@@ -11615,7 +11615,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="R30\' Successful single-target Perform can instead inflict -1 attacks against creatures others than self, or -2 on a critical success, until the end of the target\'s next turn; critical failure instead gives the target +1 attacks against self until the end of its next turn"',
   'Finishing Follow-Through':
     'Section=combat ' +
-    'Note="Gains panache whenever a finisher brings the target to 0 HP"',
+    'Note="Gains panache whenever a finisher brings the target to 0 Hit Points"',
   'Retreating Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -12300,7 +12300,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Surprise Attack as above
   'Angel Of Death':
     'Section=combat ' +
-    'Note="Reducing a marked target to 0 HP inflicts death, and interaction with it afterward requires counteract rank %{(level+1)//2}"',
+    'Note="Reducing a marked target to 0 Hit Points inflicts death, and interaction with it afterward requires counteract rank %{(level+1)//2}"',
   'Assassinate':
     'Action=2 ' +
     'Section=combat ' +
@@ -12319,7 +12319,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Shield Block to negate damage equal to double the shield\'s Hardness by doubling the amount of damage to the shield"',
   'Shield Salvation':
     'Section=combat ' +
-    'Note="Can have a shield retain 1 HP when using Shield Block would otherwise destroy it; the shield must be repaired before benefitting from Shield Salvation again"',
+    'Note="Can have a shield retain 1 Hit Point when using Shield Block would otherwise destroy it; the shield must be repaired before benefitting from Shield Salvation again"',
 
   'Beastmaster Dedication':
     'Section=feature ' +
@@ -13367,7 +13367,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Leverage Connections':Pathfinder2E.FEATURES.Connections,
   'Numb To Death':
     'Section=save ' +
-    'Note="Regains +%{level} Hit Points and does not increase wounded condition when recovering from dying once per day"',
+    'Note="Regains +%{level} HP and does not increase wounded condition when recovering from dying once per day"',
   'Pick Up The Pace':
     'Section=skill ' +
     'Note="Hustling group can continue as long as the best member"',
@@ -13382,7 +13382,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Inflicting 1d8 HP slashing on a Treat Wounds patient to gives +2 on the subsequent check and makes a success into a critical success"',
   'Robust Health':
     'Section=save ' +
-    'Note="Successful Treat Wounds or Battle Medicine on self restores +%{level} Hit Points, and Battle Medicine can be used again after 1 hr"',
+    'Note="Successful Treat Wounds or Battle Medicine on self restores +%{level} HP, and Battle Medicine can be used again after 1 hr"',
   'Rolling Landing':
     'Section=combat ' +
     'Note="After falling without damage, can use a reaction to Step or Stride up to %{rank.Acrobatics<3?speed//2:speed}\'%{rank.Acrobatics>=4?\', triggering no reactions\':\'\'}"',
@@ -13694,7 +13694,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Attack,', '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Inflicts 12d8 HP cold and slowed 1 until the start of the next turn (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +1d8 HP and gives ice +5 HP)"',
+      '"R120\' Inflicts 12d8 HP cold and slowed 1 until the start of the next turn (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 Hit Points and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +1d8 HP and gives ice +5 HP)"',
   'Augury':
     Pathfinder2E.SPELLS.Augury
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -14049,7 +14049,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Fire Shield']
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"Hovering shield with Hardness 10 (halved vs. water effects), 40 HP, and immunity to fire gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on adjacent attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
+      '"Hovering shield with Hardness 10 (halved vs. water effects), 40 Hit Points, and immunity to fire gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on adjacent attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives +5 resistance, and inflicts +1d6 HP)"',
   'Fireball':
     Pathfinder2E.SPELLS.Fireball
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -14309,7 +14309,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Description=' +
-      '"R30\' Conjures a magical mount with 40\' Speed that can be ridden only by the target and that uses the target\'s Armor Class and saves for 8 hr or until it suffers more than 10 HP damage from a single attack (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
+      '"R30\' Conjures a magical mount with 40\' Speed that can be ridden only by the target and that uses the target\'s Armor Class and saves for 8 hr or until it suffers more than 10 Hit Points from a single attack (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
   'Mask Of Terror':
     Pathfinder2E.SPELLS['Mask Of Terror']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -14861,7 +14861,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Phantasmal Killer']
     .replace('Illusion', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Inflicts 8d6 HP mental, frightened 2, and death if reduced to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure inflicts double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R120\' Inflicts 8d6 HP mental, frightened 2, and death if reduced to 0 Hit Points (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 Hit Points; critical success negates; critical failure inflicts double HP, frightened 4, death at 0 Hit Points, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vital Beacon':
     Pathfinder2E.SPELLS['Vital Beacon']
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
@@ -15485,7 +15485,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)"',
+      '"R60\' Gives familiar resistance 5 and immunity to precision damage on the triggering damage (<b>heightened +1</b> gives +2 resistance)"',
   'Restorative Moment':
     'Level=5 ' +
     'Traits=Uncommon,Focus,Witch,Concentrate,Hex,Manipulate ' +
@@ -15580,7 +15580,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Gives resistance 15 to the triggering acid, cold, electricity, or fire damage (<b>heightened +1</b> gives resistance +5)"',
+      '"Gives resistance 15 to the triggering acid, cold, electricity, or fire damage (<b>heightened +1</b> gives +5 resistance)"',
   'Fortify Summoning':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate ' +
@@ -16039,14 +16039,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Gives 5 targets resistance 10 vs. the triggering physical or energy damage (<b>heightened +1</b> gives resistance +1)"',
+      '"R30\' Gives 5 targets resistance 10 vs. the triggering physical or energy damage (<b>heightened +1</b> gives +1 resistance)"',
   'Seal Fate':
     'Level=4 ' +
     'Traits=Concentrate,Curse,Death,Manipulate ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers weakness 2 to a specified damage type, plus death when reduced to 0 HP by that damage type if the target is level 7 or less, for 1 min (<b>save Fortitude</b> inflicts weakness 2 only until the end of the next turn; critical success negates; critical failure effects last indefinitely) (<b>heightened +2</b> inflicts weakness +1 and increases the maximum target level to suffer death by 4)"',
+      '"Touched suffers weakness 2 to a specified damage type, plus death when reduced to 0 Hit Points by that damage type if the target is level 7 or less, for 1 min (<b>save Fortitude</b> inflicts weakness 2 only until the end of the next turn; critical success negates; critical failure effects last indefinitely) (<b>heightened +2</b> inflicts weakness +1 and increases the maximum target level to suffer death by 4)"',
   'Shared Invisibility':
     Pathfinder2E.SPELLS['Invisibility Sphere'] + ' ' +
     'Traits=Aura,Illusion,Manipulate,Subtle ' +
@@ -16300,19 +16300,19 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains proficiency with martial weapons equal to simple weapon proficiency while sustained for up to 1 min; first successful weapon Strike each rd automatically Sustains as a free action"',
+      '"Self gains proficiency with martial weapons equal to simple weapon proficiency while sustained for up to 1 min; first successful weapon Strike each rd automatically Sustains the spell as a free action"',
   'Battlefield Persistence':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Gives self +2 on triggering save, and raises save level by 2 vs. incapacitation effects"',
+      '"Gives self +2 on the triggering save, and raises the save level by 2 vs. incapacitation effects"',
   'Revel In Retribution':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
-    'Cast=6 ' +
+    'Cast=1 ' +
     'Description=' +
       '"Gives self an extra reaction each rd to use Reactive Strike, and success on a Reactive Strike gives 5 temporary Hit Points, for 1 min (<b>heightened +1</b> gives +1 temporary Hit Point)"',
   'Soul Siphon':
@@ -16335,7 +16335,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Gives command of target undead for 10 min (<b>save Will</b> initial and after each rd inflicts stunned 1 and confused for 1 rd; critical success negates; critical failure gives control with no further saves)"',
+      '"Gives command of target undead for 10 min; target igores self-destructive orders (<b>save Will</b> initial and after each rd inflicts stunned 1 and confused for 1 rd; critical success negates; critical failure gives control with saves only upon self-destructive orders)"',
   'Spray Of Stars':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
@@ -16349,14 +16349,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 3d6 HP cold and fatigued while sustained for up to 1 min (<b>save basic Fortitude</b>)"',
+      '"R30\' Inflicts 3d6 HP cold and fatigued (<b>save basic Fortitude</b>) while sustained for up to 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Moonlight Bridge':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates a 10\'x120\' bridge with AC 10, Hardness 30, 60 HP, and immunity to all damage other than force, spirit, and <i>ghost touch</i> that can only be crossed by allies for 10 min (<b>heightened +1</> increases length by 20\', width by 5\', and HP by 20)"',
+      '"R30\' Creates a 10\'x120\' bridge with AC 10, Hardness 30, 60 Hit Points, and immunity to all damage other than force, spirit, and <i>ghost touch</i> that can only be crossed by allies for 10 min (<b>heightened +1</b> increases length by 20\', width by 5\', and Hit Points by 20)"',
   'Incendiary Aura':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
@@ -16370,35 +16370,35 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 2 5\' bursts inflicts 5d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +2</b> adds another 5\' burst and inflicts +3d6 HP)"',
+      '"R30\' 2 5\' bursts inflict 5d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +2</b> adds another 5\' burst and inflicts +3d6 HP)"',
   'Flaming Fusillade':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows casting <i>Ignition</i> with 1 action for 1 min (<b>heightened 9</b> <i>Ignition</i> inflicts +9 HP)"',
+      '"Allows casting <i>Ignition</i> with 1 action for 1 min (<b>heightened 9th</b> <i>Ignition</i> inflicts +9 HP)"',
   'Life Link':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Focus,Healing,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Restores 1d4 HP to the target and transfers up to 3 HP of damage from the first attack on the target each rd to self for 1 min (<b>heightened 3rd</b> affects 2 targets, restores 3d4 HP, and transfers 5 HP from each target to self; <b>6th</b> affects 3 targets, restores 6d4 HP, and transfers 10 HP; <b>9th</b> affects 4 targets, restores 9d4 HP, and transfers 15 HP)"',
+      '"R30\' Restores 1d4 HP to the target and transfers up to 3 Hit Points of damage from the first attack on the target each rd to self for 1 min (<b>heightened 3rd</b> affects 2 targets, restores 3d4 HP, and transfers 5 Hit Points from each target to self; <b>6th</b> affects 3 targets, restores 6d4 HP, and transfers 10 Hit Points; <b>9th</b> affects 4 targets, restores 9d4 HP, and transfers 15 Hit Points)"',
   'Delay Affliction':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Restores 3d8 Hit Points to the target and attempts to counteract 1 affliction to delay its effects for 1 hr once per target per day (<b>heightened +1</i> restores +1d8 Hit Points and counteracts +1 affliction)"',
+      '"R30\' Restores 3d8 HP to the target and attempts to counteract 1 affliction to delay its effects for 1 hr once per target per day (<b>heightened +1</b> restores +1d8 HP and counteracts +1 affliction)"',
   'Life-Giving Form':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Light,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Causes self to shine, gives resistance 5 to precision and weakness 5 to void, and allows touch to restore 6d8 HP once per target or inflict 3d4 HP vitality for 1 min (<b>heightened +1</b> gives +1 resistance and weakness and touch restores +1d8 HP)"',
+      '"Causes self to emit light equivalent to a torch, gives resistance 5 to precision and weakness 5 to void, gives unarmed attacks +1d4 HP vitality damage, and allows touch to restore 6d8 HP once per target or inflict 3d4 HP vitality for 1 min (<b>heightened +1</b> gives +1 resistance and weakness and touch restores +1d8 HP or inflicts +1 HP)"',
   'Brain Drain':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
@@ -16412,35 +16412,35 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Gives self %{!ranks.Divine?\'untrained\':ranks.Divine==1?\'trained\':ranks.Divine==2?\'expert\':ranks.divine==3?\'master\':\'legendary\'} proficiency in a chosen Lore skill for 1 min"',
+      '"Gives self %{!rank.Divine?\'untrained\':rank.Divine==1?\'trained\':rank.Divine==2?\'expert\':rank.divine==3?\'master\':\'legendary\'} proficiency in a chosen Lore skill for 1 min"',
   'Dread Secret':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Emotion,Fear,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Inflicts on 6 targets frightened 1 and 1 damage of a known weakness type or suppression of a known resistance until the end of the next turn (<b>save Will</b> negates frightened; critical success negates; critical failure inflicts frightened 3)"',
+      '"R60\' Inflicts on 6 targets frightened 1 and 1 damage of a known weakness type or suppression of a known resistance until the start of the next turn (<b>save Will</b> negates frightened; critical success negates; critical failure inflicts frightened 3)"',
   'Tempest Touch':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Cold,Focus,Manipulate,Water ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch inflicts 1d4 HP bludgeoning, 1d4 HP cold, and -10 Speed until the end of the next turn (<b>save Fortitude</b> inflicts half HP and -5 Speed; critical success negates; critical failure inflicts double HP)"',
+      '"Touch inflicts 1d4 HP bludgeoning, 1d4 HP cold, and -10 Speed until the end of the next turn (<b>save Fortitude</b> inflicts half HP and -5 Speed; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d4 HP bludgeoning and cold)"',
   'Thunderburst':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Air,Concentrate,Focus,Manipulate,Sonic ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R100\' 20\' burst inflicts 2d6 HP sonic and deafness for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and deafness for 1 hr) (<b>heightened +2</b> inflicts +2d6 HP and extends affect by 5\')"',
+      '"R100\' 20\' burst inflicts 2d6 HP bludgeoning, 2d6 HP sonic, and deafened for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and deafened for 1 hr) (<b>heightened +2</b> inflicts +2d6 HP bludgeoning and sonic and extends affect by 5\')"',
   'Tempest Form':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Polymorph ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self loses item armor bonuses, gains resistance 10 to physical damage and immunity to precision damage, can pass through cracks, does not need to breathe, cannot cast spells, and gains a 20\' fly Speed or gains a 20\' swim Speed and can inflict 1d6 HP electricity on melee attackers, while sustained for up to 1 min (<b>heightened +2</b> gives +5 resistance and +1 HP electricity)"',
+      '"Self becomes air, water, or mist, loses item armor bonuses, gains resistance 10 to physical damage and immunity to precision damage, can pass through cracks, does not need to breathe, cannot cast spells, and gains a 20\' fly Speed or gains a 20\' swim Speed and can inflict 1d6 HP electricity on melee attackers, while sustained for up to 1 min (<b>heightened +2</b> gives +5 resistance and inflicts +1 HP electricity)"',
   // Additional domain spells from Divine Mysteries
   'Withering Grasp':
     'Level=1 ' +
