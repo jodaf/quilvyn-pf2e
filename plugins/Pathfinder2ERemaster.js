@@ -16174,7 +16174,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Lay On Hands':
     Pathfinder2E.SPELLS['Lay On Hands']
     .replace('Necromancy', 'Manipulate')
-    .replace('Positive', 'Vitality'),
+    .replace('Positive', 'Vitality')
+    .replace('positive', 'vitality'),
   'Touch Of The Void':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Champion,Manipulate,Void ' +
@@ -16183,14 +16184,17 @@ Pathfinder2ERemaster.SPELLS = {
     'Description="' +
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS['Lay On Hands'], 'Description')
       .replace('Touched', 'Touched undead')
-      .replace('touched undead', 'touched living') + '"',
+      .replace('not self', 'self')
+      .replace('Armor Class', 'damage')
+      .replace('touched undead', 'touched living')
+      .replace('positive', 'void') + '"',
   'Shields Of The Spirit':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Champion,Concentrate,Sanctified,Spirit ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"While shield is raised, self aura gives allies +1 Armor Class and inflicts 1d4 HP spirit on attacking foes for 1 rd (<b>heightened +2</b> inflicts +1d4 HP)"',
+      '"While shield is raised, self aura gives allies +1 Armor Class and inflicts 1d4 HP spirit on foes that attack them (<b>heightened +2</b> inflicts +1d4 HP)"',
   "Champion's Sacrifice":
     Pathfinder2E.SPELLS["Champion's Sacrifice"]
     .replace('Abjuration', 'Manipulate'),
@@ -16205,7 +16209,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows self to Stride (using 2 actions gives 2 Strides) without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"',
+      '"Allows self or mount to Stride or Fly (using 2 actions gives 2 Strides) to a space adjacent to a foe without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"',
 
   // Monk
   'Inner Upheaval':
@@ -16228,7 +16232,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent successful or failed Fortitude reduce or increase the slowed condition by 1, or by 2 on a critical failure"',
+      '"Successful unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent successful or failed Fortitude saves reduce or increase the slowed condition by 1, or by 2 on a critical failure"',
   'Touch Of Death':
     Pathfinder2E.SPELLS['Quivering Palm']
     .replace('Necromancy', 'Concentrate,Manipulate'),
@@ -16243,13 +16247,13 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Monk,Uncommon,Concentrate,Focus,Polymorph ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be extended to 30\', nonlethal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
+    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura, extensible to 30\', that inflicts 2d6 HP of the same type, loss of the nonlethal trait on weapons and unarmed attacks, -2 saves vs. emotion, and +2 saves vs. other mental effects for 1 min"',
   'Clinging Shadows Stance':
     'Level=4 ' +
     'Traits=Monk,Uncommon,Focus,Manipulate,Shadow,Stance ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="Stance gives +2 Grapple checks and DC to Escape and allows shadow grasp Strikes that inflict 1d4 HP void"',
+    'Description="Stance gives +2 Grapple checks and DC to Escape and allows shadow grasp Strikes"',
   'Wild Winds Stance':
     Pathfinder2E.SPELLS['Wild Winds Stance']
     .replace('Evocation', 'Manipulate'),
@@ -16259,7 +16263,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' emanation inflicts 14d4 HP void and enfeebled 2 for 1 rd (<b>save Fortitude</b> inflicts half HP and enfeebled 1 for 1 rd; critical success negates; critical failure inflicts double HP, stunned 1, enfeebled 2 for 1 rd, and immobilized for 1 rd)"',
+      '"30\' emanation inflicts 14d4 HP void and enfeebled 2 for 1 rd (<b>save Fortitude</b> inflicts half HP and enfeebled 1 for 1 rd; critical success negates; critical failure inflicts double HP, stunned 1, enfeebled 2 for 1 rd, and immobilized for 1 rd or until a successful Escape) (<b>heightened +1</b> inflicts +2d4 HP)"',
   'Harmonize Self':
     Pathfinder2E.SPELLS['Wholeness Of Body']
     .replace('Necromancy', 'Concentrate')
@@ -17887,6 +17891,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Chemical Contagion') {
     rules.defineRule
       ('features.Greater Field Discovery', 'featureNotes.' + prefix, '=', '1');
+  } else if(name == 'Clinging Shadows Initiate') {
+    Pathfinder2E.weaponRules(
+      rules, 'Shadow Grasp', 'Unarmed', 0, '1d4 V', 0, 0, 'Brawling',
+      ['Agile', 'Grapple', 'Reach', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Shadow Grasp', 'features.Clinging Shadows Initiate', '=', '1');
   } else if(name == 'Cobra Stance') {
     Pathfinder2ERemaster.weaponRules(
       rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
