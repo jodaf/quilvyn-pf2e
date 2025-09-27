@@ -704,6 +704,7 @@ Pathfinder2E.CLASSES = {
       '"1:Shields:Weapon Group",' +
       '"1:Spears:Weapon Group",' +
       '"1:Swords:Weapon Group"',
+  // TODO review Monk stance attacks wrt strength/dexterity bonuses
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -10887,7 +10888,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Free ' +
     'Description=' +
-      '"Self recovers 10d4+20 HP before suffering damage that would reduce HP to 0 once per Refocus"',
+      '"Self recovers 10d4+20 Hit Points before suffering damage that would have reduced Hit Points to 0 once per Refocus"',
   'Lay On Hands':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
@@ -10895,7 +10896,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched regains 6 HP and gains +2 Armor Class for 1 rd; touched undead instead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
+      '"Touched regains 6 HP and, if the target is not self, gains +2 Armor Class for 1 rd; touched undead instead suffers 1d6 HP positive and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
@@ -11606,7 +11607,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions inflicts 3d6 HP in a 30\' cone or 4d6 HP in a 60\' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)"',
+      '"15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions inflict 3d6 HP in a 30\' cone or 4d6 HP in a 60\' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)"',
   'Ki Rush':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Monk,Transmutation ' +
@@ -11614,7 +11615,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows self to move twice and become concealed until the next turn"',
+      '"Allows self to move twice and to become concealed until the next turn"',
   'Ki Strike':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Monk,Transmutation ' +
@@ -11630,7 +11631,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"A successful Strike allows self to inflict stunned 3 and 80 HP on the target at any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)"',
+      '"Successful unarmed melee Strike allows self to inflict stunned 3 and 80 HP on the target at any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)"',
   'Wholeness Of Body':
     'Level=2 ' +
     'Traits=Focus,Uncommon,Healing,Monk,Necromancy,Positive ' +
@@ -11638,7 +11639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)"',
+      '"Self regains 8 Hit Points or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 Hit Points)"',
   'Wild Winds Stance':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Air,Evocation,Monk,Stance ' +
@@ -15664,7 +15665,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^(\d(d\d+)?)( ([BEPS]))?$/);
+  let matchInfo = (damage + '').match(/^(\d(d\d+)?)( ([BEPSV]))?$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
