@@ -16341,7 +16341,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Gives command of target undead for 10 min; target igores self-destructive orders (<b>save Will</b> initial and after each rd inflicts stunned 1 and confused for 1 rd; critical success negates; critical failure gives control with saves only upon self-destructive orders)"',
+      '"Gives command of target undead for 10 min; target ignores self-destructive orders (<b>save Will</b> initial and after each rd inflicts stunned 1 and confused for 1 rd; critical success negates; critical failure gives control with saves only upon self-destructive orders)"',
   'Spray Of Stars':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
@@ -16661,7 +16661,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Ancestral Memories']
     .replace('Divination', 'Concentrate') + ' ' +
     'Description=' +
-      '"R60\' Self gains +1 on the next spell attack or target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
+      '"R60\' Self gains +1 on the next spell attack or the target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
   'Extend Blood Magic':
     'Level=3 ' +
     'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
@@ -16680,7 +16680,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Drain Life':
     Pathfinder2E.SPELLS['Drain Life']
     .replace('Necromancy', 'Manipulate')
-    .replace('Negative', 'Void'),
+    .replace('Negative', 'Void')
+    .replace('negative', 'void'),
   'Grasping Grave':
     Pathfinder2E.SPELLS['Grasping Grave']
     .replace('Necromancy', 'Concentrate,Manipulate'),
