@@ -11854,7 +11854,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on the target\'s highest ability modifier, until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
+      '"R30\' Depending on the target\'s highest ability modifier, inflicts enfeebled 1 (Strength), clumsy 1 (Dexterity), drained 1 (Constitution), or stupefied 1 (other), until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition severity 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
@@ -11862,7 +11862,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases radius by 5\' and inflicts +1d6 HP)"',
+      '"R120\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts difficult terrain and 1d6 HP poison (<b>save basic Fortitude</b>) for 1 min (<b>heightened +2</b> increases the radius by 5\' and inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
