@@ -11201,11 +11201,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Bloodline (Draconic (Arcane))':
     Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
   'Advanced Bloodline (Draconic (Divine))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+    .replace('arcane', 'divine'),
   'Advanced Bloodline (Draconic (Occult))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+    .replace('arcane', 'occult'),
   'Advanced Bloodline (Draconic (Primal))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+    .replace('arcane', 'primal'),
   'Advanced Bloodline (Elemental (Air))':
     Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Air))'],
   'Advanced Bloodline (Elemental (Earth))':
@@ -11332,11 +11335,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Greater Bloodline (Draconic (Arcane))':
     Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
   'Greater Bloodline (Draconic (Divine))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+    .replace('arcane', 'divine'),
   'Greater Bloodline (Draconic (Occult))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+    .replace('arcane', 'occult'),
   'Greater Bloodline (Draconic (Primal))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+    .replace('arcane', 'primal'),
   'Greater Bloodline (Elemental (Air))':
     Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Air))'],
   'Greater Bloodline (Elemental (Earth))':
@@ -16563,7 +16569,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Aberrant Whispers']
     .replace('Enchantment', 'Concentrate'),
   'Unusual Anatomy':
-    Pathfinder2E.SPELLS['Aberrant Whispers']
+    Pathfinder2E.SPELLS['Unusual Anatomy']
     .replace('Transmutation', 'Manipulate'),
   'Angelic Halo':
     Pathfinder2E.SPELLS['Angelic Halo']
@@ -16599,7 +16605,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Transmutation', 'Concentrate')
     .replace(',Evil', '')
     .replaceAll('evil, fire,', 'fire')
-    .replaceAll(/, and weakness \S+ to good,?/g, ''),
+    .replaceAll('poison,', 'poison and')
+    .replaceAll(/, and (\S+ )?weakness (\S+ )?to good,?/g, ''),
   'Hellfire Plume':
     Pathfinder2E.SPELLS['Hellfire Plume']
     .replace('Evocation', 'Concentrate,Manipulate')
@@ -16611,10 +16618,11 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Successful spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
+      '"R30\' Spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'})"',
   'Dragon Breath':
     Pathfinder2E.SPELLS['Dragon Breath']
     .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('bloodlineDamage', "'%tradition'=='Arcane'?'force':'%tradition'=='Divine'?'spirit':'%tradition'=='Occult'?'mental':'fire'")
     .replaceAll(/draconicColor[^:]*:/g, ''),
   'Dragon Wings':
     Pathfinder2E.SPELLS['Dragon Wings']
@@ -16641,9 +16649,10 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Jealous Hex':
     Pathfinder2E.SPELLS['Jealous Hex']
-    .replace('Necromancy', 'Concentrate'),
+    .replace('Necromancy', 'Concentrate')
+    .replace('ability', 'attribute'),
   'Horrific Visage':
-    Pathfinder2E.SPELLS['Jealous Hex']
+    Pathfinder2E.SPELLS['Horrific Visage']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   "You're Mine":
     Pathfinder2E.SPELLS["You're Mine"]
@@ -17539,7 +17548,11 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('bloodlineDamage',
       'features.Elemental (Air)', '=', '"slashing"',
       'features.Elemental (Metal)', '=', '"piercing"',
-      'features.Elemental (Wood)', '=', '"bludgeoning"'
+      'features.Elemental (Wood)', '=', '"bludgeoning"',
+      'features.Draconic (Arcane)', '=', '"force"',
+      'features.Draconic (Divine)', '=', '"spirit"',
+      'features.Draconic (Occult)', '=', '"mental"',
+      'features.Draconic (Primal)', '=', '"fire"'
     );
   } else if(name == 'Swashbuckler') {
     ['Battledancer', 'Braggart', 'Fencer', 'Gymnast', 'Rascal', 'Wit'].forEach(s => {
