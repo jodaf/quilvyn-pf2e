@@ -11751,7 +11751,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative, and self gains equal temporary Hit Points Hit Points 1 min (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative (<b>save basic Fortitude</b>), and self gains equal temporary Hit Points for 1 min (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
@@ -11830,7 +11830,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10 Speed for 1 rd for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10 Speed for 1 rd (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd or until a successful Escape) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Evil,Evocation,Fire,Sorcerer ' +
