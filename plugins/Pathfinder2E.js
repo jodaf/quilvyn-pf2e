@@ -3107,7 +3107,7 @@ Pathfinder2E.FEATURES = {
   // Low-Light Vision as above
   'Sensate Gnome':
     'Section=skill ' +
-    'Note="Has R30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
+    'Note="Has 30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
@@ -3724,7 +3724,7 @@ Pathfinder2E.FEATURES = {
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a melee Strike after 2 Strides"',
-  'Acute Scent':'Section=skill Note="Has R30\' imprecise scent during rage"',
+  'Acute Scent':'Section=skill Note="Has 30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
     'Section=combat ' +
@@ -12044,7 +12044,7 @@ Pathfinder2E.WEAPONS = {
     'Traits=Agile,Finesse,Thrown,"Versatile S" Range=10',
   'Gauntlet':
     'Category=Simple Price=0.2 Damage="1d4 B" Bulk=L Hands=1 Group=Brawling ' +
-    'Traits=Agile,Free-hand',
+    'Traits=Agile,Free-Hand',
   'Light Mace':
     'Category=Simple Price=0.4 Damage="1d4 B" Bulk=L Hands=1 Group=Club ' +
     'Traits=Agile,Finesse,Shove',
@@ -12065,21 +12065,21 @@ Pathfinder2E.WEAPONS = {
     'Traits=Thrown Range=20',
   'Spiked Gauntlet':
     'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Brawling ' +
-    'Traits=Agile,Free-hand',
+    'Traits=Agile,Free-Hand',
   'Staff':
     'Category=Simple Price=0 Damage="1d4 B" Bulk=1 Hands=1 Group=Club ' +
-    'Traits="Two-hand d8"',
+    'Traits="Two-Hand d8"',
 
   'Clan Dagger':
     'Category=Simple Price=2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
+    'Traits=Uncommon,Agile,Dwarf,Parry,"Versatile B"',
   'Katar':
     'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,"Deadly d6",Monk,Uncommon',
+    'Traits=Uncommon,Agile,"Deadly d6",Monk',
 
   'Bastard Sword':
     'Category=Martial Price=4 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Traits="Two-hand d12"',
+    'Traits="Two-Hand d12"',
   'Battle Axe':
     'Category=Martial Price=1 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
     'Traits="Sweep"',
@@ -12179,98 +12179,98 @@ Pathfinder2E.WEAPONS = {
 
   'Dogslicer':
     'Category=Martial Price=0.1 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
-    'Traits=Agile,Backstabber,Finesse,Goblin,Uncommon',
+    'Traits=Uncommon,Agile,Backstabber,Finesse,Goblin',
   'Elven Curve Blade':
     'Category=Martial Price=4 Damage="1d8 S" Bulk=2 Hands=2 Group=Sword ' +
-    'Traits=Elf,Finesse,Forceful,Uncommon',
+    'Traits=Uncommon,Elf,Finesse,Forceful',
   "Filcher's Fork":
     'Category=Martial Price=1 Damage="1d4 P" Bulk=L Hands=1 Group=Spear ' +
-    'Traits=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon ' +
+    'Traits=Uncommon,Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown ' +
     'Range=20',
   'Gnome Hooked Hammer':
     'Category=Martial Price=2 Damage="1d6 B" Bulk=1 Hands=1 Group=Hammer ' +
-    'Traits=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
+    'Traits=Uncommon,Gnome,Trip,"Two-Hand d10","Versatile P"',
   'Horsechopper':
     'Category=Martial Price=0.9 Damage="1d8 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Traits=Goblin,Reach,Trip,Uncommon,"Versatile P"',
+    'Traits=Uncommon,Goblin,Reach,Trip,"Versatile P"',
   'Kama':
     'Category=Martial Price=1 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,Monk,Trip,Uncommon',
+    'Traits=Uncommon,Agile,Monk,Trip',
   'Katana':
     'Category=Martial Price=2 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Traits="Deadly d8","Two-hand d10",Uncommon,"Versatile P"',
+    'Traits=Uncommon,"Deadly d8","Two-Hand d10","Versatile P"',
   'Kukri':
     'Category=Martial Price=0.6 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,Finesse,Trip,Uncommon',
+    'Traits=Uncommon,Agile,Finesse,Trip',
   'Nunchaku':
     'Category=Martial Price=0.2 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
-    'Traits=Backswing,Disarm,Finesse,Monk,Uncommon',
+    'Traits=Uncommon,Backswing,Disarm,Finesse,Monk',
   'Orc Knuckle Dragger':
     'Category=Martial Price=0.7 Damage="1d6 P" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,Disarm,Orc,Uncommon',
+    'Traits=Uncommon,Agile,Disarm,Orc',
   'Sai':
     'Category=Martial Price=0.6 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Traits=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
+    'Traits=Uncommon,Agile,Disarm,Finesse,Monk,"Versatile B"',
   'Spiked Chain':
     'Category=Martial Price=3 Damage="1d8 S" Bulk=1 Hands=2 Group=Flail ' +
-    'Traits=Disarm,Finesse,Trip,Uncommon',
+    'Traits=Uncommon,Disarm,Finesse,Trip',
   'Temple Sword':
     'Category=Martial Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Traits=Monk,Trip,Uncommon',
+    'Traits=Uncommon,Monk,Trip',
 
   'Dwarven Waraxe':
     'Category=Advanced Price=3 Damage="1d8 S" Bulk=2 Hands=1 Group=Axe ' +
-    'Traits=Dwarf,Sweep,"Two-hand d12",Uncommon',
+    'Traits=Uncommon,Dwarf,Sweep,"Two-Hand d12"',
   'Gnome Flickmace':
     'Category=Advanced Price=3 Damage="1d6 B" Bulk=1 Hands=1 Group=Flail ' +
-    'Traits=Gnome,Reach,Sweep,Uncommon',
+    'Traits=Uncommon,Gnome,Reach,Sweep',
   'Orc Necksplitter':
     'Category=Advanced Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
-    'Traits=Forceful,Orc,Sweep,Uncommon',
+    'Traits=Uncommon,Forceful,Orc,Sweep',
   'Sawtooth Saber':
     'Category=Advanced Price=5 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
-    'Traits=Agile,Finesse,Twin,Uncommon',
+    'Traits=Uncommon,Agile,Finesse,Twin',
 
   'Blowgun':
     'Category=Simple Price=0.1 Damage="1 P" Bulk=L Hands=1 Group=Dart ' +
-    'Traits=Agile,Nonlethal,"Reload 1" Range=20',
+    'Traits=Agile,Nonlethal Range=20',
   'Crossbow':
     'Category=Simple Price=3 Damage="1d8 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Traits="Reload 1", Range=120',
+    'Range=120',
   'Dart':
     'Category=Simple Price=0.01 Damage="1d4 P" Bulk=L Hands=1 Group=Dart ' +
     'Traits=Agile,Thrown Range=20',
   'Hand Crossbow':
     'Category=Simple Price=3 Damage="1d6 P" Bulk=L Hands=1 Group=Bow ' +
-    'Traits="Reload 1", Range=60',
+    'Range=60',
   'Heavy Crossbow':
     'Category=Simple Price=4 Damage="1d10 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Traits="Reload 2", Range=120',
+    'Range=120',
   'Javelin':
     'Category=Simple Price=0.1 Damage="1d6 P" Bulk=L Hands=1 Group=Dart ' +
     'Traits=Thrown Range=30',
   'Sling':
     'Category=Simple Price=0 Damage="1d6 B" Bulk=L Hands=1 Group=Sling ' +
-    'Traits=Propulsive,"Reload 1" Range=50',
+    'Traits=Propulsive Range=50',
 
   'Lesser Acid Flask':
     'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown,Splash Range=20',
+    'Traits=Thrown Range=20',
   "Lesser Alchemist's Fire":
     'Category=Martial Price=0 Damage="1d8 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown,Splash Range=20',
+    'Traits=Thrown Range=20',
   'Lesser Bottled Lightning':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown,Splash Range=20',
+    'Traits=Thrown Range=20',
   'Lesser Frost Vial':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown,Splash Range=20',
+    'Traits=Thrown Range=20',
   'Lesser Tanglefoot Bag':
     'Category=Martial Price=0 Damage="0" Bulk=L Hands=1 Group=Bomb ' +
     'Traits=Thrown Range=20',
   'Lesser Thunderstone':
     'Category=Martial Price=0 Damage="1d4 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown,Splash Range=20',
+    'Traits=Thrown Range=20',
   'Composite Longbow':
     'Category=Martial Price=20 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
     'Traits="Deadly d10",Propulsive,"Volley 30\'" Range=100',
@@ -12286,10 +12286,10 @@ Pathfinder2E.WEAPONS = {
 
   'Halfling Sling Staff':
     'Category=Martial Price=5 Damage="1d10 B" Bulk=1 Hands=2 Group=Sling ' +
-    'Traits=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
+    'Traits=Uncommon,Halfling,Propulsive Range=80',
   'Shuriken':
     'Category=Martial Price=0.01 Damage="1d4 P" Bulk=0 Hands=1 Group=Dart ' +
-    'Traits=Agile,Monk,Thrown,Uncommon Range=20'
+    'Traits=Uncommon,Agile,Monk,Thrown Range=20'
 
 };
 
@@ -15399,6 +15399,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
       if(n.match(/^Has increased .* effects$/))
         rules.defineRule('italics', note, '=', 'null');
+      if(n.match(/^Has \d+'( imprecise)? scent/) && !n.includes('during'))
+        rules.defineRule('features.Scent', 'features.' + name, '=', 'null');
     });
   }
 };
@@ -15688,17 +15690,22 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad traits list "' + traits + '" for weapon ' + name);
     return;
   }
+  traits.forEach(t => {
+    if(!(Pathfinder2E.weaponRules.traits.includes(t)) &&
+       !(Pathfinder2E.weaponRules.traits.includes(t.replace(/\s.*/, ''))))
+      console.log('Bad trait "' + t + '" for spell ' + name);
+  });
   if(range && typeof range != 'number') {
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
+  let isBomb = group == 'Bomb';
   let isFinesse = traits.includes('Finesse');
   let isPropulsive = traits.includes('Propulsive');
   let isRanged = group.match(/Bomb|Bow|Crossbow|Dart|Sling/);
-  let isSplash = traits.includes('Splash');
   let isThrown = traits.includes('Thrown');
   let specialDamage =
-    traits.filter(x => x.match(/Two-hand/)).map(x => x.replace('Two-hand', '2h')).concat(
+    traits.filter(x => x.match(/Two-Hand/)).map(x => x.replace('Two-Hand', '2h')).concat(
     traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
@@ -15714,6 +15721,13 @@ Pathfinder2E.weaponRules = function(
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
       damageType += '/' + t.charAt(t.length - 1);
+    else if(t.match(/^Modular \(.*\)$/))
+      damageType =
+        t.replace(/Modular../, '')
+         .replace(/.$/, '')
+         .replace(/ ?or /, '/')
+         .replaceAll(/, ?/g, '/')
+         .replace('//', '/');
   });
 
   let weaponName = 'weapons.' + name;
@@ -15738,7 +15752,7 @@ Pathfinder2E.weaponRules = function(
     'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
     'weaponFamiliarity.' + name, '^=', 'dict["rank.' + lowerCategory + '"]'
   );
-  if(hands == 2 || traits.filter(x => x.startsWith('Two-hand')).length > 0) {
+  if(hands == 2 || traits.filter(x => x.startsWith('Two-Hand')).length > 0) {
     rules.defineRule('weaponRank.' + name,
       'weaponFamiliarity.Two-Handed Weapons', '^=', 'dict["rank.' + lowerCategory + '"]'
     );
@@ -15793,7 +15807,7 @@ Pathfinder2E.weaponRules = function(
     rules.defineRule('damageBonus.' + name,
       'strengthModifier', '+', 'source<0 ? source : Math.floor(source / 2)'
     );
-  else if(!isRanged || (isThrown && !isSplash))
+  else if(!isRanged || (isThrown && !isBomb))
     rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   if(isFinesse)
     rules.defineRule('damageBonus.' + name, 'combatNotes.thief', '+', null);
@@ -15832,6 +15846,18 @@ Pathfinder2E.weaponRules = function(
   }
 
 };
+Pathfinder2E.weaponRules.traits = [
+  'Agile', 'Attached', 'Backstabber', 'Backswing', 'Deadly', 'Disarm', 'Dwarf',
+  'Elf', 'Fatal', 'Finesse', 'Forceful', 'Free-Hand', 'Gnome', 'Goblin',
+  'Grapple', 'Halfling', 'Jousting', 'Monk', 'Nonlethal', 'Orc', 'Parry',
+  'Propulsive', 'Reach', 'Shove', 'Sweep', 'Thrown', 'Trip', 'Twin', 'Two-Hand',
+  'Unarmed', 'Uncommon', 'Versatile', 'Volley',
+  // Remaster
+  'Concealable', 'Ranged Trip',
+  // Core 2
+  'Hampering', 'Modular', 'Razing', 'Tethered', 'Venomous',
+  'Catfolk', 'Hobgoblin', 'Kholo', 'Kobold', 'Tengu', 'Tripkee'
+];
 
 /*
  * Defines in #rules# the rules associated with with the list #features#. Rules
