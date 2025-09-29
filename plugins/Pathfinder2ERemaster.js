@@ -3160,7 +3160,6 @@ Pathfinder2ERemaster.FEATS = {
   'Spiritual Guides':
     'Traits=Barbarian,Fortune Require="level >= 4","features.Spirit Instinct"',
   'Supernatural Senses':
-    // TODO features.Scent isn't a thing
     'Traits=Barbarian,Rage ' +
     'Require="level >= 4","features.Acute Scent || features.Scent"',
   // Swipe as above
@@ -3184,7 +3183,6 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 6","features.Superstition Instinct"',
   'Nocturnal Senses':
     'Traits=Barbarian,Rage ' +
-    // TODO features.Scent isn't a thing
     'Require="level >= 6","features.Low-Light Vision || features.Scent"',
   // Modified from Attack Of Opportunity; added Archetype
   'Reactive Strike':
@@ -3211,7 +3209,6 @@ Pathfinder2ERemaster.FEATS = {
   'Furious Bully':Pathfinder2E.FEATS['Furious Bully'],
   'Instinctive Strike':
     'Traits=Barbarian ' +
-    // TODO features.Scent isn't a thing
     'Require="level >= 8","features.Acute Scent || features.Scent"',
   'Invulnerable Rager':'Traits=Barbarian Require="level >= 8"',
   'Renewed Vigor':Pathfinder2E.FEATS['Renewed Vigor'],
@@ -16713,7 +16710,7 @@ Pathfinder2ERemaster.WEAPONS = {
   'Sickle':Pathfinder2E.WEAPONS.Sickle,
   'Spear':Pathfinder2E.WEAPONS.Spear + ' Traits=Monk,Thrown',
   'Spiked Gauntlet':Pathfinder2E.WEAPONS['Spiked Gauntlet'],
-  'Staff':Pathfinder2E.WEAPONS.Staff + ' Traits=Monk,"Two-hand d8"',
+  'Staff':Pathfinder2E.WEAPONS.Staff + ' Traits=Monk,"Two-Hand d8"',
 
   'Clan Dagger':Pathfinder2E.WEAPONS['Clan Dagger'],
   'Katar':Pathfinder2E.WEAPONS.Katar,
@@ -16762,7 +16759,7 @@ Pathfinder2ERemaster.WEAPONS = {
   'Katana':Pathfinder2E.WEAPONS.Katana,
   'Khakkara':
     'Category=Martial Price=2 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
-    'Traits=Monk,Shove,"Two-Hand d10",Uncommon,"Versatile P"',
+    'Traits=Uncommon,Monk,Shove,"Two-Hand d10","Versatile P"',
   'Kukri':Pathfinder2E.WEAPONS.Kukri,
   'Nunchaku':Pathfinder2E.WEAPONS.Nunchaku,
   'Orc Knuckle Dragger':Pathfinder2E.WEAPONS['Orc Knuckle Dragger'],
@@ -16771,7 +16768,7 @@ Pathfinder2ERemaster.WEAPONS = {
   'Temple Sword':Pathfinder2E.WEAPONS['Temple Sword'],
   'Wakizashi':
     'Category=Martial Price=1 Damage="1d4 S" Bulk=L Hands=1 Group=Sword ' +
-    'Traits=Agile,"Deadly d8",Finesse,Uncommon,"Versatile P"',
+    'Traits=Uncommon,Agile,"Deadly d8",Finesse,"Versatile P"',
 
   'Dwarven Waraxe':Pathfinder2E.WEAPONS['Dwarven Waraxe'],
   'Gnome Flickmace':Pathfinder2E.WEAPONS['Gnome Flickmace'],
@@ -16786,14 +16783,12 @@ Pathfinder2ERemaster.WEAPONS = {
   'Javelin':Pathfinder2E.WEAPONS.Javelin,
   'Sling':Pathfinder2E.WEAPONS.Sling,
 
-  'Lesser Acid Flask':
-    Pathfinder2E.WEAPONS['Lesser Acid Flask'] + ' Traits=Acid,Bomb,Splash',
-  "Lesser Alchemist's Fire":
-    Pathfinder2E.WEAPONS["Lesser Alchemist's Fire"] + ' Traits=Fire,Bomb,Splash',
+  'Lesser Acid Flask':Pathfinder2E.WEAPONS['Lesser Acid Flask'],
+  "Lesser Alchemist's Fire":Pathfinder2E.WEAPONS["Lesser Alchemist's Fire"],
   'Arbalest':
     // Price changed by errata
     'Category=Martial Price=8 Damage="1d10 P" Bulk=2 Hands=2 Group=Crossbow ' +
-    'Traits=Backstabber,"Reload 1" Range=110',
+    'Traits=Backstabber Range=110',
   'Bola':
     'Category=Martial Price=0.5 Damage="1d6 B" Bulk=L Hands=1 Group=Sling ' +
     'Traits=Nonlethal,"Ranged Trip",Thrown Range=20',
@@ -16845,10 +16840,9 @@ Pathfinder2ERemaster.WEAPONS = {
   'Spirit Thresher':
     'Category=Advanced Price=2 Damage="1d12 B" Bulk=2 Hands=2 Group=Flail ' +
     'Traits=Uncommon,Kholo,Sweep,"Versatile S"',
-  // TODO modular damage
   'Tricky Pick':
     'Category=Advanced Price=10 Damage="1d6 B" Bulk=1 Hands=1 Group=Pick ' +
-    'Traits=Uncommon,Backstabber,"Fatal d10",Kobold,Modular',
+    'Traits=Uncommon,Backstabber,"Fatal d10",Kobold,"Modular (B, P, or S)"',
   'Whip Claw':
     'Category=Advanced Price=5 Damage="1d6 S" Bulk=1 Hands=2 Group=Flail ' +
     'Traits=Uncommon,Catfolk,Finesse,Hampering,Reach',
