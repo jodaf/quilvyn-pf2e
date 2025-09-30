@@ -1320,8 +1320,8 @@ Pathfinder2ERemaster.FEATS = {
   'Martial Experience':'Traits=Elf Require="level >= 5"',
   'Elf Step':Pathfinder2E.FEATS['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATS['Expert Longevity'],
-  // TODO requires "at least one innate spell gained from an elf ancestry feat"
-  'Otherworldly Acumen':'Traits=Elf Require="level >= 9"',
+  'Otherworldly Acumen':
+    'Traits=Elf Require="level >= 9","hasElfFeatSpell"',
   'Tree Climber':'Traits=Elf Require="level >= 9"',
   'Avenge Ally':'Traits=Elf,Fortune Require="level >= 13"',
   'Universal Longevity':Pathfinder2E.FEATS['Universal Longevity'],
@@ -1339,16 +1339,23 @@ Pathfinder2ERemaster.FEATS = {
   'Energized Font':Pathfinder2E.FEATS['Energized Font'],
   'Project Persona':
     'Traits=Gnome,Concentrate,Illusion,Primal,Visual Require="level >= 5"',
-  // TODO requires "at least one arcane or occult innate spell gained from a
-  // gnome heritage or gnome ancestry feat"
-  'Cautious Curiosity':'Traits=Gnome Require="level >= 9"',
+  // Requires a gnome arcane or occult innate spell; it seems that Wellspring
+  // Gnome is the only way Player Core defines to obtain this
+  'Cautious Curiosity':
+    'Traits=Gnome ' +
+    'Require=' +
+      '"level >= 9",' +
+      '"features.Wellspring Gnome (Arcane) || features.Wellspring Gnome (Occult)"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Traits=Gnome,Move,Teleportation Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
-  // TODO requires "at least one arcane or occult innate spell gained from a
-  // gnome heritage or gnome ancestry feat"
+  // Requires a gnome arcane or occult innate spell; it seems that Wellspring
+  // Gnome is the only way Player Core defines to obtain this
   'Instinctive Obfuscation':
-    'Traits=Gnome,Illusion,Visual Require="level >= 13"',
+    'Traits=Gnome,Illusion,Visual ' +
+    'Require=' +
+      '"level >= 13",' +
+      '"features.Wellspring Gnome (Arcane) || features.Wellspring Gnome (Occult)"',
   'Homeward Bound':'Traits=Gnome,Uncommon Require="level >= 17"',
 
   // Goblin
@@ -1679,8 +1686,7 @@ Pathfinder2ERemaster.FEATS = {
   'Iruxi Armaments (Fangs)':'Traits=Lizardfolk',
   'Iruxi Armaments (Tail)':'Traits=Lizardfolk',
   'Lizardfolk Lore':'Traits=Lizardfolk',
-  // TODO Requires a swim Speed
-  'Marsh Runner':'Traits=Lizardfolk',
+  'Marsh Runner':'Traits=Lizardfolk Require="features.Swim"',
   'Parthenogenic Hatchling':'Traits=Lizardfolk',
   'Reptile Speaker':'Traits=Lizardfolk',
   'Envenom Fangs':
@@ -18424,6 +18430,21 @@ Pathfinder2ERemaster.featureRules = function(
         'features.' + name, '=', '!dict.witchTraditions ? "' + trad + '" : !dict.witchTraditions.includes("' + trad + '") ? dict.witchTraditions + "; ' + trad + '" : dict.witchTraditions'
       );
     }
+    matchInfo =
+      n.match(/(arcane|divine|occult|primal|%V) innate (cantrip|hex|spell)/);
+    if(matchInfo) {
+      let allFeats = rules.getChoices('feats');
+      if(name in allFeats && 
+         QuilvynUtils.getAttrValueArray(allFeats[name], 'Traits').includes('Elf'))
+        rules.defineRule('hasElfFeatSpell', 'features.' + name, '=', '1');
+    }
+    matchInfo = n.match(/^Has (\d+)'( imprecise)? scent/);
+    if(matchInfo && !n.includes('during'))
+      rules.defineRule
+        ('features.Scent', 'features.' + name, '^=', matchInfo[1]);
+    matchInfo = n.match(/^Has a (\d+)' swim [sS]peed/);
+    if(matchInfo && !n.includes('during'))
+      rules.defineRule('features.Swim', 'features.' + name, '^=', matchInfo[1]);
   });
 };
 

@@ -15398,8 +15398,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
       if(n.match(/^Has increased .* effects$/))
         rules.defineRule('italics', note, '=', 'null');
-      if(n.match(/^Has \d+'( imprecise)? scent/) && !n.includes('during'))
-        rules.defineRule('features.Scent', 'features.' + name, '=', 'null');
     });
   }
 };
