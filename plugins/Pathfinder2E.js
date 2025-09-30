@@ -704,7 +704,6 @@ Pathfinder2E.CLASSES = {
       '"1:Shields:Weapon Group",' +
       '"1:Spears:Weapon Group",' +
       '"1:Swords:Weapon Group"',
-  // TODO review Monk stance attacks wrt strength/dexterity bonuses
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -12255,22 +12254,22 @@ Pathfinder2E.WEAPONS = {
 
   'Lesser Acid Flask':
     'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   "Lesser Alchemist's Fire":
     'Category=Martial Price=0 Damage="1d8 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   'Lesser Bottled Lightning':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   'Lesser Frost Vial':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   'Lesser Tanglefoot Bag':
     'Category=Martial Price=0 Damage="0" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   'Lesser Thunderstone':
     'Category=Martial Price=0 Damage="1d4 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Traits=Thrown Range=20',
+    'Traits=Bomb Range=20',
   'Composite Longbow':
     'Category=Martial Price=20 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
     'Traits="Deadly d10",Propulsive,"Volley 30\'" Range=100',
@@ -15699,7 +15698,6 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
-  let isBomb = group == 'Bomb';
   let isFinesse = traits.includes('Finesse');
   let isPropulsive = traits.includes('Propulsive');
   let isRanged = group.match(/Bomb|Bow|Crossbow|Dart|Sling/);
@@ -15717,7 +15715,7 @@ Pathfinder2E.weaponRules = function(
   let lowerCategory =
     category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
   damage = matchInfo[1];
-  let damageType = matchInfo[4];
+  let damageType = matchInfo[4] || '';
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
       damageType += '/' + t.charAt(t.length - 1);
@@ -15807,7 +15805,7 @@ Pathfinder2E.weaponRules = function(
     rules.defineRule('damageBonus.' + name,
       'strengthModifier', '+', 'source<0 ? source : Math.floor(source / 2)'
     );
-  else if(!isRanged || (isThrown && !isBomb))
+  else if(!isRanged || isThrown)
     rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   if(isFinesse)
     rules.defineRule('damageBonus.' + name, 'combatNotes.thief', '+', null);
@@ -15847,11 +15845,11 @@ Pathfinder2E.weaponRules = function(
 
 };
 Pathfinder2E.weaponRules.traits = [
-  'Agile', 'Attached', 'Backstabber', 'Backswing', 'Deadly', 'Disarm', 'Dwarf',
-  'Elf', 'Fatal', 'Finesse', 'Forceful', 'Free-Hand', 'Gnome', 'Goblin',
-  'Grapple', 'Halfling', 'Jousting', 'Monk', 'Nonlethal', 'Orc', 'Parry',
-  'Propulsive', 'Reach', 'Shove', 'Sweep', 'Thrown', 'Trip', 'Twin', 'Two-Hand',
-  'Unarmed', 'Uncommon', 'Versatile', 'Volley',
+  'Agile', 'Attached', 'Backstabber', 'Backswing', 'Bomb', 'Deadly', 'Disarm',
+  'Dwarf', 'Elf', 'Fatal', 'Finesse', 'Forceful', 'Free-Hand', 'Gnome',
+  'Goblin', 'Grapple', 'Halfling', 'Jousting', 'Monk', 'Nonlethal', 'Orc',
+  'Parry', 'Propulsive', 'Reach', 'Shove', 'Sweep', 'Thrown', 'Trip', 'Twin',
+  'Two-Hand', 'Unarmed', 'Uncommon', 'Versatile', 'Volley',
   // Remaster
   'Concealable', 'Ranged Trip',
   // Core 2
