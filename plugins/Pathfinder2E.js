@@ -1022,6 +1022,7 @@ Pathfinder2E.FEATS = {
     'Traits=Dwarf Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
   // Elf
+  // Note: requires "at least 100 years old"; no way to determine this
   'Ancestral Longevity':'Traits=Elf',
   'Elven Lore':'Traits=Elf',
   'Elven Weapon Familiarity':'Traits=Elf',
@@ -2763,6 +2764,10 @@ Pathfinder2E.FEATS = {
   'Diehard':'Traits=General',
   'Divine Guidance':
     'Traits=General,Skill Require="level >= 15","rank.Religion >= 4"',
+  // Note: requires "trained in a skill with the Recall Knowledge action",
+  // which nominally means Arcana, Crafting, Lore, Medicine, Nature, Occultism,
+  // Religion, or Society. However, the rules discuss the GM allowing other
+  // skill, so enforcing this requirement seems unnecessary.
   'Dubious Knowledge':'Traits=General,Skill',
   'Expeditious Search':
     'Traits=General Require="level >= 7","rank.Perception >= 3"',
@@ -17084,6 +17089,14 @@ Pathfinder2E.ruleNotes = function() {
     '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
     '  taken as a free action or reaction.\n' +
+    '  </li><li>\n' +
+    '  Quilvyn does not note the Dubious Knowledge feat requirement of being ' +
+    '  trained in a skill with the Recall Knowledge action, since Recall ' +
+    '  Knowledge can potentially be used with any skill.\n' +
+    '  </li><li>\n' +
+    '  Quilvyn gives uncommon weapons an additional "Uncommon" trait; ' +
+    '  following this convention when adding homebrew weapons will help when ' +
+    '  generating random characters.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
@@ -17091,11 +17104,13 @@ Pathfinder2E.ruleNotes = function() {
     '<h3>Limitations</h3>\n' +
     '<p>\n' +
     '<ul>\n' +
-    'Quilvyn does not note the age requirement for the elven Ancestral ' +
-    'Longevity feat.\n' +
-    '</ul><ul>\n' +
-    'Quilvyn does not note the skill training requirement for the Dubious ' +
-    'Knowledge feat.\n' +
+    '  <li>\n' +
+    '  Quilvyn does not note the age requirement for the elven Ancestral ' +
+    '  Longevity feat.\n' +
+    '  </li><li>\n' +
+    '  Quilvyn does not note the skill training requirement for the Dubious ' +
+    '  Knowledge feat.\n' +
+    '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
