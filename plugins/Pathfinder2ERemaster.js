@@ -1320,8 +1320,10 @@ Pathfinder2ERemaster.FEATS = {
   'Martial Experience':'Traits=Elf Require="level >= 5"',
   'Elf Step':Pathfinder2E.FEATS['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATS['Expert Longevity'],
+  // Note: "at least one innate spell gained from an elf ancestry feat", and
+  // Otherworldly Magic is the only feat in the Player Core that does this
   'Otherworldly Acumen':
-    'Traits=Elf Require="level >= 9","hasElfFeatSpell"',
+    'Traits=Elf Require="level >= 9","features.Otherworldly Magic"',
   'Tree Climber':'Traits=Elf Require="level >= 9"',
   'Avenge Ally':'Traits=Elf,Fortune Require="level >= 13"',
   'Universal Longevity':Pathfinder2E.FEATS['Universal Longevity'],
@@ -1339,8 +1341,10 @@ Pathfinder2ERemaster.FEATS = {
   'Energized Font':Pathfinder2E.FEATS['Energized Font'],
   'Project Persona':
     'Traits=Gnome,Concentrate,Illusion,Primal,Visual Require="level >= 5"',
-  // Requires a gnome arcane or occult innate spell; it seems that Wellspring
-  // Gnome is the only way Player Core defines to obtain this
+  // Note: requires "at least one arcane or occult innate spell gained from a
+  // gnome heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
+  // Wellspring Gnome (Occult) are the only features in the Player Core that
+  // do this
   'Cautious Curiosity':
     'Traits=Gnome ' +
     'Require=' +
@@ -1349,8 +1353,10 @@ Pathfinder2ERemaster.FEATS = {
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Traits=Gnome,Move,Teleportation Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
-  // Requires a gnome arcane or occult innate spell; it seems that Wellspring
-  // Gnome is the only way Player Core defines to obtain this
+  // Note: requires "at least one arcane or occult innate spell gained from a
+  // gnome heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
+  // Wellspring Gnome (Occult) are the only features in the Player Core that
+  // do this
   'Instinctive Obfuscation':
     'Traits=Gnome,Illusion,Visual ' +
     'Require=' +
@@ -1777,7 +1783,7 @@ Pathfinder2ERemaster.FEATS = {
   'Tripkee Glide':
     'Traits=Tripkee Require="level >= 5","features.Windweb Tripkee"',
   'Vomit Stomach':'Traits=Tripkee Require="level >= 5"',
-  // TODO require "not immune to diseases or poisons"
+  // Note: requires "not immune to diseases or poisons"; no way to check this
   'Absorb Toxin':'Traits=Tripkee Require="level >= 9"',
   'Moisture Bath':'Traits=Tripkee,Manipulate Require="level >= 9"',
   'Ricocheting Leap':'Traits=Tripkee Require="level >= 9","features.Wall Jump"',
@@ -2241,7 +2247,7 @@ Pathfinder2ERemaster.FEATS = {
   'Side By Side':
     'Traits=Druid,Ranger,Archetype ' +
     'Require=' +
-      '"features.Animal Companion",' +
+      '"features.Animal Companion || features.Beastmaster Dedication",' +
       '"levels.Druid >= 10 || ' +
        'levels.Ranger >= 12 || ' +
        'druidDedicationLevel >= 20 || ' +
@@ -2680,7 +2686,7 @@ Pathfinder2ERemaster.FEATS = {
   "Companion's Cry":
     'Traits=Ranger,Archetype ' +
     'Require=' +
-      '"features.Animal Companion",' +
+      '"features.Animal Companion || features.Beastmaster Dedication",' +
       '"levels.Ranger >= 4 || ' +
        'rangerDedicationLevel >= 8 || ' +
        'beastmasterDedicationLevel >= 6"',
@@ -3199,8 +3205,14 @@ Pathfinder2ERemaster.FEATS = {
        'barbarianDedicationLevel >= 12 || ' +
        'championDedicationLevel >= 12 || ' +
        'marshalDedicationLevel >= 8"',
-  // TODO requires "instinct that allows you to change your Rage damage type"
-  'Scouring Rage':'Traits=Barbarian Require="level >= 6"',
+  // Note: requires "an instinct that allows you to change your additional
+  // damage from Rage to a different damage type", and Dragon Instinct and
+  // Spirit Instinct are the only choices from Player Core 2 that do this
+  'Scouring Rage':
+    'Traits=Barbarian ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Dragon Instinct || features.Spirit Instinct"',
   "Spirits' Interference":
     Pathfinder2E.FEATS["Spirits' Interference"]
     .replace(',Necromancy', ''),
@@ -3393,8 +3405,13 @@ Pathfinder2ERemaster.FEATS = {
   'Aura Of Faith':
     Pathfinder2E.FEATS['Aura Of Faith']
     .replace('The Tenets Of Good', 'Holy || traits.Unholy'),
-  // TODO require "champion's reaction that grants an ally resistance"
-  'Blessed Counterstrike':'Traits=Champion,Flourish Require="level >= 12"',
+  // Note: requires "champion's reaction that grants an ally resistance", and
+  // the four listed are the only ones in Player Core 2 that do this
+  'Blessed Counterstrike':
+    'Traits=Champion,Flourish ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Grandeur || features.Justice || features.Liberation || features.Redemption"',
   "Champion's Sacrifice":
     Pathfinder2E.FEATS["Champion's Sacrifice"]
     .replace('features.The Tenets Of Good', 'traits.Unholy == 0'),
@@ -3402,8 +3419,13 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Devoted Focus']
     .replace('10', '12'),
   'Divine Wall':Pathfinder2E.FEATS['Divine Wall'],
-  // TODO require "champion's reaction that grants extra damage"
-  'Gruesome Strike':'Traits=Champion Require="level >= 12"',
+  // Note: requires "champion's reaction that grants extra damage", and the
+  // three listed are the only ones in Play Core 2 that do this
+  'Gruesome Strike':
+    'Traits=Champion ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Desecration || features.Iniquity || features.Obedience"',
   'Aura Of Determination':
     'Traits=Champion Require="level >= 14","features.Champion\'s Aura"',
   'Aura Of Life':
@@ -3416,12 +3438,21 @@ Pathfinder2ERemaster.FEATS = {
   'Auspicious Mount':
     Pathfinder2E.FEATS['Auspicious Mount']
     .replace(',"features.Steed Ally"', ''),
-  // TODO require "champion's reaction that grants extra damage"
-  'Instrument Of Slaughter':'Traits=Champion Require="level >= 16"',
-  // TODO require "champion's reaction that grants an ally resistance"
+  // Note: requires "champion's reaction that grants extra damage", and the
+  // three listed are the only ones in Play Core 2 that do this
+  'Instrument Of Slaughter':
+    'Traits=Champion ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Desecration || features.Iniquity || features.Obedience"',
+  // Note: requires "champion's reaction that grants an ally resistance", and
+  // the four listed are the only ones in Player Core 2 that do this
   'Instrument Of Zeal':
     Pathfinder2E.FEATS['Instrument Of Zeal'] + ' ' +
-    'Require="level >= 16","features.Blessed Counterstrike || features.Retributive Strike"',
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Blessed Counterstrike || features.Retributive Strike",' +
+      '"features.Grandeur || features.Justice || features.Liberation || features.Redemption"',
   'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
   'Rejuvenating Touch':
     'Traits=Champion,Archetype ' +
@@ -3784,8 +3815,11 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Oracle,Cursebound,Spellshape ' +
     'Require="level >= 4","features.Reach Spell || features.Widen Spell"',
   'Thousand Visions':'Traits=Oracle,Cursebound,Prediction Require="level >= 4"',
-  // TODO requires "initial revelation spell"
-  'Advanced Revelation':'Traits=Oracle Require="level >= 6"',
+  'Advanced Revelation':
+    'Traits=Oracle ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"levels.Oracle >= 1 || features.First Revelation"',
   'Gifted Power':'Traits=Oracle Require="level >= 6"',
   'Spiritual Sense':'Traits=Oracle,Divine Require="level >= 6"',
   // Steady Spellcasting as above
@@ -3835,8 +3869,11 @@ Pathfinder2ERemaster.FEATS = {
   'Domain Fluency (Vigil)':
     'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
   'Epiphany At The Crossroads':'Traits=Oracle,Divine Require="level >= 12"',
-  // TODO require "initial revelation spell"
-  'Greater Revelation':'Traits=Oracle Require="level >= 12"',
+  'Greater Revelation':
+    'Traits=Oracle ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"levels.Oracle >= 1 || features.First Revelation"',
   // Magic Sense as above
   'Forestall Curse':'Traits=Oracle,Concentrate Require="level >= 14"',
   'Lighter Than Air':
@@ -3954,7 +3991,9 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Conduit':
     Pathfinder2E.FEATS['Bloodline Conduit']
     .replace('Metamagic', 'Spellshape'),
-  // TODO require "a bloodline based on a specific type of creature"
+  // Note: requires "a bloodline based on a specific type of creature", which
+  // probably excludes only Imperial from Player Core 2. With homebrew and
+  // supplements, it's not worth trying to enforce for a level 20 feat.
   'Bloodline Mutation':'Traits=Sorcerer Require="level >= 20"',
   'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
@@ -4419,10 +4458,12 @@ Pathfinder2ERemaster.FEATS = {
   'Specialized Beastmaster Companion':
     'Traits=Archetype ' +
     'Require="level >= 14","features.Incredible Beastmaster Companion"',
-  // TODO requires multiple companions
   'Lead The Pack':
     'Traits=Archetype,Uncommon ' +
-    'Require="level >= 16","features.Mature Beastmaster Companion"',
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Mature Beastmaster Companion",' +
+      '"features.Animal Companion || features.Additional Companion"',
 
   'Blessed One Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
   'Blessed Sacrifice':
@@ -4563,10 +4604,11 @@ Pathfinder2ERemaster.FEATS = {
   // Improved Dueling Riposte as above
   // Guiding Riposte as above
 
-  // TODO require expert in a bow or crossbow
   'Eldritch Archer Dedication':
     'Traits=Archetype,Dedication,Magical ' +
-    'Require="level >= 6"',
+    'Require=' +
+      '"level >= 6",' +
+      '"maxBowRank >= 2 || maxCrossbowRank >= 2"',
   'Basic Eldritch Archer Spellcasting':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Eldritch Archer Dedication"',
@@ -4606,10 +4648,12 @@ Pathfinder2ERemaster.FEATS = {
   'Familiar Mascot':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Familiar Master Dedication"',
-  // TODO: Requires ability to cast spells
   'Familiar Conduit':
     'Traits=Archetype,Concentrate,Spellshape ' +
-    'Require="level >= 4","features.Familiar Master Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Familiar Master Dedication",' +
+      '"canCastSpells"',
   'Improved Familiar':
     'Traits=Archetype ' +
     'Require="level >= 6","features.Familiar Master Dedication"',
@@ -12331,8 +12375,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can have a shield retain 1 Hit Point when using Shield Block would otherwise destroy it; the shield must be repaired before benefitting from Shield Salvation again"',
 
   'Beastmaster Dedication':
-    'Section=feature ' +
-    'Note="Has the Animal Companion and Call Companion features"',
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Call Companion feature",' +
+      '"Has a young animal companion"',
   'Call Companion':
     'Section=feature ' +
     'Note="1 min process makes a different animal companion active"',
@@ -16964,6 +17010,10 @@ Pathfinder2ERemaster.magicRules = function(rules, spells) {
       rules.defineRule
         ('maxSpellRank', 'spellSlots.' + t.charAt(0) + l, '^=', l);
     });
+    rules.defineRule('canCastSpells',
+      'spellDifficultyClass.' + t, '=', '1',
+      'spellDifficultyClass.' + t + ' Arcane', '=', '1'
+    );
   });
   rules.defineRule('maxSpellLevel', 'maxSpellRank', '=', null);
 };
@@ -18430,14 +18480,6 @@ Pathfinder2ERemaster.featureRules = function(
         'features.' + name, '=', '!dict.witchTraditions ? "' + trad + '" : !dict.witchTraditions.includes("' + trad + '") ? dict.witchTraditions + "; ' + trad + '" : dict.witchTraditions'
       );
     }
-    matchInfo =
-      n.match(/(arcane|divine|occult|primal|%V) innate (cantrip|hex|spell)/);
-    if(matchInfo) {
-      let allFeats = rules.getChoices('feats');
-      if(name in allFeats && 
-         QuilvynUtils.getAttrValueArray(allFeats[name], 'Traits').includes('Elf'))
-        rules.defineRule('hasElfFeatSpell', 'features.' + name, '=', '1');
-    }
     matchInfo = n.match(/^Has (\d+)'( imprecise)? scent/);
     if(matchInfo && !n.includes('during'))
       rules.defineRule
@@ -18607,6 +18649,7 @@ Pathfinder2ERemaster.weaponRules = function(
     rules.defineRule('weaponFamiliarity.' + name,
       'weaponFamiliarity.Advanced Monk Weapons', '=', null
     );
+  rules.defineRule('max' + group + 'Rank', 'weaponRank.' + name, '^=', null);
 };
 
 /* Returns the elements in a basic PF2E character editor. */
@@ -18638,23 +18681,9 @@ Pathfinder2ERemaster.ruleNotes = function() {
     '<p>\n' +
     '<ul>\n' +
     '  <li>\n' +
-    '  To simplify tracking character level, the PF2E plugin interprets the ' +
-    '  experience points entered for a character to be cumulative from ' +
-    '  initial character creation, rather than only the experience points ' +
-    '  over the amount required to advance to their current level. For ' +
-    '  example, a 5th-level character would have between 4000 and 4999 ' +
-    '  experience points.\n' +
-    '  </li><li>\n' +
-    '  Discussion of adding different types of homebrew options to the ' +
-    '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
-    '  </li><li>\n' +
-    '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
-    '  sheet to note features that require 1, 2, or 3 actions or can be ' +
-    '  taken as a free action or Reaction.\n' +
-    '  </li><li>\n' +
     '  For consistency with the features of other classes, Quilvyn gives ' +
-    '  barbarians Medium Armor Master at level 19, rather than Armor Mastery ' +
-    "  that doesn't apply to heavy armor.\n" +
+    '  barbarians the Medium Armory Mastery feature at level 19, rather than ' +
+    "  an Armor Mastery feature that doesn't apply to heavy armor.\n" +
     '  </li><li>\n' +
     '  Shattering Strike is both a Monk feat and a Weapon Improviser feat, ' +
     '  but the two have different effects. To avoid confusion, Quilvyn ' +
@@ -18667,11 +18696,13 @@ Pathfinder2ERemaster.ruleNotes = function() {
     '<h3>Limitations</h3>\n' +
     '<p>\n' +
     '<ul>\n' +
-    'Quilvyn does not note the age requirement for the elven Ancestral ' +
-    'Longevity feat.\n' +
-    '</ul><ul>\n' +
-    'Quilvyn does not note the skill training requirement for the Dubious ' +
-    'Knowledge feat.\n' +
+    '  <li>\n' +
+    '  Quilvyn does not note the Bloodline Mutation feat requirement of ' +
+    '  having a bloodline based on a specific type of creature.\n' +
+    '  </li><li>\n' +
+    '  Quilvyn does not note the Absorb Toxin feat requirement of not being ' +
+    '  immune to diseases or poisons.\n' +
+    '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
