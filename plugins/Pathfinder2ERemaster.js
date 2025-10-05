@@ -1335,7 +1335,8 @@ Pathfinder2ERemaster.FEATS = {
   'Animal Elocutionist':Pathfinder2E.FEATS['Burrow Elocutionist'],
   'Fey Fellowship':Pathfinder2E.FEATS['Fey Fellowship'],
   'First World Magic':Pathfinder2E.FEATS['First World Magic'],
-  'Gnome Obsession':Pathfinder2E.FEATS['Gnome Obsession'],
+  // Changed parameterization
+  'Gnome Obsession (%lore)':'Traits=Gnome',
   'Gnome Weapon Familiarity':Pathfinder2E.FEATS['Gnome Weapon Familiarity'],
   'Illusion Sense':Pathfinder2E.FEATS['Illusion Sense'],
   'Razzle-Dazzle':'Traits=Gnome',
@@ -1398,8 +1399,7 @@ Pathfinder2ERemaster.FEATS = {
   'Titan Slinger':Pathfinder2E.FEATS['Titan Slinger'],
   'Unfettered Halfling':Pathfinder2E.FEATS['Unfettered Halfling'],
   'Watchful Halfling':Pathfinder2E.FEATS['Watchful Halfling'],
-  'Cultural Adaptability (%ancestry)':
-    Pathfinder2E.FEATS['Cultural Adaptability (%ancestry)'],
+  'Cultural Adaptability':Pathfinder2E.FEATS['Cultural Adaptability'],
   'Step Lively':'Traits=Halfling Require="level >= 5"',
   'Dance Underfoot':
     'Traits=Halfling Require="level >= 9","features.Step Lively"',
@@ -5641,13 +5641,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can speak with animals and gains +1 to Make An Impression on them"',
   'Fey Fellowship':Pathfinder2E.FEATURES['Fey Fellowship'],
   'First World Magic':Pathfinder2E.FEATURES['First World Magic'],
-  // Changed
-  'Gnome Obsession':
+  // Changed parameterization and effects
+  'Gnome Obsession (%lore)':
     'Section=feature,skill ' +
     'Note=' +
-      // Note: should be Assurance for the chosen lore; dunno how to do this
-      '"Skill Feat (Choose 1 from any Additional Lore; Choose 1 from any Assurance)",' +
-      '"Can use 1 day of downtime to change the chosen Gnome Obsession skill"',
+      '"Has the Additional Lore (%lore) and Assurance (%lore) features",' +
+      '"Can use 1 day of downtime to change to a different lore"',
   // Changed
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
@@ -5781,8 +5780,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Watchful Halfling':
     Pathfinder2E.FEATURES['Watchful Halfling']
     .replace('-2', '+0'),
-  'Cultural Adaptability (%ancestry)':
-    Pathfinder2E.FEATURES['Cultural Adaptability (%ancestry)'],
+  'Cultural Adaptability':Pathfinder2E.FEATURES['Cultural Adaptability'],
   'Step Lively':
     'Action=Reaction ' +
     'Section=combat ' +

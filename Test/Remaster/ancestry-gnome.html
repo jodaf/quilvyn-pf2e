@@ -12,7 +12,7 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Gnome", "ancestryFeats.Animal Accomplice":1, 
   "ancestryFeats.Animal Elocutionist":1, "ancestryFeats.Cautious Curiosity":1, "ancestryFeats.Energized Font":1, 
   "ancestryFeats.Fey Fellowship":1, "ancestryFeats.First World Adept":1, "ancestryFeats.First World Magic":1, 
-  "ancestryFeats.Gnome Obsession":1, "ancestryFeats.Gnome Weapon Familiarity":1, 
+  "ancestryFeats.Gnome Obsession (Vampire Lore)":1, "ancestryFeats.Gnome Weapon Familiarity":1, 
   "ancestryFeats.Homeward Bound":1, "ancestryFeats.Illusion Sense":1, "ancestryFeats.Instinctive Obfuscation":1, 
   "ancestryFeats.Life Leap":1, "ancestryFeats.Project Persona":1, "ancestryFeats.Razzle-Dazzle":1, 
   "ancestryFeats.Vivacious Conduit":1, "armor":"Breastplate", "background":"Acolyte", "class":"Fighter", 
@@ -79,14 +79,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry; Class; Skill</td>
+        <td><b>Feat Count</b>: Ancestry; Class</td>
         <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Gnome (Heritage); Gnome (Wellspring)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Abadar Lore); Animal Accomplice; Animal Elocutionist; Assurance (Abadar Lore); Cautious Curiosity; Energized Font; Exacting Strike; Fey Fellowship; First World Adept; First World Magic; Gnome Obsession; Gnome Weapon Familiarity; Homeward Bound; Illusion Sense; Instinctive Obfuscation; Life Leap; Project Persona; Razzle-Dazzle; Vivacious Conduit</td>
+        <td><b>Feats</b>: Additional Lore (Abadar Lore); Animal Accomplice; Animal Elocutionist; Assurance (Abadar Lore); Cautious Curiosity; Energized Font; Exacting Strike; Fey Fellowship; First World Adept; First World Magic; Gnome Obsession (Vampire Lore); Gnome Weapon Familiarity; Homeward Bound; Illusion Sense; Instinctive Obfuscation; Life Leap; Project Persona; Razzle-Dazzle; Vivacious Conduit</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Gnome Features</b>: Ancestry Feats; Arcane Wellspring; Attribute Boost (Charisma; Constitution; Choose 1 from any); Attribute Flaw (Strength); Chameleon Gnome; Fey-Touched Gnome; Gnome Heritage; Low-Light Vision; Sensate Gnome; Small; Umbral Gnome; Wellspring Gnome</td>
@@ -105,7 +105,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Gnome Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Gnome Obsession: Skill Feat (Choose 1 from any Additional Lore; Choose 1 from any Assurance)</i></td>
+        <td><i>Gnome Obsession (Vampire Lore): Has the Additional Lore (Vampire Lore) and Assurance (Vampire Lore) features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Umbral Gnome: Has the Darkvision feature</i></td>
       </tr><tr style="text-align:center">
@@ -133,32 +133,36 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Abadar Lore: +4 (intelligence; trained)</td>
-      <td>Deception: +2 (charisma; untrained)</td>
-      <td>Religion: +4 (wisdom; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Acrobatics: +1 (dexterity; untrained)</td>
       <td>Diplomacy: +2 (charisma; untrained)</td>
-      <td>Scribing Lore: +4 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Arcana: +1 (intelligence; untrained)</td>
-      <td>Intimidation: +2 (charisma; untrained)</td>
       <td>Society: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Architecture Lore: +4 (intelligence; trained)</td>
-      <td>Medicine: +1 (wisdom; untrained)</td>
+      <td>Acrobatics: +1 (dexterity; untrained)</td>
+      <td>Intimidation: +2 (charisma; untrained)</td>
       <td>Stealth: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +1 (strength; trained)</td>
-      <td>Nature: +1 (wisdom; untrained)</td>
+      <td>Arcana: +1 (intelligence; untrained)</td>
+      <td>Medicine: +1 (wisdom; untrained)</td>
       <td>Survival: +1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Cavern Lore: +4 (intelligence; trained)</td>
-      <td>Occultism: +1 (intelligence; untrained)</td>
+      <td>Architecture Lore: +4 (intelligence; trained)</td>
+      <td>Nature: +1 (wisdom; untrained)</td>
       <td>Thievery: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +1 (intelligence; untrained)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
+      <td>Athletics: +1 (strength; trained)</td>
+      <td>Occultism: +1 (intelligence; untrained)</td>
       <td>Underground Lore: +4 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Cavern Lore: +4 (intelligence; trained)</td>
+      <td>Performance: +2 (charisma; untrained)</td>
+      <td>Vampire Lore: +4 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Crafting: +1 (intelligence; untrained)</td>
+      <td>Religion: +4 (wisdom; trained)</td>
+      <td></td>
+    </tr><tr style="text-align:left">
+      <td>Deception: +2 (charisma; untrained)</td>
+      <td>Scribing Lore: +4 (intelligence; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -167,6 +171,8 @@ var attributes = {
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Additional Lore (Abadar Lore): Skill Trained (Abadar Lore)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Additional Lore (Vampire Lore): Skill Trained (Vampire Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Armor Skill Penalty: -2 strength and dexterity skills</i></td>
     </tr><tr style="text-align:center">
@@ -178,11 +184,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Abadar Lore): Can take an automatic 13 on Abadar Lore checks</td>
     </tr><tr style="text-align:center">
+      <td>Assurance (Vampire Lore): Can take an automatic 13 on Vampire Lore checks</td>
+    </tr><tr style="text-align:center">
       <td>Chameleon Gnome: <b>(1)</b> Gains +2 Stealth until surroundings change</td>
     </tr><tr style="text-align:center">
       <td>Fey Fellowship: +2 Perception (fey)/Can make a -5 Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation</td>
     </tr><tr style="text-align:center">
-      <td>Gnome Obsession: Can use 1 day of downtime to change the chosen Gnome Obsession skill</td>
+      <td>Gnome Obsession (Vampire Lore): Can use 1 day of downtime to change to a different lore</td>
     </tr><tr style="text-align:center">
       <td>Illusion Sense: +1 Perception (illusions)</td>
     </tr><tr style="text-align:center">
@@ -323,7 +331,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>First World Adept Feat: Requires level (currently 1) >= 9 and primal innate rank (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 1 available vs. 2 allocated</td>
+        <td>General And Skill Feat Allocation: 0 available vs. 2 allocated</td>
       </tr><tr style="text-align:center">
         <td>Gnome Heritage Allocation: 1 available vs. 5 allocated</td>
       </tr><tr style="text-align:center">
