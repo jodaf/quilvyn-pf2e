@@ -93,7 +93,7 @@ Pathfinder2E.RANK_NAMES =
   ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
 /* List of choices that can be expanded by house rules. */
-// Note: Left Goody out of this list for now because inclusion would require
+// NOTE: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
   'Ancestry', 'Ancestry Feature', 'Armor', 'Background', 'Background Feature',
@@ -1022,7 +1022,7 @@ Pathfinder2E.FEATS = {
     'Traits=Dwarf Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
   // Elf
-  // Note: requires "at least 100 years old"; no way to determine this
+  // NOTE: requires "at least 100 years old"; no way to determine this
   'Ancestral Longevity':'Traits=Elf',
   'Elven Lore':'Traits=Elf',
   'Elven Weapon Familiarity':'Traits=Elf',
@@ -1095,8 +1095,7 @@ Pathfinder2E.FEATS = {
   'Titan Slinger':'Traits=Halfling',
   'Unfettered Halfling':'Traits=Halfling',
   'Watchful Halfling':'Traits=Halfling',
-  // Note: Cultural Adaptability (Halfling) seems useless but not forbidden
-  'Cultural Adaptability (%ancestry)':'Traits=Halfling Require="level >= 5"',
+  'Cultural Adaptability':'Traits=Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
     'Traits=Halfling ' +
     'Require="level >= 5","features.Halfling Weapon Familiarity"',
@@ -2219,7 +2218,8 @@ Pathfinder2E.FEATS = {
       '"level >= 12",' +
       '"features.Bloodline Spells || features.Basic Bloodline Spell"',
   'Magic Sense':
-    // Note: for sorcerers, Arcane is replaced by the bloodline tradition
+    // For sorcerers, Arcane should be replaced by the bloodline tradition, but
+    // the change makes no difference
     'Traits=Sorcerer,Wizard,Arcane,Detection,Divination ' +
     'Require="level >= 12"',
   'Interweave Dispel':
@@ -2764,10 +2764,10 @@ Pathfinder2E.FEATS = {
   'Diehard':'Traits=General',
   'Divine Guidance':
     'Traits=General,Skill Require="level >= 15","rank.Religion >= 4"',
-  // Note: requires "trained in a skill with the Recall Knowledge action",
+  // NOTE: requires "trained in a skill with the Recall Knowledge action",
   // which nominally means Arcana, Crafting, Lore, Medicine, Nature, Occultism,
   // Religion, or Society. However, the rules discuss the GM allowing other
-  // skill, so enforcing this requirement seems unnecessary.
+  // skills, so enforcing this requirement seems unnecessary.
   'Dubious Knowledge':'Traits=General,Skill',
   'Expeditious Search':
     'Traits=General Require="level >= 7","rank.Perception >= 3"',
@@ -3131,11 +3131,60 @@ Pathfinder2E.FEATURES = {
       '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation"',
   'First World Magic':
     'Section=magic Note="Can cast a chosen %V innate cantrip at will"',
-  'Gnome Obsession':
+  'Gnome Obsession':'Section=skill Note="Skill %V (Choose 1 from any Lore)"',
+  'Gnome Obsession (Acolyte)':'Section=skill Note="Skill %V (Scribing Lore)"',
+  'Gnome Obsession (Acrobat)':'Section=skill Note="Skill %V (Circus Lore)"',
+  'Gnome Obsession (Animal Whisperer)':
+    'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
+  'Gnome Obsession (Artisan)':'Section=skill Note="Skill %V (Art Lore)"',
+  'Gnome Obsession (Barkeep)':'Section=skill Note="Skill %V (Alcohol Lore)"',
+  'Gnome Obsession (Barrister)':'Section=skill Note="Skill %V (Legal Lore)"',
+  'Gnome Obsession (Bounty Hunter)':
+    'Section=skill Note="Skill %V (Legal Lore)"',
+  'Gnome Obsession (Charlatan)':
+    'Section=skill Note="Skill %V (Underworld Lore)"',
+  'Gnome Obsession (Criminal)':
+    'Section=skill Note="Skill %V (Underworld Lore)"',
+  'Gnome Obsession (Detective)':
+    'Section=skill Note="Skill %V (Underworld Lore)"',
+  'Gnome Obsession (Emissary)':
+    'Section=skill Note="Skill %V (Choose 1 from any Settlement Lore)"',
+  'Gnome Obsession (Entertainer)':
+    'Section=skill Note="Skill %V (Theater Lore)"',
+  'Gnome Obsession (Farmhand)':'Section=skill Note="Skill %V (Farming Lore)"',
+  'Gnome Obsession (Field Medic)':
+    'Section=skill Note="Skill %V (Warfare Lore)"',
+  'Gnome Obsession (Field Medic)':
+    'Section=skill Note="Skill %V (Fortune-Telling Lore)"',
+  'Gnome Obsession (Gambler)':'Section=skill Note="Skill %V (Games Lore)"',
+  'Gnome Obsession (Gladiator)':
+    'Section=skill Note="Skill %V (Gladitorial Lore)"',
+  'Gnome Obsession (Guard)':
+    'Section=skill Note="Skill %V (Choose 1 from Legal Lore, Warfare Lore)"',
+  'Gnome Obsession (Herbalist)':
+    'Section=skill Note="Skill %V (Herbalism Lore)"',
+  'Gnome Obsession (Hermit)':
+    'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
+  'Gnome Obsession (Hunter)':'Section=skill Note="Skill %V (Tanning Lore)"',
+  'Gnome Obsession (Laborer)':'Section=skill Note="Skill %V (Laborer Lore)"',
+  'Gnome Obsession (Martial Disciple)':
+    'Section=skill Note="Skill %V (Warfare Lore)"',
+  'Gnome Obsession (Merchant)':
+    'Section=skill Note="Skill %V (Mercantile Lore)"',
+  'Gnome Obsession (Miner)':'Section=skill Note="Skill %V (Mining Lore)"',
+  'Gnome Obsession (Noble)':
     'Section=skill ' +
-    // NOTE: would like to replace "background Lore skill" with the actual
-    // skill, but backgrounds that allow a choice of skills make this difficult
-    'Note="Skill %V (Choose 1 from any Lore; background Lore skill)"',
+    'Note="Skill %V (Choose 1 from Genealogy Lore, Heraldry Lore)"',
+  'Gnome Obsession (Nomad)':
+    'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
+  'Gnome Obsession (Prisoner)':
+    'Section=skill Note="Skill %V (Underworld Lore)"',
+  'Gnome Obsession (Sailor)':'Section=skill Note="Skill %V (Sailing Lore)"',
+  'Gnome Obsession (Scholar)':'Section=skill Note="Skill %V (Academia Lore)"',
+  'Gnome Obsession (Street Urchin)':
+    'Section=skill Note="Skill %V (Choose 1 from any Settlement Lore)"',
+  'Gnome Obsession (Tinker)':'Section=skill Note="Skill %V (Engineering Lore)"',
+  'Gnome Obsession (Warrior)':'Section=skill Note="Skill %V (Warfare Lore)"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3277,9 +3326,9 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Can use Aid to help another overcome enchantment or possession",' +
       '"+2 Sense Motive to notice enchantment or possession, and automatically attempts a -2 check to notice these"',
-  'Cultural Adaptability (%ancestry)':
+  'Cultural Adaptability':
     'Section=feature ' +
-    'Note="Ancestry Feat (Choose 1 from any %ancestry)/Has the Adopted Ancestry (%ancestry) feature"',
+    'Note="General Feat (Choose 1 from any Adopted Ancestry)/Ancestry Feat (Choose 1 from any)"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
@@ -5332,10 +5381,10 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn"',
-  // Note: AWT should affect only advanced weapons--not both advanced and
-  // martial weapons as Weapon Familiarity indicates. But as a fighter feat,
-  // we're assured that anyone with AWT already has equal proficiency in
-  // martial and simple weapons, so the effect is harmless.
+  // AWT should affect only advanced weapons--not both advanced and martial
+  // weapons as Weapon Familiarity indicates. But as a fighter feat, we're
+  // assured that anyone with AWT already has equal proficiency in martial and
+  // simple weapons, so the effect is harmless.
   'Advanced Weapon Training (%weaponGroup)':
     'Section=combat Note="Weapon Familiarity (%weaponGroup)"',
   'Advantageous Assault':
@@ -5613,8 +5662,8 @@ Pathfinder2E.FEATURES = {
   'Monastic Weaponry':
     'Section=combat,combat ' +
     'Note=' +
-      // Note: actually applies only to simple and martial monk weapons, but
-      // all monk weapons in the core book fall into these categories
+      // This should apply only to simple and martial monk weapons, but all
+      // monk weapons in the core rules fall into these categories
       '"Attack %V (Monk Weapons)",' +
       '"Has access to uncommon monk weapons/Can use monk melee weapons with unarmed attack features"',
   'Mountain Stance':
@@ -6930,7 +6979,6 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Champion up to level 2)"',
   'Champion Resiliency':'Section=combat Note="+%V Hit Points"',
-  // NOTE: Might not be Lay On Hands for other causes
   'Healing Touch':
     'Section=magic ' +
     'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
@@ -14048,8 +14096,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Draconic (Silver)', '=', '"Silver"',
       'features.Draconic (White)', '=', '"White"'
     );
-    // NOTE: using '' instead of classLevel allows Simple Weapons to be the
-    // default for, e.g., homebrew classes
+    // Using '' instead of classLevel allows Simple Weapons to be the default
+    // for, e.g., homebrew classes
     rules.defineRule
       ('combatNotes.weaponExpertise', '', '=', '"Simple Weapons"');
     rules.defineRule('magicNotes.divineEvolution', 'maxSpellLevel', '=', null);
@@ -14810,6 +14858,16 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
+    for(let b in rules.getChoices('backgrounds')) {
+      rules.defineRule('features.Gnome Obsession (' + b + ')',
+        'features.Gnome Obsession', '?', null,
+        b.charAt(0).toLowerCase() + b.substring(1).replaceAll(' ', '') + 'Level', '=', 'source >= 2 ? 1 : null'
+      );
+      rules.defineRule('skillNotes.gnomeObsession(' + b.replaceAll(' ', '') + ')',
+        'features.Gnome Obsession (' + b + ')', '?', null,
+        'skillNotes.gnomeObsession', '=', null
+      );
+    }
   } else if(name.match(/^(Greater|True) Debilitating Bomb/)) {
     rules.defineRule('combatNotes.debilitatingBomb',
       'combatNotes.' + prefix, '=', 'null' // italics
@@ -14957,7 +15015,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('features.Ranger Key Ability', 'features.Ranger Dedication', '=', '1');
   } else if(name == 'Rogue Dedication') {
-    // NOTE: key ability for Rogue Dedication is always Dexterity--no racket.
+    // Key ability for Rogue Dedication is always Dexterity--no racket.
     rules.defineRule('classDifficultyClass.Rogue',
       'features.Rogue Dedication', '+', '10 + dict["dexterityModifier"]'
     );
@@ -17090,10 +17148,6 @@ Pathfinder2E.ruleNotes = function() {
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
     '  taken as a free action or reaction.\n' +
     '  </li><li>\n' +
-    '  Quilvyn does not note the Dubious Knowledge feat requirement of being ' +
-    '  trained in a skill with the Recall Knowledge action, since Recall ' +
-    '  Knowledge can potentially be used with any skill.\n' +
-    '  </li><li>\n' +
     '  Quilvyn gives uncommon weapons an additional "Uncommon" trait; ' +
     '  following this convention when adding homebrew weapons will help when ' +
     '  generating random characters.\n' +
@@ -17108,8 +17162,9 @@ Pathfinder2E.ruleNotes = function() {
     '  Quilvyn does not note the age requirement for the elven Ancestral ' +
     '  Longevity feat.\n' +
     '  </li><li>\n' +
-    '  Quilvyn does not note the skill training requirement for the Dubious ' +
-    '  Knowledge feat.\n' +
+    '  Quilvyn does not note the Dubious Knowledge feat requirement of being ' +
+    '  trained in a skill with the Recall Knowledge action, since Recall ' +
+    '  Knowledge potentially can be used with any skill.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
