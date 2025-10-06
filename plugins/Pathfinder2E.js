@@ -3136,7 +3136,8 @@ Pathfinder2E.FEATURES = {
   'Gnome Obsession (Acrobat)':'Section=skill Note="Skill %V (Circus Lore)"',
   'Gnome Obsession (Animal Whisperer)':
     'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
-  'Gnome Obsession (Artisan)':'Section=skill Note="Skill %V (Art Lore)"',
+  'Gnome Obsession (Artisan)':'Section=skill Note="Skill %V (Guild Lore)"',
+  'Gnome Obsession (Artist)':'Section=skill Note="Skill %V (Art Lore)"',
   'Gnome Obsession (Barkeep)':'Section=skill Note="Skill %V (Alcohol Lore)"',
   'Gnome Obsession (Barrister)':'Section=skill Note="Skill %V (Legal Lore)"',
   'Gnome Obsession (Bounty Hunter)':
@@ -3166,7 +3167,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Obsession (Hermit)':
     'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
   'Gnome Obsession (Hunter)':'Section=skill Note="Skill %V (Tanning Lore)"',
-  'Gnome Obsession (Laborer)':'Section=skill Note="Skill %V (Laborer Lore)"',
+  'Gnome Obsession (Laborer)':'Section=skill Note="Skill %V (Labor Lore)"',
   'Gnome Obsession (Martial Disciple)':
     'Section=skill Note="Skill %V (Warfare Lore)"',
   'Gnome Obsession (Merchant)':
@@ -3181,6 +3182,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Skill %V (Underworld Lore)"',
   'Gnome Obsession (Sailor)':'Section=skill Note="Skill %V (Sailing Lore)"',
   'Gnome Obsession (Scholar)':'Section=skill Note="Skill %V (Academia Lore)"',
+  'Gnome Obsession (Scout)':
+    'Section=skill Note="Skill %V (Choose 1 from any Terrain Lore)"',
   'Gnome Obsession (Street Urchin)':
     'Section=skill Note="Skill %V (Choose 1 from any Settlement Lore)"',
   'Gnome Obsession (Tinker)':'Section=skill Note="Skill %V (Engineering Lore)"',
@@ -14656,7 +14659,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('trainingLevel.' + target, note, '^=', 'source=="Expert" ? 2 : 3');
   } else if(name == 'Champion Dedication') {
-    // Suppress validation errors for selected cause and key ability and the
+    // Suppress validation errors for selected key ability and cause and the
     // cause and deity notes that don't come with Champion Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
@@ -14683,9 +14686,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == "Champion's Reaction") {
     // Extend test rules to allow characters with the Champion's Reaction
     // archetype feature to acquire Champion Reactions.
-    // NOTE: Because this code is run only when the feat is processed, any
-    // homebrew Reactions will still generate validation errors if selected by
-    // a non-champion.
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
       Object.keys(allSelectables)
