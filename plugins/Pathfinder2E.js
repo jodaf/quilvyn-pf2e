@@ -578,9 +578,6 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -4189,20 +4186,23 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Gives an ally resistance %{2+level} to any triggering damage and free actions to Escape or to save from a restraint and to Step"',
   'Liberator':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
       '"Must respect others\' freedom and oppose tyranny",' +
+      '"Has the Liberating Step feature",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
       '"Must always act with honor and respect lawful authority",' +
+      '"Has the Retributive Strike feature",' +
       '"Knows the Lay On Hands divine spell"',
   'Redeemer':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
+      '"Has the Glimpse Of Redemption feature",' +
       '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
     'Action=Reaction ' +
@@ -14681,27 +14681,10 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('validationNotes.champion-' + condensed + 'SelectableFeature',
         'featureNotes.championDedication', '+', '1'
       );
-      rules.defineRule('magicNotes.' + noteName, 'levels.Champion', '?', null);
-    });
-  } else if(name == "Champion's Reaction") {
-    // Extend test rules to allow characters with the Champion's Reaction
-    // archetype feature to acquire Champion Reactions.
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let causes =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Cause)'))
-      .map(x => x.replace('Champion - ', ''));
-    let reactions =
-      QuilvynUtils.getAttrValueArray
-        (rules.getChoices('levels').Champion, 'Features')
-        .filter(x => x.match(new RegExp('features.(' + causes.join('|') + ')\\s*\\?\\s*(1:)?[A-Z]')))
-        .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
-    reactions.forEach(r => {
-      rules.defineRule
-        ('championFeatures.' + r, "featureNotes.champion'sReaction", '=', '1');
-      rules.defineRule('testNotes.championFeatures.' + r,
-        "featureNotes.champion'sReaction", '=', '-1'
+      rules.defineRule('featureNotes.' + noteName + '-1',
+        "features.Champion's Reaction", '?', null
       );
+      rules.defineRule('magicNotes.' + noteName, 'levels.Champion', '?', null);
     });
   } else if(name == 'Cleric Dedication') {
     rules.defineRule('spellModifier.' + name,
