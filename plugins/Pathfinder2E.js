@@ -222,7 +222,6 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Half-Orc:Heritage",' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
-    // Errata gives humans an additional language
     'Languages=Common,any ' +
     'Traits=Humanoid,Human'
 };
@@ -328,7 +327,6 @@ Pathfinder2E.BACKGROUNDS = {
   'Field Medic':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      // Errata corrects Battle Medic to Battle Medicine
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
@@ -1033,7 +1031,6 @@ Pathfinder2E.FEATS = {
   'Elf Step':'Traits=Elf Require="level >= 9"',
   'Expert Longevity':
     'Traits=Elf Require="level >= 9","features.Ancestral Longevity"',
-  // Errata changes Expert Longevity to Ancestral Longevity
   'Universal Longevity':
     'Traits=Elf Require="level >= 13","features.Ancestral Longevity"',
   'Elven Weapon Expertise':
@@ -1221,26 +1218,21 @@ Pathfinder2E.FEATS = {
   'Swipe':'Traits=Barbarian,Fighter,Flourish Require="level >= 4"',
   // Errata removes Rage trait
   'Wounded Rage':'Traits=Barbarian Require="level >= 4"',
-  // Instinct trait missing from Nethys
   'Animal Skin':
     'Traits=Barbarian,Morph,Primal,Transmutation ' +
     'Require="level >= 6","features.Animal Instinct"',
   'Attack Of Opportunity':'Traits=Barbarian,Champion Require="level >= 6"',
   'Brutal Bully':'Traits=Barbarian Require="level >= 6","rank.Athletics >= 2"',
   'Cleave':'Traits=Barbarian,Rage Require="level >= 6"',
-  // Instinct trait missing from Nethys
   "Dragon's Rage Breath":
     'Traits=Barbarian,Arcane,Concentrate,Evocation,Rage ' +
     'Require="level >= 6","features.Dragon Instinct"',
-  // Instinct trait missing from Nethys
   "Giant's Stature":
     'Traits=Barbarian,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 6","features.Giant Instinct"',
-  // Instinct trait missing from Nethys
   "Spirits' Interference":
     'Traits=Barbarian,Divine,Necromancy,Rage ' +
     'Require="level >= 6","features.Spirit Instinct"',
-  // Instinct trait missing from Nethys
   'Animal Rage':
     'Traits=Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 8","features.Animal Instinct"',
@@ -1257,20 +1249,16 @@ Pathfinder2E.FEATS = {
   'Terrifying Howl':
     'Traits=Barbarian,Auditory,Rage ' +
     'Require="level >= 10","features.Intimidating Glare"',
-  // Instinct trait missing from Nethys
   "Dragon's Rage Wings":
     'Traits=Barbarian,Morph,Primal,Rage,Transmutation ' +
     'Require="level >= 12","features.Dragon Instinct"',
   'Furious Grab':'Traits=Barbarian,Rage Require="level >= 12"',
-  // Instinct trait missing from Nethys
   "Predator's Pounce":
     'Traits=Barbarian,Flourish,Open,Rage ' +
     'Require="level >= 12","features.Animal Instinct"',
-  // Instinct trait missing from Nethys
   "Spirit's Wrath":
     'Traits=Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Spirit Instinct"',
-  // Instinct trait missing from Nethys
   "Titan's Stature":
     'Traits=Barbarian,Polymorph,Transmutation ' +
     'Require=' +
@@ -1280,7 +1268,6 @@ Pathfinder2E.FEATS = {
   'Awesome Blow':
     'Traits=Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Knockback"',
-  // Instinct trait missing from Nethys
   "Giant's Lunge":
     'Traits=Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Giant Instinct"',
@@ -1291,7 +1278,6 @@ Pathfinder2E.FEATS = {
     'Traits=Barbarian,Fighter,Flourish,Open Require="level >= 14"',
   'Collateral Thrash':
     'Traits=Barbarian,Rage Require="level >= 16","features.Thrash"',
-  // Instinct trait missing from Nethys
   'Dragon Transformation':
     'Traits=Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require=' +
@@ -1438,13 +1424,11 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 6",' +
       '"features.Blade Ally",' +
-      // Errata adds The Tenets Of Good
       '"features.The Tenets Of Good"',
   "Advanced Deity's Domain (%domain)":
     'Traits=Champion Require="level >= 8","features.Deity\'s Domain (%domain)"',
   'Greater Mercy':'Traits=Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':'Traits=Champion Require="level >= 8","features.Steed Ally"',
-  // Errata renames Quick Block to Quick Shield Block and adds a prereq
   'Quick Shield Block':
     'Traits=Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
@@ -1478,7 +1462,6 @@ Pathfinder2E.FEATS = {
   'Affliction Mercy':'Traits=Champion Require="level >= 12","features.Mercy"',
   'Aura Of Faith':
     'Traits=Champion Require="level >= 12","features.The Tenets Of Good"',
-  // Errata changes Paladin requirement to The Tenets Of Good
   'Blade Of Justice':
     'Traits=Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
@@ -1534,7 +1517,6 @@ Pathfinder2E.FEATS = {
     'Traits=Champion Require="level >= 20","features.Shield Ally"',
 
   // Cleric
-  // Errata allows Unarmed
   'Deadly Simplicity':
     'Traits=Cleric ' +
     'Require=' +
@@ -1732,10 +1714,8 @@ Pathfinder2E.FEATS = {
   'Perfect Form Control':
     'Traits=Druid ' +
     'Require="level >= 18","features.Form Control","strengthModifier >= 4"',
-  // Errata corrects Wild Focus to Primal Focus
   'Primal Wellspring':
     'Traits=Druid Require="level >= 18","features.Primal Focus"',
-  // Errata removes legendary Nature requirement
   "Hierophant's Power":'Traits=Druid Require="level >= 20"',
   'Leyline Conduit':
     'Traits=Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
@@ -1752,7 +1732,6 @@ Pathfinder2E.FEATS = {
   'Snagging Strike':'Traits=Fighter',
   // Sudden Charge as above
   'Aggressive Block':'Traits=Fighter Require="level >= 2"',
-  // Errata adds Press trait
   'Assisting Shot':'Traits=Fighter,Press Require="level >= 2"',
   'Brutish Shove':'Traits=Fighter,Press Require="level >= 2"',
   'Combat Grab':'Traits=Fighter,Press Require="level >= 2"',
@@ -1796,7 +1775,7 @@ Pathfinder2E.FEATS = {
   'Incredible Aim':'Traits=Fighter,Concentrate Require="level >= 8"',
   'Mobile Shot Stance':'Traits=Fighter,Stance Require="level >= 8"',
   'Positioning Assault':'Traits=Fighter,Flourish Require="level >= 8"',
-  // Quick Shield Block as above; errata drops the Reactive Shield prereq
+  // Quick Shield Block as above
   // Sudden Leap as above
   'Agile Grace':'Traits=Fighter Require="level >= 10"',
   'Certain Strike':'Traits=Fighter,Press Require="level >= 10"',
@@ -1836,6 +1815,7 @@ Pathfinder2E.FEATS = {
   'Guiding Finish':'Traits=Fighter,Press Require="level >= 14"',
   'Guiding Riposte':
     'Traits=Fighter Require="level >= 14","features.Dueling Riposte"',
+  // Nethys adds Twin Riposte requirement for Ranger
   'Improved Twin Riposte':
     'Traits=Fighter,Ranger ' +
     'Require=' +
@@ -1906,7 +1886,6 @@ Pathfinder2E.FEATS = {
   'Wall Run':'Traits=Monk Require="level >= 8"',
   'Wild Winds Initiate':'Traits=Monk Require="level >= 8","features.Ki Spells"',
   'Knockback Strike':'Traits=Monk,Concentrate Require="level >= 10"',
-  // Errata removes the Attack trait
   'Sleeper Hold':'Traits=Monk,Incapacitation Require="level >= 10"',
   'Wind Jump':'Traits=Monk Require="level >= 10","features.Ki Spells"',
   'Winding Flow':'Traits=Monk Require="level >= 10"',
@@ -1927,7 +1906,6 @@ Pathfinder2E.FEATS = {
   'Wild Winds Gust':
     'Traits=Monk,Air,Concentrate,Evocation,Manipulate ' +
     'Require="level >= 14","features.Wild Winds Initiate"',
-  // Errata adds Aura trait
   'Enlightened Presence':
     'Traits=Monk,Aura,Emotion,Mental Require="level >= 16"',
   'Master Of Many Styles':
@@ -1996,7 +1974,6 @@ Pathfinder2E.FEATS = {
       '"features.Snare Specialist"',
   'Terrain Master':
     'Traits=Ranger ' +
-    // Errata removes Wild Stride
     'Require=' +
       '"level >= 8",' +
       '"rank.Survival >= 3",' +
@@ -2017,7 +1994,6 @@ Pathfinder2E.FEATS = {
   'Double Prey':'Traits=Ranger Require="level >= 12"',
   'Lightning Snares':
     'Traits=Ranger ' +
-    // Errata adds Quick Snares
     'Require=' +
       '"level >= 12",' +
       '"rank.Crafting >= 3",' +
@@ -2034,7 +2010,6 @@ Pathfinder2E.FEATS = {
       '"features.Warden\'s Boon"',
   'Stealthy Companion':
     'Traits=Ranger ' +
-    // Errata adds Animal Companion
     'Require=' +
       '"level >= 14",' +
       '"features.Animal Companion",' +
@@ -2045,7 +2020,7 @@ Pathfinder2E.FEATS = {
   "Warden's Guidance":'Traits=Ranger Require="level >= 14"',
   'Greater Distracting Shot':
     'Traits=Ranger Require="level >= 16","features.Distracting Shot"',
-  // Improved Twin Riposte as above; Nethys adds Twin Riposte requirement
+  // Improved Twin Riposte as above
   'Legendary Monster Hunter':
     'Traits=Ranger ' +
     'Require=' +
@@ -2056,7 +2031,7 @@ Pathfinder2E.FEATS = {
   'Ubiquitous Snares':
     'Traits=Ranger Require="level >= 16","features.Snare Specialist"',
   'Impossible Flurry':'Traits=Ranger,Flourish,Open Require="level >= 18"',
-  // Impossible Volley as above; errata adds Flourish and Open traits
+  // Impossible Volley as above
   'Manifold Edge':
     'Traits=Ranger ' +
     'Require=' +
@@ -2173,8 +2148,10 @@ Pathfinder2E.FEATS = {
       '"features.Perfect Distraction"',
 
   // Sorcerer
-  // Nethys adds Arcane
-  'Counterspell':'Traits=Sorcerer,Wizard,Abjuration,Arcane',
+  'Counterspell':
+    // For sorcerers, Arcane should be replaced by the bloodline tradition, but
+    // the change makes no difference
+    'Traits=Sorcerer,Wizard,Abjuration,Arcane',
   'Dangerous Sorcery':'Traits=Sorcerer',
   'Familiar':'Traits=Sorcerer,Wizard',
   // Reach Spell as above
@@ -2224,13 +2201,11 @@ Pathfinder2E.FEATS = {
   'Reflect Spell':
     'Traits=Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
-  // Errata removes Arcane trait
   'Greater Mental Evolution':
     'Traits=Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Arcane Evolution || features.Occult Evolution"',
-  // Errata removes Divine trait
   'Greater Vital Evolution':
     'Traits=Sorcerer ' +
     'Require=' +
@@ -2285,7 +2260,6 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 12",' +
       '"features.Counterspell",' +
-      // Errata corrects Quick Recognize to Quick Recognition
       '"features.Quick Recognition"',
   // Magic Sense as above
   'Bonded Focus':'Traits=Wizard Require="level >= 14","features.Arcane Bond"',
@@ -2746,7 +2720,6 @@ Pathfinder2E.FEATS = {
   'Combat Climber':'Traits=General,Skill Require="rank.Athletics >= 1"',
   'Confabulator':
     'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
-  // errata adds Uncommon trait
   'Connections':
     'Traits=Uncommon,General,Skill ' +
     'Require=' +
@@ -2904,7 +2877,6 @@ Pathfinder2E.FEATS = {
   'Ride':'Traits=General',
   'Robust Recovery':
     'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
-  // errata removes the Death trait
   'Scare To Death':
     'Traits=Emotion,Fear,General,Incapacitation,Skill ' +
     'Require="level >= 15","rank.Intimidation >= 4"',
@@ -3152,7 +3124,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Obsession (Farmhand)':'Section=skill Note="Skill %V (Farming Lore)"',
   'Gnome Obsession (Field Medic)':
     'Section=skill Note="Skill %V (Warfare Lore)"',
-  'Gnome Obsession (Field Medic)':
+  'Gnome Obsession (Fortune Teller)':
     'Section=skill Note="Skill %V (Fortune-Telling Lore)"',
   'Gnome Obsession (Gambler)':'Section=skill Note="Skill %V (Games Lore)"',
   'Gnome Obsession (Gladiator)':
@@ -3189,7 +3161,6 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Trained (Glaive; Kukri)/Weapon Familiarity (Gnome Weapons)",' +
-      // Errata added kukris
       '"Has access to kukris and uncommon gnome weapons"',
   'Illusion Sense':
     'Section=save,skill ' +
@@ -3508,7 +3479,6 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Regains the effects of a mutagen consumed earlier in the day for 1 min once per day"',
   'Mutagenist':
-    // Errata changes second paragraph to Mutagenic Flashback
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Mutagenic Flashback feature",' +
@@ -3588,7 +3558,6 @@ Pathfinder2E.FEATURES = {
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
-    // Errata adds the counteract modifier
     'Note="Creates an elixir of life of up to level %{advancedAlchemyLevel-2} that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect once per rd"',
   'Potent Poisoner':
     'Section=skill ' +
@@ -3668,7 +3637,6 @@ Pathfinder2E.FEATURES = {
     'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
   'Bestial Rage (Deer)':
     'Section=combat ' +
-    // Errata changes damage to 1d10
     'Note="Can use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Frog)':
     'Section=combat ' +
@@ -3796,7 +3764,6 @@ Pathfinder2E.FEATURES = {
   'Fast Movement':'Section=ability Note="Gains +10 Speed during rage"',
   'Raging Athlete':
     'Section=ability,skill ' +
-    // Errata changes the jump distance
     'Note=' +
       '"Has a %{speed}\' climb and swim Speed during rage",' +
       '"Has -10 jump DC and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
@@ -3849,7 +3816,6 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="R30\' Gives an ally the effects of Rage once per rage"',
-  // Errata adds the 2-action icon
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -3876,7 +3842,6 @@ Pathfinder2E.FEATURES = {
   'Terrifying Howl':
     'Action=1 ' +
     'Section=combat ' +
-    // Errata corrects "each creature" to "each enemy"
     'Note="Successful Intimidate checks Demoralize each foe in a 30\' radius once per target per min during rage"',
   "Dragon's Rage Wings":
     'Action=1 Section=ability Note="Gains a %{speed}\' fly Speed during rage"',
@@ -3923,7 +3888,6 @@ Pathfinder2E.FEATURES = {
     'Note="Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to %{hitPoints//2} or fewer Hit Points"',
   'Brutal Critical':
     'Section=combat ' +
-    // Errata limits effects to melee hits
     'Note="Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage"',
   'Perfect Clarity':
     'Action=Reaction ' +
@@ -3944,7 +3908,6 @@ Pathfinder2E.FEATURES = {
   // Bard
   'Bard Weapon Expertise':
     'Section=combat,combat ' +
-    // Errata adds Unarmed Attacks
     'Note=' +
       '"Attack Expert (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"Critical hits with a simple weapon, longsword, rapier, sap, shortbow, shortsword, whip, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
@@ -4531,7 +4494,6 @@ Pathfinder2E.FEATURES = {
     'Note="Mount is a specialized animal companion with %{deity}\'s mark, expert proficiency in Religion, speech, +2 Intelligence, and +1 Wisdom"',
   'Instrument Of Zeal':
     'Section=combat ' +
-    // Errata changes Smite Evil to Blade Of Justice
     'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 on the target\'s next turn"',
   'Shield Of Grace':
     'Section=combat ' +
@@ -4675,7 +4637,6 @@ Pathfinder2E.FEATURES = {
   'Cloistered Cleric':
     'Section=combat,combat,feature,magic,save ' +
     'Note=' +
-      // Errata adds Attack Expert (Simple Weapons; Unarmed Attacks)
       '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"Class Feat (Choose 1 from any Domain Initiate)",' +
@@ -4818,7 +4779,6 @@ Pathfinder2E.FEATURES = {
   'Warpriest':
     'Section=combat,combat,feature,feature,magic,save,save ' +
     'Note=' +
-      // Errata adds Attack Expert (Simple Weapons; Unarmed Attacks)
       '"Defense %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'/Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
       '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"Has the Shield Block feature",' +
@@ -4926,7 +4886,6 @@ Pathfinder2E.FEATURES = {
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=combat ' +
-    // Errata corrects the counteract level
     'Note="Can use Emblazon Armament to instead cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
   'Shared Replenishment':
     'Section=combat ' +
@@ -5023,7 +4982,6 @@ Pathfinder2E.FEATURES = {
   'Animal Companion':
     'Section=feature ' +
     'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' with Hunt Prey\'+($\'features.Masterful Companion\'?\', Flurry, Precision, and Outwit\':\'\')+\' abilities\':\'\'}"',
-  // Errata adds fungus
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
   // Reach Spell as above
   'Storm Born':
@@ -5061,7 +5019,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Feat (Choose 1 from any Wild)",' +
       '"Can select wild order feats"',
-  // Poison Resistance as above; errata removes the 1 action glyph
+  // Poison Resistance as above
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
@@ -5074,11 +5032,9 @@ Pathfinder2E.FEATURES = {
     'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
   'Woodland Stride':
     'Section=ability ' +
-    // Errata adds fungi
     'Note="Moves normally over difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
-    // Errata adds fungi
     'Note="Can communicate with plants and fungi and gains +2 to make simple Requests"',
   'Insect Shape':
     'Section=magic ' +
@@ -5338,7 +5294,6 @@ Pathfinder2E.FEATURES = {
   'Assisting Shot':
     'Action=1 ' +
     'Section=combat ' +
-    // Errata changes description
     'Note="Successful ranged Strike gives the next ally attack on the target +1 attack, or +2 with a critical success, until the start of the next turn"',
   'Brutish Shove':
     'Action=1 ' +
@@ -5497,7 +5452,6 @@ Pathfinder2E.FEATURES = {
   'Incredible Ricochet':
     'Action=1 ' +
     'Section=combat ' +
-    // Errata clarifies the need for a prior ranged Strike
     'Note="Follows a ranged Strike with another against the same foe that ignores concealment and cover"',
   'Lunging Stance':
     'Action=1 ' +
@@ -5518,7 +5472,6 @@ Pathfinder2E.FEATURES = {
   'Determination':
     'Action=1 ' +
     'Section=save ' +
-    // Errata corrects counteract level
     'Note="Ends a nonpermanent condition or allows a +%{(level+1)//2} counteract attempt to end a nonpermanent spell affecting self once per day"',
   'Guiding Finish':
     'Action=1 ' +
@@ -5563,7 +5516,6 @@ Pathfinder2E.FEATURES = {
     'Note="Successful attack rolls of 19 with a legendary weapon are critical successes"',
   'Boundless Reprisals':
      'Section=combat ' +
-     // Errata specified fighter feat or feature
      'Note="Gives an additional reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
@@ -5976,7 +5928,6 @@ Pathfinder2E.FEATURES = {
   "Companion's Cry":
     'Section=skill ' +
     'Note="Can use 2 actions for Command An Animal to give companion an additional action"',
-  // Errata corrects to Action=Reaction
   'Disrupt Prey':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6029,7 +5980,6 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Shares Hunt Prey, Flurry, Outwit, and Precision benefits with an ally until the end of its next turn"',
-  // Errata clarifies effects
   'Camouflage':
     'Section=skill ' +
     'Note="Can use Hide and Sneak in natural terrain without cover"',
@@ -6046,7 +5996,6 @@ Pathfinder2E.FEATURES = {
   // Twin Riposte as above
   "Warden's Step":
     'Section=skill ' +
-    // Nethys changes Sneak to Avoid Notice
     'Note="Can include allies in an Avoid Notice action in natural terrain"',
   'Distracting Shot':
     'Section=combat ' +
@@ -6317,7 +6266,6 @@ Pathfinder2E.FEATURES = {
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
-    // Errata changes the counteract level
     'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
   'Cloud Step':
     'Section=ability ' +
@@ -6377,7 +6325,6 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
-  // Nethys changes Simple Weapon Expertise to Weapon Expertise
   // Weapon Expertise as above
   // Weapon Specialization as above
 
@@ -6510,7 +6457,6 @@ Pathfinder2E.FEATURES = {
   'Undead':
     'Section=magic,magic,skill ' +
     'Note=' +
-      // Errata changes Touch Of Undeath to Undeath's Blessing
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
       '"Blood magic effect gives self 1 temporary Hit Points per spell level for 1 rd or inflicts 1 HP negative per spell level on a target",' +
       '"Skill Trained (Intimidation; Religion)"',
@@ -6544,7 +6490,6 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
-    // Nethys fixes Summon Plant Or Fungus name
     'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
   'Advanced Bloodline (Aberrant)':
     'Section=magic ' +
@@ -7198,7 +7143,6 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Ancestral Memories arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Undead)':
     'Section=magic ' +
-    // Errata changes Touch Of Undeath to Undeath's Blessing
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':
     'Section=feature ' +
@@ -11415,7 +11359,6 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      // Errata corrects sluggish to clumsy
       '"R30\' 5\' burst randomly inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
