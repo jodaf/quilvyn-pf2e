@@ -441,7 +441,7 @@ Pathfinder2E.CLASSES = {
   'Alchemist':
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
-      // Errata extended to Medium Armor Trained/Expertise/Mastery and changed
+      // Errata changed
       // Perpetual Potency/Perfection from moderate/greater to 3rd/11th level
       '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
       '"1:Perception Trained",' +
@@ -454,7 +454,6 @@ Pathfinder2E.CLASSES = {
       '"1:Quick Alchemy","1:Formula Book","1:Research Field",' +
       '"1:Mutagenic Flashback","1:Alchemist Feats","2:Skill Feats",' +
       '"3:General Feats","3:Skill Increases","5:Field Discovery",' +
-      // Errata adds 5:Powerful Alchemy
       '"5:Powerful Alchemy","7:Alchemical Weapon Expertise","7:Iron Will",' +
       '"7:Perpetual Infusions","9:Alchemical Expertise","9:Alertness",' +
       '"9:Double Brew","11:Juggernaut","11:Perpetual Potency",' +
@@ -628,7 +627,6 @@ Pathfinder2E.CLASSES = {
   'Druid':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
-      // Errata removes Class Trained
       '"1:Ability Boosts","1:Ability Boost (Wisdom)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
@@ -649,7 +647,6 @@ Pathfinder2E.CLASSES = {
       '"1:Storm:Order",' +
       '"1:Wild:Order" ' +
     'SpellSlots=' +
-      // Errata corrects cantrip count
       'PC1:5@1,' +
       'P1:2@1;3@2,' +
       'P2:2@3;3@4,' +
@@ -808,7 +805,6 @@ Pathfinder2E.CLASSES = {
       '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
       '"7:Expert Spellcaster","9:Lightning Reflexes","11:Alertness",' +
       '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
-      // Errata adds 17:Resolve
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
@@ -858,7 +854,6 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Arcane)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
-      // Errata corrects 1:Wizard Feats to 2:Wizard Feats
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
@@ -1159,7 +1154,6 @@ Pathfinder2E.FEATS = {
   'Debilitating Bomb':'Traits=Alchemist,"Additive 2" Require="level >= 6"',
   'Directional Bombs':'Traits=Alchemist Require="level >= 6"',
   'Feral Mutagen':'Traits=Alchemist Require="level >= 8"',
-  // Errata makes Powerful Alchemy a 5th-level class feature
   'Sticky Bomb':'Traits=Alchemist,"Additive 2" Require="level >= 8"',
   'Elastic Mutagen':'Traits=Alchemist Require="level >= 10"',
   'Expanded Splash':
@@ -1296,8 +1290,7 @@ Pathfinder2E.FEATS = {
 
   // Bard
   'Bardic Lore':'Traits=Bard Require="hasEnigmaMuse"',
-  'Lingering Composition':
-    'Traits=Bard Require="hasMaestroMuse","features.Focus Pool"',
+  'Lingering Composition':'Traits=Bard Require="hasMaestroMuse"',
   'Reach Spell':
     'Traits=Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
   'Versatile Performance':'Traits=Bard Require="hasPolymathMuse"',
@@ -1305,8 +1298,7 @@ Pathfinder2E.FEATS = {
   'Esoteric Polymath':'Traits=Bard Require="level >= 2","hasPolymathMuse"',
   'Inspire Competence':'Traits=Bard Require="level >= 2","hasMaestroMuse"',
   "Loremaster's Etude":
-    'Traits=Bard,Fortune ' +
-    'Require="level >= 2","hasEnigmaMuse","features.Focus Pool"',
+    'Traits=Bard,Fortune Require="level >= 2","hasEnigmaMuse"',
   'Multifarious Muse (Enigma)':
     'Traits=Bard Require="level >= 2","bardFeatures.Enigma == 0"',
   'Multifarious Muse (Maestro)':
@@ -1332,11 +1324,7 @@ Pathfinder2E.FEATS = {
       '"hasPolymathMuse",' +
       '"rank.Occultism >= 3"',
   'Inspire Heroics':
-    'Traits=Bard ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"hasMaestroMuse",' +
-      '"features.Focus Pool"',
+    'Traits=Bard Require="level >= 8","hasMaestroMuse"',
   'Know-It-All':'Traits=Bard Require="level >= 8","hasEnigmaMuse"',
   'House Of Imaginary Walls':'Traits=Bard Require="level >= 10"',
   'Quickened Casting':
@@ -1349,7 +1337,7 @@ Pathfinder2E.FEATS = {
     'Traits=Bard Require="level >= 12","features.Esoteric Polymath"',
   'Inspirational Focus':'Traits=Bard Require="level >= 12"',
   'Allegro':'Traits=Bard Require="level >= 14"',
-  'Soothing Ballad':'Traits=Bard Require="level >= 14","features.Focus Pool"',
+  'Soothing Ballad':'Traits=Bard Require="level >= 14"',
   'True Hypercognition':
     'Traits=Bard Require="level >= 14","hasEnigmaMuse"',
   'Effortless Concentration':
@@ -1373,7 +1361,7 @@ Pathfinder2E.FEATS = {
       '"level >= 18",' +
       '"rank.Arcana >= 1 || rank.Nature >= 1 || rank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
-  'Fatal Aria':'Traits=Bard Require="level >= 20","features.Focus Pool"',
+  'Fatal Aria':'Traits=Bard Require="level >= 20"',
   'Perfect Encore':'Traits=Bard Require="level >= 20","features.Magnum Opus"',
   'Symphony Of The Muse':
     'Traits=Bard Require="level >= 20","features.Harmonize"',
@@ -3416,7 +3404,7 @@ Pathfinder2E.FEATURES = {
   // Alchemist
   'Advanced Alchemy':
     'Section=skill ' +
-    'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check during daily prep"',
+    'Note="Can use a batch of infused reagents to create 2 infused alchemical items, or 3 signature items, of up to level %{level} without a Crafting check during daily prep"',
   'Alchemical Alacrity':
     'Section=skill Note="Has increased Quick Alchemy effects"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
@@ -4062,7 +4050,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Can add arcane, divine, and primal spells to spellbook if trained in the corresponding skill"',
   'Fatal Aria':
-    'Section=magic Note="Knows the Fatal Aria occult spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the Fatal Aria occult spell/+1 Focus Points"',
   'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
   'Symphony Of The Muse':
     'Section=magic ' +
@@ -15373,10 +15362,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       matchInfo = n.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
       if(matchInfo) {
         rules.defineRule('features.Focus Pool', note, '=', '1');
-        if(matchInfo[1])
+        if(matchInfo[1]) {
           rules.defineRule('focusPoints',
             note, matchInfo[2] == 'at least ' ? '^' : '+', matchInfo[3]=='%V' ? 'source' : matchInfo[3]
           );
+        } else {
+          rules.defineRule('focusPoints', note, '^=', '0');
+        }
       }
       matchInfo = n.match(/^Can take (.*) ancestry feats$/);
       if(matchInfo) {
