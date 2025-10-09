@@ -93,7 +93,7 @@ Pathfinder2E.RANK_NAMES =
   ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
 /* List of choices that can be expanded by house rules. */
-// NOTE: Left Goody out of this list for now because inclusion would require
+// Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
   'Ancestry', 'Ancestry Feature', 'Armor', 'Background', 'Background Feature',
@@ -441,8 +441,6 @@ Pathfinder2E.CLASSES = {
   'Alchemist':
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
-      // Errata changed
-      // Perpetual Potency/Perfection from moderate/greater to 3rd/11th level
       '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
@@ -732,7 +730,6 @@ Pathfinder2E.CLASSES = {
   'Ranger':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      // Errata changes Weapon Expertise to Ranger Weapon Expertise
       '"1:Ranger Key Ability",' +
       '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
       '"features.Strength ? 1:Ability Boost (Strength)",' +
@@ -1210,7 +1207,6 @@ Pathfinder2E.FEATS = {
   'Raging Athlete':
     'Traits=Barbarian Require="level >= 4","rank.Athletics >= 2"',
   'Swipe':'Traits=Barbarian,Fighter,Flourish Require="level >= 4"',
-  // Errata removes Rage trait
   'Wounded Rage':'Traits=Barbarian Require="level >= 4"',
   'Animal Skin':
     'Traits=Barbarian,Morph,Primal,Transmutation ' +
@@ -1398,15 +1394,7 @@ Pathfinder2E.FEATS = {
   'Loyal Warhorse':'Traits=Champion Require="level >= 6","features.Steed Ally"',
   'Shield Warden':
     'Traits=Champion,Fighter ' +
-    'Require=' +
-      '"level >= 6",' +
-      // As per core rules:
-      // '"features.Shield Ally && features.The Tenets Of Good || ' +
-      //  'levels.Fighter && features.Shield Block"',
-      // However, QuilvynRules validation doesn't support the && operator. All
-      // fighters receive Shield Block at level 1, so that's redundant, and
-      // the core rules defines only The Tenets Of Good, so we drop that.
-      '"features.Shield Ally || levels.Fighter"',
+    'Require="meetsChampionShieldWardenRequirements || meetsFighterShieldWardenRequirements"',
   'Smite Evil':
     'Traits=Champion ' +
     'Require=' +
@@ -2138,7 +2126,7 @@ Pathfinder2E.FEATS = {
   // Sorcerer
   'Counterspell':
     // For sorcerers, Arcane should be replaced by the bloodline tradition, but
-    // the change makes no difference
+    // Q makes no use of the trait
     'Traits=Sorcerer,Wizard,Abjuration,Arcane',
   'Dangerous Sorcery':'Traits=Sorcerer',
   'Familiar':'Traits=Sorcerer,Wizard',
@@ -2181,7 +2169,7 @@ Pathfinder2E.FEATS = {
       '"features.Bloodline Spells || features.Basic Bloodline Spell"',
   'Magic Sense':
     // For sorcerers, Arcane should be replaced by the bloodline tradition, but
-    // the change makes no difference
+    // Q makes no use of the trait
     'Traits=Sorcerer,Wizard,Arcane,Detection,Divination ' +
     'Require="level >= 12"',
   'Interweave Dispel':
@@ -4162,7 +4150,10 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' Gives an ally damaged by an attack resistance %{level+2} to all damage and allows self to make a melee Strike against the attacking foe if within reach"',
   'Shield Ally':
     'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
-  // Shield Block as below
+  'Shield Block':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage"',
   'Steed Ally':
     'Section=feature Note="Has a young animal companion for a mount"',
   'The Tenets Of Good':
@@ -4952,7 +4943,7 @@ Pathfinder2E.FEATURES = {
   'Primal Spellcasting':
     'Section=magic Note="Can learn spells from the primal tradition"',
   // Resolve as above
-  // Shield Block as below
+  // Shield Block as above
   'Storm':
     'Section=feature,magic,skill ' +
     'Note=' +
@@ -5195,7 +5186,7 @@ Pathfinder2E.FEATURES = {
   'Improved Flexibility':
     'Section=combat Note="Has increased Combat Flexibility effects"',
   // Juggernaut as above
-  // Shield Block as below
+  // Shield Block as above
   'Versatile Legend':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)"',
@@ -5606,8 +5597,8 @@ Pathfinder2E.FEATURES = {
   'Monastic Weaponry':
     'Section=combat,combat ' +
     'Note=' +
-      // This should apply only to simple and martial monk weapons, but all
-      // monk weapons in the core rules fall into these categories
+      // NOTE: This should apply only to simple and martial monk weapons, but
+      // all monk weapons in the core rules fall into these categories
       '"Attack %V (Monk Weapons)",' +
       '"Has access to uncommon monk weapons/Can use monk melee weapons with unarmed attack features"',
   'Mountain Stance':
@@ -7148,7 +7139,6 @@ Pathfinder2E.FEATURES = {
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
     'Note=' +
-      // Errata adds Arcane School, but gaining no features from it
       '"Has the Arcane School and Arcane Spellcasting features",' +
       '"Spell Trained (Arcane)/Can prepare 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
@@ -7438,10 +7428,7 @@ Pathfinder2E.FEATURES = {
   'Shameless Request':
     'Section=skill ' +
     'Note="Reduces the DC for an outrageous request by 2 and changes critical failures into normal failures"',
-  'Shield Block':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage"',
+  // Shield Block as above
   'Sign Language':
     'Section=skill Note="Knows the sign equivalents of understood languages"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
@@ -14783,13 +14770,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'skillNotes.gnomeObsession', '=', null
       );
     }
-  } else if(name.match(/^(Greater|True) Debilitating Bomb/)) {
-    rules.defineRule('combatNotes.debilitatingBomb',
-      'combatNotes.' + prefix, '=', 'null' // italics
-    );
-  } else if(name == 'Greater Mercy') {
-    rules.defineRule
-      ('magicNotes.mercy', 'magicNotes.greaterMercy', '=', 'null'); // italics
   } else if(name == 'Harming Hands') {
     rules.defineRule('harmSpellDie', 'magicNotes.harmingHands', '^', '10');
   } else if(name == 'Healing Hands') {
@@ -14911,10 +14891,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'Quivering Palm') {
     rules.defineRule('magicNotes.quiveringPalm', 'monkTradition', '=', null);
-  } else if(name.match(/^Radiant Blade (Master|Spirit)$/)) {
-    rules.defineRule('combatNotes.bladeAlly',
-      'combatNotes.' + prefix, '=', 'null' // italics
-    );
   } else if(name == 'Ranger Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14936,6 +14912,18 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
+    );
+  } else if(name == 'Shield Warden') {
+    rules.defineRule('meetsChampionShieldWardenRequirements',
+      'features.Shield Ally', '?', null,
+      'features.The Tenets Of Good', '?', null,
+      'levels.Champion', '=', 'source>=6 ? 1 : null',
+      'championDedicationLevel', '=', 'source >= 12 ? 1 : null'
+    );
+    rules.defineRule('meetsFighterShieldWardenRequirements',
+      'features.Shield Block', '?', null,
+      'levels.Fighter', '=', 'source>=6 ? 1 : null',
+      'fighterDedicationLevel', '=', 'source>=12 ? 1 : null'
     );
   } else if(name == 'Skill Mastery') {
     rules.defineRule
@@ -17059,9 +17047,6 @@ Pathfinder2E.ruleNotes = function() {
     '  example, a 5th-level character would have between 4000 and 4999 ' +
     '  experience points.\n' +
     '  </li><li>\n' +
-    '  Discussion of adding different types of homebrew options to the ' +
-    '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
-    '  </li><li>\n' +
     '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
     '  taken as a free action or reaction.\n' +
@@ -17069,6 +17054,10 @@ Pathfinder2E.ruleNotes = function() {
     '  Quilvyn gives uncommon weapons an additional "Uncommon" trait; ' +
     '  following this convention when adding homebrew weapons will help when ' +
     '  generating random characters.\n' +
+    '  </li><li>\n' +
+    '  </li><li>\n' +
+    '  Discussion of adding different types of homebrew options to the ' +
+    '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
@@ -17083,6 +17072,9 @@ Pathfinder2E.ruleNotes = function() {
     '  Quilvyn does not note the Dubious Knowledge feat requirement of being ' +
     '  trained in a skill with the Recall Knowledge action, since Recall ' +
     '  Knowledge potentially can be used with any skill.\n' +
+    '  </li><li>\n' +
+    '  Quilvyn gives characters with the Monastic Weaponry feat proficiency ' +
+    '  in any advanced monk weapons, as well as in simple and martial ones.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
