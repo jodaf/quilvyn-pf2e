@@ -910,7 +910,7 @@ Pathfinder2E.DEITIES = {
     'Alignment=CG FollowerAlignments=NG,CG,CN ' +
     'Font=Heal Skill=Acrobatics Weapon=Starknife ' +
     'Domain=Dreams,Luck,Moon,Travel ' +
-    'Spells="1:Sleep","3:Dream Message","6:Dreaming Potential"',
+    'Spells="1:Sleep","4:Fly","6:Dreaming Potential"',
   'Erastil':
     'Alignment=LG FollowerAlignments=LG,NG,LN ' +
     'Font=Heal Skill=Survival Weapon=Longbow ' +
@@ -930,7 +930,7 @@ Pathfinder2E.DEITIES = {
     'Alignment=LG FollowerAlignments=LG,NG ' +
     'Font=Heal Skill=Intimidation Weapon=Longsword ' +
     'Domain=Confidence,Might,Truth,Zeal ' +
-    'Spells="1:True Strike","2:See Invisibility","5:Fire Shield"',
+    'Spells="1:True Strike","2:Enlarge","5:Fire Shield"',
   'Irori':
     'Alignment=LN FollowerAlignments=LG,LN,LE ' +
     'Font=Either Skill=Athletics Weapon=Fist ' +
@@ -7261,7 +7261,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use 10 min Decipher Writing on a religious text and a successful Religion check to gain a hint about a current problem"',
   'Dubious Knowledge':
     'Section=skill ' +
-    'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
+    'Note="Normal failure on a Recall Knowledge check yields a mix of true and false information"',
   'Expeditious Search':
     'Section=skill ' +
     'Note="Can Search at %{rank.Perception>=4?4:2}x normal speed"',
@@ -8123,7 +8123,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Prepares a spell of up to 3 actions and 4th level to activate as a reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
+      '"Prepares a spell of up to 3 actions and 4th level to activate as a reaction to a specified trigger until next daily prep (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
   'Continual Flame':
     'Level=2 ' +
     'Traits=Evocation,Light ' +
@@ -8447,7 +8447,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self sends 1 min of speech to a familiar creature, received the next time they sleep (<b>heightened 4th</b> sends speech to 10 familiar creatures)"',
+      '"Self sends 1 min of speech to a familiar creature, received the next time they sleep until next daily prep (<b>heightened 4th</b> sends speech to 10 familiar creatures)"',
   'Dreaming Potential':
     'Level=5 ' +
     'Traits=Enchantment,Mental ' +
@@ -8527,7 +8527,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 day (<b>heightened 9th</b> gives resistance 10)"',
+      '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage until next daily prep (<b>heightened 9th</b> gives resistance 10)"',
   'Enhance Victuals':
     'Level=2 ' +
     'Traits=Transmutation ' +
@@ -9157,7 +9157,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched creature\'s unarmed attack gains +1 attack and 2 damage dice for 1 min"',
+      '"Touched willing creature\'s unarmed attack gains +1 attack and 2 damage dice for 1 min"',
   'Magic Missile':
     'Level=1 ' +
     'Traits=Evocation,Force ' +
@@ -9188,7 +9188,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Creates an entrance to a 40\'x40\'x30\' demiplane that can be entered only by those specified, is staffed by servants, and contains provisions for up to 150 people"',
+      '"R30\' Creates an entrance to a 40\'x40\'x30\' demiplane that can be entered only by those specified, is staffed by servants, and contains provisions for up to 150 people until next daily prep"',
   "Mariner's Curse":
     'Level=5 ' +
     'Traits=Curse,Necromancy ' +
@@ -10363,7 +10363,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10 Speed, and a successful unarmed attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min"',
+      '"R500\' 40\' burst inflicts -10 Speed, and a successful spell attack each rd immobilizes 1 target for 1 rd or until a successful Escape, for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Traits=Evocation ' +
