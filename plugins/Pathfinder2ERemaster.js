@@ -9182,7 +9182,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Permanently quickened; can use the additional action only to use Quick Alchemy"',
   'Advanced Alchemy':
     Pathfinder2E.FEATURES['Advanced Alchemy']
-    .replace('use a batch of infused reagents to create 2', 'create %{(skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4)+(skillNotes.advancedHerbalism?$$\'features.Advanced Herbalism\'*2:0)+(skillNotes.advancedPoisoncraft?$$\'features.Advanced Poisoncraft\'*2:0)} consumable'),
+    .replace('use a batch of infused reagents to create 2', 'create %{(skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4)+(skillNotes.advancedHerbalism?$$\'features.Advanced Herbalism\'*2:0)+(skillNotes.advancedPoisoncraft?$$\'features.Advanced Poisoncraft\'*2:0)} consumable')
+    .replace(', or 3 signature items,', ''),
   'Advanced Vials (Bomber)':
     'Section=skill Note="Can make bombs with a special material trait"',
   'Advanced Vials (Chirurgeon)':
