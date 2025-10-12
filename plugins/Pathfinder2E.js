@@ -12388,6 +12388,10 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
   rules.defineRule
     ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
+  rules.defineRule('combatNotes.weaponSpecialization',
+    '', '=', '2',
+    'combatNotes.greaterWeaponSpecialization', '+', '2'
+  );
   rules.defineRule
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   // For weapons with the finesse trait
@@ -12478,6 +12482,7 @@ Pathfinder2E.identityRules = function(
     (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon', 'AreasOfConcern', 'DivineAttribute', 'DivineSanctification']);
 
+  // heritage defaults to base ancestry, overridden by specific heritages
   rules.defineRule('heritage', 'ancestry', '=', null);
 
   for(let a in alignments)
@@ -12491,10 +12496,6 @@ Pathfinder2E.identityRules = function(
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
 
-  rules.defineRule('combatNotes.weaponSpecialization',
-    '', '=', '2',
-    'combatNotes.greaterWeaponSpecialization', '+', '2'
-  );
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('featureNotes.anathema',
     'deity', '+', 'null', // recomputation trigger
@@ -12503,7 +12504,7 @@ Pathfinder2E.identityRules = function(
         '.concat(source & 1 ? ["barbarian instinct"] : [])' +
         '.concat(source & 2 || source & 4 ? [dict.deity] : [])' +
         '.concat(source & 8 ? ["druidic order"] : [])' +
-        '.concat(source & 16 ? ["background"] : [])' +
+        '.concat(source & 16 ? ["background"] : [])' + // remaster
         '.join(", ")' +
         '.replace(/^([^,]*), ([^,]*)$/, "$1 or $2")' +
         '.replace(/,([^,]*)$/, ", or$1")'
@@ -13049,8 +13050,6 @@ Pathfinder2E.ancestryRules = function(
     'featureNotes.' + prefix + 'Heritage', '=', '1'
   );
 
-  if(features.filter(x => x.match(/^(\d+:)?Low-Light Vision$/)).length > 0)
-    rules.defineRule('hasAncestralLowLightVision', ancestryLevel, '=', '1');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
   rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
   languages.forEach(l => {
@@ -13077,6 +13076,7 @@ Pathfinder2E.ancestryRules = function(
       );
     }
   }
+
   Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
 
@@ -13352,6 +13352,7 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
         'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('; Choose 1 from any', '')
       );
   }
+
   Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
   Pathfinder2E.featureListRules
     (rules, selectables, name, backgroundLevel, true);
@@ -16477,7 +16478,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       else if(attributes['class'] == 'Druid' &&
               allArmors[attr].match(/Chain|Composite|Plate/))
         ; // empty
-      else if(attrs['rank.' + category + ' Armor'])
+      else if(attrs['rank.' + category + ' Armor'] ||
+              attrs['rank.' + attr])
         choices.push(attr);
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
@@ -16529,7 +16531,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           }
           // While we have more to allocate than choices, assign a boost to
           // each choice--this probably will only occur when assigning the
-          // boost acquired at every 5th level
+          // 4 boosts acquired at every 5th level
           while(howMany > choices.length) {
             choices.forEach(c => {
               attributes['abilityBoosts.' + c] = (attributes['abilityBoosts.' + c] || 0) + 1;
@@ -16684,7 +16686,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'shield') {
     // The rules have no restrictions on shield use, but it seems weird to give
     // Wizards, etc. a shield, and so we restrict shields to characters with a
-    // rank in armor.
+    // rank in Light Armor.
     attrs = this.applyRules(attributes);
     choices = attrs['rank.Light Armor']>0 ? Object.keys(this.getChoices('shields')) : ['None'];
     if(attributes['class'] == 'Druid')
