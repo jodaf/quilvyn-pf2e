@@ -16339,13 +16339,140 @@ Pathfinder2E.initialEditorElements = function() {
   return editorElements;
 };
 
-/* Returns a random name for a character of ancestry #ancestry#. */
-Pathfinder2E.randomName = function(ancestry) {
+// NOTE: move these next four functions to QuilvynUtils.js when appropriate
 
-  /* Return a random character from #string#. */
-  function randomChar(string) {
-    return string.charAt(QuilvynUtils.random(0, string.length - 1));
+/* Returns a random character from the string #s#. */
+QuilvynUtils.randomChar = function(s) {
+  return s.charAt(QuilvynUtils.random(0, s.length - 1));
+};
+
+/* Returns a random element from the array #list#. */
+QuilvynUtils.randomElement = function(list) {
+  return list.length>0 ? list[QuilvynUtils.random(0, list.length - 1)] : '';
+}
+
+/*
+ * Returns a random syllable built from the parameters. #consonants# and
+ * #vowels# are strings that contain the consonants and vowels of the language,
+ * and #runs# is an array of valid multi-character runs of vowels and
+ * consonants. Within this array, an element that begins with an upper-case
+ * consonant marks a run that can appear at the beginning of a syllable, while
+ * one that begins with a lower-case consonant can appear at the end.
+ */
+QuilvynUtils.randomSyllable = function(leading, trailing, vowels, runs) {
+  let lead =
+    QuilvynUtils.random(0, 99) < 80 ?
+      QuilvynUtils.randomChar(leading).toUpperCase() : '';
+  if(lead != '' && QuilvynUtils.random(0, 99) < 15) {
+    let leadRuns = runs.filter(e => e.startsWith(lead));
+    if(leadRuns.length > 0)
+      lead = QuilvynUtils.randomElement(leadRuns);
   }
+  if(lead == 'Q')
+    lead += 'u';
+  let vowel = QuilvynUtils.randomChar(vowels);
+  if(QuilvynUtils.random(0, 99) < 15) {
+    let vowelRuns = runs.filter(e => e.startsWith(vowel));
+    if(vowelRuns.length > 0)
+      vowel = QuilvynUtils.randomElement(vowelRuns);
+  }
+  let trail =
+    QuilvynUtils.random(0, 99) < 60 ? QuilvynUtils.randomChar(trailing) : '';
+  if(trail != '' && QuilvynUtils.random(0, 99) < 15) {
+    let trailRuns = runs.filter(e => e.startsWith(trail));
+    if(trailRuns.length > 0)
+      trail = QuilvynUtils.randomElement(trailRuns);
+  }
+  return lead.toLowerCase() + vowel + trail;
+};
+
+/*
+ * Returns a random word containing between #minSyllables# and #maxSyllables#
+ * syllables built using the contents of #components#. TODO
+ */
+QuilvynUtils.randomWord = function(pattern, components) {
+  let leading = components.leading || 'bcdfghjklmnpqrstvwxyz';
+  let trailing = components.consonants || 'bcdfgklmnprstxz';
+  let vowels = components.vowels || 'aeoiu';
+  let runs = components.runs || [
+    //'ai', 'au', 'aw', 'ay', 'ea', 'ee', 'ei', 'oa', 'oi', 'ou', 'oy', 'ua',
+    //'ue', 'ui',
+    'Bl', 'Br', 'Ch', 'Cl', 'Cr', 'Dr', 'Fl', 'Fr', 'Gl', 'Gr', 'Kl', 'Kn',
+    'Kr', 'Pl', 'Pr', 'Sc', 'Sch', 'Sh', 'Sk', 'Sl', 'St', 'Str', 'Th', 'Tr',
+    'Wh', 'ch', 'ck', 'ct', 'lc', 'lf', 'lk', 'll', 'lm', 'ln', 'lp', 'lt',
+    'mp', 'nc', 'ng', 'nk', 'nt', 'rf', 'sk', 'sp', 'ss', 'st', 'th'
+  ];
+  let matchInfo;
+  while((matchInfo = pattern.match(/%\{(\w+)\}/))) {
+    let ref = matchInfo[1];
+    let replacement;
+    if(components[ref])
+      replacement = QuilvynUtils.randomElement(components[ref]);
+    else if(ref == 'Syllable')
+      replacement =
+        QuilvynUtils.randomSyllable(leading, trailing, vowels, runs);
+    else
+      replacement = '';
+    pattern = pattern.replace(matchInfo[0], replacement);
+  }
+  return pattern;
+};
+
+Pathfinder2E.NAME_COMPONENTS = {
+  'defaults': {
+    leading: 'bdfghjklmnpqrstvwxyz',
+    // removed hjqvwy from trailing throughout
+    trailing: 'bdfgklmnprstxz',
+    vowels: 'aeiou',
+    patterns: [
+      // 1/12 1 syllable, 4/12 2 syllables, 4/12 3, 2/12 4, and 1/12 5
+      '%{Syllable}',
+      '%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}%{Syllable}',
+      '%{Syllable}%{Syllable}%{Syllable}%{Syllable}%{Syllable}'
+    ],
+  },
+  'Dwarf': {
+    leading: 'bdgklmnprstyz',
+    trailing: 'bdgklmnprstz',
+    patterns: ['%{Syllable}%{Syllable}']
+  },
+  'Elf': {
+    leading: 'cdfhjlmnprstvyz',
+    trailing: 'cdflmnprstz',
+    vowels: 'aeiouy'
+  },
+  'Gnome': {
+    leading: 'bcfghjklmnpqrstz',
+    trailing: 'bcfgklmnprstz'
+  },
+  'Goblin': {
+    leading: 'bcdfghklmnprtwyz',
+    trailing: 'bcdfgklmnprtz'
+  },
+  'Halfling': {
+    leading: 'bfjklmnrsty',
+    trailing: 'bfklmnrst'
+  },
+  'Human': {
+    leading: 'bcdfghjklmnpqrstvwxyz',
+    trailing: 'bcdfgklmnprstxz'
+  }
+};
+
+/*
+ * Returns a random name for a character of ancestry #ancestry# and gender
+ * #gender#.
+ */
+Pathfinder2E.randomName = function(ancestry, gender) {
 
   if(ancestry == null)
     ancestry = 'Human';
@@ -16361,63 +16488,27 @@ Pathfinder2E.randomName = function(ancestry) {
     ancestry = 'Halfling';
   else
     ancestry = 'Human';
+  if(!gender)
+    gender = QuilvynUtils.random(0, 100) < 50 ? 'Female' : 'Male';
 
-  let clusters = {
-    B:'lr', C:'hlr', D:'r', F:'lr', G:'lnr', K:'lnr', P:'lr', S:'chklt', T:'hr',
-    W:'h',
-    c:'hkt', l:'cfkmnptv', m: 'p', n:'cgkt', r: 'fv', s: 'kpt', t: 'h'
-  };
-  let consonants = {
-    'Dwarf':'dgkmnprst', 'Elf':'fhlmnpqswy', 'Gnome':'bdghjlmnprstw',
-    'Goblin':'bdfghklmnprtwyz', 'Halfling':'bdfghlmnprst',
-    'Human': 'bcdfghjklmnprstvwz'
-  }[ancestry];
-  let endConsonant = '';
-  let leading = 'ghjqvwy';
-  let vowels = {
-    'Dwarf':'aeiou', 'Elf':'aeioy', 'Gnome':'aeiou', 'Goblin':'aeiou',
-    'Halfling':'aeiou', 'Human':'aeiou'
-  }[ancestry];
-  let diphthongs = {a:'wy', e:'aei', o: 'aiouy', u: 'ae'};
-  let syllables = QuilvynUtils.random(0, 99);
-  syllables = ancestry == 'Dwarf' ? 2 : // Core rulebook states this
-              syllables < 50 ? 2 :
-              syllables < 75 ? 3 :
-              syllables < 90 ? 4 :
-              syllables < 95 ? 5 :
-              syllables < 99 ? 6 : 7;
-  let result = '';
-  let vowel;
+  let leading =
+    Pathfinder2E.NAME_COMPONENTS[ancestry].leading ||
+    Pathfinder2E.NAME_COMPONENTS.defaults.leading;
+  let trailing =
+    Pathfinder2E.NAME_COMPONENTS[ancestry].trailing ||
+    Pathfinder2E.NAME_COMPONENTS.defaults.trailing;
+  let vowels =
+    Pathfinder2E.NAME_COMPONENTS[ancestry].vowels ||
+    Pathfinder2E.NAME_COMPONENTS.defaults.vowels;
+  let pattern =
+    QuilvynUtils.randomElement(
+      Pathfinder2E.NAME_COMPONENTS[ancestry].patterns ||
+      Pathfinder2E.NAME_COMPONENTS.defaults.patterns
+    );
 
-  for(let i = 0; i < syllables; i++) {
-    if(QuilvynUtils.random(0, 99) <= 80) {
-      endConsonant = randomChar(consonants).toUpperCase();
-      if(clusters[endConsonant] != null && QuilvynUtils.random(0, 99) < 15)
-        endConsonant += randomChar(clusters[endConsonant]);
-      result += endConsonant;
-      if(endConsonant == 'Q')
-        result += 'u';
-    }
-    else if(endConsonant.length == 1 && QuilvynUtils.random(0, 99) < 10) {
-      result += endConsonant;
-      endConsonant += endConsonant;
-    }
-    vowel = randomChar(vowels);
-    if(endConsonant.length > 0 && diphthongs[vowel] != null &&
-       QuilvynUtils.random(0, 99) < 15)
-      vowel += randomChar(diphthongs[vowel]);
-    result += vowel;
-    endConsonant = '';
-    if(QuilvynUtils.random(0, 99) <= 60) {
-      while(leading.indexOf((endConsonant = randomChar(consonants))) >= 0)
-        ; /* empty */
-      if(clusters[endConsonant] != null && QuilvynUtils.random(0, 99) < 15)
-        endConsonant += randomChar(clusters[endConsonant]);
-      result += endConsonant;
-    }
-  }
-  return result.substring(0, 1).toUpperCase() +
-         result.substring(1).toLowerCase();
+  let result = QuilvynUtils.randomWord
+    (pattern, {leading:leading, trailing:trailing, vowels:vowels});
+  return result.charAt(0).toUpperCase() + result.substring(1);
 
 };
 
@@ -16435,11 +16526,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       attributes[prefix + remaining[which]] = value;
       remaining = remaining.slice(0, which).concat(remaining.slice(which + 1));
     }
-  }
-
-  /* Returns a random element from the array #list#. */
-  function randomElement(list) {
-    return list.length>0 ? list[QuilvynUtils.random(0, list.length - 1)] : '';
   }
 
   let attr;
@@ -16466,7 +16552,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'alignment') {
     choices =
       Object.keys(Pathfinder2E.ALIGNMENTS, attributes['class'] == 'Champion' ? /Good/ : /./);
-    attributes[attribute] = randomElement(choices);
+    attributes[attribute] = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'armor') {
     attrs = this.applyRules(attributes);
     let allArmors = this.getChoices('armors');
@@ -16540,7 +16626,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           }
           // Finally, randomly assign any remaining allocations
           while(howMany > 0 && choices.length > 0) {
-            let choice = randomElement(choices);
+            let choice = QuilvynUtils.randomElement(choices);
             attributes['abilityBoosts.' + choice] =
               (attributes['abilityBoosts.' + choice] || 0) + 1;
             howMany--;
@@ -16682,7 +16768,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     pickAttrs(attributes, 'languages.', choices, howMany, 1);
   } else if(attribute == 'name') {
-    attributes.name = Pathfinder2E.randomName(attributes.ancestry);
+    attributes.name =
+      Pathfinder2E.randomName(attributes.ancestry, attributes.gender);
   } else if(attribute == 'shield') {
     // The rules have no restrictions on shield use, but it seems weird to give
     // Wizards, etc. a shield, and so we restrict shields to characters with a
@@ -16691,7 +16778,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     choices = attrs['rank.Light Armor']>0 ? Object.keys(this.getChoices('shields')) : ['None'];
     if(attributes['class'] == 'Druid')
       choices = choices.filter(x => !x.match(/Steel|Metal/));
-    attributes.shield = randomElement(choices);
+    attributes.shield = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'skills') {
     attrs = this.applyRules(attributes);
     let allSkills = this.getChoices('skills');
@@ -16760,7 +16847,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
               choices.filter(x => (attrs['rank.' + x] || 0) == improveFrom);
           // Finally, randomly assign any remaining allocations
           while(howMany > 0 && choices.length > 0) {
-            let choice = randomElement(choices);
+            let choice = QuilvynUtils.randomElement(choices);
             attributes['skillIncreases.' + choice] =
               (attributes['skillIncreases.' + choice] || 0) + 1;
             attrs['rank.' + choice] = (attrs['rank.' + choice] || 0) + 1;
