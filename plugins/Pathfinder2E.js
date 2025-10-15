@@ -16339,99 +16339,23 @@ Pathfinder2E.initialEditorElements = function() {
   return editorElements;
 };
 
-// NOTE: move these next four functions to QuilvynUtils.js when appropriate
-
-/* Returns a random character from the string #s#. */
-QuilvynUtils.randomChar = function(s) {
-  return s.charAt(QuilvynUtils.random(0, s.length - 1));
-};
-
-/* Returns a random element from the array #list#. */
-QuilvynUtils.randomElement = function(list) {
-  return list.length>0 ? list[QuilvynUtils.random(0, list.length - 1)] : '';
-}
-
-/*
- * Returns a random syllable built from the parameters. #leading#, #trailing#,
- * and #vowels# are arrays that contain the consonants and vowels of the
- * language, and #runs# is an array of valid multi-character runs of vowels and
- * consonants. Within this latter array, an element that begins with an upper-
- * case consonant marks a run that can appear at the beginning of a syllable,
- * while one that begins with a lower-case consonant can appear at the end.
- */
-QuilvynUtils.randomSyllable = function(leading, trailing, vowels, runs) {
-  let lead =
-    QuilvynUtils.random(0, 99) < 80 ?
-      QuilvynUtils.randomElement(leading).toUpperCase() : '';
-  if(lead != '' && QuilvynUtils.random(0, 99) < 15) {
-    let leadRuns = runs.filter(e => e.startsWith(lead));
-    if(leadRuns.length > 0)
-      lead = QuilvynUtils.randomElement(leadRuns);
-  }
-  if(lead == 'Q')
-    lead += 'u';
-  let vowel = QuilvynUtils.randomElement(vowels);
-  if(QuilvynUtils.random(0, 99) < 15) {
-    let vowelRuns = runs.filter(e => e.startsWith(vowel));
-    if(vowelRuns.length > 0)
-      vowel = QuilvynUtils.randomElement(vowelRuns);
-  }
-  let trail =
-    QuilvynUtils.random(0, 99) < 60 ? QuilvynUtils.randomElement(trailing) : '';
-  if(trail != '' && QuilvynUtils.random(0, 99) < 15) {
-    let trailRuns = runs.filter(e => e.startsWith(trail));
-    if(trailRuns.length > 0)
-      trail = QuilvynUtils.randomElement(trailRuns);
-  }
-  return lead.toLowerCase() + vowel + trail;
-};
-
-/*
- * Returns a random word built using the string #pattern# as a guide and the
- * contents of the object #components#. #pattern# contains literal text, which
- * is copied verbatim to the result, interspersed with references enclosed in
- * %{}. These references name keys of #components#, whose values are arrays of
- * strings, and each reference is replaced in the result with a random element
- * of the corresponding array. These replacements can also contain references,
- * which are replaced in turn. Occurrences of the special reference %{Syllable}
- * are each replaced by a randomly-generated syllable, and four elements of
- * #components#--leading, trailing, runs, and vowels--give characters that are
- * used to form random syllables.
- */
-QuilvynUtils.randomWord = function(pattern, components) {
-  let leading = components.leading || 'bcdfghjklmnpqrstvwxyz'.split('');
-  let trailing = components.trailing || 'bcdfgklmnprstxz'.split('');
-  let vowels = components.vowels || 'aeoiu'.split('');
-  let runs = components.runs || [
-    //'ai', 'au', 'aw', 'ay', 'ea', 'ee', 'ei', 'oa', 'oi', 'ou', 'oy', 'ua',
-    //'ue', 'ui',
-    'Bl', 'Br', 'Ch', 'Cl', 'Cr', 'Dr', 'Fl', 'Fr', 'Gl', 'Gr', 'Kl', 'Kn',
-    'Kr', 'Pl', 'Pr', 'Sc', 'Sch', 'Sh', 'Sk', 'Sl', 'St', 'Str', 'Th', 'Tr',
-    'Wh', 'ch', 'ck', 'ct', 'lc', 'lf', 'lk', 'll', 'lm', 'ln', 'lp', 'lt',
-    'mp', 'nc', 'ng', 'nk', 'nt', 'rf', 'sk', 'sp', 'ss', 'st', 'th'
-  ];
-  let matchInfo;
-  while((matchInfo = pattern.match(/%\{(\w+)\}/))) {
-    let ref = matchInfo[1];
-    let replacement;
-    if(components[ref])
-      replacement = QuilvynUtils.randomElement(components[ref]);
-    else if(ref == 'Syllable')
-      replacement =
-        QuilvynUtils.randomSyllable(leading, trailing, vowels, runs);
-    else
-      replacement = '';
-    pattern = pattern.replace(matchInfo[0], replacement);
-  }
-  return pattern;
-};
-
 Pathfinder2E.NAME_COMPONENTS = {
   defaults: {
     leading: 'bdfghjklmnpqrstvwxyz'.split(''),
     // removed hjqvwy from trailing throughout
     trailing: 'bdfgklmnprstxz'.split(''),
     vowels: 'aeiou'.split(''),
+    clusters: [
+      // Results look better with only simple vowels
+      // 'ai', 'au', 'aw', 'ay', 'ea', 'ee', 'ei', 'eu', 'ew', 'ie', 'oa', 'oi',
+      // 'oo', 'ou', 'ow', 'oy', 'ue', 'ui',
+      'Ch', 'Ph', 'Sh', 'Th', 'Wh',
+      'ch', 'ck', 'lf', 'll', 'ng', 'ss', 'th',
+      'Bl', 'Br', 'Cl', 'Cr', 'Dr', 'Fl', 'Fr', 'Gl', 'Gr', 'Pl', 'Pr', 'Scr',
+      'Sl', 'Sm', 'Sp', 'St', 'Str', 'Thr', 'Tr',
+      'ct', 'lk', 'lm', 'ln', 'lp', 'lt', 'mp', 'nk', 'nt', 'rf', 'sk', 'sp',
+      'st'
+    ],
     syllables: [
       // 1/12 1 syllable, 4/12 2 syllables, 4/12 3, 2/12 4, and 1/12 5
       '%{Syllable}',
@@ -16447,18 +16371,18 @@ Pathfinder2E.NAME_COMPONENTS = {
       '%{Syllable}%{Syllable}%{Syllable}%{Syllable}',
       '%{Syllable}%{Syllable}%{Syllable}%{Syllable}%{Syllable}'
     ],
-    patterns: ['%{syllables}']
+    formats: ['%{syllables}']
   },
   Dwarf: {
     leading: 'bdgklmnprstyz'.split(''),
     trailing: 'bdgklmnprstz'.split(''),
-    patterns: ['%{Syllable}%{Syllable}']
+    formats: ['%{Syllable}%{Syllable}']
   },
   Elf: {
     leading: 'cdfhjlmnprstvyz'.split(''),
     trailing: 'cdflmnprstz'.split(''),
     vowels: 'aeiouy'.split(''),
-    patterns: [
+    formats: [
      '%{syllables}el',
      '%{syllables}el',
      '%{syllables}ara',
@@ -16470,22 +16394,22 @@ Pathfinder2E.NAME_COMPONENTS = {
     leading: 'bcfghjklmnpqrstz'.split(''),
     trailing: 'bcfgklmnprstz'.split(''),
     Female: {
-      patterns: ['%{Syllable}', '%{Syllable}%{Syllable}']
+      formats: ['%{Syllable}', '%{Syllable}%{Syllable}']
     },
     Male: {
       // Ensure at least two syllables
-      patterns: ['%{Syllable}%{syllables}']
+      formats: ['%{Syllable}%{syllables}']
     }
   },
   Goblin: {
     leading: 'bcdfghklmnprtwyz'.split(''),
     trailing: 'bcdfgklmnprtz'.split(''),
-    patterns: ['%{Syllable}', '%{Syllable}%{Syllable}']
+    formats: ['%{Syllable}', '%{Syllable}%{Syllable}']
   },
   Halfling: {
     leading: 'bfjklmnrsty'.split(''),
     trailing: 'bfklmnrst'.split(''),
-    patterns: ['%{Syllable}%{Syllable}', '%{Syllable}%{Syllable}%{Syllable}']
+    formats: ['%{Syllable}%{Syllable}', '%{Syllable}%{Syllable}%{Syllable}']
   },
   Human: {
     leading: 'bcdfghjklmnpqrstvwxyz'.split(''),
@@ -16499,7 +16423,15 @@ Pathfinder2E.NAME_COMPONENTS = {
  */
 Pathfinder2E.randomName = function(ancestry, gender) {
 
-  if(ancestry == null || !(ancestry in Pathfinder2E.NAME_COMPONENTS))
+  if(ancestry == null)
+    ancestry = 'Human';
+  // Handle homebrew sub-races, e.g., Hill Dwarf
+  if(!(ancestry in Pathfinder2E.NAME_COMPONENTS)) {
+    for(let a in Pathfinder2E.NAME_COMPONENTS)
+      if(ancestry.includes(a))
+        ancestry = a;
+  }
+  if(!(ancestry in Pathfinder2E.NAME_COMPONENTS))
     ancestry = 'Human';
   if(!gender)
     gender = QuilvynUtils.random(0, 100) < 50 ? 'Female' : 'Male';
@@ -16509,9 +16441,9 @@ Pathfinder2E.randomName = function(ancestry, gender) {
     ancestryComponents[gender] || Pathfinder2E.NAME_COMPONENTS.defaults[gender] || {};
   let components =
     Object.assign({}, Pathfinder2E.NAME_COMPONENTS.defaults, ancestryComponents, genderComponents);
-  let pattern = QuilvynUtils.randomElement(components.patterns);
+  let format = QuilvynUtils.randomElement(components.formats);
 
-  let result = QuilvynUtils.randomWord(pattern, components);
+  let result = QuilvynUtils.randomString(format, components);
   return result.charAt(0).toUpperCase() + result.substring(1);
 
 };
