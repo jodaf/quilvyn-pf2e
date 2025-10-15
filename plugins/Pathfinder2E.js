@@ -16373,15 +16373,27 @@ Pathfinder2E.NAME_COMPONENTS = {
     ],
     formats: ['%{syllables}']
   },
+  // Consonents and clusters taken from rule book sample names, with some
+  // additional clusters that seem appropriate
   Dwarf: {
     leading: 'bdgklmnprstyz'.split(''),
     trailing: 'bdgklmnprstz'.split(''),
+    clusters: [
+      // from sample names
+      'Dr', 'Gr', 'Tr', 'kk', 'lk', 'll', 'ng', 'pp', 'rr',
+      // added
+      'Kl', 'Kr', 'St', 'Th'
+    ],
     formats: ['%{Syllable}%{Syllable}']
   },
   Elf: {
     leading: 'cdfhjlmnprstvyz'.split(''),
     trailing: 'cdflmnprstz'.split(''),
     vowels: 'aeiouy'.split(''),
+    clusters: [
+      // from sample names
+      'Dr', 'Th', 'ld', 'nd', 'rd', 'ss', 'th'
+    ],
     formats: [
      '%{syllables}el',
      '%{syllables}el',
@@ -16393,6 +16405,10 @@ Pathfinder2E.NAME_COMPONENTS = {
   Gnome: {
     leading: 'bcfghjklmnpqrstz'.split(''),
     trailing: 'bcfgklmnprstz'.split(''),
+    clusters: [
+      // from sample names
+      'Br', 'Gr', 'Kr', 'Tr', 'ck', 'lm', 'ng', 'nt', 'sh', 'st'
+    ],
     Female: {
       formats: ['%{Syllable}', '%{Syllable}%{Syllable}']
     },
@@ -16404,11 +16420,19 @@ Pathfinder2E.NAME_COMPONENTS = {
   Goblin: {
     leading: 'bcdfghklmnprtwyz'.split(''),
     trailing: 'bcdfgklmnprtz'.split(''),
+    clusters: [
+      // from sample names
+      'Fr', 'Kr', 'bb', 'ck', 'kk', 'nk', 'rd', 'ee', 'oo'
+    ],
     formats: ['%{Syllable}', '%{Syllable}%{Syllable}']
   },
   Halfling: {
     leading: 'bfjklmnrsty'.split(''),
     trailing: 'bfklmnrst'.split(''),
+    clusters: [
+      // from sample names
+      'Tr', 'lk', 'll', 'nn', 'nt', 'rr', 'st'
+    ],
     formats: ['%{Syllable}%{Syllable}', '%{Syllable}%{Syllable}%{Syllable}']
   },
   Human: {
