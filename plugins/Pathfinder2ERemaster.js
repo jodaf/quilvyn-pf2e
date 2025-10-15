@@ -18674,6 +18674,110 @@ Pathfinder2ERemaster.getPlugins = function() {
   return [Pathfinder2E];
 };
 
+Pathfinder2ERemaster.NAME_COMPONENTS = {
+  Leshy: {
+    formats: ['%{adjectives} %{noun}'],
+    adjectives: [
+      '%{adjective}',
+      '%{adjective}',
+      '%{adjective}',
+      '%{adjective} %{gerund}',
+    ],
+    adjective: [
+      'Cascading', 'Lurking', 'Masterful', 'Noon', 'Scarlet', 'Snowy', 'Verdant'
+    ],
+    gerund: [
+      'Pine', 'Sky', 'Sun'
+    ],
+    noun: [
+      'Branch', 'Drinker', 'Hunter', 'Summer', 'Song', 'Rapids', 'Taleweaver'
+    ],
+  },
+  Orc: {
+    // removed hjqvwy from trailing throughout
+    leading: 'dghjklmnrsty'.split(''),
+    trailing: 'dgklmnrst'.split(''),
+    clusters: [
+      // from sample names
+      'Gr', 'Kr', 'Th', 'ch', 'gg', 'll', 'rch', 'rk', 'rr', 'sk', 'ss'
+    ]
+  },
+  Catfolk: {
+    leading: 'dfghklnprstvwyz'.split(''),
+    trailing: 'dfgklnprstz'.split(''),
+    clusters: [
+      // from sample names
+      'Dr', 'kk', 'nt', 'rr', 'sp', 'st', 'th', 'uu'
+    ]
+  },
+  Hobgoblin: {
+    leading: 'dghklmnrstvz'.split(''),
+    trailing: 'dgklmnrstz'.split(''),
+    clusters: [
+      // from sample names
+      'Dr', 'Gh', 'Kr', 'ae', 'ng', 'th'
+    ]
+  },
+  Kholo: {
+    formats: ['%{noun}', '%{adjective} %{noun}'],
+    adjective: [
+      'Iron', 'Onyx', 'Red', 'Unbent', 'White', 'Wistful'
+    ],
+    noun: [
+      'Acacia', 'Baobab', 'Elephant', 'Jackal', 'Reed', 'Thorn', 'Tooth',
+      'Woodpecker'
+    ]
+  },
+  Kobold: {
+    leading: 'bdfghjklmnrstvz'.split(''),
+    // trailing h allowed
+    trailing: 'bdfghklmnrstz'.split(''),
+    vowels: 'aeiouy'.split(''),
+    clusters: [
+      // from sample names
+      'Dr', 'Sh', 'St', 'Vr', 'Zg', 'aa', 'kk', 'ng', 'rr'
+    ]
+  },
+  Lizardfolk: {
+    leading: 'bghklmnrstz'.split(''),
+    trailing: 'bgklmnrstz'.split(''),
+    clusters: [
+      // from sample names
+      'Sh', 'lk', 'sh', 'shk', 'ss'
+    ]
+  },
+  Ratfolk: {
+    leading: 'bcdghjklmnrstxz'.split(''),
+    trailing: 'bcdgklmnrstxz'.split(''),
+    clusters: [
+      // from sample names
+      'Ch', 'Kn', 'Sk', 'nn', 'rn', 'ss'
+    ]
+  },
+  Tengu: {
+    leading: 'cdghklmprst'.split(''),
+    // trailing h allowed
+    trailing: 'cdghklmprst'.split(''),
+    clusters: [
+      // from sample names
+      'Ch', 'Gr', 'Ts', 'kk', 'rr', 'ss'
+    ]
+  },
+  Tripkee: {
+    leading: 'bcghklmnpqrstwyz'.split(''),
+    trailing: 'bcgklmnprstz'.split(''),
+    clusters: [
+      // from sample names
+      'Ct', 'Gp', 'Gr', 'Hrr', 'Mhr', 'Zt', 'ksh', 'lk', 'nn', 'pl', 'pr',
+      'sh', 'aa', 'ii', "o'o", 'uu'
+    ]
+  }
+};
+Pathfinder2E.NAME_COMPONENTS =
+  Object.assign(
+    Pathfinder2E.NAME_COMPONENTS, Pathfinder2ERemaster.NAME_COMPONENTS
+  );
+
 /* Returns HTML body content for user notes associated with this rule set. */
 Pathfinder2ERemaster.ruleNotes = function() {
   return '' +
