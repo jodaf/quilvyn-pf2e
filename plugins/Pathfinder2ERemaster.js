@@ -18681,16 +18681,27 @@ Pathfinder2ERemaster.NAME_COMPONENTS = {
       '%{adjective}',
       '%{adjective}',
       '%{adjective}',
-      '%{adjective} %{gerund}',
+      '%{adjective} %{adjunct}',
     ],
     adjective: [
-      'Cascading', 'Lurking', 'Masterful', 'Noon', 'Scarlet', 'Snowy', 'Verdant'
+      'Cascading', 'Lurking', 'Masterful', 'Noon', 'Scarlet', 'Snowy',
+      'Verdant',
+      // added
+      'Dappled', 'Dusky', 'Flourishing', 'Gloomy', 'Pastel', 'Radiant',
+      'Rippled', 'Shadowed', 'Shimmering', 'Showy', 'Sparkling', 'Still',
+      'Vibrant'
     ],
-    gerund: [
-      'Pine', 'Sky', 'Sun'
+    adjunct: [
+      'Pine', 'Sky', 'Starlight', 'Sun',
+      // added
+      'Dusk', 'Nectar', 'Pond'
     ],
     noun: [
-      'Branch', 'Drinker', 'Hunter', 'Summer', 'Song', 'Rapids', 'Taleweaver'
+      'Branch', 'Drinker', 'Hunter', 'In Summer', 'Song', 'Rapids',
+      'Taleweaver',
+      // added
+      'In Autumn', 'Bud', 'Cap', 'Chronicler', 'Gardener', 'Keeper', 'Meadow',
+      'Pathwright', 'Reader', 'Seeker', 'Stalk', 'Thicket', 'Traveler'
     ],
   },
   Orc: {
@@ -18719,13 +18730,22 @@ Pathfinder2ERemaster.NAME_COMPONENTS = {
     ]
   },
   Kholo: {
-    formats: ['%{noun}', '%{adjective} %{noun}'],
+    formats: ['%{noun}', '%{adjective} %{noun}', '%{adjective} %{noun}'],
     adjective: [
-      'Iron', 'Onyx', 'Red', 'Unbent', 'White', 'Wistful'
+      'Iron', 'Onyx', 'Red', 'Unbent', 'White', 'Wistful',
+      // added
+      'Ancient', 'Black', 'Fallen', 'Green', 'Patient', 'Sharpened', 'Wary'
     ],
     noun: [
       'Acacia', 'Baobab', 'Elephant', 'Jackal', 'Reed', 'Thorn', 'Tooth',
-      'Woodpecker'
+      'Woodpecker',
+      // added bones
+      'Claw', 'Femur', 'Rib', 'Skull', 'Spine',
+      // added plants
+      'Marula', 'Mopane', 'Nara', 'Nightshade', 'Privet', 'Tamboti', 'Wattle',
+      // added animals
+      'Adder', 'Badger', 'Boar', 'Boomslang', 'Caracal', 'Falcon', 'Impala',
+      'Kestrel', 'Leopard', 'Mamba', 'Serval', 'Viper', 'Vulture'
     ]
   },
   Kobold: {
