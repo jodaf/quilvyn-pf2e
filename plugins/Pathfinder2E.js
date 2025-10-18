@@ -14501,9 +14501,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if((matchInfo = name.match(/^([\w\s]+) Resiliency$/)) != null) {
     // TODO Count only specific class dedication feats, not all archetype feats
     let c = matchInfo[1];
-    rules.defineRule('combatNotes.' + c.toLowerCase() + 'Resiliency',
-      'sumArchetypeFeats', '=', 'source * 3'
-    );
+    rules.defineRule
+      ('combatNotes.' + prefix, 'sumArchetypeFeats', '=', 'source * 3');
   } else if(name == 'Bard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.bardDedication', '?', null,
