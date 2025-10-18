@@ -14360,8 +14360,27 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
   traits.forEach(t => {
     rules.defineRule('sum' + t + 'Feats', 'feats.' + name, '+=', null);
   });
+  // Sum Archetype feats by Dedication, initially for use by Resiliency feats.
+  // Assumes that each Archetype feat either explicitly lists its associated
+  // Dedication in its requirements or is defined after its associated
+  // Dedication with no others intervening. This holds for the predefined
+  // feats, at least well enough to implement the Resiliency feats, but
+  // homebrew feats could cause problems.
+  if(!(traits.includes('Archetype')))
+    Pathfinder2E.featRules.currentDedication = null;
+  else if(name.match(/^[\w\s]* Dedication/))
+    Pathfinder2E.featRules.currentDedication =
+      name.replace(/\s+Dedication/, '');
+  else if(requires.filter(r => r.match(/^features\.[\w\s]* Dedication$/)).length > 0)
+    Pathfinder2E.featRules.currentDedication =
+      requires.filter(r => r.match(/^features\.[\w\s]* Dedication$/))[0].replace('features.', '').replace(/\s+Dedication/, '');
+  if(Pathfinder2E.featRules.currentDedication != null)
+    rules.defineRule('sum' + Pathfinder2E.featRules.currentDedication.replaceAll(' ', '') + 'ArchetypeFeats',
+      'feats.' + name, '+=', null
+    );
 
 };
+Pathfinder2E.featRules.currentDedication = null;
 Pathfinder2E.featRules.traits = [
   'Abjuration', 'Additive 1', 'Additive 2', 'Additive 3', 'Air', 'Alchemist',
   'Ancestry', 'Arcane', 'Archetype', 'Attack', 'Auditory', 'Aura', 'Barbarian',
@@ -14499,10 +14518,10 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       );
     });
   } else if((matchInfo = name.match(/^([\w\s]+) Resiliency$/)) != null) {
-    // TODO Count only specific class dedication feats, not all archetype feats
     let c = matchInfo[1];
-    rules.defineRule
-      ('combatNotes.' + prefix, 'sumArchetypeFeats', '=', 'source * 3');
+    rules.defineRule('combatNotes.' + prefix,
+      'sum' + c.replaceAll(' ', '') + 'ArchetypeFeats', '=', 'source * 3'
+    );
   } else if(name == 'Bard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.bardDedication', '?', null,
