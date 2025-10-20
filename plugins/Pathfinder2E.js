@@ -135,6 +135,7 @@ Pathfinder2E.ALIGNMENTS = {
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
     'HitPoints=10 ' +
+    'Size=Medium ' +
     'Speed=20 ' +
     'Features=' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
@@ -150,6 +151,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Dwarf,Humanoid',
   'Elf':
     'HitPoints=6 ' +
+    'Size=Medium ' +
     'Speed=30 ' +
     'Features=' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
@@ -165,11 +167,12 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Elf,Humanoid',
   'Gnome':
     'HitPoints=8 ' +
+    'Size=Small ' +
     'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Low-Light Vision",1:Small,"1:Ancestry Feats","1:Gnome Heritage" ' +
+      '"1:Low-Light Vision","1:Ancestry Feats","1:Gnome Heritage" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage",' +
       '"1:Fey-Touched Gnome:Heritage",' +
@@ -183,11 +186,12 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Gnome,Humanoid',
   'Goblin':
     'HitPoints=6 ' +
+    'Size=Small ' +
     'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"1:Ability Flaw (Wisdom)",' +
-      '1:Darkvision,1:Small,"1:Ancestry Feats","1:Goblin Heritage" ' +
+      '1:Darkvision,"1:Ancestry Feats","1:Goblin Heritage" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage",' +
       '"1:Irongut Goblin:Heritage",' +
@@ -198,11 +202,12 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Goblin,Humanoid',
   'Halfling':
     'HitPoints=6 ' +
+    'Size=Small ' +
     'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Keen Eyes",1:Small,"1:Ancestry Feats","1:Halfling Heritage" ' +
+      '"1:Keen Eyes","1:Ancestry Feats","1:Halfling Heritage" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage",' +
       '"1:Hillock Halfling:Heritage",' +
@@ -213,6 +218,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Humanoid,Halfling',
   'Human':
     'HitPoints=8 ' +
+    'Size=Medium ' +
     'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Choose 2 from any)",' +
@@ -2677,6 +2683,8 @@ Pathfinder2E.FEATS = {
       '"rank.Arcana >= 4"',
 
   // General
+  // Require for Additional Lore is a no-op, since the feat itself will
+  // raise rank.Lore to at least 1
   'Additional Lore (%lore)':'Traits=General,Skill Require="rank.Lore >= 1"',
   'Adopted Ancestry (%ancestry)':'Traits=General',
   'Alchemical Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
@@ -2685,6 +2693,10 @@ Pathfinder2E.FEATS = {
   'Armor Proficiency':'Traits=General',
   'Assurance (%skill)':
     'Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
+  // NOTE: requires "expert in a skill with the Recall Knowledge action",
+  // which nominally means Arcana, Crafting, Lore, Medicine, Nature, Occultism,
+  // Religion, or Society. However, the rules discuss the GM allowing other
+  // skills, so enforcing this requirement seems unnecessary.
   'Automatic Knowledge (%skill)':
     'Traits=General,Skill ' +
     'Require=' +
@@ -12223,25 +12235,25 @@ Pathfinder2E.WEAPONS = {
 
   'Blowgun':
     'Category=Simple Price=0.1 Damage="1 P" Bulk=L Hands=1 Group=Dart ' +
-    'Traits=Agile,Nonlethal Range=20',
+    'Traits=Agile,Nonlethal Range=20 Reload=1',
   'Crossbow':
     'Category=Simple Price=3 Damage="1d8 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Range=120',
+    'Range=120 Reload=1',
   'Dart':
     'Category=Simple Price=0.01 Damage="1d4 P" Bulk=L Hands=1 Group=Dart ' +
     'Traits=Agile,Thrown Range=20',
   'Hand Crossbow':
     'Category=Simple Price=3 Damage="1d6 P" Bulk=L Hands=1 Group=Bow ' +
-    'Range=60',
+    'Range=60 Reload=1',
   'Heavy Crossbow':
     'Category=Simple Price=4 Damage="1d10 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Range=120',
+    'Range=120 Reload=2',
   'Javelin':
     'Category=Simple Price=0.1 Damage="1d6 P" Bulk=L Hands=1 Group=Dart ' +
     'Traits=Thrown Range=30',
   'Sling':
     'Category=Simple Price=0 Damage="1d6 B" Bulk=L Hands=1 Group=Sling ' +
-    'Traits=Propulsive Range=50',
+    'Traits=Propulsive Range=50 Reload=1',
 
   'Lesser Acid Flask':
     'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
@@ -12263,23 +12275,23 @@ Pathfinder2E.WEAPONS = {
     'Traits=Bomb Range=20',
   'Composite Longbow':
     'Category=Martial Price=20 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Traits="Deadly d10",Propulsive,"Volley 30\'" Range=100',
+    'Traits="Deadly d10",Propulsive,"Volley 30\'" Range=100 Reload=0',
   'Composite Shortbow':
     'Category=Martial Price=14 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Traits="Deadly d10",Propulsive Range=60',
+    'Traits="Deadly d10",Propulsive Range=60 Reload=0',
   'Longbow':
     'Category=Martial Price=6 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Traits="Deadly d10","Volley 30\'" Range=100',
+    'Traits="Deadly d10","Volley 30\'" Range=100 Reload=0',
   'Shortbow':
     'Category=Martial Price=3 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Traits="Deadly d10" Range=60',
+    'Traits="Deadly d10" Range=60 Reload=0',
 
   'Halfling Sling Staff':
     'Category=Martial Price=5 Damage="1d10 B" Bulk=1 Hands=2 Group=Sling ' +
-    'Traits=Uncommon,Halfling,Propulsive Range=80',
+    'Traits=Uncommon,Halfling,Propulsive Range=80 Reload=1',
   'Shuriken':
     'Category=Martial Price=0.01 Damage="1d4 P" Bulk=0 Hands=1 Group=Dart ' +
-    'Traits=Uncommon,Agile,Monk,Thrown Range=20'
+    'Traits=Uncommon,Agile,Monk,Thrown Range=20 Reload=0'
 
 };
 
@@ -12297,6 +12309,12 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
 
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
+    // base<ability> (e.g., baseStrength) is the value entered in the editor;
+    // fixedBoosts.<ability> are those provided by (generally ancestry)
+    // features, abilityBoosts.<ability> is the number of boosts entered in
+    // the editor, fullyBoosted.<ability> is the value reached if all of the
+    // abilityBoosts gave a +2, and halfBoosts are the number of abilityBoosts
+    // that only give a +1 due to the 18 ceiling
     let baseAbility = 'base' + a.charAt(0).toUpperCase() + a.substring(1);
     rules.defineRule('fullyBoosted.' + a,
       baseAbility, '=', null,
@@ -12343,7 +12361,8 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP'
   ]);
   QuilvynUtils.checkAttrTable(weapons, [
-    'Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Traits', 'Range'
+    'Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Traits', 'Range',
+    'Reload'
   ]);
 
   for(let a in armors)
@@ -12404,10 +12423,6 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
   rules.defineRule
     ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
-  rules.defineRule('combatNotes.weaponSpecialization',
-    '', '=', '2',
-    'combatNotes.greaterWeaponSpecialization', '+', '2'
-  );
   rules.defineRule
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   // For weapons with the finesse trait
@@ -12481,7 +12496,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   // Define ancestry-specific unarmed attack weapons
   Pathfinder2E.weaponRules(
     rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-    ['Finesse', 'Unarmed'], null
+    ['Finesse', 'Unarmed'], null, null
   );
 
 };
@@ -12492,7 +12507,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Speed', 'Traits']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Size', 'Speed', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
@@ -12512,6 +12527,10 @@ Pathfinder2E.identityRules = function(
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
 
+  rules.defineRule('combatNotes.weaponSpecialization',
+    '', '=', '2',
+    'combatNotes.greaterWeaponSpecialization', '+', '2'
+  );
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('featureNotes.anathema',
     'deity', '+', 'null', // recomputation trigger
@@ -12537,11 +12556,6 @@ Pathfinder2E.identityRules = function(
     'features.Druid Dedication', '+', '8'
   );
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
-  rules.defineRule('size',
-    '', '=', '"Medium"',
-    "features.Large", '=', '"Large"',
-    "features.Small", '=', '"Small"'
-  );
 
 };
 
@@ -12629,6 +12643,7 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
+  // Include Attribute for remaster
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Attribute', 'Subcategory']);
 
   for(let g in goodies)
@@ -12746,6 +12761,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Ancestry') {
     Pathfinder2E.ancestryRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
+      QuilvynUtils.getAttrValue(attrs, 'Size'),
       QuilvynUtils.getAttrValue(attrs, 'Speed'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
@@ -12883,7 +12899,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Hands'),
       group,
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
-      QuilvynUtils.getAttrValue(attrs, 'Range')
+      QuilvynUtils.getAttrValue(attrs, 'Range'),
+      QuilvynUtils.getAttrValue(attrs, 'Reload')
     );
     group =
       group == 'Knife' ? 'Knives' :
@@ -13017,13 +13034,13 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with ancestry #name#. #hitPoints#
- * gives the number of HP granted at level 1 and #speed# the speed, #features#
- * and #selectables# list associated automatic and selectable features,
- * #languages# lists languages automatically known by characters with the
- * ancestry, and #traits# lists any traits associated with it.
+ * gives the number of HP granted at level 1, #size# the size, and #speed# the
+ * speed. #features# and #selectables# list associated automatic and selectable
+ * features, #languages# lists languages automatically known by characters with
+ * the ancestry, and #traits# lists any traits associated with it.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, hitPoints, speed, features, selectables, languages, traits
+  rules, name, hitPoints, size, speed, features, selectables, languages, traits
 ) {
 
   if(!name) {
@@ -13033,8 +13050,11 @@ Pathfinder2E.ancestryRules = function(
   if(typeof hitPoints != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
   }
+  if(!(size+'').match(/^(Tiny|Small|Medium|Large)$/)) {
+    console.log('Bad size "' + size + '" for ancestry ' + name);
+  }
   if(typeof speed != 'number') {
-    console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
+    console.log('Bad speed "' + speed + '" for ancestry ' + name);
   }
   if(!Array.isArray(features)) {
     console.log('Bad features list "' + features + '" for ancestry ' + name);
@@ -13072,6 +13092,7 @@ Pathfinder2E.ancestryRules = function(
     if(l != 'any')
       rules.defineRule('languages.' + l, ancestryLevel, '=', '1');
   });
+  rules.defineRule('size', ancestryLevel, '=', '"' + size + '"');
   rules.defineRule('speed', ancestryLevel, '=', speed);
 
   let boostFeature =
@@ -14658,7 +14679,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Crane Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Crane Wing', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule('weapons.Crane Wing', 'features.Crane Stance', '=', '1');
   } else if(name == 'Divine Ally') {
@@ -14678,7 +14699,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Dragon Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Dragon Tail', 'Unarmed', 0, '1d10 B', 0, 0, 'Brawling',
-      ['Backswing', 'Nonlethal', 'Unarmed'], null
+      ['Backswing', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule('weapons.Dragon Tail', 'features.Dragon Stance', '=', '1');
   } else if(name == 'Druid Dedication') {
@@ -14827,7 +14848,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Ironblood Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Iron Sweep', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
-      ['Nonlethal', 'Parry', 'Sweep', 'Unarmed'], null
+      ['Nonlethal', 'Parry', 'Sweep', 'Unarmed'], null, null
     );
     rules.defineRule
       ('weapons.Iron Sweep', 'features.Ironblood Stance', '=', '1');
@@ -14876,7 +14897,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Mountain Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Falling Stone', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
-      ['Forceful', 'Nonlethal', 'Unarmed'], null
+      ['Forceful', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule
       ('weapons.Falling Stone', 'features.Mountain Stance', '=', '1');
@@ -14993,14 +15014,15 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Tangled Forest Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Lashing Branch', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule
       ('weapons.Lashing Branch', 'features.Tangled Forest Stance', '=', '1');
   } else if(name == 'Tiger Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Tiger Claw', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed', 'Deadly 1d4 persistent bleed'], null
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed',
+       'Deadly 1d4 persistent bleed'], null, null
     );
     rules.defineRule('weapons.Tiger Claw', 'features.Tiger Stance', '=', '1');
   } else if(name == 'Unburdened Iron') {
@@ -15034,7 +15056,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       ('magicNotes.wildWindsInitiate', 'monkTradition', '=', null);
     Pathfinder2E.weaponRules(
       rules, 'Wind Crash', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
-      ['Agile', 'Nonlethal', 'Propulsive', 'Unarmed'], 30
+      ['Agile', 'Nonlethal', 'Propulsive', 'Unarmed'], 30, null
     );
     rules.defineRule
       ('weapons.Wind Crash', 'features.Wild Winds Initiate', '=', '1');
@@ -15074,7 +15096,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Wolf Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Wolf Jaw', 'Unarmed', 0, '1d8 P', 0, 0, 'Brawling',
-      ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null
+      ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule('weapons.Wolf Jaw', 'features.Wolf Stance', '=', '1');
   }
@@ -15629,10 +15651,12 @@ Pathfinder2E.spellRules.traits = [
  * effectively, adds #bulk# to the character's encumbrance, requires #hands#
  * hands to operate, belongs to group #group#, and has weapon properties
  * #traits#. If specified, the weapon can be used as a ranged weapon with a
- * range increment of #range# feet.
+ * range increment of #range# feet, and a projectile weapon requires #reload#
+ * actions to reload.
  */
 Pathfinder2E.weaponRules = function(
-  rules, name, category, price, damage, bulk, hands, group, traits, range
+  rules, name, category, price, damage, bulk, hands, group, traits, range,
+  reload
 ) {
 
   if(!name) {
@@ -15679,6 +15703,9 @@ Pathfinder2E.weaponRules = function(
   });
   if(range && typeof range != 'number') {
     console.log('Bad range "' + range + '" for weapon ' + name);
+  }
+  if(reload && typeof reload != 'number') {
+    console.log('Bad reload "' + reload + '" for weapon ' + name);
   }
 
   let isFinesse = traits.includes('Finesse');
@@ -16161,6 +16188,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   if(type == 'Ancestry')
     result.push(
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
+      ['Size', 'Size', 'select-one', ['Tiny', 'Small', 'Medium', 'Large']],
       ['Speed', 'Speed', 'text', [3]],
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]],
@@ -16302,7 +16330,8 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Hands', 'Hands', 'select-one', [1, 2]],
       ['Group', 'Group', 'select-one', weaponGroups],
       ['Traits', 'Traits', 'text', [40]],
-      ['Range', 'Range in Feet', 'select-one', zeroToOneFifty]
+      ['Range', 'Range in Feet', 'select-one', zeroToOneFifty],
+      ['Reload', 'Reload', 'text', [2]]
     );
   }
   return result;
