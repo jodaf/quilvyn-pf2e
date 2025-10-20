@@ -606,8 +606,8 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
-      '"deityFont==\'Either\' ? 1:Healing Font:Divine Font",' +
-      '"deityFont==\'Either\' ? 1:Harmful Font:Divine Font",' +
+      '"deityFont==\'Harm or Heal\' ? 1:Healing Font:Divine Font",' +
+      '"deityFont==\'Harm or Heal\' ? 1:Harmful Font:Divine Font",' +
       '"1:Cloistered Cleric:Doctrine",' +
       '"1:Warpriest:Doctrine" ' +
     'SpellSlots=' +
@@ -888,7 +888,7 @@ Pathfinder2E.DEITIES = {
   'None':'',
   'Abadar':
     'Alignment=LN FollowerAlignments=LG,LN,LE ' +
-    'Font=Either Skill=Society Weapon=Crossbow ' +
+    'Font="Harm or Heal" Skill=Society Weapon=Crossbow ' +
     'Domain=Cities,Earth,Travel,Wealth ' +
     'Spells="1:Illusory Object","4:Creation","7:Magnificent Mansion"',
   'Asmodeus':
@@ -898,7 +898,7 @@ Pathfinder2E.DEITIES = {
     'Spells="1:Charm","4:Suggestion","6:Mislead"',
   'Calistra':
     'Alignment=CN FollowerAlignments=CG,CN,CE ' +
-    'Font=Either Skill=Deception Weapon=Whip ' +
+    'Font="Harm or Heal" Skill=Deception Weapon=Whip ' +
     'Domain=Pain,Passion,Secrecy,Trickery ' +
     'Spells="1:Charm","3:Enthrall","6:Mislead"',
   'Cayden Cailean':
@@ -918,7 +918,7 @@ Pathfinder2E.DEITIES = {
     'Spells="1:True Strike","3:Wall Of Thorns","5:Tree Stride"',
   'Gorum':
     'Alignment=CN FollowerAlignments=CN,CE ' +
-    'Font=Either Skill=Athletics Weapon=Greatsword ' +
+    'Font="Harm or Heal" Skill=Athletics Weapon=Greatsword ' +
     'Domain=Confidence,Destruction,Might,Zeal ' +
     'Spells="1:True Strike","2:Enlarge","4:Weapon Storm"',
   'Gozreh':
@@ -933,17 +933,17 @@ Pathfinder2E.DEITIES = {
     'Spells="1:True Strike","2:Enlarge","5:Fire Shield"',
   'Irori':
     'Alignment=LN FollowerAlignments=LG,LN,LE ' +
-    'Font=Either Skill=Athletics Weapon=Fist ' +
+    'Font="Harm or Heal" Skill=Athletics Weapon=Fist ' +
     'Domain=Knowledge,Might,Perfection,Truth ' +
     'Spells="1:Jump","3:Haste","4:Stoneskin"',
   'Lamashtu':
     'Alignment=CE FollowerAlignments=CE ' +
-    'Font=Either Skill=Survival Weapon=Falchion ' +
+    'Font="Harm or Heal" Skill=Survival Weapon=Falchion ' +
     'Domain=Family,Might,Nightmares,Trickery ' +
     'Spells="1:Magic Fang","2:Animal Form","4:Nightmare"',
   'Nethys':
     'Alignment=N FollowerAlignments=NG,LN,N,CN,NE ' +
-    'Font=Either Skill=Arcana Weapon=Staff ' +
+    'Font="Harm or Heal" Skill=Arcana Weapon=Staff ' +
     'Domain=Destruction,Knowledge,Magic,Protection ' +
     'Spells=' +
       '"1:Magic Missile","2:Magic Mouth","3:Levitate","4:Blink",' +
@@ -1024,7 +1024,7 @@ Pathfinder2E.FEATS = {
   'Expert Longevity':
     'Traits=Elf Require="level >= 9","features.Ancestral Longevity"',
   'Universal Longevity':
-    'Traits=Elf Require="level >= 13","features.Ancestral Longevity"',
+    'Traits=Elf Require="level >= 13","features.Expert Longevity"',
   'Elven Weapon Expertise':
     'Traits=Elf Require="level >= 13","features.Elven Weapon Familiarity"',
 
@@ -1114,6 +1114,7 @@ Pathfinder2E.FEATS = {
   'Incredible Improvisation':
     'Traits=Human Require="level >= 9","features.Clever Improviser"',
   'Multitalented':'Traits=Human Require="level >= 9"',
+  // TODO requires trained in Unconventional Weaponry weapon
   'Unconventional Expertise':
     'Traits=Human Require="level >= 13","features.Unconventional Weaponry"',
   'Elf Atavism':'Traits=Half-Elf',
@@ -1273,7 +1274,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 16",' +
       '"features.Dragon Instinct",' +
-     '"features.Dragon\'s Rage Wings"',
+      '"features.Dragon\'s Rage Wings"',
   'Reckless Abandon':'Traits=Barbarian,Rage Require="level >= 16"',
   'Brutal Critical':'Traits=Barbarian Require="level >= 18"',
   'Perfect Clarity':
@@ -1296,17 +1297,16 @@ Pathfinder2E.FEATS = {
   "Loremaster's Etude":
     'Traits=Bard,Fortune Require="level >= 2","hasEnigmaMuse"',
   'Multifarious Muse (Enigma)':
-    'Traits=Bard Require="level >= 2","bardFeatures.Enigma == 0"',
+    'Traits=Bard Require="level >= 2","features.Enigma == 0"',
   'Multifarious Muse (Maestro)':
-    'Traits=Bard Require="level >= 2","bardFeatures.Maestro == 0"',
+    'Traits=Bard Require="level >= 2","features.Maestro == 0"',
   'Multifarious Muse (Polymath)':
-    'Traits=Bard Require="level >= 2","bardFeatures.Polymath == 0"',
+    'Traits=Bard Require="level >= 2","features.Polymath == 0"',
   'Inspire Defense':'Traits=Bard Require="level >= 4","hasMaestroMuse"',
   'Melodious Spell':
     'Traits=Bard,Concentrate,Manipulate,Metamagic Require="level >= 4"',
   'Triple Time':'Traits=Bard Require="level >= 4"',
-  'Versatile Signature':
-    'Traits=Bard Require="level >= 4","hasPolymathMuse"',
+  'Versatile Signature':'Traits=Bard Require="level >= 4","hasPolymathMuse"',
   'Dirge Of Doom':'Traits=Bard Require="level >= 6"',
   'Harmonize':
     'Traits=Bard,Concentrate,Manipulate,Metamagic ' +
@@ -1334,8 +1334,7 @@ Pathfinder2E.FEATS = {
   'Inspirational Focus':'Traits=Bard Require="level >= 12"',
   'Allegro':'Traits=Bard Require="level >= 14"',
   'Soothing Ballad':'Traits=Bard Require="level >= 14"',
-  'True Hypercognition':
-    'Traits=Bard Require="level >= 14","hasEnigmaMuse"',
+  'True Hypercognition':'Traits=Bard Require="level >= 14","hasEnigmaMuse"',
   'Effortless Concentration':
     'Traits=Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
   'Studious Capacity':
@@ -1394,7 +1393,15 @@ Pathfinder2E.FEATS = {
   'Loyal Warhorse':'Traits=Champion Require="level >= 6","features.Steed Ally"',
   'Shield Warden':
     'Traits=Champion,Fighter ' +
-    'Require="meetsChampionShieldWardenRequirements || meetsFighterShieldWardenRequirements"',
+    'Require=' +
+      '"level >= 6",' +
+      // The fighter feat requires Shield Block, which is a class feature for
+      // both champion and fighter, while the champion feat requires Shield
+      // Ally and The Tenets Of Good. Champion Dedication doesn't grant a
+      // divine ally and so grants no access to Shield Warden.
+      '"features.Shield Block",' +
+      '"levels.Fighter || fighterDedicationLevel || features.Shield Ally",' +
+      '"levels.Fighter || fighterDedicationLevel || features.The Tenets Of Good"',
   'Smite Evil':
     'Traits=Champion ' +
     'Require=' +
@@ -1404,7 +1411,12 @@ Pathfinder2E.FEATS = {
   "Advanced Deity's Domain (%domain)":
     'Traits=Champion Require="level >= 8","features.Deity\'s Domain (%domain)"',
   'Greater Mercy':'Traits=Champion Require="level >= 8","features.Mercy"',
-  'Heal Mount':'Traits=Champion Require="level >= 8","features.Steed Ally"',
+  'Heal Mount':
+    'Traits=Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Steed Ally",' +
+      '"spells.Lay On Hands (D1 Foc Nec)"',
   'Quick Shield Block':
     'Traits=Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
@@ -1432,8 +1444,6 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 10",' +
       '"features.Champion\'s Reaction",' +
-      '"features.Shield Ally",' +
-      '"features.The Tenets Of Good",' +
       '"features.Shield Warden"',
   'Affliction Mercy':'Traits=Champion Require="level >= 12","features.Mercy"',
   'Aura Of Faith':
@@ -1514,7 +1524,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 2",' +
       '"features.Harmful Font || features.Healing Font",' +
-      '"deityFont == \'Either\'"',
+      '"deityFont == \'Harm or Heal\'"',
   'Channel Smite':
     'Traits=Cleric,Divine,Necromancy ' +
     'Require="level >= 4","features.Harmful Font || features.Healing Font"',
@@ -2173,7 +2183,13 @@ Pathfinder2E.FEATS = {
     'Traits=Sorcerer,Wizard,Arcane,Detection,Divination ' +
     'Require="level >= 12"',
   'Interweave Dispel':
-    'Traits=Sorcerer,Metamagic Require="level >= 14","knowsDispelMagicSpell"',
+    'Traits=Sorcerer,Metamagic ' +
+    'Require=' +
+      '"level >= 14",' +
+      '"spells.Dispel Magic (A2 Abj) || ' +
+       'spells.Dispel Magic (D2 Abj) || ' +
+       'spells.Dispel Magic (O2 Abj) || ' +
+       'spells.Dispel Magic (P2 Abj)"',
   'Reflect Spell':
     'Traits=Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
@@ -2520,10 +2536,10 @@ Pathfinder2E.FEATS = {
      'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
   "Perfection's Path (Reflex)":
     'Traits=Archetype ' +
-     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
+     'Require="level >= 12","feats.Monk Dedication","rank.Reflex >= 2"',
   "Perfection's Path (Will)":
     'Traits=Archetype ' +
-     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
+     'Require="level >= 12","feats.Monk Dedication","rank.Will >= 2"',
 
   'Ranger Dedication':
     'Traits=Archetype,Dedication,Multiclass ' +
@@ -13819,7 +13835,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('saveNotes.warpriest-1', 'level', '?', 'source>=15');
     rules.defineRule('selectableFeatureCount.Cleric (Divine Font)',
       'featureNotes.divineFont', '?', null,
-      'deityFont', '=', 'source=="Either" ? 1 : null'
+      'deityFont', '=', 'source=="Harm or Heal" ? 1 : null'
     );
     rules.defineRule('selectableFeatureCount.Cleric (Doctrine)',
       'featureNotes.doctrine', '=', '1'
@@ -14206,7 +14222,7 @@ Pathfinder2E.deityRules = function(
       return;
     }
   });
-  if(font && !(font+'').match(/^(Either|Harm|Heal)$/)) {
+  if(font && !(font+'').match(/^(Harm or Heal|Harm|Heal)$/)) {
     console.log('Bad font "' + font + '" for deity ' + name);
     return;
   }
@@ -14808,13 +14824,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'features.' + i, '=', '1'
       );
     });
-  } else if(name == 'Interweave Dispel') {
-    rules.defineRule('knowsDispelMagicSpell',
-      'spells.Dispel Magic (A2 Abj)', '=', '1',
-      'spells.Dispel Magic (D2 Abj)', '=', '1',
-      'spells.Dispel Magic (O2 Abj)', '=', '1',
-      'spells.Dispel Magic (P2 Abj)', '=', '1'
-    );
   } else if(name == 'Ironblood Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Iron Sweep', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
@@ -14931,18 +14940,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
-    );
-  } else if(name == 'Shield Warden') {
-    rules.defineRule('meetsChampionShieldWardenRequirements',
-      'features.Shield Ally', '?', null,
-      'features.The Tenets Of Good', '?', null,
-      'levels.Champion', '=', 'source>=6 ? 1 : null',
-      'championDedicationLevel', '=', 'source >= 12 ? 1 : null'
-    );
-    rules.defineRule('meetsFighterShieldWardenRequirements',
-      'features.Shield Block', '?', null,
-      'levels.Fighter', '=', 'source>=6 ? 1 : null',
-      'fighterDedicationLevel', '=', 'source>=12 ? 1 : null'
     );
   } else if(name == 'Skill Mastery') {
     rules.defineRule
@@ -16229,7 +16226,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Alignment', 'Alignment', 'select-one', shortAlignments],
       ['FollowerAlignments', 'Follower Alignments', 'text', [30]],
-      ['Font', 'Divine Font', 'select-one', ['Harm', 'Heal', 'Either']],
+      ['Font', 'Divine Font', 'select-one', ['Harm', 'Heal', 'Harm or Heal']],
       ['Skill', 'Divine Skill', 'select-one', Object.keys(rules.getChoices('skills'))],
       ['Weapon', 'Favored Weapon', 'select-one', Object.keys(rules.getChoices('weapons'))],
       ['Domain', 'Domains', 'text', [30]],
