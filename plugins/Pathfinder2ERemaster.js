@@ -891,14 +891,8 @@ Pathfinder2ERemaster.CLASSES = {
       '"2:Skill Feats","3:Furious Footfalls","3:General Feats",' +
       '"3:Skill Increases",5:Brutality,7:Juggernaut,' +
       '"7:Specialization Ability","7:Weapon Specialization",' +
-      '"9:Reflex Expertise",' +
-      '"features.Animal Instinct ? 9:Raging Resistance (Animal)",' +
-      '"features.Dragon Instinct ? 9:Raging Resistance (Dragon)",' +
-      '"features.Fury Instinct ? 9:Raging Resistance (Fury)",' +
-      '"features.Giant Instinct ? 9:Raging Resistance (Giant)",' +
-      '"features.Spirit Instinct ? 9:Raging Resistance (Spirit)",' +
-      '"features.Superstition Instinct ? 9:Raging Resistance (Superstition)",' +
-      '"11:Mighty Rage","13:Greater Juggernaut","13:Medium Armor Expertise",' +
+      '"9:Reflex Expertise","9:Raging Resistance","11:Mighty Rage",' +
+      '"13:Greater Juggernaut","13:Medium Armor Expertise",' +
       '"13:Weapon Mastery","15:Greater Weapon Specialization",' +
       '"15:Indomitable Will","17:Perception Mastery","17:Revitalizing Rage",' +
       '"19:Medium Armor Mastery",19:Devastator ' +
@@ -9470,23 +9464,23 @@ Pathfinder2ERemaster.FEATURES = {
    .replace('-1 Armor Class and ', "%{levels.Barbarian?'':'-1 Armor Class and '}")
    .replace('quickRage', 'revitalizingRage')
    .replace('rages', 'rages to again gain temporary Hit Points'),
-  'Raging Resistance (Animal)':
-    Pathfinder2E.FEATURES['Raging Resistance (Animal)']
+  'Raging Resistance (Animal Instinct)':
+    Pathfinder2E.FEATURES['Raging Resistance (Animal Instinct)']
     .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
-  'Raging Resistance (Dragon)':
-    Pathfinder2E.FEATURES['Raging Resistance (Dragon)']
+  'Raging Resistance (Dragon Instinct)':
+    Pathfinder2E.FEATURES['Raging Resistance (Dragon Instinct)']
     .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
-  'Raging Resistance (Fury)':
-    Pathfinder2E.FEATURES['Raging Resistance (Fury)']
+  'Raging Resistance (Fury Instinct)':
+    Pathfinder2E.FEATURES['Raging Resistance (Fury Instinct)']
     .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
-  'Raging Resistance (Giant)':
-    Pathfinder2E.FEATURES['Raging Resistance (Giant)']
+  'Raging Resistance (Giant Instinct)':
+    Pathfinder2E.FEATURES['Raging Resistance (Giant Instinct)']
     .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
-  'Raging Resistance (Spirit)':
-    Pathfinder2E.FEATURES['Raging Resistance (Spirit)']
+  'Raging Resistance (Spirit Instinct)':
+    Pathfinder2E.FEATURES['Raging Resistance (Spirit Instinct)']
     .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)')
     .replace('negative', 'void'),
-  'Raging Resistance (Superstition)':
+  'Raging Resistance (Superstition Instinct)':
     'Section=save ' +
     'Note="Has resistance %{saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)} to a choice of arcane or divine spells and a choice of occult or primal spells during rage"',
   'Revitalizing Rage':Pathfinder2E.FEATURES['Quick Rage'],
