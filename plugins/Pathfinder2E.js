@@ -495,13 +495,7 @@ Pathfinder2E.CLASSES = {
       '"2:Skill Feats","3:Deny Advantage","3:General Feats",' +
       '"3:Skill Increases","5:Brutality","7:Juggernaut",' +
       '"7:Specialization Ability","7:Weapon Specialization",' +
-      '"9:Lightning Reflexes",' +
-      '"features.Animal Instinct ? 9:Raging Resistance (Animal)",' +
-      '"features.Dragon Instinct ? 9:Raging Resistance (Dragon)",' +
-      '"features.Fury Instinct ? 9:Raging Resistance (Fury)",' +
-      '"features.Giant Instinct ? 9:Raging Resistance (Giant)",' +
-      '"features.Spirit Instinct ? 9:Raging Resistance (Spirit)",' +
-      '"11:Mighty Rage",' +
+      '"9:Lightning Reflexes","9:Raging Resistance","11:Mighty Rage",' +
       '"13:Greater Juggernaut","13:Medium Armor Expertise","13:Weapon Fury",' +
       '"15:Greater Weapon Specialization","15:Indomitable Will",' +
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
@@ -3702,19 +3696,19 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage, or +%{combatNotes.rage//2} HP with an agile weapon, and suffers -1 Armor Class and loss of concentration actions for 1 min; requires 1 %{combatNotes.quickRage?\'turn\':\'min\'} between rages"',
-  'Raging Resistance (Animal)':
+  'Raging Resistance (Animal Instinct)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
-  'Raging Resistance (Dragon)':
+  'Raging Resistance (Dragon Instinct)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and %{combatNotes.draconicRage||\'fire\'} during rage"',
-  'Raging Resistance (Fury)':
+  'Raging Resistance (Fury Instinct)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to physical weapon damage during rage"',
-  'Raging Resistance (Giant)':
+  'Raging Resistance (Giant Instinct)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to bludgeoning and a choice of cold, electricity, or fire during rage"',
-  'Raging Resistance (Spirit)':
+  'Raging Resistance (Spirit Instinct)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to negative and undead during rage"',
   'Specialization Ability':
@@ -13495,6 +13489,12 @@ Pathfinder2E.classRules = function(
     console.log('Bad abilities list "' + abilities + '" for class ' + name);
     return;
   }
+  abilities.forEach(a => {
+    if(!(a in Pathfinder2E.ABILITIES)) {
+      console.log('Bad ability "' + a + '" for class ' + name);
+      return;
+    }
+  });
   if(typeof hitPoints != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for class ' + name);
     return;
@@ -13535,6 +13535,7 @@ Pathfinder2E.classRules = function(
   });
 
   if(spellSlots.length > 0) {
+    // Assume here that casting classes don't get to choose primary ability
     rules.defineRule('spellModifier.' + name,
       classLevel, '?', null,
       abilities[0] + 'Modifier', '=', null
@@ -13552,19 +13553,19 @@ Pathfinder2E.classRules = function(
     } else if('C0123456789'.includes(firstChar)) {
       // Sorcerer slots depend on bloodline. Generate rules here based on a
       // tradition-specific level that is set by featureRules.
-      ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-        let firstChar = t.charAt(0);
-        let tLevel = prefix + t + 'Level';
-        let tSlots = spellSlots.map(x => firstChar + x);
-        QuilvynRules.spellSlotRules(rules, tLevel, tSlots);
+      ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(trad => {
+        let tradLevel = prefix + trad + 'Level';
+        let tradSlots = spellSlots.map(x => trad.charAt(0) + x);
+        QuilvynRules.spellSlotRules(rules, tradLevel, tradSlots);
         rules.defineRule
-          ('spellAbility.' + t, tLevel, '=', '"' + abilities[0] + '"');
-        rules.defineRule('spellModifier' + t + '.' + name,
-          tLevel, '?', null,
+          ('spellAbility.' + trad, tradLevel, '=', '"' + abilities[0] + '"');
+        rules.defineRule('spellModifier' + trad + '.' + name,
+          tradLevel, '?', null,
           'spellModifier.' + name, '=', null
         );
-        rules.defineRule
-          ('spellModifier.' + t, 'spellModifier' + t + '.' + name, '=', null);
+        rules.defineRule('spellModifier.' + trad,
+          'spellModifier' + trad + '.' + name, '=', null
+        );
       });
     }
   }
@@ -13585,21 +13586,21 @@ Pathfinder2E.classRules = function(
   } else {
     abilities.forEach(a => {
       let modifier = a + 'Modifier';
-      a = a.charAt(0).toUpperCase() + a.substring(1).toLowerCase();
+      let aUpper = a.charAt(0).toUpperCase() + a.substring(1).toLowerCase();
       rules.defineRule('classDifficultyClass.' + name,
         modifier, '+', 'null', // recomputation trigger
-        prefix + 'Features.' + a, '+', '10 + dict.' + modifier
+        prefix + 'Features.' + aUpper, '+', '10 + dict.' + modifier
       );
       rules.defineRule('classDifficultyClass.' + name + '.1',
-        prefix + 'Features.' + a, '=', '"' + a.toLowerCase() + '"'
+        prefix + 'Features.' + aUpper, '=', '"' + a + '"'
       );
     });
   }
   rules.defineRule('classDifficultyClass.' + name + '.2',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
-  rules.defineRule('classDC', 'classDifficultyClass.' + name, '=', null);
 
+  rules.defineRule('classDC', 'classDifficultyClass.' + name, '=', null);
   rules.defineRule('classHitPoints', classLevel, '=', hitPoints);
   rules.defineRule('featureNotes.' + prefix + 'Feats',
     classLevel, '=', 'Math.floor(source / 2)' + (features.includes('1:' + name + ' Feats') ? ' + 1' : '')
@@ -13692,11 +13693,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     let instincts =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', ''));
     instincts.forEach(i => {
-      if(i.includes('(')) {
-        let instinctGroup = i.replace(/\s*\(.*/, '');
+      let groupInstinct = i.includes('(') ? i.replace(/\s*\(.*/, '') : i;
+      if(groupInstinct != i)
         rules.defineRule
-          ('features.' + instinctGroup, 'features.' + i, '=', '1');
-      }
+          ('features.' + groupInstinct, 'features.' + i, '=', '1');
+      rules.defineRule('features.Raging Resistance (' + groupInstinct + ')',
+        'features.Raging Resistance', '?', null,
+        'features.' + groupInstinct, '=', '1'
+      );
     });
     rules.defineRule('selectableFeatureCount.Barbarian (Instinct)',
       'featureNotes.instinct', '=', '1'
