@@ -3937,7 +3937,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Has the Lingering Composition feature",' +
       '"Knows the Soothe occult spell"',
-  'Magnum Opus':'Section=magic Note="Knows 2 10th-level occult spells"',
+  'Magnum Opus':'Section=magic Note="Has 1 10th-level spell slot"',
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
   'Muse':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
@@ -13725,8 +13725,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule
-      ('spellSlots.OC1', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
-    rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
+      ('spellSlots.O10', 'magicNotes.magnumOpus', '=', 'null'); // italics
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponDamage', '?', 'source',
@@ -13847,19 +13846,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.warpriest',
       'level', '=', 'source<11 ? "Trained" : source<19 ? "Expert" : "Master"'
     );
-    rules.defineRule('trainingLevel.Divine',
-      'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
-      'magicNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
-    );
-    rules.defineRule('trainingLevel.Fortitude',
-      'saveNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
-    );
-    rules.defineRule('trainingLevel.Light Armor',
-      'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
-    );
-    rules.defineRule('trainingLevel.Medium Armor',
-      'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
-    );
     rules.defineRule('saveNotes.cloisteredCleric', 'level', '?', 'source>=3');
     rules.defineRule
       ('saveNotes.warpriest', 'level', '=', 'source<15 ? "Expert" : "Master"');
@@ -13874,10 +13860,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
-    rules.defineRule('spellSlots.D10',
-      'magicNotes.miraculousSpell', '=', 'null', // italics
-      'magicNotes.makerOfMiracles', '+', '1'
-    );
+    rules.defineRule
+      ('spellSlots.D10', 'magicNotes.miraculousSpell', '=', 'null'); // italics
     rules.defineChoice
       ('notes', 'validationNotes.clericAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.clericAlignment',
@@ -13903,9 +13887,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
   } else if(name == 'Fighter') {
-    ['Axes', 'Bombs', 'Brawling Weapons', 'Clubs', 'Crossbows', 'Darts',
-     'Flails', 'Hammers', 'Knives', 'Picks', 'Polearms', 'Slings', 'Shields',
-     'Spears', 'Swords'].forEach(g => {
+    let allWeapons = rules.getChoices('weapons');
+    let groups = {};
+    for(let w in allWeapons) {
+      let group = QuilvynUtils.getAttrValue(allWeapons[w], 'Group');
+      group =
+        group == 'Knife' ? 'Knives' :
+        group == 'Brawling' ? 'Brawling Weapons' : (group + 's');
+      groups[group] = '';
+    }
+    for(let g in groups) {
       rules.defineRule('features.Fighter Weapon Mastery (' + g + ')',
         'features.Fighter Weapon Mastery', '?', null,
         'features.' + g, '=', '1'
@@ -13914,7 +13905,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'features.Weapon Legend', '?', null,
         'features.' + g, '=', '1'
       );
-    });
+    }
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
     );
@@ -14037,9 +14028,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.skillIncreases',
       classLevel, '=', 'source>=2 ? source - 1 : null'
     );
-    rules.defineRule('trainingLevel.Medium Armor',
-      'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
-    );
   } else if(name == 'Sorcerer') {
     rules.defineRule('sorcererTraditions',
       classLevel, '=', 'Pathfinder2E.sorcererTraditions = ""'
@@ -14081,16 +14069,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.sorcererSpellcasting',
       'sorcererTraditionsLowered', '=', null
     );
-    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('trainingLevel.' + t,
-        'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
-        'magicNotes.masterSpellcaster', '^=', 'source.includes("' + t + '") ? 3 : null',
-        'magicNotes.legendarySpellcaster', '^=', 'source.includes("' + t + '") ? 4 : null'
-      );
-      rules.defineRule('spellSlots.' + t.charAt(0) + '10',
-        'magicNotes.bloodlinePerfection', '+', '1'
-      );
-    });
     let allSelectables = rules.getChoices('selectableFeatures');
     let bloodlines =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
@@ -14139,10 +14117,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.wizardSkills', 'intelligenceModifier', '=', '2 + source');
-    rules.defineRule('spellSlots.A10',
-      "magicNotes.archwizard'sSpellcraft", '+', 'null', // italics
-      "magicNotes.archwizard'sMight", '+', '1'
-    );
+    rules.defineRule
+      ('spellSlots.A10', "magicNotes.archwizard'sSpellcraft", '+', 'null'); // italics
     let schools =
       rules.plugin.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
       .map(x => x.replace(':Arcane School', ''))
@@ -14537,6 +14513,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'features.' + s, '=', '1'
       );
     });
+  } else if(name == "Archwizard's Might") {
+    rules.defineRule
+      ('spellSlots.A10', "magicNotes.archwizard'sMight", '+', '1');
   } else if(name == 'Armor Proficiency') {
     rules.defineRule('combatNotes.armorProficiency',
       '', '=', '"Light"',
@@ -14636,6 +14615,12 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     }
     if(name.match(/(Expert|Master) Sorcerer/))
       rules.defineRule('magicNotes.' + prefix, 'sorcererTraditions', '=', null);
+  } else if(name == 'Bloodline Perfection') {
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('spellSlots.' + t.charAt(0) + '10',
+        'magicNotes.bloodlinePerfection', '+', '1'
+      );
+    });
   } else if((matchInfo = name.match(/^Canny Acumen \((.*)\)$/)) != null) {
     let target = matchInfo[1];
     let note =
@@ -14870,6 +14855,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Ki Strike') {
     rules.defineRule('magicNotes.kiStrike', 'monkTradition', '=', null);
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
+  } else if(name == 'Maker Of Miracles') {
+    rules.defineRule('spellSlots.D10', 'magicNotes.makerOfMiracles', '+', '1');
   } else if(name == 'Master Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
@@ -14948,6 +14935,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'features.' + o, '=', '1'
       );
     });
+  } else if(name == 'Perfect Encore') {
+    rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Quivering Palm') {
     rules.defineRule('magicNotes.quiveringPalm', 'monkTradition', '=', null);
   } else if(name == 'Ranger Dedication') {
