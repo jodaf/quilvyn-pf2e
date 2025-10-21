@@ -13049,6 +13049,7 @@ Pathfinder2E.ancestryRules = function(
   }
   if(typeof hitPoints != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
+    return;
   }
   if(!(size+'').match(/^(Tiny|Small|Medium|Large)$/)) {
     console.log('Bad size "' + size + '" for ancestry ' + name);
@@ -13095,6 +13096,7 @@ Pathfinder2E.ancestryRules = function(
   rules.defineRule('size', ancestryLevel, '=', '"' + size + '"');
   rules.defineRule('speed', ancestryLevel, '=', speed);
 
+  // Handle both Ability (legacy) and Attribute (remaster) boosts
   let boostFeature =
     features.filter(x => x.match(/(Ability|Attribute) Boost/))[0];
   if(boostFeature) {
@@ -13145,7 +13147,7 @@ Pathfinder2E.ancestryRules = function(
 };
 
 /*
- * Defines in #rules# the rules associated with class #name# that cannot be
+ * Defines in #rules# the rules associated with ancestry #name# that cannot be
  * derived directly from the attributes passed to ancestryRules.
  */
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
@@ -13316,6 +13318,7 @@ Pathfinder2E.armorRules = function(
       group:{},
       speed:{},
       str:{}
+      // Unused: price, traits
     };
   }
   rules.armorStats.ac[name] = ac;
@@ -13376,15 +13379,18 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
     'level', '=', null
   );
 
-  let boostFeature = features.filter(x => x.includes('Ability Boost'))[0];
+  // Handle both Ability (legacy) and Attribute (renewed) Boost features
+  let boostFeature =
+    features.filter(x => x.match(/(Ability|Attribute) Boost/))[0];
   if(boostFeature) {
-    features = features.filter(x => !x.includes('Ability Boost'));
+    features = features.filter(x => !x.match(/(Ability|Attribute) Boost/));
     features.push('abilityGeneration !~ "4d6" ? ' + boostFeature);
-    if(boostFeature.includes('(Choose 2 from any'))
+    let m = boostFeature.match(/Choose (\d+) from any/);
+    if(m)
       features.push(
-        'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('2 from', '1 from')
+        'abilityGeneration =~ "4d6" ? ' + boostFeature.replace(/\d+ from/, (m[1] - 1) + ' from')
       );
-    else
+    else if(boostFeature.includes('; Choose 1 from any'))
       features.push(
         'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('; Choose 1 from any', '')
       );
