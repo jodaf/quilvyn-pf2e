@@ -14202,7 +14202,7 @@ Pathfinder2E.classFeatureRules = function(
 /*
  * Defines in #rules# the rules associated with deity #name#. #alignment# gives
  * the deity's alignment, #followerAlignments# lists the alignments permitted
- * for followers, #font# contains the divine font(s), #domains# lists the
+ * for followers, #font# contains the divine font, #domains# lists the
  * associated domains, #weapon# is the deity's favored weapon, #skill# the
  * divine skill, and #spells# lists associated cleric spells.
  */
@@ -14261,9 +14261,9 @@ Pathfinder2E.deityRules = function(
   if(rules.deityStats == null) {
     rules.deityStats = {
       alignment:{},
+      domains:{},
       followerAlignments:{},
       font:{},
-      domains:{},
       weapon:{},
       weaponCategory:{},
       weaponDamage:{},
@@ -14273,9 +14273,9 @@ Pathfinder2E.deityRules = function(
   }
 
   rules.deityStats.alignment[name] = alignment;
+  rules.deityStats.domains[name] = domains.join('/');
   rules.deityStats.followerAlignments[name] = followerAlignments.join('/');
   rules.deityStats.font[name] = font;
-  rules.deityStats.domains[name] = domains.join('/');
   rules.deityStats.weapon[name] = weapon;
   rules.deityStats.weaponCategory[name] =
     QuilvynUtils.getAttrValue(rules.getChoices('weapons')[weapon] || '', "Category");
@@ -14443,23 +14443,23 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'level', '=', null
     );
   }
+
   if(name == 'Abundant Step') {
     rules.defineRule('magicNotes.abundantStep', 'monkTradition', '=', null);
   } else if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
     rules.defineRule('skillNotes.' + prefix,
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule('trainingLevel.' + matchInfo[1],
-      'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
-    );
   } else if(name.match(/^Advanced (Arcana|Blood Potency|Concoction|Devotion|Dogma|Fury|Hunter's Trick|Kata|Maneuver|Muse's Whispers|Trickery|Wilding)$/)) {
     rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name.startsWith('Advanced Domain')) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Advanced School Spell') {
+    let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      rules.plugin.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
-      .map(x => x.replace(':Arcane School', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Wizard (Arcane School)'))
+      .map(x => x.replace('Wizard - ', ''));
     schools.forEach(s => {
       rules.defineRule('features.Advanced School Spell (' + s + ')',
         'features.Advanced School Spell', '?', null,
@@ -14469,6 +14469,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
+  } else if(name.startsWith('Align Armament')) {
+    rules.defineRule('features.Align Armament', 'features.' + name, '=', '1');
   } else if((matchInfo = name.match(/^(.*) Breadth$/)) != null) {
     let c = (attrs.match(/Basic (.*) Spellcasting/) || ['', 'Wizard'])[1];
     let trad =
@@ -14503,10 +14505,11 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       });
     }
   } else if(name == 'Arcane School Spell') {
+    let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      (rules.plugin.CLASSES.Wizard || Pathfinder2E.CLASSES.Wizard).match(/([\s\w]*:Arcane School)/g)
-      .map(x => x.replace(':Arcane School', ''))
-      .filter(x => x != 'Universalist');
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Wizard (Arcane School)'))
+      .map(x => x.replace('Wizard - ', ''));
     schools.forEach(s => {
       rules.defineRule('features.Arcane School Spell (' + s + ')',
         'features.Arcane School Spell', '?', null,
@@ -14544,9 +14547,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       );
     });
   } else if((matchInfo = name.match(/^([\w\s]+) Resiliency$/)) != null) {
-    let c = matchInfo[1];
     rules.defineRule('combatNotes.' + prefix,
-      'sum' + c.replaceAll(' ', '') + 'ArchetypeFeats', '=', 'source * 3'
+      'sum' + matchInfo[1].replaceAll(' ', '') + 'ArchetypeFeats', '=', 'source * 3'
     );
   } else if(name == 'Bard Dedication') {
     rules.defineRule('spellModifier.' + name,
@@ -14586,7 +14588,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       level=='Basic' ? {'1':0, '2':6, '3':8} :
       level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
-      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c] || '', 'SpellSlots') || '0').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.getChoices('levels')[c] || Pathfinder2E.CLASSES[c] || '', 'SpellSlots') || '0').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
     if(trad.match(/^[ADOP]/)) {
@@ -14626,8 +14628,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     let note =
       (target == 'Perception' ? 'skill' : 'save') + 'Notes.cannyAcumen(' + target + ')';
     rules.defineRule(note, 'level', '=', 'source<17 ? "Expert" : "Master"');
-    rules.defineRule
-      ('trainingLevel.' + target, note, '^=', 'source=="Expert" ? 2 : 3');
   } else if(name == 'Champion Dedication') {
     // Suppress validation errors for selected key ability and cause and the
     // cause and deity notes that don't come with Champion Dedication
@@ -14760,13 +14760,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.expertAlchemy', 'level', '=', 'source>=10 ? 5 : 3');
-  } else if(name == 'Extend Armament Alignment') {
-    rules.defineRule('features.Align Armament',
-      'features.Align Armament (Chaotic)', '=', '1',
-      'features.Align Armament (Evil)', '=', '1',
-      'features.Align Armament (Good)', '=', '1',
-      'features.Align Armament (Lawful)', '=', '1'
-    );
   } else if(name == 'Far Lobber') {
     let allWeapons = rules.getChoices('weapons');
     for(let w in allWeapons) {
@@ -14956,7 +14949,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Rogue Dedication') {
     // Key ability for Rogue Dedication is always Dexterity--no racket.
     rules.defineRule('classDifficultyClass.Rogue',
-      'features.Rogue Dedication', '+', '10 + dict["dexterityModifier"]'
+      'dexterityModifier', '=', 'null', // recomputation trigger
+      'features.Rogue Dedication', '+', '10 + dict.dexterityModifier'
     );
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
@@ -15223,29 +15217,34 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
 
     notes[i].split(/\s*\/\s*/).forEach(n => {
       let matchInfo =
-        n.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i);
+        n.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i) ||
+        n.match(/(Perception)\s(%V|Expert|Legendary|Master|Trained)/i);
       if(matchInfo) {
         let group = matchInfo[1];
         let rank =
           matchInfo[2] == '%V' ? '(source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4)' : matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
-        let choices = '';
-        matchInfo[3].split(/;\s*/).forEach(element => {
-          let m = element.match(/Choose (\d+|%V)/);
-          if(m)
-            choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
-          else if(!element.startsWith('%')) {
-            rules.defineRule('trainingLevel.' + element, note, '^=', rank);
-            rules.defineRule('trainingCount.' + element, note, '+=', '1');
+        if(group == 'Perception') {
+          rules.defineRule('trainingLevel.Perception', note, '^=', rank);
+        } else {
+          let choices = '';
+          matchInfo[3].split(/;\s*/).forEach(element => {
+            let m = element.match(/Choose (\d+|%V)/);
+            if(m)
+              choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
+            else if(!element.startsWith('%')) {
+              rules.defineRule('trainingLevel.' + element, note, '^=', rank);
+              rules.defineRule('trainingCount.' + element, note, '+=', '1');
+            }
+          });
+          if(choices) {
+            choices = choices.replace('+', '');
+            let choiceCount =
+              rank == 1 ? choices :
+              choices == '1' ? rank :
+              choices.includes('+') ? '(' + choices + ') * ' + rank :
+              (choices + ' * ' + rank);
+            rules.defineRule('choiceCount.' + group, note, '+=', choiceCount);
           }
-        });
-        if(choices) {
-          choices = choices.replace('+', '');
-          let choiceCount =
-            rank == 1 ? choices :
-            choices == '1' ? rank :
-            choices.includes('+') ? '(' + choices + ') * ' + rank :
-            (choices + ' * ' + rank);
-          rules.defineRule('choiceCount.' + group, note, '+=', choiceCount);
         }
         if(group == 'Spell') {
           let trad = matchInfo[3];
@@ -15277,12 +15276,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             );
           }
         }
-      }
-      matchInfo = n.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
-      if(matchInfo) {
-        let rank =
-          matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-        rules.defineRule('trainingLevel.Perception', note, '^=', rank);
       }
       matchInfo = n.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
       if(matchInfo) {
