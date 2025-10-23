@@ -13862,6 +13862,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
     rules.defineRule
       ('spellSlots.D10', 'magicNotes.miraculousSpell', '=', 'null'); // italics
+    rules.defineRule('trainingLevel.Martial Weapons',
+      'combatNotes.warpriest', '^=', 'dict.level>=3 ? 1 : null'
+    );
+    rules.defineRule('trainingLevel.Simple Weapons',
+      'combatNotes.warpriest', '^=', 'dict.level>=7 ? 2 : null'
+    );
+    rules.defineRule('trainingLevel.Unarmed Attacks',
+      'combatNotes.warpriest', '^=', 'dict.level>=7 ? 2 : null'
+    );
     rules.defineChoice
       ('notes', 'validationNotes.clericAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.clericAlignment',
@@ -15158,9 +15167,12 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
 
     while(effects.length > 0) {
 
+      // Process the first slash-terminated (outside of an expr) effect
       let m = effects.match(/^((%\{[^\}]*\}|[^\/])*)\/?(.*)$/);
       let effect = m[1];
       effects = m[3];
+
+      // Generate rules for [-+x]<amount> <variable>
       if((matchInfo = effect.match(/^([-+x](\d+(\.\d+)?|%[V1-9]|%\{[^\}]*\}))\s+(.*)$/)) != null) {
 
         let adjust = matchInfo[1];
@@ -15171,7 +15183,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           let expression = adjust.substring(3, adjust.length - 1);
           let ids = new Expr(expression).identifiers();
           // TODO What if ids.length==0?
-          // TODO If only 1 id, we could use a normal rule w/out eval
           let sn = ++maxSubnote;
           let target = sn>0 ? note + '.' + sn : note;
           rules.defineRule(target, 'features.' + name, '?', null);
@@ -15213,12 +15224,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
 
       }
 
-    }
-
-    notes[i].split(/\s*\/\s*/).forEach(n => {
-      let matchInfo =
-        n.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i) ||
-        n.match(/(Perception)\s(%V|Expert|Legendary|Master|Trained)/i);
+      // Generate rules for common notes:
+      // (Attack|Class|Defense|Perception|Save|Skill|Spell) <proficiency>
+      matchInfo =
+        effect.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i) ||
+        effect.match(/(Perception)\s(%V|Expert|Legendary|Master|Trained)/i);
       if(matchInfo) {
         let group = matchInfo[1];
         let rank =
@@ -15277,7 +15287,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           }
         }
       }
-      matchInfo = n.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
+
+      // (Ability|Skill) (Boost|Flaw|Increase)
+      matchInfo =
+        effect.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
       if(matchInfo) {
         let flaw = matchInfo[2].match(/flaw/i);
         let choices = '';
@@ -15297,19 +15310,25 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             note, '+=', choices.replace('+', '')
           );
       }
-      matchInfo = n.match(/^([A-Z]\w*) Feats?\s*.Choose (\d+|%V)/);
+
+      // <category> Feats (Choose ....)
+      matchInfo = effect.match(/^([A-Z]\w*) Feats?\s*.Choose (\d+|%V)/);
       if(matchInfo) {
         rules.defineRule('featCount.' + matchInfo[1],
           note, '+=', matchInfo[2]=='%V' ? 'source' : "'" + matchInfo[2] + "'"
         );
       }
-      matchInfo = n.match(/Weapon\sFamiliarity\s*\(([^\)]*)\)/i);
+
+      // Weapon Familiarity
+      matchInfo = effect.match(/Weapon\sFamiliarity\s*\(([^\)]*)\)/i);
       if(matchInfo) {
         matchInfo[1].split(/;\s*/).forEach(element => {
           rules.defineRule('weaponFamiliarity.' + element, note, '=', '1');
         });
       }
-      matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
+
+      // Has the ... feature
+      matchInfo = effect.match(/^Has\s+the\s+(.*)\s+features?$/);
       if(matchInfo) {
         let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         features.forEach(f => {
@@ -15318,7 +15337,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('features.' + f, note, '=', '1');
         });
       }
-      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal|%V)\s+(innate\s)?(cantrip|hex|spell)s?($|;)/);
+
+      // Knows the ... <tradition> spell
+      matchInfo =
+        effect.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal|%V)\s+(innate\s)?(cantrip|hex|spell)s?($|;)/);
       if(matchInfo) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
@@ -15359,8 +15381,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           }
         });
       }
+
+      // <tradition> innate spell
       matchInfo =
-        n.match(/(arcane|divine|occult|primal|%V) innate (cantrip|hex|spell)/);
+        effect.match(/(arcane|divine|occult|primal|%V) innate (cantrip|hex|spell)/);
       if(matchInfo) {
         let trad =
           matchInfo[1].charAt(0).toUpperCase() + matchInfo[1].substring(1);
@@ -15377,7 +15401,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           );
         }
       }
-      matchInfo = n.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
+
+      // Has a focus pool
+      matchInfo =
+        effect.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
       if(matchInfo) {
         rules.defineRule('features.Focus Pool', note, '=', '1');
         if(matchInfo[1]) {
@@ -15388,17 +15415,26 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           rules.defineRule('focusPoints', note, '^=', '0');
         }
       }
-      matchInfo = n.match(/^Can take (.*) ancestry feats$/);
+
+      // Can take <ancestry> ancestry feats
+      matchInfo = effect.match(/^Can take (.*) ancestry feats$/);
       if(matchInfo) {
         rules.defineRule
           ('allowedFeats.' + matchInfo[1], 'features.' + name, '=', '1');
       }
-      if(n.match(/^Can learn spells from the .* tradition$/))
+
+      // Can learn spells from the <tradition> tradition
+      if(effect.match(/^Can learn spells from the .* tradition$/))
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
-      if(n.match(/^Has increased .* effects$/))
+
+      // Has increased <feature> effects
+      if(effect.match(/^Has increased .* effects$/))
         rules.defineRule('italics', note, '=', 'null');
-    });
+
+    }
+
   }
+
 };
 
 /*
