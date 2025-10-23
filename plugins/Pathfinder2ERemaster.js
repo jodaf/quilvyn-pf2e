@@ -17565,6 +17565,9 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Monk (Qi Tradition)',
       'featureNotes.qiTradition', '=', null
     );
+    rules.defineRule('trainingLevel.Martial Weapons',
+      'combatNotes.warpriest', '^=', 'dict.level>=7 ? 2 : dict.level>=3 ? 1 : null'
+    );
   } else if(name == 'Oracle') {
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Divine"');
