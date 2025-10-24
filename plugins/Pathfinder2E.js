@@ -15227,8 +15227,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       // Generate rules for common notes:
       // (Attack|Class|Defense|Perception|Save|Skill|Spell) <proficiency>
       matchInfo =
-        effect.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i) ||
-        effect.match(/(Perception)\s(%V|Expert|Legendary|Master|Trained)/i);
+        effect.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/) ||
+        effect.match(/(Perception)\s(%V|Expert|Legendary|Master|Trained)/);
       if(matchInfo) {
         let group = matchInfo[1];
         let rank =
@@ -15290,9 +15290,9 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
 
       // (Ability|Skill) (Boost|Flaw|Increase)
       matchInfo =
-        effect.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
+        effect.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/);
       if(matchInfo) {
-        let flaw = matchInfo[2].match(/flaw/i);
+        let flaw = matchInfo[2] == 'Flaw';
         let choices = '';
         matchInfo[3].split(/;\s*/).forEach(element => {
           let m = element.match(/Choose (\d+|%V)/);
@@ -15485,6 +15485,10 @@ Pathfinder2E.shieldRules = function(
     console.log('Bad price "' + price + '" for shield ' + name);
     return;
   }
+  if(typeof ac != 'number') {
+    console.log('Bad ac "' + ac + '" for shield ' + name);
+    return;
+  }
   if(typeof speed != 'number') {
     console.log('Bad speed "' + speed + '" for shield ' + name);
     return;
@@ -15495,35 +15499,40 @@ Pathfinder2E.shieldRules = function(
     console.log('Bad bulk "' + bulk + '" for shield ' + name);
     return;
   }
-  if(typeof ac != 'number') {
-    console.log('Bad ac "' + ac + '" for shield ' + name);
+  if(typeof hardness != 'number') {
+    console.log('Bad hardness "' + hardness + '" for shield ' + name);
+    return;
+  }
+  if(typeof hp != 'number') {
+    console.log('Bad hp "' + hp + '" for shield ' + name);
     return;
   }
 
   if(rules.shieldStats == null) {
     rules.shieldStats = {
       ac:{},
-      speed:{},
       hardness:{},
-      hp:{}
+      hp:{},
+      speed:{}
+      // bulk, price presently unused
     };
   }
   rules.shieldStats.ac[name] = ac;
-  rules.shieldStats.speed[name] = speed;
   rules.shieldStats.hardness[name] = hardness;
   rules.shieldStats.hp[name] = hp;
+  rules.shieldStats.speed[name] = speed;
 
   rules.defineRule('shieldACBonus',
     'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.ac) + '[source]'
-  );
-  rules.defineRule('shieldSpeedPenalty',
-    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.speed) + '[source]'
   );
   rules.defineRule('shieldHardness',
     'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hardness) + '[source]'
   );
   rules.defineRule('shieldHitPoints',
     'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hp) + '[source]'
+  );
+  rules.defineRule('shieldSpeedPenalty',
+    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.speed) + '[source]'
   );
 
 };
@@ -15597,7 +15606,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
 
 /*
  * Defines in #rules# the rules associated with spell #name#, which is from
- * magic school #school#. #tradition# and #level# are used to compute any
+ * magic school #school#. #level# and #tradition# are used to compute any
  * saving throw value required by the spell. #cast# gives the casting actions
  * or time required to cast the spell, #traits# lists any traits the spell has,
  * and #description# is a verbose description of the spell's effects.
@@ -15605,6 +15614,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
 Pathfinder2E.spellRules = function(
   rules, name, school, level, tradition, cast, traits, description
 ) {
+
   if(!name) {
     console.log('Empty spell name');
     return;
@@ -15617,7 +15627,7 @@ Pathfinder2E.spellRules = function(
     console.log('Bad school "' + school + '" for spell ' + name);
     return;
   }
-  if(typeof(level) != 'number' && level != 'Cantrip') {
+  if(typeof(level) != 'number') {
     console.log('Bad level "' + level + '" for spell ' + name);
     return;
   }
@@ -15641,6 +15651,7 @@ Pathfinder2E.spellRules = function(
     console.log('Bad description "' + description + '" for spell ' + name);
     return;
   }
+
   let action =
     cast in Pathfinder2E.ACTION_MARKS ?
       Pathfinder2E.ACTION_MARKS[cast] :
@@ -15747,7 +15758,7 @@ Pathfinder2E.weaponRules = function(
 
   group =
     group == 'Knife' ? 'Knives' :
-    group == 'Brawling' ? 'Brawling Weapons' :(group + 's');
+    group == 'Brawling' ? 'Brawling Weapons' : (group + 's');
   let categoryAndGroup = category + ' ' + group;
   category = category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
   let lowerCategory =
@@ -15913,40 +15924,54 @@ Pathfinder2E.featureListRules = function(
     setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
 
   for(let i = 0; i < features.length; i++) {
+
+    // Strip leading level
     let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
+
+    // Generate rules for common features:
+    // (Attack|Class|Defense|Perception|Save|Skill|Spell) <proficiency>
     let matchInfo =
-      feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)$/i);
+      feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/) ||
+      feature.match(/(Perception)\s(Expert|Legendary|Master|Trained)/);
     if(matchInfo) {
-      let choices = '';
       let group = matchInfo[1];
       let rank =
         matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
-      matchInfo[3].split(/;\s*/).forEach(element => {
-        let m = element.match(/Choose (\d+)/);
-        if(m)
-          choices += '+' + m[1];
-        else {
-          rules.defineRule
-            ('trainingLevel.' + element, setName + '.' + feature, '^=', rank);
+      if(group == 'Perception') {
+        rules.defineRule
+          ('trainingLevel.Perception', setName + '.' + feature, '^=', rank);
+      } else {
+        let choices = '';
+        matchInfo[3].split(/;\s*/).forEach(element => {
+          let m = element.match(/Choose (\d+)/);
+          if(m)
+            choices += '+' + m[1];
+          else {
+            rules.defineRule
+              ('trainingLevel.' + element, setName + '.' + feature, '^=', rank);
+            rules.defineRule
+              ('trainingCount.' + element, setName + '.' + feature, '+=', '1');
+          }
+        });
+        if(choices) {
+          choices = choices.replace('+', '');
+          let choiceCount =
+            rank == 1 ? choices :
+            choices == '1' ? rank :
+            choices.includes('+') ? '(' + choices + ') * ' + rank :
+            (choices + ' * ' + rank);
+          rules.defineRule('choiceCount.' + group,
+            setName + '.' + feature, '+=', choiceCount
+          );
         }
-      });
-      if(choices)
-        rules.defineRule('choiceCount.' + group,
-          setName + '.' + feature, '+=', choices.replace('+', '')
-        );
+      }
     }
+
+    // (Ability|Skill) (Boost|Flaw|Increase)
     matchInfo =
-      feature.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
+      feature.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/);
     if(matchInfo) {
-      let rank =
-        matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-      rules.defineRule
-        ('trainingLevel.Perception', setName + '.' + feature, '^=', rank);
-    }
-    matchInfo =
-      feature.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
-    if(matchInfo) {
-      let flaw = matchInfo[2].match(/flaw/i);
+      let flaw = matchInfo[2] == 'Flaw';
       let choices = '';
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+)/);
@@ -15965,6 +15990,7 @@ Pathfinder2E.featureListRules = function(
           setName + '.' + feature, '+=', choices.replace('+', '')
         );
     }
+
   }
 
 };
@@ -16283,9 +16309,9 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Alignment', 'Alignment', 'select-one', shortAlignments],
       ['FollowerAlignments', 'Follower Alignments', 'text', [30]],
       ['Font', 'Divine Font', 'select-one', ['Harm', 'Heal', 'Harm or Heal']],
-      ['Skill', 'Divine Skill', 'select-one', Object.keys(rules.getChoices('skills'))],
-      ['Weapon', 'Favored Weapon', 'select-one', Object.keys(rules.getChoices('weapons'))],
       ['Domain', 'Domains', 'text', [30]],
+      ['Weapon', 'Favored Weapon', 'select-one', Object.keys(rules.getChoices('weapons'))],
+      ['Skill', 'Divine Skill', 'select-one', Object.keys(rules.getChoices('skills'))],
       ['Spells', 'Spells', 'text', [60]]
     );
   } else if(type == 'Feat')
