@@ -12302,6 +12302,7 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   );
 
   for(let a in abilities) {
+
     rules.defineChoice('notes', a + ':%V (%1)');
     // base<ability> (e.g., baseStrength) is the value entered in the editor;
     // fixedBoosts.<ability> are those provided by (generally ancestry)
@@ -12329,6 +12330,7 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
       ('abilityBoostsAllocated', 'abilityBoosts.' + a, '+=', null);
     rules.defineRule
       ('validationNotes.maximumInitialAbility', a, '=', 'source>18 ? 1 : null');
+
   }
 
   rules.defineRule('abilityNotes.abilityBoosts',
@@ -12550,6 +12552,9 @@ Pathfinder2E.identityRules = function(
     'features.Druid Dedication', '+', '8'
   );
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
+  // For Stat Block
+  rules.defineRule
+    ('alignmentAbbr', 'alignment', '=', 'source.replaceAll(/[a-z\\s]/g, "")');
 
 };
 
@@ -15559,8 +15564,10 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
   }
 
   ability = ability.toLowerCase();
-  rules.defineChoice
-    ('notes', 'skillModifiers.' + name + ':%S (' + ability + '; %1)');
+  rules.defineChoice('notes',
+    'skillModifiers.' + name + ':%S (' + ability + '; %1)',
+    'skillModifierOnly.' + name + ':%S'
+  );
   if(name.match(/Lore$/)) {
     rules.defineRule
       ('trainingLevel.' + name, 'skillIncreases.' + name, '^=', '0');
@@ -15778,7 +15785,7 @@ Pathfinder2E.weaponRules = function(
   });
 
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3 %4%5' + (range ? " R%8'" : '') + '; %6; %7)';
+  let format = '%V (%1 %2%3 %4%5%6; %7; %8)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
   rules.defineRule('rank.' + categoryAndGroup,
@@ -15872,25 +15879,29 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule(weaponName + '.5',
     '', '=', specialDamage.length > 0 ? '" [' + specialDamage.join('; ') + ']"' : '""'
   );
-  if(isFinesse)
-    rules.defineRule(weaponName + '.6',
-      'finesseAttackBonus', '=', 'source>0 ? "dexterity" : "strength"'
-    );
-  else
-    rules.defineRule(weaponName + '.6',
-      weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
-    );
-  rules.defineRule(weaponName + '.7',
-    weaponName, '=', '"untrained"',
-    'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
-  );
   if(range) {
     rules.defineRule('range.' + name,
       weaponName, '=', range,
       'weaponRangeAdjustment.' + name, '+', null
     );
-    rules.defineRule(weaponName + '.8', 'range.' + name, '=', null);
+    rules.defineRule
+      (weaponName + '.6', 'range.' + name, '=', '" R" + source + "\'"');
+  } else {
+    rules.defineRule(weaponName + '.6', weaponName, '=', '""');
   }
+  if(isFinesse)
+    rules.defineRule(weaponName + '.7',
+      weaponName, '?', null,
+      'finesseAttackBonus', '=', 'source>0 ? "dexterity" : "strength"'
+    );
+  else
+    rules.defineRule(weaponName + '.7',
+      weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
+    );
+  rules.defineRule(weaponName + '.8',
+    weaponName, '=', '"untrained"',
+    'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
+  );
 
 };
 Pathfinder2E.weaponRules.traits = [
@@ -16018,7 +16029,7 @@ Pathfinder2E.getFormats = function(rules, viewer) {
       if((matchInfo = format.match(/Notes\.(.*)$/)) != null) {
         let feature = matchInfo[1];
         feature = feature.charAt(0).toUpperCase() + feature.substring(1).replace(/([A-Z(])/g, ' $1');
-        formats['features.' + feature] = formats[format];
+        result['features.' + feature] = formats[format];
       }
     }
   } else if(viewer == 'Compact') {
@@ -16027,7 +16038,26 @@ Pathfinder2E.getFormats = function(rules, viewer) {
         result[format] = formats[format];
     }
   } else {
-    result = formats;
+    result = Object.assign({}, formats);
+  }
+  if(viewer == 'Stat Block') {
+    for(let a in Pathfinder2E.ABILITIES)
+      result[a + 'Modifier'] = '%S';
+    result.armorClass = '%V';
+    for(let l in rules.getChoices('levels'))
+      result['levels.' + l] = '%N';
+    result.perception = '%S';
+    ['Fortitude', 'Reflex', 'Will'].forEach(s => result['save.' + s] = '%S');
+    for(let s in rules.getChoices('skills'))
+      result['skillModifiers.' + s] = '%S';
+    let allWeapons = rules.getChoices('weapons');
+    for(let w in allWeapons) {
+      // TODO traits? actions?
+      let category =
+        allWeapons[w].match(/Bomb|Bow|Crossbow|Dart|Sling/)?'Ranged':'Melee';
+      result['weapons.' + w] =
+        '<b>' + category + '</b> %N %1, <b>Damage</b> %2%3 %4%5%6';
+    }
   }
   return result;
 };
@@ -16076,6 +16106,53 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Notes', within: 'Section 2'},
             {name: 'Hidden Notes', within: 'Section 2', format: '%V'}
       );
+    } else if(name == 'Stat Block') {
+      viewer.addElements(
+        {name: '_top', separator: '\n', columns: '1L'},
+          {name: 'NameAndLevel', within: '_top', separator: ' ',
+           format: '<div style="font-size:2em"><b>%V</b></div>', columns: '2L'},
+            {name: 'Name', within: 'NameAndLevel', format: '<b>%V</b>'},
+            {name: 'Level', within: 'NameAndLevel', format: 'Creature %V'},
+          {name: 'AlignmentAndTraits', within: '_top', separator: ' '},
+            {name: 'Alignment Abbr', within: 'AlignmentAndTraits',
+             format: '%V'},
+            {name: 'Traits', within: 'AlignmentAndTraits', separator: ', '},
+          {name: 'Identity', within: '_top', separator: ' '},
+            {name: 'Gender', within: 'Identity', format: '%V'},
+            {name: 'Heritage', within: 'Identity', format: '%V'},
+            {name: 'Levels', within: 'Identity', format: '%V'},
+            {name: 'Background', within: 'Identity', format: '(%V)'},
+          {name: 'Perception', within: '_top', format: 'Perception %V'},
+          {name: 'Languages', within: '_top', separator: ', '},
+          {name: 'Skill Modifiers', within: '_top', separator: ', ',
+           format: '<b>Skills</b> %V'},
+          {name: 'Abilities', within: '_top', separator: ', ', format: '%V'},
+            {name: 'Strength Modifier', within: 'Abilities',
+             format: '<b>Str</b> %V'},
+            {name: 'Dexterity Modifier', within: 'Abilities',
+             format: '<b>Dex</b> %V'},
+            {name: 'Constitution Modifier', within: 'Abilities',
+             format: '<b>Con</b> %V'},
+            {name: 'Intelligence Modifier', within: 'Abilities',
+             format: '<b>Int</b> %V'},
+            {name: 'Wisdom Modifier', within: 'Abilities',
+             format: '<b>Wis</b> %V'},
+            {name: 'Charisma Modifier', within: 'Abilities',
+             format: '<b>Cha</b> %V'},
+          // TODO items
+          {name: 'Sep1', within: '_top', format: '<hr/>'},
+          {name: 'ACAndSaves', within: '_top', separator: '; '},
+            {name: 'Armor Class', within: 'ACAndSaves', format: '<b>AC</b> %V'},
+            {name: 'Save', within: 'ACAndSaves', separator: ', '},
+          {name: 'Hit Points', within: '_top', format: '<b>HP</b> %V'},
+          // TODO reactions
+          {name: 'Sep2', within: '_top', format: '<hr/>'},
+          {name: 'Speed', within: '_top', format: '<b>%N</b> %V feet'},
+          // TODO weapon actions
+          {name: 'Weapons', within: '_top', separator: '\n', format: '%V',
+           columns: '1L'},
+      );
+      rules.defineViewer('Stat Block', viewer);
     } else if(name == 'Collected Notes' || name == 'Standard') {
       let innerSep = null;
       let listSep = '; ';
