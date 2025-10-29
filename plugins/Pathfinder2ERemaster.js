@@ -16985,7 +16985,7 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule
     ('jawsNonFinesseAttack', 'finesseAttackBonus', '+', '-source');
   rules.defineRule('attackBonus.Jaws', 'jawsNonFinesseAttack', '+', null);
-  rules.defineRule('weapons.Jaws.6', 'jawsNonFinesseAttack', '=', '"strength"');
+  rules.defineRule('weapons.Jaws.8', 'jawsNonFinesseAttack', '=', '"strength"');
 };
 
 /* Defines rules related to basic character identity. */
@@ -17260,7 +17260,7 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
   if(name == 'Catfolk') {
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
     rules.defineRule
-      ('weaponDieSidesBonus.Claws', 'combatNotes.clawedCatfolk', '^=', '2');
+      ('weaponDieSides.Claws', 'combatNotes.clawedCatfolk', '^', '6');
   } else if(name == 'Elf') {
     rules.defineRule
       ('multiclassLevelRequirementsWaived', 'features.Ancient Elf', '=', '1');
@@ -17284,14 +17284,12 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Claws', 'combatNotes.claws', '=', '1');
   } else if(name == 'Ratfolk') {
     rules.defineRule('weapons.Jaws', 'combatNotes.sharpTeeth', '=', '1');
-    rules.defineRule('weaponDieSidesBonus.Jaws',
-      'combatNotes.sharpTeeth', '^=', '-2' // decrease to 1d4
-    );
+    rules.defineRule('weaponDieSides.Jaws', 'combatNotes.sharpTeeth', 'v', '4');
     // Note: Ignore Agile trait currently not shown on character sheet
   } else if(name == 'Tengu') {
     rules.defineRule('weapons.Beak', 'combatNotes.sharpBeak', '=', '1');
     rules.defineRule
-      ('weapons.Beak.5', 'combatNotes.dogtoothTengu', '=', '" [Crit +d8]"');
+      ('weapons.Beak.6', 'combatNotes.dogtoothTengu', '=', '" [Crit +d8]"');
     rules.defineRule('weapons.Talons', 'combatNotes.talonedTengu', '=', '1');
   }
 };
@@ -17808,7 +17806,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule
         ('weapons.Claws', 'combatNotes.bestialManifestation(Claw)', '=', '1');
       // Add Versatile P trait
-      rules.defineRule('weapons.Claws.4',
+      rules.defineRule('weapons.Claws.5',
         'combatNotes.bestialManifestation(Claw)', '=', '"S/P"'
       );
     } else if(name.includes('Hoof')) {
@@ -17820,8 +17818,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     } else if(name.includes('Tail')) {
       rules.defineRule
         ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
-      rules.defineRule('weaponDieSidesBonus.Tail',
-        'combatNotes.bestialManifestation(Tail)', '^=', '-2' // decrease to 1d4
+      rules.defineRule('weaponDieSides.Tail',
+        'combatNotes.bestialManifestation(Tail)', 'v', '4'
       );
       // Add Finesse trait to this derivation of the Tail weapon
       rules.defineRule('combatNotes.bestialManifestation(Tail).1',
@@ -17831,7 +17829,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('attackBonus.Tail',
         'combatNotes.bestialManifestation(Tail).1', '+', null
       );
-      rules.defineRule('weapons.Tail.6',
+      rules.defineRule('weapons.Tail.8',
         'combatNotes.bestialManifestation(Tail).1', '=', 'source>0 ? "dexterity" : "strength"'
       );
     }
@@ -17979,8 +17977,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('features.Crossblooded Evolution', 'features.' + name, '=', '1');
   } else if(name == 'Crunch') {
-    rules.defineRule
-      ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
+    rules.defineRule('weaponDieSides.Jaws', 'combatNotes.crunch', '^', '8');
     // Note: Ignore Grapple trait currently not shown on character sheet
   } else if(name == 'Deadly Aspect') {
     rules.defineRule('combatNotes.deadlyAspect.1',
@@ -17996,9 +17993,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'features.Draconic Aspect (Tail)', '=', '" [Crit +d8]"'
     );
     rules.defineRule
-      ('weapons.Claws.5', 'combatNotes.deadlyAspect.1', '=', null);
-    rules.defineRule('weapons.Jaws.5', 'combatNotes.deadlyAspect.2', '=', null);
-    rules.defineRule('weapons.Tail.5', 'combatNotes.deadlyAspect.3', '=', null);
+      ('weapons.Claws.6', 'combatNotes.deadlyAspect.1', '=', null);
+    rules.defineRule('weapons.Jaws.6', 'combatNotes.deadlyAspect.2', '=', null);
+    rules.defineRule('weapons.Tail.6', 'combatNotes.deadlyAspect.3', '=', null);
   } else if(name == 'Devout Blessing') {
     // Suppress validation errors for Blessings
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -18221,19 +18218,17 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     );
   } else if(name.startsWith('Iruxi Armaments')) {
     if(name == 'Iruxi Armaments (Claws)') {
-      rules.defineRule('weaponDieSidesBonus.Claws',
-        'combatNotes.iruxiArmaments(Claws)', '^=', '2' // increase to 1d6
-      );
+      rules.defineRule
+        ('weaponDieSides.Claws', 'combatNotes.iruxiArmaments(Claws)', '^', '6');
       // Add the Versatile P trait
-      rules.defineRule('weapons.Claws.4',
+      rules.defineRule('weapons.Claws.5',
         'combatNotes.iruxiArmaments(Claws)', '=', '"S/P"'
       );
     } else if(name == 'Iruxi Armaments (Fangs)') {
       rules.defineRule
         ('weapons.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '=', '1');
-      rules.defineRule('weaponDieSidesBonus.Fangs',
-        'combatNotes.iruxiArmaments(Fangs)', '^=', '2' // increase to 1d8
-      );
+      rules.defineRule
+        ('weaponDieSides.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '^', '8');
     } else if(name == 'Iruxi Armaments (Tail)') {
       rules.defineRule
         ('weapons.Tail', 'combatNotes.iruxiArmaments(Tail)', '=', '1');
@@ -18387,7 +18382,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name == 'Vicious Incisors') {
     rules.defineRule
-      ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '0');
+      ('weaponDieSides.Jaws', 'combatNotes.viciousIncisors', '^', '6');
     // Note: Ignore Backstabber trait currently not shown on character sheet
   } else if(name == "Warpriest's Armor") {
     rules.defineRule("combatNotes.warpriest'sArmor",
@@ -18450,8 +18445,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('weapons.Jaws',
         "combatNotes.witch'sArmaments(IronTeeth)", '=', '1'
       );
-      rules.defineRule('weaponDieSidesBonus.Jaws',
-        "combatNotes.witch'sArmaments(IronTeeth)", '^=', '2' // increase to 1d8
+      rules.defineRule('weaponDieSides.Jaws',
+        "combatNotes.witch'sArmaments(IronTeeth)", '^', '8'
       );
       rules.defineRule('jawsNonFinesseAttack',
         "combatNotes.witch'sArmaments(IronTeeth)", '=', '0' // enable
