@@ -7543,97 +7543,110 @@ Pathfinder2E.FEATURES = {
 };
 Pathfinder2E.GOODIES = {
   'Armor':
-    'Pattern="([-+]\\d).*(?:armor(?:\\s+class)?|AC)|(?:armor(?:\\s+class)?|AC)\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+).*(?:armor(?:\\s+class)?|AC)|(?:armor(?:\\s+class)?|AC)\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=armorClass ' +
     'Section=combat Note="%V Armor Class"',
   'Charisma':
-    'Pattern="([-+]\\d)\\s+cha(?:risma)?|cha(?:risma)?\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+cha(?:risma)?|cha(?:risma)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=charisma ' +
     'Section=ability Note="%V Charisma"',
   'Class Feat Count':
-    'Pattern="([-+]\\d)\\s+class\\s+feat|class\\s+feat\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+class\\s+feat|class\\s+feat\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=featCount.Class ' +
     'Section=feature Note="%V Class Feat"',
   'Constitution':
-    'Pattern="([-+]\\d)\\s+con(?:stitution)?|con(?:stitution)?\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+con(?:stitution)?|con(?:stitution)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=constitution ' +
     'Section=ability Note="%V Constitution"',
   'Dexterity':
-    'Pattern="([-+]\\d)\\s+dex(?:terity)?|dex(?:terity)\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+dex(?:terity)?|dex(?:terity)\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=dexterity ' +
     'Section=ability Note="%V Dexterity"',
   'Fortitude':
-    'Pattern="([-+]\\d)\\s+fortitude\\s+save|fortitude\\s+save\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+fortitude\\s+save|fortitude\\s+save\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=save.Fortitude ' +
     'Section=save Note="%V Fortitude"',
   'General Feat Count':
-    'Pattern="([-+]\\d)\\s+general\\s+feat|general\\s+feat\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+general\\s+feat|general\\s+feat\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=featCount.General ' +
     'Section=feature Note="%V General Feat"',
+  'Hit Points':
+    'Pattern="([-+]\\d+)\\s+hit\\s+points|hit\\s+points\\s+([-+]\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=hitPoints ' +
+    'Section=skill Note="%V Hit Points"',
   'Intelligence':
-    'Pattern="([-+]\\d)\\s+int(?:elligence)?|int(?:elligence)?\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+int(?:elligence)?|int(?:elligence)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=intelligence ' +
     'Section=ability Note="%V Intelligence"',
+  'Perception':
+    'Pattern="([-+]\\d+)\\s+perception|perception\\s+([-+]\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=perception ' +
+    'Section=skill Note="%V Perception"',
   'Protection':
-    'Pattern="([-+]\\d).*protection|protection\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+protection|protection\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=armorClass ' +
     'Section=combat Note="%V Armor Class"',
   'Reflex':
-    'Pattern="([-+]\\d)\\s+reflex\\s+save|reflex\\s+save\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+reflex\\s+save|reflex\\s+save\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=save.Reflex ' +
     'Section=save Note="%V Reflex"',
   'Shield':
-    'Pattern="([-+]\\d).*\\s+shield|shield\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+).*\\s+shield|shield\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=armorClass ' +
     'Section=combat Note="%V Armor Class"',
   'Speed':
-    'Pattern="([-+]\\d).*\\s+speed|speed\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+).*\\s+speed|speed\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=speed ' +
     'Section=ability Note="%V Speed"',
   'Strength':
-    'Pattern="([-+]\\d)\\s+str(?:ength)?|str(?:ength)?\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+str(?:ength)?|str(?:ength)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=strength ' +
     'Section=ability Note="%V Strength"',
   'Will':
-    'Pattern="([-+]\\d)\\s+will\\s+save|will\\s+save\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+will\\s+save|will\\s+save\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=save.Will ' +
     'Section=save Note="%V Will"',
   'Wisdom':
-    'Pattern="([-+]\\d)\\s+wis(?:dom)?|wis(?:dom)?\\s+([-+]\\d)" ' +
+    'Pattern="([-+]\\d+)\\s+wis(?:dom)?|wis(?:dom)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=wisdom ' +
     'Section=ability Note="%V Wisdom"'
 };
 Pathfinder2E.LANGUAGES = {
+  // Common (pg 65)
   'Common':'',
   'Draconic':'',
   'Dwarven':'',
@@ -7645,6 +7658,7 @@ Pathfinder2E.LANGUAGES = {
   'Orcish':'',
   'Sylvan':'',
   'Undercommon':'',
+  // Uncommon (pg 65)
   'Abyssal':'',
   'Aklo':'',
   'Aquan':'',
@@ -7655,7 +7669,17 @@ Pathfinder2E.LANGUAGES = {
   'Infernal':'',
   'Necril':'',
   'Shadowtongue':'',
-  'Terran':''
+  'Terran':'',
+  // Regional (pg 432)
+  'Hallit':'',
+  'Kelish':'',
+  'Mwangi':'',
+  'Osiriani':'',
+  'Shoanti':'',
+  'Skald':'',
+  'Tien':'',
+  'Varisian':'',
+  'Vudrani':''
 };
 Pathfinder2E.SHIELDS = {
   'None':'Price=0 AC=0 Speed=0 Bulk=0 Hardness=0 HP=0',
@@ -12380,6 +12404,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
         'Value="$1 || $2" ' +
         'Section=combat Note="%V Attack and damage"'
       );
+      rules.choiceRules(rules, 'Goody', 'Striking ' + w,
+        'Pattern="([-+]\\d)\\s+striking\\s+' + pattern + '" ' +
+        'Attribute="weaponDieCount.' + w + '" ' +
+        'Effect=add ' +
+        'Value="$1" ' +
+        'Section=combat Note="%V Damage dice"'
+      );
     }
   }
 
@@ -12746,6 +12777,9 @@ Pathfinder2E.talentRules = function(
   QuilvynRules.validAllocationRules
     (rules, 'skillFeat', 'featCount.Skill', 'sumSkillFeats');
   rules.defineRule('validationNotes.skillFeatAllocation', '', 'v', '0');
+  // For Stat Block
+  rules.defineRule
+    ('items', 'goodiesList', '=', 'source.filter(x => x.match(/^\\*\\s*(\\+|item)/i)).map(x => x.replace(/[\\s\\*]*\\s*(item\\s*)?/i, "")).join(", ")');
 
 };
 
@@ -14338,10 +14372,10 @@ Pathfinder2E.deityRules = function(
       'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
       'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
     );
-    rules.defineRule('weaponDieSidesBonus.' + weapon,
+    rules.defineRule('weaponDieSides.' + weapon,
       'deityWeapon', '=', 'null', // recomputation trigger
-      'combatNotes.deificWeapon', '+=', 'dict.deityWeapon=="' + weapon + '" ? 2 : null',
-      'combatNotes.deadlySimplicity', '+=', 'dict.deityWeapon=="' + weapon + '" ? 2 : null'
+      'combatNotes.deificWeapon', '+', 'dict.deityWeapon=="' + weapon + '" ? 2 : null',
+      'combatNotes.deadlySimplicity', '+', 'dict.deityWeapon=="' + weapon + '" ? 2 : null'
     );
   }
   rules.defineRule('trainingLevel.' + skill,
@@ -15785,7 +15819,7 @@ Pathfinder2E.weaponRules = function(
   });
 
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3 %4%5%6; %7; %8)';
+  let format = '%V (%1 %2%3%4 %5%6%7; %8; %9)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
   rules.defineRule('rank.' + categoryAndGroup,
@@ -15851,9 +15885,10 @@ Pathfinder2E.weaponRules = function(
     weaponName, '=', '0',
     'weaponDamageAdjustment.' + name, '+', null
   );
+  rules.defineRule
+    ('weaponDieCount.' + name, weaponName, '=', damage.replace(/d\d+/, ''))
   rules.defineRule('weaponDieSides.' + name,
-    weaponName, '=', damage.replace(/^\d(d)?/, '') || '""',
-    'weaponDieSidesBonus.' + name, '+', null
+    weaponName, '=', damage.replace(/^\d(d)?/, '') || '""'
   );
   if(damage == '0')
     ; // empty
@@ -15869,14 +15904,15 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule(weaponName + '.1',
     'attackBonus.' + name, '=', 'QuilvynUtils.signed(source)'
   );
-  rules.defineRule(weaponName + '.2',
-    'weaponDieSides.' + name, '=', '"' + damage.replace(/d\d+/, 'd') + '" + source'
-  );
+  rules.defineRule(weaponName + '.2', 'weaponDieCount.' + name, '=', null);
   rules.defineRule(weaponName + '.3',
+    'weaponDieSides.' + name, '=', damage.includes('d') ? '"d" + source' : '""'
+  );
+  rules.defineRule(weaponName + '.4',
     'damageBonus.' + name, '=', 'source == 0 ? "" : QuilvynUtils.signed(source)'
   );
-  rules.defineRule(weaponName + '.4', weaponName, '=', '"' + damageType + '"');
-  rules.defineRule(weaponName + '.5',
+  rules.defineRule(weaponName + '.5', weaponName, '=', '"' + damageType + '"');
+  rules.defineRule(weaponName + '.6',
     '', '=', specialDamage.length > 0 ? '" [' + specialDamage.join('; ') + ']"' : '""'
   );
   if(range) {
@@ -15885,20 +15921,20 @@ Pathfinder2E.weaponRules = function(
       'weaponRangeAdjustment.' + name, '+', null
     );
     rules.defineRule
-      (weaponName + '.6', 'range.' + name, '=', '" R" + source + "\'"');
+      (weaponName + '.7', 'range.' + name, '=', '" R" + source + "\'"');
   } else {
-    rules.defineRule(weaponName + '.6', weaponName, '=', '""');
+    rules.defineRule(weaponName + '.7', weaponName, '=', '""');
   }
   if(isFinesse)
-    rules.defineRule(weaponName + '.7',
+    rules.defineRule(weaponName + '.8',
       weaponName, '?', null,
       'finesseAttackBonus', '=', 'source>0 ? "dexterity" : "strength"'
     );
   else
-    rules.defineRule(weaponName + '.7',
+    rules.defineRule(weaponName + '.8',
       weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
     );
-  rules.defineRule(weaponName + '.8',
+  rules.defineRule(weaponName + '.9',
     weaponName, '=', '"untrained"',
     'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
@@ -16020,27 +16056,34 @@ Pathfinder2E.getChoices = function(name) {
  */
 Pathfinder2E.getFormats = function(rules, viewer) {
   let format;
-  let formats = rules.getChoices('notes');
-  let result = {};
+  let result = Object.assign({}, rules.getChoices('notes'));
   let matchInfo;
   if(viewer == 'Collected Notes') {
-    for(format in formats) {
-      result[format] = formats[format];
+    for(format in result) {
       if((matchInfo = format.match(/Notes\.(.*)$/)) != null) {
         let feature = matchInfo[1];
         feature = feature.charAt(0).toUpperCase() + feature.substring(1).replace(/([A-Z(])/g, ' $1');
-        result['features.' + feature] = formats[format];
+        result['features.' + feature] = result[format];
       }
     }
   } else if(viewer == 'Compact') {
-    for(format in formats) {
-      if(!format.startsWith('spells.'))
-        result[format] = formats[format];
+    for(format in result) {
+      if(format.startsWith('spells.'))
+        result[format] = '%N';
     }
-  } else {
-    result = Object.assign({}, formats);
+  } else if(viewer == 'Stat Block') {
+    for(format in result) {
+      if(format.startsWith('spells.'))
+        result[format] = '<i>%N</i>';
+    }
   }
   if(viewer == 'Stat Block') {
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      result['spellAttackModifier.' + t] = '%S';
+      result['spellAttackModifier.' + t + ' Innate'] = '%S';
+      result['spellDifficultyClass.' + t] = '%V';
+      result['spellDifficultyClass.' + t + ' Innate'] = '%V';
+    });
     for(let a in Pathfinder2E.ABILITIES)
       result[a + 'Modifier'] = '%S';
     result.armorClass = '%V';
@@ -16113,16 +16156,17 @@ Pathfinder2E.createViewers = function(rules, viewers) {
            format: '<div style="font-size:2em"><b>%V</b></div>', columns: '2L'},
             {name: 'Name', within: 'NameAndLevel', format: '<b>%V</b>'},
             {name: 'Level', within: 'NameAndLevel', format: 'Creature %V'},
-          {name: 'AlignmentAndTraits', within: '_top', separator: ' '},
-            {name: 'Alignment Abbr', within: 'AlignmentAndTraits',
-             format: '%V'},
-            {name: 'Traits', within: 'AlignmentAndTraits', separator: ', '},
+          {name: 'AlignmentSizeTraits', within: '_top', separator: ''},
+            {name: 'Traits', within: 'AlignmentSizeTraits', separator: ', '},
+            {name: 'Size', within: 'AlignmentSizeTraits', format: ', %V'},
+            {name: 'Alignment Abbr', within: 'AlignmentSizeTraits',
+             format: ', %V'},
           {name: 'Identity', within: '_top', separator: ' '},
             {name: 'Gender', within: 'Identity', format: '%V'},
             {name: 'Heritage', within: 'Identity', format: '%V'},
             {name: 'Levels', within: 'Identity', format: '%V'},
             {name: 'Background', within: 'Identity', format: '(%V)'},
-          {name: 'Perception', within: '_top', format: 'Perception %V'},
+          {name: 'Perception', within: '_top', format: '<b>%N</b> %V'},
           {name: 'Languages', within: '_top', separator: ', '},
           {name: 'Skill Modifiers', within: '_top', separator: ', ',
            format: '<b>Skills</b> %V'},
@@ -16139,7 +16183,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
              format: '<b>Wis</b> %V'},
             {name: 'Charisma Modifier', within: 'Abilities',
              format: '<b>Cha</b> %V'},
-          // TODO items
+          {name: 'Items', within: '_top', format: '<b>%N</b> %V'},
           {name: 'Sep1', within: '_top', format: '<hr/>'},
           {name: 'ACAndSaves', within: '_top', separator: '; '},
             {name: 'Armor Class', within: 'ACAndSaves', format: '<b>AC</b> %V'},
@@ -16151,6 +16195,16 @@ Pathfinder2E.createViewers = function(rules, viewers) {
           // TODO weapon actions
           {name: 'Weapons', within: '_top', separator: '\n', format: '%V',
            columns: '1L'},
+          {name: 'SpellSection', within: '_top', separator: '; ', format: '%V'},
+            {name: 'Spell Difficulty Class', within: 'SpellSection',
+             format: 'DC %V', separator: ', '},
+            {name: 'Spell Attack Modifier', within: 'SpellSection',
+             format: 'attack %V', separator: ', '},
+            {name: 'Focus Points', within: 'SpellSection',
+             format: '%V Focus Points'},
+            {name: 'Spells', within: 'SpellSection', separator: ', ',
+             format: '%V'}
+          // TODO tradition Prepared Spells
       );
       rules.defineViewer('Stat Block', viewer);
     } else if(name == 'Collected Notes' || name == 'Standard') {
