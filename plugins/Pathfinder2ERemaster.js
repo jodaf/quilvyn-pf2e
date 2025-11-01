@@ -1419,8 +1419,8 @@ Pathfinder2ERemaster.FEATS = {
   'Haughty Obstinacy':Pathfinder2E.FEATS['Haughty Obstinacy'],
   'Natural Ambition':Pathfinder2E.FEATS['Natural Ambition'],
   'Natural Skill':Pathfinder2E.FEATS['Natural Skill'],
-  'Unconventional Weaponry (%weapon)':
-    Pathfinder2E.FEATS['Unconventional Weaponry (%weapon)'],
+  'Unconventional Weaponry (%uncommonWeapon)':
+    Pathfinder2E.FEATS['Unconventional Weaponry (%uncommonWeapon)'],
   'Adaptive Adept':Pathfinder2E.FEATS['Adaptive Adept'],
   'Clever Improviser':Pathfinder2E.FEATS['Clever Improviser'],
   'Sense Allies':'Traits=Human Require="level >= 5"',
@@ -5815,8 +5815,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Haughty Obstinacy':Pathfinder2E.FEATURES['Haughty Obstinacy'],
   'Natural Ambition':Pathfinder2E.FEATURES['Natural Ambition'],
   'Natural Skill':Pathfinder2E.FEATURES['Natural Skill'],
-  'Unconventional Weaponry (%weapon)':
-    Pathfinder2E.FEATURES['Unconventional Weaponry (%weapon)'],
+  'Unconventional Weaponry (%uncommonWeapon)':
+    Pathfinder2E.FEATURES['Unconventional Weaponry (%uncommonWeapon)'],
   'Adaptive Adept':
     Pathfinder2E.FEATURES['Adaptive Adept'].replace('level', 'rank'),
   'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
@@ -17217,6 +17217,8 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
   }
   if(type == 'weapons' && attrs.includes('Advanced'))
     rules.addChoice('advancedWeapons', name, attrs);
+  if(type == 'weapons' && attrs.includes('Uncommon'))
+    rules.addChoice('uncommonWeapons', name, attrs);
 
 };
 
