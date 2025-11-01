@@ -1101,7 +1101,7 @@ Pathfinder2E.FEATS = {
   'Haughty Obstinacy':'Traits=Human',
   'Natural Ambition':'Traits=Human',
   'Natural Skill':'Traits=Human',
-  'Unconventional Weaponry (%weapon)':'Traits=Human',
+  'Unconventional Weaponry (%uncommonWeapon)':'Traits=Human',
   'Adaptive Adept':
     'Traits=Human ' +
     'Require=' +
@@ -1114,9 +1114,12 @@ Pathfinder2E.FEATS = {
   'Incredible Improvisation':
     'Traits=Human Require="level >= 9","features.Clever Improviser"',
   'Multitalented':'Traits=Human Require="level >= 9"',
-  // TODO requires trained in Unconventional Weaponry weapon
   'Unconventional Expertise':
-    'Traits=Human Require="level >= 13","features.Unconventional Weaponry"',
+    'Traits=Human ' +
+    'Require=' +
+      '"level >= 13",' +
+      '"features.Unconventional Weaponry",' +
+      '"unconventionalWeaponTrained"',
   'Elf Atavism':'Traits=Half-Elf',
   'Inspire Imitation':'Traits=Half-Elf Require="level >= 5"',
   'Supernatural Charm':'Traits=Half-Elf Require="level >= 5"',
@@ -3341,8 +3344,8 @@ Pathfinder2E.FEATURES = {
     'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails"',
   'Natural Ambition':'Section=feature Note="Class Feat (Choose 1 from any)"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  'Unconventional Weaponry (%weapon)':
-    'Section=combat Note="Weapon Familiarity (%weapon)"',
+  'Unconventional Weaponry (%uncommonWeapon)':
+    'Section=combat Note="Weapon Familiarity (%uncommonWeapon)"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a second tradition"',
@@ -12968,6 +12971,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   }
   if(type == 'weapons' && attrs.includes('Advanced'))
     rules.addChoice('advancedWeapons', name, attrs);
+  if(type == 'weapons' && attrs.includes('Uncommon'))
+    rules.addChoice('uncommonWeapons', name, attrs);
 
 };
 
@@ -15090,6 +15095,18 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
+    let attrs = rules.getChoices('weapons')[weapon];
+    let category = QuilvynUtils.getAttrValue(attrs, 'Category');
+    category = category=='Advanced' ? 'Martial' : 'Simple';
+    let group = QuilvynUtils.getAttrValue(attrs, 'Group');
+    group =
+      group == 'Knife' ? 'Knives' :
+      group == 'Brawling' ? 'Brawling Weapons' : (group + 's');
+    rules.defineRule('unconventionalWeaponTrained',
+      'trainingLevel.' + category, '=', 'null',
+      'trainingLevel.' + group, '=', 'null',
+      'features.' + name, '=', 'dict["trainingLevel.' + weapon + '"]>0 || dict["trainingLevel.' + category + '"]>0 || dict["trainingLevel.' + group + '"]>0'
+    );
   } else if(name == 'Wholeness Of Body') {
     rules.defineRule('magicNotes.wholenessOfBody', 'monkTradition', '=', null);
   } else if(name == 'Wild Winds Initiate') {
@@ -16192,7 +16209,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
           // TODO reactions
           {name: 'Sep2', within: '_top', format: '<hr/>'},
           {name: 'Speed', within: '_top', format: '<b>%N</b> %V feet'},
-          // TODO weapon actions
           {name: 'Weapons', within: '_top', separator: '\n', format: '%V',
            columns: '1L'},
           {name: 'SpellSection', within: '_top', separator: '; ', format: '%V'},
@@ -16204,7 +16220,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
              format: '%V Focus Points'},
             {name: 'Spells', within: 'SpellSection', separator: ', ',
              format: '%V'}
-          // TODO tradition Prepared Spells
       );
       rules.defineViewer('Stat Block', viewer);
     } else if(name == 'Collected Notes' || name == 'Standard') {
