@@ -108,7 +108,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'gender', 'name', 'alignment', 'background', 'deity', 'boosts', 'experience',
-  'selectableFeatures', 'feats', 'skills', 'languages', 'armor', 'weapons',
+  'feats', 'selectableFeatures', 'skills', 'languages', 'armor', 'weapons',
   'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
@@ -140,7 +140,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage" ' +
+      '1:Darkvision,"1:Clan Dagger","1:Dwarf Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage",' +
       '"1:Death Warden Dwarf:Heritage",' +
@@ -156,7 +156,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Ability Flaw (Constitution)",' +
-      '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
+      '"1:Low-Light Vision","1:Elf Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Arctic Elf:Heritage",' +
       '"1:Cavern Elf:Heritage",' +
@@ -172,7 +172,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Low-Light Vision","1:Ancestry Feats","1:Gnome Heritage" ' +
+      '"1:Low-Light Vision","1:Gnome Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage",' +
       '"1:Fey-Touched Gnome:Heritage",' +
@@ -191,7 +191,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"1:Ability Flaw (Wisdom)",' +
-      '1:Darkvision,"1:Ancestry Feats","1:Goblin Heritage" ' +
+      '"1:Darkvision","1:Goblin Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage",' +
       '"1:Irongut Goblin:Heritage",' +
@@ -207,7 +207,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Keen Eyes","1:Ancestry Feats","1:Halfling Heritage" ' +
+      '"1:Keen Eyes","1:Halfling Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage",' +
       '"1:Hillock Halfling:Heritage",' +
@@ -222,7 +222,7 @@ Pathfinder2E.ANCESTRIES = {
     'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Choose 2 from any)",' +
-      '"1:Ancestry Feats","1:Human Heritage" ' +
+      '"1:Human Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Half-Elf:Heritage",' +
       '"1:Half-Orc:Heritage",' +
@@ -2938,7 +2938,7 @@ Pathfinder2E.FEATS = {
 Pathfinder2E.FEATURES = {
 
   // Ancestry
-  'Ancestry Feats':'Section=feature Note="Ancestry Feats (Choose %V from any)"',
+  'Ancestry Feats':'Section=feature Note="Ancestry Feat (Choose %V from any)"',
 
   // Dwarf
   'Ancient-Blooded Dwarf':
@@ -3410,8 +3410,8 @@ Pathfinder2E.FEATURES = {
   // Class Features and Feats
 
   'Ability Boosts':'Section=ability Note="Ability Boost (Choose %V from any)"',
-  'General Feats':'Section=feature Note="General Feats (Choose %V from any)"',
-  'Skill Feats':'Section=feature Note="Skill Feats (Choose %V from any)"',
+  'General Feats':'Section=feature Note="General Feat (Choose %V from any)"',
+  'Skill Feats':'Section=feature Note="Skill Feat (Choose %V from any)"',
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
@@ -3425,7 +3425,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Weapon Expertise':
     'Section=combat ' +
     'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
-  'Alchemist Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Alchemist Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
   'Alchemy':'Section=feature Note="Has the Alchemical Crafting feature"',
@@ -3621,7 +3621,7 @@ Pathfinder2E.FEATURES = {
   'Armor Of Fury':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Unarmored Defense)"',
-  'Barbarian Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Barbarian Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
   'Bestial Rage (Ape)':
@@ -3912,7 +3912,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Expert (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"Critical hits with a simple weapon, longsword, rapier, sap, shortbow, shortsword, whip, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
-  'Bard Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Bard Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Bard Skills':
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
@@ -4088,7 +4088,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Expert (Champion)",' +
       '"Spell Expert (Divine)"',
-  'Champion Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Champion Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Champion Key Ability':'Section=feature Note="1 selection"',
   'Champion Mastery':
     'Section=combat,magic ' +
@@ -4636,7 +4636,7 @@ Pathfinder2E.FEATURES = {
   'Anathema':
     'Section=feature ' +
     'Note="May not perform acts or use spells prohibited by %V"',
-  'Cleric Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Cleric Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Cloistered Cleric':
@@ -4941,7 +4941,7 @@ Pathfinder2E.FEATURES = {
       '"Has the Animal Companion feature",' +
       '"Knows the Heal Animal primal spell",' +
       '"Skill Trained (Athletics)"',
-  'Druid Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Druid Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
@@ -5152,7 +5152,7 @@ Pathfinder2E.FEATURES = {
     'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.improvedFlexibility?\' and one of up to 14th level\':\'\'} during daily prep"',
   // Evasion as above
   'Fighter Expertise':'Section=combat Note="Class Expert (Fighter)"',
-  'Fighter Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Fighter Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Fighter Key Ability':'Section=feature Note="1 selection"',
   'Fighter Skills':
     'Section=skill ' +
@@ -5555,7 +5555,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Expert (Monk)",' +
       '"Spell Expert (%V)"',
-  'Monk Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Monk Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Monk Key Ability':'Section=feature Note="1 selection"',
   'Monk Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Mystic Strikes':
@@ -5843,7 +5843,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain"',
   'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
-  'Ranger Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Ranger Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Ranger Key Ability':'Section=feature Note="1 selection"',
   'Ranger Skills':
     'Section=skill Note="Skill Trained (Nature; Survival; Choose %V from any)"',
@@ -6096,7 +6096,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
   'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
-  'Rogue Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Rogue Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Rogue Key Ability':'Section=feature Note="1 selection"',
   'Rogue Skills':
     'Section=skill Note="Skill Trained (Stealth; Choose %V from any)"',
@@ -6326,7 +6326,7 @@ Pathfinder2E.FEATURES = {
   // Master Spellcaster as above
   // Resolve as above
   // Signature Spells as above
-  'Sorcerer Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Sorcerer Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
@@ -6681,7 +6681,7 @@ Pathfinder2E.FEATURES = {
       '"Class Feat (Choose 1 from any)",' +
       '"Can use Drain Bonded Item once per spell level each day/Knows 1 additional 1st-level spell"',
   // Weapon Specialization as above
-  'Wizard Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Wizard Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Weapon Expertise':
@@ -16860,99 +16860,128 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes.experience = (level - 1) * 1000 + QuilvynUtils.random(0, 999);
   } else if(attribute == 'feats' || attribute == 'selectableFeatures') {
     attrs = this.applyRules(attributes);
+    let allNotes = this.getChoices('notes');
     let debug = [];
-    let countPrefix = attribute.replace(/s$/, '') + 'Count.';
-    let toAllocateByTrait = {};
-    for(attr in attrs) {
-      if(attr.startsWith(countPrefix))
-        toAllocateByTrait[attr.replace(countPrefix, '')] = attrs[attr];
+    let subsets;
+    if(attribute == 'feats') {
+      // Doubling the list is a simple, if inefficient, way of dealing with
+      // feats such as Ancestral Paragon that allow choosing additional feats.
+      // It's possible that such a feat might be selected by the second pass,
+      // leaving a choice unfilled, but the odds are low enough that figuring
+      // out how to handle the case seems not worth the effort.
+      subsets = [
+        'Ancestry', 'Class', 'Skill', 'General',
+        'Ancestry', 'Class', 'Skill', 'General'
+      ];
+    } else {
+      subsets = [];
+      for(attr in attrs)
+        if(attr.startsWith('selectableFeatureCount.') && attrs[attr] > 0)
+          subsets.push(attr.replace('selectableFeatureCount.', ''));
     }
-    let availableChoices = {};
-    let allChoices =
-      attribute == 'feats' ?
-        Object.assign({}, this.getChoices('ancestryFeats'), this.getChoices('classFeats'), this.getChoices('generalFeats')) :
-        this.getChoices('selectableFeatures');
-    for(attr in allChoices) {
-      let traits =
-        QuilvynUtils.getAttrValueArray
-          (allChoices[attr], allChoices[attr].includes('Type') ? 'Type' : 'Traits');
-      if(attrs[attribute + '.' + attr] != null) {
-        for(let i = 0; i < traits.length; i++) {
-          let t = traits[i];
-          if(t == attributes.ancestry || attributes['allowedFeats.' + t])
-            t = 'Ancestry';
-          else if(t == attributes['class'])
-            t = 'Class';
-          if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
-            debug.push(attribute + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByTrait[t]);
-            toAllocateByTrait[t]--;
-          }
-        }
-      } else if(attrs['features.' + attr] == null &&
-                !allChoices[attr].includes('Uncommon')) {
-        availableChoices[attr] = traits;
-      }
-    }
-    for(attr in toAllocateByTrait) {
-      let availableChoicesWithTrait = {};
+    subsets.forEach(subset => {
+      let allChoices = Object.assign({}, this.getChoices(attribute));
       let prefix =
-        attribute == 'feats' ? (attr == 'Skill' ? 'general' : attr.toLowerCase()) + 'Feats' : attribute;
-      for(let a in availableChoices) {
-        let trait = attr == 'Ancestry' ? attributes.ancestry : attr == 'Class' ? attributes['class'] : attr;
-        if(availableChoices[a].includes(trait))
-          availableChoicesWithTrait[a] = '';
-        else if(attribute == 'feats') {
-          availableChoices[a].forEach(t => {
-            if(attributes['allowedFeats.' + a])
-              availableChoicesWithTrait[a] = '';
-          });
+        subset == 'Skill' ? 'generalFeats' :
+        attribute == 'feats' ? subset.toLowerCase() + 'Feats' :
+        attribute;
+      // Grab all features and notes that grant items in this subset
+      let subsetTexts = [];
+      if(attribute == 'feats') {
+        let groupPat = new RegExp(subset + ' Feats? \\((.*)\\)');
+        for(attr in attrs) {
+          if(allNotes[attr] &&
+             (matchInfo=allNotes[attr].match(groupPat)) != null)
+            subsetTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
         }
+      } else {
+        attr = 'selectableFeatureCount.' + subset;
+        subsetTexts.push('Choose ' + attrs[attr] + ' from any');
       }
-      howMany = toAllocateByTrait[attr];
-      debug.push('Choose ' + howMany + ' ' + attr + ' ' + attribute);
-      let setsPicked = {};
-      while(howMany > 0 &&
-            (choices=Object.keys(availableChoicesWithTrait)).length > 0) {
-        debug.push('Pick ' + howMany + ' from ' + choices.length);
-        let pick;
-        let picks = {};
-        pickAttrs(picks, '', choices, howMany, 1);
-        debug.push('From ' + Object.keys(picks).join(", ") + ' reject');
-        for(pick in picks) {
-          // Only choose 1 choice from choice sets, like Assurance (skill) feats
-          if(pick.includes('(')) {
-            let pickSet = pick.replace(/ \(.*/, '');
-            if(pickSet in setsPicked) {
-              debug[debug.length - 1] += ' ' + pick;
-              delete picks[pick];
-              delete availableChoicesWithTrait[pick];
-              continue;
+      // Sort in order of most restrictive to least restrictive
+      subsetTexts = subsetTexts.sort((a, b) =>
+        a == b ? 0 :
+        a.match(/^Choose[^;]*from any$/) ? 1 :
+        b.match(/^Choose[^;]*from any$/) ? -1 :
+        a.includes('from any') ? 1 :
+        b.includes('from any') ? -1 : 0
+      );
+      let similar = {};
+      subsetTexts.forEach(text => {
+        text.split(/\s*;\s*/).forEach(selection => {
+          let m = selection.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
+          if(m) {
+            howMany = +m[1];
+            // TODO what about Adopted Ancestry and Archetype feats?
+            if(subset == 'Ancestry')
+              subset = attributes.ancestry;
+            else if(subset == 'Class')
+              subset = attributes['class'];
+            let traits = attribute == 'feats' ? 'Traits' : 'Type';
+            if(m[2] == 'any') {
+              choices =
+                Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(subset));
+              if(subset == 'General')
+                // Although valid, avoid allocating skill feats as general feats
+                choices =
+                  choices.filter(x => !(allChoices[x].includes('Skill')));
+            } else if(m[2].startsWith('any ')) {
+              // e.g., choose 2 from any Additional Lore
+              let selector = m[2].substring(4);
+              choices =
+                Object.keys(allChoices).filter(x => x.includes(selector) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(selector));
+            } else {
+              choices = m[2].split(/\s*,\s*/);
             }
-            setsPicked[pickSet] = pick;
+            debug.push('Pick ' + howMany + ' ' + subset + ' from ' + choices.length);
+            // If an item in choices is already in attributes, assume that it's
+            // because of this feature, so reduce howMany and remove it from
+            // consideration for later choices
+            let filtered = [];
+            choices.forEach(choice => {
+              if(howMany > 0 && attributes[prefix + '.' + choice]) {
+                howMany--;
+                debug.push('Existing choice ' + choice + ' reduces count by 1');
+                delete allChoices[choice];
+              } else {
+                filtered.push(choice);
+              }
+            });
+            choices = filtered;
+            // Finally, randomly assign any remaining allocations
+            while(howMany > 0 && choices.length > 0) {
+              let choice = QuilvynUtils.randomElement(choices);
+              attributes[prefix + '.' + choice] = 1;
+              let validate = this.applyRules(attributes);
+              let name = choice.charAt(0).toLowerCase() +
+                         choice.substring(1).replaceAll(' ', '').
+                         replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+              let note =
+                name + attribute.charAt(0).toUpperCase() + attribute.substring(1).replace(/s$/, '');
+              let generalized = choice.replace(/\s+\(.*\)/, '');
+              if(QuilvynUtils.sumMatching
+                   (validate,
+                    new RegExp('^(sanity|validation)Notes.'+note+'$')) != 0) {
+                delete attributes[prefix + '.' + choice];
+                debug.push('Rejected ' + choice);
+              } else if(generalized in similar) {
+                delete attributes[prefix + '.' + choice];
+                debug.push('Rejected similar ' + choice);
+              } else {
+                debug.push('Accepted ' + choice);
+                howMany--;
+                if(generalized != choice)
+                  similar[generalized] = choice;
+                delete allChoices[choice];
+              }
+              choices = choices.filter(x => x != choice);
+            }
           }
-          attributes[prefix + '.' + pick] = 1;
-          delete availableChoicesWithTrait[pick];
-        }
-        let validate = this.applyRules(attributes);
-        for(pick in picks) {
-          let name = pick.charAt(0).toLowerCase() +
-                     pick.substring(1).replaceAll(' ', '').
-                     replace(/\(/g, '\\(').replace(/\)/g, '\\)');
-          let note =
-            name + attribute.charAt(0).toUpperCase() + attribute.substring(1).replace(/s$/, '');
-          if(QuilvynUtils.sumMatching
-               (validate,
-                new RegExp('^(sanity|validation)Notes.' + note)) != 0) {
-            delete attributes[prefix + '.' + pick];
-            debug[debug.length - 1] += ' ' + pick;
-          } else {
-            howMany--;
-            delete availableChoices[pick];
-          }
-        }
-      }
-      debug.push('xxxxxxx');
-    }
+        });
+      });
+      attrs = this.applyRules(attributes);
+    });
+    debug.push('xxxxxxx');
     if(window.DEBUG) {
       let notes = attributes.notes;
       attributes.notes =
@@ -17347,7 +17376,6 @@ Pathfinder2E.ruleNotes = function() {
     '  Quilvyn gives uncommon weapons an additional "Uncommon" trait; ' +
     '  following this convention when adding homebrew weapons will help when ' +
     '  generating random characters.\n' +
-    '  </li><li>\n' +
     '  </li><li>\n' +
     '  Discussion of adding different types of homebrew options to the ' +
     '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
