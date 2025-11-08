@@ -118,8 +118,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Intelligence)",' +
-      '"1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage",' +
-      '"1:Plant Nourishment" ' +
+      '"1:Low-Light Vision","1:Plant Nourishment","1:Leshy Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Cactus Leshy:Heritage",' +
       '"1:Fruit Leshy:Heritage",' +
@@ -138,7 +138,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Choose 2 from any)",' +
-      '"1:Darkvision","1:Ancestry Feats","1:Orc Heritage" ' +
+      '"1:Darkvision","1:Orc Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Badlands Orc:Heritage",' +
       '"1:Battle-Ready Orc:Heritage",' +
@@ -157,8 +157,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Dexterity; Charisma; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
-      '"1:Low-Light Vision",' +
-      '"1:Land On Your Feet","1:Catfolk Heritage" ' +
+      '"1:Low-Light Vision","1:Land On Your Feet","1:Catfolk Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Clawed Catfolk:Heritage",' +
       '"1:Hunting Catfolk:Heritage",' +
@@ -176,7 +176,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Constitution; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
-      '"1:Darkvision","1:Hobgoblin Heritage" ' +
+      '"1:Darkvision","1:Hobgoblin Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Elfbane Hobgoblin:Heritage",' +
       '"1:Runtboss Hobgoblin:Heritage",' +
@@ -193,7 +193,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Strength; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
-      '"1:Bite","1:Low-Light Vision","1:Kholo Heritage" ' +
+      '"1:Bite","1:Low-Light Vision","1:Kholo Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Ant Kholo:Heritage",' +
       '"1:Cave Kholo:Heritage",' +
@@ -211,7 +211,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Dexterity; Charisma; Choose 1 from any)",' +
       '"1:Attribute Flaw (Constitution)",' +
-      '"1:Darkvision","1:Kobold Heritage" ' +
+      '"1:Darkvision","1:Kobold Heritage","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Cavernstalker Kobold:Heritage",' +
       '"1:Dragonscaled Kobold:Heritage",' +
@@ -229,8 +229,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Strength; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Intelligence)",' +
-      '"1:Claws",' +
-      '"1:Aquatic Adaptation","1:Lizardfolk Heritage" ' +
+      '"1:Claws","1:Aquatic Adaptation","1:Lizardfolk Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Cliffscale Lizardfolk:Heritage",' +
       '"1:Cloudleaper Lizardfolk:Heritage",' +
@@ -248,8 +248,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Strength)",' +
-      '"1:Low-Light Vision",' +
-      '"1:Sharp Teeth","1:Ratfolk Heritage" ' +
+      '"1:Low-Light Vision","1:Sharp Teeth","1:Ratfolk Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Deep Rat:Heritage",' +
       '"1:Desert Rat:Heritage",' +
@@ -266,8 +266,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Choose 1 from any)",' +
-      '"1:Low-Light Vision",' +
-      '"1:Sharp Beak","1:Tengu Heritage" ' +
+      '"1:Low-Light Vision","1:Sharp Beak","1:Tengu Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Dogtooth Tengu:Heritage",' +
       '"1:Jinxed Tengu:Heritage",' +
@@ -285,8 +285,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Strength)",' +
-      '"1:Low-Light Vision",' +
-      '"1:Natural Climber","1:Tripkee Heritage" ' +
+      '"1:Low-Light Vision","1:Natural Climber","1:Tripkee Heritage",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Poisonhide Tripkee:Heritage",' +
       '"1:Riverside Tripkee:Heritage",' +
