@@ -10,7 +10,7 @@ var attributes = {
   "abilityBoosts.charisma":4, "abilityBoosts.constitution":4, "abilityBoosts.dexterity":3, 
   "abilityBoosts.intelligence":3, "abilityBoosts.strength":2, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Evil", "ancestry":"Halfling", 
-  "ancestryFeats.Cultural Adaptability":1, "ancestryFeats.Distracting Shadows":1, "ancestryFeats.Halfling Lore":1, 
+  "ancestryFeats.Cultural Adaptability (Elf)":1, "ancestryFeats.Distracting Shadows":1, "ancestryFeats.Halfling Lore":1, 
   "ancestryFeats.Halfling Weapon Familiarity":1, "ancestryFeats.Titan Slinger":1, "ancestryFeats.Unfettered Halfling":1, 
   "ancestryFeats.Watchful Halfling":1, "armor":"None", "background":"Prisoner", "baseCharisma":10, 
   "baseConstitution":10, "baseDexterity":10, "baseIntelligence":10, "baseStrength":10, 
@@ -18,11 +18,10 @@ var attributes = {
   "classFeats.Cleric Dedication":1, "classFeats.Druid Dedication":1, "classFeats.Familiar":1, 
   "classFeats.Magic Sense":1, "classFeats.Occult Evolution":1, "classFeats.Widen Spell":1, 
   "classFeats.Wizard Dedication":1, "deity":"Rovagug", "experience":16500, "gender":"Female", 
-  "generalFeats.Additional Lore (Labor Lore)":1, "generalFeats.Adopted Ancestry (Elf)":1, 
-  "generalFeats.Adopted Ancestry (Halfling)":1, "generalFeats.Ancestral Paragon":1, 
-  "generalFeats.Assurance (Library Lore)":1, "generalFeats.Assurance (Underworld Lore)":1, 
-  "generalFeats.Dubious Knowledge":1, "generalFeats.Experienced Professional":1, 
-  "generalFeats.Intimidating Glare":1, "generalFeats.Quick Coercion":1, 
+  "generalFeats.Additional Lore (Labor Lore)":1, "generalFeats.Adopted Ancestry (Human)":1, 
+  "generalFeats.Ancestral Paragon":1, "generalFeats.Assurance (Library Lore)":1, 
+  "generalFeats.Assurance (Underworld Lore)":1, "generalFeats.Dubious Knowledge":1, 
+  "generalFeats.Experienced Professional":1, "generalFeats.Intimidating Glare":1, "generalFeats.Quick Coercion":1, 
   "generalFeats.Skill Training (Library Lore)":1, "generalFeats.Skill Training (Stealth)":1, 
   "generalFeats.Terrain Stalker (Rubble)":1, "languages.Abyssal":1, "languages.Goblin":1, "languages.Necril":1, 
   "languages.Shadowtongue":1, "name":"Spells-All", "selectableFeatures.Bard - Enigma":1, 
@@ -377,14 +376,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 7; Class: 8; General: 5; Skill: 8</td>
+        <td><b>Feat Count</b>: Ancestry: 7; Class: 8; General: 4; Skill: 8</td>
         <td><b>Selectable Feature Count</b>: Bard (Muse); Druid (Order); Halfling (Heritage); Sorcerer (Bloodline); Wizard (Arcane School)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Labor Lore); Adopted Ancestry (Elf); Adopted Ancestry (Halfling); Ancestral Paragon; Assurance (Library Lore); Assurance (Underworld Lore); Bard Dedication; Cleric Dedication; Cultural Adaptability; Distracting Shadows; Druid Dedication; Dubious Knowledge; Experienced Professional; Familiar; Halfling Lore; Halfling Weapon Familiarity; Intimidating Glare; Magic Sense; Occult Evolution; Quick Coercion; Skill Training (Library Lore); Skill Training (Stealth); Terrain Stalker (Rubble); Titan Slinger; Unfettered Halfling; Watchful Halfling; Widen Spell; Wizard Dedication</td>
+        <td><b>Feats</b>: Additional Lore (Labor Lore); Adopted Ancestry (Human); Ancestral Paragon; Assurance (Library Lore); Assurance (Underworld Lore); Bard Dedication; Cleric Dedication; Cultural Adaptability (Elf); Distracting Shadows; Druid Dedication; Dubious Knowledge; Experienced Professional; Familiar; Halfling Lore; Halfling Weapon Familiarity; Intimidating Glare; Magic Sense; Occult Evolution; Quick Coercion; Skill Training (Library Lore); Skill Training (Stealth); Terrain Stalker (Rubble); Titan Slinger; Unfettered Halfling; Watchful Halfling; Widen Spell; Wizard Dedication</td>
         <td><b>Sorcerer Features</b>: Aberrant; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bloodline Spells; Bloodline; Class Trained (Sorcerer); Defense Trained (Unarmored Defense); Defensive Robes; Expert Spellcaster; General Feats; Magical Fortitude; Majestic Will; Master Spellcaster; Perception Expertise; Perception Trained; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Sorcerous Potency; Weapon Expertise; Weapon Specialization</td>
         <td><b>Wizard Features</b>: School Of Civic Wizardry</td>
         <td><b>Druid Features</b>: Animal</td>
@@ -399,7 +398,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Ancestral Paragon: Ancestry Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Ancestry Feats: Ancestry Feats (Choose 5 from any)</i></td>
+        <td><i>Ancestry Feats: Ancestry Feat (Choose 5 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Arcane School: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -409,7 +408,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Cleric Dedication: Has the Deity and Cleric Spellcasting features</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cultural Adaptability: General Feat (Choose 1 from any Adopted Ancestry)/Ancestry Feat (Choose 1 from any)</i></td>
+        <td><i>Cultural Adaptability (Elf): Has the Adopted Ancestry (Elf) feature/Ancestry Feat (Choose 1 from any Elf)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deity: Has the Anathema and Sanctification features</i></td>
       </tr><tr style="text-align:center">
@@ -417,7 +416,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Druidic Order: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>General Feats: General Feats (Choose 4 from any)</i></td>
+        <td><i>General Feats: General Feat (Choose 4 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Halfling Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -429,9 +428,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>School Of Civic Wizardry: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Skill Feats: Skill Feats (Choose 8 from any)</i></td>
+        <td><i>Skill Feats: Skill Feat (Choose 8 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Sorcerer Feats: Class Feats (Choose 8 from any)</i></td>
+        <td><i>Sorcerer Feats: Class Feat (Choose 8 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Twilight Halfling: Has the Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
@@ -441,7 +440,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Adopted Ancestry (Elf): Can take Elf ancestry feats</td>
       </tr><tr style="text-align:center">
-        <td>Adopted Ancestry (Halfling): Can take Halfling ancestry feats</td>
+        <td>Adopted Ancestry (Human): Can take Human ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or use spells prohibited by Rovagug or druidic order</td>
       </tr><tr style="text-align:center">
