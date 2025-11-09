@@ -1400,7 +1400,8 @@ Pathfinder2ERemaster.FEATS = {
   'Titan Slinger':Pathfinder2E.FEATS['Titan Slinger'],
   'Unfettered Halfling':Pathfinder2E.FEATS['Unfettered Halfling'],
   'Watchful Halfling':Pathfinder2E.FEATS['Watchful Halfling'],
-  'Cultural Adaptability':Pathfinder2E.FEATS['Cultural Adaptability'],
+  'Cultural Adaptability (%ancestry)':
+    Pathfinder2E.FEATS['Cultural Adaptability (%ancestry)'],
   'Step Lively':'Traits=Halfling Require="level >= 5"',
   'Dance Underfoot':
     'Traits=Halfling Require="level >= 9","features.Step Lively"',
@@ -5783,7 +5784,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Watchful Halfling':
     Pathfinder2E.FEATURES['Watchful Halfling']
     .replace('-2', '+0'),
-  'Cultural Adaptability':Pathfinder2E.FEATURES['Cultural Adaptability'],
+  'Cultural Adaptability (%ancestry)':
+    Pathfinder2E.FEATURES['Cultural Adaptability (%ancestry)'],
   'Step Lively':
     'Action=Reaction ' +
     'Section=combat ' +
