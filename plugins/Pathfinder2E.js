@@ -1081,7 +1081,7 @@ Pathfinder2E.FEATS = {
   'Titan Slinger':'Traits=Halfling',
   'Unfettered Halfling':'Traits=Halfling',
   'Watchful Halfling':'Traits=Halfling',
-  'Cultural Adaptability':'Traits=Halfling Require="level >= 5"',
+  'Cultural Adaptability (%ancestry)':'Traits=Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
     'Traits=Halfling ' +
     'Require="level >= 5","features.Halfling Weapon Familiarity"',
@@ -3298,9 +3298,9 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Can use Aid to help another overcome enchantment or possession",' +
       '"+2 Sense Motive to notice enchantment or possession, and automatically attempts a -2 check to notice these"',
-  'Cultural Adaptability':
+  'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
-    'Note="General Feat (Choose 1 from any Adopted Ancestry)/Ancestry Feat (Choose 1 from any)"',
+    'Note="Has the Adopted Ancestry (%ancestry) feature/Ancestry Feat (Choose 1 from any %ancestry)"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
@@ -13533,6 +13533,7 @@ Pathfinder2E.classRules = function(
     console.log('Bad abilities list "' + abilities + '" for class ' + name);
     return;
   }
+  abilities = abilities.map(x => (x+'').toLowerCase());
   abilities.forEach(a => {
     if(!(a in Pathfinder2E.ABILITIES)) {
       console.log('Bad ability "' + a + '" for class ' + name);
