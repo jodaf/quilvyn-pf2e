@@ -994,410 +994,359 @@ Pathfinder2E.FEATS = {
   // Ancestries
 
   // Dwarf
-  'Dwarven Lore':'Traits=Dwarf',
-  'Dwarven Weapon Familiarity':'Traits=Dwarf',
-  'Rock Runner':'Traits=Dwarf',
-  'Stonecunning':'Traits=Dwarf',
-  'Unburdened Iron':'Traits=Dwarf',
-  'Vengeful Hatred':'Traits=Dwarf',
-  'Boulder Roll':'Traits=Dwarf Require="level >= 5","features.Rock Runner"',
+  'Dwarven Lore':'Level=1 Traits=Dwarf',
+  'Dwarven Weapon Familiarity':'Level=1 Traits=Dwarf',
+  'Rock Runner':'Level=1 Traits=Dwarf',
+  'Stonecunning':'Level=1 Traits=Dwarf',
+  'Unburdened Iron':'Level=1 Traits=Dwarf',
+  'Vengeful Hatred':'Level=1 Traits=Dwarf',
+  'Boulder Roll':'Level=5 Traits=Dwarf Require="features.Rock Runner"',
   'Dwarven Weapon Cunning':
-    'Traits=Dwarf Require="level >= 5","features.Dwarven Weapon Familiarity"',
-  "Mountain's Stoutness":'Traits=Dwarf Require="level >= 9"',
-  'Stonewalker':'Traits=Dwarf Require="level >= 9"',
+    'Level=5 Traits=Dwarf Require="features.Dwarven Weapon Familiarity"',
+  "Mountain's Stoutness":'Level=9 Traits=Dwarf',
+  'Stonewalker':'Level=9 Traits=Dwarf',
   'Dwarven Weapon Expertise':
-    'Traits=Dwarf Require="level >= 13","features.Dwarven Weapon Familiarity"',
+    'Level=13 Traits=Dwarf Require="features.Dwarven Weapon Familiarity"',
 
   // Elf
   // NOTE: requires "at least 100 years old"; no way to determine this
-  'Ancestral Longevity':'Traits=Elf',
-  'Elven Lore':'Traits=Elf',
-  'Elven Weapon Familiarity':'Traits=Elf',
-  'Forlorn':'Traits=Elf',
-  'Nimble Elf':'Traits=Elf',
-  'Otherworldly Magic':'Traits=Elf',
-  'Unwavering Mien':'Traits=Elf',
-  'Ageless Patience':'Traits=Elf Require="level >= 5"',
+  'Ancestral Longevity':'Level=1 Traits=Elf',
+  'Elven Lore':'Level=1 Traits=Elf',
+  'Elven Weapon Familiarity':'Level=1 Traits=Elf',
+  'Forlorn':'Level=1 Traits=Elf',
+  'Nimble Elf':'Level=1 Traits=Elf',
+  'Otherworldly Magic':'Level=1 Traits=Elf',
+  'Unwavering Mien':'Level=1 Traits=Elf',
+  'Ageless Patience':'Level=5 Traits=Elf',
   'Elven Weapon Elegance':
-    'Traits=Elf Require="level >= 5","features.Elven Weapon Familiarity"',
-  'Elf Step':'Traits=Elf Require="level >= 9"',
+    'Level=5 Traits=Elf Require="features.Elven Weapon Familiarity"',
+  'Elf Step':'Level=9 Traits=Elf',
   'Expert Longevity':
-    'Traits=Elf Require="level >= 9","features.Ancestral Longevity"',
+    'Level=9 Traits=Elf Require="features.Ancestral Longevity"',
   'Universal Longevity':
-    'Traits=Elf Require="level >= 13","features.Expert Longevity"',
+    'Level=13 Traits=Elf Require="features.Expert Longevity"',
   'Elven Weapon Expertise':
-    'Traits=Elf Require="level >= 13","features.Elven Weapon Familiarity"',
+    'Level=13 Traits=Elf Require="features.Elven Weapon Familiarity"',
 
   // Gnome
-  'Animal Accomplice':'Traits=Gnome',
-  'Burrow Elocutionist':'Traits=Gnome',
-  'Fey Fellowship':'Traits=Gnome',
-  'First World Magic':'Traits=Gnome',
-  'Gnome Obsession':'Traits=Gnome',
-  'Gnome Weapon Familiarity':'Traits=Gnome',
-  'Illusion Sense':'Traits=Gnome',
+  'Animal Accomplice':'Level=1 Traits=Gnome',
+  'Burrow Elocutionist':'Level=1 Traits=Gnome',
+  'Fey Fellowship':'Level=1 Traits=Gnome',
+  'First World Magic':'Level=1 Traits=Gnome',
+  'Gnome Obsession':'Level=1 Traits=Gnome',
+  'Gnome Weapon Familiarity':'Level=1 Traits=Gnome',
+  'Illusion Sense':'Level=1 Traits=Gnome',
   'Animal Elocutionist':
-    'Traits=Gnome Require="level >= 5","features.Burrow Elocutionist"',
+    'Level=5 Traits=Gnome Require="features.Burrow Elocutionist"',
   'Energized Font':
+    'Level=5 ' +
     'Traits=Gnome ' +
-    'Require=' +
-      '"level >= 5",' +
-      '"features.Focus Pool",' +
-      '"gnomeSharedInnateAndFocusTradition"',
+    'Require="features.Focus Pool","gnomeSharedInnateAndFocusTradition"',
   'Gnome Weapon Innovator':
-    'Traits=Gnome Require="level >= 5","features.Gnome Weapon Familiarity"',
-  'First World Adept':
-    'Traits=Gnome Require="level >= 9","rank.Primal Innate >= 1"',
-  'Vivacious Conduit':'Traits=Gnome Require="level >= 9"',
+    'Level=5 Traits=Gnome Require="features.Gnome Weapon Familiarity"',
+  'First World Adept':'Level=9 Traits=Gnome Require="rank.Primal Innate >= 1"',
+  'Vivacious Conduit':'Level=9 Traits=Gnome',
   'Gnome Weapon Expertise':
-    'Traits=Gnome Require="level >= 13","features.Gnome Weapon Familiarity"',
+    'Level=13 Traits=Gnome Require="features.Gnome Weapon Familiarity"',
 
   // Goblin
-  'Burn It!':'Traits=Goblin',
-  'City Scavenger':'Traits=Goblin',
-  'Goblin Lore':'Traits=Goblin',
-  'Goblin Scuttle':'Traits=Goblin',
-  'Goblin Song':'Traits=Goblin',
-  'Goblin Weapon Familiarity':'Traits=Goblin',
-  'Junk Tinker':'Traits=Goblin',
-  'Rough Rider':'Traits=Goblin',
-  'Very Sneaky':'Traits=Goblin',
+  'Burn It!':'Level=1 Traits=Goblin',
+  'City Scavenger':'Level=1 Traits=Goblin',
+  'Goblin Lore':'Level=1 Traits=Goblin',
+  'Goblin Scuttle':'Level=1 Traits=Goblin',
+  'Goblin Song':'Level=1 Traits=Goblin',
+  'Goblin Weapon Familiarity':'Level=1 Traits=Goblin',
+  'Junk Tinker':'Level=1 Traits=Goblin',
+  'Rough Rider':'Level=1 Traits=Goblin',
+  'Very Sneaky':'Level=1 Traits=Goblin',
   'Goblin Weapon Frenzy':
-    'Traits=Goblin Require="level >= 5","features.Goblin Weapon Familiarity"',
-  'Cave Climber':'Traits=Goblin Require="level >= 9"',
+    'Level=5 Traits=Goblin Require="features.Goblin Weapon Familiarity"',
+  'Cave Climber':'Level=9 Traits=Goblin',
   'Skittering Scuttle':
-    'Traits=Goblin Require="level >= 9","features.Goblin Scuttle"',
+    'Level=9 Traits=Goblin Require="features.Goblin Scuttle"',
   'Goblin Weapon Expertise':
-    'Traits=Goblin Require="level >= 13","features.Goblin Weapon Familiarity"',
-  'Very, Very Sneaky':
-    'Traits=Goblin Require="level >= 13","features.Very Sneaky"',
+    'Level=13 Traits=Goblin Require="features.Goblin Weapon Familiarity"',
+  'Very, Very Sneaky':'Level=13 Traits=Goblin Require="features.Very Sneaky"',
 
   // Halfling
-  'Distracting Shadows':'Traits=Halfling',
-  'Halfling Lore':'Traits=Halfling',
-  'Halfling Luck':'Traits=Halfling,Fortune',
-  'Halfling Weapon Familiarity':'Traits=Halfling',
-  'Sure Feet':'Traits=Halfling',
-  'Titan Slinger':'Traits=Halfling',
-  'Unfettered Halfling':'Traits=Halfling',
-  'Watchful Halfling':'Traits=Halfling',
-  'Cultural Adaptability (%ancestry)':'Traits=Halfling Require="level >= 5"',
+  'Distracting Shadows':'Level=1 Traits=Halfling',
+  'Halfling Lore':'Level=1 Traits=Halfling',
+  'Halfling Luck':'Level=1 Traits=Halfling,Fortune',
+  'Halfling Weapon Familiarity':'Level=1 Traits=Halfling',
+  'Sure Feet':'Level=1 Traits=Halfling',
+  'Titan Slinger':'Level=1 Traits=Halfling',
+  'Unfettered Halfling':'Level=1 Traits=Halfling',
+  'Watchful Halfling':'Level=1 Traits=Halfling',
+  'Cultural Adaptability (%ancestry)':'Level=5 Traits=Halfling',
   'Halfling Weapon Trickster':
+    'Level=5 ' +
     'Traits=Halfling ' +
-    'Require="level >= 5","features.Halfling Weapon Familiarity"',
-  'Guiding Luck':
-    'Traits=Halfling Require="level >= 9","features.Halfling Luck"',
-  'Irrepressible':'Traits=Halfling Require="level >= 9"',
+    'Require="features.Halfling Weapon Familiarity"',
+  'Guiding Luck':'Level=9 Traits=Halfling Require="features.Halfling Luck"',
+  'Irrepressible':'Level=9 Traits=Halfling',
   'Ceaseless Shadows':
-    'Traits=Halfling Require="level >= 13","features.Distracting Shadows"',
+    'Level=13 Traits=Halfling Require="features.Distracting Shadows"',
   'Halfling Weapon Expertise':
-    'Traits=Halfling ' +
-    'Require="level >= 13","features.Halfling Weapon Familiarity"',
+    'Level=13 Traits=Halfling Require="features.Halfling Weapon Familiarity"',
 
   // Human
-  'Adapted Cantrip':'Traits=Human Require="features.Spellcasting"',
-  'Cooperative Nature':'Traits=Human',
-  'General Training':'Traits=Human',
-  'Haughty Obstinacy':'Traits=Human',
-  'Natural Ambition':'Traits=Human',
-  'Natural Skill':'Traits=Human',
-  'Unconventional Weaponry (%uncommonWeapon)':'Traits=Human',
+  'Adapted Cantrip':'Level=1 Traits=Human Require="features.Spellcasting"',
+  'Cooperative Nature':'Level=1 Traits=Human',
+  'General Training':'Level=1 Traits=Human',
+  'Haughty Obstinacy':'Level=1 Traits=Human',
+  'Natural Ambition':'Level=1 Traits=Human',
+  'Natural Skill':'Level=1 Traits=Human',
+  'Unconventional Weaponry (%uncommonWeapon)':'Level=1 Traits=Human',
   'Adaptive Adept':
-    'Traits=Human ' +
-    'Require=' +
-      '"level >= 5",' +
-      '"features.Adapted Cantrip",' +
-      '"maxSpellLevel >= 3"',
-  'Clever Improviser':'Traits=Human Require="level >= 5"',
+    'Level=5 Traits=Human ' +
+    'Require="features.Adapted Cantrip","maxSpellLevel >= 3"',
+  'Clever Improviser':'Level=5 Traits=Human',
   'Cooperative Soul':
-    'Traits=Human Require="level >= 9","features.Cooperative Nature"',
+    'Level=9 Traits=Human Require="features.Cooperative Nature"',
   'Incredible Improvisation':
-    'Traits=Human Require="level >= 9","features.Clever Improviser"',
-  'Multitalented':'Traits=Human Require="level >= 9"',
+    'Level=9 Traits=Human Require="features.Clever Improviser"',
+  'Multitalented':'Level=9 Traits=Human',
   'Unconventional Expertise':
+    'Level=13 ' +
     'Traits=Human ' +
-    'Require=' +
-      '"level >= 13",' +
-      '"features.Unconventional Weaponry",' +
-      '"unconventionalWeaponTrained"',
-  'Elf Atavism':'Traits=Half-Elf',
-  'Inspire Imitation':'Traits=Half-Elf Require="level >= 5"',
-  'Supernatural Charm':'Traits=Half-Elf Require="level >= 5"',
-  'Monstrous Peacemaker':'Traits=Half-Orc',
-  'Orc Ferocity':'Traits=Orc',
-  'Orc Sight':'Traits=Half-Orc Require="features.Low-Light Vision"',
-  'Orc Superstition':'Traits=Orc,Concentrate',
-  'Orc Weapon Familiarity':'Traits=Orc',
+    'Require="features.Unconventional Weaponry","unconventionalWeaponTrained"',
+  'Elf Atavism':'Level=1 Traits=Half-Elf',
+  'Inspire Imitation':'Level=5 Traits=Half-Elf',
+  'Supernatural Charm':'Level=5 Traits=Half-Elf',
+  'Monstrous Peacemaker':'Level=1 Traits=Half-Orc',
+  'Orc Ferocity':'Level=1 Traits=Orc',
+  'Orc Sight':'Level=1 Traits=Half-Orc Require="features.Low-Light Vision"',
+  'Orc Superstition':'Level=1 Traits=Orc,Concentrate',
+  'Orc Weapon Familiarity':'Level=1 Traits=Orc',
   'Orc Weapon Carnage':
-    'Traits=Orc Require="level >= 5","features.Orc Weapon Familiarity"',
-  'Victorious Vigor':'Traits=Orc Require="level >= 5"',
+    'Level=5 Traits=Orc Require="features.Orc Weapon Familiarity"',
+  'Victorious Vigor':'Level=5 Traits=Orc',
   'Pervasive Superstition':
-    'Traits=Orc Require="level >= 9","features.Orc Superstition"',
-  'Incredible Ferocity':
-    'Traits=Orc Require="level >= 13","features.Orc Ferocity"',
+    'Level=9 Traits=Orc Require="features.Orc Superstition"',
+  'Incredible Ferocity':'Level=13 Traits=Orc Require="features.Orc Ferocity"',
   'Orc Weapon Expertise':
-    'Traits=Orc Require="level >= 13","features.Orc Weapon Familiarity"',
+    'Level=13 Traits=Orc Require="features.Orc Weapon Familiarity"',
 
   // Class
 
   // Alchemist
-  'Alchemical Familiar':'Traits=Alchemist',
-  'Alchemical Savant':'Traits=Alchemist Require="rank.Crafting >= 1"',
-  'Far Lobber':'Traits=Alchemist',
-  'Quick Bomber':'Traits=Alchemist',
-  'Poison Resistance':'Traits=Alchemist,Druid Require="level >= 2"',
-  'Revivifying Mutagen':'Traits=Alchemist Require="level >= 2"',
-  'Smoke Bomb':'Traits=Alchemist,"Additive 1" Require="level >= 2"',
-  'Calculated Splash':'Traits=Alchemist Require="level >= 4"',
-  'Efficient Alchemy':'Traits=Alchemist Require="level >= 4"',
-  'Enduring Alchemy':'Traits=Alchemist Require="level >= 4"',
-  'Combine Elixirs':'Traits=Alchemist,"Additive 2" Require="level >= 6"',
-  'Debilitating Bomb':'Traits=Alchemist,"Additive 2" Require="level >= 6"',
-  'Directional Bombs':'Traits=Alchemist Require="level >= 6"',
-  'Feral Mutagen':'Traits=Alchemist Require="level >= 8"',
-  'Sticky Bomb':'Traits=Alchemist,"Additive 2" Require="level >= 8"',
-  'Elastic Mutagen':'Traits=Alchemist Require="level >= 10"',
+  'Alchemical Familiar':'Level=1 Traits=Alchemist',
+  'Alchemical Savant':'Level=1 Traits=Alchemist Require="rank.Crafting >= 1"',
+  'Far Lobber':'Level=1 Traits=Alchemist',
+  'Quick Bomber':'Level=1 Traits=Alchemist',
+  'Poison Resistance':'Level=2 Traits=Alchemist,Druid',
+  'Revivifying Mutagen':'Level=2 Traits=Alchemist',
+  'Smoke Bomb':'Level=2 Traits=Alchemist,"Additive 1"',
+  'Calculated Splash':'Level=4 Traits=Alchemist',
+  'Efficient Alchemy':'Level=4 Traits=Alchemist',
+  'Enduring Alchemy':'Level=4 Traits=Alchemist',
+  'Combine Elixirs':'Level=6 Traits=Alchemist,"Additive 2"',
+  'Debilitating Bomb':'Level=6 Traits=Alchemist,"Additive 2"',
+  'Directional Bombs':'Level=6 Traits=Alchemist',
+  'Feral Mutagen':'Level=8 Traits=Alchemist',
+  'Sticky Bomb':'Level=8 Traits=Alchemist,"Additive 2"',
+  'Elastic Mutagen':'Level=10 Traits=Alchemist',
   'Expanded Splash':
-    'Traits=Alchemist Require="level >= 10","features.Calculated Splash"',
+    'Level=10 Traits=Alchemist Require="features.Calculated Splash"',
   'Greater Debilitating Bomb':
-    'Traits=Alchemist Require="level >= 10","features.Debilitating Bomb"',
-  'Merciful Elixir':'Traits=Alchemist,"Additive 2" Require="level >= 10"',
+    'Level=10 Traits=Alchemist Require="features.Debilitating Bomb"',
+  'Merciful Elixir':'Level=10 Traits=Alchemist,"Additive 2"',
   'Potent Poisoner':
-    'Traits=Alchemist Require="level >= 10","features.Powerful Alchemy"',
-  'Extend Elixir':'Traits=Alchemist Require="level >= 12"',
-  'Invincible Mutagen':'Traits=Alchemist Require="level >= 12"',
+    'Level=10 Traits=Alchemist Require="features.Powerful Alchemy"',
+  'Extend Elixir':'Level=12 Traits=Alchemist',
+  'Invincible Mutagen':'Level=12 Traits=Alchemist',
   'Uncanny Bombs':
-    'Traits=Alchemist Require="level >= 12","features.Far Lobber"',
-  'Glib Mutagen':'Traits=Alchemist Require="level >= 14"',
+    'Level=12 Traits=Alchemist Require="features.Far Lobber"',
+  'Glib Mutagen':'Level=14 Traits=Alchemist',
   'Greater Merciful Elixir':
-    'Traits=Alchemist Require="level >= 14","features.Merciful Elixir"',
+    'Level=14 Traits=Alchemist Require="features.Merciful Elixir"',
   'True Debilitating Bomb':
-    'Traits=Alchemist ' +
-    'Require=' +
-      '"level >= 14",' +
-      '"features.Greater Debilitating Bomb"',
+    'Level=14 Traits=Alchemist Require="features.Greater Debilitating Bomb"',
   'Eternal Elixir':
-    'Traits=Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Exploitive Bomb':'Traits=Alchemist,"Additive 2" Require="level >= 16"',
-  'Genius Mutagen':'Traits=Alchemist Require="level >= 16"',
+    'Level=16 Traits=Alchemist Require="features.Extend Elixir"',
+  'Exploitive Bomb':'Level=16 Traits=Alchemist,"Additive 2"',
+  'Genius Mutagen':'Level=16 Traits=Alchemist',
   'Persistent Mutagen':
-    'Traits=Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Improbable Elixirs':'Traits=Alchemist Require="level >= 18"',
-  'Mindblank Mutagen':'Traits=Alchemist Require="level >= 18"',
-  'Miracle Worker':'Traits=Alchemist Require="level >= 18"',
-  'Perfect Debilitation':'Traits=Alchemist Require="level >= 18"',
-  "Craft Philosopher's Stone":'Traits=Alchemist Require="level >= 20"',
+    'Level=16 Traits=Alchemist Require="features.Extend Elixir"',
+  'Improbable Elixirs':'Level=18 Traits=Alchemist',
+  'Mindblank Mutagen':'Level=18 Traits=Alchemist',
+  'Miracle Worker':'Level=18 Traits=Alchemist',
+  'Perfect Debilitation':'Level=18 Traits=Alchemist',
+  "Craft Philosopher's Stone":'Level=20 Traits=Alchemist',
   'Mega Bomb':
-    'Traits=Alchemist,"Additive 3" ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"features.Expanded Splash"',
-  'Perfect Mutagen':'Traits=Alchemist Require="level >= 20"',
+    'Level=20 Traits=Alchemist,"Additive 3" Require="features.Expanded Splash"',
+  'Perfect Mutagen':'Level=20 Traits=Alchemist',
 
   // Barbarian
-  'Acute Vision':'Traits=Barbarian',
-  'Moment Of Clarity':'Traits=Barbarian,Concentrate,Rage',
-  'Raging Intimidation':'Traits=Barbarian',
-  'Raging Thrower':'Traits=Barbarian',
-  'Sudden Charge':'Traits=Barbarian,Fighter,Flourish,Open',
+  'Acute Vision':'Level=1 Traits=Barbarian',
+  'Moment Of Clarity':'Level=1 Traits=Barbarian,Concentrate,Rage',
+  'Raging Intimidation':'Level=1 Traits=Barbarian',
+  'Raging Thrower':'Level=1 Traits=Barbarian',
+  'Sudden Charge':'Level=1 Traits=Barbarian,Fighter,Flourish,Open',
   'Acute Scent':
-    'Traits=Barbarian ' +
-    'Require="level >= 2","features.Acute Vision || features.Darkvision"',
-  'Furious Finish':'Traits=Barbarian,Rage Require="level >= 2"',
-  'No Escape':'Traits=Barbarian,Rage Require="level >= 2"',
-  'Second Wind':'Traits=Barbarian Require="level >= 2"',
-  'Shake It Off':'Traits=Barbarian,Concentrate,Rage Require="level >= 2"',
-  'Fast Movement':'Traits=Barbarian Require="level >= 4"',
-  'Raging Athlete':
-    'Traits=Barbarian Require="level >= 4","rank.Athletics >= 2"',
-  'Swipe':'Traits=Barbarian,Fighter,Flourish Require="level >= 4"',
-  'Wounded Rage':'Traits=Barbarian Require="level >= 4"',
+    'Level=2 Traits=Barbarian ' +
+    'Require="features.Acute Vision || features.Darkvision"',
+  'Furious Finish':'Level=2 Traits=Barbarian,Rage',
+  'No Escape':'Level=2 Traits=Barbarian,Rage',
+  'Second Wind':'Level=2 Traits=Barbarian',
+  'Shake It Off':'Level=2 Traits=Barbarian,Concentrate,Rage',
+  'Fast Movement':'Level=4 Traits=Barbarian',
+  'Raging Athlete':'Level=4 Traits=Barbarian Require="rank.Athletics >= 2"',
+  'Swipe':'Level=4 Traits=Barbarian,Fighter,Flourish',
+  'Wounded Rage':'Level=4 Traits=Barbarian',
   'Animal Skin':
-    'Traits=Barbarian,Morph,Primal,Transmutation ' +
-    'Require="level >= 6","features.Animal Instinct"',
-  'Attack Of Opportunity':'Traits=Barbarian,Champion Require="level >= 6"',
-  'Brutal Bully':'Traits=Barbarian Require="level >= 6","rank.Athletics >= 2"',
-  'Cleave':'Traits=Barbarian,Rage Require="level >= 6"',
+    'Level=6 Traits=Barbarian,Morph,Primal,Transmutation ' +
+    'Require="features.Animal Instinct"',
+  'Attack Of Opportunity':'Level=6 Traits=Barbarian,Champion',
+  'Brutal Bully':'Level=6 Traits=Barbarian Require="rank.Athletics >= 2"',
+  'Cleave':'Level=6 Traits=Barbarian,Rage',
   "Dragon's Rage Breath":
-    'Traits=Barbarian,Arcane,Concentrate,Evocation,Rage ' +
-    'Require="level >= 6","features.Dragon Instinct"',
+    'Level=6 Traits=Barbarian,Arcane,Concentrate,Evocation,Rage ' +
+    'Require="features.Dragon Instinct"',
   "Giant's Stature":
-    'Traits=Barbarian,Polymorph,Primal,Rage,Transmutation ' +
-    'Require="level >= 6","features.Giant Instinct"',
+    'Level=6 Traits=Barbarian,Polymorph,Primal,Rage,Transmutation ' +
+    'Require="features.Giant Instinct"',
   "Spirits' Interference":
-    'Traits=Barbarian,Divine,Necromancy,Rage ' +
-    'Require="level >= 6","features.Spirit Instinct"',
+    'Level=6 Traits=Barbarian,Divine,Necromancy,Rage ' +
+    'Require="features.Spirit Instinct"',
   'Animal Rage':
-    'Traits=Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
-    'Require="level >= 8","features.Animal Instinct"',
-  'Furious Bully':'Traits=Barbarian Require="level >= 8","rank.Athletics >= 3"',
-  'Renewed Vigor':'Traits=Barbarian,Concentrate,Rage Require="level >= 8"',
-  'Share Rage':'Traits=Barbarian,Auditory,Rage,Visual Require="level >= 8"',
-  'Sudden Leap':'Traits=Barbarian,Fighter Require="level >= 8"',
-  'Thrash':'Traits=Barbarian,Rage Require="level >= 8"',
-  'Come And Get Me':'Traits=Barbarian,Concentrate,Rage Require="level >= 10"',
-  'Furious Sprint':'Traits=Barbarian,Rage Require="level >= 10"',
-  'Great Cleave':
-    'Traits=Barbarian,Rage Require="level >= 10","features.Cleave"',
-  'Knockback':'Traits=Barbarian,Rage Require="level >= 10"',
+    'Level=8 Traits=Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation '+
+    'Require="features.Animal Instinct"',
+  'Furious Bully':'Level=8 Traits=Barbarian Require="rank.Athletics >= 3"',
+  'Renewed Vigor':'Level=8 Traits=Barbarian,Concentrate,Rage',
+  'Share Rage':'Level=8 Traits=Barbarian,Auditory,Rage,Visual',
+  'Sudden Leap':'Level=8 Traits=Barbarian,Fighter',
+  'Thrash':'Level=8 Traits=Barbarian,Rage',
+  'Come And Get Me':'Level=10 Traits=Barbarian,Concentrate,Rage',
+  'Furious Sprint':'Level=10 Traits=Barbarian,Rage',
+  'Great Cleave':'Level=10 Traits=Barbarian,Rage Require="features.Cleave"',
+  'Knockback':'Level=10 Traits=Barbarian,Rage',
   'Terrifying Howl':
-    'Traits=Barbarian,Auditory,Rage ' +
-    'Require="level >= 10","features.Intimidating Glare"',
+    'Level=10 Traits=Barbarian,Auditory,Rage ' +
+    'Require="features.Intimidating Glare"',
   "Dragon's Rage Wings":
-    'Traits=Barbarian,Morph,Primal,Rage,Transmutation ' +
-    'Require="level >= 12","features.Dragon Instinct"',
-  'Furious Grab':'Traits=Barbarian,Rage Require="level >= 12"',
+    'Level=12 Traits=Barbarian,Morph,Primal,Rage,Transmutation ' +
+    'Require="features.Dragon Instinct"',
+  'Furious Grab':'Level=12 Traits=Barbarian,Rage',
   "Predator's Pounce":
-    'Traits=Barbarian,Flourish,Open,Rage ' +
-    'Require="level >= 12","features.Animal Instinct"',
+    'Level=12 Traits=Barbarian,Flourish,Open,Rage ' +
+    'Require="features.Animal Instinct"',
   "Spirit's Wrath":
-    'Traits=Barbarian,Attack,Concentrate,Rage ' +
-    'Require="level >= 12","features.Spirit Instinct"',
+    'Level=12 Traits=Barbarian,Attack,Concentrate,Rage ' +
+    'Require="features.Spirit Instinct"',
   "Titan's Stature":
-    'Traits=Barbarian,Polymorph,Transmutation ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Giant Instinct",' +
-      '"features.Giant\'s Stature"',
+    'Level=12 Traits=Barbarian,Polymorph,Transmutation ' +
+    'Require="features.Giant Instinct","features.Giant\'s Stature"',
   'Awesome Blow':
-    'Traits=Barbarian,Concentrate,Rage ' +
-    'Require="level >= 14","features.Knockback"',
+    'Level=14 Traits=Barbarian,Concentrate,Rage Require="features.Knockback"',
   "Giant's Lunge":
-    'Traits=Barbarian,Concentrate,Rage ' +
-    'Require="level >= 14","features.Giant Instinct"',
+    'Level=14 Traits=Barbarian,Concentrate,Rage ' +
+    'Require="features.Giant Instinct"',
   'Vengeful Strike':
-    'Traits=Barbarian,Rage ' +
-    'Require="level >= 14","features.Come And Get Me"',
+    'Level=14 Traits=Barbarian,Rage Require="features.Come And Get Me"',
   'Whirlwind Strike':
-    'Traits=Barbarian,Fighter,Flourish,Open Require="level >= 14"',
+    'Level=14 Traits=Barbarian,Fighter,Flourish,Open',
   'Collateral Thrash':
-    'Traits=Barbarian,Rage Require="level >= 16","features.Thrash"',
+    'Level=16 Traits=Barbarian,Rage Require="features.Thrash"',
   'Dragon Transformation':
+    'Level=16 ' +
     'Traits=Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Dragon Instinct",' +
-      '"features.Dragon\'s Rage Wings"',
-  'Reckless Abandon':'Traits=Barbarian,Rage Require="level >= 16"',
-  'Brutal Critical':'Traits=Barbarian Require="level >= 18"',
-  'Perfect Clarity':
-    'Traits=Barbarian,Concentrate,Fortune,Rage Require="level >= 18"',
-  'Vicious Evisceration':'Traits=Barbarian,Rage Require="level >= 18"',
+    'Require="features.Dragon Instinct","features.Dragon\'s Rage Wings"',
+  'Reckless Abandon':'Level=16 Traits=Barbarian,Rage',
+  'Brutal Critical':'Level=18 Traits=Barbarian',
+  'Perfect Clarity':'Level=18 Traits=Barbarian,Concentrate,Fortune,Rage',
+  'Vicious Evisceration':'Level=18 Traits=Barbarian,Rage',
   'Contagious Rage':
-    'Traits=Barbarian,Auditory,Rage,Visual ' +
-    'Require="level >= 20","features.Share Rage"',
-  'Quaking Stomp':'Traits=Barbarian,Manipulate,Rage Require="level >= 20"',
+    'Level=20 Traits=Barbarian,Auditory,Rage,Visual ' +
+    'Require="features.Share Rage"',
+  'Quaking Stomp':'Level=20 Traits=Barbarian,Manipulate,Rage',
 
   // Bard
-  'Bardic Lore':'Traits=Bard Require="hasEnigmaMuse"',
-  'Lingering Composition':'Traits=Bard Require="hasMaestroMuse"',
+  'Bardic Lore':'Level=1 Traits=Bard Require="hasEnigmaMuse"',
+  'Lingering Composition':'Level=1 Traits=Bard Require="hasMaestroMuse"',
   'Reach Spell':
-    'Traits=Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
-  'Versatile Performance':'Traits=Bard Require="hasPolymathMuse"',
-  'Cantrip Expansion':'Traits=Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
-  'Esoteric Polymath':'Traits=Bard Require="level >= 2","hasPolymathMuse"',
-  'Inspire Competence':'Traits=Bard Require="level >= 2","hasMaestroMuse"',
-  "Loremaster's Etude":
-    'Traits=Bard,Fortune Require="level >= 2","hasEnigmaMuse"',
+    'Level=1 Traits=Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
+  'Versatile Performance':'Level=1 Traits=Bard Require="hasPolymathMuse"',
+  'Cantrip Expansion':'Level=2 Traits=Bard,Cleric,Sorcerer,Wizard',
+  'Esoteric Polymath':'Level=2 Traits=Bard Require="hasPolymathMuse"',
+  'Inspire Competence':'Level=2 Traits=Bard Require="hasMaestroMuse"',
+  "Loremaster's Etude":'Level=2 Traits=Bard,Fortune Require="hasEnigmaMuse"',
   'Multifarious Muse (Enigma)':
-    'Traits=Bard Require="level >= 2","features.Enigma == 0"',
+    'Level=2 Traits=Bard Require="features.Enigma == 0"',
   'Multifarious Muse (Maestro)':
-    'Traits=Bard Require="level >= 2","features.Maestro == 0"',
+    'Level=2 Traits=Bard Require="features.Maestro == 0"',
   'Multifarious Muse (Polymath)':
-    'Traits=Bard Require="level >= 2","features.Polymath == 0"',
-  'Inspire Defense':'Traits=Bard Require="level >= 4","hasMaestroMuse"',
-  'Melodious Spell':
-    'Traits=Bard,Concentrate,Manipulate,Metamagic Require="level >= 4"',
-  'Triple Time':'Traits=Bard Require="level >= 4"',
-  'Versatile Signature':'Traits=Bard Require="level >= 4","hasPolymathMuse"',
-  'Dirge Of Doom':'Traits=Bard Require="level >= 6"',
+    'Level=2 Traits=Bard Require="features.Polymath == 0"',
+  'Inspire Defense':'Level=4 Traits=Bard Require="hasMaestroMuse"',
+  'Melodious Spell':'Level=4 Traits=Bard,Concentrate,Manipulate,Metamagic',
+  'Triple Time':'Level=4 Traits=Bard',
+  'Versatile Signature':'Level=4 Traits=Bard Require="hasPolymathMuse"',
+  'Dirge Of Doom':'Level=6 Traits=Bard',
   'Harmonize':
-    'Traits=Bard,Concentrate,Manipulate,Metamagic ' +
-    'Require="level >= 6","hasMaestroMuse"',
-  'Steady Spellcasting':
-    'Traits=Bard,Cleric,Druid,Sorcerer,Wizard Require="level >= 6"',
+    'Level=6 Traits=Bard,Concentrate,Manipulate,Metamagic ' +
+    'Require="hasMaestroMuse"',
+  'Steady Spellcasting':'Level=6 Traits=Bard,Cleric,Druid,Sorcerer,Wizard',
   'Eclectic Skill':
-    'Traits=Bard ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"hasPolymathMuse",' +
-      '"rank.Occultism >= 3"',
-  'Inspire Heroics':
-    'Traits=Bard Require="level >= 8","hasMaestroMuse"',
-  'Know-It-All':'Traits=Bard Require="level >= 8","hasEnigmaMuse"',
-  'House Of Imaginary Walls':'Traits=Bard Require="level >= 10"',
+    'Level=8 Traits=Bard Require="hasPolymathMuse","rank.Occultism >= 3"',
+  'Inspire Heroics':'Level=8 Traits=Bard Require="hasMaestroMuse"',
+  'Know-It-All':'Level=8 Traits=Bard Require="hasEnigmaMuse"',
+  'House Of Imaginary Walls':'Level=10 Traits=Bard',
   'Quickened Casting':
-    'Traits=Bard,Sorcerer,Wizard,Concentrate,Metamagic ' +
-    'Require="level >= 10"',
+    'Level=10 Traits=Bard,Sorcerer,Wizard,Concentrate,Metamagic',
   'Unusual Composition':
-    'Traits=Bard,Concentrate,Manipulate,Metamagic ' +
-    'Require="level >= 10","hasPolymathMuse"',
+    'Level=10 Traits=Bard,Concentrate,Manipulate,Metamagic ' +
+    'Require="hasPolymathMuse"',
   'Eclectic Polymath':
-    'Traits=Bard Require="level >= 12","features.Esoteric Polymath"',
-  'Inspirational Focus':'Traits=Bard Require="level >= 12"',
-  'Allegro':'Traits=Bard Require="level >= 14"',
-  'Soothing Ballad':'Traits=Bard Require="level >= 14"',
-  'True Hypercognition':'Traits=Bard Require="level >= 14","hasEnigmaMuse"',
-  'Effortless Concentration':
-    'Traits=Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
+    'Level=12 Traits=Bard Require="features.Esoteric Polymath"',
+  'Inspirational Focus':'Level=12 Traits=Bard',
+  'Allegro':'Level=14 Traits=Bard',
+  'Soothing Ballad':'Level=14 Traits=Bard',
+  'True Hypercognition':'Level=14 Traits=Bard Require="hasEnigmaMuse"',
+  'Effortless Concentration':'Level=16 Traits=Bard,Druid,Sorcerer,Wizard',
   'Studious Capacity':
-    'Traits=Bard ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"hasEnigmaMuse",' +
-      '"rank.Occultism >= 4"',
+    'Level=16 Traits=Bard Require="hasEnigmaMuse","rank.Occultism >= 4"',
   'Deep Lore':
-    'Traits=Bard ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"hasEnigmaMuse",' +
-      '"rank.Occultism >= 4"',
-  'Eternal Composition':'Traits=Bard Require="level >= 18","hasMaestroMuse"',
+    'Level=18 Traits=Bard ' +
+    'Require="hasEnigmaMuse","rank.Occultism >= 4"',
+  'Eternal Composition':'Level=18 Traits=Bard Require="hasMaestroMuse"',
   'Impossible Polymath':
-    'Traits=Bard ' +
+    'Level=18 Traits=Bard ' +
     'Require=' +
-      '"level >= 18",' +
       '"rank.Arcana >= 1 || rank.Nature >= 1 || rank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
-  'Fatal Aria':'Traits=Bard Require="level >= 20"',
-  'Perfect Encore':'Traits=Bard Require="level >= 20","features.Magnum Opus"',
-  'Symphony Of The Muse':
-    'Traits=Bard Require="level >= 20","features.Harmonize"',
+  'Fatal Aria':'Level=20 Traits=Bard',
+  'Perfect Encore':'Level=20 Traits=Bard Require="features.Magnum Opus"',
+  'Symphony Of The Muse':'Level=20 Traits=Bard Require="features.Harmonize"',
 
   // Champion
   "Deity's Domain (%domain)":
-    'Traits=Champion Require="deityDomains =~ \'%domain\'"',
-  'Ranged Reprisal':'Traits=Champion Require="features.Paladin"',
-  'Unimpeded Step':'Traits=Champion Require="features.Liberator"',
-  'Weight Of Guilt':'Traits=Champion Require="features.Redeemer"',
-  'Divine Grace':'Traits=Champion Require="level >= 2"',
+    'Level=1 Traits=Champion Require="deityDomains =~ \'%domain\'"',
+  'Ranged Reprisal':'Level=1 Traits=Champion Require="features.Paladin"',
+  'Unimpeded Step':'Level=1 Traits=Champion Require="features.Liberator"',
+  'Weight Of Guilt':'Level=1 Traits=Champion Require="features.Redeemer"',
+  'Divine Grace':'Level=2 Traits=Champion',
   'Dragonslayer Oath':
-    'Traits=Champion,Oath Require="level >= 2","features.The Tenets Of Good"',
+    'Level=2 Traits=Champion,Oath Require="features.The Tenets Of Good"',
   'Fiendsbane Oath':
-    'Traits=Champion,Oath Require="level >= 2","features.The Tenets Of Good"',
+    'Level=2 Traits=Champion,Oath Require="features.The Tenets Of Good"',
   'Shining Oath':
-    'Traits=Champion,Oath Require="level >= 2","features.The Tenets Of Good"',
-  'Vengeful Oath':
-    'Traits=Champion,Oath Require="level >= 2","features.Paladin"',
+    'Level=2 Traits=Champion,Oath Require="features.The Tenets Of Good"',
+  'Vengeful Oath':'Level=2 Traits=Champion,Oath Require="features.Paladin"',
   'Aura Of Courage':
-    'Traits=Champion Require="level >= 4","features.The Tenets Of Good"',
+    'Level=4 Traits=Champion Require="features.The Tenets Of Good"',
   'Divine Health':
-    'Traits=Champion Require="level >= 4","features.The Tenets Of Good"',
+    'Level=4 Traits=Champion Require="features.The Tenets Of Good"',
   'Mercy':
-    'Traits=Champion,Concentrate,Metamagic ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Foc Nec)"',
+    'Level=4 Traits=Champion,Concentrate,Metamagic ' +
+    'Require="spells.Lay On Hands (D1 Foc Nec)"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Devotion Spells",' +
-      '"features.The Tenets Of Good"',
-  'Loyal Warhorse':'Traits=Champion Require="level >= 6","features.Steed Ally"',
+    'Level=6 Traits=Champion ' +
+    'Require="features.Devotion Spells","features.The Tenets Of Good"',
+  'Loyal Warhorse':'Level=6 Traits=Champion Require="features.Steed Ally"',
   'Shield Warden':
-    'Traits=Champion,Fighter ' +
+    'Level=6 Traits=Champion,Fighter ' +
     'Require=' +
-      '"level >= 6",' +
       // The fighter feat requires Shield Block, which is a class feature for
       // both champion and fighter, while the champion feat requires Shield
       // Ally and The Tenets Of Good. Champion Dedication doesn't grant a
@@ -1406,1533 +1355,1253 @@ Pathfinder2E.FEATS = {
       '"levels.Fighter || fighterDedicationLevel || features.Shield Ally",' +
       '"levels.Fighter || fighterDedicationLevel || features.The Tenets Of Good"',
   'Smite Evil':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Blade Ally",' +
-      '"features.The Tenets Of Good"',
+    'Level=6 Traits=Champion ' +
+    'Require="features.Blade Ally","features.The Tenets Of Good"',
   "Advanced Deity's Domain (%domain)":
-    'Traits=Champion Require="level >= 8","features.Deity\'s Domain (%domain)"',
-  'Greater Mercy':'Traits=Champion Require="level >= 8","features.Mercy"',
+    'Level=8 Traits=Champion Require="features.Deity\'s Domain (%domain)"',
+  'Greater Mercy':'Level=8 Traits=Champion Require="features.Mercy"',
   'Heal Mount':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Steed Ally",' +
-      '"spells.Lay On Hands (D1 Foc Nec)"',
+    'Level=8 Traits=Champion ' +
+    'Require="features.Steed Ally","spells.Lay On Hands (D1 Foc Nec)"',
   'Quick Shield Block':
-    'Traits=Champion,Fighter ' +
-    'Require="level >= 8","features.Shield Block"',
-  'Second Ally':'Traits=Champion Require="level >= 8","features.Divine Ally"',
+    'Level=8 Traits=Champion,Fighter Require="features.Shield Block"',
+  'Second Ally':'Level=8 Traits=Champion Require="features.Divine Ally"',
   'Sense Evil':
-    'Traits=Champion Require="level >= 8","features.The Tenets Of Good"',
-  'Devoted Focus':
-    'Traits=Champion Require="level >= 10","features.Devotion Spells"',
+    'Level=8 Traits=Champion Require="features.The Tenets Of Good"',
+  'Devoted Focus':'Level=10 Traits=Champion Require="features.Devotion Spells"',
   'Imposing Destrier':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Steed Ally",' +
-      '"features.Loyal Warhorse"',
+    'Level=10 Traits=Champion ' +
+    'Require="features.Steed Ally","features.Loyal Warhorse"',
   'Litany Against Sloth':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Devotion Spells",' +
-      '"features.The Tenets Of Good"',
+    'Level=10 Traits=Champion ' +
+    'Require="features.Devotion Spells","features.The Tenets Of Good"',
   'Radiant Blade Spirit':
-    'Traits=Champion Require="level >= 10","features.Blade Ally"',
+    'Level=10 Traits=Champion Require="features.Blade Ally"',
   'Shield Of Reckoning':
-    'Traits=Champion,Flourish ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Champion\'s Reaction",' +
-      '"features.Shield Warden"',
-  'Affliction Mercy':'Traits=Champion Require="level >= 12","features.Mercy"',
+    'Level=10 Traits=Champion,Flourish ' +
+    'Require="features.Champion\'s Reaction","features.Shield Warden"',
+  'Affliction Mercy':'Level=12 Traits=Champion Require="features.Mercy"',
   'Aura Of Faith':
-    'Traits=Champion Require="level >= 12","features.The Tenets Of Good"',
+    'Level=12 Traits=Champion Require="features.The Tenets Of Good"',
   'Blade Of Justice':
-    'Traits=Champion Require="level >= 12","features.The Tenets Of Good"',
+    'Level=12 Traits=Champion Require="features.The Tenets Of Good"',
   "Champion's Sacrifice":
-    'Traits=Champion Require="level >= 12","features.The Tenets Of Good"',
-  'Divine Wall':'Traits=Champion Require="level >= 12"',
-  'Lasting Doubt':'Traits=Champion Require="level >= 12","features.Redeemer"',
-  'Liberating Stride':
-    'Traits=Champion Require="level >= 12","features.Liberator"',
+    'Level=12 Traits=Champion Require="features.The Tenets Of Good"',
+  'Divine Wall':'Level=12 Traits=Champion',
+  'Lasting Doubt':'Level=12 Traits=Champion Require="features.Redeemer"',
+  'Liberating Stride':'Level=12 Traits=Champion Require="features.Liberator"',
   'Anchoring Aura':
-    'Traits=Champion Require="level >= 14","features.Fiendsbane Oath"',
-  'Aura Of Life':
-    'Traits=Champion Require="level >= 14","features.Shining Oath"',
+    'Level=14 Traits=Champion Require="features.Fiendsbane Oath"',
+  'Aura Of Life':'Level=14 Traits=Champion Require="features.Shining Oath"',
   'Aura Of Righteousness':
-    'Traits=Champion Require="level >= 14","features.The Tenets Of Good"',
+    'Level=14 Traits=Champion Require="features.The Tenets Of Good"',
   'Aura Of Vengeance':
-    'Traits=Champion ' +
-    'Require="level >= 14","features.Exalt","features.Vengeful Oath"',
-  'Divine Reflexes':'Traits=Champion Require="level >= 14"',
+    'Level=14 Traits=Champion ' +
+    'Require="features.Exalt","features.Vengeful Oath"',
+  'Divine Reflexes':'Level=14 Traits=Champion',
   'Litany Of Righteousness':
-    'Traits=Champion Require="level >= 14","features.The Tenets Of Good"',
+    'Level=14 Traits=Champion Require="features.The Tenets Of Good"',
   'Wyrmbane Aura':
-    'Traits=Champion Require="level >= 14","features.Dragonslayer Oath"',
+    'Level=14 Traits=Champion Require="features.Dragonslayer Oath"',
   'Auspicious Mount':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Steed Ally",' +
-      '"features.Imposing Destrier"',
+    'Level=16 Traits=Champion ' +
+    'Require="features.Steed Ally","features.Imposing Destrier"',
   'Instrument Of Zeal':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Blade Ally",' +
-      '"features.The Tenets Of Good"',
+    'Level=16 Traits=Champion ' +
+    'Require="features.Blade Ally","features.The Tenets Of Good"',
   'Shield Of Grace':
-    'Traits=Champion Require="level >= 16","features.Shield Warden"',
+    'Level=16 Traits=Champion Require="features.Shield Warden"',
   'Celestial Form':
-    'Traits=Champion Require="level >= 18","features.The Tenets Of Good"',
-  'Ultimate Mercy':'Traits=Champion Require="level >= 18","features.Mercy"',
+    'Level=18 Traits=Champion Require="features.The Tenets Of Good"',
+  'Ultimate Mercy':'Level=18 Traits=Champion Require="features.Mercy"',
   'Celestial Mount':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"features.Steed Ally",' +
-      '"features.The Tenets Of Good"',
+    'Level=20 Traits=Champion ' +
+    'Require="features.Steed Ally","features.The Tenets Of Good"',
   'Radiant Blade Master':
-    'Traits=Champion ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"features.Blade Ally",' +
-      '"features.Radiant Blade Spirit"',
-  'Shield Paragon':
-    'Traits=Champion Require="level >= 20","features.Shield Ally"',
+    'Level=20 Traits=Champion ' +
+    'Require="features.Blade Ally","features.Radiant Blade Spirit"',
+  'Shield Paragon':'Level=20 Traits=Champion Require="features.Shield Ally"',
 
   // Cleric
   'Deadly Simplicity':
-    'Traits=Cleric ' +
+    'Level=1 Traits=Cleric ' +
     'Require=' +
       '"deityWeaponCategory =~ \'Simple|Unarmed\'",' +
       '"deityWeaponRank >= 1"',
   'Domain Initiate (%domain)':
-    'Traits=Cleric Require="deityDomains =~ \'%domain\'"',
-  'Harming Hands':'Traits=Cleric Require="features.Harmful Font"',
-  'Healing Hands':'Traits=Cleric Require="features.Healing Font"',
-  'Holy Castigation':'Traits=Cleric Require="alignment =~ \'Good\'"',
+    'Level=1 Traits=Cleric Require="deityDomains =~ \'%domain\'"',
+  'Harming Hands':'Level=1 Traits=Cleric Require="features.Harmful Font"',
+  'Healing Hands':'Level=1 Traits=Cleric Require="features.Healing Font"',
+  'Holy Castigation':'Level=1 Traits=Cleric Require="alignment =~ \'Good\'"',
   // Reach Spell as above
   // Cantrip Expansion as above
-  'Communal Healing':'Traits=Cleric,Healing,Positive Require="level >= 2"',
-  'Emblazon Armament':'Traits=Cleric,Exploration Require="level >= 2"',
-  'Sap Life':'Traits=Cleric,Healing Require="level >= 2"',
-  'Turn Undead':'Traits=Cleric Require="level >= 2"',
+  'Communal Healing':'Level=2 Traits=Cleric,Healing,Positive',
+  'Emblazon Armament':'Level=2 Traits=Cleric,Exploration',
+  'Sap Life':'Level=2 Traits=Cleric,Healing',
+  'Turn Undead':'Level=2 Traits=Cleric',
   'Versatile Font':
-    'Traits=Cleric ' +
+    'Level=2 Traits=Cleric ' +
     'Require=' +
-      '"level >= 2",' +
       '"features.Harmful Font || features.Healing Font",' +
       '"deityFont == \'Harm or Heal\'"',
   'Channel Smite':
-    'Traits=Cleric,Divine,Necromancy ' +
-    'Require="level >= 4","features.Harmful Font || features.Healing Font"',
+    'Level=4 Traits=Cleric,Divine,Necromancy ' +
+    'Require="features.Harmful Font || features.Healing Font"',
   'Command Undead':
-    'Traits=Cleric,Concentrate,Metamagic ' +
-    'Require="level >= 4","features.Harmful Font","alignment =~ \'Evil\'"',
-  'Directed Channel':'Traits=Cleric Require="level >= 4"',
+    'Level=4 Traits=Cleric,Concentrate,Metamagic ' +
+    'Require="features.Harmful Font","alignment =~ \'Evil\'"',
+  'Directed Channel':'Level=4 Traits=Cleric',
   'Improved Communal Healing':
-    'Traits=Cleric Require="level >= 4","features.Communal Healing"',
+    'Level=4 Traits=Cleric Require="features.Communal Healing"',
   'Necrotic Infusion':
-    'Traits=Cleric,Concentrate,Metamagic ' +
-    'Require="level >= 4","features.Harmful Font","alignment =~ \'Evil\'"',
+    'Level=4 Traits=Cleric,Concentrate,Metamagic ' +
+    'Require="features.Harmful Font","alignment =~ \'Evil\'"',
   'Cast Down':
-    'Traits=Cleric,Concentrate,Metamagic ' +
-    'Require="level >= 6","features.Harmful Font || features.Healing Font"',
-  'Divine Weapon':'Traits=Cleric Require="level >= 6"',
-  'Selective Energy':'Traits=Cleric Require="level >= 6"',
+    'Level=6 Traits=Cleric,Concentrate,Metamagic ' +
+    'Require="features.Harmful Font || features.Healing Font"',
+  'Divine Weapon':'Level=6 Traits=Cleric',
+  'Selective Energy':'Level=6 Traits=Cleric',
   // Steady Spellcasting as above
   'Advanced Domain (%domain)':
-    'Traits=Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (%domain)"',
+    'Level=8 Traits=Cleric Require="features.Domain Initiate (%domain)"',
   'Align Armament (Chaotic)':
-    'Traits=Cleric,Divine,Evocation ' +
-    'Require="level >= 8","deityAlignment =~ \'C\'"',
+    'Level=8 Traits=Cleric,Divine,Evocation ' +
+    'Require="deityAlignment =~ \'C\'"',
   'Align Armament (Evil)':
-    'Traits=Cleric,Divine,Evocation ' +
-    'Require="level >= 8","deityAlignment =~ \'E\'"',
+    'Level=8 Traits=Cleric,Divine,Evocation ' +
+    'Require="deityAlignment =~ \'E\'"',
   'Align Armament (Good)':
-    'Traits=Cleric,Divine,Evocation ' +
-    'Require="level >= 8","deityAlignment =~ \'G\'"',
+    'Level=8 Traits=Cleric,Divine,Evocation ' +
+    'Require="deityAlignment =~ \'G\'"',
   'Align Armament (Lawful)':
-    'Traits=Cleric,Divine,Evocation ' +
-    'Require="level >= 8","deityAlignment =~ \'L\'"',
+    'Level=8 Traits=Cleric,Divine,Evocation ' +
+    'Require="deityAlignment =~ \'L\'"',
   'Channeled Succor':
-    'Traits=Cleric Require="level >= 8","features.Healing Font"',
-  'Cremate Undead':'Traits=Cleric Require="level >= 8"',
+    'Level=8 Traits=Cleric Require="features.Healing Font"',
+  'Cremate Undead':'Level=8 Traits=Cleric',
   'Emblazon Energy':
-    'Traits=Cleric Require="level >= 8","features.Emblazon Armament"',
+    'Level=8 Traits=Cleric Require="features.Emblazon Armament"',
   'Castigating Weapon':
-    'Traits=Cleric Require="level >= 10","features.Holy Castigation"',
+    'Level=10 Traits=Cleric Require="features.Holy Castigation"',
   'Heroic Recovery':
-    'Traits=Cleric,Concentrate,Metamagic ' +
-    'Require="level >= 10","features.Healing Font","alignment =~ \'Good\'"',
+    'Level=10 Traits=Cleric,Concentrate,Metamagic ' +
+    'Require="features.Healing Font","alignment =~ \'Good\'"',
   'Improved Command Undead':
-    'Traits=Cleric ' +
+    'Level=10 Traits=Cleric ' +
     'Require=' +
-      '"level >= 10",' +
       '"features.Harmful Font",' +
       '"features.Command Undead",' +
       '"alignment =~ \'Evil\'"',
   'Replenishment Of War':
-    'Traits=Cleric Require="level >= 10","deityWeaponRank >= 2"',
+    'Level=10 Traits=Cleric Require="deityWeaponRank >= 2"',
   'Defensive Recovery':
-    'Traits=Cleric,Concentrate,Metamagic ' +
-    'Require="level >= 12","features.Harmful Font || features.Healing Font"',
+    'Level=12 Traits=Cleric,Concentrate,Metamagic ' +
+    'Require="features.Harmful Font || features.Healing Font"',
   'Domain Focus':
-    'Traits=Cleric Require="level >= 12","features.Domain Initiate"',
+    'Level=12 Traits=Cleric Require="features.Domain Initiate"',
   'Emblazon Antimagic':
-    'Traits=Cleric Require="level >= 12","features.Emblazon Armament"',
+    'Level=12 Traits=Cleric Require="features.Emblazon Armament"',
   'Shared Replenishment':
-    'Traits=Cleric Require="level >= 12","features.Replenishment Of War"',
+    'Level=12 Traits=Cleric Require="features.Replenishment Of War"',
   "Deity's Protection":
-    'Traits=Cleric Require="level >= 14","features.Advanced Domain"',
+    'Level=14 Traits=Cleric Require="features.Advanced Domain"',
   'Extend Armament Alignment':
-    'Traits=Cleric Require="level >= 14","features.Align Armament"',
+    'Level=14 Traits=Cleric Require="features.Align Armament"',
   'Fast Channel':
-    'Traits=Cleric ' +
-    'Require="level >= 14","features.Harmful Font || features.Healing Font"',
-  'Swift Banishment':'Traits=Cleric Require="level >= 14"',
-  'Eternal Bane':'Traits=Cleric Require="level >= 16","alignment =~ \'Evil\'"',
+    'Level=14 Traits=Cleric ' +
+    'Require="features.Harmful Font || features.Healing Font"',
+  'Swift Banishment':'Level=14 Traits=Cleric',
+  'Eternal Bane':'Level=16 Traits=Cleric Require="alignment =~ \'Evil\'"',
   'Eternal Blessing':
-    'Traits=Cleric Require="level >= 16","alignment =~ \'Good\'"',
-  'Resurrectionist':'Traits=Cleric Require="level >= 16"',
-  'Domain Wellspring':
-    'Traits=Cleric Require="level >= 18","features.Domain Focus"',
-  'Echoing Channel':'Traits=Cleric,Concentrate,Metamagic Require="level >= 18"',
+    'Level=16 Traits=Cleric Require="alignment =~ \'Good\'"',
+  'Resurrectionist':'Level=16 Traits=Cleric',
+  'Domain Wellspring':'Level=18 Traits=Cleric Require="features.Domain Focus"',
+  'Echoing Channel':'Level=18 Traits=Cleric,Concentrate,Metamagic',
   'Improved Swift Banishment':
-    'Traits=Cleric Require="level >= 18","features.Swift Banishment"',
-  "Avatar's Audience":'Traits=Cleric Require="level >= 20"',
+    'Level=18 Traits=Cleric Require="features.Swift Banishment"',
+  "Avatar's Audience":'Level=20 Traits=Cleric',
   'Maker Of Miracles':
-    'Traits=Cleric Require="level >= 20","features.Miraculous Spell"',
-  'Metamagic Channel':'Traits=Cleric,Concentrate Require="level >= 20"',
+    'Level=20 Traits=Cleric Require="features.Miraculous Spell"',
+  'Metamagic Channel':'Level=20 Traits=Cleric,Concentrate',
 
   // Druid
   'Animal Companion':
-    'Traits=Druid,Ranger Require="inAnimalOrder || levels.Ranger"',
-  'Leshy Familiar':'Traits=Druid Require="inLeafOrder"',
+    'Level=1 Traits=Druid,Ranger Require="inAnimalOrder || levels.Ranger"',
+  'Leshy Familiar':'Level=1 Traits=Druid Require="inLeafOrder"',
   // Reach Spell as above
-  'Storm Born':'Traits=Druid Require="inStormOrder"',
-  'Widen Spell':'Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
-  'Wild Shape':'Traits=Druid Require="inWildOrder"',
-  'Call Of The Wild':'Traits=Druid Require="level >= 2"',
+  'Storm Born':'Level=1 Traits=Druid Require="inStormOrder"',
+  'Widen Spell':'Level=1 Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
+  'Wild Shape':'Level=1 Traits=Druid Require="inWildOrder"',
+  'Call Of The Wild':'Level=2 Traits=Druid',
   'Enhanced Familiar':
-    'Traits=Druid,Sorcerer,Wizard ' +
-    'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
+    'Level=2 Traits=Druid,Sorcerer,Wizard ' +
+    'Require="features.Familiar || features.Leshy Familiar"',
   'Order Explorer (Animal)':
-    'Traits=Druid Require="level >= 2","features.Animal == 0"',
+    'Level=2 Traits=Druid Require="features.Animal == 0"',
   'Order Explorer (Leaf)':
-    'Traits=Druid Require="level >= 2","features.Leaf == 0"',
+    'Level=2 Traits=Druid Require="features.Leaf == 0"',
   'Order Explorer (Storm)':
-    'Traits=Druid Require="level >= 2","features.Storm == 0"',
+    'Level=2 Traits=Druid Require="features.Storm == 0"',
   'Order Explorer (Wild)':
-    'Traits=Druid Require="level >= 2","features.Wild == 0"',
+    'Level=2 Traits=Druid Require="features.Wild == 0"',
   // Poison Resistance as above
   'Form Control':
-    'Traits=Druid,Manipulate,Metamagic ' +
-    'Require="level >= 4","strengthModifier >= 2","features.Wild Shape"',
+    'Level=4 Traits=Druid,Manipulate,Metamagic ' +
+    'Require="strengthModifier >= 2","features.Wild Shape"',
+  // TODO level?
   'Mature Animal Companion':
-    'Traits=Druid,Ranger ' +
+    'Level=1 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
   'Order Magic (Animal)':
-    'Traits=Druid Require="level >= 4","features.Order Explorer (Animal)"',
+    'Level=4 Traits=Druid Require="features.Order Explorer (Animal)"',
   'Order Magic (Leaf)':
-    'Traits=Druid Require="level >= 4","features.Order Explorer (Leaf)"',
+    'Level=4 Traits=Druid Require="features.Order Explorer (Leaf)"',
   'Order Magic (Storm)':
-    'Traits=Druid Require="level >= 4","features.Order Explorer (Storm)"',
+    'Level=4 Traits=Druid Require="features.Order Explorer (Storm)"',
   'Order Magic (Wild)':
-    'Traits=Druid Require="level >= 4","features.Order Explorer (Wild)"',
-  'Thousand Faces':'Traits=Druid Require="level >= 4","features.Wild Shape"',
-  'Woodland Stride':'Traits=Druid Require="level >= 4","inLeafOrder"',
-  'Green Empathy':'Traits=Druid Require="level >= 6","inLeafOrder"',
-  'Insect Shape':'Traits=Druid Require="level >= 6","features.Wild Shape"',
+    'Level=4 Traits=Druid Require="features.Order Explorer (Wild)"',
+  'Thousand Faces':'Level=4 Traits=Druid Require="features.Wild Shape"',
+  'Woodland Stride':'Level=4 Traits=Druid Require="inLeafOrder"',
+  'Green Empathy':'Level=6 Traits=Druid Require="inLeafOrder"',
+  'Insect Shape':'Level=6 Traits=Druid Require="features.Wild Shape"',
   // Steady Spellcasting as above
   'Storm Retribution':
-    'Traits=Druid ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"inStormOrder",' +
-      '"spells.Tempest Surge (P1 Foc Evo)"',
-  'Ferocious Shape':'Traits=Druid Require="level >= 8","features.Wild Shape"',
-  'Fey Caller':'Traits=Druid Require="level >= 8"',
+    'Level=6 Traits=Druid ' +
+    'Require="inStormOrder","spells.Tempest Surge (P1 Foc Evo)"',
+  'Ferocious Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
+  'Fey Caller':'Level=8 Traits=Druid',
+  // TODO level?
   'Incredible Companion':
-    'Traits=Druid,Ranger ' +
+    'Level=1 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 8 || levels.Ranger >= 10",' +
       '"features.Mature Animal Companion"',
-  'Soaring Shape':'Traits=Druid Require="level >= 8","features.Wild Shape"',
-  'Wind Caller':'Traits=Druid Require="level >= 8","inStormOrder"',
-  'Elemental Shape':'Traits=Druid Require="level >= 10","features.Wild Shape"',
-  'Healing Transformation':'Traits=Druid,Metamagic Require="level >= 10"',
+  'Soaring Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
+  'Wind Caller':'Level=8 Traits=Druid Require="inStormOrder"',
+  'Elemental Shape':'Level=10 Traits=Druid Require="features.Wild Shape"',
+  'Healing Transformation':'Level=10 Traits=Druid,Metamagic',
   'Overwhelming Energy':
-    'Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic Require="level >= 10"',
+    'Level=10 Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
   'Plant Shape':
-    'Traits=Druid ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"inLeafOrder || features.Wild Shape"',
+    'Level=10 Traits=Druid Require="inLeafOrder || features.Wild Shape"',
+  // TODO level
   'Side By Side':
-    'Traits=Druid,Ranger ' +
+    'Level=1 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 10 || levels.Ranger >= 12",' +
       '"features.Animal Companion"',
-  'Dragon Shape':'Traits=Druid Require="level >= 12","features.Soaring Shape"',
-  'Green Tongue':'Traits=Druid Require="level >= 12","features.Green Empathy"',
-  'Primal Focus':'Traits=Druid Require="level >= 12"',
-  'Primal Summons':
-    'Traits=Druid Require="level >= 12","features.Call Of The Wild"',
+  'Dragon Shape':'Level=12 Traits=Druid Require="features.Soaring Shape"',
+  'Green Tongue':'Level=12 Traits=Druid Require="features.Green Empathy"',
+  'Primal Focus':'Level=12 Traits=Druid',
+  'Primal Summons':'Level=12 Traits=Druid Require="features.Call Of The Wild"',
+  // TODO level
   'Specialized Companion':
-    'Traits=Druid,Ranger ' +
+    'Level=1 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 14 || levels.Ranger >= 16",' +
       '"features.Incredible Companion"',
-  'Timeless Nature':'Traits=Druid Require="level >= 14"',
+  'Timeless Nature':'Level=14 Traits=Druid',
   'Verdant Metamorphosis':
-    'Traits=Druid Require="level >= 14","inLeafOrder"',
+    'Level=14 Traits=Druid Require="inLeafOrder"',
   // Effortless Concentration as above
-  'Impaling Briars':'Traits=Druid Require="level >= 16","inLeafOrder"',
+  'Impaling Briars':'Level=16 Traits=Druid Require="inLeafOrder"',
   'Monstrosity Shape':
-    'Traits=Druid Require="level >= 16","features.Wild Shape"',
-  'Invoke Disaster':'Traits=Druid Require="level >= 18","features.Wind Caller"',
+    'Level=16 Traits=Druid Require="features.Wild Shape"',
+  'Invoke Disaster':'Level=18 Traits=Druid Require="features.Wind Caller"',
   'Perfect Form Control':
-    'Traits=Druid ' +
-    'Require="level >= 18","features.Form Control","strengthModifier >= 4"',
+    'Level=18 Traits=Druid ' +
+    'Require="features.Form Control","strengthModifier >= 4"',
   'Primal Wellspring':
-    'Traits=Druid Require="level >= 18","features.Primal Focus"',
-  "Hierophant's Power":'Traits=Druid Require="level >= 20"',
+    'Level=18 Traits=Druid Require="features.Primal Focus"',
+  "Hierophant's Power":'Level=1 Traits=Druid',
   'Leyline Conduit':
-    'Traits=Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
+    'Level=20 Traits=Druid,Concentrate,Manipulate,Metamagic',
   'True Shapeshifter':
-    'Traits=Druid,Concentrate ' +
-    'Require="level >= 20","features.Dragon Shape","features.Wild Shape"',
+    'Level=20 Traits=Druid,Concentrate ' +
+    'Require="features.Dragon Shape","features.Wild Shape"',
 
   // Fighter
-  'Double Slice':'Traits=Fighter',
-  'Exacting Strike':'Traits=Fighter,Press',
-  'Point-Blank Shot':'Traits=Fighter,Open,Stance',
-  'Power Attack':'Traits=Fighter,Flourish',
-  'Reactive Shield':'Traits=Fighter',
-  'Snagging Strike':'Traits=Fighter',
+  'Double Slice':'Level=1 Traits=Fighter',
+  'Exacting Strike':'Level=1 Traits=Fighter,Press',
+  'Point-Blank Shot':'Level=1 Traits=Fighter,Open,Stance',
+  'Power Attack':'Level=1 Traits=Fighter,Flourish',
+  'Reactive Shield':'Level=1 Traits=Fighter',
+  'Snagging Strike':'Level=1 Traits=Fighter',
   // Sudden Charge as above
-  'Aggressive Block':'Traits=Fighter Require="level >= 2"',
-  'Assisting Shot':'Traits=Fighter,Press Require="level >= 2"',
-  'Brutish Shove':'Traits=Fighter,Press Require="level >= 2"',
-  'Combat Grab':'Traits=Fighter,Press Require="level >= 2"',
-  'Dueling Parry':'Traits=Fighter Require="level >= 2"',
-  'Intimidating Strike':
-    'Traits=Fighter,Emotion,Fear,Mental Require="level >= 2"',
-  'Lunge':'Traits=Fighter Require="level >= 2"',
-  'Double Shot':'Traits=Fighter,Flourish Require="level >= 4"',
-  'Dual-Handed Assault':'Traits=Fighter,Flourish Require="level >= 4"',
-  'Knockdown':
-    'Traits=Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
+  'Aggressive Block':'Level=2 Traits=Fighter',
+  'Assisting Shot':'Level=2 Traits=Fighter,Press',
+  'Brutish Shove':'Level=2 Traits=Fighter,Press',
+  'Combat Grab':'Level=2 Traits=Fighter,Press',
+  'Dueling Parry':'Level=2 Traits=Fighter',
+  'Intimidating Strike':'Level=2 Traits=Fighter,Emotion,Fear,Mental',
+  'Lunge':'Level=2 Traits=Fighter',
+  'Double Shot':'Level=4 Traits=Fighter,Flourish',
+  'Dual-Handed Assault':'Level=4 Traits=Fighter,Flourish',
+  'Knockdown':'Level=4 Traits=Fighter,Flourish Require="rank.Athletics >= 1"',
   'Powerful Shove':
-    'Traits=Fighter ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Aggressive Block || features.Brutish Shove"',
-  'Quick Reversal':'Traits=Fighter,Flourish,Press Require="level >= 4"',
-  'Shielded Stride':'Traits=Fighter Require="level >= 4"',
+    'Level=4 Traits=Fighter ' +
+    'Require="features.Aggressive Block || features.Brutish Shove"',
+  'Quick Reversal':'Level=4 Traits=Fighter,Flourish,Press',
+  'Shielded Stride':'Level=4 Traits=Fighter',
   // Swipe as above
-  'Twin Parry':'Traits=Fighter,Ranger Require="level >= 4"',
-  'Advanced Weapon Training (%weaponGroup)':
-    'Traits=Fighter Require="level >= 6"',
-  'Advantageous Assault':'Traits=Fighter,Press Require="level >= 6"',
+  'Twin Parry':'Level=4 Traits=Fighter,Ranger',
+  'Advanced Weapon Training (%weaponGroup)':'Level=6 Traits=Fighter',
+  'Advantageous Assault':'Level=6 Traits=Fighter,Press',
   'Disarming Stance':
-    'Traits=Fighter,Stance Require="level >= 6","rank.Athletics >= 1"',
-  'Furious Focus':'Traits=Fighter Require="level >= 6","features.Power Attack"',
-  "Guardian's Deflection":'Traits=Fighter Require="level >= 6"',
-  'Reflexive Shield':'Traits=Fighter Require="level >= 6"',
-  'Revealing Stab':'Traits=Fighter Require="level >= 6"',
-  'Shatter Defenses':'Traits=Fighter,Press Require="level >= 6"',
+    'Level=6 Traits=Fighter,Stance Require="rank.Athletics >= 1"',
+  'Furious Focus':'Level=6 Traits=Fighter Require="features.Power Attack"',
+  "Guardian's Deflection":'Level=6 Traits=Fighter',
+  'Reflexive Shield':'Level=6 Traits=Fighter',
+  'Revealing Stab':'Level=6 Traits=Fighter',
+  'Shatter Defenses':'Level=6 Traits=Fighter,Press',
   // Shield Warden as above
-  'Triple Shot':'Traits=Fighter Require="level >= 6","features.Double Shot"',
+  'Triple Shot':'Level=6 Traits=Fighter Require="features.Double Shot"',
   'Blind-Fight':
-    'Traits=Fighter,Ranger,Rogue ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"rank.Perception >= 3"',
-  'Dueling Riposte':
-    'Traits=Fighter Require="level >= 8","features.Dueling Parry"',
-  'Felling Strike':'Traits=Fighter Require="level >= 8"',
-  'Incredible Aim':'Traits=Fighter,Concentrate Require="level >= 8"',
-  'Mobile Shot Stance':'Traits=Fighter,Stance Require="level >= 8"',
-  'Positioning Assault':'Traits=Fighter,Flourish Require="level >= 8"',
+    'Level=8 Traits=Fighter,Ranger,Rogue Require="rank.Perception >= 3"',
+  'Dueling Riposte':'Level=8 Traits=Fighter Require="features.Dueling Parry"',
+  'Felling Strike':'Level=8 Traits=Fighter',
+  'Incredible Aim':'Level=8 Traits=Fighter,Concentrate',
+  'Mobile Shot Stance':'Level=8 Traits=Fighter,Stance',
+  'Positioning Assault':'Level=8 Traits=Fighter,Flourish',
   // Quick Shield Block as above
   // Sudden Leap as above
-  'Agile Grace':'Traits=Fighter Require="level >= 10"',
-  'Certain Strike':'Traits=Fighter,Press Require="level >= 10"',
-  'Combat Reflexes':'Traits=Fighter Require="level >= 10"',
-  'Debilitating Shot':'Traits=Fighter,Flourish Require="level >= 10"',
+  'Agile Grace':'Level=10 Traits=Fighter',
+  'Certain Strike':'Level=10 Traits=Fighter,Press',
+  'Combat Reflexes':'Level=10 Traits=Fighter',
+  'Debilitating Shot':'Level=10 Traits=Fighter,Flourish',
   'Disarming Twist':
-    'Traits=Fighter,Press Require="level >= 10","rank.Athletics >= 1"',
-  'Disruptive Stance':'Traits=Fighter,Stance Require="level >= 10"',
-  'Fearsome Brute':'Traits=Fighter Require="level >= 10"',
-  'Improved Knockdown':
-    'Traits=Fighter Require="level >= 10","features.Knockdown"',
-  'Mirror Shield':'Traits=Fighter Require="level >= 10"',
-  'Twin Riposte':'Traits=Fighter,Ranger Require="level >= 10"',
-  'Brutal Finish':'Traits=Fighter,Press Require="level >= 12"',
+    'Level=10 Traits=Fighter,Press Require="rank.Athletics >= 1"',
+  'Disruptive Stance':'Level=10 Traits=Fighter,Stance',
+  'Fearsome Brute':'Level=10 Traits=Fighter',
+  'Improved Knockdown':'Level=10 Traits=Fighter Require="features.Knockdown"',
+  'Mirror Shield':'Level=10 Traits=Fighter',
+  'Twin Riposte':'Level=10 Traits=Fighter,Ranger',
+  'Brutal Finish':'Level=12 Traits=Fighter,Press',
   'Dueling Dance':
-    'Traits=Fighter,Stance Require="level >= 12","features.Dueling Parry"',
+    'Level=12 Traits=Fighter,Stance Require="features.Dueling Parry"',
   'Flinging Shove':
-    'Traits=Fighter ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Aggressive Block || features.Brutish Shove"',
+    'Level=12 Traits=Fighter ' +
+    'Require="features.Aggressive Block || features.Brutish Shove"',
   'Improved Dueling Riposte':
-    'Traits=Fighter Require="level >= 12","features.Dueling Riposte"',
+    'Level=12 Traits=Fighter Require="features.Dueling Riposte"',
   'Incredible Ricochet':
-    'Traits=Fighter,Concentrate,Press ' +
-    'Require="level >= 12","features.Incredible Aim"',
+    'Level=12 Traits=Fighter,Concentrate,Press ' +
+    'Require="features.Incredible Aim"',
   'Lunging Stance':
-    'Traits=Fighter,Stance ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Attack Of Opportunity",' +
-      '"features.Lunge"',
-  "Paragon's Guard":'Traits=Fighter,Stance Require="level >= 12"',
-  'Spring Attack':'Traits=Fighter,Press Require="level >= 12"',
-  'Desperate Finisher':'Traits=Fighter Require="level >= 14"',
-  'Determination':'Traits=Fighter,Concentrate Require="level >= 14"',
-  'Guiding Finish':'Traits=Fighter,Press Require="level >= 14"',
+    'Level=12 Traits=Fighter,Stance ' +
+    'Require="features.Attack Of Opportunity","features.Lunge"',
+  "Paragon's Guard":'Level=12 Traits=Fighter,Stance',
+  'Spring Attack':'Level=12 Traits=Fighter,Press',
+  'Desperate Finisher':'Level=14 Traits=Fighter',
+  'Determination':'Level=14 Traits=Fighter,Concentrate',
+  'Guiding Finish':'Level=14 Traits=Fighter,Press',
   'Guiding Riposte':
-    'Traits=Fighter Require="level >= 14","features.Dueling Riposte"',
+    'Level=14 Traits=Fighter Require="features.Dueling Riposte"',
   // Nethys adds Twin Riposte requirement for Ranger
+  // TODO level
   'Improved Twin Riposte':
-    'Traits=Fighter,Ranger ' +
+    'Level=1 Traits=Fighter,Ranger ' +
     'Require=' +
       '"levels.Fighter >= 14 || levels.Ranger >= 16",' +
       '"features.Twin Riposte"',
+  // TODO level
   'Stance Savant':
-    'Traits=Fighter,Monk Require="levels.Fighter >= 14 || levels.Monk >= 12"',
-  'Two-Weapon Flurry':'Traits=Fighter,Flourish,Press Require="level >= 14"',
+    'Level=1 Traits=Fighter,Monk ' +
+    'Require="levels.Fighter >= 14 || levels.Monk >= 12"',
+  'Two-Weapon Flurry':'Level=14 Traits=Fighter,Flourish,Press',
   // Whirlwind Strike as above
   'Graceful Poise':
-    'Traits=Fighter,Stance Require="level >= 16","features.Double Slice"',
+    'Level=16 Traits=Fighter,Stance Require="features.Double Slice"',
   'Improved Reflexive Shield':
-    'Traits=Fighter Require="level >= 16","features.Reflexive Shield"',
+    'Level=16 Traits=Fighter Require="features.Reflexive Shield"',
   'Multishot Stance':
-    'Traits=Fighter,Stance Require="level >= 16","features.Triple Shot"',
+    'Level=16 Traits=Fighter,Stance Require="features.Triple Shot"',
   'Twinned Defense':
-    'Traits=Fighter,Stance Require="level >= 16","features.Twin Parry"',
+    'Level=16 Traits=Fighter,Stance Require="features.Twin Parry"',
   'Impossible Volley':
-    'Traits=Fighter,Ranger,Flourish,Open Require="level >= 18"',
-  'Savage Critical':'Traits=Fighter Require="level >= 18"',
-  'Boundless Reprisals':'Traits=Fighter Require="level >= 20"',
-  'Weapon Supremacy':'Traits=Fighter Require="level >= 20"',
+    'Level=18 Traits=Fighter,Ranger,Flourish,Open',
+  'Savage Critical':'Level=18 Traits=Fighter',
+  'Boundless Reprisals':'Level=20 Traits=Fighter',
+  'Weapon Supremacy':'Level=20 Traits=Fighter',
 
   // Monk
-  'Crane Stance':'Traits=Monk,Stance',
-  'Dragon Stance':'Traits=Monk,Stance',
-  'Ki Rush':'Traits=Monk',
-  'Ki Strike':'Traits=Monk',
-  'Monastic Weaponry':'Traits=Monk',
-  'Mountain Stance':'Traits=Monk,Stance',
-  'Tiger Stance':'Traits=Monk,Stance',
-  'Wolf Stance':'Traits=Monk,Stance',
-  'Brawling Focus':'Traits=Monk Require="level >= 2"',
-  'Crushing Grab':'Traits=Monk Require="level >= 2"',
-  'Dancing Leaf':'Traits=Monk Require="level >= 2"',
-  'Elemental Fist':'Traits=Monk Require="level >= 2","features.Ki Strike"',
-  'Stunning Fist':'Traits=Monk Require="level >= 2","features.Flurry Of Blows"',
-  'Deflect Arrow':'Traits=Monk Require="level >= 4"',
-  'Flurry Of Maneuvers':
-    'Traits=Monk Require="level >= 4","rank.Athletics >= 2"',
-  'Flying Kick':'Traits=Monk Require="level >= 4"',
-  'Guarded Movement':'Traits=Monk Require="level >= 4"',
-  'Stand Still':'Traits=Monk Require="level >= 4"',
-  'Wholeness Of Body':'Traits=Monk Require="level >= 4","features.Ki Spells"',
+  'Crane Stance':'Level=1 Traits=Monk,Stance',
+  'Dragon Stance':'Level=1 Traits=Monk,Stance',
+  'Ki Rush':'Level=1 Traits=Monk',
+  'Ki Strike':'Level=1 Traits=Monk',
+  'Monastic Weaponry':'Level=1 Traits=Monk',
+  'Mountain Stance':'Level=1 Traits=Monk,Stance',
+  'Tiger Stance':'Level=1 Traits=Monk,Stance',
+  'Wolf Stance':'Level=1 Traits=Monk,Stance',
+  'Brawling Focus':'Level=2 Traits=Monk',
+  'Crushing Grab':'Level=2 Traits=Monk',
+  'Dancing Leaf':'Level=2 Traits=Monk',
+  'Elemental Fist':'Level=2 Traits=Monk Require="features.Ki Strike"',
+  'Stunning Fist':'Level=2 Traits=Monk Require="features.Flurry Of Blows"',
+  'Deflect Arrow':'Level=4 Traits=Monk',
+  'Flurry Of Maneuvers':'Level=4 Traits=Monk Require="rank.Athletics >= 2"',
+  'Flying Kick':'Level=4 Traits=Monk',
+  'Guarded Movement':'Level=4 Traits=Monk',
+  'Stand Still':'Level=4 Traits=Monk',
+  'Wholeness Of Body':'Level=4 Traits=Monk Require="features.Ki Spells"',
   'Abundant Step':
-    'Traits=Monk ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Incredible Movement",' +
-      '"features.Ki Spells"',
-  'Crane Flutter':'Traits=Monk Require="level >= 6","features.Crane Stance"',
+    'Level=6 Traits=Monk ' +
+    'Require="features.Incredible Movement","features.Ki Spells"',
+  'Crane Flutter':'Level=6 Traits=Monk Require="features.Crane Stance"',
   'Dragon Roar':
-    'Traits=Monk,Auditory,Emotion,Fear,Mental ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Dragon Stance"',
-  'Ki Blast':'Traits=Monk Require="level >= 6","features.Ki Spells"',
+    'Level=6 Traits=Monk,Auditory,Emotion,Fear,Mental ' +
+    'Require="features.Dragon Stance"',
+  'Ki Blast':'Level=6 Traits=Monk Require="features.Ki Spells"',
   'Mountain Stronghold':
-    'Traits=Monk Require="level >= 6","features.Mountain Stance"',
-  'Tiger Slash':'Traits=Monk Require="level >= 6","features.Tiger Stance"',
-  'Water Step':'Traits=Monk Require="level >= 6"',
-  'Whirling Throw':'Traits=Monk Require="level >= 6"',
-  'Wolf Drag':'Traits=Monk Require="level >= 6","features.Wolf Stance"',
-  'Arrow Snatching':'Traits=Monk Require="level >= 8","features.Deflect Arrow"',
-  'Ironblood Stance':'Traits=Monk,Stance Require="level >= 8"',
-  'Mixed Maneuver':'Traits=Monk Require="level >= 8","rank.Athletics >= 3"',
-  'Tangled Forest Stance':'Traits=Monk,Stance Require="level >= 8"',
-  'Wall Run':'Traits=Monk Require="level >= 8"',
-  'Wild Winds Initiate':'Traits=Monk Require="level >= 8","features.Ki Spells"',
-  'Knockback Strike':'Traits=Monk,Concentrate Require="level >= 10"',
-  'Sleeper Hold':'Traits=Monk,Incapacitation Require="level >= 10"',
-  'Wind Jump':'Traits=Monk Require="level >= 10","features.Ki Spells"',
-  'Winding Flow':'Traits=Monk Require="level >= 10"',
-  'Diamond Soul':'Traits=Monk Require="level >= 12"',
-  'Disrupt Ki':'Traits=Monk,Negative Require="level >= 12"',
-  'Improved Knockback':
-    'Traits=Monk Require="level >= 12","rank.Athletics >= 3"',
-  'Meditative Focus':'Traits=Monk Require="level >= 12","features.Ki Spells"',
+    'Level=6 Traits=Monk Require="features.Mountain Stance"',
+  'Tiger Slash':'Level=6 Traits=Monk Require="features.Tiger Stance"',
+  'Water Step':'Level=6 Traits=Monk',
+  'Whirling Throw':'Level=6 Traits=Monk',
+  'Wolf Drag':'Level=6 Traits=Monk Require="features.Wolf Stance"',
+  'Arrow Snatching':'Level=8 Traits=Monk Require="features.Deflect Arrow"',
+  'Ironblood Stance':'Level=8 Traits=Monk,Stance',
+  'Mixed Maneuver':'Level=8 Traits=Monk Require="rank.Athletics >= 3"',
+  'Tangled Forest Stance':'Level=8 Traits=Monk,Stance',
+  'Wall Run':'Level=8 Traits=Monk',
+  'Wild Winds Initiate':'Level=8 Traits=Monk Require="features.Ki Spells"',
+  'Knockback Strike':'Level=10 Traits=Monk,Concentrate',
+  'Sleeper Hold':'Level=10 Traits=Monk,Incapacitation',
+  'Wind Jump':'Level=10 Traits=Monk Require="features.Ki Spells"',
+  'Winding Flow':'Level=10 Traits=Monk',
+  'Diamond Soul':'Level=12 Traits=Monk',
+  'Disrupt Ki':'Level=12 Traits=Monk,Negative',
+  'Improved Knockback':'Level=12 Traits=Monk Require="rank.Athletics >= 3"',
+  'Meditative Focus':'Level=12 Traits=Monk Require="features.Ki Spells"',
   // Stance Savant as above
-  'Ironblood Surge':
-    'Traits=Monk Require="level >= 14","features.Ironblood Stance"',
+  'Ironblood Surge':'Level=14 Traits=Monk Require="features.Ironblood Stance"',
   'Mountain Quake':
-    'Traits=Monk Require="level >= 14","features.Mountain Stronghold"',
+    'Level=14 Traits=Monk Require="features.Mountain Stronghold"',
   'Tangled Forest Rake':
-    'Traits=Monk Require="level >= 14","features.Tangled Forest Stance"',
-  'Timeless Body':'Traits=Monk Require="level >= 14"',
-  'Tongue Of Sun And Moon':'Traits=Monk Require="level >= 14"',
+    'Level=14 Traits=Monk Require="features.Tangled Forest Stance"',
+  'Timeless Body':'Level=14 Traits=Monk',
+  'Tongue Of Sun And Moon':'Level=14 Traits=Monk',
   'Wild Winds Gust':
-    'Traits=Monk,Air,Concentrate,Evocation,Manipulate ' +
-    'Require="level >= 14","features.Wild Winds Initiate"',
-  'Enlightened Presence':
-    'Traits=Monk,Aura,Emotion,Mental Require="level >= 16"',
+    'Level=14 Traits=Monk,Air,Concentrate,Evocation,Manipulate ' +
+    'Require="features.Wild Winds Initiate"',
+  'Enlightened Presence':'Level=16 Traits=Monk,Aura,Emotion,Mental',
   'Master Of Many Styles':
-    'Traits=Monk Require="level >= 16","features.Stance Savant"',
-  'Quivering Palm':'Traits=Monk Require="level >= 16","features.Ki Spells"',
-  'Shattering Strike':'Traits=Monk Require="level >= 16"',
-  'Diamond Fists':'Traits=Monk Require="level >= 18"',
-  'Empty Body':'Traits=Monk Require="level >= 18","features.Ki Spells"',
+    'Level=16 Traits=Monk Require="features.Stance Savant"',
+  'Quivering Palm':'Level=16 Traits=Monk Require="features.Ki Spells"',
+  'Shattering Strike':'Level=16 Traits=Monk',
+  'Diamond Fists':'Level=18 Traits=Monk',
+  'Empty Body':'Level=18 Traits=Monk Require="features.Ki Spells"',
   'Meditative Wellspring':
-    'Traits=Monk Require="level >= 18","features.Meditative Focus"',
-  'Swift River':'Traits=Monk Require="level >= 18"',
-  'Enduring Quickness':'Traits=Monk Require="level >= 20"',
-  'Fuse Stance':'Traits=Monk Require="level >= 20","sumStanceFeats >= 2 "',
-  'Impossible Technique':'Traits=Monk,Fortune Require="level >= 20"',
+    'Level=18 Traits=Monk Require="features.Meditative Focus"',
+  'Swift River':'Level=18 Traits=Monk',
+  'Enduring Quickness':'Level=20 Traits=Monk',
+  'Fuse Stance':'Level=20 Traits=Monk Require="sumStanceFeats >= 2 "',
+  'Impossible Technique':'Level=1 Traits=Monk,Fortune',
 
   // Ranger
   // Animal Companion as above
-  'Crossbow Ace':'Traits=Ranger',
-  'Hunted Shot':'Traits=Ranger,Flourish',
-  'Monster Hunter':'Traits=Ranger',
-  'Twin Takedown':'Traits=Ranger,Flourish',
-  'Favored Terrain (%terrain)':'Traits=Ranger Require="level >= 2"',
-  "Hunter's Aim":'Traits=Ranger,Concentrate Require="level >= 2"',
-  'Monster Warden':
-    'Traits=Ranger Require="level >= 2","features.Monster Hunter"',
-  'Quick Draw':'Traits=Ranger,Rogue Require="level >= 2"',
-  'Wild Empathy':'Traits=Ranger Require="level >= 2"',
-  "Companion's Cry":
-    'Traits=Ranger Require="level >= 4","features.Animal Companion"',
-  'Disrupt Prey':'Traits=Ranger Require="level >= 4"',
-  'Far Shot':'Traits=Ranger Require="level >= 4"',
-  'Favored Enemy':'Traits=Ranger Require="level >= 4"',
-  'Running Reload':'Traits=Ranger Require="level >= 4"',
-  "Scout's Warning":'Traits=Ranger,Rogue Require="level >= 4"',
+  'Crossbow Ace':'Level=1 Traits=Ranger',
+  'Hunted Shot':'Level=1 Traits=Ranger,Flourish',
+  'Monster Hunter':'Level=1 Traits=Ranger',
+  'Twin Takedown':'Level=1 Traits=Ranger,Flourish',
+  'Favored Terrain (%terrain)':'Level=2 Traits=Ranger',
+  "Hunter's Aim":'Level=2 Traits=Ranger,Concentrate',
+  'Monster Warden':'Level=2 Traits=Ranger Require="features.Monster Hunter"',
+  'Quick Draw':'Level=2 Traits=Ranger,Rogue',
+  'Wild Empathy':'Level=2 Traits=Ranger',
+  "Companion's Cry":'Level=4 Traits=Ranger Require="features.Animal Companion"',
+  'Disrupt Prey':'Level=4 Traits=Ranger',
+  'Far Shot':'Level=4 Traits=Ranger',
+  'Favored Enemy':'Level=4 Traits=Ranger',
+  'Running Reload':'Level=4 Traits=Ranger',
+  "Scout's Warning":'Level=4 Traits=Ranger,Rogue',
   'Snare Specialist':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"rank.Crafting >= 2",' +
-      '"features.Snare Crafting"',
+    'Level=4 Traits=Ranger ' +
+    'Require="rank.Crafting >= 2","features.Snare Crafting"',
   // Twin Parry as above
   // Mature Animal Companion as above
   'Quick Snares':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"rank.Crafting >= 2",' +
-      '"features.Snare Specialist"',
-  'Skirmish Strike':'Traits=Ranger,Rogue,Flourish Require="level >= 6"',
-  'Snap Shot':'Traits=Ranger Require="level >= 6"',
+    'Level=6 Traits=Ranger ' +
+    'Require="rank.Crafting >= 2","features.Snare Specialist"',
+  'Skirmish Strike':'Level=6 Traits=Ranger,Rogue,Flourish',
+  'Snap Shot':'Level=6 Traits=Ranger',
   'Swift Tracker':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"rank.Survival >= 2",' +
-      '"features.Experienced Tracker"',
+    'Level=6 Traits=Ranger ' +
+    'Require="rank.Survival >= 2","features.Experienced Tracker"',
   // Blind-Fight as above
   'Deadly Aim':
-    'Traits=Ranger,Open Require="level >= 8","features.Weapon Specialization"',
-  'Hazard Finder':'Traits=Ranger Require="level >= 8"',
+    'Level=8 Traits=Ranger,Open Require="features.Weapon Specialization"',
+  'Hazard Finder':'Level=8 Traits=Ranger',
   'Powerful Snares':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"rank.Crafting >= 3",' +
-      '"features.Snare Specialist"',
+    'Level=8 Traits=Ranger ' +
+    'Require="rank.Crafting >= 3","features.Snare Specialist"',
   'Terrain Master':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"rank.Survival >= 3",' +
-      '"features.Favored Terrain"',
-  "Warden's Boon":'Traits=Ranger Require="level >= 8"',
-  'Camouflage':'Traits=Ranger Require="level >= 10","rank.Stealth >= 3"',
+    'Level=8 Traits=Ranger ' +
+    'Require="rank.Survival >= 3","features.Favored Terrain"',
+  "Warden's Boon":'Level=8 Traits=Ranger',
+  'Camouflage':'Level=10 Traits=Ranger Require="rank.Stealth >= 3"',
   // Incredible Companion as above
   'Master Monster Hunter':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"rank.Nature >= 3",' +
-      '"features.Monster Hunter"',
-  'Penetrating Shot':'Traits=Ranger,Open Require="level >= 10"',
+    'Level=10 Traits=Ranger ' +
+    'Require="rank.Nature >= 3","features.Monster Hunter"',
+  'Penetrating Shot':'Level=10 Traits=Ranger,Open',
   // Twin Riposte as above
-  "Warden's Step":'Traits=Ranger Require="level >= 10","rank.Stealth >= 3"',
-  'Distracting Shot':'Traits=Ranger Require="level >= 12"',
-  'Double Prey':'Traits=Ranger Require="level >= 12"',
+  "Warden's Step":'Level=10 Traits=Ranger Require="rank.Stealth >= 3"',
+  'Distracting Shot':'Level=12 Traits=Ranger',
+  'Double Prey':'Level=12 Traits=Ranger',
   'Lightning Snares':
-    'Traits=Ranger ' +
+    'Level=12 Traits=Ranger ' +
     'Require=' +
-      '"level >= 12",' +
       '"rank.Crafting >= 3",' +
       '"features.Quick Snares",' +
       '"features.Snare Specialist"',
-  'Second Sting':'Traits=Ranger,Press Require="level >= 12"',
+  'Second Sting':'Level=12 Traits=Ranger,Press',
   // Side By Side as above
-  'Sense The Unseen':'Traits=Ranger,Rogue Require="level >= 14"',
+  'Sense The Unseen':'Level=14 Traits=Ranger,Rogue',
   'Shared Prey':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 14",' +
-      '"features.Double Prey",' +
-      '"features.Warden\'s Boon"',
+    'Level=14 Traits=Ranger ' +
+    'Require="features.Double Prey","features.Warden\'s Boon"',
   'Stealthy Companion':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 14",' +
-      '"features.Animal Companion",' +
-      '"features.Camouflage"',
+    'Level=14 Traits=Ranger ' +
+    'Require="features.Animal Companion","features.Camouflage"',
   'Targeting Shot':
-    'Traits=Ranger,Concentrate,Press ' +
-    'Require="level >= 14","features.Hunter\'s Aim"',
-  "Warden's Guidance":'Traits=Ranger Require="level >= 14"',
+    'Level=14 Traits=Ranger,Concentrate,Press ' +
+    'Require="features.Hunter\'s Aim"',
+  "Warden's Guidance":'Level=14 Traits=Ranger',
   'Greater Distracting Shot':
-    'Traits=Ranger Require="level >= 16","features.Distracting Shot"',
+    'Level=16 Traits=Ranger Require="features.Distracting Shot"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"rank.Nature >= 4",' +
-      '"features.Master Monster Hunter"',
+    'Level=16 Traits=Ranger ' +
+    'Require="rank.Nature >= 4","features.Master Monster Hunter"',
   // Specialized Companion as above
   'Ubiquitous Snares':
-    'Traits=Ranger Require="level >= 16","features.Snare Specialist"',
-  'Impossible Flurry':'Traits=Ranger,Flourish,Open Require="level >= 18"',
+    'Level=16 Traits=Ranger Require="features.Snare Specialist"',
+  'Impossible Flurry':'Level=18 Traits=Ranger,Flourish,Open',
   // Impossible Volley as above
   'Manifold Edge':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Hunter\'s Edge",' +
-      '"features.Masterful Hunter"',
+    'Level=18 Traits=Ranger ' +
+    'Require="features.Hunter\'s Edge","features.Masterful Hunter"',
   'Masterful Companion':
-    'Traits=Ranger ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Masterful Hunter",' +
-      '"features.Animal Companion"',
-  'Perfect Shot':'Traits=Ranger,Flourish Require="level >= 18"',
-  'Shadow Hunter':'Traits=Ranger Require="level >= 18","features.Camouflage"',
+    'Level=18 Traits=Ranger ' +
+    'Require="features.Masterful Hunter","features.Animal Companion"',
+  'Perfect Shot':'Level=1 Traits=Ranger,Flourish',
+  'Shadow Hunter':'Level=1 Traits=Ranger Require="features.Camouflage"',
   'Legendary Shot':
-    'Traits=Ranger ' +
+    'Level=20 Traits=Ranger ' +
     'Require=' +
-      '"level >= 20",' +
       '"features.Masterful Hunter",' +
       '"rank.Perception >= 4",' +
       '"features.Far Shot"',
   'To The Ends Of The Earth':
-    'Traits=Ranger Require="level >= 20","rank.Survival >= 4"',
-  'Triple Threat':'Traits=Ranger Require="level >= 20","features.Shared Prey"',
-  'Ultimate Skirmisher':
-    'Traits=Ranger Require="level >= 20","features.Wild Stride"',
+    'Level=20 Traits=Ranger Require="rank.Survival >= 4"',
+  'Triple Threat':'Level=20 Traits=Ranger Require="features.Shared Prey"',
+  'Ultimate Skirmisher':'Level=20 Traits=Ranger Require="features.Wild Stride"',
 
   // Rogue
-  'Nimble Dodge':'Traits=Rogue',
-  'Trap Finder':'Traits=Rogue',
-  'Twin Feint':'Traits=Rogue',
+  'Nimble Dodge':'Level=1 Traits=Rogue',
+  'Trap Finder':'Level=1 Traits=Rogue',
+  'Twin Feint':'Level=1 Traits=Rogue',
   "You're Next":
-    'Traits=Rogue,Emotion,Fear,Mental Require="rank.Intimidation >= 1"',
-  'Brutal Beating':'Traits=Rogue Require="level >= 2","features.Ruffian"',
-  'Distracting Feint':'Traits=Rogue Require="level >= 2","features.Scoundrel"',
-  'Minor Magic (Arcane)':'Traits=Rogue Require="level >= 2"',
-  'Minor Magic (Divine)':'Traits=Rogue Require="level >= 2"',
-  'Minor Magic (Occult)':'Traits=Rogue Require="level >= 2"',
-  'Minor Magic (Primal)':'Traits=Rogue Require="level >= 2"',
-  'Mobility':'Traits=Rogue Require="level >= 2"',
+    'Level=1 Traits=Rogue,Emotion,Fear,Mental Require="rank.Intimidation >= 1"',
+  'Brutal Beating':'Level=2 Traits=Rogue Require="features.Ruffian"',
+  'Distracting Feint':'Level=2 Traits=Rogue Require="features.Scoundrel"',
+  'Minor Magic (Arcane)':'Level=2 Traits=Rogue',
+  'Minor Magic (Divine)':'Level=2 Traits=Rogue',
+  'Minor Magic (Occult)':'Level=2 Traits=Rogue',
+  'Minor Magic (Primal)':'Level=2 Traits=Rogue',
+  'Mobility':'Level=2 Traits=Rogue',
   // Quick Draw as above
-  'Unbalancing Blow':'Traits=Rogue Require="level >= 2","features.Thief"',
-  'Battle Assessment':'Traits=Rogue,Secret Require="level >= 4"',
-  'Dread Striker':'Traits=Rogue Require="level >= 4"',
-  'Magical Trickster':'Traits=Rogue Require="level >= 4"',
-  'Poison Weapon':'Traits=Rogue,Manipulate Require="level >= 4"',
-  'Reactive Pursuit':'Traits=Rogue Require="level >= 4"',
-  'Sabotage':'Traits=Rogue,Incapacitation Require="level >= 4"',
+  'Unbalancing Blow':'Level=2 Traits=Rogue Require="features.Thief"',
+  'Battle Assessment':'Level=4 Traits=Rogue,Secret',
+  'Dread Striker':'Level=4 Traits=Rogue',
+  'Magical Trickster':'Level=4 Traits=Rogue',
+  'Poison Weapon':'Level=4 Traits=Rogue,Manipulate',
+  'Reactive Pursuit':'Level=4 Traits=Rogue',
+  'Sabotage':'Level=4 Traits=Rogue,Incapacitation',
   // Scout's Warning as above
-  'Gang Up':'Traits=Rogue Require="level >= 6"',
-  'Light Step':'Traits=Rogue Require="level >= 6"',
+  'Gang Up':'Level=6 Traits=Rogue',
+  'Light Step':'Level=6 Traits=Rogue',
   // Skirmish Strike as above
-  'Twist The Knife':'Traits=Rogue Require="level >= 6"',
+  'Twist The Knife':'Level=6 Traits=Rogue',
   // Blind-Fight as above
-  'Delay Trap':'Traits=Rogue Require="level >= 8"',
+  'Delay Trap':'Level=8 Traits=Rogue',
   'Improved Poison Weapon':
-    'Traits=Rogue Require="level >= 8","features.Poison Weapon"',
-  'Nimble Roll':'Traits=Rogue Require="level >= 8","features.Nimble Dodge"',
-  'Opportune Backstab':'Traits=Rogue Require="level >= 8"',
-  'Sidestep':'Traits=Rogue Require="level >= 8"',
-  'Sly Striker':'Traits=Rogue Require="level >= 8","features.Sneak Attack"',
+    'Level=8 Traits=Rogue Require="features.Poison Weapon"',
+  'Nimble Roll':'Level=8 Traits=Rogue Require="features.Nimble Dodge"',
+  'Opportune Backstab':'Level=8 Traits=Rogue',
+  'Sidestep':'Level=8 Traits=Rogue',
+  'Sly Striker':'Level=8 Traits=Rogue Require="features.Sneak Attack"',
   'Precise Debilitations':
-    'Traits=Rogue ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Thief",' +
-      '"features.Debilitating Strike"',
-  'Sneak Savant':'Traits=Rogue Require="level >= 10","rank.Stealth >= 3"',
+    'Level=10 Traits=Rogue ' +
+    'Require="features.Thief","features.Debilitating Strike"',
+  'Sneak Savant':'Level=10 Traits=Rogue Require="rank.Stealth >= 3"',
   'Tactical Debilitations':
-    'Traits=Rogue ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Scoundrel",' +
-      '"features.Debilitating Strike"',
+    'Level=10 Traits=Rogue ' +
+    'Require="features.Scoundrel","features.Debilitating Strike"',
   'Vicious Debilitations':
-    'Traits=Rogue ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Ruffian",' +
-      '"features.Debilitating Strike"',
+    'Level=10 Traits=Rogue ' +
+    'Require="features.Ruffian","features.Debilitating Strike"',
   'Critical Debilitation':
-    'Traits=Rogue,Incapacitation ' +
-    'Require="level >= 12","features.Debilitating Strike"',
-  'Fantastic Leap':'Traits=Rogue Require="level >= 12"',
-  'Felling Shot':'Traits=Rogue Require="level >= 12"',
-  'Reactive Interference':'Traits=Rogue Require="level >= 12"',
-  'Spring From The Shadows':'Traits=Rogue,Flourish Require="level >= 12"',
-  'Defensive Roll':'Traits=Rogue Require="level >= 14"',
-  'Instant Opening':'Traits=Rogue,Concentrate Require="level >= 14"',
-  'Leave An Opening':'Traits=Rogue Require="level >= 14"',
+    'Level=12 Traits=Rogue,Incapacitation ' +
+    'Require="features.Debilitating Strike"',
+  'Fantastic Leap':'Level=12 Traits=Rogue',
+  'Felling Shot':'Level=12 Traits=Rogue',
+  'Reactive Interference':'Level=12 Traits=Rogue',
+  'Spring From The Shadows':'Level=12 Traits=Rogue,Flourish',
+  'Defensive Roll':'Level=1 Traits=Rogue',
+  'Instant Opening':'Level=1 Traits=Rogue,Concentrate',
+  'Leave An Opening':'Level=1 Traits=Rogue',
   // Sense The Unseen as above
-  'Blank Slate':'Traits=Rogue Require="level >= 16","rank.Deception >= 4"',
-  'Cloud Step':'Traits=Rogue Require="level >= 16","rank.Acrobatics >= 4"',
-  'Cognitive Loophole':'Traits=Rogue Require="level >= 16"',
-  'Dispelling Slice':'Traits=Rogue Require="level >= 16"',
+  'Blank Slate':'Level=16 Traits=Rogue Require="rank.Deception >= 4"',
+  'Cloud Step':'Level=16 Traits=Rogue Require="rank.Acrobatics >= 4"',
+  'Cognitive Loophole':'Level=16 Traits=Rogue',
+  'Dispelling Slice':'Level=16 Traits=Rogue',
   'Perfect Distraction':
-    'Traits=Rogue Require="level >= 16","rank.Deception >= 4"',
+    'Level=16 Traits=Rogue Require="rank.Deception >= 4"',
   'Implausible Infiltration':
-    'Traits=Rogue,Magical,Move ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"rank.Acrobatics >= 4",' +
-      '"features.Quick Squeeze"',
-  'Powerful Sneak':'Traits=Rogue Require="level >= 18"',
-  "Trickster's Ace":'Traits=Rogue,Concentrate Require="level >= 18"',
-  'Hidden Paragon':'Traits=Rogue Require="level >= 20","rank.Stealth >= 4"',
-  'Impossible Striker':
-    'Traits=Rogue Require="level >= 20","features.Sly Striker"',
+    'Level=18 Traits=Rogue,Magical,Move ' +
+    'Require="rank.Acrobatics >= 4","features.Quick Squeeze"',
+  'Powerful Sneak':'Level=18 Traits=Rogue',
+  "Trickster's Ace":'Level=18 Traits=Rogue,Concentrate',
+  'Hidden Paragon':'Level=20 Traits=Rogue Require="rank.Stealth >= 4"',
+  'Impossible Striker':'Level=20 Traits=Rogue Require="features.Sly Striker"',
   'Reactive Distraction':
-    'Traits=Rogue,Concentrate,Manipulate ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"rank.Deception >= 4",' +
-      '"features.Perfect Distraction"',
+    'Level=20 Traits=Rogue,Concentrate,Manipulate ' +
+    'Require="rank.Deception >= 4","features.Perfect Distraction"',
 
   // Sorcerer
   'Counterspell':
     // For sorcerers, Arcane should be replaced by the bloodline tradition, but
     // Q makes no use of the trait
-    'Traits=Sorcerer,Wizard,Abjuration,Arcane',
-  'Dangerous Sorcery':'Traits=Sorcerer',
-  'Familiar':'Traits=Sorcerer,Wizard',
+    'Level=1 Traits=Sorcerer,Wizard,Abjuration,Arcane',
+  'Dangerous Sorcery':'Level=1 Traits=Sorcerer',
+  'Familiar':'Level=1 Traits=Sorcerer,Wizard',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
   // Enhanced Familiar as above
   'Arcane Evolution':
-    'Traits=Sorcerer,Arcane ' +
-    'Require="level >= 4","sorcererTraditions =~ \'Arcane\'"',
-  'Bespell Weapon':'Traits=Sorcerer,Wizard Require="level >= 4"',
+    'Level=4 Traits=Sorcerer,Arcane ' +
+    'Require="sorcererTraditions =~ \'Arcane\'"',
+  'Bespell Weapon':'Level=4 Traits=Sorcerer,Wizard',
   'Divine Evolution':
-    'Traits=Sorcerer,Divine ' +
-    'Require="level >= 4","sorcererTraditions =~ \'Divine\'"',
+    'Level=4 Traits=Sorcerer,Divine ' +
+    'Require="sorcererTraditions =~ \'Divine\'"',
   'Occult Evolution':
-    'Traits=Sorcerer,Occult ' +
-     'Require="level >= 4","sorcererTraditions =~ \'Occult\'"',
+    'Level=4 Traits=Sorcerer,Occult ' +
+     'Require="sorcererTraditions =~ \'Occult\'"',
   'Primal Evolution':
-    'Traits=Sorcerer,Primal ' +
-    'Require="level >= 4","sorcererTraditions =~ \'Primal\'"',
+    'Level=4 Traits=Sorcerer,Primal ' +
+    'Require="sorcererTraditions =~ \'Primal\'"',
   'Advanced Bloodline':
-    'Traits=Sorcerer ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
+    'Level=6 Traits=Sorcerer ' +
+    'Require="features.Bloodline Spells || features.Basic Bloodline Spell"',
   // Steady Spellcasting as above
-  'Bloodline Resistance':'Traits=Sorcerer Require="level >= 8"',
-  'Crossblooded Evolution':'Traits=Sorcerer Require="level >= 8"',
+  'Bloodline Resistance':'Level=8 Traits=Sorcerer',
+  'Crossblooded Evolution':'Level=8 Traits=Sorcerer',
   'Greater Bloodline':
-    'Traits=Sorcerer ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
+    'Level=10 Traits=Sorcerer ' +
+    'Require="features.Bloodline Spells || features.Basic Bloodline Spell"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':
-    'Traits=Sorcerer ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
+    'Level=12 Traits=Sorcerer ' +
+    'Require="features.Bloodline Spells || features.Basic Bloodline Spell"',
   'Magic Sense':
     // For sorcerers, Arcane should be replaced by the bloodline tradition, but
     // Q makes no use of the trait
-    'Traits=Sorcerer,Wizard,Arcane,Detection,Divination ' +
-    'Require="level >= 12"',
+    'Level=12 Traits=Sorcerer,Wizard,Arcane,Detection,Divination',
   'Interweave Dispel':
-    'Traits=Sorcerer,Metamagic ' +
+    'Level=14 Traits=Sorcerer,Metamagic ' +
     'Require=' +
-      '"level >= 14",' +
       '"spells.Dispel Magic (A2 Abj) || ' +
        'spells.Dispel Magic (D2 Abj) || ' +
        'spells.Dispel Magic (O2 Abj) || ' +
        'spells.Dispel Magic (P2 Abj)"',
   'Reflect Spell':
-    'Traits=Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
+    'Level=14 Traits=Sorcerer,Wizard Require="features.Counterspell"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
-    'Traits=Sorcerer ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Arcane Evolution || features.Occult Evolution"',
+    'Level=16 Traits=Sorcerer ' +
+    'Require="features.Arcane Evolution || features.Occult Evolution"',
   'Greater Vital Evolution':
-    'Traits=Sorcerer ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Divine Evolution || features.Primal Evolution"',
+    'Level=16 Traits=Sorcerer ' +
+    'Require="features.Divine Evolution || features.Primal Evolution"',
   'Bloodline Wellspring':
-    'Traits=Sorcerer Require="level >= 18","features.Bloodline Focus"',
+    'Level=18 Traits=Sorcerer Require="features.Bloodline Focus"',
   'Greater Crossblooded Evolution':
-    'Traits=Sorcerer ' +
-    'Require="level >= 18","features.Crossblooded Evolution"',
-  'Bloodline Conduit':'Traits=Sorcerer,Metamagic Require="level >= 20"',
+    'Level=18 Traits=Sorcerer Require="features.Crossblooded Evolution"',
+  'Bloodline Conduit':'Level=20 Traits=Sorcerer,Metamagic',
   'Bloodline Perfection':
-    'Traits=Sorcerer Require="level >= 20","features.Bloodline Paragon"',
-  'Metamagic Mastery':'Traits=Sorcerer,Wizard Require="level >= 20"',
+    'Level=20 Traits=Sorcerer Require="features.Bloodline Paragon"',
+  'Metamagic Mastery':'Level=20 Traits=Sorcerer,Wizard',
 
   // Wizard
   // Counterspell as above
-  'Eschew Materials':'Traits=Wizard',
+  'Eschew Materials':'Level=1 Traits=Wizard',
   // Familiar as above
-  'Hand Of The Apprentice':'Traits=Wizard Require="features.Universalist"',
+  'Hand Of The Apprentice':'Level=1 Traits=Wizard Require="features.Universalist"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
   'Conceal Spell':
-    'Traits=Wizard,Concentrate,Manipulate,Metamagic Require="level >= 2"',
+    'Level=2 Traits=Wizard,Concentrate,Manipulate,Metamagic',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
-    'Traits=Wizard ' +
-    'Require="level >= 4","features.Arcane Bond","features.Arcane School"',
+    'Level=4 Traits=Wizard ' +
+    'Require="features.Arcane Bond","features.Arcane School"',
   'Silent Spell':
-    'Traits=Wizard,Concentrate,Metamagic ' +
-    'Require="level >= 4","features.Conceal Spell"',
-  'Spell Penetration':'Traits=Wizard Require="level >= 6"',
+    'Level=4 Traits=Wizard,Concentrate,Metamagic ' +
+    'Require="features.Conceal Spell"',
+  'Spell Penetration':'Level=6 Traits=Wizard',
   // Steady Spellcasting as above
   'Advanced School Spell':
-    'Traits=Wizard Require="level >= 8","features.Arcane School"',
+    'Level=8 Traits=Wizard Require="features.Arcane School"',
   'Bond Conservation':
-    'Traits=Wizard,Manipulate,Metamagic ' +
-    'Require="level >= 8","features.Arcane Bond"',
+    'Level=8 Traits=Wizard,Manipulate,Metamagic Require="features.Arcane Bond"',
   'Universal Versatility':
-    'Traits=Wizard ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Universalist",' +
-      '"features.Hand Of The Apprentice"',
+    'Level=8 Traits=Wizard ' +
+    'Require="features.Universalist","features.Hand Of The Apprentice"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Scroll Savant':'Traits=Wizard Require="level >= 10","rank.Crafting >= 2"',
+  'Scroll Savant':'Level=10 Traits=Wizard Require="rank.Crafting >= 2"',
   'Clever Counterspell':
-    'Traits=Wizard ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Counterspell",' +
-      '"features.Quick Recognition"',
+    'Level=12 Traits=Wizard ' +
+    'Require="features.Counterspell","features.Quick Recognition"',
   // Magic Sense as above
-  'Bonded Focus':'Traits=Wizard Require="level >= 14","features.Arcane Bond"',
+  'Bonded Focus':'Level=14 Traits=Wizard Require="features.Arcane Bond"',
   // Reflect Spell as above
-  'Superior Bond':'Traits=Wizard Require="level >= 14","features.Arcane Bond"',
+  'Superior Bond':'Level=14 Traits=Wizard Require="features.Arcane Bond"',
   // Effortless Concentration as above
-  'Spell Tinker':'Traits=Wizard,Concentrate Require="level >= 16"',
-  'Infinite Possibilities':'Traits=Wizard Require="level >= 18"',
-  'Reprepare Spell':'Traits=Wizard Require="level >= 18"',
+  'Spell Tinker':'Level=16 Traits=Wizard,Concentrate',
+  'Infinite Possibilities':'Level=18 Traits=Wizard',
+  'Reprepare Spell':'Level=18 Traits=Wizard',
   "Archwizard's Might":
-    'Traits=Wizard ' +
-    'Require="level >= 20","features.Archwizard\'s Spellcraft"',
+    'Level=20 Traits=Wizard Require="features.Archwizard\'s Spellcraft"',
   // Metamagic Mastery as above
-  'Spell Combination':'Traits=Wizard Require="level >= 20"',
+  'Spell Combination':'Level=20 Traits=Wizard',
 
   // Archetype
+  // TODO level
   'Alchemist Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Alchemist == 0"',
   'Basic Concoction':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Alchemist Dedication"',
+    'Level=4 Traits=Archetype Require="features.Alchemist Dedication"',
   'Quick Alchemy':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Alchemist Dedication"',
+    'Level=4 Traits=Archetype Require="features.Alchemist Dedication"',
   'Advanced Concoction':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Basic Concoction"',
+    'Level=6 Traits=Archetype Require="features.Basic Concoction"',
   'Expert Alchemy':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Alchemist Dedication",' +
-      '"rank.Crafting >= 2"',
+    'Level=6 Traits=Archetype ' +
+    'Require="features.Alchemist Dedication","rank.Crafting >= 2"',
   'Master Alchemy':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Expert Alchemy",' +
-      '"rank.Crafting >= 3"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Expert Alchemy","rank.Crafting >= 3"',
 
+  // TODO level
   'Barbarian Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"constitutionModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Barbarian == 0"',
   'Barbarian Resiliency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Barbarian Dedication",' +
-      '"classHitPoints <= 10"',
+    'Level=4 Traits=Archetype ' +
+    'Require="features.Barbarian Dedication","classHitPoints <= 10"',
   'Basic Fury':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Barbarian Dedication"',
-  'Advanced Fury':
-    'Traits=Archetype Require="level >= 6","features.Basic Fury"',
+    'Level=4 Traits=Archetype Require="features.Barbarian Dedication"',
+  'Advanced Fury':'Level=6 Traits=Archetype Require="features.Basic Fury"',
   'Instinct Ability':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Barbarian Dedication"',
+    'Level=6 Traits=Archetype Require="features.Barbarian Dedication"',
   "Juggernaut's Fortitude":
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Barbarian Dedication",' +
-      '"rank.Fortitude >= 2"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Barbarian Dedication","rank.Fortitude >= 2"',
 
+  // TODO level
   'Bard Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Bard == 0"',
   'Basic Bard Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
+    'Level=4 Traits=Archetype Require="features.Bard Dedication"',
   "Basic Muse's Whispers":
-    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
+    'Level=4 Traits=Archetype Require="features.Bard Dedication"',
   "Advanced Muse's Whispers":
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Basic Muse\'s Whispers"',
+    'Level=6 Traits=Archetype Require="features.Basic Muse\'s Whispers"',
   'Counter Perform':
-    'Traits=Archetype Require="level >= 6","features.Bard Dedication"',
+    'Level=6 Traits=Archetype Require="features.Bard Dedication"',
   'Inspirational Performance':
-    'Traits=Archetype Require="level >= 8","features.Bard Dedication"',
+    'Level=8 Traits=Archetype Require="features.Bard Dedication"',
   'Occult Breadth':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Basic Bard Spellcasting"',
+    'Level=8 Traits=Archetype Require="features.Basic Bard Spellcasting"',
   'Expert Bard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Bard Spellcasting",' +
-      '"rank.Occultism >= 3"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Basic Bard Spellcasting","rank.Occultism >= 3"',
   'Master Bard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Bard Spellcasting",' +
-      '"rank.Occultism >= 4"',
+    'Level=18 Traits=Archetype ' +
+    'Require="features.Expert Bard Spellcasting","rank.Occultism >= 4"',
 
+  // TODO level
   'Champion Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Champion == 0"',
   'Basic Devotion':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Champion Dedication"',
+    'Level=4 Traits=Archetype Require="features.Champion Dedication"',
   'Champion Resiliency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Champion Dedication",' +
-      '"classHitPoints <= 8"',
+    'Level=4 Traits=Archetype ' +
+    'Require="features.Champion Dedication","classHitPoints <= 8"',
   'Healing Touch':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Champion Dedication"',
+    'Level=4 Traits=Archetype Require="features.Champion Dedication"',
   'Advanced Devotion':
-    'Traits=Archetype Require="level >= 6","features.Basic Devotion"',
+    'Level=6 Traits=Archetype Require="features.Basic Devotion"',
   "Champion's Reaction":
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Champion Dedication"',
+    'Level=6 Traits=Archetype Require="features.Champion Dedication"',
   'Divine Ally':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Champion Dedication"',
+    'Level=6 Traits=Archetype Require="features.Champion Dedication"',
   'Diverse Armor Expert':
-    'Traits=Archetype ' +
+    'Level=14 Traits=Archetype ' +
     'Require=' +
-      '"level >= 14",' +
       '"features.Champion Dedication",' +
       '"rank.Unarmored Defense >= 2 || ' +
        'rank.Light Armor >= 2 || ' +
        'rank.Medium Armor >= 2 || ' +
        'rank.Heavy Armor >= 2"',
 
+  // TODO level
   'Cleric Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
+    'Level=4 Traits=Archetype Require="features.Cleric Dedication"',
   'Basic Dogma':
-    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
+    'Level=4 Traits=Archetype Require="features.Cleric Dedication"',
   'Advanced Dogma':
-    'Traits=Archetype Require="level >= 6","features.Basic Dogma"',
+    'Level=6 Traits=Archetype Require="features.Basic Dogma"',
   'Divine Breadth':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Basic Cleric Spellcasting"',
+    'Level=8 Traits=Archetype Require="features.Basic Cleric Spellcasting"',
   'Expert Cleric Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Cleric Spellcasting",' +
-      '"rank.Religion >= 3"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Basic Cleric Spellcasting","rank.Religion >= 3"',
   'Master Cleric Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Cleric Spellcasting",' +
-      '"rank.Religion >= 4"',
+    'Level=18 Traits=Archetype ' +
+    'Require="features.Expert Cleric Spellcasting","rank.Religion >= 4"',
 
+  // TODO level
   'Druid Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
+    'Level=4 Traits=Archetype Require="features.Druid Dedication"',
   'Basic Wilding':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
-  'Order Spell':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
+    'Level=4 Traits=Archetype Require="features.Druid Dedication"',
+  'Order Spell':'Level=4 Traits=Archetype Require="features.Druid Dedication"',
   'Advanced Wilding':
-    'Traits=Archetype Require="level >= 6","features.Basic Wilding"',
+    'Level=6 Traits=Archetype Require="features.Basic Wilding"',
   'Primal Breadth':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Basic Druid Spellcasting"',
+    'Level=8 Traits=Archetype Require="features.Basic Druid Spellcasting"',
   'Expert Druid Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Druid Spellcasting",' +
-      '"rank.Nature >= 3"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Basic Druid Spellcasting","rank.Nature >= 3"',
   'Master Druid Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Druid Spellcasting",' +
-      '"rank.Nature >= 4"',
+    'Level=18 Traits=Archetype ' +
+    'Require="features.Expert Druid Spellcasting","rank.Nature >= 4"',
 
+  // TODO level
   'Fighter Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Fighter Dedication"',
+    'Level=4 Traits=Archetype Require="features.Fighter Dedication"',
   'Fighter Resiliency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Fighter Dedication",' +
-      '"classHitPoints <= 8"',
+    'Level=4 Traits=Archetype ' +
+    'Require="features.Fighter Dedication","classHitPoints <= 8"',
   'Opportunist':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Fighter Dedication"',
+    'Level=4 Traits=Archetype Require="features.Fighter Dedication"',
   'Advanced Maneuver':
-    'Traits=Archetype Require="level >= 6","features.Basic Maneuver"',
+    'Level=6 Traits=Archetype Require="features.Basic Maneuver"',
   'Diverse Weapon Expert':
-    'Traits=Archetype ' +
+    'Level=12 Traits=Archetype ' +
     'Require=' +
-      '"level >= 12",' +
       '"features.Fighter Dedication",' +
       '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
 
+  // TODO level
   'Monk Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Monk == 0"',
-  'Basic Kata':
-    'Traits=Archetype Require="level >= 4","feats.Monk Dedication"',
+  'Basic Kata':'Level=4 Traits=Archetype Require="feats.Monk Dedication"',
   'Monk Resiliency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"feats.Monk Dedication",' +
-      '"classHitPoints <= 8"',
-  'Advanced Kata':
-    'Traits=Archetype Require="level >= 6","feats.Basic Kata"',
-  'Monk Moves':
-    'Traits=Archetype Require="level >= 8","feats.Monk Dedication"',
-  "Monk's Flurry":
-    'Traits=Archetype Require="level >= 10","feats.Monk Dedication"',
+    'Level=4 Traits=Archetype ' +
+    'Require="feats.Monk Dedication","classHitPoints <= 8"',
+  'Advanced Kata':'Level=6 Traits=Archetype Require="feats.Basic Kata"',
+  'Monk Moves':'Level=8 Traits=Archetype Require="feats.Monk Dedication"',
+  "Monk's Flurry":'Level=10 Traits=Archetype Require="feats.Monk Dedication"',
   "Perfection's Path (Fortitude)":
-    'Traits=Archetype ' +
-     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
+    'Level=12 Traits=Archetype ' +
+     'Require="feats.Monk Dedication","rank.Fortitude >= 2"',
   "Perfection's Path (Reflex)":
-    'Traits=Archetype ' +
-     'Require="level >= 12","feats.Monk Dedication","rank.Reflex >= 2"',
+    'Level=12 Traits=Archetype ' +
+     'Require="feats.Monk Dedication","rank.Reflex >= 2"',
   "Perfection's Path (Will)":
-    'Traits=Archetype ' +
-     'Require="level >= 12","feats.Monk Dedication","rank.Will >= 2"',
+    'Level=12 Traits=Archetype ' +
+     'Require="feats.Monk Dedication","rank.Will >= 2"',
 
+  // TODO level
   'Ranger Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
-    'Traits=Archetype Require="level >= 4","features.Ranger Dedication"',
+    'Level=4 Traits=Archetype Require="features.Ranger Dedication"',
   'Ranger Resiliency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Ranger Dedication",' +
-      '"classHitPoints <= 8"',
+    'Level=4 Traits=Archetype ' +
+    'Require="features.Ranger Dedication","classHitPoints <= 8"',
   "Advanced Hunter's Trick":
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Basic Hunter\'s Trick"',
+    'Level=6 Traits=Archetype Require="features.Basic Hunter\'s Trick"',
   'Master Spotter':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Ranger Dedication",' +
-      '"rank.Perception >= 2"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Ranger Dedication","rank.Perception >= 2"',
 
+  // TODO level
   'Rogue Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Rogue == 0"',
   'Basic Trickery':
-    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
+    'Level=4 Traits=Archetype Require="features.Rogue Dedication"',
   'Sneak Attacker':
-    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
+    'Level=4 Traits=Archetype Require="features.Rogue Dedication"',
   'Advanced Trickery':
-    'Traits=Archetype Require="level >= 6","features.Basic Trickery"',
+    'Level=6 Traits=Archetype Require="features.Basic Trickery"',
   'Skill Mastery':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Rogue Dedication",' +
-      '"maxSkillRank >= 2"',
+    'Level=8 Traits=Archetype ' +
+    'Require="features.Rogue Dedication","maxSkillRank >= 2"',
   'Uncanny Dodge':
-    'Traits=Archetype Require="level >= 10","features.Rogue Dedication"',
+    'Level=10 Traits=Archetype Require="features.Rogue Dedication"',
   'Evasiveness':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Rogue Dedication",' +
-      '"rank.Reflex >= 2"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Rogue Dedication","rank.Reflex >= 2"',
 
+  // TODO level
   'Sorcerer Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Sorcerer Dedication"',
+    'Level=4 Traits=Archetype Require="features.Sorcerer Dedication"',
   'Basic Blood Potency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Sorcerer Dedication"',
+    'Level=4 Traits=Archetype Require="features.Sorcerer Dedication"',
   'Basic Bloodline Spell':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Sorcerer Dedication"',
+    'Level=4 Traits=Archetype Require="features.Sorcerer Dedication"',
   'Advanced Blood Potency':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Basic Blood Potency"',
+    'Level=6 Traits=Archetype Require="features.Basic Blood Potency"',
   'Bloodline Breadth':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Basic Sorcerer Spellcasting"',
+    'Level=8 Traits=Archetype Require="features.Basic Sorcerer Spellcasting"',
   'Expert Sorcerer Spellcasting':
-    'Traits=Archetype ' +
+    'Level=12 Traits=Archetype ' +
     'Require=' +
-      '"level >= 12",' +
       '"features.Basic Sorcerer Spellcasting",' +
       '"rank.Arcana >= 3 || ' +
        'rank.Nature >= 3 || ' +
        'rank.Occultism >= 3 || ' +
        'rank.Religion >= 3"',
   'Master Sorcerer Spellcasting':
-    'Traits=Archetype ' +
+    'Level=18 Traits=Archetype ' +
     'Require=' +
-      '"level >= 18",' +
       '"features.Expert Sorcerer Spellcasting",' +
       '"rank.Arcana >= 4 || ' +
        'rank.Nature >= 4 || ' +
        'rank.Occultism >= 4 || ' +
        'rank.Religion >= 4"',
 
+  // TODO level
   'Wizard Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
+    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Wizard == 0"',
   'Arcane School Spell':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Level=4 Traits=Archetype Require="features.Wizard Dedication"',
   'Basic Arcana':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Level=4 Traits=Archetype Require="features.Wizard Dedication"',
   'Basic Wizard Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Level=4 Traits=Archetype Require="features.Wizard Dedication"',
   'Advanced Arcana':
-    'Traits=Archetype Require="level >= 6","features.Basic Arcana"',
+    'Level=6 Traits=Archetype Require="features.Basic Arcana"',
   'Arcane Breadth':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Basic Wizard Spellcasting"',
+    'Level=8 Traits=Archetype Require="features.Basic Wizard Spellcasting"',
   'Expert Wizard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Wizard Spellcasting",' +
-      '"rank.Arcana >= 3"',
+    'Level=12 Traits=Archetype ' +
+    'Require="features.Basic Wizard Spellcasting","rank.Arcana >= 3"',
   'Master Wizard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Wizard Spellcasting",' +
-      '"rank.Arcana >= 4"',
+    'Level=18 Traits=Archetype ' +
+    'Require="features.Expert Wizard Spellcasting","rank.Arcana >= 4"',
 
   // General
   // Require for Additional Lore is a no-op, since the feat itself will
   // raise rank.Lore to at least 1
-  'Additional Lore (%lore)':'Traits=General,Skill Require="rank.Lore >= 1"',
-  'Adopted Ancestry (%ancestry)':'Traits=General',
-  'Alchemical Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
-  'Ancestral Paragon':'Traits=General Require="level >= 3"',
-  'Arcane Sense':'Traits=General,Skill Require="rank.Arcana >= 1"',
-  'Armor Proficiency':'Traits=General',
+  'Additional Lore (%lore)':
+    'Level=1 Traits=General,Skill Require="rank.Lore >= 1"',
+  'Adopted Ancestry (%ancestry)':'Level=1 Traits=General',
+  'Alchemical Crafting':
+    'Level=1 Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Ancestral Paragon':'Level=3 Traits=General',
+  'Arcane Sense':'Level=1 Traits=General,Skill Require="rank.Arcana >= 1"',
+  'Armor Proficiency':'Level=1 Traits=General',
   'Assurance (%skill)':
-    'Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
+    'Level=1 Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
   // NOTE: requires "expert in a skill with the Recall Knowledge action",
   // which nominally means Arcana, Crafting, Lore, Medicine, Nature, Occultism,
   // Religion, or Society. However, the rules discuss the GM allowing other
   // skills, so enforcing this requirement seems unnecessary.
   'Automatic Knowledge (%skill)':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"rank.%skill >= 2",' +
-      '"features.Assurance (%skill)"',
-  'Bargain Hunter':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
+    'Level=2 Traits=General,Skill ' +
+    'Require="rank.%skill >= 2","features.Assurance (%skill)"',
+  'Bargain Hunter':'Level=1 Traits=General,Skill Require="rank.Diplomacy >= 1"',
   'Battle Cry':
-    'Traits=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
+    'Level=7 Traits=General,Skill Require="rank.Intimidation >= 3"',
   'Battle Medicine':
-    'Traits=General,Healing,Manipulate,Skill Require="rank.Medicine >= 1"',
-  'Bizarre Magic':
-    'Traits=General,Skill Require="level >= 7","rank.Occultism >= 3"',
+    'Level=1 Traits=General,Healing,Manipulate,Skill ' +
+    'Require="rank.Medicine >= 1"',
+  'Bizarre Magic':'Level=7 Traits=General,Skill Require="rank.Occultism >= 3"',
   'Bonded Animal':
-    'Traits=Downtime,General,Skill Require="level >= 2","rank.Nature >= 2"',
-  'Breath Control':'Traits=General',
-  'Canny Acumen (Fortitude)':'Traits=General',
-  'Canny Acumen (Perception)':'Traits=General',
-  'Canny Acumen (Reflex)':'Traits=General',
-  'Canny Acumen (Will)':'Traits=General',
-  'Cat Fall':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
-  'Charming Liar':'Traits=General,Skill Require="rank.Deception >= 1"',
-  'Cloud Jump':
-    'Traits=General,Skill Require="level >= 15","rank.Athletics >= 4"',
-  'Combat Climber':'Traits=General,Skill Require="rank.Athletics >= 1"',
-  'Confabulator':
-    'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
+    'Level=2 Traits=Downtime,General,Skill Require="rank.Nature >= 2"',
+  'Breath Control':'Level=1 Traits=General',
+  'Canny Acumen (Fortitude)':'Level=1 Traits=General',
+  'Canny Acumen (Perception)':'Level=1 Traits=General',
+  'Canny Acumen (Reflex)':'Level=1 Traits=General',
+  'Canny Acumen (Will)':'Level=1 Traits=General',
+  'Cat Fall':'Level=1 Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Charming Liar':'Level=1 Traits=General,Skill Require="rank.Deception >= 1"',
+  'Cloud Jump':'Level=15 Traits=General,Skill Require="rank.Athletics >= 4"',
+  'Combat Climber':'Level=1 Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Confabulator':'Level=2 Traits=General,Skill Require="rank.Deception >= 2"',
   'Connections':
-    'Traits=Uncommon,General,Skill ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"rank.Society >= 2",' +
-      '"features.Courtly Graces"',
+    'Level=1 Traits=Uncommon,General,Skill ' +
+    'Require="rank.Society >= 2","features.Courtly Graces"',
   'Continual Recovery':
-    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
-  'Courtly Graces':'Traits=General,Skill Require="rank.Society >= 1"',
-  'Craft Anything':
-    'Traits=General,Skill Require="level >= 15","rank.Crafting >= 4"',
-  'Diehard':'Traits=General',
+    'Level=2 Traits=General,Skill Require="rank.Medicine >= 2"',
+  'Courtly Graces':'Level=1 Traits=General,Skill Require="rank.Society >= 1"',
+  'Craft Anything':'Level=15 Traits=General,Skill Require="rank.Crafting >= 4"',
+  'Diehard':'Level=1 Traits=General',
   'Divine Guidance':
-    'Traits=General,Skill Require="level >= 15","rank.Religion >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Religion >= 4"',
   // NOTE: requires "trained in a skill with the Recall Knowledge action",
   // which nominally means Arcana, Crafting, Lore, Medicine, Nature, Occultism,
   // Religion, or Society. However, the rules discuss the GM allowing other
   // skills, so enforcing this requirement seems unnecessary.
-  'Dubious Knowledge':'Traits=General,Skill',
-  'Expeditious Search':
-    'Traits=General Require="level >= 7","rank.Perception >= 3"',
-  'Experienced Professional':'Traits=General,Skill Require="rank.Lore >= 1"',
-  'Experienced Smuggler':'Traits=General,Skill Require="rank.Stealth >= 1"',
-  'Experienced Tracker':'Traits=General,Skill Require="rank.Survival >= 1"',
+  'Dubious Knowledge':'Level=1 Traits=General,Skill',
+  'Expeditious Search':'Level=7 Traits=General Require="rank.Perception >= 3"',
+  'Experienced Professional':
+    'Level=1 Traits=General,Skill Require="rank.Lore >= 1"',
+  'Experienced Smuggler':
+    'Level=1 Traits=General,Skill Require="rank.Stealth >= 1"',
+  'Experienced Tracker':
+    'Level=1 Traits=General,Skill Require="rank.Survival >= 1"',
   'Fascinating Performance':
-    'Traits=General,Skill Require="rank.Performance >= 1"',
-  'Fast Recovery':'Traits=General Require="constitutionModifier >= 2"',
-  'Feather Step':'Traits=General Require="dexterityModifier >= 2"',
-  'Fleet':'Traits=General',
-  'Foil Senses':
-    'Traits=General,Skill Require="level >= 7","rank.Stealth >= 3"',
-  'Forager':'Traits=General,Skill Require="rank.Survival >= 1"',
-  'Glad-Hand':
-    'Traits=General,Skill Require="level >= 2","rank.Diplomacy >= 2"',
-  'Group Coercion':'Traits=General,Skill Require="rank.Intimidation >= 1"',
-  'Group Impression':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
-  'Hefty Hauler':'Traits=General,Skill Require="rank.Athletics >= 1"',
-  'Hobnobber':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
+    'Level=1 Traits=General,Skill Require="rank.Performance >= 1"',
+  'Fast Recovery':'Level=1 Traits=General Require="constitutionModifier >= 2"',
+  'Feather Step':'Level=1 Traits=General Require="dexterityModifier >= 2"',
+  'Fleet':'Level=1 Traits=General',
+  'Foil Senses':'Level=7 Traits=General,Skill Require="rank.Stealth >= 3"',
+  'Forager':'Level=1 Traits=General,Skill Require="rank.Survival >= 1"',
+  'Glad-Hand':'Level=2 Traits=General,Skill Require="rank.Diplomacy >= 2"',
+  'Group Coercion':
+    'Level=1 Traits=General,Skill Require="rank.Intimidation >= 1"',
+  'Group Impression':
+    'Level=1 Traits=General,Skill Require="rank.Diplomacy >= 1"',
+  'Hefty Hauler':'Level=1 Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Hobnobber':'Level=1 Traits=General,Skill Require="rank.Diplomacy >= 1"',
   'Impeccable Crafting':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 7",' +
-      '"rank.Crafting >= 3",' +
-      '"features.Specialty Crafting"',
+    'Level=7 Traits=General,Skill ' +
+    'Require="rank.Crafting >= 3","features.Specialty Crafting"',
   'Impressive Performance':
-    'Traits=General,Skill Require="rank.Performance >= 1"',
-  'Incredible Initiative':'Traits=General',
+    'Level=1 Traits=General,Skill Require="rank.Performance >= 1"',
+  'Incredible Initiative':'Level=1 Traits=General',
   'Incredible Investiture':
-    'Traits=General Require="level >= 11","charismaModifier >= 3"',
-  'Intimidating Glare':'Traits=General,Skill Require="rank.Intimidation >= 1"',
+    'Level=11 Traits=General Require="charismaModifier >= 3"',
+  'Intimidating Glare':
+    'Level=1 Traits=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
-    'Traits=General,Skill ' +
-    'Require="level >= 2","strengthModifier >= 3","rank.Intimidation >= 2"',
+    'Level=2 Traits=General,Skill ' +
+    'Require="strengthModifier >= 3","rank.Intimidation >= 2"',
   'Inventor':
-    'Traits=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
-  'Kip Up':'Traits=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
+    'Level=7 Traits=Downtime,General,Skill Require="rank.Crafting >= 3"',
+  'Kip Up':'Level=7 Traits=General,Skill Require="rank.Acrobatics >= 3"',
   'Lasting Coercion':
-    'Traits=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
+    'Level=2 Traits=General,Skill Require="rank.Intimidation >= 2"',
   'Legendary Codebreaker':
-    'Traits=General,Skill Require="level >= 15","rank.Society >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Society >= 4"',
   'Legendary Linguist':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Society >= 4",' +
-      '"features.Multilingual"',
+    'Level=15 Traits=General,Skill ' +
+    'Require="rank.Society >= 4","features.Multilingual"',
   'Legendary Medic':
-    'Traits=General,Skill Require="level >= 15","rank.Medicine >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Medicine >= 4"',
   'Legendary Negotiation':
-    'Traits=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Diplomacy >= 4"',
   'Legendary Performer':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Performance >= 4",' +
-      '"features.Virtuosic Performer"',
+    'Level=15 Traits=General,Skill ' +
+    'Require="rank.Performance >= 4","features.Virtuosic Performer"',
   'Legendary Professional':
-    'Traits=General,Skill Require="level >= 15","rank.Lore >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Lore >= 4"',
   'Legendary Sneak':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Stealth >= 4",' +
-      '"features.Swift Sneak"',
+    'Level=15 Traits=General,Skill ' +
+    'Require="rank.Stealth >= 4","features.Swift Sneak"',
   'Legendary Survivalist':
-    'Traits=General,Skill Require="level >= 15","rank.Survival >= 4"',
+    'Level=15 Traits=General,Skill Require="rank.Survival >= 4"',
   'Legendary Thief':
-    'Traits=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Thievery >= 4",' +
-      '"features.Pickpocket"',
-  'Lengthy Diversion':'Traits=General,Skill Require="rank.Deception >= 1"',
-  'Lie To Me':'Traits=General,Skill Require="rank.Deception >= 1"',
+    'Level=15 Traits=General,Skill ' +
+    'Require="rank.Thievery >= 4","features.Pickpocket"',
+  'Lengthy Diversion':
+    'Level=1 Traits=General,Skill Require="rank.Deception >= 1"',
+  'Lie To Me':'Level=1 Traits=General,Skill Require="rank.Deception >= 1"',
   'Magical Crafting':
-    'Traits=General,Skill Require="level >= 2","rank.Crafting >= 2"',
+    'Level=2 Traits=General,Skill Require="rank.Crafting >= 2"',
   'Magical Shorthand':
-    'Traits=General,Skill ' +
+    'Level=2 Traits=General,Skill ' +
     'Require=' +
-      '"level >= 2",' +
       '"rank.Arcana >= 2 || ' +
        'rank.Nature >= 2 || ' +
        'rank.Occultism >= 2 || ' +
        'rank.Religion >= 2"',
-  'Multilingual':'Traits=General,Skill Require="rank.Society >= 1"',
-  'Natural Medicine':'Traits=General,Skill Require="rank.Nature >= 1"',
+  'Multilingual':'Level=1 Traits=General,Skill Require="rank.Society >= 1"',
+  'Natural Medicine':'Level=1 Traits=General,Skill Require="rank.Nature >= 1"',
   'Nimble Crawl':
-    'Traits=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
-  'Oddity Identification':'Traits=General,Skill Require="rank.Occultism >= 1"',
-  'Pickpocket':'Traits=General,Skill Require="rank.Thievery >= 1"',
-  'Planar Survival':
-    'Traits=General,Skill Require="level >= 7","rank.Survival >= 3"',
-  'Powerful Leap':
-    'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
-  'Quick Climb':
-    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Quick Coercion':'Traits=General,Skill Require="rank.Intimidation >= 1"',
-  'Quick Disguise':
-    'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
+    'Level=2 Traits=General,Skill Require="rank.Acrobatics >= 2"',
+  'Oddity Identification':
+    'Level=1 Traits=General,Skill Require="rank.Occultism >= 1"',
+  'Pickpocket':'Level=1 Traits=General,Skill Require="rank.Thievery >= 1"',
+  'Planar Survival':'Level=7 Traits=General,Skill Require="rank.Survival >= 3"',
+  'Powerful Leap':'Level=2 Traits=General,Skill Require="rank.Athletics >= 2"',
+  'Quick Climb':'Level=7 Traits=General,Skill Require="rank.Athletics >= 3"',
+  'Quick Coercion':
+    'Level=1 Traits=General,Skill Require="rank.Intimidation >= 1"',
+  'Quick Disguise':'Level=2 Traits=General,Skill Require="rank.Deception >= 2"',
   'Quick Identification':
-    'Traits=General,Skill ' +
+    'Level=1 Traits=General,Skill ' +
     'Require=' +
       '"rank.Arcana >= 1 || ' +
        'rank.Nature >= 1 || ' +
        'rank.Occultism >= 1 || ' +
        'rank.Religion >= 1"',
-  'Quick Jump':'Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Quick Jump':'Level=1 Traits=General,Skill Require="rank.Athletics >= 1"',
   'Quick Recognition':
-    'Traits=General,Skill ' +
+    'Level=7 Traits=General,Skill ' +
     'Require=' +
-      '"level >= 7",' +
       '"rank.Arcana >= 3 || ' +
        'rank.Nature >= 3 || ' +
        'rank.Occultism >= 3 || ' +
        'rank.Religion >= 3",' +
       '"features.Recognize Spell"',
-  'Quick Repair':'Traits=General,Skill Require="rank.Crafting >= 1"',
-  'Quick Squeeze':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
-  'Quick Swim':
-    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Quick Unlock':
-    'Traits=General,Skill Require="level >= 7","rank.Thievery >= 3"',
-  'Quiet Allies':
-    'Traits=General,Skill Require="level >= 2","rank.Stealth >= 2"',
-  'Rapid Mantel':
-    'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
-  'Read Lips':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Quick Repair':'Level=1 Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Quick Squeeze':'Level=1 Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Quick Swim':'Level=7 Traits=General,Skill Require="rank.Athletics >= 3"',
+  'Quick Unlock':'Level=7 Traits=General,Skill Require="rank.Thievery >= 3"',
+  'Quiet Allies':'Level=2 Traits=General,Skill Require="rank.Stealth >= 2"',
+  'Rapid Mantel':'Level=2 Traits=General,Skill Require="rank.Athletics >= 2"',
+  'Read Lips':'Level=1 Traits=General,Skill Require="rank.Society >= 1"',
   'Recognize Spell':
-    'Traits=General,Secret,Skill ' +
+    'Level=1 Traits=General,Secret,Skill ' +
     'Require=' +
        '"rank.Arcana >= 1 || ' +
         'rank.Nature >= 1 || ' +
         'rank.Occultism >= 1 || ' +
         'rank.Religion >= 1"',
-  'Ride':'Traits=General',
-  'Robust Recovery':
-    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+  'Ride':'Level=1 Traits=General',
+  'Robust Recovery':'Level=2 Traits=General,Skill Require="rank.Medicine >= 2"',
   'Scare To Death':
-    'Traits=Emotion,Fear,General,Incapacitation,Skill ' +
-    'Require="level >= 15","rank.Intimidation >= 4"',
+    'Level=15 Traits=Emotion,Fear,General,Incapacitation,Skill ' +
+    'Require="rank.Intimidation >= 4"',
   'Shameless Request':
-    'Traits=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
-  'Shield Block':'Traits=General',
-  'Sign Language':'Traits=General,Skill Require="rank.Society >= 1"',
+    'Level=7 Traits=General,Skill Require="rank.Diplomacy >= 3"',
+  'Shield Block':'Level=1 Traits=General',
+  'Sign Language':'Level=1 Traits=General,Skill Require="rank.Society >= 1"',
   'Skill Training (%skill)':
-    'Traits=General,Skill Require="intelligenceModifier >= 1"',
+    'Level=1 Traits=General,Skill Require="intelligenceModifier >= 1"',
   'Slippery Secrets':
-    'Traits=General,Skill Require="level >= 7","rank.Deception >= 3"',
-  'Snare Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
-  'Specialty Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
-  'Steady Balance':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
-  'Streetwise':'Traits=General,Skill Require="rank.Society >= 1"',
-  'Student Of The Canon':'Traits=General,Skill Require="rank.Religion >= 1"',
-  'Subtle Theft':'Traits=General,Skill Require="rank.Thievery >= 1"',
-  'Survey Wildlife':'Traits=General,Skill Require="rank.Survival >= 1"',
-  'Swift Sneak':
-    'Traits=General,Skill Require="level >= 7","rank.Stealth >= 3"',
+    'Level=7 Traits=General,Skill Require="rank.Deception >= 3"',
+  'Snare Crafting':'Level=1 Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Specialty Crafting':
+    'Level=1 Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Steady Balance':
+    'Level=1 Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Streetwise':'Level=1 Traits=General,Skill Require="rank.Society >= 1"',
+  'Student Of The Canon':
+    'Level=1 Traits=General,Skill Require="rank.Religion >= 1"',
+  'Subtle Theft':'Level=1 Traits=General,Skill Require="rank.Thievery >= 1"',
+  'Survey Wildlife':'Level=1 Traits=General,Skill Require="rank.Survival >= 1"',
+  'Swift Sneak':'Level=7 Traits=General,Skill Require="rank.Stealth >= 3"',
   'Terrain Expertise (%terrain)':
-    'Traits=General,Skill Require="rank.Survival >= 1"',
-  'Terrain Stalker (Rubble)':'Traits=General,Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Snow)':'Traits=General,Skill Require="rank.Stealth >= 1"',
+    'Level=1 Traits=General,Skill Require="rank.Survival >= 1"',
+  'Terrain Stalker (Rubble)':
+    'Level=1 Traits=General,Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Snow)':
+    'Level=1 Traits=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Underbrush)':
-    'Traits=General,Skill Require="rank.Stealth >= 1"',
+    'Level=1 Traits=General,Skill Require="rank.Stealth >= 1"',
   'Terrified Retreat':
-    'Traits=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
-  'Titan Wrestler':'Traits=General,Skill Require="rank.Athletics >= 1"',
-  'Toughness':'Traits=General',
+    'Level=7 Traits=General,Skill Require="rank.Intimidation >= 3"',
+  'Titan Wrestler':'Level=1 Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Toughness':'Level=1 Traits=General',
   'Train Animal':
-    'Traits=Downtime,General,Manipulate,Skill Require="rank.Nature >= 1"',
+    'Level=1 Traits=Downtime,General,Manipulate,Skill ' +
+    'Require="rank.Nature >= 1"',
   'Trick Magic Item':
-    'Traits=General,Manipulate,Skill ' +
+    'Level=1 Traits=General,Manipulate,Skill ' +
     'Require=' +
       '"rank.Arcana >= 1 || ' +
        'rank.Nature >= 1 || ' +
        'rank.Occultism >= 1 || ' +
        'rank.Religion >= 1"',
-  'Underwater Marauder':'Traits=General,Skill Require="rank.Athletics >= 1"',
-  'Unified Theory':
-    'Traits=General,Skill Require="level >= 15","rank.Arcana >= 4"',
-  'Unmistakable Lore':
-    'Traits=General,Skill Require="level >= 2","rank.Lore >= 2"',
-  'Untrained Improvisation':'Traits=General Require="level >= 3"',
-  'Virtuosic Performer':'Traits=General,Skill Require="rank.Performance >= 1"',
-  'Wall Jump':
-    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Ward Medic':
-    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+  'Underwater Marauder':
+    'Level=1 Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Unified Theory':'Level=15 Traits=General,Skill Require="rank.Arcana >= 4"',
+  'Unmistakable Lore':'Level=2 Traits=General,Skill Require="rank.Lore >= 2"',
+  'Untrained Improvisation':'Level=3 Traits=General',
+  'Virtuosic Performer':
+    'Level=1 Traits=General,Skill Require="rank.Performance >= 1"',
+  'Wall Jump':'Level=7 Traits=General,Skill Require="rank.Athletics >= 3"',
+  'Ward Medic':'Level=2 Traits=General,Skill Require="rank.Medicine >= 2"',
   'Wary Disarmament':
-    'Traits=General,Skill Require="level >= 2","rank.Thievery >= 2"',
-  'Weapon Proficiency (Martial Weapons)':'Traits=General',
-  'Weapon Proficiency (Simple Weapons)':'Traits=General',
-  'Weapon Proficiency (%advancedWeapon)':'Traits=General'
+    'Level=2 Traits=General,Skill Require="rank.Thievery >= 2"',
+  'Weapon Proficiency (Martial Weapons)':'Level=1 Traits=General',
+  'Weapon Proficiency (Simple Weapons)':'Level=1 Traits=General',
+  'Weapon Proficiency (%advancedWeapon)':'Level=1 Traits=General'
 
 };
 Pathfinder2E.FEATURES = {
@@ -12671,7 +12340,7 @@ Pathfinder2E.talentRules = function(
 
   let matchInfo;
 
-  QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Traits']);
+  QuilvynUtils.checkAttrTable(feats, ['Level', 'Traits', 'Require', 'Imply']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note', 'Action']);
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
@@ -12867,9 +12536,10 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Feat') {
     Pathfinder2E.featRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Level'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
+      QuilvynUtils.getAttrValueArray(attrs, 'Imply')
     );
     Pathfinder2E.featRulesExtra(rules, name, attrs);
   } else if(type == 'Feature')
@@ -14396,22 +14066,20 @@ Pathfinder2E.deityRules = function(
 };
 
 /*
- * Defines in #rules# the rules associated with feat #name#. #require# and
- * #implies# list any hard and soft prerequisites for the feat, and #traits#
- * lists the traits of the feat.
+ * Defines in #rules# the rules associated with the level #level# feat #name#.
+ * #traits# lists the traits of the feat, and #require# and #implies# list any
+ * hard and soft prerequisites for the feat,
  */
-Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
+Pathfinder2E.featRules = function(
+  rules, name, level, traits, requires, implies
+) {
 
   if(!name) {
     console.log('Empty feat name');
     return;
   }
-  if(!Array.isArray(requires)) {
-    console.log('Bad requires list "' + requires + '" for feat ' + name);
-    return;
-  }
-  if(!Array.isArray(implies)) {
-    console.log('Bad implies list "' + implies + '" for feat ' + name);
+  if(typeof(level) != 'number') {
+    console.log('Bad level "' + level + '" for feat ' + name);
     return;
   }
   if(!Array.isArray(traits)) {
@@ -14422,10 +14090,20 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
     if(!(Pathfinder2E.featRules.traits.includes(t)))
       console.log('Bad trait "' + t + '" for feat ' + name);
   });
+  if(!Array.isArray(requires)) {
+    console.log('Bad requires list "' + requires + '" for feat ' + name);
+    return;
+  }
+  if(!Array.isArray(implies)) {
+    console.log('Bad implies list "' + implies + '" for feat ' + name);
+    return;
+  }
 
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
+  if(level > 1)
+    requires.unshift('level >= ' + level);
   if(requires.length > 0)
     QuilvynRules.prerequisiteRules
       (rules, 'validation', prefix + 'Feat', 'feats.' + name, requires);
@@ -15904,7 +15582,7 @@ Pathfinder2E.weaponRules = function(
     'weaponDamageAdjustment.' + name, '+', null
   );
   rules.defineRule
-    ('weaponDieCount.' + name, weaponName, '=', damage.replace(/d\d+/, ''))
+    ('weaponDieCount.' + name, weaponName, '=', damage.replace(/d\d+/, ''));
   rules.defineRule('weaponDieSides.' + name,
     weaponName, '=', damage.replace(/^\d(d)?/, '') || '""'
   );
@@ -16463,9 +16141,10 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   } else if(type == 'Feat')
     result.push(
+      ['Level', 'Level', 'select-one', oneToTwenty],
+      ['Traits', 'Traits', 'text', [20]],
       ['Require', 'Prerequisites', 'text', [40]],
-      ['Imply', 'Implies', 'text', [40]],
-      ['Traits', 'Traits', 'text', [20]]
+      ['Imply', 'Implies', 'text', [40]]
     );
   else if(type == 'Feature') {
     result.push(
@@ -16885,7 +16564,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       let prefix =
         subset == 'Skill' ? 'generalFeats' :
         attribute == 'feats' ? subset.toLowerCase() + 'Feats' :
-        attribute;
+        'selectableFeatures';
       // Grab all features and notes that grant items in this subset
       let subsetTexts = [];
       if(attribute == 'feats') {
@@ -16897,6 +16576,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         }
       } else {
         attr = 'selectableFeatureCount.' + subset;
+        // Massage into a form consistent with feats for ease of handling
         subsetTexts.push('Choose ' + attrs[attr] + ' from any');
       }
       // Sort in order of most restrictive to least restrictive
@@ -16913,42 +16593,55 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           let m = selection.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
             howMany = +m[1];
-            // TODO what about Adopted Ancestry and Archetype feats?
-            if(subset == 'Ancestry')
-              subset = attributes.ancestry;
-            else if(subset == 'Class')
-              subset = attributes['class'];
+            let pat = subset;
             let traits = attribute == 'feats' ? 'Traits' : 'Type';
-            if(m[2] == 'any') {
+            if(subset == 'Ancestry') {
+              pat = attributes.ancestry;
+              for(let a in this.getChoices('ancestrys'))
+                if('features.Adopted Ancestry (' + a + ')' in attrs)
+                  pat += '|' + a;
+            } else if(subset == 'Class') {
+              pat = attributes['class'] + '|Dedication';
+              if(Object.keys(attrs).filter(x => x.match(/^features.*Dedication$/)).length > 0)
+                pat += '|Archetype';
+            }
+            pat = pat.replaceAll(/([\(\)])/g, '\\$1');
+            let category = m[2];
+            let maxLevel = null;
+            if((m=category.match(/(.*)\s+up to level\s+(.*)/)) != null) {
+              category = m[1];
+              maxLevel = new Expr(m[2].replaceAll(/%\{|\}/g, '')).eval();
+            }
+            if(category == 'any') {
               choices =
-                Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(subset));
+                Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0);
               if(subset == 'General')
                 // Although valid, avoid allocating skill feats as general feats
                 choices =
                   choices.filter(x => !(allChoices[x].includes('Skill')));
-            } else if(m[2].startsWith('any ')) {
-              // e.g., choose 2 from any Additional Lore
-              let selector = m[2].substring(4);
+            } else if(category.startsWith('any ')) {
+              // e.g., choose 2 from any Additional Lore or from any Gnome
+              category = category.substring(4);
               choices =
-                Object.keys(allChoices).filter(x => x.includes(selector) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(selector));
+                Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category));
             } else {
               choices = m[2].split(/\s*,\s*/);
             }
-            debug.push('Pick ' + howMany + ' ' + subset + ' from ' + choices.length);
+            debug.push('Pick ' + howMany + ' ' + pat + ' from ' + choices.length);
             // If an item in choices is already in attributes, assume that it's
             // because of this feature, so reduce howMany and remove it from
             // consideration for later choices
-            let filtered = [];
+            let unchosen = [];
             choices.forEach(choice => {
               if(howMany > 0 && attributes[prefix + '.' + choice]) {
                 howMany--;
                 debug.push('Existing choice ' + choice + ' reduces count by 1');
                 delete allChoices[choice];
               } else {
-                filtered.push(choice);
+                unchosen.push(choice);
               }
             });
-            choices = filtered;
+            choices = unchosen;
             // Finally, randomly assign any remaining allocations
             while(howMany > 0 && choices.length > 0) {
               let choice = QuilvynUtils.randomElement(choices);
@@ -16959,12 +16652,16 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                          replace(/\(/g, '\\(').replace(/\)/g, '\\)');
               let note =
                 name + attribute.charAt(0).toUpperCase() + attribute.substring(1).replace(/s$/, '');
-              let generalized = choice.replace(/\s+\(.*\)/, '');
+              // Only choose 1 from collections of similar items like
+              // Additional Lore (*) and * Dedication
+              let generalized =
+                choice.replace(/\s+\(.*\)/, '')
+                      .replace(/^.*Dedication/, 'Dedication');
               if(QuilvynUtils.sumMatching
                    (validate,
                     new RegExp('^(sanity|validation)Notes.'+note+'$')) != 0) {
                 delete attributes[prefix + '.' + choice];
-                debug.push('Rejected ' + choice);
+                debug.push('Rejected invalid ' + choice);
               } else if(generalized in similar) {
                 delete attributes[prefix + '.' + choice];
                 debug.push('Rejected similar ' + choice);
@@ -16974,6 +16671,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 if(generalized != choice)
                   similar[generalized] = choice;
                 delete allChoices[choice];
+                if(generalized == 'Dedication')
+                  choices =
+                    choices.concat(Object.keys(allChoices).filter(x => allChoices[x].includes('Archetype')));
               }
               choices = choices.filter(x => x != choice);
             }
