@@ -1549,7 +1549,7 @@ Pathfinder2E.FEATS = {
     'Level=4 Traits=Druid,Manipulate,Metamagic ' +
     'Require="strengthModifier >= 2","features.Wild Shape"',
   'Mature Animal Companion':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=4 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
@@ -1573,7 +1573,7 @@ Pathfinder2E.FEATS = {
   'Ferocious Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
   'Fey Caller':'Level=8 Traits=Druid',
   'Incredible Companion':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=8 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 8 || levels.Ranger >= 10",' +
@@ -1587,7 +1587,7 @@ Pathfinder2E.FEATS = {
   'Plant Shape':
     'Level=10 Traits=Druid Require="inLeafOrder || features.Wild Shape"',
   'Side By Side':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=10 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 10 || levels.Ranger >= 12",' +
@@ -1597,7 +1597,7 @@ Pathfinder2E.FEATS = {
   'Primal Focus':'Level=12 Traits=Druid',
   'Primal Summons':'Level=12 Traits=Druid Require="features.Call Of The Wild"',
   'Specialized Companion':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=14 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 14 || levels.Ranger >= 16",' +
@@ -1701,13 +1701,13 @@ Pathfinder2E.FEATS = {
     'Level=14 Traits=Fighter Require="features.Dueling Riposte"',
   // Nethys adds Twin Riposte requirement for Ranger
   'Improved Twin Riposte':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=14 Traits=Fighter,Ranger ' +
     'Require=' +
       '"levels.Fighter >= 14 || levels.Ranger >= 16",' +
       '"features.Twin Riposte"',
   'Stance Savant':
-    // Use the lower class level for feat level
+    // Use the lower class level as the feat level
     'Level=12 Traits=Fighter,Monk ' +
     'Require="levels.Fighter >= 14 || levels.Monk >= 12"',
   'Two-Weapon Flurry':'Level=14 Traits=Fighter,Flourish,Press',
