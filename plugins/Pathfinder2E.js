@@ -1548,9 +1548,9 @@ Pathfinder2E.FEATS = {
   'Form Control':
     'Level=4 Traits=Druid,Manipulate,Metamagic ' +
     'Require="strengthModifier >= 2","features.Wild Shape"',
-  // TODO level?
   'Mature Animal Companion':
-    'Level=1 Traits=Druid,Ranger ' +
+    // Use the lower class level for feat level
+    'Level=4 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
@@ -1572,9 +1572,9 @@ Pathfinder2E.FEATS = {
     'Require="inStormOrder","spells.Tempest Surge (P1 Foc Evo)"',
   'Ferocious Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
   'Fey Caller':'Level=8 Traits=Druid',
-  // TODO level?
   'Incredible Companion':
-    'Level=1 Traits=Druid,Ranger ' +
+    // Use the lower class level for feat level
+    'Level=8 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 8 || levels.Ranger >= 10",' +
       '"features.Mature Animal Companion"',
@@ -1586,9 +1586,9 @@ Pathfinder2E.FEATS = {
     'Level=10 Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
   'Plant Shape':
     'Level=10 Traits=Druid Require="inLeafOrder || features.Wild Shape"',
-  // TODO level
   'Side By Side':
-    'Level=1 Traits=Druid,Ranger ' +
+    // Use the lower class level for feat level
+    'Level=10 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 10 || levels.Ranger >= 12",' +
       '"features.Animal Companion"',
@@ -1596,9 +1596,9 @@ Pathfinder2E.FEATS = {
   'Green Tongue':'Level=12 Traits=Druid Require="features.Green Empathy"',
   'Primal Focus':'Level=12 Traits=Druid',
   'Primal Summons':'Level=12 Traits=Druid Require="features.Call Of The Wild"',
-  // TODO level
   'Specialized Companion':
-    'Level=1 Traits=Druid,Ranger ' +
+    // Use the lower class level for feat level
+    'Level=14 Traits=Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 14 || levels.Ranger >= 16",' +
       '"features.Incredible Companion"',
@@ -1615,7 +1615,7 @@ Pathfinder2E.FEATS = {
     'Require="features.Form Control","strengthModifier >= 4"',
   'Primal Wellspring':
     'Level=18 Traits=Druid Require="features.Primal Focus"',
-  "Hierophant's Power":'Level=1 Traits=Druid',
+  "Hierophant's Power":'Level=20 Traits=Druid',
   'Leyline Conduit':
     'Level=20 Traits=Druid,Concentrate,Manipulate,Metamagic',
   'True Shapeshifter':
@@ -1700,15 +1700,15 @@ Pathfinder2E.FEATS = {
   'Guiding Riposte':
     'Level=14 Traits=Fighter Require="features.Dueling Riposte"',
   // Nethys adds Twin Riposte requirement for Ranger
-  // TODO level
   'Improved Twin Riposte':
-    'Level=1 Traits=Fighter,Ranger ' +
+    // Use the lower class level for feat level
+    'Level=14 Traits=Fighter,Ranger ' +
     'Require=' +
       '"levels.Fighter >= 14 || levels.Ranger >= 16",' +
       '"features.Twin Riposte"',
-  // TODO level
   'Stance Savant':
-    'Level=1 Traits=Fighter,Monk ' +
+    // Use the lower class level for feat level
+    'Level=12 Traits=Fighter,Monk ' +
     'Require="levels.Fighter >= 14 || levels.Monk >= 12"',
   'Two-Weapon Flurry':'Level=14 Traits=Fighter,Flourish,Press',
   // Whirlwind Strike as above
@@ -1797,7 +1797,7 @@ Pathfinder2E.FEATS = {
   'Swift River':'Level=18 Traits=Monk',
   'Enduring Quickness':'Level=20 Traits=Monk',
   'Fuse Stance':'Level=20 Traits=Monk Require="sumStanceFeats >= 2 "',
-  'Impossible Technique':'Level=1 Traits=Monk,Fortune',
+  'Impossible Technique':'Level=20 Traits=Monk,Fortune',
 
   // Ranger
   // Animal Companion as above
@@ -1886,8 +1886,8 @@ Pathfinder2E.FEATS = {
   'Masterful Companion':
     'Level=18 Traits=Ranger ' +
     'Require="features.Masterful Hunter","features.Animal Companion"',
-  'Perfect Shot':'Level=1 Traits=Ranger,Flourish',
-  'Shadow Hunter':'Level=1 Traits=Ranger Require="features.Camouflage"',
+  'Perfect Shot':'Level=18 Traits=Ranger,Flourish',
+  'Shadow Hunter':'Level=18 Traits=Ranger Require="features.Camouflage"',
   'Legendary Shot':
     'Level=20 Traits=Ranger ' +
     'Require=' +
@@ -1950,9 +1950,9 @@ Pathfinder2E.FEATS = {
   'Felling Shot':'Level=12 Traits=Rogue',
   'Reactive Interference':'Level=12 Traits=Rogue',
   'Spring From The Shadows':'Level=12 Traits=Rogue,Flourish',
-  'Defensive Roll':'Level=1 Traits=Rogue',
-  'Instant Opening':'Level=1 Traits=Rogue,Concentrate',
-  'Leave An Opening':'Level=1 Traits=Rogue',
+  'Defensive Roll':'Level=14 Traits=Rogue',
+  'Instant Opening':'Level=14 Traits=Rogue,Concentrate',
+  'Leave An Opening':'Level=14 Traits=Rogue',
   // Sense The Unseen as above
   'Blank Slate':'Level=16 Traits=Rogue Require="rank.Deception >= 4"',
   'Cloud Step':'Level=16 Traits=Rogue Require="rank.Acrobatics >= 4"',
@@ -2042,7 +2042,8 @@ Pathfinder2E.FEATS = {
   // Counterspell as above
   'Eschew Materials':'Level=1 Traits=Wizard',
   // Familiar as above
-  'Hand Of The Apprentice':'Level=1 Traits=Wizard Require="features.Universalist"',
+  'Hand Of The Apprentice':
+    'Level=1 Traits=Wizard Require="features.Universalist"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
