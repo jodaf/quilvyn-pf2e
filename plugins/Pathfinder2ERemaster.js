@@ -3999,11 +3999,9 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS.Evasiveness
     .replace('features.Rogue Dedication', 'features.Rogue Dedication || features.Swashbuckler Dedication'),
 
-  // TODO level
   'Witch Dedication':
-    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
+    'Level=2 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
-      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Witch == 0"',
   'Basic Witch Spellcasting':
@@ -4060,11 +4058,9 @@ Pathfinder2ERemaster.FEATS = {
   "Champion's Reaction":Pathfinder2E.FEATS["Champion's Reaction"],
   'Devout Blessing':Pathfinder2E.FEATS['Divine Ally'],
 
-  // TODO level
   'Investigator Dedication':
-    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
+    'Level=2 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
-      '"level >= 2",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Investigator == 0"',
   'Basic Deduction':
@@ -4089,11 +4085,9 @@ Pathfinder2ERemaster.FEATS = {
   "Perfection's Path (Reflex)":Pathfinder2E.FEATS["Perfection's Path (Reflex)"],
   "Perfection's Path (Will)":Pathfinder2E.FEATS["Perfection's Path (Will)"],
 
-  // TODO level
   'Oracle Dedication':
-    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
+    'Level=2 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
-      '"level >= 2",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Oracle == 0"',
   'Basic Mysteries':
@@ -4125,11 +4119,9 @@ Pathfinder2ERemaster.FEATS = {
   'Master Sorcerer Spellcasting':
     Pathfinder2E.FEATS['Master Sorcerer Spellcasting'],
 
-  // TODO level
   'Swashbuckler Dedication':
-    'Level=1 Traits=Archetype,Dedication,Multiclass ' +
+    'Level=2 Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
-      '"level >= 2",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Swashbuckler == 0"',
@@ -5179,7 +5171,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Petrifies self until the end of the current turn, negating the damage from the triggering effect and subsequent effects that would not affect stone, once per day"',
 
   // Elf
-  'Ancient Elf':'Section=feature Note="Class Feat (Choose 1 from any Multiclass)"',
+  'Ancient Elf':
+    'Section=feature Note="Class Feat (Choose 1 from any Multiclass)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Elf Heritage':Pathfinder2E.FEATURES['Elf Heritage'],
