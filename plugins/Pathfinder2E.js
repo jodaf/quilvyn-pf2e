@@ -16601,10 +16601,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 choices =
                   choices.filter(x => !(allChoices[x].includes('Skill')));
             } else if(category.startsWith('any ')) {
-              // e.g., choose 2 from any Additional Lore or from any Gnome
+              // e.g., choose 2 from any Additional Lore (name), from any Gnome
+              // (trait), or from any Athletics (requirement)
               category = category.substring(4);
               choices =
-                Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category));
+                Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x = x.includes(category)).length > 0);
             } else {
               choices = m[2].split(/\s*,\s*/);
             }

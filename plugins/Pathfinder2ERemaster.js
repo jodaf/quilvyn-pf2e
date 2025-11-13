@@ -5768,7 +5768,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Nephilim Resistance':
     'Section=save Note="Has resistance 5 to a choice of energy"',
   'Scion Of Many Planes':
-    'Section=feature Note="Ancestry Feat (Choose 1 from any Nephilim Lineage)"',
+    'Section=feature Note="Ancestry Feat (Choose 1 from any Lineage)"',
   'Skillful Tail':
     'Section=feature Note="Can use tail for simple Interact actions"',
   'Celestial Magic':
@@ -8463,7 +8463,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Knows a choice of the Summon Animal and Summon Plant Or Fungus primal spells/Casting or Sustaining a hex gives familiar a choice of imprecise scent, tremorsense, and wavesense with a 60\' range until the start of the next turn, allowing it to immediately Point Out as a free action",' +
       '"Skill Trained (Nature)"',
   'Will Of The Pupil':Pathfinder2E.FEATURES.Resolve,
-  'Witch Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Witch Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Witch Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Witch Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
@@ -9786,8 +9786,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Class Expert (Investigator)",' +
       '"Has increased Pursue A Lead effects"',
-  'Investigator Feats':
-    'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Investigator Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Investigator Skills':
     'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
   'Keen Recollection':
@@ -10335,7 +10334,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Suffers from a mystery-linked curse and a cursebound condition"',
   'Oracular Senses':'Section=skill Note="Perception Expert"',
-  'Oracle Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Oracle Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Oracle Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Oracle Spellcasting':
@@ -11200,8 +11199,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Class Expert (Swashbuckler)",' +
       '"Has increased Stylish Combatant effects"',
-  'Swashbuckler Feats':
-    'Section=feature Note="Class Feats (Choose %V from any)"',
+  'Swashbuckler Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Swashbuckler Skills':
     'Section=skill Note="Skill Trained (Acrobatics; Select %V from any)"',
   "Swashbuckler's Style":'Section=feature Note="1 selection"',
