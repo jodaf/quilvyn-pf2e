@@ -108,7 +108,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'gender', 'name', 'alignment', 'background', 'deity', 'boosts', 'experience',
-  'feats', 'selectableFeatures', 'skills', 'languages', 'armor', 'weapons',
+  'skills', 'feats', 'selectableFeatures', 'languages', 'armor', 'weapons',
   'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
@@ -16415,8 +16415,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'alignment') {
-    choices =
-      Object.keys(Pathfinder2E.ALIGNMENTS, attributes['class'] == 'Champion' ? /Good/ : /./);
+    choices = Object.keys(Pathfinder2E.ALIGNMENTS);
+    if(attributes['class'] == 'Champion')
+      choices = choices.filter(x => x.includes('Good'));
     attributes[attribute] = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'armor') {
     attrs = this.applyRules(attributes);
@@ -16521,6 +16522,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes.experience = (level - 1) * 1000 + QuilvynUtils.random(0, 999);
   } else if(attribute == 'feats' || attribute == 'selectableFeatures') {
     attrs = this.applyRules(attributes);
+    let allChoices = Object.assign({}, this.getChoices(attribute));
     let allNotes = this.getChoices('notes');
     let debug = [];
     let subsets;
@@ -16541,7 +16543,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           subsets.push(attr.replace('selectableFeatureCount.', ''));
     }
     subsets.forEach(subset => {
-      let allChoices = Object.assign({}, this.getChoices(attribute));
       let prefix =
         subset == 'Skill' ? 'generalFeats' :
         attribute == 'feats' ? subset.toLowerCase() + 'Feats' :
@@ -16587,27 +16588,36 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 pat += '|Archetype';
             }
             pat = pat.replaceAll(/([\(\)])/g, '\\$1');
-            let category = m[2];
-            let maxLevel = null;
-            if((m=category.match(/(.*)\s+up to level\s+(.*)/)) != null) {
-              category = m[1];
-              maxLevel = new Expr(m[2].replaceAll(/%\{|\}/g, '')).eval();
-            }
-            if(category == 'any') {
-              choices =
-                Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0);
-              if(subset == 'General')
-                // Although valid, avoid allocating skill feats as general feats
+            choices = [];
+            m[2].split(/\s*,\s*/).forEach(category => {
+              let maxLevel = null;
+              if(category.includes('up to level')) {
+                let p = category.match(/(.*)\s+up to level\s+(.*)/);
+                category = p[1];
+                maxLevel = new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval();
+              }
+              if(category == 'any') {
                 choices =
-                  choices.filter(x => !(allChoices[x].includes('Skill')));
-            } else if(category.startsWith('any ')) {
-              // e.g., choose 2 from any Additional Lore (name), from any Gnome
-              // (trait), or from any Athletics (requirement)
-              category = category.substring(4);
+                  choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0));
+              } else if(category.startsWith('any ')) {
+                // e.g., choose 2 from any Additional Lore (name), from any
+                // Gnome (trait), or from any Athletics (requirement)
+                category = category.substring(4);
+                choices =
+                  choices.concat(Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.includes(category)).length > 0));
+              } else {
+                choices.push(category);
+              }
+            });
+            if(subset == 'General') {
+              // Although valid, avoid allocating skill feats as general feats
               choices =
-                Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x = x.includes(category)).length > 0);
-            } else {
-              choices = m[2].split(/\s*,\s*/);
+                choices.concat(choices.filter(x => !(allChoices[x].includes('Skill'))));
+            } else if(subset == 'Skill') {
+              // Be careful to exclude Archetype (class) feats that also have
+              // the Skill trait
+              choices =
+                choices.filter(x => !(QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes('Archetype')));
             }
             debug.push('Pick ' + howMany + ' ' + pat + ' from ' + choices.length);
             // If an item in choices is already in attributes, assume that it's
@@ -16663,6 +16673,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         });
       });
       attrs = this.applyRules(attributes);
+      if(subset == 'General')
+        // Start afresh before making the second feat pass
+        allChoices = Object.assign({}, this.getChoices(attribute));
     });
     debug.push('xxxxxxx');
     if(window.DEBUG) {
