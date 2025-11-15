@@ -108,7 +108,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'gender', 'name', 'alignment', 'background', 'deity', 'boosts', 'experience',
-  'skills', 'feats', 'selectableFeatures', 'languages', 'armor', 'weapons',
+  'feats', 'selectableFeatures', 'skills', 'languages', 'armor', 'weapons',
   'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
@@ -16520,7 +16520,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let level = attributes.level || 1;
     delete attributes.level;
     attributes.experience = (level - 1) * 1000 + QuilvynUtils.random(0, 999);
-  } else if(attribute == 'feats' || attribute == 'selectableFeatures') {
+  } else if(attribute == 'feats' ||
+            attribute == 'selectableFeatures' ||
+            attribute == 'skills') {
     attrs = this.applyRules(attributes);
     let allChoices = Object.assign({}, this.getChoices(attribute));
     let allNotes = this.getChoices('notes');
@@ -16536,17 +16538,20 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         'Ancestry', 'Class', 'Skill', 'General',
         'Ancestry', 'Class', 'Skill', 'General'
       ];
-    } else {
+    } else if(attribute == 'selectableFeatures') {
       subsets = [];
       for(attr in attrs)
         if(attr.startsWith('selectableFeatureCount.') && attrs[attr] > 0)
           subsets.push(attr.replace('selectableFeatureCount.', ''));
+    } else {
+      subsets = ['.*'];
     }
     subsets.forEach(subset => {
       let prefix =
         subset == 'Skill' ? 'generalFeats' :
         attribute == 'feats' ? subset.toLowerCase() + 'Feats' :
-        'selectableFeatures';
+        attribute == 'skills' ? 'skillIncreases' :
+        attribute;
       // Grab all features and notes that grant items in this subset
       let subsetTexts = [];
       if(attribute == 'feats') {
@@ -16556,10 +16561,24 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
              (matchInfo=allNotes[attr].match(groupPat)) != null)
             subsetTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
         }
-      } else {
+      } else if(attribute == 'selectableFeatures') {
         attr = 'selectableFeatureCount.' + subset;
-        // Massage into a form consistent with feats for ease of handling
+        // Massage into a form consistent with others for ease of handling
         subsetTexts.push('Choose ' + attrs[attr] + ' from any');
+      } else {
+        for(attr in attrs) {
+          if((matchInfo = attr.match(/^\w+Features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\((.*)\)$/)))
+            ; // empty
+          else if(!allNotes[attr] ||
+             (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\((.*?)\)/)) == null)
+            continue;
+          let improvement = matchInfo[1].replace('%V', attrs[attr]);
+          if(!improvement.match(/^(Trained|Expert|Master|Legendary|Increase)$/)) {
+            console.log('Unknown skill improvement "' + improvement + '"');
+            continue;
+          }
+          subsetTexts.push(matchInfo[2].replaceAll('%V', attrs[attr]));
+        }
       }
       // Sort in order of most restrictive to least restrictive
       subsetTexts = subsetTexts.sort((a, b) =>
@@ -16569,14 +16588,19 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         a.includes('from any') ? 1 :
         b.includes('from any') ? -1 : 0
       );
-      let similar = {};
       subsetTexts.forEach(text => {
+        let similar = {};
         text.split(/\s*;\s*/).forEach(selection => {
           let m = selection.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
+            debug.push(text);
             howMany = +m[1];
             let pat = subset;
-            let traits = attribute == 'feats' ? 'Traits' : 'Type';
+            let traits =
+              attribute == 'feats' ? 'Traits' :
+              attribute == 'selectableFeatures' ? 'Type' :
+              this.plugin.SKILLS.Athletics.includes('Ability') ? 'Ability' :
+              'Attribute';
             if(subset == 'Ancestry') {
               pat = attributes.ancestry;
               for(let a in this.getChoices('ancestrys'))
@@ -16593,7 +16617,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
               let maxLevel = null;
               if(category.includes('up to level')) {
                 let p = category.match(/(.*)\s+up to level\s+(.*)/);
+                console.log(category);
                 category = p[1];
+                console.log(p[2]);
                 maxLevel = new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval();
               }
               if(category == 'any') {
@@ -16601,10 +16627,18 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                   choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0));
               } else if(category.startsWith('any ')) {
                 // e.g., choose 2 from any Additional Lore (name), from any
-                // Gnome (trait), or from any Athletics (requirement)
+                // Gnome (trait), from any Athletics (requirement), or from
+                // any Settlement Lore (subcategory)
                 category = category.substring(4);
+                debug.push(category);
                 choices =
-                  choices.concat(Object.keys(allChoices).filter(x => x.includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) || QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.includes(category)).length > 0));
+                  choices.concat(Object.keys(allChoices).filter(x =>
+                    x.replace(/\s+\(.*/, '') == category ||
+                    (category == 'Lore' && x.includes('Lore')) ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.includes(category)).length > 0 ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category)
+                ));
               } else {
                 choices.push(category);
               }
@@ -16638,6 +16672,12 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             while(howMany > 0 && choices.length > 0) {
               let choice = QuilvynUtils.randomElement(choices);
               attributes[prefix + '.' + choice] = 1;
+              if(text.includes('Skill Expert'))
+                attributes[prefix + '.' + choice] = 2;
+              else if(text.includes('Skill Master'))
+                attributes[prefix + '.' + choice] = 3;
+              else if(text.includes('Skill Legendary'))
+                attributes[prefix + '.' + choice] = 4;
               let validate = this.applyRules(attributes);
               let name = choice.charAt(0).toLowerCase() +
                          choice.substring(1).replaceAll(' ', '').
@@ -16648,7 +16688,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
               // Additional Lore (*) and * Dedication
               let generalized =
                 choice.replace(/\s+\(.*\)/, '')
-                      .replace(/^.*Dedication/, 'Dedication');
+                      .replace(/^.*Dedication$/, 'Dedication')
+                      .replace(/^.*Lore$/, 'Lore');
               if(QuilvynUtils.sumMatching
                    (validate,
                     new RegExp('^(sanity|validation)Notes.'+note+'$')) != 0) {
@@ -16708,84 +16749,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     if(attributes['class'] == 'Druid')
       choices = choices.filter(x => !x.match(/Steel|Metal/));
     attributes.shield = QuilvynUtils.randomElement(choices);
-  } else if(attribute == 'skills') {
-    attrs = this.applyRules(attributes);
-    let allSkills = this.getChoices('skills');
-    let skillsAllocated = {};
-    for(attr in allSkills)
-      skillsAllocated[attr] = attrs['skillIncreases.' + attr] || 0;
-    let allNotes = this.getChoices('notes');
-    // Get text and improvement level of all features and notes affecting skills
-    let skillTexts = [];
-    for(attr in attrs) {
-      if((matchInfo = attr.match(/^\w+Features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\((.*)\)$/)))
-        ; // empty
-      else if(!allNotes[attr] ||
-         (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\((.*?)\)/)) == null)
-        continue;
-      let improvement = matchInfo[1].replace('%V', attrs[attr]);
-      let prior =
-        {Trained:0, Expert:1, Master:2, Legendary:3, Increase:9}[improvement];
-      if(prior == null) {
-        console.log('Unknown skill improvement "' + improvement + '"');
-        continue;
-      }
-      skillTexts.push(prior + matchInfo[2].replaceAll('%V', attrs[attr]));
-    }
-    // Sort in order of most restrictive to least restrictive
-    skillTexts = skillTexts.sort((a, b) =>
-      a.charAt(0) != b.charAt(0) ? a.charAt(0) - b.charAt(0) :
-      a == b ? 0 :
-      a.match(/^Choose[^;]*from any$/) ? 1 :
-      b.match(/^Choose[^;]*from any$/) ? -1 :
-      a.includes('from any') ? 1 :
-      b.includes('from any') ? -1 : 0
-    );
-    skillTexts.forEach(text => {
-      let improveFrom = text.charAt(0);
-      text = text.substring(1);
-      text.split(/\s*;\s*/).forEach(improvement => {
-        let m = improvement.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
-        if(!m) {
-          // Improve specific skill; nothing to allocate
-        } else {
-          howMany = +m[1];
-          if(m[2].match(/^any$/i))
-            choices = Object.keys(allSkills);
-          else if(m[2].match(/^any\s/))
-            // e.g., choose 2 from any Lore
-            choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
-          else
-            choices = m[2].split(/\s*,\s*/);
-          // If existing increases have been allocated to the skills in
-          // choices, assume that they apply to this improvement and reduce
-          // howMany and skillsAllocated appropriately
-          while(howMany > 0 &&
-                choices.reduce((total, choice) => total + skillsAllocated[choice], 0) > 0) {
-            choices.forEach(choice => {
-              if(howMany > 0 && skillsAllocated[choice] > 0) {
-                howMany--;
-                skillsAllocated[choice]--;
-              }
-            });
-          }
-          // Remove any choices that don't have the appropriate number of
-          // prior improvements
-          if(improveFrom != 9)
-            choices =
-              choices.filter(x => (attrs['rank.' + x] || 0) == improveFrom);
-          // Finally, randomly assign any remaining allocations
-          while(howMany > 0 && choices.length > 0) {
-            let choice = QuilvynUtils.randomElement(choices);
-            attributes['skillIncreases.' + choice] =
-              (attributes['skillIncreases.' + choice] || 0) + 1;
-            attrs['rank.' + choice] = (attrs['rank.' + choice] || 0) + 1;
-            howMany--;
-            choices = choices.filter(x => x != choice);
-          }
-        }
-      });
-    });
   } else if(attribute == 'spells') {
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
