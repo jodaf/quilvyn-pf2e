@@ -7552,7 +7552,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Order Explorer (Leaf)':Pathfinder2E.FEATURES['Order Explorer (Leaf)'],
   'Order Explorer (Storm)':Pathfinder2E.FEATURES['Order Explorer (Storm)'],
   'Order Explorer (Untamed)':
-    Pathfinder2E.FEATURES['Order Explorer (Wild)'].replace('wild', 'untamed'),
+    Pathfinder2E.FEATURES['Order Explorer (Wild)']
+    .replace('wild', 'untamed')
+    .replace('Wild', 'Untamed'),
   'Poison Resistance':Pathfinder2E.FEATURES['Poison Resistance'],
   'Anthropomorphic Shape':
      Pathfinder2E.FEATURES['Thousand Faces']
@@ -11901,7 +11903,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Settlement Scholastics':
     'Section=feature,skill ' +
     'Note=' +
-      // TODO not quite correct
+      // TODO restricted to Settlement Lore
       '"Skill Feat (Choose %V from any Additional Lore)",' +
       '"+%V Language Count"',
   'Scholastic Identification':
@@ -12409,7 +12411,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,feature ' +
     'Note=' +
       '"Moves normally through difficult terrain and uneven ground caused by unstable ground",' +
-      // TODO Not quite correct
+      // TODO restricted to Sailing Lore or coastal Settlement Lore
       '"Has the Boarding Assault feature/Skill Feat (Choose 1 from any Additional Lore)"',
   'Boarding Assault':
     'Action=2 ' +
