@@ -542,9 +542,9 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Enigma:Muse",' +
-      '"1:Maestro:Muse",' +
-      '"1:Polymath:Muse" ' +
+      '"1:Enigma Muse:Muse",' +
+      '"1:Maestro Muse:Muse",' +
+      '"1:Polymath Muse:Muse" ' +
     'SpellSlots=' +
       'OC1:5@1,' +
       'O1:2@1;3@2,' +
@@ -640,10 +640,10 @@ Pathfinder2E.CLASSES = {
       '"13:Weapon Specialization","15:Master Spellcaster",' +
       '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
     'Selectables=' +
-      '"1:Animal:Order",' +
-      '"1:Leaf:Order",' +
-      '"1:Storm:Order",' +
-      '"1:Wild:Order" ' +
+      '"1:Animal Order:Order",' +
+      '"1:Leaf Order:Order",' +
+      '"1:Storm Order:Order",' +
+      '"1:Wild Order:Order" ' +
     'SpellSlots=' +
       'PC1:5@1,' +
       'P1:2@1;3@2,' +
@@ -1262,53 +1262,99 @@ Pathfinder2E.FEATS = {
   'Quaking Stomp':'Level=20 Traits=Barbarian,Manipulate,Rage',
 
   // Bard
-  'Bardic Lore':'Level=1 Traits=Bard Require="hasEnigmaMuse"',
-  'Lingering Composition':'Level=1 Traits=Bard Require="hasMaestroMuse"',
+  'Bardic Lore':
+    'Level=1 Traits=Bard ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)"',
+  'Lingering Composition':
+    'Level=1 Traits=Bard ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Reach Spell':
     'Level=1 Traits=Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
-  'Versatile Performance':'Level=1 Traits=Bard Require="hasPolymathMuse"',
+  'Versatile Performance':
+    'Level=1 Traits=Bard ' +
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)"',
   'Cantrip Expansion':'Level=2 Traits=Bard,Cleric,Sorcerer,Wizard',
-  'Esoteric Polymath':'Level=2 Traits=Bard Require="hasPolymathMuse"',
-  'Inspire Competence':'Level=2 Traits=Bard Require="hasMaestroMuse"',
-  "Loremaster's Etude":'Level=2 Traits=Bard,Fortune Require="hasEnigmaMuse"',
-  'Multifarious Muse (Enigma)':
-    'Level=2 Traits=Bard Require="features.Enigma == 0"',
-  'Multifarious Muse (Maestro)':
-    'Level=2 Traits=Bard Require="features.Maestro == 0"',
-  'Multifarious Muse (Polymath)':
-    'Level=2 Traits=Bard Require="features.Polymath == 0"',
-  'Inspire Defense':'Level=4 Traits=Bard Require="hasMaestroMuse"',
+  'Esoteric Polymath':
+    'Level=2 Traits=Bard ' +
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)"',
+  'Inspire Competence':
+    'Level=2 Traits=Bard ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
+  "Loremaster's Etude":
+    'Level=2 Traits=Bard,Fortune ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)"',
+  'Multifarious Muse (Enigma Muse)':
+    'Level=2 Traits=Bard Require="features.Enigma Muse == 0"',
+  'Multifarious Muse (Maestro Muse)':
+    'Level=2 Traits=Bard Require="features.Maestro Muse == 0"',
+  'Multifarious Muse (Polymath Muse)':
+    'Level=2 Traits=Bard Require="features.Polymath Muse == 0"',
+  'Inspire Defense':
+    'Level=4 Traits=Bard ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Melodious Spell':'Level=4 Traits=Bard,Concentrate,Manipulate,Metamagic',
   'Triple Time':'Level=4 Traits=Bard',
-  'Versatile Signature':'Level=4 Traits=Bard Require="hasPolymathMuse"',
+  'Versatile Signature':
+    'Level=4 Traits=Bard ' +
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)"',
   'Dirge Of Doom':'Level=6 Traits=Bard',
   'Harmonize':
     'Level=6 Traits=Bard,Concentrate,Manipulate,Metamagic ' +
-    'Require="hasMaestroMuse"',
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Steady Spellcasting':'Level=6 Traits=Bard,Cleric,Druid,Sorcerer,Wizard',
   'Eclectic Skill':
-    'Level=8 Traits=Bard Require="hasPolymathMuse","rank.Occultism >= 3"',
-  'Inspire Heroics':'Level=8 Traits=Bard Require="hasMaestroMuse"',
-  'Know-It-All':'Level=8 Traits=Bard Require="hasEnigmaMuse"',
+    'Level=8 Traits=Bard ' +
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)",'+
+      '"rank.Occultism >= 3"',
+  'Inspire Heroics':
+    'Level=8 Traits=Bard ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
+  'Know-It-All':
+    'Level=8 Traits=Bard ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)"',
   'House Of Imaginary Walls':'Level=10 Traits=Bard',
   'Quickened Casting':
     'Level=10 Traits=Bard,Sorcerer,Wizard,Concentrate,Metamagic',
   'Unusual Composition':
     'Level=10 Traits=Bard,Concentrate,Manipulate,Metamagic ' +
-    'Require="hasPolymathMuse"',
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)"',
   'Eclectic Polymath':
     'Level=12 Traits=Bard Require="features.Esoteric Polymath"',
   'Inspirational Focus':'Level=12 Traits=Bard',
   'Allegro':'Level=14 Traits=Bard',
   'Soothing Ballad':'Level=14 Traits=Bard',
-  'True Hypercognition':'Level=14 Traits=Bard Require="hasEnigmaMuse"',
+  'True Hypercognition':
+    'Level=14 Traits=Bard ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)"',
   'Effortless Concentration':'Level=16 Traits=Bard,Druid,Sorcerer,Wizard',
   'Studious Capacity':
-    'Level=16 Traits=Bard Require="hasEnigmaMuse","rank.Occultism >= 4"',
+    'Level=16 Traits=Bard ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)",' +
+      '"rank.Occultism >= 4"',
   'Deep Lore':
     'Level=18 Traits=Bard ' +
-    'Require="hasEnigmaMuse","rank.Occultism >= 4"',
-  'Eternal Composition':'Level=18 Traits=Bard Require="hasMaestroMuse"',
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)",' +
+      '"rank.Occultism >= 4"',
+  'Eternal Composition':
+    'Level=18 Traits=Bard ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Impossible Polymath':
     'Level=18 Traits=Bard ' +
     'Require=' +
@@ -1526,24 +1572,34 @@ Pathfinder2E.FEATS = {
 
   // Druid
   'Animal Companion':
-    'Level=1 Traits=Druid,Ranger Require="inAnimalOrder || levels.Ranger"',
-  'Leshy Familiar':'Level=1 Traits=Druid Require="inLeafOrder"',
+    'Level=1 Traits=Druid,Ranger ' +
+    'Require=' +
+      '"features.Animal Order || ' +
+       'features.Order Explorer (Animal Order) || ' +
+       'levels.Ranger"',
+  'Leshy Familiar':
+    'Level=1 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   // Reach Spell as above
-  'Storm Born':'Level=1 Traits=Druid Require="inStormOrder"',
+  'Storm Born':
+    'Level=1 Traits=Druid ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Widen Spell':'Level=1 Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
-  'Wild Shape':'Level=1 Traits=Druid Require="inWildOrder"',
+  'Wild Shape':
+    'Level=1 Traits=Druid ' +
+    'Require="features.Wild Order || features.Order Explorer (Wild Order)"',
   'Call Of The Wild':'Level=2 Traits=Druid',
   'Enhanced Familiar':
     'Level=2 Traits=Druid,Sorcerer,Wizard ' +
     'Require="features.Familiar || features.Leshy Familiar"',
-  'Order Explorer (Animal)':
-    'Level=2 Traits=Druid Require="features.Animal == 0"',
-  'Order Explorer (Leaf)':
-    'Level=2 Traits=Druid Require="features.Leaf == 0"',
-  'Order Explorer (Storm)':
-    'Level=2 Traits=Druid Require="features.Storm == 0"',
-  'Order Explorer (Wild)':
-    'Level=2 Traits=Druid Require="features.Wild == 0"',
+  'Order Explorer (Animal Order)':
+    'Level=2 Traits=Druid Require="features.Animal Order == 0"',
+  'Order Explorer (Leaf Order)':
+    'Level=2 Traits=Druid Require="features.Leaf Order == 0"',
+  'Order Explorer (Storm Order)':
+    'Level=2 Traits=Druid Require="features.Storm Order == 0"',
+  'Order Explorer (Wild Order)':
+    'Level=2 Traits=Druid Require="features.Wild Order == 0"',
   // Poison Resistance as above
   'Form Control':
     'Level=4 Traits=Druid,Manipulate,Metamagic ' +
@@ -1554,22 +1610,28 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
-  'Order Magic (Animal)':
-    'Level=4 Traits=Druid Require="features.Order Explorer (Animal)"',
-  'Order Magic (Leaf)':
-    'Level=4 Traits=Druid Require="features.Order Explorer (Leaf)"',
-  'Order Magic (Storm)':
-    'Level=4 Traits=Druid Require="features.Order Explorer (Storm)"',
-  'Order Magic (Wild)':
-    'Level=4 Traits=Druid Require="features.Order Explorer (Wild)"',
+  'Order Magic (Animal Order)':
+    'Level=4 Traits=Druid Require="features.Order Explorer (Animal Order)"',
+  'Order Magic (Leaf Order)':
+    'Level=4 Traits=Druid Require="features.Order Explorer (Leaf Order)"',
+  'Order Magic (Storm Order)':
+    'Level=4 Traits=Druid Require="features.Order Explorer (Storm Order)"',
+  'Order Magic (Wild Order)':
+    'Level=4 Traits=Druid Require="features.Order Explorer (Wild Order)"',
   'Thousand Faces':'Level=4 Traits=Druid Require="features.Wild Shape"',
-  'Woodland Stride':'Level=4 Traits=Druid Require="inLeafOrder"',
-  'Green Empathy':'Level=6 Traits=Druid Require="inLeafOrder"',
+  'Woodland Stride':
+    'Level=4 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
+  'Green Empathy':
+    'Level=6 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Insect Shape':'Level=6 Traits=Druid Require="features.Wild Shape"',
   // Steady Spellcasting as above
   'Storm Retribution':
     'Level=6 Traits=Druid ' +
-    'Require="inStormOrder","spells.Tempest Surge (P1 Foc Evo)"',
+    'Require=' +
+      '"features.Storm Order || features.Order Explorer (Storm Order)",' +
+      '"spells.Tempest Surge (P1 Foc Evo)"',
   'Ferocious Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
   'Fey Caller':'Level=8 Traits=Druid',
   'Incredible Companion':
@@ -1579,13 +1641,19 @@ Pathfinder2E.FEATS = {
       '"levels.Druid >= 8 || levels.Ranger >= 10",' +
       '"features.Mature Animal Companion"',
   'Soaring Shape':'Level=8 Traits=Druid Require="features.Wild Shape"',
-  'Wind Caller':'Level=8 Traits=Druid Require="inStormOrder"',
+  'Wind Caller':
+    'Level=8 Traits=Druid ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Elemental Shape':'Level=10 Traits=Druid Require="features.Wild Shape"',
   'Healing Transformation':'Level=10 Traits=Druid,Metamagic',
   'Overwhelming Energy':
     'Level=10 Traits=Druid,Sorcerer,Wizard,Manipulate,Metamagic',
   'Plant Shape':
-    'Level=10 Traits=Druid Require="inLeafOrder || features.Wild Shape"',
+    'Level=10 Traits=Druid ' +
+    'Require=' +
+      '"features.Leaf Order || ' +
+       'features.Order Explorer (Leaf Order) || ' +
+       'features.Wild Shape"',
   'Side By Side':
     // Use the lower class level as the feat level
     'Level=10 Traits=Druid,Ranger ' +
@@ -1604,9 +1672,12 @@ Pathfinder2E.FEATS = {
       '"features.Incredible Companion"',
   'Timeless Nature':'Level=14 Traits=Druid',
   'Verdant Metamorphosis':
-    'Level=14 Traits=Druid Require="inLeafOrder"',
+    'Level=14 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   // Effortless Concentration as above
-  'Impaling Briars':'Level=16 Traits=Druid Require="inLeafOrder"',
+  'Impaling Briars':
+    'Level=16 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Monstrosity Shape':
     'Level=16 Traits=Druid Require="features.Wild Shape"',
   'Invoke Disaster':'Level=18 Traits=Druid Require="features.Wind Caller"',
@@ -3565,7 +3636,7 @@ Pathfinder2E.FEATURES = {
   'Composition Spells':
     'Section=magic ' +
     'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and 1 Focus Point"',
-  'Enigma':
+  'Enigma Muse':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Bardic Lore feature",' +
@@ -3581,7 +3652,7 @@ Pathfinder2E.FEATURES = {
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
-  'Maestro':
+  'Maestro Muse':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Lingering Composition feature",' +
@@ -3591,7 +3662,7 @@ Pathfinder2E.FEATURES = {
   'Muse':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
     'Section=magic Note="Can learn spells from the occult tradition"',
-  'Polymath':
+  'Polymath Muse':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Versatile Performance feature",' +
@@ -3631,20 +3702,20 @@ Pathfinder2E.FEATURES = {
   "Loremaster's Etude":
     'Section=magic ' +
     'Note="Knows the Loremaster\'s Etude occult spell/+1 Focus Points"',
-  'Multifarious Muse (Enigma)':
+  'Multifarious Muse (Enigma Muse)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Enigma)",' +
+      '"Class Feat (Choose 1 from any Enigma Muse)",' +
       '"Can select enigma muse feats"',
-  'Multifarious Muse (Maestro)':
+  'Multifarious Muse (Maestro Muse)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Maestro)",' +
+      '"Class Feat (Choose 1 from any Maestro Muse)",' +
       '"Can select maestro muse feats"',
-  'Multifarious Muse (Polymath)':
+  'Multifarious Muse (Polymath Muse)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Polymath)",' +
+      '"Class Feat (Choose 1 from any Polymath Muse)",' +
       '"Can select polymath muse feats"',
   'Inspire Defense':
     'Section=magic Note="Knows the Inspire Defense occult cantrip"',
@@ -4581,7 +4652,7 @@ Pathfinder2E.FEATURES = {
 
   // Druid
   // Alertness as above
-  'Animal':
+  'Animal Order':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Animal Companion feature",' +
@@ -4600,7 +4671,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
   // Great Fortitude as above
-  'Leaf':
+  'Leaf Order':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Leshy Familiar feature",' +
@@ -4615,14 +4686,14 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Can learn spells from the primal tradition"',
   // Resolve as above
   // Shield Block as above
-  'Storm':
+  'Storm Order':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Storm Born feature",' +
       '"Knows the Tempest Surge primal spell/+1 Focus Points",' +
       '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
-  'Wild':
+  'Wild Order':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Wild Shape feature",' +
@@ -4650,25 +4721,25 @@ Pathfinder2E.FEATURES = {
     'Note="Can spend 10 min in concert with nature to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
     'Section=feature Note="Can select 4 familiar or master abilities each day"',
-  'Order Explorer (Animal)':
+  'Order Explorer (Animal Order)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Animal)",' +
+      '"Class Feat (Choose 1 from any Animal Order)",' +
       '"Can select animal order feats"',
-  'Order Explorer (Leaf)':
+  'Order Explorer (Leaf Order)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Leaf)",' +
+      '"Class Feat (Choose 1 from any Leaf Order)",' +
       '"Can select leaf order feats"',
-  'Order Explorer (Storm)':
+  'Order Explorer (Storm Order)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Storm)",' +
+      '"Class Feat (Choose 1 from any Storm Order)",' +
       '"Can select storm order feats"',
-  'Order Explorer (Wild)':
+  'Order Explorer (Wild Order)':
     'Section=feature,feature ' +
     'Note=' +
-      '"Class Feat (Choose 1 from any Wild)",' +
+      '"Class Feat (Choose 1 from any Wild Order)",' +
       '"Can select wild order feats"',
   // Poison Resistance as above
   'Form Control':
@@ -4690,13 +4761,13 @@ Pathfinder2E.FEATURES = {
   'Insect Shape':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
-  'Order Magic (Animal)':
+  'Order Magic (Animal Order)':
     'Section=magic Note="Knows the Heal Animal primal spell"',
-  'Order Magic (Leaf)':
+  'Order Magic (Leaf Order)':
     'Section=magic Note="Knows the Goodberry primal spell"',
-  'Order Magic (Storm)':
+  'Order Magic (Storm Order)':
     'Section=magic Note="Knows the Tempest Surge primal spell"',
-  'Order Magic (Wild)':
+  'Order Magic (Wild Order)':
     'Section=magic Note="Knows the Wild Morph primal spell"',
   // Steady Spellcasting as above
   'Storm Retribution':
@@ -6624,16 +6695,16 @@ Pathfinder2E.FEATURES = {
     'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell slot"',
   'Basic Wilding':
     'Section=feature Note="Class Feat (Choose 1 from any Druid up to level 2)"',
-  'Order Spell (Animal)':
+  'Order Spell (Animal Order)':
     'Section=magic ' +
     'Note="Knows the Heal Animal primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Leaf)':
+  'Order Spell (Leaf Order)':
     'Section=magic ' +
     'Note="Knows the Goodberry primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Storm)':
+  'Order Spell (Storm Order)':
     'Section=magic ' +
     'Note="Knows the Tempest Surge primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Wild)':
+  'Order Spell (Wild Order)':
     'Section=magic ' +
     'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Wilding':
@@ -14605,13 +14676,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('weapons.Falling Stone', 'features.Mountain Stance', '=', '1');
   } else if(name.match(/^Multifarious Muse/)) {
-    let muse = name.replace('Multifarious Muse (', '').replace(')', '');
     rules.defineRule
       ('features.Multifarious Muse', 'features.' + name, '=', '1');
-    rules.defineRule('has' + muse + 'Muse',
-      'features.' + muse, '=', '1',
-      'features.' + name, '=', '1'
-    );
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', 'source<2 ? 2 : source',
@@ -14623,12 +14689,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'features.Half-Elf', '=', '1'
     );
   } else if(name.match(/^Order Explorer/)) {
-    let order = name.replace('Order Explorer (', '').replace(')', '');
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
-    rules.defineRule('in' + order + 'Order',
-      'features.' + order, '=', '1',
-      'features.' + name, '=', '1'
-    );
   } else if(name == 'Order Spell') {
     let allSelectables = rules.getChoices('selectableFeatures');
     let orders =
@@ -14757,7 +14818,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
     let attrs = rules.getChoices('weapons')[weapon];
     let category = QuilvynUtils.getAttrValue(attrs, 'Category');
-    category = category=='Advanced' ? 'Martial' : 'Simple';
+    category = category=='Advanced' ? 'Martial Weapons' : 'Simple Weapons';
     let group = QuilvynUtils.getAttrValue(attrs, 'Group');
     group =
       group == 'Knife' ? 'Knives' :
@@ -16507,15 +16568,15 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       (attributes.alignment || 'Neutral').match(/^([CLN]).*\s([GEN])/);
     alignment = alignment ? alignment[1] + alignment[2] : 'N';
     choices = [];
-    let deities = this.getChoices('deitys');
-    for(let d in deities) {
+    let allDeities = this.getChoices('deitys');
+    for(let d in allDeities) {
       let allowed =
-        QuilvynUtils.getAttrValueArray(deities[d], 'FollowerAlignments');
+        QuilvynUtils.getAttrValueArray(allDeities[d], 'FollowerAlignments');
       if(!allowed || allowed.includes(alignment))
         choices.push(d);
     }
     if(choices.length > 0)
-      attributes.deity = choices[QuilvynUtils.random(0, choices.length - 1)];
+      attributes.deity = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'experience') {
     let level = attributes.level || 1;
     delete attributes.level;
@@ -16591,7 +16652,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       subsetTexts.forEach(text => {
         let similar = {};
         text.split(/\s*;\s*/).forEach(selection => {
-          let m = selection.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
+          let m = selection.match(/Choose\s+(\d+)\s+from\s+(.*)/i);
           if(m) {
             debug.push(text);
             howMany = +m[1];
@@ -16620,13 +16681,14 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 console.log(category);
                 category = p[1];
                 console.log(p[2]);
-                maxLevel = new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval();
+                maxLevel =
+                  new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval(attributes);
               }
               if(category == 'any') {
                 choices =
                   choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0));
               } else if(category.startsWith('any ')) {
-                // e.g., choose 2 from any Additional Lore (name), from any
+                // e.g., Choose 2 from any Additional Lore (name), from any
                 // Gnome (trait), from any Athletics (requirement), or from
                 // any Settlement Lore (subcategory)
                 category = category.substring(4);
@@ -16779,25 +16841,21 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'weapons') {
-    let weapons = this.getChoices('weapons');
-    let c = 'Fighter';
-    for(attr in attributes) {
-      if(attr.match(/^levels\./))
-        c = attr.replace('levels.', '');
-    }
+    let allWeapons = this.getChoices('weapons');
+    let c = attributes['class'] || 'Fighter';
     let ancestry = attributes.ancestry || 'Human';
     attrs = this.applyRules(attributes);
     choices = [];
     howMany = 3;
-    for(attr in weapons) {
+    for(attr in allWeapons) {
       if(attributes['weapons.' + attr]) {
         howMany--;
         continue;
       }
-      let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
-      if(weapons[attr].includes('Uncommon') &&
-         !weapons[attr].includes(c) &&
-         !weapons[attr].includes(ancestry))
+      let category = QuilvynUtils.getAttrValue(allWeapons[attr], 'Category');
+      if(allWeapons[attr].includes('Uncommon') &&
+         !allWeapons[attr].includes(c) &&
+         !allWeapons[attr].includes(ancestry))
         continue;
       category += category == 'Unarmed' ? ' Attacks' : ' Weapons';
       if(attrs['rank.' + category] || attrs['rank.' + attr])

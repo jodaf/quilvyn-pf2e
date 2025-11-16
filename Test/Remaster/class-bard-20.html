@@ -25,14 +25,14 @@ var attributes = {
   "classFeats.Hymn Of Healing":1, "classFeats.Impossible Polymath":1, "classFeats.In Tune":1, 
   "classFeats.Inspirational Focus":1, "classFeats.Know-It-All":1, "classFeats.Lingering Composition":1, 
   "classFeats.Loremaster's Etude":1, "classFeats.Martial Performance":1, "classFeats.Melodious Spell":1, 
-  "classFeats.Multifarious Muse (Enigma)":1, "classFeats.Multifarious Muse (Maestro)":1, 
-  "classFeats.Multifarious Muse (Polymath)":1, "classFeats.Multifarious Muse (Warrior)":1, "classFeats.Ode To Ouroboros":1, 
-  "classFeats.Perfect Encore":1, "classFeats.Pied Piping":1, "classFeats.Quickened Casting":1, 
-  "classFeats.Rallying Anthem":1, "classFeats.Reach Spell":1, "classFeats.Reflexive Courage":1, 
-  "classFeats.Resounding Finale":1, "classFeats.Reverberate":1, "classFeats.Ritual Researcher":1, 
-  "classFeats.Shared Assault":1, "classFeats.Song Of Marching":1, "classFeats.Song Of Strength":1, 
-  "classFeats.Soothing Ballad":1, "classFeats.Soulsight":1, "classFeats.Steady Spellcasting":1, 
-  "classFeats.Studious Capacity":1, "classFeats.Symphony Of The Muse":1, 
+  "classFeats.Multifarious Muse (Enigma Muse)":1, "classFeats.Multifarious Muse (Maestro Muse)":1, 
+  "classFeats.Multifarious Muse (Polymath Muse)":1, "classFeats.Multifarious Muse (Warrior Muse)":1, 
+  "classFeats.Ode To Ouroboros":1, "classFeats.Perfect Encore":1, "classFeats.Pied Piping":1, 
+  "classFeats.Quickened Casting":1, "classFeats.Rallying Anthem":1, "classFeats.Reach Spell":1, 
+  "classFeats.Reflexive Courage":1, "classFeats.Resounding Finale":1, "classFeats.Reverberate":1, 
+  "classFeats.Ritual Researcher":1, "classFeats.Shared Assault":1, "classFeats.Song Of Marching":1, 
+  "classFeats.Song Of Strength":1, "classFeats.Soothing Ballad":1, "classFeats.Soulsight":1, 
+  "classFeats.Steady Spellcasting":1, "classFeats.Studious Capacity":1, "classFeats.Symphony Of The Muse":1, 
   "classFeats.Symphony Of The Unfettered Heart":1, "classFeats.Triple Time":1, "classFeats.Triumphant Inspiration":1, 
   "classFeats.True Hypercognition":1, "classFeats.Ultimate Polymath":1, "classFeats.Unusual Composition":1, 
   "classFeats.Uplifting Overature":1, "classFeats.Uplifting Overture":1, "classFeats.Versatile Performance":1, 
@@ -46,14 +46,15 @@ var attributes = {
   "generalFeats.Unmistakable Lore":1, "generalFeats.Virtuosic Performer":1, 
   "generalFeats.Weapon Proficiency (Sawtooth Saber)":1, "languages.Aklo":1, "languages.Diabolic":1, "languages.Elven":1, 
   "languages.Empyrean":1, "languages.Jotun":1, "languages.Necril":1, "languages.Shadowtongue":1, 
-  "name":"Class-Bard 20", "selectableFeatures.Bard - Enigma":1, "selectableFeatures.Bard - Maestro":1, 
-  "selectableFeatures.Bard - Polymath":1, "selectableFeatures.Bard - Warrior":1, 
-  "selectableFeatures.Human - Versatile Human":1, "shield":"None", "skillIncreases.Arcana":1, "skillIncreases.Cave Lore":1, 
-  "skillIncreases.Cooking Lore":1, "skillIncreases.Desert Lore":1, "skillIncreases.Fortune-Telling Lore":1, 
-  "skillIncreases.Games Lore":1, "skillIncreases.Giant Lore":1, "skillIncreases.Halfling Lore":1, 
-  "skillIncreases.Labor Lore":1, "skillIncreases.Magnimar Lore":1, "skillIncreases.Occultism":3, 
-  "skillIncreases.Religion":1, "skillIncreases.Sailing Lore":1, "skillIncreases.Scribing Lore":1, 
-  "skillIncreases.Society":1, "weapons.Greatpick":1, "weapons.Ranseur":1, "weapons.Rapier":1
+  "name":"Class-Bard 20", "selectableFeatures.Bard - Enigma Muse":1, 
+  "selectableFeatures.Bard - Maestro Muse":1, "selectableFeatures.Bard - Polymath Muse":1, 
+  "selectableFeatures.Bard - Warrior Muse":1, "selectableFeatures.Human - Versatile Human":1, "shield":"None", 
+  "skillIncreases.Arcana":1, "skillIncreases.Cave Lore":1, "skillIncreases.Cooking Lore":1, 
+  "skillIncreases.Desert Lore":1, "skillIncreases.Fortune-Telling Lore":1, "skillIncreases.Games Lore":1, 
+  "skillIncreases.Giant Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Labor Lore":1, 
+  "skillIncreases.Magnimar Lore":1, "skillIncreases.Occultism":3, "skillIncreases.Religion":1, 
+  "skillIncreases.Sailing Lore":1, "skillIncreases.Scribing Lore":1, "skillIncreases.Society":1, 
+  "weapons.Greatpick":1, "weapons.Ranseur":1, "weapons.Rapier":1
 };
   </script>
 </head>
@@ -115,8 +116,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Accompany; Additional Lore (Baking Lore); Additional Lore (Engineering Lore); Additional Lore (Military Lore); All In My Head; Allegro; Annotate Composition; Assured Knowledge; Bardic Lore; Bounce Back; Call And Response; Cantrip Expansion; Clever Improviser; Combat Reading; Cooperative Soul; Courageous Advance; Courageous Assault; Courageous Onslaught; Deep Lore; Defensive Coordination; Directed Audience; Dirge Of Doom; Discordant Voice; Dubious Knowledge; Earworm; Eclectic Polymath; Eclectic Skill; Educate Allies; Effortless Concentration; Emotional Push; Enigma's Knowledge; Esoteric Polymath; Eternal Composition; Fatal Aria; Feather Step; Fortissimo Composition; Group Aid; Harmonize; House Of Imaginary Walls; Hymn Of Healing; Impossible Polymath; In Tune; Inspirational Focus; Know-It-All; Leverage Connections; Lingering Composition; Loremaster's Etude; Martial Performance; Melodious Spell; Multifarious Muse (Enigma); Multifarious Muse (Maestro); Multifarious Muse (Polymath); Multifarious Muse (Warrior); Multilingual; Ode To Ouroboros; Perfect Encore; Pied Piping; Prescient Planner; Quickened Casting; Rallying Anthem; Reach Spell; Reflexive Courage; Resounding Finale; Reverberate; Ritual Researcher; Schooled In Secrets; Shared Assault; Sign Language; Skill Training (Orc Lore); Skill Training (Piloting Lore); Skill Training (Plains Lore); Song Of Marching; Song Of Strength; Soothing Ballad; Soulsight; Steady Spellcasting; Studious Capacity; Symphony Of The Muse; Symphony Of The Unfettered Heart; Triple Time; Triumphant Inspiration; True Hypercognition; Ultimate Polymath; Unconventional Weaponry (Orc Knuckle Dragger); Unmistakable Lore; Unusual Composition; Uplifting Overture; Versatile Performance; Versatile Signature; Vigorous Anthem; Virtuosic Performer; Weapon Proficiency (Sawtooth Saber); Well-Versed</td>
-        <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Bard Weapon Expertise; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma; Expert Spellcaster; Fortitude Expertise; General Feats; Greater Performer's Heart; Legendary Spellcaster; Light Armor Expertise; Maestro; Magnum Opus; Master Spellcaster; Muse; Perception Expert; Perception Mastery; Performer's Heart; Polymath; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult); Warrior; Weapon Specialization</td>
+        <td><b>Feats</b>: Accompany; Additional Lore (Baking Lore); Additional Lore (Engineering Lore); Additional Lore (Military Lore); All In My Head; Allegro; Annotate Composition; Assured Knowledge; Bardic Lore; Bounce Back; Call And Response; Cantrip Expansion; Clever Improviser; Combat Reading; Cooperative Soul; Courageous Advance; Courageous Assault; Courageous Onslaught; Deep Lore; Defensive Coordination; Directed Audience; Dirge Of Doom; Discordant Voice; Dubious Knowledge; Earworm; Eclectic Polymath; Eclectic Skill; Educate Allies; Effortless Concentration; Emotional Push; Enigma's Knowledge; Esoteric Polymath; Eternal Composition; Fatal Aria; Feather Step; Fortissimo Composition; Group Aid; Harmonize; House Of Imaginary Walls; Hymn Of Healing; Impossible Polymath; In Tune; Inspirational Focus; Know-It-All; Leverage Connections; Lingering Composition; Loremaster's Etude; Martial Performance; Melodious Spell; Multifarious Muse (Enigma Muse); Multifarious Muse (Maestro Muse); Multifarious Muse (Polymath Muse); Multifarious Muse (Warrior Muse); Multilingual; Ode To Ouroboros; Perfect Encore; Pied Piping; Prescient Planner; Quickened Casting; Rallying Anthem; Reach Spell; Reflexive Courage; Resounding Finale; Reverberate; Ritual Researcher; Schooled In Secrets; Shared Assault; Sign Language; Skill Training (Orc Lore); Skill Training (Piloting Lore); Skill Training (Plains Lore); Song Of Marching; Song Of Strength; Soothing Ballad; Soulsight; Steady Spellcasting; Studious Capacity; Symphony Of The Muse; Symphony Of The Unfettered Heart; Triple Time; Triumphant Inspiration; True Hypercognition; Ultimate Polymath; Unconventional Weaponry (Orc Knuckle Dragger); Unmistakable Lore; Unusual Composition; Uplifting Overture; Versatile Performance; Versatile Signature; Vigorous Anthem; Virtuosic Performer; Weapon Proficiency (Sawtooth Saber); Well-Versed</td>
+        <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Bard Weapon Expertise; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma Muse; Expert Spellcaster; Fortitude Expertise; General Feats; Greater Performer's Heart; Legendary Spellcaster; Light Armor Expertise; Maestro Muse; Magnum Opus; Master Spellcaster; Muse; Perception Expert; Perception Mastery; Performer's Heart; Polymath Muse; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult); Warrior Muse; Weapon Specialization</td>
         <td><b>Detective Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Society; Underworld Lore); Streetwise</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -130,39 +131,39 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has the Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Enigma: Has the Bardic Lore feature</i></td>
+        <td><i>Enigma Muse: Has the Bardic Lore feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>General Feats: General Feat (Choose 5 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Maestro: Has the Lingering Composition feature</i></td>
+        <td><i>Maestro Muse: Has the Lingering Composition feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multifarious Muse (Enigma): Class Feat (Choose 1 from any Enigma)</i></td>
+        <td><i>Multifarious Muse (Enigma Muse): Class Feat (Choose 1 from any Enigma Muse)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multifarious Muse (Maestro): Class Feat (Choose 1 from any Maestro)</i></td>
+        <td><i>Multifarious Muse (Maestro Muse): Class Feat (Choose 1 from any Maestro Muse)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multifarious Muse (Polymath): Class Feat (Choose 1 from any Polymath)</i></td>
+        <td><i>Multifarious Muse (Polymath Muse): Class Feat (Choose 1 from any Polymath Muse)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multifarious Muse (Warrior): Class Feat (Choose 1 from any Warrior)</i></td>
+        <td><i>Multifarious Muse (Warrior Muse): Class Feat (Choose 1 from any Warrior Muse)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Muse: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Polymath: Has the Versatile Performance feature</i></td>
+        <td><i>Polymath Muse: Has the Versatile Performance feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: Skill Feat (Choose 10 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: General Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Warrior: Has the Martial Performance feature</i></td>
+        <td><i>Warrior Muse: Has the Martial Performance feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Enigma): Can select enigma muse feats</td>
+        <td>Multifarious Muse (Enigma Muse): Can select enigma muse feats</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Maestro): Can select maestro muse feats</td>
+        <td>Multifarious Muse (Maestro Muse): Can select maestro muse feats</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Polymath): Can select polymath muse feats</td>
+        <td>Multifarious Muse (Polymath Muse): Can select polymath muse feats</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Warrior): Can select warrior muse feats</td>
+        <td>Multifarious Muse (Warrior Muse): Can select warrior muse feats</td>
       </tr><tr style="text-align:center">
         <td>Prescient Planner: Can retrieve an undeclared piece of adventuring gear from backpack once per shopping trip</td>
       </tr></table>
@@ -460,7 +461,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Dirge Of Doom: Knows the Dirge Of Doom occult cantrip</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Enigma: Knows the Sure Strike occult spell</i></td>
+      <td><i>Enigma Muse: Knows the Sure Strike occult spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Expert Spellcaster: Spell Expert (Occult)</i></td>
     </tr><tr style="text-align:center">
@@ -478,7 +479,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Loremaster's Etude: Knows the Loremaster's Etude occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Maestro: Knows the Soothe occult spell</i></td>
+      <td><i>Maestro Muse: Knows the Soothe occult spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Magnum Opus: Has 1 10th-rank spell slot</i></td>
     </tr><tr style="text-align:center">
@@ -490,7 +491,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Pied Piping: Knows the Pied Piping occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Polymath: Knows the Phantasmal Minion occult spell</i></td>
+      <td><i>Polymath Muse: Knows the Phantasmal Minion occult spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Rallying Anthem: Knows the Rallying Anthem occult cantrip</i></td>
     </tr><tr style="text-align:center">
@@ -506,7 +507,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Uplifting Overture: Knows the Uplifting Overture occult cantrip</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Warrior: Knows the Fear occult spell</i></td>
+      <td><i>Warrior Muse: Knows the Fear occult spell</i></td>
     </tr><tr style="text-align:center">
       <td>Accompany: <b>(R)</b> R30' Successful Performance and the sacrifice of a Focus Point or spell slot allows an ally to cast the triggering spell without expending a point or slot</td>
     </tr><tr style="text-align:center">
@@ -594,13 +595,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Class Feats Allocation: 14 available vs. 72 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Enigma) Feat: Requires level (currently 20) >= 2 and enigma feature (currently 1) == 0</td>
+        <td>Multifarious Muse (Enigma Muse) Feat: Requires level (currently 20) >= 2 and enigma muse feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Maestro) Feat: Requires level (currently 20) >= 2 and maestro feature (currently 1) == 0</td>
+        <td>Multifarious Muse (Maestro Muse) Feat: Requires level (currently 20) >= 2 and maestro muse feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Polymath) Feat: Requires level (currently 20) >= 2 and polymath feature (currently 1) == 0</td>
+        <td>Multifarious Muse (Polymath Muse) Feat: Requires level (currently 20) >= 2 and polymath muse feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">
-        <td>Multifarious Muse (Warrior) Feat: Requires level (currently 20) >= 2 and warrior feature (currently 1) == 0</td>
+        <td>Multifarious Muse (Warrior Muse) Feat: Requires level (currently 20) >= 2 and warrior muse feature (currently 1) == 0</td>
       </tr></table>
 </td>
     </tr></table>

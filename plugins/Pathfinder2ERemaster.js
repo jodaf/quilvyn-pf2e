@@ -463,7 +463,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks) =>
     // 1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
     // 1:Occult Spellcasting => 1:Bard Spellcasting
-    // null => 1:Warrior:Muse
+    // null => 1:Warrior Muse:Muse
     // 3:Lightning Reflexes => 3:Reflex Expertise
     // 9:Great Fortitude => 9:Fortitude Expertise
     // 9:Resolve => 9:Performer's Heart
@@ -487,10 +487,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Master Spellcaster","17:Greater Performer\'s Heart",' +
       '"19:Magnum Opus","19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Enigma:Muse",' +
-      '"1:Maestro:Muse",' +
-      '"1:Polymath:Muse",' +
-      '"1:Warrior:Muse" ' +
+      '"1:Enigma Muse:Muse",' +
+      '"1:Maestro Muse:Muse",' +
+      '"1:Polymath Muse:Muse",' +
+      '"1:Warrior Muse:Muse" ' +
     'SpellSlots=' +
       'OC1:5@1,' +
       'O1:2@1;3@2,' +
@@ -551,7 +551,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 1:Primal Spellcasting => 1:Druid Spellcasting
     // 1:Druidic Language => 1:Wildsong
     // 1:Wild Empathy => 1:Voice Of Nature
-    // 1:Wild:Order => 1:Untamed:Order
+    // 1:Wild Order:Order => 1:Untamed Order:Order
     // 2:Alertness => 2:Perception Expertise
     // 3:Great Fortitude => 3:Fortitude Expertise
     // 5:Lightning Reflexes => 5:Reflex Expertise
@@ -575,10 +575,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Master Spellcaster","19:Legendary Spellcaster",' +
       '"19:Primal Hierophant" ' +
     'Selectables=' +
-      '1:Animal:Order,' +
-      '1:Leaf:Order,' +
-      '1:Storm:Order,' +
-      '1:Untamed:Order ' +
+      '"1:Animal Order:Order",' +
+      '"1:Leaf Order:Order",' +
+      '"1:Storm Order:Order",' +
+      '"1:Untamed Order:Order" ' +
     'SpellSlots=' +
       'PC1:5@1,' +
       'P1:2@1;3@2,' +
@@ -1842,8 +1842,12 @@ Pathfinder2ERemaster.FEATS = {
   'Hymn Of Healing':'Level=1 Traits=Bard',
   'Lingering Composition':
     Pathfinder2E.FEATS['Lingering Composition'] + ' ' +
-    'Require="hasMaestroMuse"',
-  'Martial Performance':'Level=1 Traits=Bard Require="hasWarriorMuse"',
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
+  'Martial Performance':
+    'Level=1 Traits=Bard ' +
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'Reach Spell':
     Pathfinder2E.FEATS['Reach Spell']
     .replace('Metamagic', 'Spellshape')
@@ -1857,36 +1861,49 @@ Pathfinder2ERemaster.FEATS = {
   'Emotional Push':'Level=2 Traits=Bard,Concentrate',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
   "Loremaster's Etude":Pathfinder2E.FEATS["Loremaster's Etude"],
-  'Multifarious Muse (Enigma)':Pathfinder2E.FEATS['Multifarious Muse (Enigma)'],
-  'Multifarious Muse (Maestro)':
-    Pathfinder2E.FEATS['Multifarious Muse (Maestro)'],
-  'Multifarious Muse (Polymath)':
-    Pathfinder2E.FEATS['Multifarious Muse (Polymath)'],
-  'Multifarious Muse (Warrior)':
-    Pathfinder2E.FEATS['Multifarious Muse (Polymath)']
+  'Multifarious Muse (Enigma Muse)':
+    Pathfinder2E.FEATS['Multifarious Muse (Enigma Muse)'],
+  'Multifarious Muse (Maestro Muse)':
+    Pathfinder2E.FEATS['Multifarious Muse (Maestro Muse)'],
+  'Multifarious Muse (Polymath Muse)':
+    Pathfinder2E.FEATS['Multifarious Muse (Polymath Muse)'],
+  'Multifarious Muse (Warrior Muse)':
+    Pathfinder2E.FEATS['Multifarious Muse (Polymath Muse)']
     .replace('Polymath', 'Warrior'),
-  'Song Of Strength':'Level=2 Traits=Bard Require="hasWarriorMuse"',
+  'Song Of Strength':
+    'Level=2 Traits=Bard ' +
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'Uplifting Overture':Pathfinder2E.FEATS['Inspire Competence'],
   'Combat Reading':'Level=4 Traits=Bard,Secret',
   'Courageous Advance':
     'Level=4 Traits=Bard,Auditory,Concentrate,Spellshape ' +
-    'Require="hasWarriorMuse"',
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'In Tune':
-    'Level=4 Traits=Bard,Concentrate,Spellshape Require="hasMaestroMuse"',
+    'Level=4 Traits=Bard,Concentrate,Spellshape ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Melodious Spell':
     Pathfinder2E.FEATS['Melodious Spell']
     .replace('Manipulate,Metamagic', 'Spellshape'),
   'Rallying Anthem':Pathfinder2E.FEATS['Inspire Defense'] + ' Require=""',
   'Ritual Researcher':
     'Level=4 Traits=Bard,Uncommon ' +
-    'Require="hasEnigmaMuse","rank.Occultism >= 2"',
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)",' +
+      '"rank.Occultism >= 2"',
   'Triple Time':Pathfinder2E.FEATS['Triple Time'],
   'Versatile Signature':Pathfinder2E.FEATS['Versatile Signature'],
   'Assured Knowledge':
-    'Level=6 Traits=Bard,Fortune Require="hasEnigmaMuse"',
+    'Level=6 Traits=Bard,Fortune ' +
+    'Require=' +
+      '"features.Enigma Muse || features.Multifarious Muse (Enigma Muse)"',
   'Defensive Coordination':
     'Level=6 Traits=Bard,Auditory,Concentration,Spellshape ' +
-    'Require="hasWarriorMuse","features.Rallying Anthem"',
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)",' +
+      '"features.Rallying Anthem"',
   'Dirge Of Doom':Pathfinder2E.FEATS['Dirge Of Doom'],
   'Educate Allies':
     'Level=6 Traits=Bard,Concentrate Require="features.Well-Versed"',
@@ -1902,13 +1919,16 @@ Pathfinder2ERemaster.FEATS = {
   'Fortissimo Composition':Pathfinder2E.FEATS['Inspire Heroics'],
   'Know-It-All':Pathfinder2E.FEATS['Know-It-All'],
   'Reflexive Courage':
-    'Level=8 Traits=Bard,Auditory,Concentrate Require="hasWarriorMuse"',
+    'Level=8 Traits=Bard,Auditory,Concentrate ' +
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'Soulsight':'Level=8 Traits=Bard',
   'Annotate Composition':
     'Level=10 Traits=Bard,Exploration,Linguistic',
   'Courageous Assault':
     'Level=10 Traits=Bard,Auditory,Concentrate,Spellshape ' +
-    'Require="hasWarriorMuse"',
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'House Of Imaginary Walls':Pathfinder2E.FEATS['House Of Imaginary Walls'],
   'Ode To Ouroboros':'Level=10 Traits=Bard',
   'Quickened Casting':
@@ -1928,7 +1948,10 @@ Pathfinder2ERemaster.FEATS = {
   'Allegro':Pathfinder2E.FEATS.Allegro,
   'Earworm':'Level=14 Traits=Bard,Exploration',
   'Soothing Ballad':Pathfinder2E.FEATS['Soothing Ballad'],
-  'Triumphant Inspiration':'Level=14 Traits=Bard Require="hasWarriorMuse"',
+  'Triumphant Inspiration':
+    'Level=14 Traits=Bard ' +
+    'Require=' +
+      '"features.Warrior Muse || features.Multifarious Muse (Warrior Muse)"',
   'True Hypercognition':Pathfinder2E.FEATS['True Hypercognition'],
   'Vigorous Anthem':'Level=14 Traits=Bard,Auditory,Concentrate,Spellshape',
   'Courageous Onslaught':
@@ -1938,7 +1961,9 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Effortless Concentration']
     .replace('Traits=', 'Traits=Witch,'),
   'Resounding Finale':
-    'Level=16 Traits=Bard,Concentrate Require="hasMaestroMuse"',
+    'Level=16 Traits=Bard,Concentrate ' +
+    'Require=' +
+      '"features.Maestro Muse || features.Multifarious Muse (Maestro Muse)"',
   'Studious Capacity':Pathfinder2E.FEATS['Studious Capacity'],
   'All In My Head':'Level=18 Traits=Bard,Illusion,Mental',
   'Deep Lore':Pathfinder2E.FEATS['Deep Lore'],
@@ -1951,7 +1976,10 @@ Pathfinder2ERemaster.FEATS = {
   'Perfect Encore':Pathfinder2E.FEATS['Perfect Encore'],
   'Pied Piping':'Level=20 Traits=Bard',
   'Symphony Of The Muse':Pathfinder2E.FEATS['Symphony Of The Muse'],
-  'Ultimate Polymath':'Level=20 Traits=Bard Require="hasPolymathMuse"',
+  'Ultimate Polymath':
+    'Level=20 Traits=Bard ' +
+    'Require=' +
+      '"features.Polymath Muse || features.Multifarious Muse (Polymath Muse)"',
 
   // Cleric
   'Deadly Simplicity':Pathfinder2E.FEATS['Deadly Simplicity'],
@@ -2102,11 +2130,14 @@ Pathfinder2ERemaster.FEATS = {
        'witchDedicationLevel >= 4 || ' +
        'wizardDedicationLevel >= 4 || ' +
        'familiarMasterDedicationLevel >= 4"',
-  'Order Explorer (Animal)':Pathfinder2E.FEATS['Order Explorer (Animal)'],
-  'Order Explorer (Leaf)':Pathfinder2E.FEATS['Order Explorer (Leaf)'],
-  'Order Explorer (Storm)':Pathfinder2E.FEATS['Order Explorer (Storm)'],
-  'Order Explorer (Untamed)':
-    Pathfinder2E.FEATS['Order Explorer (Wild)']
+  'Order Explorer (Animal Order)':
+    Pathfinder2E.FEATS['Order Explorer (Animal Order)'],
+  'Order Explorer (Leaf Order)':
+    Pathfinder2E.FEATS['Order Explorer (Leaf Order)'],
+  'Order Explorer (Storm Order)':
+    Pathfinder2E.FEATS['Order Explorer (Storm Order)'],
+  'Order Explorer (Untamed Order)':
+    Pathfinder2E.FEATS['Order Explorer (Wild Order)']
     .replace('Wild', 'Untamed'),
   // Added Archetype
   'Poison Resistance':
@@ -2127,18 +2158,23 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Form Control']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="features.Untamed Form"',
-  'Leshy Familiar Secrets':'Level=4 Traits=Druid Require="inLeafOrder"',
+  'Leshy Familiar Secrets':
+    'Level=4 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Mature Animal Companion':Pathfinder2E.FEATS['Mature Animal Companion'],
-  'Order Magic (Animal)':Pathfinder2E.FEATS['Order Magic (Animal)'],
-  'Order Magic (Leaf)':Pathfinder2E.FEATS['Order Magic (Leaf)'],
-  'Order Magic (Storm)':Pathfinder2E.FEATS['Order Magic (Storm)'],
-  'Order Magic (Untamed)':
-    Pathfinder2E.FEATS['Order Magic (Wild)']
+  'Order Magic (Animal Order)':Pathfinder2E.FEATS['Order Magic (Animal Order)'],
+  'Order Magic (Leaf Order)':Pathfinder2E.FEATS['Order Magic (Leaf Order)'],
+  'Order Magic (Storm Order)':Pathfinder2E.FEATS['Order Magic (Storm Order)'],
+  'Order Magic (Untamed Order)':
+    Pathfinder2E.FEATS['Order Magic (Wild Order)']
     .replace('Wild', 'Untamed'),
   'Snowdrift Spell':
-    'Level=4 Traits=Druid,Cold,Manipulate,Spellshape Require="inStormOrder"',
+    'Level=4 Traits=Druid,Cold,Manipulate,Spellshape ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Current Spell':'Level=6 Traits=Druid,Concentrate,Spellshape',
-  'Grown Of Oak':'Level=6 Traits=Druid Require="inLeafOrder"',
+  'Grown Of Oak':
+    'Level=6 Traits=Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Insect Shape':
     Pathfinder2E.FEATS['Insect Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -2154,7 +2190,8 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Wild Shape', 'Untamed Form'),
   'Fey Caller':Pathfinder2E.FEATS['Fey Caller'],
   'Floral Restoration':
-    'Level=8 Traits=Druid,Healing,Vitality Require="inLeafOrder"',
+    'Level=8 Traits=Druid,Healing,Vitality ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Incredible Companion':Pathfinder2E.FEATS['Incredible Companion'],
   'Raise Menhir':'Level=8 Traits=Druid',
   'Soaring Shape':
@@ -2186,11 +2223,13 @@ Pathfinder2ERemaster.FEATS = {
        'druidDedicationLevel >= 20 || ' +
        'beastmasterDedicationLevel >= 14"',
   'Thunderclap Spell':
-    'Level=10 Traits=Druid,Sonic,Spellshape Require="inStormOrder"',
+    'Level=10 Traits=Druid,Sonic,Spellshape ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
   // errata correct plant order to leaf order
   'Garland Spell':
-    'Level=12 Traits=Druid,Manipulate,Spellshape Require="inLeafOrder"',
+    'Level=12 Traits=Druid,Manipulate,Spellshape ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   // Note: also subsumes legacy Feat 18 Primal Wellspring
   'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
   'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
@@ -2212,7 +2251,9 @@ Pathfinder2ERemaster.FEATS = {
   'Monstrosity Shape':
     Pathfinder2E.FEATS['Monstrosity Shape']
     .replace('Wild Shape', 'Untamed Form'),
-  'Uplifting Winds':'Level=16 Traits=Druid Require="inStormOrder"',
+  'Uplifting Winds':
+    'Level=16 Traits=Druid ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Invoke Disaster':Pathfinder2E.FEATS['Invoke Disaster'],
   'Perfect Form Control':Pathfinder2E.FEATS['Perfect Form Control'],
   'Primal Aegis':'Level=18 Traits=Druid',
@@ -6880,7 +6921,8 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Composition Spells']
     .replace('Inspire Courage', 'Courageous Anthem')
     .replace(' and 1 Focus Point', ''),
-  'Enigma':Pathfinder2E.FEATURES.Enigma.replace('True Strike', 'Sure Strike'),
+  'Enigma Muse':
+    Pathfinder2E.FEATURES['Enigma Muse'].replace('True Strike', 'Sure Strike'),
   'Expert Spellcaster':Pathfinder2E.FEATURES['Expert Spellcaster'],
   'Fortitude Expertise':Pathfinder2E.FEATURES['Great Fortitude'],
   "Greater Performer's Heart":
@@ -6893,17 +6935,17 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Magnum Opus']
     .replace('level', 'rank'),
   'Master Spellcaster':Pathfinder2E.FEATURES['Master Spellcaster'],
-  'Maestro':Pathfinder2E.FEATURES.Maestro,
+  'Maestro Muse':Pathfinder2E.FEATURES['Maestro Muse'],
   'Muse':Pathfinder2E.FEATURES.Muse,
   "Performer's Heart":Pathfinder2E.FEATURES.Resolve,
   'Perception Mastery':Pathfinder2E.FEATURES['Vigilant Senses'],
-  'Polymath':
-    Pathfinder2E.FEATURES.Polymath
+  'Polymath Muse':
+    Pathfinder2E.FEATURES['Polymath Muse']
     .replace('Unseen Servant', 'Phantasmal Minion'),
   'Reflex Expertise':Pathfinder2E.FEATURES['Lightning Reflexes'],
   'Signature Spells':
     Pathfinder2E.FEATURES['Signature Spells'].replace('level', 'rank'),
-  'Warrior':
+  'Warrior Muse':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Martial Performance feature",' +
@@ -6934,14 +6976,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Esoteric Polymath':Pathfinder2E.FEATURES['Esoteric Polymath'],
   "Loremaster's Etude":
     Pathfinder2E.FEATURES["Loremaster's Etude"],
-  'Multifarious Muse (Enigma)':
-    Pathfinder2E.FEATURES['Multifarious Muse (Enigma)'],
-  'Multifarious Muse (Maestro)':
-    Pathfinder2E.FEATURES['Multifarious Muse (Maestro)'],
-  'Multifarious Muse (Polymath)':
-    Pathfinder2E.FEATURES['Multifarious Muse (Polymath)'],
-  'Multifarious Muse (Warrior)':
-    Pathfinder2E.FEATURES['Multifarious Muse (Polymath)']
+  'Multifarious Muse (Enigma Muse)':
+    Pathfinder2E.FEATURES['Multifarious Muse (Enigma Muse)'],
+  'Multifarious Muse (Maestro Muse)':
+    Pathfinder2E.FEATURES['Multifarious Muse (Maestro Muse)'],
+  'Multifarious Muse (Polymath Muse)':
+    Pathfinder2E.FEATURES['Multifarious Muse (Polymath Muse)'],
+  'Multifarious Muse (Warrior Muse)':
+    Pathfinder2E.FEATURES['Multifarious Muse (Polymath Muse)']
     .replace('Polymath', 'Warrior').replace('polymath', 'warrior'),
   'Song Of Strength':
     Pathfinder2E.FEATURES['Inspire Defense']
@@ -7492,7 +7534,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Druid
   // Anathema as above
-  'Animal':Pathfinder2E.FEATURES.Animal,
+  'Animal Order':Pathfinder2E.FEATURES['Animal Order'],
   'Druid Feats':Pathfinder2E.FEATURES['Druid Feats'],
   'Druid Skills':Pathfinder2E.FEATURES['Druid Skills'],
   'Druid Spellcasting':Pathfinder2E.FEATURES['Primal Spellcasting'],
@@ -7501,8 +7543,8 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(' and 1 Focus Point', ''),
   // Expert Spellcaster as above
   // Fortitude Expertise as above
-  'Leaf':
-    Pathfinder2E.FEATURES.Leaf
+  'Leaf Order':
+    Pathfinder2E.FEATURES['Leaf Order']
     .replace('Goodberry', 'Cornucopia'),
   // Legendary Spellcaster as above
   // Master Spellcaster as above
@@ -7512,9 +7554,9 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Primal Hierophant']
     .replace('level', 'rank'),
   // Reflex Expertise as above
-  'Storm':Pathfinder2E.FEATURES.Storm,
-  'Untamed':
-    Pathfinder2E.FEATURES.Wild
+  'Storm Order':Pathfinder2E.FEATURES['Storm Order'],
+  'Untamed Order':
+    Pathfinder2E.FEATURES['Wild Order']
     .replace('Wild Shape', 'Untamed Form')
     .replace('Wild Morph', 'Untamed Shift'),
   'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
@@ -7548,11 +7590,14 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Call Of The Wild']
     .replace('level', 'rank'),
   'Enhanced Familiar':Pathfinder2E.FEATURES['Enhanced Familiar'],
-  'Order Explorer (Animal)':Pathfinder2E.FEATURES['Order Explorer (Animal)'],
-  'Order Explorer (Leaf)':Pathfinder2E.FEATURES['Order Explorer (Leaf)'],
-  'Order Explorer (Storm)':Pathfinder2E.FEATURES['Order Explorer (Storm)'],
-  'Order Explorer (Untamed)':
-    Pathfinder2E.FEATURES['Order Explorer (Wild)']
+  'Order Explorer (Animal Order)':
+    Pathfinder2E.FEATURES['Order Explorer (Animal Order)'],
+  'Order Explorer (Leaf Order)':
+    Pathfinder2E.FEATURES['Order Explorer (Leaf Order)'],
+  'Order Explorer (Storm Order)':
+    Pathfinder2E.FEATURES['Order Explorer (Storm Order)'],
+  'Order Explorer (Untamed Order)':
+    Pathfinder2E.FEATURES['Order Explorer (Wild Order)']
     .replace('wild', 'untamed')
     .replace('Wild', 'Untamed'),
   'Poison Resistance':Pathfinder2E.FEATURES['Poison Resistance'],
@@ -7574,13 +7619,15 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Familiar gains Grasping Tendrils, Purify Air, or Verdant Burst feature each day"',
   'Mature Animal Companion':Pathfinder2E.FEATURES['Mature Animal Companion'],
-  'Order Magic (Animal)':Pathfinder2E.FEATURES['Order Magic (Animal)'],
-  'Order Magic (Leaf)':
-    Pathfinder2E.FEATURES['Order Magic (Leaf)']
+  'Order Magic (Animal Order)':
+    Pathfinder2E.FEATURES['Order Magic (Animal Order)'],
+  'Order Magic (Leaf Order)':
+    Pathfinder2E.FEATURES['Order Magic (Leaf Order)']
     .replace('Goodberry', 'Cornucopia'),
-  'Order Magic (Storm)':Pathfinder2E.FEATURES['Order Magic (Storm)'],
-  'Order Magic (Untamed)':
-    Pathfinder2E.FEATURES['Order Magic (Wild)']
+  'Order Magic (Storm Order)':
+    Pathfinder2E.FEATURES['Order Magic (Storm Order)'],
+  'Order Magic (Untamed Order)':
+    Pathfinder2E.FEATURES['Order Magic (Wild Order)']
     .replace('Wild Morph', 'Untamed Shift'),
   'Snowdrift Spell':
     'Action=1 ' +
@@ -10303,7 +10350,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Curse Of Torrential Knowledge feature",' +
       '"Has the Whispers Of Weakness feature",' +
       '"Knows the Brain Drain divine spell",' +
-      '"Skill Trained (Occultism; choose 1 from any Lore)"',
+      '"Skill Trained (Occultism; Choose 1 from any Lore)"',
   'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
   'Tempest':
     'Section=feature,feature,magic,skill ' +
@@ -11473,18 +11520,18 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Basic Druid Spellcasting']
     .replaceAll('-level', '-rank'),
   'Basic Wilding':Pathfinder2E.FEATURES['Basic Wilding'],
-  'Order Spell (Animal)':
-    Pathfinder2E.FEATURES['Order Spell (Animal)']
+  'Order Spell (Animal Order)':
+    Pathfinder2E.FEATURES['Order Spell (Animal Order)']
     .replace(' and at least 1 Focus Point', ''),
-  'Order Spell (Leaf)':
-    Pathfinder2E.FEATURES['Order Spell (Leaf)']
+  'Order Spell (Leaf Order)':
+    Pathfinder2E.FEATURES['Order Spell (Leaf Order)']
     .replace(' and at least 1 Focus Point', '')
     .replace('Goodberry', 'Cornucopia'),
-  'Order Spell (Storm)':
-    Pathfinder2E.FEATURES['Order Spell (Storm)']
+  'Order Spell (Storm Order)':
+    Pathfinder2E.FEATURES['Order Spell (Storm Order)']
     .replace(' and at least 1 Focus Point', ''),
-  'Order Spell (Untamed)':
-    Pathfinder2E.FEATURES['Order Spell (Wild)']
+  'Order Spell (Untamed Order)':
+    Pathfinder2E.FEATURES['Order Spell (Wild Order)']
     .replace(' and at least 1 Focus Point', '')
     .replace('Wild Morph', 'Untamed Form'),
   'Advanced Wilding':Pathfinder2E.FEATURES['Advanced Wilding'],
@@ -11686,7 +11733,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Class Trained (Investigator)",' +
       '"Has the On The Case feature",' +
-      '"Skill Trained (Society; choose 1 from any)"',
+      '"Skill Trained (Society; Choose 1 from any)"',
   'Basic Deduction':
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Investigator up to level 2)"',

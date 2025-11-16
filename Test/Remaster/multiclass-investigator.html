@@ -21,13 +21,13 @@ var attributes = {
   "generalFeats.Additional Lore (Games Lore)":1, "generalFeats.Additional Lore (Giant Lore)":1, 
   "generalFeats.Assurance (Absalom Lore)":1, "generalFeats.Feather Step":1, 
   "generalFeats.Skill Training (Aquatic Lore)":1, "languages.Jotun":1, "languages.Kelish":1, "languages.Varisian":1, 
-  "name":"Multiclass-Investigator", "selectableFeatures.Barbarian - Spirit Instinct":1, 
-  "selectableFeatures.Fighter - Bombs":1, "selectableFeatures.Fighter - Strength":1, 
-  "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", "skillIncreases.Absalom Lore":1, 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Astral Plane Lore":1, "skillIncreases.Astronomy Lore":1, 
-  "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, "skillIncreases.Deception":1, 
-  "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Leshy Lore":1, "skillIncreases.River Lore":1, 
-  "skillIncreases.Sailing Lore":1, "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
+  "name":"Multiclass-Investigator", "selectableFeatures.Fighter - Bombs":1, 
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", 
+  "skillIncreases.Absalom Lore":2, "skillIncreases.Acrobatics":1, "skillIncreases.Astral Plane Lore":1, 
+  "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, 
+  "skillIncreases.Deception":1, "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Leshy Lore":1, 
+  "skillIncreases.River Lore":1, "skillIncreases.Sailing Lore":1, "weapons.Bola":1, "weapons.Light Mace":1, 
+  "weapons.Main-gauche":1
 };
   </script>
 </head>
@@ -90,7 +90,6 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Deduction; Aggressive Block; Assurance (Absalom Lore); Basic Deduction; Brutish Shove; Combat Assessment; Double Slice; Feather Step; Intimidating Strike; Investigator Dedication; Investigator's Stratagem; Keen Recollection; Lunge; Master Spotter; Parting Shot; Point Blank Stance; Sense Allies; Skill Mastery; Skill Training (Aquatic Lore); Twin Parry; Unconventional Weaponry (Dogslicer); Vicious Swing</td>
-        <td><b>Barbarian Features</b>: Spirit Instinct</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bombs; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -142,7 +141,7 @@ var attributes = {
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
-      <td>Absalom Lore: +9 (intelligence; trained)</td>
+      <td>Absalom Lore: +11 (intelligence; expert)</td>
       <td>Diplomacy: +2 (charisma; untrained)</td>
       <td>Performance: +2 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
@@ -194,7 +193,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Investigator Dedication: Skill Trained (Society; choose 1 from any)</i></td>
+      <td><i>Investigator Dedication: Skill Trained (Society; Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Master Spotter: Perception Master</i></td>
     </tr><tr style="text-align:center">
@@ -204,7 +203,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Aquatic Lore): Skill Trained (Aquatic Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Absalom Lore): Can take an automatic 17 on Absalom Lore checks</td>
+      <td>Assurance (Absalom Lore): Can take an automatic 19 on Absalom Lore checks</td>
     </tr><tr style="text-align:center">
       <td>Clue In: <b>(R)</b> Gives another creature +1 on the triggering Perception or skill check that will help to answer an active investigation question once per 10 min</td>
     </tr><tr style="text-align:center">
@@ -313,10 +312,6 @@ var attributes = {
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Advanced Deduction Feat: Requires level (currently 5) >= 6 and basic deduction feature (currently 1)</td>
-      </tr><tr style="text-align:center">
-        <td>Barbarian Instinct Allocation: 0 available vs. 1 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Barbarian-Spirit Instinct Selectable Feature: Requires barbarian level</td>
       </tr><tr style="text-align:center">
         <td>Class Feats Allocation: 5 available vs. 17 allocated</td>
       </tr><tr style="text-align:center">
