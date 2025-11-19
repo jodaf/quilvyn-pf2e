@@ -16605,7 +16605,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         if(attr.startsWith('selectableFeatureCount.') && attrs[attr] > 0)
           subsets.push(attr.replace('selectableFeatureCount.', ''));
     } else {
-      subsets = ['.*'];
+      // Skills have no subsets
+      subsets = [''];
     }
     subsets.forEach(subset => {
       let prefix =
@@ -16623,9 +16624,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             subsetTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
         }
       } else if(attribute == 'selectableFeatures') {
-        attr = 'selectableFeatureCount.' + subset;
         // Massage into a form consistent with others for ease of handling
-        subsetTexts.push('Choose ' + attrs[attr] + ' from any');
+        subsetTexts.push
+          ('Choose ' + attrs['selectableFeatureCount.' + subset] + ' from any');
       } else {
         for(attr in attrs) {
           if((matchInfo = attr.match(/^\w+Features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\((.*)\)$/)))
@@ -16633,11 +16634,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           else if(!allNotes[attr] ||
              (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\((.*?)\)/)) == null)
             continue;
-          let improvement = matchInfo[1].replace('%V', attrs[attr]);
-          if(!improvement.match(/^(Trained|Expert|Master|Legendary|Increase)$/)) {
-            console.log('Unknown skill improvement "' + improvement + '"');
-            continue;
-          }
           subsetTexts.push(matchInfo[2].replaceAll('%V', attrs[attr]));
         }
       }
@@ -16650,30 +16646,37 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         b.includes('from any') ? -1 : 0
       );
       subsetTexts.forEach(text => {
-        let similar = {};
+        let selectedGroupMember = {};
         text.split(/\s*;\s*/).forEach(selection => {
           let m = selection.match(/Choose\s+(\d+)\s+from\s+(.*)/i);
           if(m) {
-            debug.push(text);
+            debug.push(selection);
             howMany = +m[1];
-            let pat = subset;
-            let traits =
-              attribute == 'feats' ? 'Traits' :
-              attribute == 'selectableFeatures' ? 'Type' :
-              this.plugin.SKILLS.Athletics.includes('Ability') ? 'Ability' :
-              'Attribute';
+            choices = Object.keys(allChoices);
             if(subset == 'Ancestry') {
-              pat = attributes.ancestry;
+              choices =
+                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(attributes.ancestry));
               for(let a in this.getChoices('ancestrys'))
                 if('features.Adopted Ancestry (' + a + ')' in attrs)
-                  pat += '|' + a;
+                  choices =
+                    choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(a)));
             } else if(subset == 'Class') {
-              pat = attributes['class'] + '|Dedication';
-              if(Object.keys(attrs).filter(x => x.match(/^features.*Dedication$/)).length > 0)
-                pat += '|Archetype';
+              choices =
+                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').filter(x => x == attributes['class'] || x == 'Dedication').length > 0)
+              for(attr in attributes) {
+                if(attr.match(/^.*Dedication$/))
+                  choices =
+                    choices.concat(
+                      Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('features.' + attr)).length > 0)
+                    );
+              }
+            } else if(attribute == 'feats') { // Skill or General
+              choices =
+                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(subset));
+            } else if(attribute == 'selectableFeatures') {
+              choices =
+                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Type').includes(subset));
             }
-            pat = pat.replaceAll(/([\(\)])/g, '\\$1');
-            choices = [];
             m[2].split(/\s*,\s*/).forEach(category => {
               let maxLevel = null;
               if(category.includes('up to level')) {
@@ -16684,38 +16687,43 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 maxLevel =
                   new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval(attributes);
               }
-              if(category == 'any') {
-                choices =
-                  choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], traits).filter(x => x.match('^(' + pat + ')$')).length > 0));
-              } else if(category.startsWith('any ')) {
-                // e.g., Choose 2 from any Additional Lore (name), from any
-                // Gnome (trait), from any Athletics (requirement), or from
-                // any Settlement Lore (subcategory)
+              if(category.startsWith('any ')) {
+                // e.g., Choose 2 from any ...
+                // ... Additional Lore (name with (.*) removed),
+                // ... Gnome (trait),
+                // ... Intelligence (Ability or Attribute),
+                // ... Athletics (requirement with rank.),
+                // ... Polymath Muse (requirement with features.),
+                // ... Settlement Lore (subcategory)
+                // ... Lore (partial subcategory)
                 category = category.substring(4);
                 debug.push(category);
                 choices =
-                  choices.concat(Object.keys(allChoices).filter(x =>
+                  choices.filter(x =>
                     x.replace(/\s+\(.*/, '') == category ||
-                    (category == 'Lore' && x.includes('Lore')) ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], traits).includes(category) ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.includes(category)).length > 0 ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category)
-                ));
-              } else {
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(category) ||
+                    QuilvynUtils.getAttrValue(allChoices[x], 'Ability') == category ||
+                    QuilvynUtils.getAttrValue(allChoices[x], 'Attribute') == category ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('rank.' + category)).length > 0 ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('features.' + category)).length > 0 ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category) ||
+                    x == 'Lore' && QuilvynUtils.getAttrValue(allChoices[x], 'Subcategory').includes('Lore')
+                );
+              } else if(category != 'any') {
                 choices.push(category);
               }
             });
             if(subset == 'General') {
               // Although valid, avoid allocating skill feats as general feats
               choices =
-                choices.concat(choices.filter(x => !(allChoices[x].includes('Skill'))));
+                choices.filter(x => !(allChoices[x].includes('Skill')));
             } else if(subset == 'Skill') {
               // Be careful to exclude Archetype (class) feats that also have
               // the Skill trait
               choices =
                 choices.filter(x => !(QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes('Archetype')));
             }
-            debug.push('Pick ' + howMany + ' ' + pat + ' from ' + choices.length);
+            debug.push('Pick ' + howMany + ' ' + subset + ' from ' + choices.length);
             // If an item in choices is already in attributes, assume that it's
             // because of this feature, so reduce howMany and remove it from
             // consideration for later choices
@@ -16733,6 +16741,16 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             // Finally, randomly assign any remaining allocations
             while(howMany > 0 && choices.length > 0) {
               let choice = QuilvynUtils.randomElement(choices);
+              choices = choices.filter(x => x != choice);
+              // Only select one Dedication, one Skill Training, etc.
+              let group =
+                choice.replace(/\s+\(.*\)/, '')
+                      .replace(/^.*Dedication$/, 'Dedication')
+                      .replace(/^.*Lore$/, 'Lore');
+              if(group in selectedGroupMember) {
+                debug.push('Rejected similar ' + choice);
+                continue;
+              }
               attributes[prefix + '.' + choice] = 1;
               if(text.includes('Skill Expert'))
                 attributes[prefix + '.' + choice] = 2;
@@ -16741,36 +16759,27 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
               else if(text.includes('Skill Legendary'))
                 attributes[prefix + '.' + choice] = 4;
               let validate = this.applyRules(attributes);
-              let name = choice.charAt(0).toLowerCase() +
-                         choice.substring(1).replaceAll(' ', '').
-                         replace(/\(/g, '\\(').replace(/\)/g, '\\)');
               let note =
-                name + attribute.charAt(0).toUpperCase() + attribute.substring(1).replace(/s$/, '');
-              // Only choose 1 from collections of similar items like
-              // Additional Lore (*) and * Dedication
-              let generalized =
-                choice.replace(/\s+\(.*\)/, '')
-                      .replace(/^.*Dedication$/, 'Dedication')
-                      .replace(/^.*Lore$/, 'Lore');
+                choice.charAt(0).toLowerCase() +
+                choice.substring(1).replaceAll(' ', '').
+                replace(/\(/g, '\\(').replace(/\)/g, '\\)') +
+                attribute.charAt(0).toUpperCase() +
+                attribute.substring(1).replace(/s$/, '');
               if(QuilvynUtils.sumMatching
                    (validate,
                     new RegExp('^(sanity|validation)Notes.'+note+'$')) != 0) {
-                delete attributes[prefix + '.' + choice];
                 debug.push('Rejected invalid ' + choice);
-              } else if(generalized in similar) {
                 delete attributes[prefix + '.' + choice];
-                debug.push('Rejected similar ' + choice);
               } else {
                 debug.push('Accepted ' + choice);
                 howMany--;
-                if(generalized != choice)
-                  similar[generalized] = choice;
+                if(group != choice)
+                  selectedGroupMember[group] = choice;
                 delete allChoices[choice];
-                if(generalized == 'Dedication')
+                if(group == 'Dedication')
                   choices =
-                    choices.concat(Object.keys(allChoices).filter(x => allChoices[x].includes('Archetype')));
+                    choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('features.' + choice)).length > 0));
               }
-              choices = choices.filter(x => x != choice);
             }
           }
         });
