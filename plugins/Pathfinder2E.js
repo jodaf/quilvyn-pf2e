@@ -16339,7 +16339,7 @@ Pathfinder2E.NAME_COMPONENTS = {
     ],
     formats: ['%{syllables}']
   },
-  // Consonents and clusters taken from rule book sample names, with some
+  // Consonants and clusters taken from rule book sample names, with some
   // additional clusters that seem appropriate
   Dwarf: {
     leading: 'bdgklmnprstyz'.split(''),
@@ -16595,6 +16595,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       // It's possible that such a feat might be selected by the second pass,
       // leaving a choice unfilled, but the odds are low enough that figuring
       // out how to handle the case seems not worth the effort.
+      // See >>> note below that assumes that General is the last in this list
       subsets = [
         'Ancestry', 'Class', 'Skill', 'General',
         'Ancestry', 'Class', 'Skill', 'General'
@@ -16652,64 +16653,70 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           if(m) {
             debug.push(selection);
             howMany = +m[1];
-            choices = Object.keys(allChoices);
+            let subsetChoices = Object.keys(allChoices);
             if(subset == 'Ancestry') {
-              choices =
-                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(attributes.ancestry));
+              subsetChoices =
+                subsetChoices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(attributes.ancestry));
               for(let a in this.getChoices('ancestrys'))
                 if('features.Adopted Ancestry (' + a + ')' in attrs)
-                  choices =
-                    choices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(a)));
+                  subsetChoices =
+                    subsetChoices.concat(Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(a)));
             } else if(subset == 'Class') {
-              choices =
-                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').filter(x => x == attributes['class'] || x == 'Dedication').length > 0)
+              subsetChoices =
+                subsetChoices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').filter(x => x == attributes['class'] || x == 'Dedication').length > 0);
               for(attr in attributes) {
-                if(attr.match(/^.*Dedication$/))
-                  choices =
-                    choices.concat(
+                if(attr.match(/^.*Dedication$/)) {
+                  attr = attr.replace(/^.*\./, '');
+                  debug.push('Add ' + attr + ' feats');
+                  // Most Dedication-dependent feats list the Dedication feat
+                  // in their requirements; any others won't be randomly chosen
+                  subsetChoices =
+                    subsetChoices.concat(
                       Object.keys(allChoices).filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('features.' + attr)).length > 0)
                     );
+                }
               }
             } else if(attribute == 'feats') { // Skill or General
-              choices =
-                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(subset));
+              subsetChoices =
+                subsetChoices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(subset));
             } else if(attribute == 'selectableFeatures') {
-              choices =
-                choices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Type').includes(subset));
+              subsetChoices =
+                subsetChoices.filter(x => QuilvynUtils.getAttrValueArray(allChoices[x], 'Type').includes(subset));
             }
+            choices = [];
             m[2].split(/\s*,\s*/).forEach(category => {
               let maxLevel = null;
               if(category.includes('up to level')) {
                 let p = category.match(/(.*)\s+up to level\s+(.*)/);
-                console.log(category);
                 category = p[1];
-                console.log(p[2]);
                 maxLevel =
                   new Expr(p[2].replaceAll(/%\{|\}/g, '')).eval(attributes);
               }
               if(category.startsWith('any ')) {
                 // e.g., Choose 2 from any ...
                 // ... Additional Lore (name with (.*) removed),
-                // ... Gnome (trait),
-                // ... Intelligence (Ability or Attribute),
-                // ... Athletics (requirement with rank.),
-                // ... Polymath Muse (requirement with features.),
-                // ... Settlement Lore (subcategory)
-                // ... Lore (partial subcategory)
+                // ... Lore (feat partial name)
+                // ... Gnome (feat Trait),
+                // ... Intelligence (skill Ability or Attribute),
+                // ... Athletics (feat Require with rank.),
+                // ... Polymath Muse (feat Require with features.),
+                // ... Settlement Lore (feat Subcategory)
                 category = category.substring(4);
                 debug.push(category);
-                choices =
-                  choices.filter(x =>
+                choices = choices.concat(
+                  subsetChoices.filter(x =>
                     x.replace(/\s+\(.*/, '') == category ||
+                    (category == 'Lore' && x.includes(' Lore')) ||
                     QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes(category) ||
                     QuilvynUtils.getAttrValue(allChoices[x], 'Ability') == category ||
                     QuilvynUtils.getAttrValue(allChoices[x], 'Attribute') == category ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('rank.' + category)).length > 0 ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('features.' + category)).length > 0 ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category) ||
-                    x == 'Lore' && QuilvynUtils.getAttrValue(allChoices[x], 'Subcategory').includes('Lore')
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('(rank|features)\\.' + category) && !x.match(/==\s+0/)).length > 0 ||
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category)
+                  )
                 );
-              } else if(category != 'any') {
+              } else if(category == 'any') {
+                choices = choices.concat(subsetChoices);
+              } else {
                 choices.push(category);
               }
             });
@@ -16718,8 +16725,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
               choices =
                 choices.filter(x => !(allChoices[x].includes('Skill')));
             } else if(subset == 'Skill') {
-              // Be careful to exclude Archetype (class) feats that also have
-              // the Skill trait
+              // Exclude Archetype feats that also have the Skill trait
               choices =
                 choices.filter(x => !(QuilvynUtils.getAttrValueArray(allChoices[x], 'Traits').includes('Archetype')));
             }
@@ -16786,7 +16792,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       });
       attrs = this.applyRules(attributes);
       if(subset == 'General')
-        // Start afresh before making the second feat pass
+        // >>> Start afresh before making the second feat pass
         allChoices = Object.assign({}, this.getChoices(attribute));
     });
     debug.push('xxxxxxx');
@@ -17103,6 +17109,12 @@ Pathfinder2E.ruleNotes = function() {
     '  following this convention when adding homebrew weapons will help when ' +
     '  generating random characters.\n' +
     '  </li><li>\n' +
+    '  Because of dependencies between feats, selectable features, and ' +
+    '  skills, Quilvyn sometimes leaves some choices unfilled when ' +
+    '  randomizing, particularly when creating higher-level random ' +
+    '  characters. You can use the Randomize menu to fill in any missed ' +
+    '  selections.\n' +
+    '  </li><li>\n' +
     '  Discussion of adding different types of homebrew options to the ' +
     '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
     '  </li>\n' +
@@ -17123,12 +17135,6 @@ Pathfinder2E.ruleNotes = function() {
     '  Quilvyn gives characters with the Monastic Weaponry feat proficiency ' +
     '  in any advanced monk weapons, as well as in simple and martial ones.\n' +
     '  </li>\n' +
-    '</ul>\n' +
-    '</p>\n' +
-    '\n' +
-    '<h3>Known Bugs</h3>\n' +
-    '<p>\n' +
-    '<ul>\n' +
     '</ul>\n' +
     '</p>\n';
 };

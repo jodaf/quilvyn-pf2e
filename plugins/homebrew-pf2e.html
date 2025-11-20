@@ -105,7 +105,7 @@ the type in the Selectable Type box ("Doctrine"); otherwise, leave the box
 empty, indicating that all characters of the given ancestry, background, or
 class gain the feature. Unlike most text boxes, the Selectable Type field only
 accepts a single value. The Replace box lists any predefined features that
-this one replaces. For class features, the Prerequisite box narrows the scope
+this one replaces. For class features, the Prerequisites box narrows the scope
 of this feature to a subset of characters in the class&mdash;for example, a
 new Champion cause that requires a particular alignment to select.
 </p><p>
@@ -205,18 +205,18 @@ The example shown gives a possible set of values for the Babylonian deity Enlil.
 <img src='../Images/hbpf2e-feat-feature.jpg' alt='Homebrew Feat'/>
 </td><td>
 <p>
-For homebrew feats, Quilvyn displays fields to note any requirements that
-must be met to select the feat and any traits associated with it. Quilvyn
-allows you to specify two kinds of requirements for a feat. The Prerequisite
-box lists any requirements that must be met to select the feat; Quilvyn
-generates a validation error if the feat is selected for a character who does
-not meet these requirements. The Implies box lists any requirements that, while
-not strictly required, make the feat useless if not met. For example, although
-the rules don't require possessing a shield to select it, the Shield Block feat
-from the core rules will be useless to a character without one. Quilvyn will
-generate a validation warning if the Implies requirements are not met. When
-specified, the Prerequisite and Implies fields will normally contain references
-to character attributes; see the discussion of
+For homebrew feats, Quilvyn displays fields to note the feat level, any
+requirements that must be met to select it, and any traits associated with it.
+Quilvyn allows you to specify two kinds of requirements for a feat. The
+Prerequisites box lists any requirements that must be met to select the feat;
+Quilvyn generates a validation error if the feat is selected for a character
+who does not meet these requirements. The Implies box lists any requirements
+that, while not strictly required, make the feat useless if not met. For
+example, although the rules don't require possessing a shield to select it, the
+Shield Block feat from the core rules will be useless to a character without
+one. Quilvyn will generate a validation warning if the Implies requirements are
+not met. When specified, the Prerequisites and Implies fields will typically
+contain references to character attributes; see the discussion of
 <a href="#attrs">using character attributes</a> for how to include these. The
 effects of a feat are entered separately as a feature.
 </p><p>
@@ -235,8 +235,8 @@ In Quilvyn, <i>features</i> describe the effects of feats, ancestry features,
 background features, and class features. When adding a homebrew feature,
 enter the section of the character sheet (one of attributes, combat, feature,
 magic, save, or skill) where the note for the feature should appear, the note
-text, and the action count or type of associated with the feature. You can
-enter multiple sections and notes, but the number of sections entered must
+text, and the action count or type of action associated with the feature. You
+can enter multiple sections and notes, but the number of sections entered must
 equal the number of notes. Feature notes can both reference and modify
 character attributes; see the discussion of
 <a href="#attrs">using character attributes</a> for how to do this.
@@ -299,7 +299,7 @@ that is related to Intelligence.
 </td><td>
 <p>
 When adding a homebrew spell, Quilvyn displays fields that allow you to enter
-the spell's school, level, tradition(s), the number of actions or amount of
+the spell's school, level, traditions, the number of actions or amount of
 time required to cast the spell, any traits associated with the spell, and the
 description of the spell. Spell descriptions can embed references to character
 attributes; see the discussion of
@@ -356,7 +356,7 @@ prerequisites when entering a homebrew feat.
 </p><p>
 Since the effects of the Alert Dodger feat come from battle experience, it
 makes sense to require a minimum level&mdash;say, 7&mdash;to take the
-feat. This is represented by adding text to the feat's Prerequisite field:
+feat. This is represented by adding text to the feat's Prerequisites field:
 </p>
 <img src='../Images/hbpf2e-attr-1.jpg' alt='Alert Dodger feat'/>
 
