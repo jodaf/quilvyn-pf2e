@@ -9850,7 +9850,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Methodology':'Section=feature Note="1 selection"',
   'On The Case':
     'Section=feature Note="Has the Clue In and Pursue A Lead features"',
-  // TODO 2 active investigations maximum?
   'Pursue A Lead':
     'Section=skill ' +
     'Note="Can use 1 min examining a detail to detect a deeper mystery; success allows opening an investigation and gives +%V on later Perception and skill checks when attempting to answer a central question about it"',
@@ -11428,7 +11427,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="<b>(Bravado)</b> Successful Tumble Through a larger creature\'s space as difficult terrain inflicts weakness %{level//2} to precision damage from the next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
-  // TODO check Jump distance
   'Flamboyant Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -11697,11 +11695,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Has the Superstitious Resilience feature"',
   "Juggernaut's Fortitude":Pathfinder2E.FEATURES["Juggernaut's Fortitude"],
 
-  // Errata adds Champion's Aura
-  // TODO Trained in Heavy Armor only if already trained in Medium Armor
+  // Changed effects; errata adds Champion's Aura
   'Champion Dedication':
-    Pathfinder2E.FEATURES['Champion Dedication']
-    .replace('Ability and Deity And Cause', "Attribute, Champion's Aura, Deity, and Cause"),
+    'Section=combat,combat,feature,skill ' +
+    'Note=' +
+      '"Defense Trained (Light Armor; Medium Armor)/Class Trained (Champion)",' +
+      '"Defense Trained (Heavy Armor)",' +
+      '"Has the Champion Key Attribute, Champion\'s Aura, Deity, and Cause features",' +
+      '"Skill Trained (Religion)"',
   'Basic Devotion':Pathfinder2E.FEATURES['Basic Devotion'],
   'Champion Resiliency':Pathfinder2E.FEATURES['Champion Resiliency'],
   // Changed effects
@@ -11888,8 +11889,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Class Trained (Swashbuckler)",' +
       '"Has the Panache and Swashbuckler\'s Style features",' +
-      // TODO or the style-linked skill
-      '"Skill Trained (Acrobatics)"',
+      '"Skill Trained (Choose 1 from Acrobatics, %V)"',
   'Basic Flair':
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Swashbuckler up to level 2)"',
@@ -17582,6 +17582,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('magicNotes.cautiousCuriosity', 'gnomeTradition', '=', null);
   } else if(name.match(/^(Champion|Cleric) Dedication$/)) {
+    rules.defineRule('combatNotes.' + prefix + '-1',
+      'trainingCount.Medium Armor', '?', 'source >= 2'
+    );
     let c = name.startsWith('Champion') ? 'Champion' : 'Cleric';
     // Suppress validation errors for selected sanctification
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -18004,8 +18007,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('validationNotes.swashbuckler-' + s.replaceAll(' ', '') + 'SelectableFeature',
         'features.' + name, '+', '1'
       );
+      let m =
+        ((rules.getChoices('features') || rules.plugin.FEATURES)[s] || '').match(/Skill Trained .([\w\s]*)/);
+      if(m)
+        // Handled here, this doesn't work for homebrew styles
+        rules.defineRule
+          ('skillNotes.' + prefix, 'features.' + s, '=', '"' + m[1] + '"');
       s = s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
       rules.defineRule('featureNotes.' + s, 'levels.Swashbuckler', '?', null);
+      rules.defineRule('skillNotes.' + s, 'levels.Swashbuckler', '?', null);
     });
   } else if(name == 'Tap Into Blood') {
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
