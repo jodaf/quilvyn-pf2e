@@ -1054,14 +1054,14 @@ Pathfinder2ERemaster.CLASSES = {
       '"17:Greater Mysterious Resolve","19:Legendary Spellcaster",' +
       '"19:Oracular Clarity" ' +
     'Selectables=' +
-      '"1:Ancestors:Mystery",' +
-      '"1:Battle:Mystery",' +
-      '"1:Bones:Mystery",' +
-      '"1:Cosmos:Mystery",' +
-      '"1:Flames:Mystery",' +
-      '"1:Life:Mystery",' +
-      '"1:Lore:Mystery",' +
-      '"1:Tempest:Mystery" ' +
+      '"1:Ancestors Mystery:Mystery",' +
+      '"1:Battle Mystery:Mystery",' +
+      '"1:Bones Mystery:Mystery",' +
+      '"1:Cosmos Mystery:Mystery",' +
+      '"1:Flames Mystery:Mystery",' +
+      '"1:Life Mystery:Mystery",' +
+      '"1:Lore Mystery:Mystery",' +
+      '"1:Tempest Mystery:Mystery" ' +
     'SpellSlots=' +
       'DC1:5@1,' +
       'D1:3@1;4@2,' +
@@ -3749,16 +3749,16 @@ Pathfinder2ERemaster.FEATS = {
   // Quickened Casting as above
   'Roll The Bones Of Fate':
     'Level=10 Traits=Oracle,Cursebound,Divine,Prediction ' +
-    'Require="features.Bones || features.Lore"',
+    'Require="features.Bones Mystery || features.Lore Mystery"',
   'The Dead Walk':
     'Level=10 Traits=Oracle,Cursebound,Divine ' +
-    'Require="features.Ancestors || features.Battle"',
+    'Require="features.Ancestors Mystery || features.Battle Mystery"',
   'Trial By Skyfire':
     'Level=10 Traits=Oracle,Cursebound,Divine,Fire ' +
-    'Require="features.Cosmos || features.Flames"',
+    'Require="features.Cosmos Mystery || features.Flames Mystery"',
   'Waters Of Creation':
     'Level=10 Traits=Oracle,Cursebound,Divine,Healing,Vitality,Water ' +
-    'Require="features.Life || features.Tempest"',
+    'Require="features.Life Mystery || features.Tempest Mystery"',
   'Domain Fluency (%domain)':
     'Level=12 Traits=Oracle Require="features.Domain Acumen"',
   // Added domains from Divine Mysteries
@@ -10260,28 +10260,28 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
   // Oracle
-  'Ancestors':
+  'Ancestors Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Ancestral Meddling feature",' +
       '"Has the Whispers Of Weakness feature",' +
       '"Knows the Ancestral Touch divine spell",' +
       '"Skill Trained (Society)"',
-  'Battle':
+  'Battle Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of The Mortal Warrior feature",' +
       '"Has the Oracular Warning feature",' +
       '"Knows the Weapon Trance divine spell",' +
       '"Skill Trained (Athletics)"',
-  'Bones':
+  'Bones Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Living Death feature",' +
       '"Has the Nudge The Scales feature",' +
       '"Knows the Soul Siphon divine spell",' +
       '"Skill Trained (Medicine)"',
-  'Cosmos':
+  'Cosmos Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of The Sky\'s Call feature",' +
@@ -10331,21 +10331,21 @@ Pathfinder2ERemaster.FEATURES = {
       '"Shows effects of overflowing knowledge",' +
       '"Cursebound inflicts a penalty to Will saves of equal severity",' +
       '"Cursebound inflicts a penalty to Perception of equal severity"',
-  'Flames':
+  'Flames Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Engulfing Flames feature",' +
       '"Has the Foretell Harm feature",' +
       '"Knows the Incendiary Aura divine spell",' +
       '"Skill Trained (Acrobatics)"',
-  'Life':
+  'Life Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Outpouring Life feature",' +
       '"Has the Nudge The Scales feature",' +
       '"Knows the Life Link divine spell",' +
       '"Skill Trained (Medicine)"',
-  'Lore':
+  'Lore Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Torrential Knowledge feature",' +
@@ -10353,7 +10353,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Knows the Brain Drain divine spell",' +
       '"Skill Trained (Occultism; Choose 1 from any Lore)"',
   'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
-  'Tempest':
+  'Tempest Mystery':
     'Section=feature,feature,magic,skill ' +
     'Note=' +
       '"Has the Curse Of Inclement Headwinds feature",' +
@@ -10563,21 +10563,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=combat ' +
     'Note="<b>(Cursebound)</b> R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
-  'Advanced Revelation (Ancestors)':
+  'Advanced Revelation (Ancestors Mystery)':
     'Section=magic Note="Knows the Ancestral Defense divine spell"',
-  'Advanced Revelation (Battle)':
+  'Advanced Revelation (Battle Mystery)':
     'Section=magic Note="Knows the Battlefield Persistence divine spell"',
-  'Advanced Revelation (Bones)':
+  'Advanced Revelation (Bones Mystery)':
     'Section=magic Note="Knows the Armor Of Bones divine spell"',
-  'Advanced Revelation (Cosmos)':
+  'Advanced Revelation (Cosmos Mystery)':
     'Section=magic Note="Knows the Interstellar Void divine spell"',
-  'Advanced Revelation (Flames)':
+  'Advanced Revelation (Flames Mystery)':
     'Section=magic Note="Knows the Whirling Flames divine spell"',
-  'Advanced Revelation (Life)':
+  'Advanced Revelation (Life Mystery)':
     'Section=magic Note="Knows the Delay Affliction divine spell"',
-  'Advanced Revelation (Lore)':
+  'Advanced Revelation (Lore Mystery)':
     'Section=magic Note="Knows the Access Lore divine spell"',
-  'Advanced Revelation (Tempest)':
+  'Advanced Revelation (Tempest Mystery)':
     'Section=magic Note="Knows the Thunderburst divine spell"',
   'Gifted Power':
     'Section=magic Note="+1 rank %V spell slot for a mystery granted spell"',
@@ -10690,21 +10690,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=save ' +
     'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} HP, and can Stand once per day"',
-  'Greater Revelation (Ancestors)':
+  'Greater Revelation (Ancestors Mystery)':
     'Section=magic Note="Knows the Ancestral Form divine spell"',
-  'Greater Revelation (Battle)':
+  'Greater Revelation (Battle Mystery)':
     'Section=magic Note="Knows the Revel In Retribution divine spell"',
-  'Greater Revelation (Bones)':
+  'Greater Revelation (Bones Mystery)':
     'Section=magic Note="Knows the Claim Undead divine spell"',
-  'Greater Revelation (Cosmos)':
+  'Greater Revelation (Cosmos Mystery)':
     'Section=magic Note="Knows the Moonlight Bridge divine spell"',
-  'Greater Revelation (Flames)':
+  'Greater Revelation (Flames Mystery)':
     'Section=magic Note="Knows the Flaming Fusillade divine spell"',
-  'Greater Revelation (Life)':
+  'Greater Revelation (Life Mystery)':
     'Section=magic Note="Knows the Life-Giving Form divine spell"',
-  'Greater Revelation (Lore)':
+  'Greater Revelation (Lore Mystery)':
     'Section=magic Note="Knows the Dread Secret divine spell"',
-  'Greater Revelation (Tempest)':
+  'Greater Revelation (Tempest Mystery)':
     'Section=magic Note="Knows the Tempest Form divine spell"',
   // Magic Sense as above
   'Forestall Curse':
@@ -11779,28 +11779,28 @@ Pathfinder2ERemaster.FEATURES = {
   'Basic Oracle Spellcasting':
     'Section=magic ' +
     'Note="Has 1 1st-rank%{level>=8?\', 1 2nd-rank, and 1 3rd-rank\':level>=6?\' and 1 2nd-rank\':\'\'} divine spell slot"',
-  'First Revelation (Ancestors)':
+  'First Revelation (Ancestors Mystery)':
     'Section=magic ' +
     'Note="Knows the Ancestral Touch divine spell/Has a focus pool"',
-  'First Revelation (Battle)':
+  'First Revelation (Battle Mystery)':
     'Section=magic ' +
     'Note="Knows the Weapon Trance divine spell/Has a focus pool"',
-  'First Revelation (Bones)':
+  'First Revelation (Bones Mystery)':
     'Section=magic ' +
     'Note="Knows the Soul Siphon divine spell/Has a focus pool"',
-  'First Revelation (Cosmos)':
+  'First Revelation (Cosmos Mystery)':
     'Section=magic ' +
     'Note="Knows the Spray Of Stars divine spell/Has a focus pool"',
-  'First Revelation (Flames)':
+  'First Revelation (Flames Mystery)':
     'Section=magic ' +
     'Note="Knows the Incendiary Aura divine spell/Has a focus pool"',
-  'First Revelation (Life)':
+  'First Revelation (Life Mystery)':
     'Section=magic ' +
     'Note="Knows the Life Link divine spell/Has a focus pool"',
-  'First Revelation (Lore)':
+  'First Revelation (Lore Mystery)':
     'Section=magic ' +
     'Note="Knows the Brain Drain divine spell/Has a focus pool"',
-  'First Revelation (Tempest)':
+  'First Revelation (Tempest Mystery)':
     'Section=magic ' +
     'Note="Knows the Tempest Touch divine spell/Has a focus pool"',
   'Advanced Mysteries':
