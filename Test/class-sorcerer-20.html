@@ -34,12 +34,12 @@ var attributes = {
   "generalFeats.Skill Training (River Lore)":1, "generalFeats.Skill Training (Scouting Lore)":1, 
   "generalFeats.Untrained Improvisation":1, "languages.Abyssal":1, "languages.Infernal":1, "languages.Jotun":1, 
   "languages.Necril":1, "languages.Orcish":1, "name":"Class-Sorcerer 20", 
-  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Sorcerer - Aberrant":1, 
-  "selectableFeatures.Sorcerer - Angelic":1, "selectableFeatures.Sorcerer - Demonic":1, 
-  "selectableFeatures.Sorcerer - Diabolic":1, "selectableFeatures.Sorcerer - Draconic (Black)":1, 
-  "selectableFeatures.Sorcerer - Elemental (Water)":1, "selectableFeatures.Sorcerer - Fey":1, 
-  "selectableFeatures.Sorcerer - Hag":1, "selectableFeatures.Sorcerer - Imperial":1, 
-  "selectableFeatures.Sorcerer - Undead":1, "shield":"Wooden", "skillIncreases.Academia Lore":1, 
+  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Sorcerer - Aberrant Bloodline":1, 
+  "selectableFeatures.Sorcerer - Angelic Bloodline":1, "selectableFeatures.Sorcerer - Demonic Bloodline":1, 
+  "selectableFeatures.Sorcerer - Diabolic Bloodline":1, "selectableFeatures.Sorcerer - Draconic Bloodline (Black)":1, 
+  "selectableFeatures.Sorcerer - Elemental Bloodline (Water)":1, "selectableFeatures.Sorcerer - Fey Bloodline":1, 
+  "selectableFeatures.Sorcerer - Hag Bloodline":1, "selectableFeatures.Sorcerer - Imperial Bloodline":1, 
+  "selectableFeatures.Sorcerer - Undead Bloodline":1, "shield":"Wooden", "skillIncreases.Academia Lore":1, 
   "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Astral Plane Lore":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, "skillIncreases.Crafting":1, 
   "skillIncreases.Demon Lore":1, "skillIncreases.Elven Lore":1, "skillIncreases.Forest Lore":1, 
@@ -108,7 +108,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adapted Cantrip; Advanced Bloodline; Arcane Evolution; Armor Proficiency; Assurance (Demon Lore); Assurance (Performance); Bespell Weapon; Bloodline Conduit; Bloodline Focus; Bloodline Perfection; Bloodline Resistance; Bloodline Wellspring; Canny Acumen (Reflex); Canny Acumen (Will); Cantrip Expansion; Clever Improviser; Cooperative Nature; Counterspell; Crossblooded Evolution; Dangerous Sorcery; Divine Evolution; Effortless Concentration; Enhanced Familiar; Familiar; Fast Recovery; Greater Bloodline; Greater Crossblooded Evolution; Greater Mental Evolution; Greater Vital Evolution; Haughty Obstinacy; Interweave Dispel; Magic Sense; Metamagic Mastery; Natural Skill; Occult Evolution; Overwhelming Energy; Primal Evolution; Quickened Casting; Reach Spell; Reflect Spell; Skill Training (Abyss Lore); Skill Training (Acrobatics); Skill Training (Astral Plane Lore); Skill Training (Crafting); Skill Training (Mining Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Scouting Lore); Steady Spellcasting; Untrained Improvisation; Widen Spell</td>
-        <td><b>Sorcerer Features</b>: Aberrant; Ability Boost (Charisma); Ability Boosts; Alertness; Angelic; Attack Trained (Simple Weapons; Unarmed Attacks); Bloodline Paragon; Bloodline Spells; Bloodline; Defense Trained (Unarmored Defense); Defensive Robes; Demonic; Diabolic; Draconic (Black); Elemental (Water); Expert Spellcaster; Fey; General Feats; Hag; Imperial; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Undead; Weapon Expertise; Weapon Specialization</td>
+        <td><b>Sorcerer Features</b>: Aberrant Bloodline; Ability Boost (Charisma); Ability Boosts; Alertness; Angelic Bloodline; Attack Trained (Simple Weapons; Unarmed Attacks); Bloodline Paragon; Bloodline Spells; Bloodline; Defense Trained (Unarmored Defense); Defensive Robes; Demonic Bloodline; Diabolic Bloodline; Draconic Bloodline (Black); Elemental Bloodline (Water); Expert Spellcaster; Fey Bloodline; General Feats; Hag Bloodline; Imperial Bloodline; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Undead Bloodline; Weapon Expertise; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
       </tr></table>
@@ -219,29 +219,29 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Aberrant: Skill Trained (Intimidation; Occultism)</i></td>
+      <td><i>Aberrant Bloodline: Skill Trained (Intimidation; Occultism)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Alertness: Perception Expert</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Angelic: Skill Trained (Diplomacy; Religion)</i></td>
+      <td><i>Angelic Bloodline: Skill Trained (Diplomacy; Religion)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Arcane Evolution: Skill Trained (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Demonic: Skill Trained (Intimidation; Religion)</i></td>
+      <td><i>Demonic Bloodline: Skill Trained (Intimidation; Religion)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Diabolic: Skill Trained (Deception; Religion)</i></td>
+      <td><i>Diabolic Bloodline: Skill Trained (Deception; Religion)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Draconic (Black): Skill Trained (Arcana; Intimidation)</i></td>
+      <td><i>Draconic Bloodline (Black): Skill Trained (Arcana; Intimidation)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Duplicated Training: Skill Trained (Choose 13 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Elemental (Water): Skill Trained (Intimidation; Nature)</i></td>
+      <td><i>Elemental Bloodline (Water): Skill Trained (Intimidation; Nature)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Fey: Skill Trained (Deception; Nature)</i></td>
+      <td><i>Fey Bloodline: Skill Trained (Deception; Nature)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Hag: Skill Trained (Deception; Occultism)</i></td>
+      <td><i>Hag Bloodline: Skill Trained (Deception; Occultism)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Imperial: Skill Trained (Arcana; Society)</i></td>
+      <td><i>Imperial Bloodline: Skill Trained (Arcana; Society)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +4 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -269,7 +269,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Sorcerer Skills: Skill Trained (Choose 6 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Undead: Skill Trained (Intimidation; Religion)</i></td>
+      <td><i>Undead Bloodline: Skill Trained (Intimidation; Religion)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Untrained Improvisation: +20 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
@@ -441,29 +441,29 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Aberrant: Spell Trained (Occult)/Knows the Tentacular Limbs occult spell</i></td>
+      <td><i>Aberrant Bloodline: Spell Trained (Occult)/Knows the Tentacular Limbs occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Aberrant): Knows the Aberrant Whispers occult spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Aberrant Bloodline): Knows the Aberrant Whispers occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Angelic): Knows the Angelic Wings divine spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Angelic Bloodline): Knows the Angelic Wings divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Demonic): Knows the Swamp Of Sloth divine spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Demonic Bloodline): Knows the Swamp Of Sloth divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Diabolic): Knows the Embrace The Pit divine spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Diabolic Bloodline): Knows the Embrace The Pit divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Draconic (Black)): Knows the Dragon Breath arcane spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Draconic Bloodline (Black)): Knows the Dragon Breath arcane spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Elemental (Water)): Knows the Elemental Motion primal spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Elemental Bloodline (Water)): Knows the Elemental Motion primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Fey): Knows the Fey Disappearance primal spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Fey Bloodline): Knows the Fey Disappearance primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Hag): Knows the Horrific Visage occult spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Hag Bloodline): Knows the Horrific Visage occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Imperial): Knows the Extend Spell arcane spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Imperial Bloodline): Knows the Extend Spell arcane spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Bloodline (Undead): Knows the Drain Life divine spell/+1 Focus Points</i></td>
+      <td><i>Advanced Bloodline (Undead Bloodline): Knows the Drain Life divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Angelic: Spell Trained (Divine)/Knows the Angelic Halo divine spell</i></td>
+      <td><i>Angelic Bloodline: Spell Trained (Divine)/Knows the Angelic Halo divine spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Bloodline Paragon: Has 1 10th-level spell slot</i></td>
     </tr><tr style="text-align:center">
@@ -471,43 +471,43 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Bloodline Spells: Has a focus pool and 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Demonic: Spell Trained (Divine)/Knows the Glutton's Jaws divine spell</i></td>
+      <td><i>Demonic Bloodline: Spell Trained (Divine)/Knows the Glutton's Jaws divine spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Diabolic: Spell Trained (Divine)/Knows the Diabolic Edict divine spell</i></td>
+      <td><i>Diabolic Bloodline: Spell Trained (Divine)/Knows the Diabolic Edict divine spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Divine Evolution: +1 D9 slot for <i>Heal</i> or <i>Harm</i></i></td>
     </tr><tr style="text-align:center">
-      <td><i>Draconic (Black): Spell Trained (Arcane)/Knows the Dragon Claws arcane spell</i></td>
+      <td><i>Draconic Bloodline (Black): Spell Trained (Arcane)/Knows the Dragon Claws arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Elemental (Water): Spell Trained (Primal)/Knows the Elemental Toss primal spell</i></td>
+      <td><i>Elemental Bloodline (Water): Spell Trained (Primal)/Knows the Elemental Toss primal spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Expert Spellcaster: Spell Expert (Occult; Divine; Arcane; Primal)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Fey: Spell Trained (Primal)/Knows the Faerie Dust primal spell</i></td>
+      <td><i>Fey Bloodline: Spell Trained (Primal)/Knows the Faerie Dust primal spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Aberrant): Knows the Unusual Anatomy occult spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Aberrant Bloodline): Knows the Unusual Anatomy occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Angelic): Knows the Celestial Brand divine spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Angelic Bloodline): Knows the Celestial Brand divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Demonic): Knows the Abyssal Wrath divine spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Demonic Bloodline): Knows the Abyssal Wrath divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Diabolic): Knows the Hellfire Plume divine spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Diabolic Bloodline): Knows the Hellfire Plume divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Draconic (Black)): Knows the Dragon Wings arcane spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Draconic Bloodline (Black)): Knows the Dragon Wings arcane spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Elemental (Water)): Knows the Elemental Blast primal spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Elemental Bloodline (Water)): Knows the Elemental Blast primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Fey): Knows the Fey Glamour primal spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Fey Bloodline): Knows the Fey Glamour primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Hag): Knows the You're Mine occult spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Hag Bloodline): Knows the You're Mine occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Imperial): Knows the Arcane Countermeasure arcane spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Imperial Bloodline): Knows the Arcane Countermeasure arcane spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Greater Bloodline (Undead): Knows the Grasping Grave divine spell/+1 Focus Points</i></td>
+      <td><i>Greater Bloodline (Undead Bloodline): Knows the Grasping Grave divine spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Hag: Spell Trained (Occult)/Knows the Jealous Hex occult spell</i></td>
+      <td><i>Hag Bloodline: Spell Trained (Occult)/Knows the Jealous Hex occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Imperial: Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell</i></td>
+      <td><i>Imperial Bloodline: Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Legendary Spellcaster: Spell Legendary (Occult; Divine; Arcane; Primal)</i></td>
     </tr><tr style="text-align:center">
@@ -515,13 +515,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Primal Evolution: +1 P9 slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i></i></td>
     </tr><tr style="text-align:center">
-      <td><i>Undead: Spell Trained (Divine)/Knows the Undeath's Blessing divine spell</i></td>
+      <td><i>Undead Bloodline: Spell Trained (Divine)/Knows the Undeath's Blessing divine spell</i></td>
     </tr><tr style="text-align:center">
-      <td>Aberrant: Blood magic effect gives self or a target +2 Will saves for 1 rd</td>
+      <td>Aberrant Bloodline: Blood magic effect gives self or a target +2 Will saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Adapted Cantrip: Knows a cantrip from a second tradition</td>
     </tr><tr style="text-align:center">
-      <td>Angelic: Blood magic effect gives self or a target +1 saves for 1 rd</td>
+      <td>Angelic Bloodline: Blood magic effect gives self or a target +1 saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Arcane Evolution: Can learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire</td>
     </tr><tr style="text-align:center">
@@ -541,17 +541,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Dangerous Sorcery: Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level</td>
     </tr><tr style="text-align:center">
-      <td>Demonic: Blood magic effect gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd</td>
+      <td>Demonic Bloodline: Blood magic effect gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Diabolic: Blood magic effect gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target</td>
+      <td>Diabolic Bloodline: Blood magic effect gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target</td>
     </tr><tr style="text-align:center">
-      <td>Draconic (Black): Blood magic effect gives self or a target +1 Armor Class for 1 rd</td>
+      <td>Draconic Bloodline (Black): Blood magic effect gives self or a target +1 Armor Class for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
     </tr><tr style="text-align:center">
-      <td>Elemental (Water): Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target</td>
+      <td>Elemental Bloodline (Water): Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target</td>
     </tr><tr style="text-align:center">
-      <td>Fey: Blood magic effect gives self or a target concealment for 1 rd</td>
+      <td>Fey Bloodline: Blood magic effect gives self or a target concealment for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Greater Crossblooded Evolution: Can have 3 spells of different levels from different traditions in repertoire</td>
     </tr><tr style="text-align:center">
@@ -559,9 +559,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Greater Vital Evolution: Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day</td>
     </tr><tr style="text-align:center">
-      <td>Hag: Blood magic effect inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn</td>
+      <td>Hag Bloodline: Blood magic effect inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn</td>
     </tr><tr style="text-align:center">
-      <td>Imperial: Blood magic effect gives self or a target +1 skill checks for 1 rd</td>
+      <td>Imperial Bloodline: Blood magic effect gives self or a target +1 skill checks for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Interweave Dispel: <b>(1)</b> Expends a spell slot to add <i>Dispel Magic</i> effects to a successful subsequent single-target spell</td>
     </tr><tr style="text-align:center">
@@ -585,7 +585,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Can negate spellcasting disruption with successful DC 15 flat check</td>
     </tr><tr style="text-align:center">
-      <td>Undead: Blood magic effect gives self 1 temporary Hit Points per spell level for 1 rd or inflicts 1 HP negative per spell level on a target</td>
+      <td>Undead Bloodline: Blood magic effect gives self 1 temporary Hit Points per spell level for 1 rd or inflicts 1 HP negative per spell level on a target</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area instantaneous spell by 5', the effect of a 15' or shorter line or cone instantaneous spell by 5', or the effect of a longer line or cone instantaneous spell by 10'</td>
     </tr></table>

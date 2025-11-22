@@ -1082,7 +1082,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 9:Lightning Reflexes => 9:Reflex Expertise
     // 11:Alertness => 11:Perception Expertise
     // 17:Resolve => 17:Majestic Will
-    // added Elemental (Metal) and Elemental (Wood) bloodlines
+    // added Elemental Bloodline (Metal) and Elemental Bloodline (Wood)
     // Draconic Bloodline changed to different exemplars
     // Added Metal and Wood to Elemental bloodlines
     'Attribute=charisma HitPoints=6 ' +
@@ -1102,24 +1102,24 @@ Pathfinder2ERemaster.CLASSES = {
       '"13:Weapon Specialization","15:Master Spellcaster","17:Majestic Will",' +
       '"19:Bloodline Paragon","19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '1:Aberrant:Bloodline,' +
-      '1:Angelic:Bloodline,' +
-      '1:Demonic:Bloodline,' +
-      '1:Diabolic:Bloodline,' +
-      '"1:Draconic (Arcane):Bloodline",' +
-      '"1:Draconic (Divine):Bloodline",' +
-      '"1:Draconic (Occult):Bloodline",' +
-      '"1:Draconic (Primal):Bloodline",' +
-      '"1:Elemental (Air):Bloodline",' +
-      '"1:Elemental (Earth):Bloodline",' +
-      '"1:Elemental (Fire):Bloodline",' +
-      '"1:Elemental (Metal):Bloodline",' +
-      '"1:Elemental (Water):Bloodline",' +
-      '"1:Elemental (Wood):Bloodline",' +
-      '1:Fey:Bloodline,' +
-      '1:Hag:Bloodline,' +
-      '1:Imperial:Bloodline,' +
-      '1:Undead:Bloodline ' +
+      '"1:Aberrant Bloodline:Bloodline",' +
+      '"1:Angelic Bloodline:Bloodline",' +
+      '"1:Demonic Bloodline:Bloodline",' +
+      '"1:Diabolic Bloodline:Bloodline",' +
+      '"1:Draconic Bloodline (Arcane):Bloodline",' +
+      '"1:Draconic Bloodline (Divine):Bloodline",' +
+      '"1:Draconic Bloodline (Occult):Bloodline",' +
+      '"1:Draconic Bloodline (Primal):Bloodline",' +
+      '"1:Elemental Bloodline (Air):Bloodline",' +
+      '"1:Elemental Bloodline (Earth):Bloodline",' +
+      '"1:Elemental Bloodline (Fire):Bloodline",' +
+      '"1:Elemental Bloodline (Metal):Bloodline",' +
+      '"1:Elemental Bloodline (Water):Bloodline",' +
+      '"1:Elemental Bloodline (Wood):Bloodline",' +
+      '"1:Fey Bloodline:Bloodline",' +
+      '"1:Hag Bloodline:Bloodline",' +
+      '"1:Imperial Bloodline:Bloodline",' +
+      '"1:Undead Bloodline:Bloodline" ' +
     // SpellSlots tradition depends on bloodline--see classRules
     'SpellSlots=' +
       'C1:5@1,' +
@@ -3827,36 +3827,36 @@ Pathfinder2ERemaster.FEATS = {
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATS['Bloodline Resistance'],
   // Changed configuration
-  'Crossblooded Evolution (Aberrant)':
-    'Level=8 Traits=Sorcerer Require="features.Aberrant == 0"',
-  'Crossblooded Evolution (Angelic)':
-    'Level=8 Traits=Sorcerer Require="features.Angelic == 0"',
-  'Crossblooded Evolution (Demonic)':
-    'Level=8 Traits=Sorcerer Require="features.Demonic == 0"',
-  'Crossblooded Evolution (Diabolic)':
-    'Level=8 Traits=Sorcerer Require="features.Diabolic == 0"',
-  'Crossblooded Evolution (Draconic)':
-    'Level=8 Traits=Sorcerer Require="features.Draconic == 0"',
-  'Crossblooded Evolution (Elemental (Air))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Elemental (Earth))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Elemental (Fire))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Elemental (Metal))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Elemental (Water))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Elemental (Wood))':
-    'Level=8 Traits=Sorcerer Require="features.Elemental == 0"',
-  'Crossblooded Evolution (Fey)':
-    'Level=8 Traits=Sorcerer Require="features.Fey == 0"',
-  'Crossblooded Evolution (Hag)':
-    'Level=8 Traits=Sorcerer Require="features.Hag == 0"',
-  'Crossblooded Evolution (Imperial)':
-    'Level=8 Traits=Sorcerer Require="features.Imperial == 0"',
-  'Crossblooded Evolution (Undead)':
-    'Level=8 Traits=Sorcerer Require="features.Undead == 0"',
+  'Crossblooded Evolution (Aberrant Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Aberrant Bloodline == 0"',
+  'Crossblooded Evolution (Angelic Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Angelic Bloodline == 0"',
+  'Crossblooded Evolution (Demonic Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Demonic Bloodline == 0"',
+  'Crossblooded Evolution (Diabolic Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Diabolic Bloodline == 0"',
+  'Crossblooded Evolution (Draconic Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Draconic Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Air))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Earth))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Fire))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Metal))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Water))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Elemental Bloodline (Wood))':
+    'Level=8 Traits=Sorcerer Require="features.Elemental Bloodline == 0"',
+  'Crossblooded Evolution (Fey Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Fey Bloodline == 0"',
+  'Crossblooded Evolution (Hag Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Hag Bloodline == 0"',
+  'Crossblooded Evolution (Imperial Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Imperial Bloodline == 0"',
+  'Crossblooded Evolution (Undead Bloodline)':
+    'Level=8 Traits=Sorcerer Require="features.Undead Bloodline == 0"',
   'Explosion Of Power':'Level=8 Traits=Sorcerer',
   'Energy Fusion':'Level=10 Traits=Sorcerer,Concentrate,Spellshape',
   'Greater Bloodline':Pathfinder2E.FEATS['Greater Bloodline'],
@@ -10746,10 +10746,10 @@ Pathfinder2ERemaster.FEATURES = {
    'Note="Can select 1 spell from an accessible domain during daily prep to cast as a revelation spell"',
 
   // Sorcerer
-  'Aberrant':
-    Pathfinder2E.FEATURES.Aberrant
+  'Aberrant Bloodline':
+    Pathfinder2E.FEATURES['Aberrant Bloodline']
     .replace('self or a target +2', 'self +2 or a target -1'),
-  'Angelic':Pathfinder2E.FEATURES.Angelic,
+  'Angelic Bloodline':Pathfinder2E.FEATURES['Angelic Bloodline'],
   'Bloodline':Pathfinder2E.FEATURES.Bloodline,
   'Bloodline Paragon':
     Pathfinder2E.FEATURES['Bloodline Paragon']
@@ -10759,73 +10759,73 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(' and 1 Focus Point', '')
     .replace('granted', 'sorcerous gift'),
   // Defensive Robes as above
-  'Demonic':
-    Pathfinder2E.FEATURES.Demonic
+  'Demonic Bloodline':
+    Pathfinder2E.FEATURES['Demonic Bloodline']
     .replace('+1', '+2'),
-  'Diabolic':
-    Pathfinder2E.FEATURES.Diabolic
+  'Diabolic Bloodline':
+    Pathfinder2E.FEATURES['Diabolic Bloodline']
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Draconic (Arcane)':
-    Pathfinder2E.FEATURES['Draconic (Brass)']
+  'Draconic Bloodline (Arcane)':
+    Pathfinder2E.FEATURES['Draconic Bloodline (Brass)']
     .replace('Dragon Claws', 'Flurry Of Claws'),
-  'Draconic (Divine)':
-    Pathfinder2E.FEATURES['Draconic (Brass)']
+  'Draconic Bloodline (Divine)':
+    Pathfinder2E.FEATURES['Draconic Bloodline (Brass)']
     .replace('Dragon Claws', 'Flurry Of Claws')
     .replace('Arcane', 'Divine')
     .replace('arcane', 'divine')
     .replace('Arcana', 'Religion'),
-  'Draconic (Occult)':
-    Pathfinder2E.FEATURES['Draconic (Brass)']
+  'Draconic Bloodline (Occult)':
+    Pathfinder2E.FEATURES['Draconic Bloodline (Brass)']
     .replace('Dragon Claws', 'Flurry Of Claws')
     .replace('Arcane', 'Occult')
     .replace('arcane', 'occult')
     .replace('Arcana', 'Occultism'),
-  'Draconic (Primal)':
-    Pathfinder2E.FEATURES['Draconic (Brass)']
+  'Draconic Bloodline (Primal)':
+    Pathfinder2E.FEATURES['Draconic Bloodline (Brass)']
     .replace('Dragon Claws', 'Flurry Of Claws')
     .replace('Arcane', 'Primal')
     .replace('arcane', 'primal')
     .replace('Arcana', 'Nature'),
-  'Elemental (Air)':
-    Pathfinder2E.FEATURES['Elemental (Air)']
+  'Elemental Bloodline (Air)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Air)']
     .replace('+1', '+2')
     .replace('bludgeoning', 'slashing')
     .replace('level', 'rank'),
-  'Elemental (Earth)':
-    Pathfinder2E.FEATURES['Elemental (Earth)']
+  'Elemental Bloodline (Earth)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Earth)']
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Elemental (Fire)':
-    Pathfinder2E.FEATURES['Elemental (Fire)']
+  'Elemental Bloodline (Fire)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Fire)']
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Elemental (Metal)':
-    Pathfinder2E.FEATURES['Elemental (Air)']
+  'Elemental Bloodline (Metal)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Air)']
     .replace('+1', '+2')
     .replace('bludgeoning', 'piercing')
     .replace('level', 'rank'),
-  'Elemental (Water)':
-    Pathfinder2E.FEATURES['Elemental (Water)']
+  'Elemental Bloodline (Water)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Water)']
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Elemental (Wood)':
-    Pathfinder2E.FEATURES['Elemental (Earth)']
+  'Elemental Bloodline (Wood)':
+    Pathfinder2E.FEATURES['Elemental Bloodline (Earth)']
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Fey':
-    Pathfinder2E.FEATURES.Fey
+  'Fey Bloodline':
+    Pathfinder2E.FEATURES['Fey Bloodline']
     .replace('self or a target', 'self +2 Performance or'),
-  'Hag':
-    Pathfinder2E.FEATURES.Hag
+  'Hag Bloodline':
+    Pathfinder2E.FEATURES['Hag Bloodline']
     .replace('2 HP', '4 HP')
     .replace('level', 'rank')
     .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the following turn'),
-  'Imperial':
-    Pathfinder2E.FEATURES.Imperial
+  'Imperial Bloodline':
+    Pathfinder2E.FEATURES['Imperial Bloodline']
     .replace('self or a target', 'self +1 Armor Class or'),
-  'Undead':
-    Pathfinder2E.FEATURES.Undead
+  'Undead Bloodline':
+    Pathfinder2E.FEATURES['Undead Bloodline']
     .replace('negative', 'void')
     .replace('for 1 rd', 'until the start of the next turn')
     .replaceAll('level', 'rank'),
@@ -10887,44 +10887,46 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Adds a second target, inflicting half the initial damage, to a single-target instantaneous attack spell"',
-  'Advanced Bloodline (Aberrant)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Aberrant)'],
-  'Advanced Bloodline (Angelic)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Angelic)'],
-  'Advanced Bloodline (Demonic)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Demonic)'],
-  'Advanced Bloodline (Diabolic)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Diabolic)'],
-  'Advanced Bloodline (Draconic (Arcane))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
-  'Advanced Bloodline (Draconic (Divine))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+  'Advanced Bloodline (Aberrant Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Aberrant Bloodline)'],
+  'Advanced Bloodline (Angelic Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Angelic Bloodline)'],
+  'Advanced Bloodline (Demonic Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Demonic Bloodline)'],
+  'Advanced Bloodline (Diabolic Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Diabolic Bloodline)'],
+  'Advanced Bloodline (Draconic Bloodline (Arcane))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic Bloodline (Black))'],
+  'Advanced Bloodline (Draconic Bloodline (Divine))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'divine'),
-  'Advanced Bloodline (Draconic (Occult))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+  'Advanced Bloodline (Draconic Bloodline (Occult))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'occult'),
-  'Advanced Bloodline (Draconic (Primal))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))']
+  'Advanced Bloodline (Draconic Bloodline (Primal))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'primal'),
-  'Advanced Bloodline (Elemental (Air))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Air))'],
-  'Advanced Bloodline (Elemental (Earth))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Earth))'],
-  'Advanced Bloodline (Elemental (Fire))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Fire))'],
-  'Advanced Bloodline (Elemental (Metal))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Earth))'],
-  'Advanced Bloodline (Elemental (Water))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Water))'],
-  'Advanced Bloodline (Elemental (Wood))':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Water))'],
-  'Advanced Bloodline (Fey)':Pathfinder2E.FEATURES['Advanced Bloodline (Fey)'],
-  'Advanced Bloodline (Hag)':Pathfinder2E.FEATURES['Advanced Bloodline (Hag)'],
-  'Advanced Bloodline (Imperial)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Imperial)']
+  'Advanced Bloodline (Elemental Bloodline (Air))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Air))'],
+  'Advanced Bloodline (Elemental Bloodline (Earth))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Earth))'],
+  'Advanced Bloodline (Elemental Bloodline (Fire))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Fire))'],
+  'Advanced Bloodline (Elemental Bloodline (Metal))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Earth))'],
+  'Advanced Bloodline (Elemental Bloodline (Water))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Water))'],
+  'Advanced Bloodline (Elemental Bloodline (Wood))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental Bloodline (Water))'],
+  'Advanced Bloodline (Fey Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Fey Bloodline)'],
+  'Advanced Bloodline (Hag Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Hag Bloodline)'],
+  'Advanced Bloodline (Imperial Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Imperial Bloodline)']
     .replace('Extend Spell', 'Extend Blood Magic'),
-  'Advanced Bloodline (Undead)':
-    Pathfinder2E.FEATURES['Advanced Bloodline (Undead)'],
+  'Advanced Bloodline (Undead Bloodline)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Undead Bloodline)'],
   'Diverting Vortex':
     'Action=1 ' +
     'Section=magic ' +
@@ -10942,74 +10944,74 @@ Pathfinder2ERemaster.FEATURES = {
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATURES['Bloodline Resistance'],
   // Changed effects
-  'Crossblooded Evolution (Aberrant)':
+  'Crossblooded Evolution (Aberrant Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Aberrant, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Aberrant Bloodline'], 'Note')[1] + '"')
     .replace('self or a target +2', 'self +2 or a target -1'),
-  'Crossblooded Evolution (Angelic)':
+  'Crossblooded Evolution (Angelic Bloodline)':
     'Section=magic ' +
-    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Angelic, 'Note')[1] + '"',
-  'Crossblooded Evolution (Demonic)':
+    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Angelic Bloodline'], 'Note')[1] + '"',
+  'Crossblooded Evolution (Demonic Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Demonic, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Demonic Bloodline'], 'Note')[1] + '"')
     .replace('+1', '+2'),
-  'Crossblooded Evolution (Diabolic)':
+  'Crossblooded Evolution (Diabolic Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Diabolic, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Diabolic Bloodline'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Draconic)':
+  'Crossblooded Evolution (Draconic Bloodline)':
     'Section=magic ' +
-    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Draconic (Brass)'], 'Note')[1] + '"',
-  'Crossblooded Evolution (Elemental (Air))':
+    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Draconic Bloodline (Brass)'], 'Note')[1] + '"',
+  'Crossblooded Evolution (Elemental Bloodline (Air))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Air)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Air)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('bludgeoning', 'slashing')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Elemental (Earth))':
+  'Crossblooded Evolution (Elemental Bloodline (Earth))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Earth)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Earth)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Elemental (Fire))':
+  'Crossblooded Evolution (Elemental Bloodline (Fire))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Fire)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Fire)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Elemental (Metal))':
+  'Crossblooded Evolution (Elemental Bloodline (Metal))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Air)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Air)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('bludgeoning', 'piercing')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Elemental (Water))':
+  'Crossblooded Evolution (Elemental Bloodline (Water))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Water)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Water)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Elemental (Wood))':
+  'Crossblooded Evolution (Elemental Bloodline (Wood))':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Earth)'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental Bloodline (Earth)'], 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
-  'Crossblooded Evolution (Fey)':
+  'Crossblooded Evolution (Fey Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Fey, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Fey Bloodline'], 'Note')[1] + '"')
     .replace('self or a target', 'self +2 Performance or'),
-  'Crossblooded Evolution (Hag)':
+  'Crossblooded Evolution (Hag Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Hag, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Hag Bloodline'], 'Note')[1] + '"')
     .replace('2 HP', '4 HP')
     .replace('level', 'rank')
     .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the following turn'),
-  'Crossblooded Evolution (Imperial)':
+  'Crossblooded Evolution (Imperial Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Imperial, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Imperial Bloodline'], 'Note')[1] + '"')
     .replace('self or a target', 'self +1 Armor Class or'),
-  'Crossblooded Evolution (Undead)':
+  'Crossblooded Evolution (Undead Bloodline)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Undead, 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Undead Bloodline'], 'Note')[1] + '"')
     .replace('negative', 'void')
     .replace('for 1 rd', 'until the start of the next turn')
     .replaceAll('level', 'rank'),
@@ -11020,44 +11022,46 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Expends 2 spell slots to increase a subsequent spell\'s energy damage by another spell\'s rank; the total damage is split evenly between the energy types inflicted by the 2 spells"',
-  'Greater Bloodline (Aberrant)':
-    Pathfinder2E.FEATURES['Greater Bloodline (Aberrant)'],
-  'Greater Bloodline (Angelic)':
-    Pathfinder2E.FEATURES['Greater Bloodline (Angelic)'],
-  'Greater Bloodline (Demonic)':
-    Pathfinder2E.FEATURES['Greater Bloodline (Demonic)']
+  'Greater Bloodline (Aberrant Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Aberrant Bloodline)'],
+  'Greater Bloodline (Angelic Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Angelic Bloodline)'],
+  'Greater Bloodline (Demonic Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Demonic Bloodline)']
     .replace('Abyssal', 'Chthonian'),
-  'Greater Bloodline (Diabolic)':
-    Pathfinder2E.FEATURES['Greater Bloodline (Diabolic)'],
-  'Greater Bloodline (Draconic (Arcane))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
-  'Greater Bloodline (Draconic (Divine))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+  'Greater Bloodline (Diabolic Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Diabolic Bloodline)'],
+  'Greater Bloodline (Draconic Bloodline (Arcane))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic Bloodline (Black))'],
+  'Greater Bloodline (Draconic Bloodline (Divine))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'divine'),
-  'Greater Bloodline (Draconic (Occult))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+  'Greater Bloodline (Draconic Bloodline (Occult))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'occult'),
-  'Greater Bloodline (Draconic (Primal))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))']
+  'Greater Bloodline (Draconic Bloodline (Primal))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic Bloodline (Black))']
     .replace('arcane', 'primal'),
-  'Greater Bloodline (Elemental (Air))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Air))'],
-  'Greater Bloodline (Elemental (Earth))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
-  'Greater Bloodline (Elemental (Fire))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Fire))'],
-  'Greater Bloodline (Elemental (Metal))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
-  'Greater Bloodline (Elemental (Water))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Water))'],
-  'Greater Bloodline (Elemental (Wood))':
-    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
-  'Greater Bloodline (Fey)':Pathfinder2E.FEATURES['Greater Bloodline (Fey)'],
-  'Greater Bloodline (Hag)':Pathfinder2E.FEATURES['Greater Bloodline (Hag)'],
-  'Greater Bloodline (Imperial)':
-     Pathfinder2E.FEATURES['Greater Bloodline (Imperial)'],
-  'Greater Bloodline (Undead)':
-     Pathfinder2E.FEATURES['Greater Bloodline (Undead)'],
+  'Greater Bloodline (Elemental Bloodline (Air))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Air))'],
+  'Greater Bloodline (Elemental Bloodline (Earth))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Earth))'],
+  'Greater Bloodline (Elemental Bloodline (Fire))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Fire))'],
+  'Greater Bloodline (Elemental Bloodline (Metal))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Earth))'],
+  'Greater Bloodline (Elemental Bloodline (Water))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Water))'],
+  'Greater Bloodline (Elemental Bloodline (Wood))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental Bloodline (Earth))'],
+  'Greater Bloodline (Fey Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Fey Bloodline)'],
+  'Greater Bloodline (Hag Bloodline)':
+    Pathfinder2E.FEATURES['Greater Bloodline (Hag Bloodline)'],
+  'Greater Bloodline (Imperial Bloodline)':
+     Pathfinder2E.FEATURES['Greater Bloodline (Imperial Bloodline)'],
+  'Greater Bloodline (Undead Bloodline)':
+     Pathfinder2E.FEATURES['Greater Bloodline (Undead Bloodline)'],
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Signature Spell Expansion':
@@ -11816,66 +11820,66 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Basic Sorcerer Spellcasting']
     .replaceAll('-level', '-rank'),
   'Basic Blood Potency':Pathfinder2E.FEATURES['Basic Blood Potency'],
-  'Basic Bloodline Spell (Aberrant)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Aberrant)']
+  'Basic Bloodline Spell (Aberrant Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Aberrant Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Angelic)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Angelic)']
+  'Basic Bloodline Spell (Angelic Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Angelic Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Demonic)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Demonic)']
+  'Basic Bloodline Spell (Demonic Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Demonic Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Diabolic)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Diabolic)']
+  'Basic Bloodline Spell (Diabolic Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Diabolic Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Draconic (Arcane))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+  'Basic Bloodline Spell (Draconic Bloodline (Arcane))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic Bloodline (Brass))']
     .replace(' and at least 1 Focus Point', '')
     .replace('Dragon Claws', 'Flurry Of Claws'),
-  'Basic Bloodline Spell (Draconic (Divine))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+  'Basic Bloodline Spell (Draconic Bloodline (Divine))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic Bloodline (Brass))']
     .replace(' and at least 1 Focus Point', '')
     .replace('arcane', 'divine')
     .replace('Dragon Claws', 'Flurry Of Claws'),
-  'Basic Bloodline Spell (Draconic (Occult))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+  'Basic Bloodline Spell (Draconic Bloodline (Occult))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic Bloodline (Brass))']
     .replace(' and at least 1 Focus Point', '')
     .replace('arcane', 'occult')
     .replace('Dragon Claws', 'Flurry Of Claws'),
-  'Basic Bloodline Spell (Draconic (Primal))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+  'Basic Bloodline Spell (Draconic Bloodline (Primal))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic Bloodline (Brass))']
     .replace(' and at least 1 Focus Point', '')
     .replace('arcane', 'primal')
     .replace('Dragon Claws', 'Flurry Of Claws'),
-  'Basic Bloodline Spell (Elemental (Air))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Air))']
+  'Basic Bloodline Spell (Elemental Bloodline (Air))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Air))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Elemental (Earth))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Earth))']
+  'Basic Bloodline Spell (Elemental Bloodline (Earth))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Earth))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Elemental (Fire))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Fire))']
+  'Basic Bloodline Spell (Elemental Bloodline (Fire))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Fire))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Elemental (Metal))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Earth))']
+  'Basic Bloodline Spell (Elemental Bloodline (Metal))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Earth))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Elemental (Water))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Water))']
+  'Basic Bloodline Spell (Elemental Bloodline (Water))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Water))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Elemental (Wood))':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Water))']
+  'Basic Bloodline Spell (Elemental Bloodline (Wood))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental Bloodline (Water))']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Fey)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Fey)']
+  'Basic Bloodline Spell (Fey Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Fey Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Hag)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Hag)']
+  'Basic Bloodline Spell (Hag Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Hag Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Imperial)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Imperial)']
+  'Basic Bloodline Spell (Imperial Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Imperial Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
-  'Basic Bloodline Spell (Undead)':
-    Pathfinder2E.FEATURES['Basic Bloodline Spell (Undead)']
+  'Basic Bloodline Spell (Undead Bloodline)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Undead Bloodline)']
     .replace(' and at least 1 Focus Point', ''),
   'Advanced Blood Potency':Pathfinder2E.FEATURES['Advanced Blood Potency'],
   'Bloodline Breadth':Pathfinder2E.FEATURES['Bloodline Breadth'],
@@ -11952,8 +11956,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Settlement Scholastics':
     'Section=feature,skill ' +
     'Note=' +
-      // TODO restricted to Settlement Lore
-      '"Skill Feat (Choose %V from any Additional Lore)",' +
+      '"Skill Feat (Choose %V from any Additional Lore (Settlement Lore))",' +
       '"+%V Language Count"',
   'Scholastic Identification':
     'Section=skill ' +
@@ -12459,8 +12462,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,feature ' +
     'Note=' +
       '"Moves normally through difficult terrain and uneven ground caused by unstable ground",' +
-      // TODO restricted to Sailing Lore or coastal Settlement Lore
-      '"Has the Boarding Assault feature/Skill Feat (Choose 1 from any Additional Lore)"',
+      '"Has the Boarding Assault feature/Skill Feat (Choose 1 from any Additional Lore (Settlement Lore), Additional Lore (Sailing Lore))"',
   'Boarding Assault':
     'Action=2 ' +
     'Section=combat ' +
@@ -16333,8 +16335,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Motion':
     Pathfinder2E.SPELLS['Elemental Motion']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace('(Earth)', "(Earth)'||$$'features.Elemental (Metal)")
-    .replace('{', "{$$'features.Elemental (Wood)'?(speed+\\\"' climb Speed\\\"):"),
+    .replace('(Earth)', "(Earth)'||$$'features.Elemental Bloodline (Metal)")
+    .replace('{', "{$$'features.Elemental Bloodline (Wood)'?(speed+\\\"' climb Speed\\\"):"),
   'Elemental Blast':
     Pathfinder2E.SPELLS['Elemental Blast']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -17244,13 +17246,13 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
     );
   } else if(name == 'Sorcerer') {
     rules.defineRule('bloodlineDamage',
-      'features.Elemental (Air)', '=', '"slashing"',
-      'features.Elemental (Metal)', '=', '"piercing"',
-      'features.Elemental (Wood)', '=', '"bludgeoning"',
-      'features.Draconic (Arcane)', '=', '"force"',
-      'features.Draconic (Divine)', '=', '"spirit"',
-      'features.Draconic (Occult)', '=', '"mental"',
-      'features.Draconic (Primal)', '=', '"fire"'
+      'features.Elemental Bloodline (Air)', '=', '"slashing"',
+      'features.Elemental Bloodline (Metal)', '=', '"piercing"',
+      'features.Elemental Bloodline (Wood)', '=', '"bludgeoning"',
+      'features.Draconic Bloodline (Arcane)', '=', '"force"',
+      'features.Draconic Bloodline (Divine)', '=', '"spirit"',
+      'features.Draconic Bloodline (Occult)', '=', '"mental"',
+      'features.Draconic Bloodline (Primal)', '=', '"fire"'
     );
   } else if(name == 'Swashbuckler') {
     ['Battledancer', 'Braggart', 'Fencer', 'Gymnast', 'Rascal', 'Wit'].forEach(s => {

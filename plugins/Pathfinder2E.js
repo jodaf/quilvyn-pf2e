@@ -805,28 +805,28 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Aberrant:Bloodline",' +
-      '"1:Angelic:Bloodline",' +
-      '"1:Demonic:Bloodline",' +
-      '"1:Diabolic:Bloodline",' +
-      '"1:Draconic (Brass):Bloodline",' +
-      '"1:Draconic (Bronze):Bloodline",' +
-      '"1:Draconic (Copper):Bloodline",' +
-      '"1:Draconic (Gold):Bloodline",' +
-      '"1:Draconic (Silver):Bloodline",' +
-      '"1:Draconic (Black):Bloodline",' +
-      '"1:Draconic (Blue):Bloodline",' +
-      '"1:Draconic (Green):Bloodline",' +
-      '"1:Draconic (Red):Bloodline",' +
-      '"1:Draconic (White):Bloodline",' +
-      '"1:Elemental (Air):Bloodline",' +
-      '"1:Elemental (Earth):Bloodline",' +
-      '"1:Elemental (Fire):Bloodline",' +
-      '"1:Elemental (Water):Bloodline",' +
-      '"1:Fey:Bloodline",' +
-      '"1:Hag:Bloodline",' +
-      '"1:Imperial:Bloodline",' +
-      '"1:Undead:Bloodline" ' +
+      '"1:Aberrant Bloodline:Bloodline",' +
+      '"1:Angelic Bloodline:Bloodline",' +
+      '"1:Demonic Bloodline:Bloodline",' +
+      '"1:Diabolic Bloodline:Bloodline",' +
+      '"1:Draconic Bloodline (Brass):Bloodline",' +
+      '"1:Draconic Bloodline (Bronze):Bloodline",' +
+      '"1:Draconic Bloodline (Copper):Bloodline",' +
+      '"1:Draconic Bloodline (Gold):Bloodline",' +
+      '"1:Draconic Bloodline (Silver):Bloodline",' +
+      '"1:Draconic Bloodline (Black):Bloodline",' +
+      '"1:Draconic Bloodline (Blue):Bloodline",' +
+      '"1:Draconic Bloodline (Green):Bloodline",' +
+      '"1:Draconic Bloodline (Red):Bloodline",' +
+      '"1:Draconic Bloodline (White):Bloodline",' +
+      '"1:Elemental Bloodline (Air):Bloodline",' +
+      '"1:Elemental Bloodline (Earth):Bloodline",' +
+      '"1:Elemental Bloodline (Fire):Bloodline",' +
+      '"1:Elemental Bloodline (Water):Bloodline",' +
+      '"1:Fey Bloodline:Bloodline",' +
+      '"1:Hag Bloodline:Bloodline",' +
+      '"1:Imperial Bloodline:Bloodline",' +
+      '"1:Undead Bloodline:Bloodline" ' +
     // SpellSlots tradition depends on bloodline--see classRules
     'SpellSlots=' +
       'C1:5@1,' +
@@ -6050,133 +6050,133 @@ Pathfinder2E.FEATURES = {
   // Weapon Expertise as above
   // Weapon Specialization as above
 
-  'Aberrant':
+  'Aberrant Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Tentacular Limbs occult spell",' +
       '"Blood magic effect gives self or a target +2 Will saves for 1 rd",' +
       '"Skill Trained (Intimidation; Occultism)"',
-  'Angelic':
+  'Angelic Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Angelic Halo divine spell",' +
       '"Blood magic effect gives self or a target +1 saves for 1 rd",' +
       '"Skill Trained (Diplomacy; Religion)"',
-  'Demonic':
+  'Demonic Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
       '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
-  'Diabolic':
+  'Diabolic Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
       '"Blood magic effect gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target",' +
       '"Skill Trained (Deception; Religion)"',
-  'Draconic (Brass)':
+  'Draconic Bloodline (Brass)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Bronze)':
+  'Draconic Bloodline (Bronze)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Copper)':
+  'Draconic Bloodline (Copper)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Gold)':
+  'Draconic Bloodline (Gold)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Silver)':
+  'Draconic Bloodline (Silver)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Black)':
+  'Draconic Bloodline (Black)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Blue)':
+  'Draconic Bloodline (Blue)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Green)':
+  'Draconic Bloodline (Green)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Red)':
+  'Draconic Bloodline (Red)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (White)':
+  'Draconic Bloodline (White)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Elemental (Air)':
+  'Elemental Bloodline (Air)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
       '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Earth)':
+  'Elemental Bloodline (Earth)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
       '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Fire)':
+  'Elemental Bloodline (Fire)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
       '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP fire per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Water)':
+  'Elemental Bloodline (Water)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
       '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
-  'Fey':
+  'Fey Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Faerie Dust primal spell",' +
       '"Blood magic effect gives self or a target concealment for 1 rd",' +
       '"Skill Trained (Deception; Nature)"',
-  'Hag':
+  'Hag Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
       '"Blood magic effect inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn",' +
       '"Skill Trained (Deception; Occultism)"',
-  'Imperial':
+  'Imperial Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell",' +
       '"Blood magic effect gives self or a target +1 skill checks for 1 rd",' +
       '"Skill Trained (Arcana; Society)"',
-  'Undead':
+  'Undead Bloodline':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
@@ -6213,58 +6213,58 @@ Pathfinder2E.FEATURES = {
   'Primal Evolution':
     'Section=magic ' +
     'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
-  'Advanced Bloodline (Aberrant)':
+  'Advanced Bloodline (Aberrant Bloodline)':
     'Section=magic ' +
     'Note="Knows the Aberrant Whispers occult spell/+1 Focus Points"',
-  'Advanced Bloodline (Angelic)':
+  'Advanced Bloodline (Angelic Bloodline)':
     'Section=magic Note="Knows the Angelic Wings divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Demonic)':
+  'Advanced Bloodline (Demonic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Swamp Of Sloth divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Diabolic)':
+  'Advanced Bloodline (Diabolic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Embrace The Pit divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Black))':
+  'Advanced Bloodline (Draconic Bloodline (Black))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Blue))':
+  'Advanced Bloodline (Draconic Bloodline (Blue))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Brass))':
+  'Advanced Bloodline (Draconic Bloodline (Brass))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Bronze))':
+  'Advanced Bloodline (Draconic Bloodline (Bronze))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Copper))':
+  'Advanced Bloodline (Draconic Bloodline (Copper))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Gold))':
+  'Advanced Bloodline (Draconic Bloodline (Gold))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Green))':
+  'Advanced Bloodline (Draconic Bloodline (Green))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Red))':
+  'Advanced Bloodline (Draconic Bloodline (Red))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Silver))':
+  'Advanced Bloodline (Draconic Bloodline (Silver))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (White))':
+  'Advanced Bloodline (Draconic Bloodline (White))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Air))':
+  'Advanced Bloodline (Elemental Bloodline (Air))':
     'Section=magic ' +
     'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Earth))':
+  'Advanced Bloodline (Elemental Bloodline (Earth))':
     'Section=magic ' +
     'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Fire))':
+  'Advanced Bloodline (Elemental Bloodline (Fire))':
     'Section=magic ' +
     'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Water))':
+  'Advanced Bloodline (Elemental Bloodline (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Fey)':
+  'Advanced Bloodline (Fey Bloodline)':
     'Section=magic ' +
     'Note="Knows the Fey Disappearance primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Hag)':
+  'Advanced Bloodline (Hag Bloodline)':
     'Section=magic ' +
     'Note="Knows the Horrific Visage occult spell/+1 Focus Points"',
-  'Advanced Bloodline (Imperial)':
+  'Advanced Bloodline (Imperial Bloodline)':
     'Section=magic Note="Knows the Extend Spell arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Undead)':
+  'Advanced Bloodline (Undead Bloodline)':
     'Section=magic Note="Knows the Drain Life divine spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
@@ -6272,57 +6272,57 @@ Pathfinder2E.FEATURES = {
   'Crossblooded Evolution':
     'Section=magic ' +
     'Note="Can have 1 spell from a different tradition in repertoire"',
-  'Greater Bloodline (Aberrant)':
+  'Greater Bloodline (Aberrant Bloodline)':
     'Section=magic ' +
     'Note="Knows the Unusual Anatomy occult spell/+1 Focus Points"',
-  'Greater Bloodline (Angelic)':
+  'Greater Bloodline (Angelic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Celestial Brand divine spell/+1 Focus Points"',
-  'Greater Bloodline (Demonic)':
+  'Greater Bloodline (Demonic Bloodline)':
     'Section=magic Note="Knows the Abyssal Wrath divine spell/+1 Focus Points"',
-  'Greater Bloodline (Diabolic)':
+  'Greater Bloodline (Diabolic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Hellfire Plume divine spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Black))':
+  'Greater Bloodline (Draconic Bloodline (Black))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Blue))':
+  'Greater Bloodline (Draconic Bloodline (Blue))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Brass))':
+  'Greater Bloodline (Draconic Bloodline (Brass))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Bronze))':
+  'Greater Bloodline (Draconic Bloodline (Bronze))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Copper))':
+  'Greater Bloodline (Draconic Bloodline (Copper))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Gold))':
+  'Greater Bloodline (Draconic Bloodline (Gold))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Green))':
+  'Greater Bloodline (Draconic Bloodline (Green))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Red))':
+  'Greater Bloodline (Draconic Bloodline (Red))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Silver))':
+  'Greater Bloodline (Draconic Bloodline (Silver))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (White))':
+  'Greater Bloodline (Draconic Bloodline (White))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Elemental (Air))':
+  'Greater Bloodline (Elemental Bloodline (Air))':
     'Section=magic ' +
     'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
-  'Greater Bloodline (Elemental (Earth))':
+  'Greater Bloodline (Elemental Bloodline (Earth))':
     'Section=magic ' +
     'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
-  'Greater Bloodline (Elemental (Fire))':
+  'Greater Bloodline (Elemental Bloodline (Fire))':
     'Section=magic ' +
     'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
-  'Greater Bloodline (Elemental (Water))':
+  'Greater Bloodline (Elemental Bloodline (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
-  'Greater Bloodline (Fey)':
+  'Greater Bloodline (Fey Bloodline)':
     'Section=magic Note="Knows the Fey Glamour primal spell/+1 Focus Points"',
-  'Greater Bloodline (Hag)':
+  'Greater Bloodline (Hag Bloodline)':
     'Section=magic Note="Knows the You\'re Mine occult spell/+1 Focus Points"',
-  'Greater Bloodline (Imperial)':
+  'Greater Bloodline (Imperial Bloodline)':
     'Section=magic ' +
     'Note="Knows the Arcane Countermeasure arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Undead)':
+  'Greater Bloodline (Undead Bloodline)':
     'Section=magic ' +
     'Note="Knows the Grasping Grave divine spell/+1 Focus Points"',
   // Overwhelming Energy as above
@@ -6800,70 +6800,70 @@ Pathfinder2E.FEATURES = {
   'Basic Blood Potency':
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Sorcerer up to level 2)"',
-  'Basic Bloodline Spell (Aberrant)':
+  'Basic Bloodline Spell (Aberrant Bloodline)':
     'Section=magic ' +
     'Note="Knows the Tentacular Limbs occult spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Angelic)':
+  'Basic Bloodline Spell (Angelic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Angelic Halo divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Demonic)':
+  'Basic Bloodline Spell (Demonic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Glutton\'s Jaws divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Diabolic)':
+  'Basic Bloodline Spell (Diabolic Bloodline)':
     'Section=magic ' +
     'Note="Knows the Diabolic Edict divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Black))':
+  'Basic Bloodline Spell (Draconic Bloodline (Black))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Blue))':
+  'Basic Bloodline Spell (Draconic Bloodline (Blue))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Brass))':
+  'Basic Bloodline Spell (Draconic Bloodline (Brass))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Bronze))':
+  'Basic Bloodline Spell (Draconic Bloodline (Bronze))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Copper))':
+  'Basic Bloodline Spell (Draconic Bloodline (Copper))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Gold))':
+  'Basic Bloodline Spell (Draconic Bloodline (Gold))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Green))':
+  'Basic Bloodline Spell (Draconic Bloodline (Green))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Red))':
+  'Basic Bloodline Spell (Draconic Bloodline (Red))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Silver))':
+  'Basic Bloodline Spell (Draconic Bloodline (Silver))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (White))':
+  'Basic Bloodline Spell (Draconic Bloodline (White))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Air))':
+  'Basic Bloodline Spell (Elemental Bloodline (Air))':
     'Section=magic ' +
     'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Earth))':
+  'Basic Bloodline Spell (Elemental Bloodline (Earth))':
     'Section=magic ' +
     'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Fire))':
+  'Basic Bloodline Spell (Elemental Bloodline (Fire))':
     'Section=magic ' +
     'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Water))':
+  'Basic Bloodline Spell (Elemental Bloodline (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Fey)':
+  'Basic Bloodline Spell (Fey Bloodline)':
     'Section=magic ' +
     'Note="Knows the Faerie Dust primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Hag)':
+  'Basic Bloodline Spell (Hag Bloodline)':
     'Section=magic ' +
     'Note="Knows the Jealous Hex occult spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Imperial)':
+  'Basic Bloodline Spell (Imperial Bloodline)':
     'Section=magic ' +
     'Note="Knows the Ancestral Memories arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Undead)':
+  'Basic Bloodline Spell (Undead Bloodline)':
     'Section=magic ' +
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':
@@ -11507,7 +11507,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?(speed+\\"\' swim Speed and water breathing\\"):(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10 Speed; <b>9th</b> gives +20 Speed)"',
+      '"Self gains a %{$\'features.Elemental Bloodline (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental Bloodline (Water)\'?(speed+\\"\' swim Speed and water breathing\\"):(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10 Speed; <b>9th</b> gives +20 Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
@@ -13809,22 +13809,22 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('bloodlineDamage',
       'draconicColor', '=', '{Black:"acid", Blue:"electricity", Bronze:"electricity", Copper:"acid", Green:"poison", Silver:"cold", White:"cold"}[source] || "fire"',
-      'features.Elemental (Air)', '=', '"bludgeoning"',
-      'features.Elemental (Earth)', '=', '"bludgeoning"',
-      'features.Elemental (Fire)', '=', '"fire"',
-      'features.Elemental (Water)', '=', '"bludgeoning"'
+      'features.Elemental Bloodline (Air)', '=', '"bludgeoning"',
+      'features.Elemental Bloodline (Earth)', '=', '"bludgeoning"',
+      'features.Elemental Bloodline (Fire)', '=', '"fire"',
+      'features.Elemental Bloodline (Water)', '=', '"bludgeoning"'
     );
     rules.defineRule('draconicColor',
-      'features.Draconic (Black)', '=', '"Black"',
-      'features.Draconic (Blue)', '=', '"Blue"',
-      'features.Draconic (Brass)', '=', '"Brass"',
-      'features.Draconic (Bronze)', '=', '"Bronze"',
-      'features.Draconic (Copper)', '=', '"Copper"',
-      'features.Draconic (Gold)', '=', '"Gold"',
-      'features.Draconic (Green)', '=', '"Green"',
-      'features.Draconic (Red)', '=', '"Red"',
-      'features.Draconic (Silver)', '=', '"Silver"',
-      'features.Draconic (White)', '=', '"White"'
+      'features.Draconic Bloodline (Black)', '=', '"Black"',
+      'features.Draconic Bloodline (Blue)', '=', '"Blue"',
+      'features.Draconic Bloodline (Brass)', '=', '"Brass"',
+      'features.Draconic Bloodline (Bronze)', '=', '"Bronze"',
+      'features.Draconic Bloodline (Copper)', '=', '"Copper"',
+      'features.Draconic Bloodline (Gold)', '=', '"Gold"',
+      'features.Draconic Bloodline (Green)', '=', '"Green"',
+      'features.Draconic Bloodline (Red)', '=', '"Red"',
+      'features.Draconic Bloodline (Silver)', '=', '"Silver"',
+      'features.Draconic Bloodline (White)', '=', '"White"'
     );
     // Using '' instead of classLevel allows Simple Weapons to be the default
     // for, e.g., homebrew classes
@@ -16587,6 +16587,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let allChoices = Object.assign({}, this.getChoices(attribute));
     let allNotes = this.getChoices('notes');
+    let allSkills = this.getChoices('skills');
     let debug = [];
     let subsets;
     if(attribute == 'feats') {
@@ -16700,7 +16701,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 // ... Intelligence (skill Ability or Attribute),
                 // ... Athletics (feat Require with rank.),
                 // ... Polymath Muse (feat Require with features.),
-                // ... Settlement Lore (feat Subcategory)
+                // ... Settlement Lore (skill Subcategory)
+                // ... Additional Lore (Settlement Lore) (feat w/skill Subcategory)
                 category = category.substring(4);
                 debug.push(category);
                 choices = choices.concat(
@@ -16711,7 +16713,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                     QuilvynUtils.getAttrValue(allChoices[x], 'Ability') == category ||
                     QuilvynUtils.getAttrValue(allChoices[x], 'Attribute') == category ||
                     QuilvynUtils.getAttrValueArray(allChoices[x], 'Require').filter(x => x.match('(rank|features)\\.' + category) && !x.match(/==\s+0/)).length > 0 ||
-                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category)
+                    QuilvynUtils.getAttrValueArray(allChoices[x], 'Subcategory').includes(category) ||
+                    (category.match(/^Additional Lore \(.*\)$/) &&
+                     x.match(/^Additional Lore \(.*\)$/) &&
+                     QuilvynUtils.getAttrValueArray(allSkills[x.replaceAll(/Additional Lore \(|\)/g, '')]||'', 'Subcategory').includes(category.replaceAll(/Additional Lore \(|\)/g, '')))
                   )
                 );
               } else if(category == 'any') {
