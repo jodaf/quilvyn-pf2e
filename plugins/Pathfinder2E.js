@@ -12189,7 +12189,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('rank.Armor', 'armorCategory', '=', '0');
   ['Unarmored Defense', 'Light Armor', 'Medium Armor', 'Heavy Armor'].forEach(a => {
     rules.defineRule('rank.Armor',
-      'rank.' + a, '=', 'dict.armorCategory=="' + a.replace(/\s.*/, '') + '" ? source : null'
+      'rank.' + a, '^', 'dict.armorCategory=="' + a.replace(/\s.*/, '') + '" ? source : null'
     );
     rules.defineRule('trainingLevel.' + a, '', '=', '0');
     rules.defineRule('rank.' + a, 'trainingLevel.' + a, '=', null);
@@ -16827,6 +16827,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       choices = choices.filter(x => !x.match(/Steel|Metal/));
     attributes.shield = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'spells') {
+    // TODO: restrict spells with the Uncommon trait?
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
     let allSpells = this.getChoices('spells');

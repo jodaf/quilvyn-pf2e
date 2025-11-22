@@ -9395,7 +9395,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"1 selection",' +
       '"Has a focus pool"',
   'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
-  'Exalted Reaction':'Section=combat Note="Has increased %V effects"',
+  'Exalted Reaction':
+    'Section=combat Note="Has increased Champion\'s Reaction effects"',
   'Flash Of Grandeur':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -9450,7 +9451,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked"',
-  'Relentless Reaction':'Section=combat Note="Has increased %V effects"',
+  'Relentless Reaction':
+    'Section=combat Note="Has increased Champion\'s Reaction effects"',
   // Changed description
   'Retributive Strike':
     'Action=Reaction ' +
@@ -12156,11 +12158,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="30\' emanation gives +1 degree of success on saves vs. visual effects, forces foes to succeed on a Will save to use a focus action, and allows allies to Hide without cover"',
 
   'Dandy Dedication':
-    'Section=feature,skill ' +
+    'Section=feature,skill,skill ' +
     'Note=' +
       '"Has the Influence Rumor feature",' +
-      // TODO Skill Expert if already trained
-      '"Skill Trained (Deception; Society)"',
+      '"Skill %V (Deception)",' +
+      '"Skill %V (Society)"',
   'Influence Rumor':
     'Section=skill ' +
     'Note="Successful Diplomacy influences the course, tone, or content of a circulating rumor"',
@@ -12348,8 +12350,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has a 15\' martial\'s aura emanation",' +
       '"Marshal\'s aura gives self and allies +1 vs. fear",' +
-      // TODO Expert if already trained
-      '"Skill Trained (Choose 1 from Diplomacy, Intimidation)"',
+      '"Skill %V (Choose 1 from Diplomacy, Intimidation)"',
   'Dread Marshal Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -12584,9 +12585,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill Note="Can use Crafting to Disable A Device or Pick A Lock"',
 
   'Sentinel Dedication':
-    'Section=combat ' +
-    // TODO Heavy Armor if already trained in Medium Armor, and advances with other features
-    'Note="Defense Trained (Light Armor; Medium Armor)"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Defense %V (Light Armor; Medium Armor)",' +
+      '"Defense %V (Heavy Armor)"',
   'Steel Skin':
     'Section=save Note="Does not suffer fatigue from sleeping in armor"',
   'Armor Specialist':
@@ -15203,7 +15205,8 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description=' +
       '"R30\' Inflicts -1 Perception, attacks, and Will saves, -2 vs. sleep, and a DC 5 flat check to use a concentrate action while sustained for up to 1 min (<b>save Will</b> negates flat check; critical success negates)"',
-  // TODO the below aren't focus spells, but are not generally available either
+  // NOTE: added the Focus trait to the cantrips below to note that they aren't
+  // generally available
   'Clinging Ice':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Cantrip,Cold,Hex,Manipulate ' +
@@ -16696,7 +16699,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
-    Pathfinder2ERemaster.ancestryRulesExtra(rules, name);
+    Pathfinder2ERemaster.ancestryRulesExtra(rules, name, attrs);
   } else if(type == 'Ancestry Feature')
     Pathfinder2ERemaster.ancestryFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Ancestry'),
@@ -16722,7 +16725,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
-    Pathfinder2ERemaster.backgroundRulesExtra(rules, name);
+    Pathfinder2ERemaster.backgroundRulesExtra(rules, name, attrs);
   } else if(type == 'Background Feature')
     Pathfinder2ERemaster.backgroundFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Background'),
@@ -16738,7 +16741,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'SpellSlots')
     );
-    Pathfinder2ERemaster.classRulesExtra(rules, name);
+    Pathfinder2ERemaster.classRulesExtra(rules, name, attrs);
   } else if(type == 'Class Feature')
     Pathfinder2ERemaster.classFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Class'),
@@ -16787,7 +16790,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
-    Pathfinder2ERemaster.heritageRulesExtra(rules, name);
+    Pathfinder2ERemaster.heritageRulesExtra(rules, name, attrs);
   } else if(type == 'Language')
     Pathfinder2ERemaster.languageRules(rules, name);
   else if(type == 'Shield')
@@ -16910,7 +16913,7 @@ Pathfinder2ERemaster.ancestryRules = function(
  * Defines in #rules# the rules associated with class #name# that cannot be
  * derived directly from the attributes passed to ancestryRules.
  */
-Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
+Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name, attrs) {
   Pathfinder2E.ancestryRulesExtra(rules, name);
   if(name == 'Catfolk') {
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
@@ -16996,7 +16999,7 @@ Pathfinder2ERemaster.backgroundRules = function(
  * Defines in #rules# the rules associated with background #name# that cannot
  * be derived directly from the attributes passed to backgroundRules.
  */
-Pathfinder2ERemaster.backgroundRulesExtra = function(rules, name) {
+Pathfinder2ERemaster.backgroundRulesExtra = function(rules, name, attrs) {
   Pathfinder2E.backgroundRulesExtra(rules, name);
   if(name == 'Feybound') {
     rules.defineRule('featureNotes.anathema.1', 'feyboundLevel', '+', '16');
@@ -17043,7 +17046,7 @@ Pathfinder2ERemaster.classRules = function(
  * Defines in #rules# the rules associated with class #name# that cannot be
  * derived directly from the attributes passed to classRules.
  */
-Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
+Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
   Pathfinder2E.classRulesExtra(rules, name);
   let classLevel = 'levels.' + name;
   if(name == 'Alchemist') {
@@ -17101,19 +17104,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.blessedShield.1',
       'features.Blessed Shield', '?', null,
       'level', '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
-    );
-    rules.defineRule('combatNotes.exaltedReaction',
-      'combatNotes.relentlessReaction', '=', null
-    );
-    // TODO generalize to handle homebrew?
-    rules.defineRule('combatNotes.relentlessReaction',
-      'featureNotes.desecration', '=', '"Selfish Shield"',
-      'featureNotes.grandeur', '=', '"Flash Of Grandeur"',
-      'featureNotes.iniquity', '=', '"Destructive Vengeance"',
-      'featureNotes.justice', '=', '"Retributive Strike"',
-      'featureNotes.liberation', '=', '"Liberating Step"',
-      'featureNotes.obedience', '=', '"Iron Command"',
-      'featureNotes.redemption', '=', '"Glimpse Of Redemption"'
     );
     rules.defineRule('featureNotes.blessingOfTheDevoted',
       '', '=', '1',
@@ -17303,23 +17293,21 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       "featureNotes.swashbuckler'sStyle", '=', '1'
     );
   } else if(name == 'Witch') {
-    // TODO Generalize for homebrew?
-    let patronSkills = {
-      "Faith's Flamekeeper":'Religion',
-      'The Inscribed One':'Arcana',
-      'The Resentment':'Occultism',
-      'Silence In Snow':'Nature',
-      'Spinner Of Threads':'Occultism',
-      'Starless Shadow':'Occultism',
-      'Wilding Steward':'Nature'
-    };
-    for(let p in patronSkills) {
-      rules.defineRule('rank.' + p + ' Skill',
-        'features.' + p, '?', null,
-        'rank.' + patronSkills[p], '=', null
-      );
-      rules.defineRule('rank.patronSkill', 'rank.' + p + ' Skill', '^=', null);
-    }
+    // TODO Handled here, this doesn't work for homebrew patrons
+    let patrons =
+      QuilvynUtils.getAttrValueArray(attrs, 'Selectables').filter(x => x.endsWith('Patron')).map(x => x.replace(/^\d+:/, '').replace(/:.*$/, ''));
+    patrons.forEach(p => {
+      let m =
+        (rules.plugin.FEATURES[p] || '').match(/Skill Trained .([\w\s]*)/);
+      if(m) {
+        rules.defineRule('rank.' + p + ' Skill',
+          'features.' + p, '?', null,
+          'rank.' + m[1], '=', null
+        );
+        rules.defineRule
+          ('rank.patronSkill', 'rank.' + p + ' Skill', '^=', null);
+      }
+    });
     rules.defineRule('witchTraditionsLowered',
       'witchTraditions', '=', 'source.toLowerCase()'
     );
@@ -17442,9 +17430,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name.match(/^(Advanced|Greater) Revelation$/)) {
-    // TODO Homebrew mysteries
-    ['Ancestors', 'Battle', 'Bones', 'Cosmos', 'Flames', 'Life', 'Lore',
-     'Tempest'].forEach(m => {
+    // TODO Handled here, this doesn't work for homebrew mysteries
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let mysteries =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Mystery'))
+      .map(x => x.replace(/^\w+ - /, ''));
+     mysteries.forEach(m => {
       rules.defineRule('features.' + name + ' (' + m + ')',
         'features.' + name, '?', null,
         'features.' + m, '=', '1'
@@ -17637,6 +17629,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Crunch') {
     rules.defineRule('weaponDieSides.Jaws', 'combatNotes.crunch', '^', '8');
     // Note: Ignore Grapple trait currently not shown on character sheet
+  } else if(name == 'Dandy Dedication') {
+    rules.defineRule('skillNotes.dandyDedication',
+      '', '=', '"Trained"',
+      'trainingCount.Deception', '=', 'source>1 ? "Expert" : null'
+    );
+    rules.defineRule('skillNotes.dandyDedication-1',
+      '', '=', '"Trained"',
+      'trainingCount.Society', '=', 'source>1 ? "Expert" : null'
+    );
   } else if(name == 'Deadly Aspect') {
     rules.defineRule('combatNotes.deadlyAspect.1',
       'combatNotes.deadlyAspect', '?', null,
@@ -17896,6 +17897,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Linguist Dedication') {
     rules.defineRule
       ('features.Multilingual', 'features.Linguist Dedication', '+', '1');
+  } else if(name == 'Marshal Dedication') {
+    rules.defineRule('skillNotes.marshalDedication',
+      '', '=', '"Trained"',
+      'trainingCount.Diplomacy', '=', 'source>1 ? "Expert" : null',
+      'trainingCount.Intimidation', '=', 'source>1 ? "Expert" : null'
+    );
   } else if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
       'features.Martial Experience', '?', null,
@@ -17973,6 +17980,16 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('armorClass', 'combatNotes.scalyHide.1', '+', null);
     // NOTE: apparently reduced dex cap only applies if unarmored
     rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v=', '3');
+  } else if(name == 'Sentinel Dedication') {
+    rules.defineRule('combatNotes.sentinelDedication',
+      '', '=', '"Trained"',
+      'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source].charAt(0).toUpperCase() + Pathfinder2E.RANK_NAMES[source].substring(1)'
+    );
+    rules.defineRule('combatNotes.sentinelDedication-1',
+      'trainingCount.Medium Armor', '?', 'source >= 2',
+      '', '=', '"Trained"',
+      'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source].charAt(0).toUpperCase() + Pathfinder2E.RANK_NAMES[source].substring(1)'
+    );
   } else if(name == 'Settlement Scholastics') {
     rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
     rules.defineRule('skillNotes.' + prefix, 'feats.' + name, '=', null);
@@ -18010,7 +18027,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       let m =
         ((rules.getChoices('features') || rules.plugin.FEATURES)[s] || '').match(/Skill Trained .([\w\s]*)/);
       if(m)
-        // Handled here, this doesn't work for homebrew styles
+        // TODO Handled here, this doesn't work for homebrew styles
         rules.defineRule
           ('skillNotes.' + prefix, 'features.' + s, '=', '"' + m[1] + '"');
       s = s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
@@ -18084,7 +18101,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     });
     // Suppress validation errors for selected patron and the notes for features
     // of patron that don't come with Witch Dedication
-    // TODO Suppress standard patron spells
     let allSelectables = rules.getChoices('selectableFeatures');
     let patrons =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Witch (Patron)')).map(x => x.replace('Witch - ', ''));
@@ -18235,7 +18251,7 @@ Pathfinder2ERemaster.heritageRules = function(
  * Defines in #rules# the rules associated with versatile heritage #name# that
  * cannot be derived directly from the attributes passed to heritageRules.
  */
-Pathfinder2ERemaster.heritageRulesExtra = function(rules, name) {
+Pathfinder2ERemaster.heritageRulesExtra = function(rules, name, attrs) {
   if(name == 'Dragonblood') {
     rules.defineRule('selectableFeatureCount.Dragonblood (Draconic Exemplar)',
       'featureNotes.draconicExemplar', '=', '1'
