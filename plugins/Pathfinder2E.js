@@ -7304,6 +7304,18 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=featCount.General ' +
     'Section=feature Note="%V General Feat"',
+  'Focus Maximum':
+    'Pattern="([-+]\\d+)\\s+focus\\s+max(?:imum)?|focus\\s+max(?:imum)?\\s+([-+]\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=focusPointMaximum ' +
+    'Section=ability Note="%V Maximum Focus Points"',
+  'Focus Points':
+    'Pattern="([-+]\\d+)\\s+focus\\s+points|focus\\s+points\\s+([-+]\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=focusPoints ' +
+    'Section=ability Note="%V Focus Points"',
   'Hit Points':
     'Pattern="([-+]\\d+)\\s+hit\\s+points|hit\\s+points\\s+([-+]\\d+)" ' +
     'Effect=add ' +
@@ -12111,27 +12123,27 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.choiceRules(rules, 'Shield', s, shields[s]);
   for(let w in weapons) {
     rules.choiceRules(rules, 'Weapon', w, weapons[w]);
-    if(w != 'Shield') {
-      let pattern = w.replace(/  */g, '\\s+');
-      rules.choiceRules(rules, 'Goody', w,
-        // To avoid triggering additional weapons with a common suffix (e.g.,
-        // "* punching dagger +2" also makes regular dagger +2), require that
-        // weapon goodies with a trailing value have no preceding word or be
-        // enclosed in parentheses.
-        'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
-        'Effect=add ' +
-        'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
-        'Value="$1 || $2" ' +
-        'Section=combat Note="%V Attack and damage"'
-      );
-      rules.choiceRules(rules, 'Goody', 'Striking ' + w,
-        'Pattern="([-+]\\d)\\s+striking\\s+' + pattern + '" ' +
-        'Attribute="weaponDieCount.' + w + '" ' +
-        'Effect=add ' +
-        'Value="$1" ' +
-        'Section=combat Note="%V Damage dice"'
-      );
-    }
+    if(w == 'Shield')
+      continue;
+    let pattern = w.replace(/  */g, '\\s+');
+    rules.choiceRules(rules, 'Goody', w,
+      // To avoid triggering additional weapons with a common suffix (e.g.,
+      // "* punching dagger +2" also makes regular dagger +2), require that
+      // weapon goodies with a trailing value have no preceding word or be
+      // enclosed in parentheses.
+      'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
+      'Effect=add ' +
+      'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
+      'Value="$1 || $2" ' +
+      'Section=combat Note="%V Attack and damage"'
+    );
+    rules.choiceRules(rules, 'Goody', 'Striking ' + w,
+      'Pattern="([-+]\\d)\\s+striking\\s+' + pattern + '" ' +
+      'Attribute="weaponDieCount.' + w + '" ' +
+      'Effect=add ' +
+      'Value="$1" ' +
+      'Section=combat Note="%V Damage dice"'
+    );
   }
 
   rules.defineChoice('notes',
@@ -12286,7 +12298,7 @@ Pathfinder2E.identityRules = function(
         '.concat(source & 1 ? ["barbarian instinct"] : [])' +
         '.concat(source & 2 || source & 4 ? [dict.deity] : [])' +
         '.concat(source & 8 ? ["druidic order"] : [])' +
-        '.concat(source & 16 ? ["background"] : [])' + // remaster
+        '.concat(source & 16 ? ["background"] : [])' + // Remaster
         '.join(", ")' +
         '.replace(/^([^,]*), ([^,]*)$/, "$1 or $2")' +
         '.replace(/,([^,]*)$/, ", or$1")'
@@ -12393,22 +12405,15 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
-  // Include Attribute for remaster
+  // Include Attribute for Remaster
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Attribute', 'Subcategory']);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
-  for(let l in languages) {
+  for(let l in languages)
     rules.choiceRules(rules, 'Language', l, languages[l]);
-    rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
-  }
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
-    rules.defineRule('skillNotes.duplicatedTraining',
-      'trainingCount.' + s, '+=', 'source>1 ? source - 1 : null'
-    );
-    rules.defineRule
-      ('skillIncreasesAllocated', 'skillIncreases.' + s, '+=', null);
     let pattern =
       s.replaceAll('(', '\\(').replaceAll(')', '\\)').replace(/\s+/, '\\b\\s*');
     rules.choiceRules(rules, 'Goody', s,
@@ -12422,6 +12427,10 @@ Pathfinder2E.talentRules = function(
   // feats and features after skills because some contain %skill
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
+      if(!rules.getChoices(matchInfo[2] + 's')) {
+        console.log('Feat ' + f + ' uses unknown type "' + matchInfo[2] + '"');
+        continue;
+      }
       for(let c in rules.getChoices(matchInfo[2] + 's')) {
         rules.choiceRules
           (rules, 'Feat', f.replace(matchInfo[1], c), feats[f].replaceAll(matchInfo[1], c));
@@ -12432,6 +12441,10 @@ Pathfinder2E.talentRules = function(
   }
   for(let f in features) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
+      if(!rules.getChoices(matchInfo[2] + 's')) {
+        console.log('Feature ' + f + ' uses unknown type "' + matchInfo[2] + '"');
+        continue;
+      }
       for(let c in rules.getChoices(matchInfo[2] + 's')) {
         rules.choiceRules
           (rules, 'Feature', f.replace(matchInfo[1], c), features[f].replaceAll(matchInfo[1], c));
@@ -12521,7 +12534,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
-    Pathfinder2E.ancestryRulesExtra(rules, name);
+    Pathfinder2E.ancestryRulesExtra(rules, name, attrs);
   } else if(type == 'Ancestry Feature')
     Pathfinder2E.ancestryFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Ancestry'),
@@ -12547,7 +12560,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
-    Pathfinder2E.backgroundRulesExtra(rules, name);
+    Pathfinder2E.backgroundRulesExtra(rules, name, attrs);
   } else if(type == 'Background Feature')
     Pathfinder2E.backgroundFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Background'),
@@ -12563,7 +12576,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'SpellSlots')
     );
-    Pathfinder2E.classRulesExtra(rules, name);
+    Pathfinder2E.classRulesExtra(rules, name, attrs);
   } else if(type == 'Class Feature')
     Pathfinder2E.classFeatureRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Class'),
@@ -12887,6 +12900,7 @@ Pathfinder2E.ancestryRules = function(
       rules.defineRule
         ('heritage', prefix + 'Features.' + s, '=', '"' + s + '"');
   });
+
   traits.forEach(t => {
     rules.defineRule('traits.' + t, ancestryLevel, '=', '1');
   });
@@ -12906,7 +12920,7 @@ Pathfinder2E.ancestryRules = function(
  * Defines in #rules# the rules associated with ancestry #name# that cannot be
  * derived directly from the attributes passed to ancestryRules.
  */
-Pathfinder2E.ancestryRulesExtra = function(rules, name) {
+Pathfinder2E.ancestryRulesExtra = function(rules, name, attrs) {
   if(name == 'Dwarf') {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Gnome') {
@@ -13175,7 +13189,7 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
  * Defines in #rules# the rules associated with background #name# that cannot
  * be derived directly from the attributes passed to backgroundRules.
  */
-Pathfinder2E.backgroundRulesExtra = function(rules, name) {
+Pathfinder2E.backgroundRulesExtra = function(rules, name, attrs) {
   if(name == 'Martial Disciple') {
     rules.defineRule('selectableFeatureCount.Martial Disciple (Martial Focus)',
       'featureNotes.martialFocus', '=', '1'
@@ -13394,7 +13408,7 @@ Pathfinder2E.classRules = function(
  * Defines in #rules# the rules associated with class #name# that cannot be
  * derived directly from the attributes passed to classRules.
  */
-Pathfinder2E.classRulesExtra = function(rules, name) {
+Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
 
   let classLevel = 'levels.' + name;
 
@@ -15239,7 +15253,7 @@ Pathfinder2E.languageRules = function(rules, name) {
     console.log('Empty language name');
     return;
   }
-  // No rules pertain to language
+  rules.defineRule('languagesSpoken', 'languages.' + name, '+=', '1');
 };
 
 /*
@@ -15364,6 +15378,8 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
     'rank.' + name, '=', '2 * source',
     'proficiencyLevelBonus.' + name, '+', null
   );
+  rules.defineRule
+    ('skillIncreasesAllocated', 'skillIncreases.' + name, '+=', null);
   rules.defineRule('skillModifiers.' + name,
     'proficiencyBonus.' + name, '=', null,
     ability + 'Modifier', '+', null,
@@ -15374,6 +15390,9 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
       ('skillModifiers.' + name, 'skillNotes.armorSkillPenalty', '+', null);
   rules.defineRule('skillModifiers.' + name + '.1',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
+  );
+  rules.defineRule('skillNotes.duplicatedTraining',
+    'trainingCount.' + name, '+=', 'source>1 ? source - 1 : null'
   );
 
   if(name.endsWith(' Lore'))

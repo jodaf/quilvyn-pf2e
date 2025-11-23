@@ -16916,7 +16916,7 @@ Pathfinder2ERemaster.ancestryRules = function(
  * derived directly from the attributes passed to ancestryRules.
  */
 Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name, attrs) {
-  Pathfinder2E.ancestryRulesExtra(rules, name);
+  Pathfinder2E.ancestryRulesExtra(rules, name, attrs);
   if(name == 'Catfolk') {
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
     rules.defineRule
@@ -17002,7 +17002,7 @@ Pathfinder2ERemaster.backgroundRules = function(
  * be derived directly from the attributes passed to backgroundRules.
  */
 Pathfinder2ERemaster.backgroundRulesExtra = function(rules, name, attrs) {
-  Pathfinder2E.backgroundRulesExtra(rules, name);
+  Pathfinder2E.backgroundRulesExtra(rules, name, attrs);
   if(name == 'Feybound') {
     rules.defineRule('featureNotes.anathema.1', 'feyboundLevel', '+', '16');
   } else if(name == 'Raised By Belief') {
@@ -17049,7 +17049,7 @@ Pathfinder2ERemaster.classRules = function(
  * derived directly from the attributes passed to classRules.
  */
 Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
-  Pathfinder2E.classRulesExtra(rules, name);
+  Pathfinder2E.classRulesExtra(rules, name, attrs);
   let classLevel = 'levels.' + name;
   if(name == 'Alchemist') {
     rules.defineRule
