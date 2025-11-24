@@ -7262,10 +7262,16 @@ Pathfinder2E.FEATURES = {
 
 };
 Pathfinder2E.GOODIES = {
-  'Armor':
-    'Pattern="([-+]\\d+).*(?:armor(?:\\s+class)?|AC)|(?:armor(?:\\s+class)?|AC)\\s+([-+]\\d+)" ' +
+  'Ancestry Feats':
+    'Pattern="\\+?(\\d+)\\s+ancestry\\s+feats?|ancestry\\s+feats?\\s+\\+?(\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
+    'Attribute=featCount.Ancestry ' +
+    'Section=feature Note="Ancestry Feat (Choose %V from any)"',
+  'Armor':
+    'Pattern="([-+]\\d+)(\\s+(resilient|greater\\s+resilient|major\\s+resilient))?.*\\s+armor|armor\\s+([-+]\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $4" ' +
     'Attribute=armorClass ' +
     'Section=combat Note="%V Armor Class"',
   'Charisma':
@@ -7274,12 +7280,12 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=charisma ' +
     'Section=ability Note="%V Charisma"',
-  'Class Feat Count':
-    'Pattern="([-+]\\d+)\\s+class\\s+feat|class\\s+feat\\s+([-+]\\d+)" ' +
+  'Class Feats':
+    'Pattern="\\+?(\\d+)\\s+class\\s+feats?|class\\s+feats?\\s+\\+?(\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=featCount.Class ' +
-    'Section=feature Note="%V Class Feat"',
+    'Section=feature Note="Class Feat (Choose %V from any)"',
   'Constitution':
     'Pattern="([-+]\\d+)\\s+con(?:stitution)?|con(?:stitution)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
@@ -7298,12 +7304,12 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=save.Fortitude ' +
     'Section=save Note="%V Fortitude"',
-  'General Feat Count':
-    'Pattern="([-+]\\d+)\\s+general\\s+feat|general\\s+feat\\s+([-+]\\d+)" ' +
+  'General Feats':
+    'Pattern="\\+?(\\d+)\\s+general\\s+feats?|general\\s+feats?\\s+\\+?(\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=featCount.General ' +
-    'Section=feature Note="%V General Feat"',
+    'Section=feature Note="General Feat (Choose %V from any)"',
   'Focus Maximum':
     'Pattern="([-+]\\d+)\\s+focus\\s+max(?:imum)?|focus\\s+max(?:imum)?\\s+([-+]\\d+)" ' +
     'Effect=add ' +
@@ -7346,12 +7352,24 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=save.Reflex ' +
     'Section=save Note="%V Reflex"',
+  'Resilient Armor':
+    'Pattern="(resilient|greater\\s+resilient|major\\s+resilient).*\\s+armor" ' +
+    'Effect=add ' +
+    'Value="$1.match(/major/i) ? 3 : $1.match(/greater/i) ? 2 : 1" ' +
+    'Attribute=save.Fortitude,save.Reflex,save.Will ' +
+    'Section=save Note="%V Saves"',
   'Shield':
     'Pattern="([-+]\\d+).*\\s+shield|shield\\s+([-+]\\d+)" ' +
     'Effect=add ' +
     'Value="$1 || $2" ' +
-    'Attribute=armorClass ' +
-    'Section=combat Note="%V Armor Class"',
+    'Attribute=shieldACBonus ' +
+    'Section=combat Note="%V Shield AC Bonus"',
+  'Skill Feats':
+    'Pattern="\\+?(\\d+)\\s+skill\\s+feats?|skill\\s+feats?\\s+\\+?(\\d+)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=featCount.Skill ' +
+    'Section=feature Note="Skill Feat (Choose %V from any)"',
   'Speed':
     'Pattern="([-+]\\d+).*\\s+speed|speed\\s+([-+]\\d+)" ' +
     'Effect=add ' +
@@ -12131,17 +12149,17 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
       // "* punching dagger +2" also makes regular dagger +2), require that
       // weapon goodies with a trailing value have no preceding word or be
       // enclosed in parentheses.
-      'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
+      'Pattern="([-+]\\d+)(\\s+(striking|greater\\s+striking|major\\s+striking))?\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d+)" ' +
       'Effect=add ' +
-      'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
-      'Value="$1 || $2" ' +
-      'Section=combat Note="%V Attack and damage"'
+      'Attribute="weaponAttackAdjustment.' + w + '" ' +
+      'Value="$1 || $4" ' +
+      'Section=combat Note="%V Attack"'
     );
     rules.choiceRules(rules, 'Goody', 'Striking ' + w,
-      'Pattern="([-+]\\d)\\s+striking\\s+' + pattern + '" ' +
+      'Pattern="(striking|greater\\s+striking|major\\s+striking)\\s+' + pattern + '" ' +
       'Attribute="weaponDieCount.' + w + '" ' +
       'Effect=add ' +
-      'Value="$1" ' +
+      'Value="$1.match(/major/i) ? 3 : $1.match(/greater/i) ? 2 : 1" ' +
       'Section=combat Note="%V Damage dice"'
     );
   }
@@ -15245,6 +15263,12 @@ Pathfinder2E.goodyRules = function(
 ) {
   QuilvynRules.goodyRules
     (rules, name, pattern, effect, value, attributes, sections, notes);
+  if(name.match(/^[\w]+ Feats$/)) {
+    // Override rule to avoid an unwanted '+' in the note
+    name = name.replaceAll(' ', '');
+    rules.defineRule
+      ('featureNotes.goodies' + name, 'goodies' + name, '=', null);
+  }
 };
 
 /* Defines in #rules# the rules associated with language #name#. */
