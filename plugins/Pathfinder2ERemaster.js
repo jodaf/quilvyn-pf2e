@@ -63,6 +63,9 @@ function Pathfinder2ERemaster(edition) {
     'abilityGeneration:Attribute Generation,select-one,abilgens'
   );
 
+  // If edition contains "legacy", we add elements from Pathfinder2E that
+  // aren't overridden by this plugin. Not sure whether that's a good idea,
+  // so the README.md file doesn't note this.
   let choices = {};
   ['ANCESTRIES', 'ARMORS', 'BACKGROUNDS', 'CLASSES', 'DEITIES', 'FEATS',
    'FEATURES', 'GOODIES', 'LANGUAGES', 'SHIELDS', 'SKILLS', 'SPELLS', 'WEAPONS'
@@ -297,6 +300,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Languages=Common,Tripkee ' +
     'Traits=Humanoid,Tripkee'
 };
+// Replace any occurences of 'Ability' from Pathfinder2E.js with 'Attribute'
 for(let a in Pathfinder2ERemaster.ANCESTRIES)
   Pathfinder2ERemaster.ANCESTRIES[a] =
     Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute');
@@ -371,7 +375,7 @@ Pathfinder2ERemaster.BACKGROUNDS =
   'Pilgrim':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Wisdom, Charisma; Choose 1 from any)",' +
-      // NOTE: Deity Lore, not deitySkill
+      // Character gains Deity Lore for the chosen deity, not its divine skill
       '"1:Skill Trained (Religion; Choose 1 from any Deity Lore)",' +
       '"1:Pilgrim\'s Token"',
   'Refugee':
@@ -414,7 +418,8 @@ Pathfinder2ERemaster.BACKGROUNDS =
       '"1:Attribute Boost (Choose 1 from Constitution, Charisma; Choose 1 from any)",' +
       '"1:Skill Trained (Performance; Genealogy Lore)",' +
       '"1:Fascinating Performance"',
-  // Rare backgrounds, pg 51
+  // Rare backgrounds: Core 2 pg 52
+  // Probably not worth adding a Trait simply to avoid randomly picking one
   'Amnesiac':
     'Features=' +
       '"1:Attribute Boost (Choose 3 from any)"',
@@ -453,6 +458,7 @@ Pathfinder2ERemaster.BACKGROUNDS =
       '"1:Skill Trained (Society)",' +
       '"1:Courtly Graces"'
 });
+// Replace any occurences of 'Ability' from Pathfinder2E.js with 'Attribute'
 for(let b in Pathfinder2ERemaster.BACKGROUNDS)
   Pathfinder2ERemaster.BACKGROUNDS[b] =
     Pathfinder2ERemaster.BACKGROUNDS[b].replaceAll('Ability', 'Attribute');
@@ -507,7 +513,7 @@ Pathfinder2ERemaster.CLASSES = {
   'Cleric':
     // Ability => Attribute
     // "" => 1:Class Trained (Cleric)
-    // 1:Divine Spellcasting => Cleric Spellcasting
+    // 1:Divine Spellcasting => 1:Cleric Spellcasting
     // 5:Alertness => 5:Perception Expertise
     // 9:Resolve => 9:Resolute Faith
     // 11:Lightning Reflexes => 11:Reflex Expertise
@@ -1084,7 +1090,6 @@ Pathfinder2ERemaster.CLASSES = {
     // 17:Resolve => 17:Majestic Will
     // added Elemental Bloodline (Metal) and Elemental Bloodline (Wood)
     // Draconic Bloodline changed to different exemplars
-    // Added Metal and Wood to Elemental bloodlines
     'Attribute=charisma HitPoints=6 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
@@ -1321,7 +1326,7 @@ Pathfinder2ERemaster.FEATS = {
   'Martial Experience':'Level=5 Traits=Elf',
   'Elf Step':Pathfinder2E.FEATS['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATS['Expert Longevity'],
-  // Note: "at least one innate spell gained from an elf ancestry feat", and
+  // Requires "at least one innate spell gained from an elf ancestry feat", and
   // Otherworldly Magic is the only feat in the Player Core that does this
   'Otherworldly Acumen':
     'Level=9 Traits=Elf Require="features.Otherworldly Magic"',
@@ -1342,25 +1347,27 @@ Pathfinder2ERemaster.FEATS = {
   'Razzle-Dazzle':'Level=1 Traits=Gnome',
   'Energized Font':Pathfinder2E.FEATS['Energized Font'],
   'Project Persona':'Level=5 Traits=Gnome,Concentrate,Illusion,Primal,Visual',
-  // Note: requires "at least one arcane or occult innate spell gained from a
-  // gnome heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
+  // Requires "at least one arcane or occult innate spell gained from a gnome
+  // heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
   // Wellspring Gnome (Occult) are the only features in the Player Core that
   // do this
   'Cautious Curiosity':
     'Level=9 Traits=Gnome ' +
     'Require=' +
-      '"features.Wellspring Gnome (Arcane) || features.Wellspring Gnome (Occult)"',
+      '"features.Wellspring Gnome (Arcane) || ' +
+       'features.Wellspring Gnome (Occult)"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Level=9 Traits=Gnome,Move,Teleportation',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
-  // Note: requires "at least one arcane or occult innate spell gained from a
-  // gnome heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
+  // Requires "at least one arcane or occult innate spell gained from a gnome
+  // heritage or gnome ancestry feat", and Wellspring Gnome (Arcane) and
   // Wellspring Gnome (Occult) are the only features in the Player Core that
   // do this
   'Instinctive Obfuscation':
     'Level=13 Traits=Gnome,Illusion,Visual ' +
     'Require=' +
-      '"features.Wellspring Gnome (Arcane) || features.Wellspring Gnome (Occult)"',
+      '"features.Wellspring Gnome (Arcane) || ' +
+       'features.Wellspring Gnome (Occult)"',
   'Homeward Bound':'Level=17 Traits=Gnome,Uncommon',
 
   // Goblin
@@ -1635,7 +1642,8 @@ Pathfinder2ERemaster.FEATS = {
 
   // Kobold
   'Cringe':'Level=1 Traits=Kobold,Emotion,Mental,Visual',
-  "Dragon's Presence":'Level=1 Traits=Kobold Require="features.Dragonscaled Kobold"',
+  "Dragon's Presence":
+    'Level=1 Traits=Kobold Require="features.Dragonscaled Kobold"',
   'Kobold Lore':'Level=1 Traits=Kobold',
   'Kobold Weapon Familiarity':'Level=1 Traits=Kobold',
   'Scamper':'Level=1 Traits=Kobold',
@@ -1736,7 +1744,7 @@ Pathfinder2ERemaster.FEATS = {
   "Wind God's Fan":'Level=9 Traits=Tengu Require="features.Tengu Feather Fan"',
   "Harbinger's Claw":'Level=13 Traits=Tengu,Auditory,Divine,Misfortune',
   'Jinx Glutton':'Level=13 Traits=Tengu Require="features.Eat Fortune"',
-  // Errata corrects level to 13
+  // errata corrects level to 13
   "Thunder God's Fan":
     'Level=13 Traits=Tengu Require="features.Tengu Feather Fan"',
   'Great Tengu Form':'Level=17 Traits=Tengu Require="features.Long-Nosed Form"',
@@ -1756,7 +1764,7 @@ Pathfinder2ERemaster.FEATS = {
   'Tenacious Net':'Level=5 Traits=Tripkee',
   'Tripkee Glide':'Level=5 Traits=Tripkee Require="features.Windweb Tripkee"',
   'Vomit Stomach':'Level=5 Traits=Tripkee',
-  // Note: requires "not immune to diseases or poisons"; no way to check this
+  // Requires "not immune to diseases or poisons"; no way to check this
   'Absorb Toxin':'Level=9 Traits=Tripkee',
   'Moisture Bath':'Level=9 Traits=Tripkee,Manipulate',
   'Ricocheting Leap':'Level=9 Traits=Tripkee Require="features.Wall Jump"',
@@ -1792,7 +1800,7 @@ Pathfinder2ERemaster.FEATS = {
   'Draconic Aspect (Jaws)':'Level=1 Traits=Dragonblood',
   'Draconic Aspect (Tail)':'Level=1 Traits=Dragonblood',
   'Draconic Resistance':'Level=1 Traits=Dragonblood',
-  // Low-Light Vision requirement removed by errata
+  // errata removes Low-Light Vision requirement
   'Draconic Sight':'Level=1 Traits=Dragonblood',
   'Dragon Lore':'Level=1 Traits=Dragonblood',
   'Scaly Hide':'Level=1 Traits=Dragonblood',
@@ -2103,7 +2111,6 @@ Pathfinder2ERemaster.FEATS = {
        'rangerDedicationLevel >= 4 || ' +
        'beastmasterDedicationLevel >= 4"',
   'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
-  // Note: Feat 1 Plant Empathy links to legacy Feat 6 Druid Empathy in Nethys
   'Plant Empathy':'Level=1 Traits=Druid',
   // Reach Spell as above
   'Storm Born':Pathfinder2E.FEATS['Storm Born'],
@@ -2226,11 +2233,11 @@ Pathfinder2ERemaster.FEATS = {
     'Level=10 Traits=Druid,Sonic,Spellshape ' +
     'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
-  // errata correct plant order to leaf order
+  // errata corrects plant order to leaf order
   'Garland Spell':
     'Level=12 Traits=Druid,Manipulate,Spellshape ' +
     'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
-  // Note: also subsumes legacy Feat 18 Primal Wellspring
+  // also subsumes legacy Feat 18 Primal Wellspring
   'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
   'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
   'Wandering Oasis':'Level=12 Traits=Druid Require="rank.Survival >= 3"',
@@ -2791,8 +2798,13 @@ Pathfinder2ERemaster.FEATS = {
   // Scout's Warning as above
   'The Harder They Fall':'Level=4 Traits=Rogue',
   'Twin Distraction':'Level=4 Traits=Rogue Require="features.Twin Feint"',
-  // Note: "sneak attack 2d6" requirement is met by Rogue level 5
-  'Analyze Weakness':'Level=6 Traits=Rogue Require="features.Sneak Attack"',
+  // "sneak attack 2d6" requirement is met only by Rogue level 5; Rogue
+  // Dedication and Assassin Dedication never get there
+  'Analyze Weakness':
+    'Level=6 Traits=Rogue ' +
+    'Require=' +
+      '"features.Sneak Attack",' +
+      '"levels.Rogue >= 5"',
   'Anticipate Ambush':
     'Level=6 Traits=Rogue,Exploration Require="rank.Stealth >= 2"',
   'Far Throw':'Level=6 Traits=Rogue',
@@ -2978,8 +2990,9 @@ Pathfinder2ERemaster.FEATS = {
   'Clever Counterspell':Pathfinder2E.FEATS['Clever Counterspell'],
   'Forcible Energy':'Level=12 Traits=Wizard,Manipulate,Spellshape',
   'Keen Magical Detection':'Level=12 Traits=Wizard,Fortune',
-  // Note: oracle replaces Arcane trait with Divine
   'Magic Sense':
+    // For oracles, Arcane should be replaced by Divine, but Q makes no use of
+    // the trait
     Pathfinder2E.FEATS['Magic Sense']
     .replace(',Divination', '')
     .replace('Traits=', 'Traits=Oracle,'),
@@ -3148,9 +3161,9 @@ Pathfinder2ERemaster.FEATS = {
        'barbarianDedicationLevel >= 12 || ' +
        'championDedicationLevel >= 12 || ' +
        'marshalDedicationLevel >= 8"',
-  // Note: requires "an instinct that allows you to change your additional
-  // damage from Rage to a different damage type", and Dragon Instinct and
-  // Spirit Instinct are the only choices from Player Core 2 that do this
+  // Requires "an instinct that allows you to change your additional damage
+  // from Rage to a different damage type", and Dragon Instinct and Spirit
+  // Instinct are the only choices from Player Core 2 that do this
   'Scouring Rage':
     'Level=6 Traits=Barbarian ' +
     'Require="features.Dragon Instinct || features.Spirit Instinct"',
@@ -3251,7 +3264,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Weight Of Guilt']
     .replace('Redeemer', 'Redemption'),
   'Divine Grace':Pathfinder2E.FEATS['Divine Grace'],
-  // NOTE: level and requirements changed
+  // Changed level and requirements
   'Divine Health':
     Pathfinder2E.FEATS['Divine Health'] + ' ' +
     'Level=2 ' +
@@ -3343,12 +3356,15 @@ Pathfinder2ERemaster.FEATS = {
   'Aura Of Faith':
     Pathfinder2E.FEATS['Aura Of Faith']
     .replace('The Tenets Of Good', 'Holy || traits.Unholy'),
-  // Note: requires "champion's reaction that grants an ally resistance", and
-  // the four listed are the only ones in Player Core 2 that do this
+  // Requires "champion's reaction that grants an ally resistance", and the
+  // four listed are the only ones in Player Core 2 that do this
   'Blessed Counterstrike':
     'Level=12 Traits=Champion,Flourish ' +
     'Require=' +
-      '"features.Grandeur || features.Justice || features.Liberation || features.Redemption"',
+      '"features.Grandeur || ' +
+       'features.Justice || ' +
+       'features.Liberation || ' +
+       'features.Redemption"',
   "Champion's Sacrifice":
     Pathfinder2E.FEATS["Champion's Sacrifice"]
     .replace('features.The Tenets Of Good', 'traits.Unholy == 0'),
@@ -3356,12 +3372,14 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Devoted Focus']
     .replace('10', '12'),
   'Divine Wall':Pathfinder2E.FEATS['Divine Wall'],
-  // Note: requires "champion's reaction that grants extra damage", and the
-  // three listed are the only ones in Play Core 2 that do this
+  // Requires "champion's reaction that grants extra damage", and the three
+  // listed are the only ones in Play Core 2 that do this
   'Gruesome Strike':
     'Level=12 Traits=Champion ' +
     'Require=' +
-      '"features.Desecration || features.Iniquity || features.Obedience"',
+      '"features.Desecration || ' +
+       'features.Iniquity || ' +
+       'features.Obedience"',
   'Aura Of Determination':
     'Level=14 Traits=Champion Require="features.Champion\'s Aura"',
   'Aura Of Life':
@@ -3374,19 +3392,24 @@ Pathfinder2ERemaster.FEATS = {
   'Auspicious Mount':
     Pathfinder2E.FEATS['Auspicious Mount']
     .replace('"features.Steed Ally",', ''),
-  // Note: requires "champion's reaction that grants extra damage", and the
-  // three listed are the only ones in Play Core 2 that do this
+  // Requires "champion's reaction that grants extra damage", and the three
+  // listed are the only ones in Play Core 2 that do this
   'Instrument Of Slaughter':
     'Level=16 Traits=Champion ' +
     'Require=' +
-      '"features.Desecration || features.Iniquity || features.Obedience"',
-  // Note: requires "champion's reaction that grants an ally resistance", and
-  // the four listed are the only ones in Player Core 2 that do this
+      '"features.Desecration || ' +
+       'features.Iniquity || ' +
+       'features.Obedience"',
+  // Requires "champion's reaction that grants an ally resistance", and the
+  // four listed are the only ones in Player Core 2 that do this
   'Instrument Of Zeal':
     Pathfinder2E.FEATS['Instrument Of Zeal'] + ' ' +
     'Require=' +
       '"features.Blessed Counterstrike || features.Retributive Strike",' +
-      '"features.Grandeur || features.Justice || features.Liberation || features.Redemption"',
+      '"features.Grandeur || ' +
+       'features.Justice || ' +
+       'features.Liberation || ' +
+       'features.Redemption"',
   'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
   // Added Archetype
   'Rejuvenating Touch':
@@ -3713,14 +3736,15 @@ Pathfinder2ERemaster.FEATS = {
   'Foretell Harm':'Level=1 Traits=Oracle,Cursebound,Divine',
   'Glean Lore':'Level=1 Traits=Oracle,Divine,Secret',
   'Nudge The Scales':'Level=1 Traits=Oracle,Cursebound,Divine,Healing,Spirit',
-  'Oracular Warning':'Level=1 Traits=Oracle,Auditory,Cursebound,Divine,Emotion,Mental',
+  'Oracular Warning':
+    'Level=1 Traits=Oracle,Auditory,Cursebound,Divine,Emotion,Mental',
   // Reach Spell as above
   'Whispers Of Weakness':'Level=1 Traits=Oracle,Cursebound,Divine',
   // Widen Spell as above
   // Cantrip Expansion as above
   'Divine Aegis':'Level=2 Traits=Oracle,Divine',
   'Domain Acumen (%domain)':'Level=2 Traits=Oracle',
-  // Added domains from Divine Mysteries
+  // Domains that Core 2 notes coming from from Lost Omens Divine Mysteries
   'Domain Acumen (Decay)':'Level=2 Traits=Oracle',
   'Domain Acumen (Dust)':'Level=2 Traits=Oracle',
   'Domain Acumen (Duty)':'Level=2 Traits=Oracle',
@@ -3761,7 +3785,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="features.Life Mystery || features.Tempest Mystery"',
   'Domain Fluency (%domain)':
     'Level=12 Traits=Oracle Require="features.Domain Acumen"',
-  // Added domains from Divine Mysteries
+  // Domains that Core 2 notes coming from from Lost Omens Divine Mysteries
   'Domain Fluency (Decay)':
     'Level=12 Traits=Oracle Require="features.Domain Acumen"',
   'Domain Fluency (Dust)':
@@ -3890,9 +3914,9 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Conduit':
     Pathfinder2E.FEATS['Bloodline Conduit']
     .replace('Metamagic', 'Spellshape'),
-  // Note: requires "a bloodline based on a specific type of creature", which
+  // Requires "a bloodline based on a specific type of creature", which
   // probably excludes only Imperial from Player Core 2. With homebrew and
-  // supplements, it's not worth trying to enforce for a level 20 feat.
+  // supplements, it's not worth adding Require= to a level 20 feat.
   'Bloodline Mutation':'Level=20 Traits=Sorcerer',
   'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
@@ -3902,14 +3926,17 @@ Pathfinder2ERemaster.FEATS = {
   'Elegant Buckler':'Level=1 Traits=Swashbuckler',
   'Extravagant Parry':'Level=1 Traits=Swashbuckler',
   'Flashy Dodge':'Level=1 Traits=Swashbuckler',
-  'Flying Blade':'Level=1 Traits=Swashbuckler Require="features.Precise Strike"',
+  'Flying Blade':
+    'Level=1 Traits=Swashbuckler Require="features.Precise Strike"',
   'Focused Fascination':
     'Level=1 Traits=Swashbuckler Require="features.Fascinating Performance"',
   'Goading Feint':'Level=1 Traits=Swashbuckler Require="rank.Deception >= 1"',
   'One For All':
-    'Level=1 Traits=Swashbuckler,Auditory,Concentrate,Emotion,Linguistic,Mental '+
+    'Level=1 ' +
+    'Traits=Swashbuckler,Auditory,Concentrate,Emotion,Linguistic,Mental '+
     'Require="rank.Diplomacy >= 1"',
-  'Plummeting Roll':'Level=1 Traits=Swashbuckler Require="rank.Acrobatics >= 1"',
+  'Plummeting Roll':
+    'Level=1 Traits=Swashbuckler Require="rank.Acrobatics >= 1"',
   // You're Next as above
   'After You':'Level=2 Traits=Swashbuckler',
   // Added Archetype
@@ -5253,7 +5280,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="%{level>=11?\'Skill Trained (Simple Weapons; Martial Weapons; Advanced Weapons)\':\'+\'+level+\' attack with untrained weapons\'}"',
   'Elf Step':Pathfinder2E.FEATURES['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATURES['Expert Longevity'],
-  // NOTE: Tradition determined by another feature
+  // Tradition determined by another feature
   'Otherworldly Acumen':
     'Section=magic ' +
     'Note="Knows 1 chosen 2nd-rank innate spell; can cast it once per day and use a day of downtime to change the spell chosen"',
@@ -5791,8 +5818,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Nephilim Lore':
     'Section=feature,skill ' +
     'Note=' +
-      // Note: should require choosing a planar lore
-      '"Skill Feat (Choose 1 from any Additional Lore)",' +
+      '"Skill Feat (Choose 1 from any Additional Lore (Planar Lore))",' +
       '"Skill Trained (Choose 1 from Diplomacy, Intimidation; Religion)"',
   'Nimble Hooves':'Section=ability Note="+5 Speed"',
   'Blessed Blood':
@@ -9375,9 +9401,12 @@ Pathfinder2ERemaster.FEATURES = {
   "Champion's Aura":
     'Section=feature ' +
     'Note="15\' aura can be detected by followers of %{deity} and can be suppressed or resumed with 1 action"',
-  // Note: also Weapon Familiarity (%{deityWeapon}) if the weapon is advanced,
-  // but there are no predefined deities for which that's the case
-  'Deific Weapon':Pathfinder2E.FEATURES['Deific Weapon'],
+  // Changed effects
+  'Deific Weapon':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"%{deityWeapon} inflicts +1 damage die step",' +
+      '"Weapon Familiarity (%V)"',
   // Deity as above
   'Desecration':
     'Section=feature,feature ' +
@@ -9955,7 +9984,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Successful Pursue A Lead allows receiving answers to 2 questions about the mystery once per day"',
   'Just One More Thing':
-    // In description 'Action=1 ' +
+    // 'Action=1 ' + // in Note
     'Section=skill ' +
     'Note="Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding %{skillNotes.pursueALead} if the check is connected to an active investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action, and the others require the maximum of 1 rd or half the time spent on the failed action"',
   'Ongoing Strategy':
@@ -10161,7 +10190,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Wall Run':Pathfinder2E.FEATURES['Wall Run'],
   'Wild Winds Initiate':Pathfinder2E.FEATURES['Wild Winds Initiate'],
   'Cobra Envenom':
-    // 'Action=1 ' + // inserted into second note
+    // 'Action=1 ' + // in 2nd note
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Cobra Stance effects",' +
@@ -10404,7 +10433,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Successful Religion check gives 1 true and 1 false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives 1 or 2 pieces of incorrect info or misleading clues"',
   'Nudge The Scales':
-    // in note 'Action=1 ' +
+    // 'Action=1 ' + // in 1st note
     'Section=magic,save ' +
     'Note=' +
       '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(Cursebound)</b> R30\' Target regains %{level*2+2} HP",' +
@@ -11295,7 +11324,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Prepares to Aid an ally within 30\'; the subsequent Aid can use Diplomacy for the check and has the bravado trait"',
   'Plummeting Roll':
-    // 'Action=Reaction ' + in note
+    // 'Action=Reaction ' + // in 2nd Note
     'Section=feature,save ' +
     'Note=' +
       '"Has the Cat Fall feature",' +
@@ -13141,12 +13170,28 @@ Pathfinder2ERemaster.FEATURES = {
 
 };
 for(let f in Pathfinder2ERemaster.FEATURES) {
+  // Flag bad references to Pathfinder2E.FEATURES
   if(!Pathfinder2ERemaster.FEATURES[f])
     console.log(f);
+  // Method of accruing Focus Points has changed
   Pathfinder2ERemaster.FEATURES[f] =
     Pathfinder2ERemaster.FEATURES[f].replace('/+1 Focus Points', '');
 }
-Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
+Pathfinder2ERemaster.GOODIES = 
+  Object.assign({}, Pathfinder2E.GOODIES, {
+  'Charisma':
+    Pathfinder2E.GOODIES.Charisma + ' Attribute=charismaModifier',
+  'Constitution':
+    Pathfinder2E.GOODIES.Constitution + ' Attribute=constitutionModifier',
+  'Dexterity':
+    Pathfinder2E.GOODIES.Dexterity + ' Attribute=dexterityModifier',
+  'Intelligence':
+    Pathfinder2E.GOODIES.Intelligence + ' Attribute=intelligenceModifier',
+  'Strength':
+    Pathfinder2E.GOODIES.Strength + ' Attribute=strengthModifier',
+  'Wisdom':
+    Pathfinder2E.GOODIES.Wisdom + ' Attribute=wisdomModifier'
+});
 Pathfinder2ERemaster.HERITAGES = {
   'Changeling':
     'Traits=Uncommon ' +
@@ -13361,6 +13406,7 @@ Pathfinder2ERemaster.SKILLS = {
   'Curse Lore':'Attribute=Intelligence',
   'Fey Lore':'Attribute=Intelligence'
 };
+// Replace any occurences of 'Ability' from Pathfinder2E.js with 'Attribute'
 for(let s in Pathfinder2ERemaster.SKILLS)
   Pathfinder2ERemaster.SKILLS[s] =
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
@@ -13368,7 +13414,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Acid Grip':
     Pathfinder2E.SPELLS['Acid Arrow']
     .replace('Evocation', 'Manipulate') + ' ' +
-    // Duration deleted by errata
+    // errata deletes Duration
     'Description=' +
       '"R120\' Inflicts 2d8 HP acid and a 10\' forced move, plus 1d6 HP persistent acid and -10 Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5\' forced move only; critical success negates; critical failure inflicts double initial HP and a 20\' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Aerial Form':
@@ -13430,7 +13476,7 @@ Pathfinder2ERemaster.SPELLS = {
       '"R60\' Spell attack inflicts 2d6 HP fire, or double HP on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
   'Bless':
     Pathfinder2E.SPELLS.Bless
-    // Aura trait added by errata
+    // errata adds Aura trait
     .replace('Enchantment', 'Concentrate,Manipulate,Aura')
     .replace('5', '15')
     .replace('by 5', 'by 10')
@@ -13528,7 +13574,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Control Water':
     Pathfinder2E.SPELLS['Control Water']
     .replace('Evocation', 'Concentrate,Manipulate')
-    // Duration from errata
+    // errata adds Duration
     .replace('creatures', 'creatures for 1 hr (<b>save Fortitude</b> negates)'),
   'Cozy Cabin':
     'Level=3 ' +
@@ -13692,7 +13738,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('negative, positive', 'vitality, void'),
   'Enfeeble':
     Pathfinder2E.SPELLS['Ray Of Enfeeblement'] + ' ' +
-    // Attack trait removed by errata
+    // errata removes Attack trait
     'Traits=Concentrate,Manipulate ' +
     'Description=' +
       '"R30\' Inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1 until the start of the next turn; critical success negates; critical failure inflicts enfeebled 3 for 1 min)"',
@@ -13790,7 +13836,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Frostbite':
     Pathfinder2E.SPELLS['Ray Of Frost'] + ' ' +
-    // Attack trait removed by errata
+    // errata removes Attack trait
     'Traits=Cantrip,Cold,Concentrate,Manipulate ' +
     'Description=' +
       '"R60\' Inflicts 2d4 HP cold (<b>save basic Fortitude</b>; critical failure also inflicts weakness 1 to bludgeoning for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP and weakness +1 to bludgeoning)"',
@@ -14235,7 +14281,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Modify Memory']
     .replace('Divination', 'Concentrate,Manipulate'),
   'Ring Of Truth':
-    // Note: assume casting time remains the same
+    // assume casting time remains the same
     Pathfinder2E.SPELLS['Zone Of Truth']
     .replace('Enchantment', 'Concentrate,Manipulate,Detection')
     .replace('prevents', 'reveals')
@@ -15207,7 +15253,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description=' +
       '"R30\' Inflicts -1 Perception, attacks, and Will saves, -2 vs. sleep, and a DC 5 flat check to use a concentrate action while sustained for up to 1 min (<b>save Will</b> negates flat check; critical success negates)"',
-  // NOTE: added the Focus trait to the cantrips below to note that they aren't
+  // added the Focus trait to the cantrips below to note that they aren't
   // generally available
   'Clinging Ice':
     'Level=1 ' +
@@ -16149,7 +16195,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"Self becomes air, water, or mist, loses item armor bonuses, gains resistance 10 to physical damage and immunity to precision damage, can pass through cracks, does not need to breathe, cannot cast spells, and gains a 20\' fly Speed or gains a 20\' swim Speed and can inflict 1d6 HP electricity on melee attackers, while sustained for up to 1 min (<b>heightened +2</b> gives +5 resistance and inflicts +1 HP electricity)"',
-  // Additional domain spells from Divine Mysteries
+  // Additional spells for the domains from Lost Omens Divine Mysteries
   'Withering Grasp':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Attack,Concentrate,Focus,Manipulate,Void ' +
@@ -16398,6 +16444,7 @@ Pathfinder2ERemaster.SPELLS = {
       '"Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, while sustained for up to 1 min (<b>heightened 6th</b> allows speaking to the companion and extends the range to 100 miles and the maximum duration to 10 min; <b> 8th</b> allows telepathic communication and extends the range to planetary and the maximum duration to 1 hr)"'
 
 };
+// Drop the School trait to exclude it from spell names
 for(let s in Pathfinder2ERemaster.SPELLS)
   Pathfinder2ERemaster.SPELLS[s] =
     Pathfinder2ERemaster.SPELLS[s].replace(/School=\w*/, '');
@@ -17106,6 +17153,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
     rules.defineRule('combatNotes.blessedShield.1',
       'features.Blessed Shield', '?', null,
       'level', '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
+    );
+    rules.defineRule('combatNotes.deificWeapon-1',
+      'deityWeaponCategory', '?', 'source == "Advanced"',
+      'deityWeapon', '=', null
     );
     rules.defineRule('featureNotes.blessingOfTheDevoted',
       '', '=', '1',
