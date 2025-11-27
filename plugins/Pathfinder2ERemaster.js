@@ -1764,7 +1764,7 @@ Pathfinder2ERemaster.FEATS = {
   'Tenacious Net':'Level=5 Traits=Tripkee',
   'Tripkee Glide':'Level=5 Traits=Tripkee Require="features.Windweb Tripkee"',
   'Vomit Stomach':'Level=5 Traits=Tripkee',
-  // Requires "not immune to diseases or poisons"; no way to check this
+  // NOTE: Requires "not immune to diseases or poisons"; no way to check this
   'Absorb Toxin':'Level=9 Traits=Tripkee',
   'Moisture Bath':'Level=9 Traits=Tripkee,Manipulate',
   'Ricocheting Leap':'Level=9 Traits=Tripkee Require="features.Wall Jump"',
@@ -3914,7 +3914,7 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Conduit':
     Pathfinder2E.FEATS['Bloodline Conduit']
     .replace('Metamagic', 'Spellshape'),
-  // Requires "a bloodline based on a specific type of creature", which
+  // NOTE: Requires "a bloodline based on a specific type of creature", which
   // probably excludes only Imperial from Player Core 2. With homebrew and
   // supplements, it's not worth adding Require= to a level 20 feat.
   'Bloodline Mutation':'Level=20 Traits=Sorcerer',
@@ -18523,12 +18523,6 @@ Pathfinder2ERemaster.ruleNotes = function() {
     '  Quilvyn does not note the Absorb Toxin feat requirement of not being ' +
     '  immune to diseases or poisons.\n' +
     '  </li>\n' +
-    '</ul>\n' +
-    '</p>\n' +
-    '\n' +
-    '<h3>Known Bugs</h3>\n' +
-    '<p>\n' +
-    '<ul>\n' +
     '</ul>\n' +
     '</p>\n';
 };
