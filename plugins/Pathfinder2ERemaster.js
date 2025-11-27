@@ -5197,10 +5197,11 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
   "Stonemason's Eye":
-    Pathfinder2E.FEATURES.Stonecunning
-    .replace('Section=', 'Section=feature,skill,')
-    .replace('Note=', 'Note="Has the Specialty Crafting feature for Stonemasonry","Skill Trained (Crafting)",')
-    .replace('-2', '+0'),
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Specialty Crafting feature for Stonemasonry",' +
+      '"Skill Trained (Crafting)",' +
+      '"+2 Perception to detect unusual stonework, and automatically attempts a %{features.Stonewalker&&rank.Perception>=4?\'+2\':\'\'} check to notice it"',
   'Unburdened Iron':Pathfinder2E.FEATURES['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATURES['Boulder Roll'],
   'Defy The Darkness':
@@ -17950,7 +17951,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     );
   } else if(name == 'Oracle Dedication') {
     rules.defineRule('spellModifier.' + name,
-      'magicNotes.oracleDedication', '?', null,
+      'magicNotes.' + prefix, '?', null,
       'charismaModifier', '=', null
     );
     rules.defineRule
@@ -17958,11 +17959,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('spellAbility.Divine',
       'magicNotes.oracleDedication', '=', '"charisma"'
     );
-    rules.defineRule
-      ('spellSlots.DC1', 'magicNotes.oracleDedication', '+=', '2');
+    rules.defineRule('spellSlots.DC1', 'magicNotes.' + prefix, '+=', '2');
     // Suppress validation errors for Mysteries and mystery features that don't
     // come from OD
     let allSelectables = rules.getChoices('selectableFeatures');
+    // TODO homebrew mysteries?
     let mysteries =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Oracle (Mystery)'))
@@ -17977,38 +17978,38 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'Pack Stalker') {
     // Make sure there's a featCount.Skill to increment
-    rules.defineRule('featCount.Skill', 'features.Pack Stalker', '^=', '0');
+    rules.defineRule('featCount.Skill', 'features.' + name, '^=', '0');
   } else if(name == "Patron's Truth") {
-    rules.defineRule('spellSlots.A10', "magicNotes.patron'sTruth", '+', '1');
-    rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');
-    rules.defineRule('spellSlots.O10', "magicNotes.patron'sTruth", '+', '1');
-    rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
+    rules.defineRule('spellSlots.A10', 'magicNotes.' + prefix, '+', '1');
+    rules.defineRule('spellSlots.D10', 'magicNotes.' + prefix, '+', '1');
+    rules.defineRule('spellSlots.O10', 'magicNotes.' + prefix, '+', '1');
+    rules.defineRule('spellSlots.P10', 'magicNotes.' + prefix, '+', '1');
   } else if(name == 'Pirate Combat Training') {
     rules.defineRule
       ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name == 'Martial Artist Dedication') {
-    rules.defineRule
-      ('weaponDieSides.Fist', 'combatNotes.martialArtistDedication', '^', '6');
+    rules.defineRule('weaponDieSides.Fist', 'combatNotes.' + prefix, '^', '6');
   } else if(name.startsWith('Qi Spells')) {
     rules.defineRule('features.Qi Spells', 'features.' + name, '=', '1');
   } else if(name == 'Saber Teeth') {
-    rules.defineRule('weapons.Jaws', 'combatNotes.saberTeeth', '=', '1');
+    rules.defineRule('weapons.Jaws', 'combatNotes.' + prefix, '=', '1');
     rules.defineRule
-      ('jawsNonFinesseAttack', 'combatNotes.saberTeeth', '=', '0'); // enable
+      ('jawsNonFinesseAttack', 'combatNotes.' + prefix, '=', '0'); // enable
   } else if(name == 'Scaly Hide') {
-    rules.defineRule('combatNotes.scalyHide.1',
+    rules.defineRule('combatNotes.' + prefix + '.1',
       'armorCategory', '?', 'source=="Unarmored"',
-      'combatNotes.scalyHide', '=', '2'
+      'combatNotes.' + prefix, '=', '2'
     );
-    rules.defineRule('armorClass', 'combatNotes.scalyHide.1', '+', null);
+    rules.defineRule('armorClass', 'combatNotes.' + prefix + '.1', '+', null);
     // NOTE: apparently reduced dex cap only applies if unarmored
-    rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v=', '3');
+    rules.defineRule
+      ('armorDexterityCap', 'combatNotes.' + prefix + '.1', 'v=', '3');
   } else if(name == 'Sentinel Dedication') {
-    rules.defineRule('combatNotes.sentinelDedication',
+    rules.defineRule('combatNotes.' + prefix,
       '', '=', '"Trained"',
       'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source].charAt(0).toUpperCase() + Pathfinder2E.RANK_NAMES[source].substring(1)'
     );
-    rules.defineRule('combatNotes.sentinelDedication-1',
+    rules.defineRule('combatNotes.' + prefix + '-1',
       'trainingCount.Medium Armor', '?', 'source >= 2',
       '', '=', '"Trained"',
       'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source].charAt(0).toUpperCase() + Pathfinder2E.RANK_NAMES[source].substring(1)'
@@ -18017,28 +18018,27 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
     rules.defineRule('skillNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Slag May') {
-    rules.defineRule('weapons.Slag Claws', 'combatNotes.slagMay', '=', '1');
+    rules.defineRule('weapons.Slag Claws', 'combatNotes.' + prefix, '=', '1');
   } else if(name == "Stonemason's Eye") {
-    rules.defineRule("featureNotes.stonemason'sEye",
-      'trainingCount.Crafting', '?', 'source > 1'
-    );
-    rules.defineRule('features.Specialty Crafting',
-      "featureNotes.stoneMason'sEye", '=', '1'
-    );
-    rules.defineRule('skillNotes.duplicatedTraining',
-      "featureNotes.stoneMason'sEye", '+', '-1'
-    );
+    // Gains the Special Crafting feature instead of training in a different
+    // skill for duplicated Crafting training
+    rules.defineRule
+      ('featureNotes.' + prefix, 'trainingCount.Crafting', '?', 'source > 1');
+    rules.defineRule
+      ('features.Specialty Crafting', 'featureNotes.' + prefix, '=', '1');
+    rules.defineRule
+      ('skillNotes.duplicatedTraining', 'featureNotes.' + prefix, '+', '-1');
   } else if(name == 'Stumbling Stance') {
     Pathfinder2ERemaster.weaponRules(
       rules, 'Stumbling Swing', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
       ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null, null
     );
-    rules.defineRule
-      ('weapons.Stumbling Swing', 'features.Stumbling Stance', '=', '1');
+    rules.defineRule('weapons.Stumbling Swing', 'features.' + name, '=', '1');
   } else if(name == 'Swashbuckler Dedication') {
     // Suppress validation errors for Styles and style features that don't
     // come from SD
     let allSelectables = rules.getChoices('selectableFeatures');
+    // TODO homebrew styles?
     let styles =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Swashbuckler (Style)'))
@@ -18050,7 +18050,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       let m =
         ((rules.getChoices('features') || rules.plugin.FEATURES)[s] || '').match(/Skill Trained .([\w\s]*)/);
       if(m)
-        // TODO Handled here, this doesn't work for homebrew styles
         rules.defineRule
           ('skillNotes.' + prefix, 'features.' + s, '=', '"' + m[1] + '"');
       s = s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
@@ -18059,38 +18058,34 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'Tap Into Blood') {
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('features.Tap Into Blood (' + t + ')',
-        'features.Tap Into Blood', '?', null,
+      rules.defineRule('features.' + name + ' (' + t + ')',
+        'features.' + name, '?', null,
         'sorcererTraditions', '=', 'source.match(/' + t + '/) ? 1 : null'
       );
     });
   } else if(name == 'Tengu Feather Fan') {
     rules.defineRule('magicNotes.waveFan',
-      'magicNotes.tenguFeatherFan', '=', '1',
+      'magicNotes.' + prefix, '=', '1',
       "magicNotes.windGod'sFan", '+', '1',
       "magicNotes.thunderGod'sFan", '+', '1'
     );
   } else if(name == 'Traditional Resistances') {
-    rules.defineRule('saveNotes.traditionalResistances',
+    rules.defineRule('saveNotes.' + prefix,
       'features.Arcane Dragonblood', '=', '"arcane"',
       'features.Divine Dragonblood', '=', '"divine"',
       'features.Occult Dragonblood', '=', '"occult"',
       'features.Primal Dragonblood', '=', '"primal"'
     );
   } else if(name == 'Tusks') {
-    rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
-  } else if(name == 'Untamed Form') {
-    rules.defineRule
-      ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
+    rules.defineRule('weapons.Tusks', 'combatNotes.' + prefix, '=', '1');
   } else if(name == 'Viking Weapon Familiarity') {
     rules.defineRule
       ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name == 'Vicious Incisors') {
-    rules.defineRule
-      ('weaponDieSides.Jaws', 'combatNotes.viciousIncisors', '^', '6');
-    // Note: Ignore Backstabber trait currently not shown on character sheet
+    rules.defineRule('weaponDieSides.Jaws', 'combatNotes.' + prefix, '^', '6');
+    // Ignore Backstabber trait--currently not shown on character sheet
   } else if(name == "Warpriest's Armor") {
-    rules.defineRule("combatNotes.warpriest'sArmor",
+    rules.defineRule('combatNotes.' + prefix,
       'rank.Medium Armor', '=', 'source==1 ? "Trained" : source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
     );
   } else if(name.startsWith('Weapon Proficiency')) {
@@ -18098,9 +18093,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
   } else if(name.startsWith('Witch Dedication')) {
-    rules.defineRule('magicNotes.witchDedication',
-      'witchTraditions', '=', 'source.toLowerCase()'
-    );
+    rules.defineRule
+      ('magicNotes.' + prefix, 'witchTraditions', '=', 'source.toLowerCase()');
     rules.defineRule('witchTraditions',
       'feats.' + name, '=', 'Pathfinder2E.witchTraditions = ""'
     );
@@ -18127,6 +18121,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let patrons =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Witch (Patron)')).map(x => x.replace('Witch - ', ''));
+    // TODO homebrew patrons?
     patrons.forEach(m => {
       let condensed = m.replaceAll(' ', '');
       let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
@@ -18142,23 +18137,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ("features.Witch's Armaments", 'features.' + name, '=', '1');
     if(name.includes('Nails')) {
-      rules.defineRule('weapons.Nails',
-        "combatNotes.witch'sArmaments(EldritchNails)", '=', '1'
-      );
+      rules.defineRule('weapons.Nails', 'combatNotes.' + prefix, '=', '1');
     } else if(name.includes('Teeth')) {
-      rules.defineRule('weapons.Jaws',
-        "combatNotes.witch'sArmaments(IronTeeth)", '=', '1'
-      );
-      rules.defineRule('weaponDieSides.Jaws',
-        "combatNotes.witch'sArmaments(IronTeeth)", '^', '8'
-      );
-      rules.defineRule('jawsNonFinesseAttack',
-        "combatNotes.witch'sArmaments(IronTeeth)", '=', '0' // enable
-      );
+      rules.defineRule('weapons.Jaws', 'combatNotes.' + prefix, '=', '1');
+      rules.defineRule
+        ('weaponDieSides.Jaws', 'combatNotes.' + prefix, '^', '8');
+      rules.defineRule
+        ('jawsNonFinesseAttack', 'combatNotes.' + prefix, '=', '0'); // enable
     } else if(name.includes('Hair')) {
-      rules.defineRule('weapons.Hair',
-        "combatNotes.witch'sArmaments(LivingHair)", '=', '1'
-      );
+      rules.defineRule('weapons.Hair', 'combatNotes.' + prefix, '=', '1');
     }
   }
 };
