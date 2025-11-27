@@ -4333,7 +4333,7 @@ Pathfinder2ERemaster.FEATS = {
     'Level=8 Traits=Archetype,Concentrate,Spellshape ' +
     'Require=' +
       '"features.Blessed One Dedication",' +
-      '"maxSpellLevel >= 1",' +
+      '"maxSpellRank >= 1",' +
       '"features.Mercy"',
   // Greater Mercy as above
   'Blessed Denial':
@@ -16607,19 +16607,21 @@ Pathfinder2ERemaster.WEAPONS = {
     'Traits=Uncommon,Forceful,Propulsive Range=80'
 };
 
-/* Defines the rules related to character abilities. */
-Pathfinder2ERemaster.attributeRules = function(rules, abilities) {
-  Pathfinder2E.abilityRules(rules, abilities);
+/* Defines the rules related to character attributes. */
+Pathfinder2ERemaster.attributeRules = function(rules, attributes) {
+  Pathfinder2E.abilityRules(rules, attributes);
   delete rules.choices.abilgens;
   rules.defineChoice('abilgens',
     'Standard ancestry boosts', 'Two free ancestry boosts'
   );
-  for(let a in abilities) {
+  // Remove base abilities from character sheet and set them all to 10
+  for(let a in attributes) {
     delete rules.choices.notes[a];
     rules.defineChoice('notes', a + ':%1');
     rules.defineRule
       ('base' + a.charAt(0).toUpperCase() + a.substring(1), '', '=', '10');
   }
+  // Replace abilityBoosts note with attributeBoosts
   rules.defineRule('abilityNotes.abilityBoosts', '', '?', 'null');
   rules.defineRule('abilityNotes.attributeBoosts',
     'level', '=', '4 + Math.floor(source / 5) * 4'
@@ -16635,7 +16637,7 @@ Pathfinder2ERemaster.attributeRules = function(rules, abilities) {
 Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
   Pathfinder2E.combatRules(rules, armors, shields, weapons);
   // Define ancestry-specific unarmed attack weapons. Traits on some vary
-  // between ancestries; these are modified by the individual features
+  // between ancestries; these are modified by the individual features.
   Pathfinder2ERemaster.weaponRules(
     rules, 'Beak', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null, null
@@ -16713,7 +16715,7 @@ Pathfinder2ERemaster.magicRules = function(rules, spells) {
     });
     rules.defineRule('canCastSpells',
       'spellDifficultyClass.' + t, '=', '1',
-      'spellDifficultyClass.' + t + ' Arcane', '=', '1'
+      'spellDifficultyClass.' + t + ' Innate', '=', '1'
     );
   });
   rules.defineRule('maxSpellLevel', 'maxSpellRank', '=', null);
@@ -16724,9 +16726,11 @@ Pathfinder2ERemaster.talentRules = function(
   rules, feats, features, goodies, languages, skills
 ) {
   for(let f in feats)
+    // Flag bad references to Pathfinder2E.FEATS
     if(feats[f] == null)
       console.log(f);
   for(let f in features)
+    // Flag bad references to Pathfinder2E.FEATURES
     if(features[f] == null)
       console.log(f);
   Pathfinder2E.talentRules(rules, feats, features, goodies, languages, skills);
@@ -16971,9 +16975,6 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Elf') {
     rules.defineRule
       ('multiclassLevelRequirementsWaived', 'features.Ancient Elf', '=', '1');
-  } else if(name == 'Gnome') {
-    // Make sure there's a featCount.Skill to increment
-    rules.defineRule('featCount.Skill', 'features.Gnome Obsession', '^=', '0');
   } else if(name == 'Human') {
     rules.defineRule('skillNotes.skilledHeritageHuman', 'level', '?', 'null');
     rules.defineRule('skillNotes.skilledHuman',
@@ -16992,7 +16993,7 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Ratfolk') {
     rules.defineRule('weapons.Jaws', 'combatNotes.sharpTeeth', '=', '1');
     rules.defineRule('weaponDieSides.Jaws', 'combatNotes.sharpTeeth', 'v', '4');
-    // Note: Ignore Agile trait currently not shown on character sheet
+    // Ignoring Agile trait--currently not shown on character sheet
   } else if(name == 'Tengu') {
     rules.defineRule('weapons.Beak', 'combatNotes.sharpBeak', '=', '1');
     rules.defineRule
@@ -17108,6 +17109,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let fields =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
+    // TODO homebrew fields?
     fields.forEach(f => {
       rules.defineRule('features.Advanced Vials (' + f + ')',
         'features.Advanced Vials', '?', null,
@@ -17306,6 +17308,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
       'features.Draconic Bloodline (Primal)', '=', '"fire"'
     );
   } else if(name == 'Swashbuckler') {
+    // TODO homebrew styles?
     ['Battledancer', 'Braggart', 'Fencer', 'Gymnast', 'Rascal', 'Wit'].forEach(s => {
       rules.defineRule('features.Exemplary Finisher (' + s + ')',
         'features.Exemplary Finisher', '?', null,
@@ -17346,7 +17349,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
       "featureNotes.swashbuckler'sStyle", '=', '1'
     );
   } else if(name == 'Witch') {
-    // TODO Handled here, this doesn't work for homebrew patrons
+    // TODO homebrew patrons?
     let patrons =
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables').filter(x => x.endsWith('Patron')).map(x => x.replace(/^\d+:/, '').replace(/:.*$/, ''));
     patrons.forEach(p => {
@@ -17477,13 +17480,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   if(name == 'Acrobat Dedication') {
-    rules.defineRule('skillNotes.acrobatDedication',
+    rules.defineRule('skillNotes.' + prefix,
       'level', '=', 'source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
   } if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name.match(/^(Advanced|Greater) Revelation$/)) {
-    // TODO Handled here, this doesn't work for homebrew mysteries
+    // TODO homebrew mysteries?
     let allSelectables = rules.getChoices('selectableFeatures');
     let mysteries =
       Object.keys(allSelectables)
@@ -17498,42 +17501,36 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name.match(/^Advanced (Deduction|Flair|Mysteries|Witchcraft)$/)) {
     rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
-    rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
+    rules.defineRule('languages.Empyrean', 'skillNotes.' + prefix, '=', '1');
   } else if(name.startsWith('Bestial Manifestation')) {
     rules.defineRule
       ('features.Bestial Manifestation', 'features.' + name, '=', '1');
     if(name.includes('Claw')) {
-      rules.defineRule
-        ('weapons.Claws', 'combatNotes.bestialManifestation(Claw)', '=', '1');
+      rules.defineRule('weapons.Claws', 'combatNotes.' + prefix, '=', '1');
       // Add Versatile P trait
-      rules.defineRule('weapons.Claws.5',
-        'combatNotes.bestialManifestation(Claw)', '=', '"S/P"'
-      );
+      rules.defineRule
+        ('weapons.Claws.5', 'combatNotes.' + prefix, '=', '"S/P"');
     } else if(name.includes('Hoof')) {
-      rules.defineRule
-        ('weapons.Hoof', 'combatNotes.bestialManifestation(Hoof)', '=', '1');
+      rules.defineRule('weapons.Hoof', 'combatNotes.' + prefix, '=', '1');
     } else if(name.includes('Jaws')) {
-      rules.defineRule
-        ('weapons.Jaws', 'combatNotes.bestialManifestation(Jaws)', '=', '1');
+      rules.defineRule('weapons.Jaws', 'combatNotes.' + prefix, '=', '1');
     } else if(name.includes('Tail')) {
+      rules.defineRule('weapons.Tail', 'combatNotes.' + prefix, '=', '1');
       rules.defineRule
-        ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
-      rules.defineRule('weaponDieSides.Tail',
-        'combatNotes.bestialManifestation(Tail)', 'v', '4'
-      );
+        ('weaponDieSides.Tail', 'combatNotes.' + prefix, 'v', '4');
       // Add Finesse trait to this derivation of the Tail weapon
-      rules.defineRule('combatNotes.bestialManifestation(Tail).1',
-        'features.Bestial Manifestation (Tail)', '?', null,
+      rules.defineRule('combatNotes.' + prefix + '.1',
+        'features.' + name, '?', null,
          'finesseAttackBonus', '=', null
       );
-      rules.defineRule('attackBonus.Tail',
-        'combatNotes.bestialManifestation(Tail).1', '+', null
-      );
+      rules.defineRule
+        ('attackBonus.Tail', 'combatNotes.' + prefix + '.1', '+', null);
       rules.defineRule('weapons.Tail.8',
-        'combatNotes.bestialManifestation(Tail).1', '=', 'source>0 ? "dexterity" : "strength"'
+        'combatNotes.' + prefix + '.1', '=', 'source>0 ? "dexterity" : "strength"'
       );
     }
   } else if(name.match(/^(Basic|Greater|Major) Lesson/)) {
+    // TODO homebrew domains?
     let hex =
       name.includes('Dreams') ? 'Veil Of Dreams' :
       name.includes('Elements') ? 'Elemental Betrayal' :
@@ -17597,7 +17594,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'featureNotes.' + prefix + '.1', '=', 'source!="" ? 1 : null'
     );
   } else if(name == 'Breath Of The Dragon') {
-    rules.defineRule('combatNotes.breathOfTheDragon',
+    // TODO homebrew or other exemplars?
+    rules.defineRule('combatNotes.' + prefix,
       'features.Adamantine Exemplar', '=', '"bludgeoning"',
       'features.Conspirator Exemplar', '=', '"poison"',
       'features.Diabolic Exemplar', '=', '"fire"',
@@ -17607,7 +17605,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'features.Mirage Exemplar', '=', '"mental"',
       'features.Omen Exemplar', '=', '"mental"'
     );
-    rules.defineRule('combatNotes.breathOfTheDragon.1',
+    rules.defineRule('combatNotes.' + prefix + '.1',
       'features.Breath Of The Dragon', '=', '"Reflex"',
       'features.Conspirator Exemplar', '=', '"Fortitude"',
       'features.Horned Exemplar', '=', '"Fortitude"',
@@ -17615,7 +17613,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'features.Omen Exemplar', '=', '"Will"'
     );
   } else if(name == 'Cackle') {
-    rules.defineRule('magicNotes.cackle',
+    rules.defineRule('magicNotes.' + prefix,
       'witchTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
     );
     ['arcane', 'divine', 'occult', 'primal'].forEach(t => {
@@ -17624,8 +17622,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       );
     });
   } else if(name == 'Cautious Curiosity') {
-    rules.defineRule
-      ('magicNotes.cautiousCuriosity', 'gnomeTradition', '=', null);
+    rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
   } else if(name.match(/^(Champion|Cleric) Dedication$/)) {
     rules.defineRule('combatNotes.' + prefix + '-1',
       'trainingCount.Medium Armor', '?', 'source >= 2'
@@ -17648,6 +17645,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Cause)'))
       .map(x => x.replace('Champion - ', ''));
+    // TODO homebrew causes?
     causes.forEach(c => {
       rules.defineRule("features.Champion's Reaction (" + c + ")",
         "feats.Champion's Reaction", '?', null,
@@ -17665,49 +17663,50 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules, 'Shadow Grasp', 'Unarmed', 0, '1d4 V', 0, 0, 'Brawling',
       ['Agile', 'Grapple', 'Reach', 'Unarmed'], null, null
     );
-    rules.defineRule
-      ('weapons.Shadow Grasp', 'features.Clinging Shadows Initiate', '=', '1');
+    rules.defineRule('weapons.Shadow Grasp', 'features.' + name, '=', '1');
   } else if(name == 'Cobra Stance') {
     Pathfinder2ERemaster.weaponRules(
       rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
       ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venomous'], null, null
     );
-    rules.defineRule('weapons.Cobra Fang', 'features.Cobra Stance', '=', '1');
+    rules.defineRule('weapons.Cobra Fang', 'features.' + name, '=', '1');
   } else if(name == 'Contortionist') {
     rules.defineRule
-      ('skillNotes.contortionist', 'rank.Acrobatics', '?', 'source >= 3');
+      ('skillNotes.' + prefix, 'rank.Acrobatics', '?', 'source >= 3');
   } else if(name.startsWith('Crossblooded Evolution')) {
     rules.defineRule
       ('features.Crossblooded Evolution', 'features.' + name, '=', '1');
   } else if(name == 'Crunch') {
-    rules.defineRule('weaponDieSides.Jaws', 'combatNotes.crunch', '^', '8');
-    // Note: Ignore Grapple trait currently not shown on character sheet
+    rules.defineRule('weaponDieSides.Jaws', 'combatNotes.' + prefix, '^', '8');
+    // Ignoring Grapple trait--currently not shown on character sheet
   } else if(name == 'Dandy Dedication') {
-    rules.defineRule('skillNotes.dandyDedication',
+    rules.defineRule('skillNotes.' + prefix,
       '', '=', '"Trained"',
       'trainingCount.Deception', '=', 'source>1 ? "Expert" : null'
     );
-    rules.defineRule('skillNotes.dandyDedication-1',
+    rules.defineRule('skillNotes.' + prefix + '-1',
       '', '=', '"Trained"',
       'trainingCount.Society', '=', 'source>1 ? "Expert" : null'
     );
   } else if(name == 'Deadly Aspect') {
-    rules.defineRule('combatNotes.deadlyAspect.1',
+    rules.defineRule('combatNotes.' + prefix + '.1',
       'combatNotes.deadlyAspect', '?', null,
       'features.Draconic Aspect (Claw)', '=', '" [Crit +d8]"'
     );
-    rules.defineRule('combatNotes.deadlyAspect.2',
+    rules.defineRule('combatNotes.' + prefix + '.2',
       'combatNotes.deadlyAspect', '?', null,
       'features.Draconic Aspect (Jaws)', '=', '" [Crit +d8]"'
     );
-    rules.defineRule('combatNotes.deadlyAspect.3',
+    rules.defineRule('combatNotes.' + prefix + '.3',
       'combatNotes.deadlyAspect', '?', null,
       'features.Draconic Aspect (Tail)', '=', '" [Crit +d8]"'
     );
     rules.defineRule
-      ('weapons.Claws.6', 'combatNotes.deadlyAspect.1', '=', null);
-    rules.defineRule('weapons.Jaws.6', 'combatNotes.deadlyAspect.2', '=', null);
-    rules.defineRule('weapons.Tail.6', 'combatNotes.deadlyAspect.3', '=', null);
+      ('weapons.Claws.6', 'combatNotes.' + prefix + '.1', '=', null);
+    rules.defineRule
+      ('weapons.Jaws.6', 'combatNotes.' + prefix + '.2', '=', null);
+    rules.defineRule
+      ('weapons.Tail.6', 'combatNotes.' + prefix + '.3', '=', null);
   } else if(name == 'Devout Blessing') {
     // Suppress validation errors for Blessings
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -17715,6 +17714,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Blessing Of The Devoted)'))
       .map(x => x.replace('Champion - ', ''));
+    // TODO homebrew blessings?
     blessings.forEach(b => {
       rules.defineRule('validationNotes.champion-' + b.replaceAll(' ', '') + 'SelectableFeature',
         'features.' + name, '+', '1'
@@ -17738,6 +17738,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Devotion Spell)'))
       .map(x => x.replace('Champion - ', ''));
+    // TODO homebrew devotion spells?
     spells.forEach(s => {
       rules.defineRule('validationNotes.champion-' + s.replaceAll(' ', '') + 'SelectableFeature',
         'features.' + name, '+', '1'
@@ -17748,23 +17749,21 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name.startsWith('Draconic Aspect')) {
     rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
     if(name.includes('Claw')) {
-      rules.defineRule
-        ('weapons.Claws', 'combatNotes.draconicAspect(Claw)', '=', '1');
+      rules.defineRule('weapons.Claws', 'combatNotes.' + prefix, '=', '1');
     } else if(name.includes('Jaws')) {
-      rules.defineRule
-        ('weapons.Jaws', 'combatNotes.draconicAspect(Jaws)', '=', '1');
+      rules.defineRule('weapons.Jaws', 'combatNotes.' + prefix, '=', '1');
       rules.defineRule('jawsNonFinesseAttack',
         'combatNotes.draconicAspect(Jaws)', '=', '0' // enable
       );
-      // Note: Ignore Forceful trait currently not shown on character sheet
+      // Ignore Forceful trait--currently not shown on character sheet
     } else if(name.includes('Tail')) {
-      rules.defineRule
-        ('weapons.Tail', 'combatNotes.draconicAspect(Tail)', '=', '1');
-      // Note: Ignore Trip trait currently not shown on character sheet
+      rules.defineRule('weapons.Tail', 'combatNotes.' + prefix, '=', '1');
+      // Ignore Trip trait--urrently not shown on character sheet
     }
   } else if(name == 'Draconic Resistance') {
-    rules.defineRule('saveNotes.draconicResistance',
-      // NOTE: Nethys removes ambiguity; resistance to bludgeoning isn't allowed
+    rules.defineRule('saveNotes.' + prefix,
+      // Nethys removes ambiguity; resistance to bludgeoning isn't allowed
+      // TODO homebrew examplars?
       'features.Adamantine Exemplar', '=', '"a choice of acid, cold, fire, electricity, or sonic"',
       'features.Conspirator Exemplar', '=', '"poison"',
       'features.Diabolic Exemplar', '=', '"fire"',
@@ -17775,33 +17774,23 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'features.Omen Exemplar', '=', '"mental"'
     );
   } else if(name == 'Draconic Sight') {
-    rules.defineRule('featureNotes.draconicSight',
+    rules.defineRule('featureNotes.' + prefix,
       '', '=', '"Low-Light Vision"',
       'hasAncestralLowLightVision', '=', '"Darkvision"'
     );
     rules.defineRule('features.Darkvision',
-      'featureNotes.draconicSight', '=', 'source=="Darkvision" ? 1 : null'
+      'featureNotes.' + prefix, '=', 'source=="Darkvision" ? 1 : null'
     );
     rules.defineRule('features.Low-Light Vision',
-      'featureNotes.draconicSight', '=', 'source=="Low-Light Vision" ? 1 : null'
+      'featureNotes.' + prefix, '=', 'source=="Low-Light Vision" ? 1 : null'
     );
   } else if(name == 'Draconic Veil') {
-    rules.defineRule('features.Draconic Veil (Arcane)',
-      'features.Draconic Veil', '?', null,
-      'features.Arcane Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Draconic Veil (Divine)',
-      'features.Draconic Veil', '?', null,
-      'features.Divine Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Draconic Veil (Occult)',
-      'features.Draconic Veil', '?', null,
-      'features.Occult Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Draconic Veil (Primal)',
-      'features.Draconic Veil', '?', null,
-      'features.Primal Dragonblood', '=', '1'
-    );
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('features.' + name + ' (' + t + ')',
+        'features.' + name, '?', null,
+        'features.' + t + ' Dragonblood', '=', '1'
+      );
+    });
   } else if(name == 'Eldritch Archer Dedication') {
     let tradFeatures = [];
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
@@ -17811,7 +17800,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('eldritchArcherTraditions',
         'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
       );
-      rules.defineRule('magicNotes.eldritchArcherDedication',
+      rules.defineRule('magicNotes.' + prefix,
         'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
       );
       rules.defineRule('spellModifier' + t + '.Eldritch Archer',
@@ -17825,7 +17814,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'spellModifier' + t + '.Eldritch Archer', '=', null
       );
       tradFeatures.push(
-        'features.Eldritch Archer Dedication ? 6:' + t + ':Eldritch Archer (Tradition)'
+        'features.' + name + ' ? 6:' + t + ':Eldritch Archer (Tradition)'
       );
     });
     Pathfinder2E.featureListRules(
@@ -17842,79 +17831,64 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name.match(/^(Expert|Master) Witch Spellcasting$/)) {
     rules.defineRule('magicNotes.' + prefix, 'witchTraditions', '=', null);
   } else if(name == 'Fangs') {
-    rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
-    // Note: Ignore Grapple trait currently not shown on character sheet
+    rules.defineRule('weapons.Fangs', 'combatNotes.' + prefix, '=', '1');
+    // Ignore Grapple trait--currently not shown on character sheet
   } else if(name == 'First Revelation') {
     let mysteries =
       rules.plugin.CLASSES.Oracle.match(/([\s\w]*:Mystery)/g)
       .map(x => x.replace(':Mystery', ''));
+    // TODO homebrew mysteries
     mysteries.forEach(s => {
-      rules.defineRule('features.First Revelation (' + s + ')',
-        'features.First Revelation', '?', null,
+      rules.defineRule('features.' + name + ' (' + s + ')',
+        'features.' + name, '?', null,
         'features.' + s, '=', '1'
       );
     });
   } else if(name == 'Form Of The Dragon') {
-    rules.defineRule('features.Form Of The Dragon (Arcane)',
-      'features.Form Of The Dragon', '?', null,
-      'features.Arcane Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Form Of The Dragon (Divine)',
-      'features.Form Of The Dragon', '?', null,
-      'features.Divine Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Form Of The Dragon (Occult)',
-      'features.Form Of The Dragon', '?', null,
-      'features.Occult Dragonblood', '=', '1'
-    );
-    rules.defineRule('features.Form Of The Dragon (Primal)',
-      'features.Form Of The Dragon', '?', null,
-      'features.Primal Dragonblood', '=', '1'
-    );
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('features.' + name + ' (' + t + ')',
+        'features.' + name, '?', null,
+        'features.' + t + ' Dragonblood', '=', '1'
+      );
+    });
   } else if(name == "Gecko's Grip") {
-    rules.defineRule("abilityNotes.gecko'sGrip",
+    rules.defineRule('abilityNotes.' + prefix,
       'features.Cliffscale Lizardfolk', '?', 'source'
     );
-    rules.defineRule("featureNotes.gecko'sGrip",
+    rules.defineRule('featureNotes.' + prefix,
       'features.Cliffscale Lizardfolk', '?', '!source'
     );
-    rules.defineRule("skillNotes.gecko'sGrip",
+    rules.defineRule('skillNotes.' + prefix,
       'features.Cliffscale Lizardfolk', '?', '!source'
     );
   } else if(name == 'Gifted Power') {
     [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
-      rules.defineRule('magicNotes.giftedPower', 'spellSlots.D' + l, '^=', l);
+      rules.defineRule('magicNotes.' + prefix, 'spellSlots.D' + l, '^=', l);
       rules.defineRule('spellSlots.D' + l,
-        'magicNotes.giftedPower', '+', 'source==' + l + ' ? 1 : null'
+        'magicNotes.' + prefix, '+', 'source==' + l + ' ? 1 : null'
       );
     });
   } else if(name == 'Gnome Obsession') {
     // Override legacy rule
-    rules.defineRule('skillNotes.gnomeObsession', 'level', '=', 'null');
+    rules.defineRule('skillNotes.' + prefix, 'level', '=', 'null');
   } else if(name == 'Gossip Lore') {
     Pathfinder2ERemaster.skillRules(rules, 'Gossip Lore', 'Intelligence', null);
-    rules.defineRule('skillNotes.gossipLore',
+    rules.defineRule('skillNotes.' + prefix,
       '', '=', '"Trained"',
       'rank.Society', '=', 'source>=4 ? "Expert" : null'
     );
   } else if(name == 'Grown Of Oak') {
-    rules.defineRule('magicNotes.grownOfOak',
-      '', '=', '1',
-      'spellSlots.P4', '^', '2',
-      'spellSlots.P5', '^', '3',
-      'spellSlots.P6', '^', '4',
-      'spellSlots.P7', '^', '5',
-      'spellSlots.P8', '^', '6',
-      'spellSlots.P9', '^', '7',
-      'spellSlots.P10', '^', '8'
-    );
+    rules.defineRule('magicNotes.' + prefix, '', '=', '1');
+    [4, 5, 6, 7, 8, 9, 10].forEach(r => {
+      rules.defineRule('magicNotes.' + prefix, 'spellSlots.P' + r, '=', r - 2);
+    });
   } else if(name == 'Hag Claws') {
     // No mods needed to base Claw attributes
-    rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
+    rules.defineRule('weapons.Claws', 'combatNotes.' + prefix, '=', '1');
   } else if(name == 'Harmonize Self') {
-    rules.defineRule('magicNotes.harmonizeSelf', 'monkTradition', '=', null);
+    rules.defineRule('magicNotes.' + prefix, 'monkTradition', '=', null);
   } else if(name == 'Homeward Bound') {
-    rules.defineRule('magicNotes.homewardBound', 'gnomeTradition', '=', null);
+    rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
   } else if(name.startsWith('Initiate Warden')) {
     rules.defineRule('features.Initiate Warden', 'features.' + name, '=', '1');
     rules.defineRule
@@ -17925,55 +17899,51 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule('spellModifier.Primal', 'spellModifier.Ranger', '=', null);
   } else if(name == 'Invulnerable Rager') {
-    rules.defineRule('combatNotes.invulnerableRager',
+    rules.defineRule('combatNotes.' + prefix,
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'
     );
   } else if(name.startsWith('Iruxi Armaments')) {
-    if(name == 'Iruxi Armaments (Claws)') {
+    if(name.includes('Claws')) {
       rules.defineRule
-        ('weaponDieSides.Claws', 'combatNotes.iruxiArmaments(Claws)', '^', '6');
+        ('weaponDieSides.Claws', 'combatNotes.' + prefix, '^', '6');
       // Add the Versatile P trait
-      rules.defineRule('weapons.Claws.5',
-        'combatNotes.iruxiArmaments(Claws)', '=', '"S/P"'
-      );
-    } else if(name == 'Iruxi Armaments (Fangs)') {
       rules.defineRule
-        ('weapons.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '=', '1');
+        ('weapons.Claws.5', 'combatNotes.' + prefix, '=', '"S/P"');
+    } else if(name.includes('Fangs')) {
+      rules.defineRule('weapons.Fangs', 'combatNotes.' + prefix, '=', '1');
       rules.defineRule
-        ('weaponDieSides.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '^', '8');
-    } else if(name == 'Iruxi Armaments (Tail)') {
-      rules.defineRule
-        ('weapons.Tail', 'combatNotes.iruxiArmaments(Tail)', '=', '1');
-      // Note: Ignore Sweep trait currently not shown on character sheet
+        ('weaponDieSides.Fangs', 'combatNotes.' + prefix, '^', '8');
+    } else if(name.includes('Tail')) {
+      rules.defineRule('weapons.Tail', 'combatNotes.' + prefix, '=', '1');
+      // Ignoring Sweep trait--currently not shown on character sheet
     }
     rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
   } else if(name == 'Linguist Dedication') {
-    rules.defineRule
-      ('features.Multilingual', 'features.Linguist Dedication', '+', '1');
+    rules.defineRule('features.Multilingual', 'features.' + name, '+', '1');
   } else if(name == 'Marshal Dedication') {
-    rules.defineRule('skillNotes.marshalDedication',
+    rules.defineRule('skillNotes.' + prefix,
       '', '=', '"Trained"',
       'trainingCount.Diplomacy', '=', 'source>1 ? "Expert" : null',
       'trainingCount.Intimidation', '=', 'source>1 ? "Expert" : null'
     );
   } else if(name == 'Martial Experience') {
-    rules.defineRule('combatNotes.martialExperience.1',
-      'features.Martial Experience', '?', null,
+    rules.defineRule('combatNotes.' + prefix + '.1',
+      'features.' + name, '?', null,
       'level', '=', 'source>=11 ? 1 : null'
     );
     rules.defineRule('trainingLevel.Simple Weapons',
-      'combatNotes.martialExperience.1', '^', null
+      'combatNotes.' + prefix + '.1', '^', null
     );
     rules.defineRule('trainingLevel.Martial Weapons',
-      'combatNotes.martialExperience.1', '^', null
+      'combatNotes.' + prefix + '.1', '^', null
     );
     rules.defineRule('trainingLevel.Advanced Weapons',
-      'combatNotes.martialExperience.1', '^', null
+      'combatNotes.' + prefix + '.1', '^', null
     );
   } else if(name.match(/^Mercy \(.*\)$/)) {
     rules.defineRule('features.Mercy', 'features.' + name, '=', '1');
   } else if(name == 'Monastic Archer Stance') {
-    rules.defineRule('combatNotes.monasticArcherStance',
+    rules.defineRule('combatNotes.' + prefix,
       '', '=', '"Trained"',
       'features.Expert Strikes', '=', '"Expert"',
       'features.Master Strikes', '=', '"Master"'
