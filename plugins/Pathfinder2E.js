@@ -15134,7 +15134,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       matchInfo = effect.match(/Weapon\sFamiliarity\s*\(([^\)]*)\)/i);
       if(matchInfo) {
         matchInfo[1].split(/;\s*/).forEach(element => {
-          rules.defineRule('weaponFamiliarity.' + element, note, '=', '1');
+          if(!element.includes('%'))
+            rules.defineRule('weaponFamiliarity.' + element, note, '=', '1');
         });
       }
 
@@ -15144,7 +15145,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         features.forEach(f => {
           f = f.trim();
-          if(f != '')
+          if(f != '' && !f.includes('%'))
             rules.defineRule('features.' + f, note, '=', '1');
         });
       }

@@ -11285,7 +11285,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has increased Stylish Combatant effects"',
   'Swashbuckler Feats':'Section=feature Note="Class Feat (Choose %V from any)"',
   'Swashbuckler Skills':
-    'Section=skill Note="Skill Trained (Acrobatics; Select %V from any)"',
+    'Section=skill Note="Skill Trained (Acrobatics; Choose %V from any)"',
   "Swashbuckler's Style":'Section=feature Note="1 selection"',
   'Vivacious Speed':
     'Section=ability Note="+%V Speed/Has increased Stylish Combatant effects"',
@@ -17439,15 +17439,17 @@ Pathfinder2ERemaster.deityRules = function(
   rules.defineRule('deitySanctification',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.sanctification) + '[source]'
   );
-  rules.defineRule('features.Assurance (' + skill + ')',
-    'featureNotes.beliefSkills', '=', 'source=="' + skill + '" ? 1 : null'
-  );
-  rules.defineRule('trainingLevel.' + skill,
-    'skillNotes.beliefSkills', '^=', 'source=="' + skill + '" ? 1 : null'
-  );
-  rules.defineRule('trainingCount.' + skill,
-    'skillNotes.beliefSkills', '+=', 'source=="' + skill + '" ? 1 : null'
-  );
+  if(skill) {
+    rules.defineRule('features.Assurance (' + skill + ')',
+      'featureNotes.beliefSkills', '=', 'source=="' + skill + '" ? 1 : null'
+    );
+    rules.defineRule('trainingLevel.' + skill,
+      'skillNotes.beliefSkills', '^=', 'source=="' + skill + '" ? 1 : null'
+    );
+    rules.defineRule('trainingCount.' + skill,
+      'skillNotes.beliefSkills', '+=', 'source=="' + skill + '" ? 1 : null'
+    );
+  }
   rules.defineRule('trainingLevel.' + name + ' Lore',
     'skillNotes.beliefSkills.1', '^=', 'source=="' + name + ' Lore" ? 1 : null'
   );
