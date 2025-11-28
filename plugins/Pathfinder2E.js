@@ -14134,10 +14134,12 @@ Pathfinder2E.deityRules = function(
       'combatNotes.deadlySimplicity', '+', 'dict.deityWeapon=="' + weapon + '" ? 2 : null'
     );
   }
-  rules.defineRule('trainingLevel.' + skill,
-    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
-    'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
-  );
+  if(skill) {
+    rules.defineRule('trainingLevel.' + skill,
+      'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
+      'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
+    );
+  }
 
   domains.forEach(d => {
     rules.addChoice('domains', d, '');
@@ -15201,13 +15203,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           if(trad != '%V' && trad != t)
             continue;
           if(trad == '%V')
-            rules.defineRule(prefix + 'Is' + t,
-              'features.' + name, '?', 'source=="' + t +'"'
+            rules.defineRule('rank.' + t + ' Innate',
+              'features.' + name, '=', 'dict["' + note + '"]=="' + t.toLowerCase() +'" ? 1 : null'
             );
-          rules.defineRule('rank.' + trad + ' Innate',
-            trad == '%V' ? prefix + 'Is' + t : ('features.' + name), '=', '1',
-            'rank.' + trad, '^', null
-          );
+          else
+            rules.defineRule
+              ('rank.' + t + ' Innate', 'features.' + name, '=', '1');
+          rules.defineRule('rank.' + t + ' Innate', 'rank.' + t, '^', null);
         }
       }
 
@@ -15223,13 +15225,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         } else {
           rules.defineRule('focusPoints', note, '^=', '0');
         }
-      }
-
-      // Can take <ancestry> ancestry feats
-      matchInfo = effect.match(/^Can take (.*) ancestry feats$/);
-      if(matchInfo) {
-        rules.defineRule
-          ('allowedFeats.' + matchInfo[1], 'features.' + name, '=', '1');
       }
 
       // Can learn spells from the <tradition> tradition

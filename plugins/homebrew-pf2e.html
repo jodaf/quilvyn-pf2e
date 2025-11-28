@@ -467,7 +467,7 @@ and dexterity modifiers, giving us its final definition:
 Given this note, Quilvyn will automatically generate a rule to add the computed
 value to their armor class and will display the note in italics.
 </p><p>
-As this note shows attribute references can use multiple attributes. Within
+As this note shows, attribute references can use multiple attributes. Within
 embedded references, Quilvyn supports the common comparison operators (&lt;,
 &lt;=, &gt;, &gt;=, ==, !=), the common arithmetic operators (+, -, *, /, unary
 -), AND (&amp;&amp;), OR (||), matching (=~, !~), and integer division (//). It
@@ -477,7 +477,7 @@ respectively. Using these operators, we can define the note for the monk
 Whirling Throw feature like this:
 </p>
 
-<code>A successful Athletics vs. a grabbed or restrained foe's Fortitude DC allows throwing it %{10+5*strengthModifier}', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning</code>
+<code>A successful Athletics vs. a grabbed or restrained foe's Fortitude DC allows throwing it %{10+5*strengthModifier}', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning, plus knocked prone on a critical success</code>
 
 <p></p>
 
@@ -514,9 +514,11 @@ useful in entering homebrew ancestries, classes, feats, and features.
 <ul style="padding-left: 15px; margin-top: 0">
 <li>alignment</li>
 <li>ancestry</li>
+<li>background</li>
 <li>deity</li>
 <li>deityAlignment</li>
 <li>deityDomains</li>
+<li>deityFollowerAlignments</li>
 <li>deityFont</li>
 <li>deitySkill</li>
 <li>deitySpells</li>
@@ -531,11 +533,15 @@ useful in entering homebrew ancestries, classes, feats, and features.
 </ul>
 </td><td>
 <ul style="padding-left: 15px; margin-top: 0">
+<li>armor</li>
 <li>armorClass</li>
 <li>hitPoints</li>
 <li>save.Fortitude</li>
 <li>save.Reflex</li>
 <li>save.Will</li>
+<li>shield</li>
+<li>shieldHardness</li>
+<li>shieldHitPoints</li>
 <li>speed</li>
 <li>weapons.&lt;name&gt;, e.g.,<br/>
   weapons.Longsword<br/>
@@ -553,6 +559,7 @@ useful in entering homebrew ancestries, classes, feats, and features.
 </td><td>
 <ul style="padding-left: 15px; margin-top: 0">
 <li>focusPoints</li>
+<li>focusPointsMaximum</li>
 <li>spellSlots.&lt;type&gt;, e.g.,<br>
   spellSlots.A0<br/>
   spellSlots.D3</li>
@@ -568,6 +575,7 @@ useful in entering homebrew ancestries, classes, feats, and features.
 </ul>
 </td><td>
 <ul style="padding-left: 15px; margin-top: 0">
+<li>encumberedBulk</li>
 <li>features.&lt;name&gt;, e.g.<br/>
   features.Alertness<br/>
   features.Cleave</li>
@@ -575,6 +583,8 @@ useful in entering homebrew ancestries, classes, feats, and features.
 <li>languages.&lt;name&gt;, e.g.,<br/>
   languages.Common<br/>
   languages.Sylvan</li>
+<li>maximumBulk</li>
+<li>perception</li>
 <li>rank.&lt;name&gt;, e.g.,<br/>
   rank.Religion<br/>
   rank.Simple Weapons<br/>
@@ -582,6 +592,9 @@ useful in entering homebrew ancestries, classes, feats, and features.
 <li>skillModifiers.&lt;name&gt;, e.g.,<br/>
   skillModifiers.Athletics<br/>
   skillModifiers.Survival</li>
+<li>trainingLevel.&lt;name&gt;, e.g.,<br/>
+  trainingLevel.Blowgun<br/>
+  trainingLevel.Cooking Lore</li>
 </ul>
 </td>
 </tr></table>
