@@ -679,21 +679,21 @@ Pathfinder2E.CLASSES = {
     'Selectables=' +
       '"1:Dexterity:Key Ability",' +
       '"1:Strength:Key Ability",' +
-      '"1:Axes:Weapon Group",' +
-      '"1:Bombs:Weapon Group",' +
-      '"1:Brawling Weapons:Weapon Group",' +
-      '"1:Clubs:Weapon Group",' +
-      '"1:Crossbows:Weapon Group",' +
-      '"1:Darts:Weapon Group",' +
-      '"1:Flails:Weapon Group",' +
-      '"1:Hammers:Weapon Group",' +
-      '"1:Knives:Weapon Group",' +
-      '"1:Picks:Weapon Group",' +
-      '"1:Polearms:Weapon Group",' +
-      '"1:Slings:Weapon Group",' +
-      '"1:Shields:Weapon Group",' +
-      '"1:Spears:Weapon Group",' +
-      '"1:Swords:Weapon Group"',
+      '"5:Axes:Weapon Group",' +
+      '"5:Bombs:Weapon Group",' +
+      '"5:Brawling Weapons:Weapon Group",' +
+      '"5:Clubs:Weapon Group",' +
+      '"5:Crossbows:Weapon Group",' +
+      '"5:Darts:Weapon Group",' +
+      '"5:Flails:Weapon Group",' +
+      '"5:Hammers:Weapon Group",' +
+      '"5:Knives:Weapon Group",' +
+      '"5:Picks:Weapon Group",' +
+      '"5:Polearms:Weapon Group",' +
+      '"5:Slings:Weapon Group",' +
+      '"5:Shields:Weapon Group",' +
+      '"5:Spears:Weapon Group",' +
+      '"5:Swords:Weapon Group"',
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -6758,7 +6758,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Ranger)",' +
-      '"Has the Hunt Prey feature",' +
+      '"Has the Hunt Prey and Ranger Key Ability features",' +
       '"Skill Trained (Survival)"',
   "Basic Hunter's Trick":
     'Section=feature ' +
@@ -13321,12 +13321,24 @@ Pathfinder2E.classRules = function(
 
   selectables.forEach(selectable => {
     let pieces = selectable.split(':');
+    let level =
+      pieces.length > 1 && pieces[0].match(/\d+$/) ? +(pieces[0].match(/(\d+)/)[0]) : 1;
     let s = pieces[pieces.length > 1 && pieces[0].match(/\d+$/) ? 1 : 0];
     let sType = s == s[pieces.length - 1] ? '' : pieces[pieces.length - 1];
     let sCount = prefix + sType.replaceAll(' ', '') + 'Count';
     rules.defineRule(sCount, prefix + 'Features.' + s, '+=', '1');
     QuilvynRules.validAllocationRules
       (rules, prefix + sType.replaceAll(' ', ''), 'selectableFeatureCount.' + name + (sType != '' ? ' (' + sType + ')' : ''), sCount);
+    if(level == 1) {
+      // Suppress validation errors to allow characters with the corresponding
+      // dedication feat to select this feature. Although this will incorrectly
+      // suppress some checks (e.g., Alchemist Dedication doesn't allow picking
+      // a research field), the allocation check will still flag these, and it
+      // cleans the code significantly to handle it here.
+      rules.defineRule('validationNotes.' + prefix + '-' + s.replaceAll(' ', '') + 'SelectableFeature',
+        'featureNotes.' + prefix + 'Dedication', '+', '1'
+      );
+    }
   });
 
   if(spellSlots.length > 0) {
@@ -13456,6 +13468,7 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       'skillNotes.perpetualPotency', '^', 'dict["features.Chirurgeon"] ? 6 : 3',
       'skillNotes.perpetualPerfection', '^', '11'
     );
+    // TODO homebrew fields?
     let allSelectables = rules.getChoices('selectableFeatures');
     let fields =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
@@ -13484,6 +13497,7 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       '', '=', '2',
       'combatNotes.furyInstinct', '^', null
     );
+    // TODO homebrew instincts?
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', ''));
@@ -13588,6 +13602,7 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       'deityFollowerAlignments', '?', null,
       'alignment', '=', 'dict.deityFollowerAlignments.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
+    // TODO homebrew causes?
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Cause')).map(x => x.replace('Champion - ', ''));
@@ -13873,6 +13888,7 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
     rules.defineRule('magicNotes.sorcererSpellcasting',
       'sorcererTraditionsLowered', '=', null
     );
+    // TODO homebrew bloodlines?
     let allSelectables = rules.getChoices('selectableFeatures');
     let bloodlines =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
@@ -14273,6 +14289,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name.startsWith('Advanced Domain')) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Advanced School Spell') {
+    // TODO homebrew schools?
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
@@ -14323,6 +14340,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       });
     }
   } else if(name == 'Arcane School Spell') {
+    // TODO homebrew schools?
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
@@ -14351,19 +14369,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('rank.Heavy Armor',
       'combatNotes.armorProficiency', '^=', 'source=="Heavy" ? 1 : null'
     );
-  } else if(name == 'Barbarian Dedication') {
-    // Suppress validation errors for selected instinct
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let instincts =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Barbarian (Instinct)'))
-      .map(x => x.replace('Barbarian - ', ''));
-    instincts.forEach(i => {
-      let condensed = i.replaceAll(' ', '');
-      rules.defineRule('validationNotes.barbarian-' + condensed + 'SelectableFeature',
-        'featureNotes.barbarianDedication', '+', '1'
-      );
-    });
   } else if((matchInfo = name.match(/^([\w\s]+) Resiliency$/)) != null) {
     rules.defineRule('combatNotes.' + prefix,
       'sum' + matchInfo[1].replaceAll(' ', '') + 'ArchetypeFeats', '=', 'source * 3'
@@ -14375,23 +14380,17 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule
       ('spellModifier.Occult', 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAbility.Occult',
-      'magicNotes.bardDedication', '=', '"charisma"'
-    );
+    rules.defineRule
+      ('spellAbility.Occult', 'magicNotes.bardDedication', '=', '"charisma"');
     rules.defineRule('spellSlots.OC1', 'magicNotes.bardDedication', '+=', '2');
-    // Suppress validation errors for selected muse and the notes for features
-    // of muse that don't come with Bard Dedication
+    // Suppress the muse features that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let muses =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bard (Muse)')).map(x => x.replace('Bard - ', ''));
     muses.forEach(m => {
-      let condensed = m.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.bard-' + condensed + 'SelectableFeature',
-        'featureNotes.bardDedication', '+', '1'
-      );
-      rules.defineRule('featureNotes.' + noteName, 'levels.Bard', '?', null);
-      rules.defineRule('magicNotes.' + noteName, 'levels.Bard', '?', null);
+      let note = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + note, 'levels.Bard', '?', null);
+      rules.defineRule('magicNotes.' + note, 'levels.Bard', '?', null);
     });
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
@@ -14447,32 +14446,18 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       (target == 'Perception' ? 'skill' : 'save') + 'Notes.cannyAcumen(' + target + ')';
     rules.defineRule(note, 'level', '=', 'source<17 ? "Expert" : "Master"');
   } else if(name == 'Champion Dedication') {
-    // Suppress validation errors for selected key ability and cause and the
-    // cause and deity notes that don't come with Champion Dedication
+    // Suppress the cause features that don't come with Champion Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
-    let abilities =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].match(/Champion .Key/))
-      .map(x => x.replace('Champion - ', ''));
-    abilities.forEach(a => {
-      rules.defineRule('validationNotes.champion-' + a + 'SelectableFeature',
-        'features.Champion Dedication', '+', '1'
-      );
-    });
     let causes =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Cause)'))
       .map(x => x.replace('Champion - ', ''));
     causes.forEach(c => {
-      let condensed = c.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.champion-' + condensed + 'SelectableFeature',
-        'featureNotes.championDedication', '+', '1'
-      );
-      rules.defineRule('featureNotes.' + noteName + '-1',
+      let note = c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + note + '-1',
         "features.Champion's Reaction", '?', null
       );
-      rules.defineRule('magicNotes.' + noteName, 'levels.Champion', '?', null);
+      rules.defineRule('magicNotes.' + note, 'levels.Champion', '?', null);
     });
   } else if(name == 'Cleric Dedication') {
     rules.defineRule('spellModifier.' + name,
@@ -14486,7 +14471,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule
       ('spellSlots.DC1', 'magicNotes.clericDedication', '+=', '2');
-    // Suppress the deity notes that don't come with Cleric Dedication
+    // Suppress the deity features that don't come with Cleric Dedication
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
   } else if(name == 'Crane Stance') {
@@ -14495,18 +14480,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null, null
     );
     rules.defineRule('weapons.Crane Wing', 'features.Crane Stance', '=', '1');
-  } else if(name == 'Divine Ally') {
-    // Suppress validation errors for selected ally
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let allies =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Divine Ally)'))
-      .map(x => x.replace('Champion - ', ''));
-    allies.forEach(a => {
-      rules.defineRule('validationNotes.champion-' + a.replaceAll(' ', '') + 'SelectableFeature',
-        'feats.Divine Ally', '+', '1'
-      );
-    });
   } else if(name.startsWith('Domain Initiate')) {
     rules.defineRule('features.Domain Initiate', 'features.' + name, '=', '1');
   } else if(name == 'Dragon Stance') {
@@ -14526,21 +14499,16 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'magicNotes.druidDedication', '=', '"wisdom"'
     );
     rules.defineRule('spellSlots.PC1', 'magicNotes.druidDedication', '+=', '2');
-    // Suppress validation errors for selected order and the notes for features
-    // of Druidic Order that don't come with Druid Dedication
+    // Suppress the Order features that don't come with Druid Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let orders =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Druid (Order)'))
       .map(x => x.replace('Druid - ', ''));
     orders.forEach(o => {
-      let condensed = o.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.druid-' + condensed + 'SelectableFeature',
-        'featureNotes.druidDedication', '+', '1'
-      );
-      rules.defineRule('featureNotes.' + noteName, 'levels.Druid', '?', null);
-      rules.defineRule('magicNotes.' + noteName, 'levels.Druid', '?', null);
+      let note = o.charAt(0).toLowerCase() + o.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + note, 'levels.Druid', '?', null);
+      rules.defineRule('magicNotes.' + note, 'levels.Druid', '?', null);
     });
     rules.defineRule('magicNotes.druidicOrder', 'levels.Druid', '?', null);
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/)) {
@@ -14601,18 +14569,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     else if(name.includes('Plains'))
       rules.defineRule
         ('abilityNotes.' + prefix + '-1', 'features.Wild Stride', '=', '10');
-  } else if(name == 'Fighter Dedication') {
-    // Suppress validation errors for selected key ability
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let abilities =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Fighter (Key'))
-      .map(x => x.replace('Fighter - ', ''));
-    abilities.forEach(a => {
-      rules.defineRule('validationNotes.fighter-' + a + 'SelectableFeature',
-        'features.Fighter Dedication', '+', '1'
-      );
-    });
   } else if(name.match(/^First World (Adept|Magic)$/)) {
     rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
   } else if(name == 'General Training') {
@@ -14684,18 +14640,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       ('spellModifier.' + trad, 'spellModifier.' + name, '=', null);
     rules.defineRule('spellAbility.' + trad, note, '=', '"charisma"');
     rules.defineRule('spellSlots.' + trad.charAt(0) + 'C1', note, '+=', '2');
-  } else if(name == 'Monk Dedication') {
-    // Suppress validation errors for selected key ability
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let abilities =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Monk (Key'))
-      .map(x => x.replace('Monk - ', ''));
-    abilities.forEach(a => {
-      rules.defineRule('validationNotes.monk-' + a + 'SelectableFeature',
-        'features.Monk Dedication', '+', '1'
-      );
-    });
   } else if(name == 'Monk Moves') {
     rules.defineRule('abilityNotes.monkMoves.1',
       'abilityNotes.monkMoves', '=', '10',
@@ -14740,20 +14684,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Quivering Palm') {
     rules.defineRule('magicNotes.quiveringPalm', 'monkTradition', '=', null);
-  } else if(name == 'Ranger Dedication') {
-    // Suppress validation errors for selected key ability
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let abilities =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Ranger (Key Ability)'))
-      .map(x => x.replace('Ranger - ', ''));
-    abilities.forEach(a => {
-      rules.defineRule('validationNotes.ranger-' + a + 'SelectableFeature',
-        'features.Ranger Dedication', '+', '1'
-      );
-    });
-    rules.defineRule
-      ('features.Ranger Key Ability', 'features.Ranger Dedication', '=', '1');
   } else if(name == 'Rogue Dedication') {
     // Key ability for Rogue Dedication is always Dexterity--no racket.
     rules.defineRule('classDifficultyClass.Rogue',
@@ -14792,24 +14722,19 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'spellModifier' + t + '.' + name, '=', '"charisma"'
       );
     });
-    // Suppress validation errors for selected bloodlines and the notes for
-    // features of bloodlines that don't come with Sorcerer Dedication
+    // Suppress features of bloodlines that don't come with Sorcerer Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let bloodlines =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Bloodline'))
       .map(x => x.replace('Sorcerer - ', ''));
     bloodlines.forEach(b => {
-      let condensed = b.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.sorcerer-' + condensed + 'SelectableFeature',
-        'featureNotes.sorcererDedication', '+', '1'
-      );
-      rules.defineRule('magicNotes.' + noteName, 'levels.Sorcerer', '?', null);
+      let note = b.charAt(0).toLowerCase() + b.substring(1).replaceAll(' ', '');
+      rules.defineRule('magicNotes.' + note, 'levels.Sorcerer', '?', null);
       rules.defineRule
-        ('magicNotes.' + noteName + '-1', 'levels.Sorcerer', '?', null);
+        ('magicNotes.' + note + '-1', 'levels.Sorcerer', '?', null);
       rules.defineRule
-        ('magicNotes.' + noteName + '-2', 'levels.Sorcerer', '?', null);
+        ('magicNotes.' + note + '-2', 'levels.Sorcerer', '?', null);
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
   } else if(name == 'Tangled Forest Stance') {
@@ -14887,8 +14812,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule
       ('spellSlots.AC1', 'magicNotes.wizardDedication', '+=', '2');
-    // Suppress validation errors for selected school and the notes for
-    // features of the school that don't come with Wizard Dedication
+    // Suppress features of schools that don't come with Wizard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
@@ -14896,14 +14820,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       .map(x => x.replace('Wizard - ', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
-      let condensed = s.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.wizard-' + condensed + 'SelectableFeature',
-        'featureNotes.wizardDedication', '+', '1'
-      );
-      rules.defineRule('magicNotes.' + noteName, 'levels.Wizard', '?', null);
-      rules.defineRule
-        ('magicNotes.' + noteName + '-1', 'levels.Wizard', '?', null);
+      let note = s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
+      rules.defineRule('magicNotes.' + note, 'levels.Wizard', '?', null);
+      rules.defineRule('magicNotes.' + note + '-1', 'levels.Wizard', '?', null);
     });
     rules.defineRule('magicNotes.arcaneSchool', 'levels.Wizard', '?', null);
   } else if(name == 'Wolf Stance') {

@@ -625,21 +625,21 @@ Pathfinder2ERemaster.CLASSES = {
     'Selectables=' +
       '"1:Dexterity:Key Attribute",' +
       '"1:Strength:Key Attribute",' +
-      '"1:Axes:Weapon Group",' +
-      '"1:Bombs:Weapon Group",' +
-      '"1:Brawling Weapons:Weapon Group",' +
-      '"1:Clubs:Weapon Group",' +
-      '"1:Crossbows:Weapon Group",' +
-      '"1:Darts:Weapon Group",' +
-      '"1:Flails:Weapon Group",' +
-      '"1:Hammers:Weapon Group",' +
-      '"1:Knives:Weapon Group",' +
-      '"1:Picks:Weapon Group",' +
-      '"1:Polearms:Weapon Group",' +
-      '"1:Slings:Weapon Group",' +
-      '"1:Shields:Weapon Group",' +
-      '"1:Spears:Weapon Group",' +
-      '"1:Swords:Weapon Group"',
+      '"5:Axes:Weapon Group",' +
+      '"5:Bombs:Weapon Group",' +
+      '"5:Brawling Weapons:Weapon Group",' +
+      '"5:Clubs:Weapon Group",' +
+      '"5:Crossbows:Weapon Group",' +
+      '"5:Darts:Weapon Group",' +
+      '"5:Flails:Weapon Group",' +
+      '"5:Hammers:Weapon Group",' +
+      '"5:Knives:Weapon Group",' +
+      '"5:Picks:Weapon Group",' +
+      '"5:Polearms:Weapon Group",' +
+      '"5:Slings:Weapon Group",' +
+      '"5:Shields:Weapon Group",' +
+      '"5:Spears:Weapon Group",' +
+      '"5:Swords:Weapon Group"',
 
   'Ranger':
     // Ability => Attribute
@@ -17630,18 +17630,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('combatNotes.' + prefix + '-1',
       'trainingCount.Medium Armor', '?', 'source >= 2'
     );
-    let c = name.startsWith('Champion') ? 'Champion' : 'Cleric';
-    // Suppress validation errors for selected sanctification
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let sanctifications =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Sanctification'))
-      .map(x => x.replace(/^\w+ - /, ''));
-    sanctifications.forEach(s => {
-      rules.defineRule('validationNotes.' + c.toLowerCase() + '-' + s.replaceAll(' ', '') + 'SelectableFeature',
-        'feats.' + c + ' Dedication', '+', '1'
-      );
-    });
   } else if(name == "Champion's Reaction") {
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
@@ -17710,19 +17698,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       ('weapons.Jaws.6', 'combatNotes.' + prefix + '.2', '=', null);
     rules.defineRule
       ('weapons.Tail.6', 'combatNotes.' + prefix + '.3', '=', null);
-  } else if(name == 'Devout Blessing') {
-    // Suppress validation errors for Blessings
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let blessings =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Blessing Of The Devoted)'))
-      .map(x => x.replace('Champion - ', ''));
-    // TODO homebrew blessings?
-    blessings.forEach(b => {
-      rules.defineRule('validationNotes.champion-' + b.replaceAll(' ', '') + 'SelectableFeature',
-        'features.' + name, '+', '1'
-      );
-    });
   } else if(name == 'Devout Magic') {
     rules.defineRule('spellModifier.Champion Dedication',
       'magicNotes.' + prefix, '?', null,
@@ -17735,18 +17710,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('selectableFeatureCount.Champion (Devotion Spell)',
       'featureNotes.' + prefix, '=', '1'
     );
-    // Suppress validation errors for Devotion Spells
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let spells =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Devotion Spell)'))
-      .map(x => x.replace('Champion - ', ''));
-    // TODO homebrew devotion spells?
-    spells.forEach(s => {
-      rules.defineRule('validationNotes.champion-' + s.replaceAll(' ', '') + 'SelectableFeature',
-        'features.' + name, '+', '1'
-      );
-    });
   } else if(name.startsWith('Domain Acumen')) {
     rules.defineRule('features.Domain Acumen', 'features.' + name, '=', '1');
   } else if(name.startsWith('Draconic Aspect')) {
@@ -17962,8 +17925,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'magicNotes.oracleDedication', '=', '"charisma"'
     );
     rules.defineRule('spellSlots.DC1', 'magicNotes.' + prefix, '+=', '2');
-    // Suppress validation errors for Mysteries and mystery features that don't
-    // come from OD
+    // Suppress mystery features that don't come with Oracle Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     // TODO homebrew mysteries?
     let mysteries =
@@ -17971,9 +17933,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       .filter(x => allSelectables[x].includes('Oracle (Mystery)'))
       .map(x => x.replace('Oracle - ', ''));
     mysteries.forEach(m => {
-      rules.defineRule('validationNotes.oracle-' + m.replaceAll(' ', '') + 'SelectableFeature',
-        'features.' + name, '+', '1'
-      );
       m = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
       rules.defineRule('featureNotes.' + m + '-1', 'levels.Oracle', '?', null);
       rules.defineRule('magicNotes.' + m, 'levels.Oracle', '?', null);
@@ -18037,8 +17996,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule('weapons.Stumbling Swing', 'features.' + name, '=', '1');
   } else if(name == 'Swashbuckler Dedication') {
-    // Suppress validation errors for Styles and style features that don't
-    // come from SD
+    // Suppress Style features that don't come with Swashbuckler Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     // TODO homebrew styles?
     let styles =
@@ -18046,9 +18004,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       .filter(x => allSelectables[x].includes('Swashbuckler (Style)'))
       .map(x => x.replace('Swashbuckler - ', ''));
     styles.forEach(s => {
-      rules.defineRule('validationNotes.swashbuckler-' + s.replaceAll(' ', '') + 'SelectableFeature',
-        'features.' + name, '+', '1'
-      );
       let m =
         ((rules.getChoices('features') || rules.plugin.FEATURES)[s] || '').match(/Skill Trained .([\w\s]*)/);
       if(m)
@@ -18118,22 +18073,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'spellModifier' + t + '.' + name, '=', '"intelligence"'
       );
     });
-    // Suppress validation errors for selected patron and the notes for features
-    // of patron that don't come with Witch Dedication
+    // Suppress Patron features that don't come with Witch Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let patrons =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Witch (Patron)')).map(x => x.replace('Witch - ', ''));
     // TODO homebrew patrons?
     patrons.forEach(m => {
-      let condensed = m.replaceAll(' ', '');
-      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
-      rules.defineRule('validationNotes.witch-' + condensed + 'SelectableFeature',
-        'featureNotes.witchDedication', '+', '1'
-      );
-      rules.defineRule
-        ('magicNotes.' + noteName + '-1', 'levels.Witch', '?', null);
-      rules.defineRule
-        ('magicNotes.' + noteName + '-2', 'levels.Witch', '?', null);
+      let note = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
+      rules.defineRule('magicNotes.' + note + '-1', 'levels.Witch', '?', null);
+      rules.defineRule('magicNotes.' + note + '-2', 'levels.Witch', '?', null);
     });
   } else if(name.startsWith("Witch's Armaments")) {
     rules.defineRule
