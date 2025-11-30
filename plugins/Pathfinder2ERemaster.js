@@ -17110,7 +17110,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let fields =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
-    // TODO homebrew fields?
     fields.forEach(f => {
       rules.defineRule('features.Advanced Vials (' + f + ')',
         'features.Advanced Vials', '?', null,
@@ -17283,6 +17282,26 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
       'magicNotes.oracularClarity', '=', 'null', // italics
       'magicNotes.oracularProvidence', '+', '1'
     );
+    let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
+    let mysteries =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Oracle (Mystery)'))
+      .map(x => x.replace('Oracle - ', ''));
+    mysteries.forEach(m => {
+      rules.defineRule('features.Advanced Revelation (' + m + ')',
+        'features.Advanced Revelation', '?', null,
+        'features.' + m, '=', '1'
+      );
+      rules.defineRule('features.First Revelation (' + m + ')',
+        'features.First Revelation', '?', null,
+        'features.' + m, '=', '1'
+      );
+      rules.defineRule('features.Greater Revelation (' + m + ')',
+        'features.Greater Revelation', '?', null,
+        'features.' + m, '=', '1'
+      );
+    });
   } else if(name == 'Ranger') {
     // Easiest way to deal with legacy rules that depend on Wild Stride
     rules.defineRule
@@ -17309,8 +17328,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
       'features.Draconic Bloodline (Primal)', '=', '"fire"'
     );
   } else if(name == 'Swashbuckler') {
-    // TODO homebrew styles?
-    ['Battledancer', 'Braggart', 'Fencer', 'Gymnast', 'Rascal', 'Wit'].forEach(s => {
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let styles =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Style')).map(x => x.replace('Swashbuckler - ', ''));
+    styles.forEach(s => {
       rules.defineRule('features.Exemplary Finisher (' + s + ')',
         'features.Exemplary Finisher', '?', null,
         'features.' + s, '=', '1'
@@ -17350,12 +17371,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
       "featureNotes.swashbuckler'sStyle", '=', '1'
     );
   } else if(name == 'Witch') {
-    // TODO homebrew patrons?
+    let allSelectables = rules.getChoices('selectableFeatures');
     let patrons =
-      QuilvynUtils.getAttrValueArray(attrs, 'Selectables').filter(x => x.endsWith('Patron')).map(x => x.replace(/^\d+:/, '').replace(/:.*$/, ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Patron')).map(x => x.replace('Witch - ', ''));
     patrons.forEach(p => {
       let m =
-        (rules.plugin.FEATURES[p] || '').match(/Skill Trained .([\w\s]*)/);
+        ((rules.getChoices('features') || {})[p] || rules.plugin.FEATURES[p] || '').match(/Skill Trained .([\w\s]*)/);
       if(m) {
         rules.defineRule('rank.' + p + ' Skill',
           'features.' + p, '?', null,
@@ -17488,19 +17509,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     );
   } if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
-  } else if(name.match(/^(Advanced|Greater) Revelation$/)) {
-    // TODO homebrew mysteries?
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let mysteries =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Mystery'))
-      .map(x => x.replace(/^\w+ - /, ''));
-     mysteries.forEach(m => {
-      rules.defineRule('features.' + name + ' (' + m + ')',
-        'features.' + name, '?', null,
-        'features.' + m, '=', '1'
-      );
-    });
   } else if(name.match(/^Advanced (Deduction|Flair|Mysteries|Witchcraft)$/)) {
     rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
@@ -17533,7 +17541,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       );
     }
   } else if(name.match(/^(Basic|Greater|Major) Lesson/)) {
-    // TODO homebrew domains?
+    // TODO homebrew lessons?
     let hex =
       name.includes('Dreams') ? 'Veil Of Dreams' :
       name.includes('Elements') ? 'Elemental Betrayal' :
@@ -17626,17 +17634,16 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'Cautious Curiosity') {
     rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
-  } else if(name.match(/^(Champion|Cleric) Dedication$/)) {
+  } else if(name == 'Champion Dedication') {
     rules.defineRule('combatNotes.' + prefix + '-1',
       'trainingCount.Medium Armor', '?', 'source >= 2'
     );
-  } else if(name == "Champion's Reaction") {
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew causes
     let causes =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Cause)'))
       .map(x => x.replace('Champion - ', ''));
-    // TODO homebrew causes?
     causes.forEach(c => {
       rules.defineRule("features.Champion's Reaction (" + c + ")",
         "feats.Champion's Reaction", '?', null,
@@ -17649,6 +17656,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Chemical Contagion') {
     rules.defineRule
       ('features.Greater Field Discovery', 'featureNotes.' + prefix, '=', '1');
+  } else if(name == 'Cleric Dedication') {
+    rules.defineRule('combatNotes.' + prefix + '-1',
+      'trainingCount.Medium Armor', '?', 'source >= 2'
+    );
   } else if(name == 'Clinging Shadows Initiate') {
     Pathfinder2E.weaponRules(
       rules, 'Shadow Grasp', 'Unarmed', 0, '1d4 V', 0, 0, 'Brawling',
@@ -17799,17 +17810,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Fangs') {
     rules.defineRule('weapons.Fangs', 'combatNotes.' + prefix, '=', '1');
     // Ignore Grapple trait--currently not shown on character sheet
-  } else if(name == 'First Revelation') {
-    let mysteries =
-      rules.plugin.CLASSES.Oracle.match(/([\s\w]*:Mystery)/g)
-      .map(x => x.replace(':Mystery', ''));
-    // TODO homebrew mysteries
-    mysteries.forEach(s => {
-      rules.defineRule('features.' + name + ' (' + s + ')',
-        'features.' + name, '?', null,
-        'features.' + s, '=', '1'
-      );
-    });
   } else if(name == 'Form Of The Dragon') {
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('features.' + name + ' (' + t + ')',
@@ -17925,9 +17925,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'magicNotes.oracleDedication', '=', '"charisma"'
     );
     rules.defineRule('spellSlots.DC1', 'magicNotes.' + prefix, '+=', '2');
-    // Suppress mystery features that don't come with Oracle Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
-    // TODO homebrew mysteries?
+    // Suppress mystery features that don't come with Oracle Dedication
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
     let mysteries =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Oracle (Mystery)'))
@@ -17998,14 +17998,14 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Swashbuckler Dedication') {
     // Suppress Style features that don't come with Swashbuckler Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
-    // TODO homebrew styles?
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
     let styles =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Swashbuckler (Style)'))
       .map(x => x.replace('Swashbuckler - ', ''));
     styles.forEach(s => {
       let m =
-        ((rules.getChoices('features') || rules.plugin.FEATURES)[s] || '').match(/Skill Trained .([\w\s]*)/);
+        ((rules.getChoices('features') || {})[s] || rules.plugin.FEATURES[s] || '').match(/Skill Trained .([\w\s]*)/);
       if(m)
         rules.defineRule
           ('skillNotes.' + prefix, 'features.' + s, '=', '"' + m[1] + '"');
@@ -18075,9 +18075,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     });
     // Suppress Patron features that don't come with Witch Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
     let patrons =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Witch (Patron)')).map(x => x.replace('Witch - ', ''));
-    // TODO homebrew patrons?
     patrons.forEach(m => {
       let note = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
       rules.defineRule('magicNotes.' + note + '-1', 'levels.Witch', '?', null);

@@ -13468,8 +13468,8 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       'skillNotes.perpetualPotency', '^', 'dict["features.Chirurgeon"] ? 6 : 3',
       'skillNotes.perpetualPerfection', '^', '11'
     );
-    // TODO homebrew fields?
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew fields
     let fields =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
     fields.forEach(f => {
@@ -13497,8 +13497,8 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       '', '=', '2',
       'combatNotes.furyInstinct', '^', null
     );
-    // TODO homebrew instincts?
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew instincts
     let instincts =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', ''));
     instincts.forEach(i => {
@@ -13602,8 +13602,8 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
       'deityFollowerAlignments', '?', null,
       'alignment', '=', 'dict.deityFollowerAlignments.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
-    // TODO homebrew causes?
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew causes
     let causes =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Cause')).map(x => x.replace('Champion - ', ''));
     causes.forEach(c => {
@@ -13888,8 +13888,8 @@ Pathfinder2E.classRulesExtra = function(rules, name, attrs) {
     rules.defineRule('magicNotes.sorcererSpellcasting',
       'sorcererTraditionsLowered', '=', null
     );
-    // TODO homebrew bloodlines?
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
     let bloodlines =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
     bloodlines.forEach(b => {
@@ -14016,6 +14016,19 @@ Pathfinder2E.classFeatureRules = function(
       prefix + 'Features.' + name, '=', '0'
     );
   });
+  if(selectable) {
+    // Rerun {class,feat}RulesExtra so that code that iterates through a
+    // class's selectable features can incorporate the new selection
+    if(rules.plugin.classRulesExtra)
+      rules.plugin.classRulesExtra(rules, className, '');
+    if(rules.plugin.featRulesExtra)
+      rules.plugin.featRulesExtra(rules, className + ' Dedication', '');
+    let prefix =
+      className.charAt(0).toLowerCase() + className.substring(1).replaceAll(' ', '');
+    rules.defineRule(prefix + selectable.replaceAll(' ', '') + 'Count',
+      prefix + 'Features.' + name, '+=', '1'
+    );
+  }
 
 };
 
@@ -14289,7 +14302,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name.startsWith('Advanced Domain')) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Advanced School Spell') {
-    // TODO homebrew schools?
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
@@ -14340,7 +14352,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       });
     }
   } else if(name == 'Arcane School Spell') {
-    // TODO homebrew schools?
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
@@ -14373,6 +14384,20 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('combatNotes.' + prefix,
       'sum' + matchInfo[1].replaceAll(' ', '') + 'ArchetypeFeats', '=', 'source * 3'
     );
+  } else if(name == 'Barbarian Dedication') {
+    let allSelectables = rules.getChoices('selectableFeatures');
+    // Rerun by classFeatureRules allows this to handle homebrew instincts
+    let instincts =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Barbarian (Instinct)'))
+      .map(x => x.replace('Barbarian - ', ''));
+    instincts.forEach(i => {
+      // Instinct Ability handled here to take advantage of classFeatureRules rerun
+      rules.defineRule('features.Instinct Ability (' + i + ')',
+        'features.Instinct Ability', '?', null,
+        'features.' + i, '=', '1'
+      );
+    });
   } else if(name == 'Bard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.bardDedication', '?', null,
@@ -14383,8 +14408,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('spellAbility.Occult', 'magicNotes.bardDedication', '=', '"charisma"');
     rules.defineRule('spellSlots.OC1', 'magicNotes.bardDedication', '+=', '2');
-    // Suppress the muse features that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Suppress the muse features that don't come with Bard Dedication
+    // Rerun by classFeatureRules allows this to handle homebrew muses
     let muses =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bard (Muse)')).map(x => x.replace('Bard - ', ''));
     muses.forEach(m => {
@@ -14446,8 +14472,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       (target == 'Perception' ? 'skill' : 'save') + 'Notes.cannyAcumen(' + target + ')';
     rules.defineRule(note, 'level', '=', 'source<17 ? "Expert" : "Master"');
   } else if(name == 'Champion Dedication') {
-    // Suppress the cause features that don't come with Champion Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Suppress cause features that don't come with Champion Dedication
+    // Rerun by classFeatureRules allows this to handle homebrew causes
     let causes =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Champion (Cause)'))
@@ -14499,8 +14526,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'magicNotes.druidDedication', '=', '"wisdom"'
     );
     rules.defineRule('spellSlots.PC1', 'magicNotes.druidDedication', '+=', '2');
-    // Suppress the Order features that don't come with Druid Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Suppress the Order features that don't come with Druid Dedication
+    // Rerun by classFeatureRules allows this to handle homebrew orders
     let orders =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Druid (Order)'))
@@ -14509,6 +14537,11 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       let note = o.charAt(0).toLowerCase() + o.substring(1).replaceAll(' ', '');
       rules.defineRule('featureNotes.' + note, 'levels.Druid', '?', null);
       rules.defineRule('magicNotes.' + note, 'levels.Druid', '?', null);
+      // Order Spell handled here to take advantage of classFeatureRules rerun
+      rules.defineRule('features.Order Spell (' + o + ')',
+        'features.Order Spell', '?', null,
+        'features.' + o, '=', '1'
+      );
     });
     rules.defineRule('magicNotes.druidicOrder', 'levels.Druid', '?', null);
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/)) {
@@ -14522,6 +14555,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'featureNotes.elfAtavism', '=', '1'
     );
     // Suppress validation errors for selected half-elf heritages
+    // TODO homebrew heritages
     let allSelectables = rules.getChoices('selectableFeatures');
     let elfHeritages =
       Object.keys(allSelectables)
@@ -14595,18 +14629,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if(name == "Hierophant's Power") {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
-  } else if(name == 'Instinct Ability') {
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let instincts =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Barbarian (Instinct)'))
-      .map(x => x.replace('Barbarian - ', ''));
-    instincts.forEach(i => {
-      rules.defineRule('features.Instinct Ability (' + i + ')',
-        'features.Instinct Ability', '?', null,
-        'features.' + i, '=', '1'
-      );
-    });
   } else if(name == 'Ironblood Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Iron Sweep', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
@@ -14668,18 +14690,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     );
   } else if(name.match(/^Order Explorer/)) {
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
-  } else if(name == 'Order Spell') {
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let orders =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Druid (Order)'))
-      .map(x => x.replace('Druid - ', ''));
-    orders.forEach(o => {
-      rules.defineRule('features.Order Spell (' + o + ')',
-        'features.Order Spell', '?', null,
-        'features.' + o, '=', '1'
-      );
-    });
   } else if(name == 'Perfect Encore') {
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Quivering Palm') {
@@ -14722,8 +14732,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'spellModifier' + t + '.' + name, '=', '"charisma"'
       );
     });
-    // Suppress features of bloodlines that don't come with Sorcerer Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
+    // Suppress features of bloodlines that don't come with Sorcerer Dedication
+    // Rerun by classFeatureRules allows this to handle homebrew bloodlines
     let bloodlines =
       Object.keys(allSelectables)
       .filter(x => allSelectables[x].includes('Bloodline'))
@@ -16790,7 +16801,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       choices = choices.filter(x => !x.match(/Steel|Metal/));
     attributes.shield = QuilvynUtils.randomElement(choices);
   } else if(attribute == 'spells') {
-    // TODO: restrict spells with the Uncommon trait?
+    // TODO restrict spells with the Uncommon trait?
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
     let allSpells = this.getChoices('spells');
