@@ -5531,7 +5531,7 @@ Pathfinder2E.FEATURES = {
   "Hunter's Edge":'Section=feature Note="1 selection"',
   'Flurry':
     'Section=combat ' +
-    'Note="Reduces multiple attack penalties vs. hunted prey to -3 and -6, or -2 and -4 with an agile weapon"',
+    'Note="Reduces multiple attack penalties vs. hunted prey to -3 and -6, or -2 and -4 with an agile attack"',
   'Outwit':
     'Section=combat,skill ' +
     'Note=' +

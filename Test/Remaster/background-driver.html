@@ -12,11 +12,11 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Dogslicer)":1, 
   "armor":"Chain Mail", "background":"Driver", "class":"Fighter", "classFeats.Reactive Shield":1, 
   "deity":"Pharasma", "experience":267, "gender":"Male", "languages.Chthonian":1, 
-  "languages.Jotun":1, "name":"Background-Driver", "selectableFeatures.Fighter - Strength":1, 
-  "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Arcana":1, "skillIncreases.Driving Lore":1, "skillIncreases.Halfling Lore":1, 
-  "skillIncreases.Orc Lore":1, "skillIncreases.Tanning Lore":1, "weapons.Light Mace":1, 
-  "weapons.Longbow":1, "weapons.Longsword":1
+  "languages.Jotun":1, "name":"Background-Driver", "selectableFeatures.Driver - Ground Vehicles":1, 
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Driving Lore":1, 
+  "skillIncreases.Halfling Lore":1, "skillIncreases.Orc Lore":1, "skillIncreases.Tanning Lore":1, 
+  "weapons.Light Mace":1, "weapons.Longbow":1, "weapons.Longsword":1
 };
   </script>
 </head>
@@ -66,7 +66,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry; Class</td>
-        <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Driver (Driver Training); Fighter (Key Attribute); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -74,7 +74,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Feats</b>: Reactive Shield; Unconventional Weaponry (Dogslicer)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
-        <td><b>Driver Features</b>: Assurance (Piloting Lore); Attribute Boost (Choose 1 from Strength, Dexterity; Choose 1 from any); Skill Trained (Acrobatics; Piloting Lore)</td>
+        <td><b>Driver Features</b>: Assurance (Driving Lore); Attribute Boost (Choose 1 from Strength, Dexterity; Choose 1 from any); Driver Training; Ground Vehicles; Skill Trained (Acrobatics; Driving Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
       </tr></table>
 </td>
@@ -82,6 +82,8 @@ var attributes = {
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
         <td><i>Ancestry Feats: Ancestry Feat (Choose 1 from any)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Driver Training: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: Class Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
@@ -102,31 +104,31 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +6 (dexterity; expert)</td>
       <td>Halfling Lore: +4 (intelligence; trained)</td>
-      <td>Piloting Lore: +4 (intelligence; trained)</td>
+      <td>Religion: +2 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +4 (intelligence; trained)</td>
       <td>Intimidation: +1 (charisma; untrained)</td>
-      <td>Religion: +2 (wisdom; untrained)</td>
+      <td>Society: +1 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +3 (strength; untrained)</td>
       <td>Medicine: +2 (wisdom; untrained)</td>
-      <td>Society: +1 (intelligence; untrained)</td>
+      <td>Stealth: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +1 (intelligence; untrained)</td>
       <td>Nature: +2 (wisdom; untrained)</td>
-      <td>Stealth: +1 (dexterity; untrained)</td>
+      <td>Survival: +2 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +1 (charisma; untrained)</td>
       <td>Occultism: +1 (intelligence; untrained)</td>
-      <td>Survival: +2 (wisdom; untrained)</td>
+      <td>Tanning Lore: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +1 (charisma; untrained)</td>
       <td>Orc Lore: +4 (intelligence; trained)</td>
-      <td>Tanning Lore: +4 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Driving Lore: +4 (intelligence; trained)</td>
-      <td>Performance: +1 (charisma; untrained)</td>
       <td>Thievery: +1 (dexterity; untrained)</td>
+    </tr><tr style="text-align:left">
+      <td>Driving Lore: +6 (intelligence; expert)</td>
+      <td>Performance: +1 (charisma; untrained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -140,7 +142,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skilled Human: Skill Trained (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Piloting Lore): Can take an automatic 13 on Piloting Lore checks</td>
+      <td>Assurance (Driving Lore): Can take an automatic 15 on Driving Lore checks</td>
     </tr></table>
 </td>
   </tr></table>
