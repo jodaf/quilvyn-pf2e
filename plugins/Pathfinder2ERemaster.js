@@ -92,7 +92,7 @@ function Pathfinder2ERemaster(edition) {
 
 }
 
-Pathfinder2ERemaster.VERSION = '2.4.1.0';
+Pathfinder2ERemaster.VERSION = '2.4.1.1';
 
 Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
   Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => !(x.match(/alignment|abilities|strength|constitution|dexterity|intelligence|wisdom|charisma/)));
@@ -2028,7 +2028,7 @@ Pathfinder2ERemaster.FEATS = {
   'Restorative Strike':'Level=4 Traits=Cleric',
   'Sacred Ground':
     'Level=4 Traits=Cleric,Consecration,Divine,Exploration ' +
-    'Require="features.Harmful Font || feature.Healing Font"',
+    'Require="features.Harmful Font || features.Healing Font"',
   'Cast Down':
     Pathfinder2E.FEATS['Cast Down']
     .replace('Metamagic', 'Spellshape') + ' Require=""',
@@ -3157,7 +3157,7 @@ Pathfinder2ERemaster.FEATS = {
     'Level=6 Traits=Barbarian,Rage Require="features.Superstition Instinct"',
   'Nocturnal Senses':
     'Level=6 Traits=Barbarian,Rage ' +
-    'Require="features.Low-Light Vision || features.Scent"',
+    'Require="features.Low-Light Vision || features.Scent || features.Acute Scent"',
   // Modified from Attack Of Opportunity; added Archetype
   'Reactive Strike':
     'Level=6 Traits=Barbarian,Champion,Archetype ' +
@@ -3819,7 +3819,7 @@ Pathfinder2ERemaster.FEATS = {
   'Mysterious Repertoire':'Level=14 Traits=Oracle',
   "Revelation's Focus":'Level=14 Traits=Oracle',
   'Conduit Of Void And Vitality':
-    'Level=16 Traits=Oracle,Cursebound,Divine Require="feature.Mystery"',
+    'Level=16 Traits=Oracle,Cursebound,Divine Require="features.Mystery"',
   'Diverse Mystery':
     'Level=16 Traits=Oracle Require="features.Advanced Revelation"',
   'Portentous Spell':
@@ -17257,6 +17257,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name, attrs) {
     );
     rules.defineRule('clericFeatures.Unholy',
       'deitySanctification', '=', 'source=="Unholy" ? 1 : null'
+    );
+    // Avoid a validation error indicating that the character has selected 1
+    // too many Sanctification options if clericFeatures.{Holy,Unholy} came
+    // from the above rules instead of a selectable feature
+    rules.defineRule('clericSanctificationCount',
+      'deitySanctification', '+', 'source=="Holy" || source=="Unholy" ? -1 : null'
     );
     rules.defineRule('combatNotes.warpriest.2',
       'features.Warpriest', '?', null,
